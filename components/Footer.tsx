@@ -94,7 +94,7 @@ export default function Footer() {
             © {currentYear} Ekim Demirci. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-2 md:mt-0">
-            Built with Next.js & Tailwind CSS
+            Türkiye'nin En İyi SEO Uzmanı
           </p>
         </div>
       </div>
