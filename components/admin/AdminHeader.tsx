@@ -1,9 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Bell, User, LogOut } from "lucide-react";
 
 export default function AdminHeader() {
+  const router = useRouter();
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("admin_authenticated");
+    sessionStorage.removeItem("admin_role");
+    router.push("/admin/login");
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 z-50">
       <div className="flex items-center justify-between h-full px-6">
@@ -34,7 +43,10 @@ export default function AdminHeader() {
                 Administrator
               </p>
             </div>
-            <button className="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+            <button
+              onClick={handleLogout}
+              className="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+            >
               <LogOut className="w-5 h-5" />
             </button>
           </div>

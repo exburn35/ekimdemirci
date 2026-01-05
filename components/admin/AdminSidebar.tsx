@@ -11,7 +11,7 @@ import {
   Settings,
   ChevronLeft,
   ChevronRight,
-  Pages,
+  FolderOpen,
   Globe,
   FileCode,
 } from "lucide-react";
@@ -26,7 +26,7 @@ const menuItems = [
   {
     title: "Pages",
     href: "/admin/pages",
-    icon: Pages,
+    icon: FolderOpen,
     children: [
       { title: "All Pages", href: "/admin/pages" },
       { title: "Page Builder", href: "/admin/pages/builder" },

@@ -12,25 +12,26 @@ A modern, high-performance Next.js website for an SEO Specialist, built with cut
 - **SEO Optimized** with metadata, sitemap, and robots.txt
 - **Fully Responsive** design for all devices
 - **Performance Focused** aiming for 100/100 Lighthouse scores
+- **Admin Panel** with SEO management and page builder
 
 ## 📁 Project Structure
 
 ```
 ├── app/
-│   ├── layout.tsx          # Root layout with navigation and footer
-│   ├── page.tsx            # Home page
-│   ├── globals.css         # Global styles and Tailwind directives
-│   ├── sitemap.ts          # Dynamic sitemap generation
-│   └── robots.ts           # Robots.txt configuration
+│   ├── admin/              # Admin panel routes
+│   │   ├── login/         # Admin login page
+│   │   ├── seo/           # SEO management
+│   │   └── pages/         # Page management
+│   ├── about/             # About page
+│   ├── services/          # Services pages
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── globals.css        # Global styles
 ├── components/
-│   ├── Navigation.tsx      # Sticky glassmorphism navigation
-│   ├── Footer.tsx          # SEO-rich footer
-│   ├── Hero.tsx            # Premium hero section
-│   ├── TrustBar.tsx        # Client logos section
-│   ├── Services.tsx        # Services overview
-│   └── CaseStudyTeaser.tsx # Case study preview
+│   ├── admin/             # Admin panel components
+│   └── ...                # Public components
 └── lib/
-    └── utils.ts            # Utility functions (cn helper)
+    └── utils.ts           # Utility functions
 ```
 
 ## 🛠️ Tech Stack
@@ -57,12 +58,52 @@ A modern, high-performance Next.js website for an SEO Specialist, built with cut
 3. **Open your browser:**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
+## 🔐 Admin Panel Access
+
+### Default Login Credentials
+
+- **URL**: `/admin/login`
+- **Email**: `admin@ekimdemirci.com`
+- **Password**: `admin123`
+
+⚠️ **Important**: Change these credentials in production by setting environment variables:
+- `NEXT_PUBLIC_ADMIN_EMAIL`
+- `NEXT_PUBLIC_ADMIN_PASSWORD`
+
+### Admin Panel Features
+
+- **Dashboard**: Overview with stats and recent activity
+- **SEO Management**: 
+  - Robots.txt editor
+  - Sitemap manager
+  - Page-level SEO optimization with real-time scoring
+- **Page Builder**: Visual drag-and-drop page editor (coming soon)
+- **Settings**: Site configuration
+
 ## 📝 Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
+
+## 🚀 Deployment
+
+### Deploying to Vercel
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and sign in
+3. Click **"Add New Project"**
+4. Import your GitHub repository: `exburn35/ekimdemirci`
+5. Click **"Deploy"**
+
+Vercel will automatically:
+- Detect Next.js framework
+- Run build commands
+- Deploy your site
+- Set up automatic deployments on every push
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 
 ## 🎨 Design Features
 
@@ -80,24 +121,30 @@ A modern, high-performance Next.js website for an SEO Specialist, built with cut
 - Robots.txt configuration
 - Open Graph and Twitter Card support
 - Optimized image handling (ready for Next.js Image component)
+- Admin-managed SEO settings
 
 ## 📄 Pages
 
 - **Home** (`/`) - Hero, Trust Bar, Services, Case Study Teaser
-- **About** (`/about`) - Coming soon
+- **About** (`/about`) - About page with tools, brands, and stats
+- **Services** (`/services`) - Main services page
+  - AI SEO (`/services/ai-seo`)
+  - Technical SEO (`/services/technical-seo`)
+  - On-Page SEO (`/services/on-page`)
+  - Off-Page SEO (`/services/off-page`)
 - **Case Studies** (`/case-studies`) - Coming soon
 - **Blog** (`/blog`) - Coming soon
 - **Contact** (`/contact`) - Coming soon
+- **Admin** (`/admin`) - Admin panel (requires login)
 
 ## 🎯 Next Steps
 
-1. Add actual client logos to the TrustBar component
-2. Create the About, Case Studies, Blog, and Contact pages
-3. Set up MDX or headless CMS for blog content
-4. Add contact form with Zod + React Hook Form validation
-5. Implement case study detail pages with charts
-6. Add actual images using Next.js Image component
-7. Configure domain-specific settings in metadata
+1. Set up authentication (NextAuth.js recommended)
+2. Add database integration (Prisma + PostgreSQL/MySQL)
+3. Implement page builder with drag-and-drop
+4. Add contact form backend
+5. Set up email notifications
+6. Configure custom domain on Vercel
 
 ## 📧 Contact
 
@@ -106,7 +153,3 @@ For questions or support, please contact: contact@ekimdemirci.com
 ---
 
 Built with ❤️ using Next.js and Tailwind CSS
-
-
-
-

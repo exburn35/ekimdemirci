@@ -28,6 +28,7 @@ export default function PageSEOEditor({ page, onSave, onCancel }: PageSEOEditorP
 
   useEffect(() => {
     calculateSEOScore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData]);
 
   const calculateSEOScore = () => {

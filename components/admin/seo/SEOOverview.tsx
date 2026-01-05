@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FileCode, Sitemap, FileText, CheckCircle2, AlertCircle } from "lucide-react";
+import { FileCode, Network, FileText, CheckCircle2, AlertCircle } from "lucide-react";
 
 const seoCards = [
   {
@@ -15,7 +15,7 @@ const seoCards = [
     title: "Sitemap",
     description: "Manage XML sitemap configuration",
     href: "/admin/seo/sitemap",
-    icon: Sitemap,
+    icon: Network,
     status: "configured",
   },
   {

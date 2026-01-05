@@ -1,27 +1,44 @@
-import { redirect } from "next/navigation";
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import AdminSidebar from "@/components/admin/AdminSidebar";
 import AdminHeader from "@/components/admin/AdminHeader";
 
-// TODO: Implement actual authentication check
-// For now, this is a placeholder
-async function checkAuth() {
-  // This should check for admin role
-  // const session = await getServerSession();
-  // if (!session || session.user.role !== 'ADMIN') {
-  //   redirect('/');
-  // }
-  return true;
-}
+function AdminLayoutContent({ children }: { children: React.ReactNode }) {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
 
-export default async function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const isAuthorized = await checkAuth();
-  
+  useEffect(() => {
+    // Check if user is authenticated
+    // Skip check on client-side during initial render to avoid hydration issues
+    if (typeof window !== "undefined") {
+      const authenticated = sessionStorage.getItem("admin_authenticated");
+      const role = sessionStorage.getItem("admin_role");
+
+      if (authenticated === "true" && role === "ADMIN") {
+        setIsAuthorized(true);
+      } else {
+        router.push("/admin/login");
+      }
+    }
+    setIsLoading(false);
+  }, [router]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
   if (!isAuthorized) {
-    redirect("/");
+    return null;
   }
 
   return (
@@ -35,5 +52,13 @@ export default async function AdminLayout({
       </div>
     </div>
   );
+}
+
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <AdminLayoutContent>{children}</AdminLayoutContent>;
 }
 
