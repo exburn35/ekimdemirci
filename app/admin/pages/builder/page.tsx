@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function PageBuilderPage() {
   const router = useRouter();
   const [isCreating, setIsCreating] = useState(false);
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(true);
   const [pageData, setPageData] = useState({
     title: "",
     slug: "",
