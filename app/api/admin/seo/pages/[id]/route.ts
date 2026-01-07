@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = 'force-dynamic'
+
 // UPDATE page SEO
 export async function PUT(
   request: NextRequest,
