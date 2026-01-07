@@ -10,10 +10,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Skip static generation for dynamic routes that require database
-  experimental: {
-    isrMemoryCacheSize: 0,
-  },
 }
 
 module.exports = nextConfig
