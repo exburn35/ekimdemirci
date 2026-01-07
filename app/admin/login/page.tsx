@@ -65,8 +65,7 @@ export default function AdminLogin() {
           className="w-full max-w-md"
         >
           <div className="bg-white rounded-lg shadow-lg p-8">
-
-          <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
               <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
                 <p className="text-sm text-red-800 dark:text-red-300">{error}</p>
@@ -139,9 +138,10 @@ export default function AdminLogin() {
                 </>
               )}
             </button>
-          </form>
-        </div>
-      </motion.div>
+            </form>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
