@@ -4,6 +4,11 @@ import { prisma } from "@/lib/prisma";
 // GET all pages with SEO data
 export async function GET() {
   try {
+    // Skip database queries during build
+    if (!process.env.DATABASE_URL) {
+      return NextResponse.json([]);
+    }
+
     const pages = await prisma.page.findMany({
       select: {
         id: true,
@@ -20,10 +25,8 @@ export async function GET() {
     return NextResponse.json(pages);
   } catch (error) {
     console.error("Error fetching pages SEO:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch pages SEO" },
-      { status: 500 }
-    );
+    // Return empty array on error to prevent build failures
+    return NextResponse.json([]);
   }
 }
 

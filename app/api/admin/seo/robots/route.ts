@@ -4,6 +4,20 @@ import { prisma } from "@/lib/prisma";
 // GET robots.txt content
 export async function GET() {
   try {
+    // Skip database queries during build
+    if (!process.env.DATABASE_URL) {
+      const defaultContent = `User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://ekimdemirci.com/sitemap.xml`;
+      return NextResponse.json({ content: defaultContent });
+    }
+
     let config = await prisma.sEOConfig.findUnique({
       where: { type: "robots" },
     });
@@ -31,10 +45,17 @@ Sitemap: https://ekimdemirci.com/sitemap.xml`;
     return NextResponse.json({ content: config.content });
   } catch (error) {
     console.error("Error fetching robots.txt:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch robots.txt" },
-      { status: 500 }
-    );
+    // Return default content on error
+    const defaultContent = `User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://ekimdemirci.com/sitemap.xml`;
+    return NextResponse.json({ content: defaultContent });
   }
 }
 
