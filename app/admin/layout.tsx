@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import AdminSidebar from "@/components/admin/AdminSidebar";
 import AdminHeader from "@/components/admin/AdminHeader";
 
@@ -9,8 +9,18 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
+  const pathname = usePathname();
+
+  // Skip authentication check for login page
+  const isLoginPage = pathname === "/admin/login";
 
   useEffect(() => {
+    // If we're on the login page, skip authentication check
+    if (isLoginPage) {
+      setIsLoading(false);
+      return;
+    }
+
     // Check if user is authenticated
     // Skip check on client-side during initial render to avoid hydration issues
     if (typeof window !== "undefined") {
@@ -24,7 +34,12 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
       }
     }
     setIsLoading(false);
-  }, [router]);
+  }, [router, isLoginPage]);
+
+  // If we're on the login page, render children directly without any wrapper
+  if (isLoginPage) {
+    return <>{children}</>;
+  }
 
   if (isLoading) {
     return (
