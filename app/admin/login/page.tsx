@@ -43,7 +43,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col" style={{ background: '#ffffff' }}>
       {/* Purple Header Section */}
       <div className="bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center py-20 px-4">
         <div className="text-center">
@@ -57,14 +57,14 @@ export default function AdminLogin() {
       </div>
 
       {/* White Form Section */}
-      <div className="flex-1 flex items-center justify-center bg-gray-50 px-4 py-12">
+      <div className="flex-1 flex items-center justify-center px-4 py-12" style={{ background: '#f9fafb' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="w-full max-w-md"
         >
-          <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="rounded-lg shadow-lg p-8" style={{ background: '#ffffff' }}>
             <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
               <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
@@ -73,34 +73,44 @@ export default function AdminLogin() {
             )}
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-600 mb-2">
+              <label className="block text-sm font-medium mb-2" style={{ color: '#4b5563' }}>
                 Username
               </label>
               <div className="relative">
-                <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{ color: '#9ca3af' }} />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-3 border-b-2 border-gray-300 bg-transparent text-gray-900 focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full px-4 py-3 border-b-2 bg-transparent focus:outline-none transition-colors"
+                  style={{ 
+                    borderColor: '#d1d5db',
+                    color: '#111827',
+                    borderBottomColor: email ? '#9333ea' : '#d1d5db'
+                  }}
                   placeholder="Enter your email"
                 />
               </div>
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-600 mb-2">
+              <label className="block text-sm font-medium mb-2" style={{ color: '#4b5563' }}>
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Lock className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{ color: '#9ca3af' }} />
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full px-4 py-3 border-b-2 border-gray-300 bg-transparent text-gray-900 focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full px-4 py-3 border-b-2 bg-transparent focus:outline-none transition-colors"
+                  style={{ 
+                    borderColor: '#d1d5db',
+                    color: '#111827',
+                    borderBottomColor: password ? '#9333ea' : '#d1d5db'
+                  }}
                   placeholder="Enter your password"
                 />
               </div>
@@ -112,9 +122,9 @@ export default function AdminLogin() {
                   type="checkbox"
                   className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
                 />
-                <span className="ml-2 text-sm text-gray-600">Remember Me</span>
+                <span className="ml-2 text-sm" style={{ color: '#4b5563' }}>Remember Me</span>
               </label>
-              <a href="#" className="text-sm text-blue-600 hover:underline">
+              <a href="#" className="text-sm hover:underline" style={{ color: '#2563eb' }}>
                 Forgot Password?
               </a>
             </div>
@@ -122,7 +132,24 @@ export default function AdminLogin() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full px-6 py-4 bg-white border-2 border-gray-300 rounded-lg font-semibold text-gray-700 hover:border-purple-500 hover:text-purple-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full px-6 py-4 border-2 rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              style={{
+                background: '#ffffff',
+                borderColor: '#d1d5db',
+                color: '#374151'
+              }}
+              onMouseEnter={(e) => {
+                if (!isLoading) {
+                  e.currentTarget.style.borderColor = '#9333ea';
+                  e.currentTarget.style.color = '#9333ea';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isLoading) {
+                  e.currentTarget.style.borderColor = '#d1d5db';
+                  e.currentTarget.style.color = '#374151';
+                }
+              }}
             >
               {isLoading ? (
                 <>
