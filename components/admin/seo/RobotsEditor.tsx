@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Save, Download, RefreshCw, CheckCircle2, AlertCircle } from "lucide-react";
 
 const defaultRobots = `User-agent: *
@@ -18,13 +18,39 @@ export default function RobotsEditor() {
   const [isSaving, setIsSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "success" | "error">("idle");
 
+  // Load robots.txt on mount
+  useEffect(() => {
+    const loadRobots = async () => {
+      try {
+        const response = await fetch("/api/admin/seo/robots");
+        if (response.ok) {
+          const data = await response.json();
+          if (data.content) {
+            setContent(data.content);
+          }
+        }
+      } catch (error) {
+        console.error("Failed to load robots.txt:", error);
+      }
+    };
+    loadRobots();
+  }, []);
+
   const handleSave = async () => {
     setIsSaving(true);
     setSaveStatus("idle");
 
     try {
-      // TODO: Implement server action to save robots.txt
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch("/api/admin/seo/robots", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ content }),
+      });
+
+      if (!response.ok) throw new Error("Failed to save");
+      
       setSaveStatus("success");
     } catch (error) {
       setSaveStatus("error");
@@ -153,4 +179,5 @@ export default function RobotsEditor() {
     </div>
   );
 }
+
 

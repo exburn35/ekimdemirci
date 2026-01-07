@@ -26,6 +26,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -33,6 +34,38 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Prisma
+generated/
+
+# System files
+AppData/
+Contacts/
+Desktop/
+Documents/
+Downloads/
+Favorites/
+Links/
+Local Sites/
+Music/
+OneDrive/
+Pictures/
+Saved Games/
+Searches/
+Tracing/
+Videos/
+NTUSER.*
+ntuser.*
+*.log
+.cursor/
+.gemini/
+.antigravity/
+.rustup/
+.cargo/
+.idlerc/
+.matplotlib/
+.ScreamingFrogSEOSpider/
+
 
 
 

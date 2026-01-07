@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Save, Plus, Trash2, RefreshCw, CheckCircle2, ExternalLink } from "lucide-react";
 
 interface SitemapEntry {
@@ -40,13 +40,45 @@ export default function SitemapEditor() {
   const [isSaving, setIsSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "success" | "error">("idle");
 
+  // Load sitemap entries on mount
+  useEffect(() => {
+    const loadSitemap = async () => {
+      try {
+        const response = await fetch("/api/admin/seo/sitemap");
+        if (response.ok) {
+          const data = await response.json();
+          if (data.length > 0) {
+            setEntries(data.map((entry: any) => ({
+              id: entry.id,
+              url: entry.url,
+              lastModified: entry.lastModified.split("T")[0],
+              changeFrequency: entry.changeFrequency,
+              priority: entry.priority,
+            })));
+          }
+        }
+      } catch (error) {
+        console.error("Failed to load sitemap:", error);
+      }
+    };
+    loadSitemap();
+  }, []);
+
   const handleSave = async () => {
     setIsSaving(true);
     setSaveStatus("idle");
 
     try {
-      // TODO: Implement server action to save sitemap
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch("/api/admin/seo/sitemap", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ entries }),
+      });
+
+      if (!response.ok) throw new Error("Failed to save");
+      
       setSaveStatus("success");
     } catch (error) {
       setSaveStatus("error");
@@ -55,7 +87,7 @@ export default function SitemapEditor() {
     }
   };
 
-  const handleAdd = () => {
+  const handleAdd = async () => {
     const newEntry: SitemapEntry = {
       id: Date.now().toString(),
       url: "",
@@ -66,8 +98,17 @@ export default function SitemapEditor() {
     setEntries([...entries, newEntry]);
   };
 
-  const handleDelete = (id: string) => {
-    setEntries(entries.filter((entry) => entry.id !== id));
+  const handleDelete = async (id: string) => {
+    try {
+      const response = await fetch(`/api/admin/seo/sitemap/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        setEntries(entries.filter((entry) => entry.id !== id));
+      }
+    } catch (error) {
+      console.error("Failed to delete entry:", error);
+    }
   };
 
   const handleUpdate = (id: string, field: keyof SitemapEntry, value: string | number) => {
@@ -243,4 +284,5 @@ export default function SitemapEditor() {
     </div>
   );
 }
+
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Edit, Search, CheckCircle2, AlertCircle, TrendingUp } from "lucide-react";
 import PageSEOEditor from "./PageSEOEditor";
@@ -56,6 +56,54 @@ const mockPages: PageSEO[] = [
 export default function PageSEOList() {
   const [selectedPage, setSelectedPage] = useState<PageSEO | null>(null);
   const [pages, setPages] = useState<PageSEO[]>(mockPages);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPages = async () => {
+      try {
+        const response = await fetch("/api/admin/seo/pages");
+        if (response.ok) {
+          const data = await response.json();
+          setPages(
+            data.map((page: any) => ({
+              id: page.id,
+              path: page.slug,
+              title: page.title,
+              metaTitle: page.metaTitle || "",
+              metaDescription: page.metaDescription || "",
+              ogImage: page.ogImage || "",
+              canonicalUrl: page.canonicalUrl || "",
+              seoScore: calculateScore(page),
+              issues: getIssues(page),
+            }))
+          );
+        }
+      } catch (error) {
+        console.error("Failed to load pages:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    loadPages();
+  }, []);
+
+  const calculateScore = (page: any): number => {
+    let score = 100;
+    if (!page.metaTitle) score -= 20;
+    if (!page.metaDescription) score -= 20;
+    if (!page.ogImage) score -= 15;
+    if (!page.canonicalUrl) score -= 10;
+    return Math.max(0, score);
+  };
+
+  const getIssues = (page: any): string[] => {
+    const issues: string[] = [];
+    if (!page.metaTitle) issues.push("Missing meta title");
+    if (!page.metaDescription) issues.push("Missing meta description");
+    if (!page.ogImage) issues.push("Missing OG image");
+    if (!page.canonicalUrl) issues.push("Missing canonical URL");
+    return issues;
+  };
 
   const getScoreColor = (score: number) => {
     if (score >= 90) return "text-green-600 dark:text-green-400";
@@ -185,4 +233,5 @@ export default function PageSEOList() {
     </div>
   );
 }
+
 

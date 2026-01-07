@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Page {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  content     Json     // Visual builder data (components, layout, etc.)
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // SEO fields
+  metaTitle       String?
+  metaDescription String?
+  ogImage         String?
+  canonicalUrl    String?
+  
+  @@index([slug])
+  @@index([published])
+}
+
+model SEOConfig {
+  id            String   @id @default(cuid())
+  type          String   @unique // "robots" or "sitemap"
+  content       String   // robots.txt content or sitemap JSON
+  updatedAt     DateTime @updatedAt
+  
+  @@map("seo_config")
+}
+
+model SitemapEntry {
+  id              String   @id @default(cuid())
+  url             String
+  lastModified    DateTime
+  changeFrequency String   // always, hourly, daily, weekly, monthly, yearly, never
+  priority        Float    @default(0.5)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@index([url])
+  @@map("sitemap_entries")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // Hashed password
+  role      String   @default("ADMIN") // ADMIN, EDITOR, etc.
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("users")
+}
+

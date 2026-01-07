@@ -75,8 +75,28 @@ export default function PageSEOEditor({ page, onSave, onCancel }: PageSEOEditorP
     setSeoScore(Math.max(0, score));
   };
 
-  const handleSave = () => {
-    onSave({ ...formData, seoScore, issues });
+  const handleSave = async () => {
+    try {
+      const response = await fetch(`/api/admin/seo/pages/${formData.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          metaTitle: formData.metaTitle,
+          metaDescription: formData.metaDescription,
+          ogImage: formData.ogImage,
+          canonicalUrl: formData.canonicalUrl,
+        }),
+      });
+
+      if (response.ok) {
+        const updatedPage = await response.json();
+        onSave({ ...formData, seoScore, issues });
+      }
+    } catch (error) {
+      console.error("Failed to save page SEO:", error);
+    }
   };
 
   const getScoreColor = (score: number) => {
