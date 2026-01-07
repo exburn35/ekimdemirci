@@ -14,10 +14,6 @@ export default function EditPagePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    loadPage();
-  }, [pageId]);
-
   const loadPage = async () => {
     try {
       const response = await fetch(`/api/admin/pages/${pageId}`);
@@ -38,6 +34,11 @@ export default function EditPagePage() {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    loadPage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageId]);
 
   const handleSave = async (components: PageComponent[]) => {
     try {

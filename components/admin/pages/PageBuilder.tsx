@@ -308,7 +308,7 @@ export default function PageBuilder({
           <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
             <Layout className="w-12 h-12 text-gray-400 mx-auto mb-4" />
             <p className="text-gray-600 dark:text-gray-400">
-              No components yet. Click "Add Component" to get started.
+              No components yet. Click &quot;Add Component&quot; to get started.
             </p>
           </div>
         ) : (
