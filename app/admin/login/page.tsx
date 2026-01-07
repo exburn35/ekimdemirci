@@ -43,25 +43,28 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-md"
-      >
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 border border-gray-200 dark:border-gray-700">
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Lock className="w-8 h-8 text-white" />
-            </div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-              Admin Login
-            </h1>
-            <p className="text-gray-600 dark:text-gray-400">
-              Enter your credentials to access the admin panel
-            </p>
-          </div>
+    <div className="min-h-screen flex flex-col bg-white">
+      {/* Purple Header Section */}
+      <div className="bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center py-20 px-4">
+        <div className="text-center">
+          <h1 className="text-5xl font-bold text-white mb-4">
+            ADMIN LOGIN
+          </h1>
+          <p className="text-white text-lg">
+            Hello there, Sign in and start managing your website
+          </p>
+        </div>
+      </div>
+
+      {/* White Form Section */}
+      <div className="flex-1 flex items-center justify-center bg-gray-50 px-4 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full max-w-md"
+        >
+          <div className="bg-white rounded-lg shadow-lg p-8">
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
@@ -70,69 +73,73 @@ export default function AdminLogin() {
               </div>
             )}
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Email Address
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-600 mb-2">
+                Username
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="admin@ekimdemirci.com"
+                  className="w-full px-4 py-3 border-b-2 border-gray-300 bg-transparent text-gray-900 focus:outline-none focus:border-purple-500 transition-colors"
+                  placeholder="Enter your email"
                 />
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-600 mb-2">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Lock className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border-b-2 border-gray-300 bg-transparent text-gray-900 focus:outline-none focus:border-purple-500 transition-colors"
                   placeholder="Enter your password"
                 />
               </div>
             </div>
 
+            <div className="flex items-center justify-between mb-6">
+              <label className="flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                />
+                <span className="ml-2 text-sm text-gray-600">Remember Me</span>
+              </label>
+              <a href="#" className="text-sm text-blue-600 hover:underline">
+                Forgot Password?
+              </a>
+            </div>
+
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full px-6 py-4 bg-white border-2 border-gray-300 rounded-lg font-semibold text-gray-700 hover:border-purple-500 hover:text-purple-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isLoading ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
                   Signing in...
                 </>
               ) : (
                 <>
-                  <Lock className="w-5 h-5" />
-                  Sign In
+                  LOGIN
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </>
               )}
             </button>
           </form>
-
-          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-            <p className="text-xs text-blue-800 dark:text-blue-300">
-              <strong>Default Credentials:</strong><br />
-              Email: admin@ekimdemirci.com<br />
-              Password: admin123
-            </p>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
-              ⚠️ Change these credentials in production by setting environment variables
-            </p>
-          </div>
         </div>
       </motion.div>
     </div>
