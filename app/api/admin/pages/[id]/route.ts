@@ -34,17 +34,18 @@ export async function PUT(
     const body = await request.json();
     const { title, content, metaTitle, metaDescription, ogImage, canonicalUrl, published } = body;
 
+    const updateData: any = {};
+    if (title !== undefined) updateData.title = title;
+    if (content !== undefined) updateData.content = content;
+    if (metaTitle !== undefined) updateData.metaTitle = metaTitle;
+    if (metaDescription !== undefined) updateData.metaDescription = metaDescription;
+    if (ogImage !== undefined) updateData.ogImage = ogImage;
+    if (canonicalUrl !== undefined) updateData.canonicalUrl = canonicalUrl;
+    if (published !== undefined) updateData.published = published;
+
     const page = await prisma.page.update({
       where: { id: params.id },
-      data: {
-        title,
-        content,
-        metaTitle,
-        metaDescription,
-        ogImage,
-        canonicalUrl,
-        published,
-      },
+      data: updateData,
     });
 
     return NextResponse.json(page);
