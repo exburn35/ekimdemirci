@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Save, Image as ImageIcon, Palette, Navigation, FileText } from "lucide-react";
 import { motion } from "framer-motion";
+import NavigationEditor from "./NavigationEditor";
 
 interface SiteSetting {
   key: string;
@@ -13,9 +15,12 @@ interface SiteSetting {
 }
 
 export default function AppearanceSettings() {
+  const searchParams = useSearchParams();
   const [settings, setSettings] = useState<Record<string, SiteSetting>>({});
   const [isSaving, setIsSaving] = useState(false);
-  const [activeTab, setActiveTab] = useState<"general" | "navigation" | "footer" | "theme">("general");
+  const [activeTab, setActiveTab] = useState<"general" | "navigation" | "footer" | "theme">(
+    (searchParams.get("tab") as any) || "general"
+  );
 
   useEffect(() => {
     loadSettings();
@@ -216,17 +221,7 @@ export default function AppearanceSettings() {
           </div>
         )}
 
-        {activeTab === "navigation" && (
-          <div className="space-y-6">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-              Navigation Menu
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400">
-              Navigation menu management will be available here. You can add, edit, and reorder menu items.
-            </p>
-            {/* Navigation editor will be implemented */}
-          </div>
-        )}
+        {activeTab === "navigation" && <NavigationEditor />}
 
         {activeTab === "footer" && (
           <div className="space-y-6">

@@ -1,15 +1,17 @@
-import { Metadata } from "next";
+"use client";
+
+import { Suspense } from "react";
 import AppearanceSettings from "@/components/admin/appearance/AppearanceSettings";
 
-export const metadata: Metadata = {
-  title: "Appearance",
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+function AppearancePageContent() {
+  return <AppearanceSettings />;
+}
 
 export default function AppearancePage() {
-  return <AppearanceSettings />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AppearancePageContent />
+    </Suspense>
+  );
 }
 
