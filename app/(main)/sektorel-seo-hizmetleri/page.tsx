@@ -1,4 +1,5 @@
-import { Metadata } from "next";
+"use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { 
@@ -6,22 +7,13 @@ import {
   ShoppingCart, 
   Scale, 
   Sparkles, 
-  UserMd, 
+  UserCircle, 
   Building2,
   ArrowRight,
   CheckCircle2
 } from "lucide-react";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
-
-export const metadata: Metadata = {
-  title: "Sektörel SEO Hizmetleri | Ekim Demirci",
-  description: "Sektörünüze özel SEO hizmetleri. Diş hekimleri, avukatlar, doktorlar, hastaneler, e-ticaret ve güzellik merkezleri için özelleştirilmiş SEO çözümleri.",
-  openGraph: {
-    title: "Sektörel SEO Hizmetleri | Ekim Demirci",
-    description: "Sektörünüze özel SEO hizmetleri ile dijital varlığınızı güçlendirin.",
-  },
-};
 
 const sectors = [
   {
@@ -55,7 +47,7 @@ const sectors = [
   {
     title: "Doktorlar için SEO",
     description: "Tıp doktorları ve uzman hekimler için özelleştirilmiş SEO hizmetleri.",
-    icon: UserMd,
+    icon: UserCircle,
     href: "/sektorel-seo-hizmetleri/doktorlar-icin-seo-2",
     gradient: "from-orange-500 to-red-500",
   },

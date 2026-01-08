@@ -1,16 +1,8 @@
-import { Metadata } from "next";
+"use client";
+
 import { motion } from "framer-motion";
 import { Search, CheckCircle2, BarChart3, FileText, Clock, ArrowRight } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
-
-export const metadata: Metadata = {
-  title: "SEO Audit Talebi | Ekim Demirci",
-  description: "Ücretsiz SEO audit talebi oluşturun. Web sitenizin SEO durumunu analiz edin ve iyileştirme fırsatlarını keşfedin.",
-  openGraph: {
-    title: "SEO Audit Talebi | Ekim Demirci",
-    description: "Ücretsiz SEO audit ile web sitenizin durumunu öğrenin.",
-  },
-};
 
 const auditFeatures = [
   {

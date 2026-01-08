@@ -1,18 +1,10 @@
-import { Metadata } from "next";
+"use client";
+
 import { motion } from "framer-motion";
 import { TrendingUp, Users, Target, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
-
-export const metadata: Metadata = {
-  title: "Başarı Hikayeleri | Ekim Demirci",
-  description: "SEO hizmetlerimiz ile müşterilerimizin elde ettiği başarılar ve sonuçlar. Gerçek vaka çalışmaları ve başarı hikayeleri.",
-  openGraph: {
-    title: "Başarı Hikayeleri | Ekim Demirci",
-    description: "Müşterilerimizin SEO ile elde ettiği başarılar.",
-  },
-};
 
 const successStories = [
   {

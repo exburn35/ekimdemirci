@@ -1,18 +1,10 @@
-import { Metadata } from "next";
+"use client";
+
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Zap, Target, TrendingUp, Shield } from "lucide-react";
 import Link from "next/link";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
-
-export const metadata: Metadata = {
-  title: "SEO Danışmanlık Fiyatları | Ekim Demirci",
-  description: "SEO danışmanlık hizmetlerimizin fiyatları ve paketleri. Bütçenize uygun SEO çözümleri ile dijital varlığınızı güçlendirin.",
-  openGraph: {
-    title: "SEO Danışmanlık Fiyatları | Ekim Demirci",
-    description: "Bütçenize uygun SEO çözümleri ile dijital varlığınızı güçlendirin.",
-  },
-};
 
 const pricingPlans = [
   {

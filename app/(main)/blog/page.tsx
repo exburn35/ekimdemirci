@@ -1,17 +1,9 @@
-import { Metadata } from "next";
+"use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, Clock, ArrowRight, FileText } from "lucide-react";
 import SEOAuditSection from "@/components/SEOAuditSection";
-
-export const metadata: Metadata = {
-  title: "Blog | Ekim Demirci",
-  description: "SEO, dijital pazarlama ve web geliştirme hakkında güncel makaleler, ipuçları ve rehberler.",
-  openGraph: {
-    title: "Blog | Ekim Demirci",
-    description: "SEO ve dijital pazarlama hakkında güncel içerikler.",
-  },
-};
 
 // Placeholder blog posts - in a real app, these would come from a CMS or database
 const blogPosts = [

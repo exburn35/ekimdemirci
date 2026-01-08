@@ -1,18 +1,10 @@
-import { Metadata } from "next";
+"use client";
+
 import { motion } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
 import FAQClient from "./FAQClient";
-
-export const metadata: Metadata = {
-  title: "Sık Sorulan Sorular (FAQ) | Ekim Demirci",
-  description: "SEO hizmetleri hakkında sık sorulan sorular ve cevapları. SEO danışmanlığı, fiyatlandırma ve süreç hakkında bilgi edinin.",
-  openGraph: {
-    title: "Sık Sorulan Sorular (FAQ) | Ekim Demirci",
-    description: "SEO hizmetleri hakkında sık sorulan sorular ve cevapları.",
-  },
-};
 
 const faqs = [
   {
