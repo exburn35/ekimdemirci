@@ -1,12 +1,23 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, Clock, ArrowRight, FileText } from "lucide-react";
 import SEOAuditSection from "@/components/SEOAuditSection";
 
-// Placeholder blog posts - in a real app, these would come from a CMS or database
-const blogPosts = [
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt?: string;
+  category?: string;
+  featuredImage?: string;
+  publishedAt?: string;
+  readTime?: number;
+  views: number;
+  tags?: string[];
+}
   {
     id: 1,
     title: "SEO'da Otorite Nedir?",
@@ -63,9 +74,50 @@ const blogPosts = [
   },
 ];
 
-const categories = ["Tümü", "SEO", "Teknik SEO", "Yerel SEO", "E-Ticaret SEO", "Off-Page SEO"];
-
 export default function Blog() {
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [categories, setCategories] = useState<string[]>(["Tümü"]);
+  const [selectedCategory, setSelectedCategory] = useState("Tümü");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    loadBlogPosts();
+  }, [selectedCategory]);
+
+  const loadBlogPosts = async () => {
+    try {
+      setIsLoading(true);
+      const categoryParam =
+        selectedCategory === "Tümü" ? "" : `?category=${selectedCategory}`;
+      const response = await fetch(`/api/blog${categoryParam}`);
+      if (response.ok) {
+        const data = await response.json();
+        setBlogPosts(data.posts || []);
+
+        // Extract unique categories
+        const uniqueCategories = new Set<string>(["Tümü"]);
+        data.posts?.forEach((post: BlogPost) => {
+          if (post.category) {
+            uniqueCategories.add(post.category);
+          }
+        });
+        setCategories(Array.from(uniqueCategories));
+      }
+    } catch (error) {
+      console.error("Error loading blog posts:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+
   return (
     <>
       {/* Hero Section */}
@@ -105,7 +157,12 @@ export default function Blog() {
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 rounded-full glass text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full glass text-sm font-medium transition-colors ${
+                  selectedCategory === category
+                    ? "text-white bg-white/20"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
+                }`}
               >
                 {category}
               </button>
@@ -129,28 +186,46 @@ export default function Blog() {
               >
                 <Link href={`/blog/${post.slug}`}>
                   <div className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">
-                        {post.category}
-                      </span>
-                      <div className="flex items-center gap-2 text-gray-400 text-xs">
-                        <Calendar className="w-3 h-3" />
-                        {new Date(post.date).toLocaleDateString("tr-TR", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
+                    {post.featuredImage && (
+                      <div className="w-full h-48 overflow-hidden">
+                        <img
+                          src={post.featuredImage}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
                       </div>
-                    </div>
-                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                      {post.title}
-                    </h2>
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-gray-500 text-xs">
-                        <Clock className="w-3 h-3" />
-                        {post.readTime} okuma
+                    )}
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        {post.category && (
+                          <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">
+                            {post.category}
+                          </span>
+                        )}
+                        <div className="flex items-center gap-2 text-gray-400 text-xs">
+                          <Calendar className="w-3 h-3" />
+                          {post.publishedAt
+                            ? new Date(post.publishedAt).toLocaleDateString("tr-TR", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                              })
+                            : "—"}
+                        </div>
                       </div>
+                      <h2 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                        {post.title}
+                      </h2>
+                      {post.excerpt && (
+                        <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                          {post.excerpt}
+                        </p>
+                      )}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-gray-500 text-xs">
+                          <Clock className="w-3 h-3" />
+                          {post.readTime || 5} dk okuma
+                        </div>
                       <div className="flex items-center gap-2 text-blue-400 text-sm font-medium group-hover:gap-3 transition-all">
                         Devamını Oku
                         <ArrowRight className="w-4 h-4" />

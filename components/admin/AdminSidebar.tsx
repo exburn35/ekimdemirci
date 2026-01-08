@@ -34,6 +34,11 @@ const menuItems = [
     ],
   },
   {
+    title: "Blog",
+    href: "/admin/blog",
+    icon: FileText,
+  },
+  {
     title: "Content Blocks",
     href: "/admin/content-blocks",
     icon: Layers,
