@@ -57,9 +57,78 @@ model User {
   password  String   // Hashed password
   role      String   @default("ADMIN") // ADMIN, EDITOR, etc.
   name      String?
+  avatar    String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   
   @@map("users")
+}
+
+model Media {
+  id          String   @id @default(cuid())
+  filename    String
+  originalName String
+  mimeType    String
+  size        Int      // Size in bytes
+  url         String   // Full URL to the file
+  alt         String?
+  title       String?
+  description String?
+  uploadedBy  String?  // User ID
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([mimeType])
+  @@map("media")
+}
+
+model SiteSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String   // JSON string for complex values
+  type        String   @default("text") // text, image, json, boolean, number
+  category    String   @default("general") // general, appearance, seo, social
+  label       String?
+  description String?
+  updatedAt   DateTime @updatedAt
+  
+  @@map("site_settings")
+}
+
+model ContentBlock {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  content     Json     // Rich content with HTML, images, links
+  type        String   @default("html") // html, component, section
+  location    String?  // Where it's used (header, footer, sidebar, etc.)
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([slug])
+  @@index([location])
+  @@map("content_blocks")
+}
+
+model NavigationItem {
+  id          String   @id @default(cuid())
+  label       String
+  href        String
+  icon        String?
+  order       Int      @default(0)
+  parentId    String?  // For nested menus
+  target      String   @default("_self") // _self, _blank
+  menuType    String   @default("main") // main, footer, mobile
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  parent      NavigationItem? @relation("NavigationChildren", fields: [parentId], references: [id], onDelete: Cascade)
+  children    NavigationItem[] @relation("NavigationChildren")
+  
+  @@index([menuType])
+  @@index([order])
+  @@map("navigation_items")
 }
 

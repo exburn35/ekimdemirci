@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import DashboardStats from "@/components/admin/DashboardStats";
+import DashboardEnhanced from "@/components/admin/DashboardEnhanced";
 import RecentActivity from "@/components/admin/RecentActivity";
 import QuickActions from "@/components/admin/QuickActions";
 
@@ -20,11 +20,11 @@ export default function AdminDashboard() {
           Dashboard
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mt-2">
-          Welcome to your admin panel
+          Next.js Admin Dashboard Solution
         </p>
       </div>
 
-      <DashboardStats />
+      <DashboardEnhanced />
       <QuickActions />
       <RecentActivity />
     </div>

@@ -12,8 +12,9 @@ import {
   ChevronLeft,
   ChevronRight,
   FolderOpen,
-  Globe,
-  FileCode,
+  Image as ImageIcon,
+  Palette,
+  Layers,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -30,6 +31,26 @@ const menuItems = [
     children: [
       { title: "All Pages", href: "/admin/pages" },
       { title: "Page Builder", href: "/admin/pages/builder" },
+    ],
+  },
+  {
+    title: "Content Blocks",
+    href: "/admin/content-blocks",
+    icon: Layers,
+  },
+  {
+    title: "Media Library",
+    href: "/admin/media",
+    icon: ImageIcon,
+  },
+  {
+    title: "Appearance",
+    href: "/admin/appearance",
+    icon: Palette,
+    children: [
+      { title: "Theme Settings", href: "/admin/appearance" },
+      { title: "Navigation", href: "/admin/appearance?tab=navigation" },
+      { title: "Footer", href: "/admin/appearance?tab=footer" },
     ],
   },
   {
