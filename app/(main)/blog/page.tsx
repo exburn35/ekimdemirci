@@ -18,61 +18,6 @@ interface BlogPost {
   views: number;
   tags?: string[];
 }
-  {
-    id: 1,
-    title: "SEO'da Otorite Nedir?",
-    excerpt: "SEO'da otorite, web sitenizin arama motorları tarafından ne kadar güvenilir ve değerli görüldüğünü ifade eder. Bu makalede otoriteyi nasıl artırabileceğinizi öğreneceksiniz.",
-    date: "2024-01-15",
-    readTime: "5 dk",
-    category: "SEO",
-    slug: "seoda-otorite-nedir",
-  },
-  {
-    id: 2,
-    title: "HTTP Yönlendirme (Redirect) Kodları Nelerdir?",
-    excerpt: "HTTP yönlendirme kodları, web sitelerinde URL yönlendirmeleri yaparken kullanılan önemli araçlardır. Bu makalede farklı redirect kodlarını ve ne zaman kullanılacağını öğreneceksiniz.",
-    date: "2024-01-10",
-    readTime: "7 dk",
-    category: "Teknik SEO",
-    slug: "http-yonlendirme-redirect-kodlari",
-  },
-  {
-    id: 3,
-    title: "Yerel SEO Stratejileri: 2024 Rehberi",
-    excerpt: "Yerel SEO, fiziksel bir konumu olan işletmeler için kritik öneme sahiptir. Bu rehberde 2024'ün en etkili yerel SEO stratejilerini bulacaksınız.",
-    date: "2024-01-05",
-    readTime: "10 dk",
-    category: "Yerel SEO",
-    slug: "yerel-seo-stratejileri-2024",
-  },
-  {
-    id: 4,
-    title: "Core Web Vitals: Site Hızınızı Artırın",
-    excerpt: "Google'ın Core Web Vitals metrikleri, kullanıcı deneyimini ölçen önemli faktörlerdir. Bu makalede bu metrikleri nasıl iyileştirebileceğinizi öğreneceksiniz.",
-    date: "2023-12-28",
-    readTime: "8 dk",
-    category: "Teknik SEO",
-    slug: "core-web-vitals-site-hizi",
-  },
-  {
-    id: 5,
-    title: "E-Ticaret SEO: Ürün Sayfalarınızı Optimize Edin",
-    excerpt: "E-ticaret siteleri için SEO stratejileri, organik trafik ve satışları artırmada kritik rol oynar. Bu makalede ürün sayfalarınızı nasıl optimize edeceğinizi öğreneceksiniz.",
-    date: "2023-12-20",
-    readTime: "12 dk",
-    category: "E-Ticaret SEO",
-    slug: "e-ticaret-seo-urun-sayfalari",
-  },
-  {
-    id: 6,
-    title: "Backlink Stratejisi: Kaliteli Linkler Nasıl Alınır?",
-    excerpt: "Backlinkler, SEO'nun en önemli faktörlerinden biridir. Bu makalede kaliteli backlinkler nasıl alınacağını ve link building stratejilerini öğreneceksiniz.",
-    date: "2023-12-15",
-    readTime: "9 dk",
-    category: "Off-Page SEO",
-    slug: "backlink-stratejisi-kaliteli-linkler",
-  },
-];
 
 export default function Blog() {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
@@ -185,17 +130,16 @@ export default function Blog() {
                 className="glass-strong rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 group"
               >
                 <Link href={`/blog/${post.slug}`}>
+                  {post.featuredImage && (
+                    <div className="w-full h-48 overflow-hidden">
+                      <img
+                        src={post.featuredImage}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
                   <div className="p-6">
-                    {post.featuredImage && (
-                      <div className="w-full h-48 overflow-hidden">
-                        <img
-                          src={post.featuredImage}
-                          alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    )}
-                    <div className="p-6">
                       <div className="flex items-center gap-3 mb-4">
                         {post.category && (
                           <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">
@@ -226,12 +170,12 @@ export default function Blog() {
                           <Clock className="w-3 h-3" />
                           {post.readTime || 5} dk okuma
                         </div>
-                      <div className="flex items-center gap-2 text-blue-400 text-sm font-medium group-hover:gap-3 transition-all">
-                        Devamını Oku
-                        <ArrowRight className="w-4 h-4" />
+                        <div className="flex items-center gap-2 text-blue-400 text-sm font-medium group-hover:gap-3 transition-all">
+                          Devamını Oku
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
                       </div>
                     </div>
-                  </div>
                 </Link>
               </motion.article>
             ))}
