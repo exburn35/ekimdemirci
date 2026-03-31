@@ -24,7 +24,7 @@ export default function TrustBar() {
           className="text-center mb-12"
         >
           <p className="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-2">
-            Sektör Liderleri Tarafından Güvenilen
+            Sektör Liderleri Tarafından Güvenilen SEO Danışmanı
           </p>
         </motion.div>
 
