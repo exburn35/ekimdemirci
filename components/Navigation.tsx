@@ -53,6 +53,11 @@ export default function Navigation() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isSectoralOpen, setIsSectoralOpen] = useState(false);
   const [isOtherOpen, setIsOtherOpen] = useState(false);
+  // Mobile accordion states
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileSectoralOpen, setMobileSectoralOpen] = useState(false);
+  const [mobileOtherOpen, setMobileOtherOpen] = useState(false);
+
   const servicesRef = useRef<HTMLDivElement>(null);
   const sectoralRef = useRef<HTMLDivElement>(null);
   const otherRef = useRef<HTMLDivElement>(null);
@@ -293,95 +298,138 @@ export default function Navigation() {
             animate={{ opacity: 1, height: "auto", y: 0 }}
             exit={{ opacity: 0, height: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl mt-2 overflow-hidden"
+            className="md:hidden bg-[#0a0f25]/98 backdrop-blur-2xl border border-white/10 rounded-2xl mt-2 overflow-hidden shadow-2xl flex flex-col"
           >
-            <div className="px-4 py-6 space-y-4">
-              <Link
-                href="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
-              >
+            {/* Scrollable Nav Area */}
+            <div className="px-3 py-4 space-y-1 max-h-[65vh] overflow-y-auto hidden-scrollbar">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
                 Anasayfa
               </Link>
-              <Link
-                href="/hakkimda"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
-              >
+              <Link href="/hakkimda" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
                 Hakkımda
               </Link>
-              <Link
-                href="/blog"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
-              >
+              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
                 Blog
               </Link>
-              <Link
-                href="/iletisim"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
-              >
+              <Link href="/iletisim" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
                 İletişim
               </Link>
 
-              {/* Mobile SEO Services */}
-              <div className="space-y-2">
-                <div className="text-gray-500 text-sm font-semibold uppercase tracking-wider px-2 py-1">
+              <div className="pt-2 pb-1">
+                <hr className="border-white/5" />
+              </div>
+
+              {/* Mobile SEO Services Accordion */}
+              <div className="rounded-xl overflow-hidden border border-white/5 bg-white/[0.01]">
+                <button
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="w-full flex items-center justify-between text-gray-300 hover:text-white transition-all p-4 font-medium"
+                >
                   SEO Hizmetleri
-                </div>
-                {seoServices.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-gray-300 hover:text-white transition-colors duration-200 py-2 pl-4"
-                  >
-                    {service.name}
-                  </Link>
-                ))}
+                  <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180 text-purple-400" : "text-gray-500"}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden bg-black/20"
+                    >
+                      <div className="p-2 flex flex-col gap-1 border-t border-white/5">
+                        {seoServices.map((service) => (
+                          <Link
+                            key={service.name}
+                            href={service.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block text-[15px] text-gray-400 hover:text-white bg-transparent hover:bg-purple-500/10 rounded-lg transition-all py-3 px-4"
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
-              {/* Mobile Sektörel SEO Services */}
-              <div className="space-y-2">
-                <div className="text-gray-500 text-sm font-semibold uppercase tracking-wider px-2 py-1">
+              {/* Mobile Sektörel SEO Accordion */}
+              <div className="rounded-xl overflow-hidden border border-white/5 bg-white/[0.01]">
+                <button
+                  onClick={() => setMobileSectoralOpen(!mobileSectoralOpen)}
+                  className="w-full flex items-center justify-between text-gray-300 hover:text-white transition-all p-4 font-medium"
+                >
                   Sektörel SEO
-                </div>
-                {sectoralServices.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-gray-300 hover:text-white transition-colors duration-200 py-2 pl-4"
-                  >
-                    {service.name}
-                  </Link>
-                ))}
+                  <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileSectoralOpen ? "rotate-180 text-purple-400" : "text-gray-500"}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileSectoralOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden bg-black/20"
+                    >
+                      <div className="p-2 flex flex-col gap-1 border-t border-white/5">
+                        {sectoralServices.map((service) => (
+                          <Link
+                            key={service.name}
+                            href={service.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block text-[15px] text-gray-400 hover:text-white bg-transparent hover:bg-purple-500/10 rounded-lg transition-all py-3 px-4"
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
-              {/* Mobile Other Services */}
-              <div className="space-y-2">
-                <div className="text-gray-500 text-sm font-semibold uppercase tracking-wider px-2 py-1">
+              {/* Mobile Other Accordion */}
+              <div className="rounded-xl overflow-hidden border border-white/5 bg-white/[0.01]">
+                <button
+                  onClick={() => setMobileOtherOpen(!mobileOtherOpen)}
+                  className="w-full flex items-center justify-between text-gray-300 hover:text-white transition-all p-4 font-medium"
+                >
                   Daha Fazla
-                </div>
-                {otherServices.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-gray-300 hover:text-white transition-colors duration-200 py-2 pl-4"
-                  >
-                    {service.name}
-                  </Link>
-                ))}
+                  <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileOtherOpen ? "rotate-180 text-purple-400" : "text-gray-500"}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileOtherOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden bg-black/20"
+                    >
+                      <div className="p-2 flex flex-col gap-1 border-t border-white/5">
+                        {otherServices.map((service) => (
+                          <Link
+                            key={service.name}
+                            href={service.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block text-[15px] text-gray-400 hover:text-white bg-transparent hover:bg-purple-500/10 rounded-lg transition-all py-3 px-4"
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
+            </div>
 
+            {/* Static Bottom Action Area */}
+            <div className="p-4 border-t border-white/10 bg-[#0a0f25] mt-auto">
               <Link
                 href="/iletisim"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-6 py-2 bg-white text-black rounded-full font-semibold text-sm text-center hover:bg-gray-200 transition-all duration-300"
+                className="block w-full py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-semibold text-center hover:from-purple-500 hover:to-indigo-500 shadow-lg active:scale-[0.98] transition-all"
               >
-                Başla
+                Projemi Yükselt!
               </Link>
             </div>
           </motion.div>
