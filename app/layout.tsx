@@ -12,11 +12,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ekim Demirci | SEO Specialist | High-Performance SEO Solutions",
+    default: "Ekim Demirci | SEO Uzmanı | Yüksek Performanslı SEO Çözümleri",
     template: "%s | Ekim Demirci"
   },
-  description: "Expert SEO Specialist helping businesses achieve top search rankings and drive organic growth. Proven results with data-driven SEO strategies.",
-  keywords: ["SEO Specialist", "Search Engine Optimization", "SEO Consultant", "Organic Traffic", "SEO Services"],
+  description: "İşletmelerin arama sıralamalarını yükseltmelerine ve organik büyüme sağlamalarına yardımcı olan uzman SEO Danışmanı. Veri odaklı SEO stratejileri ile kanıtlanmış sonuçlar.",
+  keywords: ["SEO Uzmanı", "Arama Motoru Optimizasyonu", "SEO Danışmanı", "Organik Trafik", "SEO Hizmetleri"],
   authors: [{ name: "Ekim Demirci" }],
   creator: "Ekim Demirci",
   publisher: "Ekim Demirci",
@@ -26,16 +26,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "tr_TR",
     url: "https://ekimdemirci.com",
-    siteName: "Ekim Demirci - SEO Specialist",
-    title: "Ekim Demirci | SEO Specialist | High-Performance SEO Solutions",
-    description: "Expert SEO Specialist helping businesses achieve top search rankings and drive organic growth.",
+    siteName: "Ekim Demirci - SEO Uzmanı",
+    title: "Ekim Demirci | SEO Uzmanı | Yüksek Performanslı SEO Çözümleri",
+    description: "İşletmelerin arama sıralamalarını yükseltmelerine ve organik büyüme sağlamalarına yardımcı olan uzman SEO Danışmanı.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ekim Demirci | SEO Specialist",
-    description: "Expert SEO Specialist helping businesses achieve top search rankings and drive organic growth.",
+    title: "Ekim Demirci | SEO Uzmanı",
+    description: "İşletmelerin arama sıralamalarını yükseltmelerine ve organik büyüme sağlamalarına yardımcı olan uzman SEO Danışmanı.",
   },
   robots: {
     index: true,
@@ -59,8 +59,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} font-sans antialiased`}>
+    <html lang="tr">
+      <body className={`${inter.variable} font-sans antialiased text-gray-200 bg-[#0a0f25]`}>
         {children}
       </body>
     </html>

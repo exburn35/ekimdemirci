@@ -33,7 +33,7 @@ export default function Blog() {
     try {
       setIsLoading(true);
       const categoryParam =
-        selectedCategory === "Tümü" ? "" : `?category=${selectedCategory}`;
+        selectedCategory === "Tümü" ? "?limit=50" : `?category=${selectedCategory}&limit=50`;
       const response = await fetch(`/api/blog${categoryParam}`);
       if (response.ok) {
         const data = await response.json();
@@ -158,7 +158,7 @@ export default function Blog() {
                         </div>
                       </div>
                       <h2 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                        {post.title}
+                        {post.title.replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&')}
                       </h2>
                       {post.excerpt && (
                         <p className="text-gray-400 text-sm mb-4 line-clamp-3">

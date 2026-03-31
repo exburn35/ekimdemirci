@@ -1,165 +1,62 @@
-import { MetadataRoute } from 'next'
-import { prisma } from '@/lib/prisma'
-
-export const dynamic = 'force-dynamic'
+import { MetadataRoute } from "next";
+import prisma from "@/lib/prisma"; // Assuming you have a prisma instance configured here, adjust if needed
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://ekimdemirci.com'
-  
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/ai-seo`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/technical-seo`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/on-page`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/off-page`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/sektorel-seo-hizmetleri`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/sektorel-seo-hizmetleri/dis-hekimleri-icin-seo-2`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/sektorel-seo-hizmetleri/e-ticaret-seo`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/sektorel-seo-hizmetleri/avukatlar-icin-seo-hizmeti`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/sektorel-seo-hizmetleri/guzellik-merkezleri-icin-seo-2`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/sektorel-seo-hizmetleri/doktorlar-icin-seo-2`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/sektorel-seo-hizmetleri/hastaneler-icin-seo-2`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/seo-danismanlik-fiyatlari`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/audit-talebi`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/icerik-yazimi`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/basari-hikayeleri`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-  ]
+  const baseUrl = "https://ekimdemirci.com";
 
-  // Try to fetch dynamic pages from database
+  // Static routes map
+  const staticRoutes = [
+    "",
+    "/hakkimda",
+    "/iletisim",
+    "/blog",
+    "/seo-hizmetleri",
+    "/seo-danismanlik-fiyatlari",
+    "/sektorel-seo-hizmetleri",
+    "/audit-talebi",
+    "/basari-hikayeleri",
+    "/sikca-sorulan-sorular",
+    "/icerik-yazimi",
+    "/seo-hizmetleri/yapay-zeka-seo",
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: route === "" ? 1.0 : 0.8,
+  }));
+
   try {
-    if (process.env.DATABASE_URL) {
-      const dbPages = await prisma.page.findMany({
-        where: { published: true },
-        select: {
-          slug: true,
-          updatedAt: true,
-        },
-      });
+    // 1. Fetch dynamic Blog Posts
+    const blogs = await prisma.blogPost.findMany({
+      where: { published: true },
+      select: { slug: true, updatedAt: true },
+    });
 
-      const dynamicPages: MetadataRoute.Sitemap = dbPages.map((page) => ({
-        url: `${baseUrl}/${page.slug}`,
-        lastModified: page.updatedAt,
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-      }));
+    const blogRoutes = blogs.map((blog) => ({
+      url: `${baseUrl}/blog/${blog.slug}`,
+      lastModified: blog.updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
 
-      return [...staticPages, ...dynamicPages];
-    }
+    // 2. Fetch standard Pages (Dynamically Generated Pages)
+    // Optional depending on if you use the Page model for frontend rendering
+    const customPages = await prisma.page.findMany({
+      where: { published: true },
+      select: { slug: true, updatedAt: true },
+    });
+
+    const pageRoutes = customPages.map((page) => ({
+      // Handle cases where slug might be something like '/about' or 'about'
+      url: `${baseUrl}${page.slug.startsWith("/") ? page.slug : "/" + page.slug}`,
+      lastModified: page.updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+
+    return [...staticRoutes, ...blogRoutes, ...pageRoutes];
   } catch (error) {
-    console.error('Error fetching dynamic pages for sitemap:', error);
-    // Fall through to return static pages only
+    // Fallback if DB fails during build Phase or runtime
+    return staticRoutes;
   }
-
-  return staticPages
 }
-

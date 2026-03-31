@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { Save, Image as ImageIcon, Palette, Navigation, FileText } from "lucide-react";
 import { motion } from "framer-motion";
@@ -65,13 +66,13 @@ export default function AppearanceSettings() {
       });
 
       if (response.ok) {
-        alert("Settings saved successfully!");
+        alert("Ayarlar başarıyla kaydedildi!");
       } else {
-        alert("Failed to save settings");
+        alert("Ayarlar kaydedilemedi");
       }
     } catch (error) {
       console.error("Error saving settings:", error);
-      alert("Error saving settings");
+      alert("Ayarlar kaydedilirken bir hata oluştu");
     } finally {
       setIsSaving(false);
     }
@@ -82,10 +83,10 @@ export default function AppearanceSettings() {
   };
 
   const tabs = [
-    { id: "general", label: "General", icon: FileText },
-    { id: "navigation", label: "Navigation", icon: Navigation },
-    { id: "footer", label: "Footer", icon: FileText },
-    { id: "theme", label: "Theme", icon: Palette },
+    { id: "general", label: "Genel", icon: FileText },
+    { id: "navigation", label: "Navigasyon", icon: Navigation },
+    { id: "footer", label: "Alt Bilgi (Footer)", icon: FileText },
+    { id: "theme", label: "Tema", icon: Palette },
   ];
 
   return (
@@ -94,10 +95,10 @@ export default function AppearanceSettings() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Appearance
+            Görünüm
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-2">
-            Customize your website&apos;s appearance and settings
+            Web sitenizin görünümünü ve ayarlarını özelleştirin
           </p>
         </div>
         <button
@@ -108,12 +109,12 @@ export default function AppearanceSettings() {
           {isSaving ? (
             <>
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              Saving...
+              Kaydediliyor...
             </>
           ) : (
             <>
               <Save className="w-5 h-5" />
-              Save Changes
+              Değişiklikleri Kaydet
             </>
           )}
         </button>
@@ -147,12 +148,12 @@ export default function AppearanceSettings() {
         {activeTab === "general" && (
           <div className="space-y-6">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-              General Settings
+              Genel Ayarlar
             </h2>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Site Title
+                Site Başlığı
               </label>
               <input
                 type="text"
@@ -164,7 +165,7 @@ export default function AppearanceSettings() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Site Description
+                Site Açıklaması
               </label>
               <textarea
                 value={getSetting("site_description", "")}
@@ -180,15 +181,18 @@ export default function AppearanceSettings() {
               </label>
               <div className="flex items-center gap-4">
                 {getSetting("site_logo") && (
-                  <img
+                  <div className="relative w-16 h-16 rounded overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                  <Image
                     src={getSetting("site_logo")}
-                    alt="Site Logo"
-                    className="w-32 h-32 object-contain border border-gray-300 dark:border-gray-600 rounded-lg"
+                    alt="Logo"
+                    fill
+                    className="object-contain"
                   />
+                </div>
                 )}
                 <label className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors cursor-pointer flex items-center gap-2">
                   <ImageIcon className="w-5 h-5" />
-                  {getSetting("site_logo") ? "Change Logo" : "Upload Logo"}
+                  {getSetting("site_logo") ? "Logoyu Değiştir" : "Logo Yükle"}
                   <input
                     type="file"
                     accept="image/*"
@@ -226,11 +230,11 @@ export default function AppearanceSettings() {
         {activeTab === "footer" && (
           <div className="space-y-6">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-              Footer Settings
+              Alt Bilgi (Footer) Ayarları
             </h2>
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Footer Copyright Text
+                Telif Hakkı Metni
               </label>
               <input
                 type="text"
@@ -245,11 +249,11 @@ export default function AppearanceSettings() {
         {activeTab === "theme" && (
           <div className="space-y-6">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-              Theme Settings
+              Tema Ayarları
             </h2>
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Primary Color
+                Ana Renk
               </label>
               <input
                 type="color"

@@ -7,26 +7,26 @@ const stats = [
   {
     icon: Calendar,
     value: "2020",
-    label: "Professional Sector Entry",
-    description: "Started my journey in digital marketing",
+    label: "Profesyonel Sektöre Giriş",
+    description: "Dijital pazarlama yolculuğumun başlangıcı",
   },
   {
     icon: Briefcase,
     value: "15+",
-    label: "Different Sectors",
-    description: "Experience across diverse industries",
+    label: "Farklı Sektör",
+    description: "Çeşitli endüstrilerde deneyim",
   },
   {
     icon: Globe,
     value: "15+",
-    label: "Countries Consulted",
-    description: "International SEO expertise",
+    label: "Danışmanlık Verilen Ülke",
+    description: "Uluslararası SEO uzmanlığı",
   },
   {
     icon: Users,
     value: "200+",
-    label: "Clients Consulted",
-    description: "Successful projects delivered",
+    label: "Danışmanlık Verilen Müşteri",
+    description: "Başarıyla teslim edilen projeler",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function StatsSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Experience & Results
+              Deneyim & Sonuçlar
             </span>
           </h2>
         </motion.div>

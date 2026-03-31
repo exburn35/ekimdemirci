@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import BlogList from "@/components/admin/blog/BlogList";
 
 export const metadata: Metadata = {
-  title: "Blog Posts",
+  title: "Blog Yazıları",
   robots: {
     index: false,
     follow: false,

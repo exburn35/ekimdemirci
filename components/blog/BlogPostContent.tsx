@@ -1,160 +1,151 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
 import Link from "next/link";
-import { PageComponent } from "@/components/admin/pages/PageBuilder";
+import Image from "next/image";
+import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
+import { BlogPost, Heading, formatDate } from "@/lib/blog";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
-
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt?: string;
-  content: any;
-  components?: PageComponent[] | null;
-  featuredImage?: string;
-  category?: string;
-  tags?: string[];
-  publishedAt?: string;
-  readTime?: number;
-  views: number;
-}
+import BlogSidebar from "./BlogSidebar";
+import TableOfContents from "./TableOfContents";
+import BlogNavigation from "./BlogNavigation";
+import BlogLinkPreview from "./BlogLinkPreview";
+import BlogMotionWrapper from "./BlogMotionWrapper";
 
 interface BlogPostContentProps {
   post: BlogPost;
+  processedHtml: string;
+  headings: Heading[];
 }
 
-export default function BlogPostContent({ post }: BlogPostContentProps) {
+export default function BlogPostContent({ post, processedHtml, headings }: BlogPostContentProps) {
   return (
     <>
+      <BlogLinkPreview />
+      
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden min-h-[60vh] flex items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        
         {post.featuredImage && (
-          <div
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: `url(${post.featuredImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
+          <div className="absolute inset-0 opacity-30 select-none pointer-events-none">
+            <Image
+              src={post.featuredImage}
+              alt={post.title}
+              fill
+              className="object-cover transition-opacity duration-1000"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+          </div>
         )}
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center lg:text-left">
+          <BlogMotionWrapper>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group"
             >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Blog
+              <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
+              <span>Blog Yazılarına Dön</span>
             </Link>
 
             {post.category && (
-              <div className="inline-block px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-medium mb-6">
+              <div className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-bold mb-8 uppercase tracking-widest">
                 {post.category}
               </div>
             )}
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                {post.title}
+            <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tight">
+              <span className="bg-gradient-to-r from-white via-white to-gray-500 bg-clip-text text-transparent">
+                {post.title.replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&')}
               </span>
             </h1>
 
-            {post.excerpt && (
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                {post.excerpt}
-              </p>
-            )}
-
-            <div className="flex items-center gap-6 text-gray-400 text-sm">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-gray-400 text-sm">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                {post.publishedAt
-                  ? new Date(post.publishedAt).toLocaleDateString("tr-TR", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })
-                  : "—"}
+                <Calendar className="w-4 h-4 text-blue-400" />
+                <time dateTime={post.publishedAt}>
+                  {post.publishedAt ? formatDate(post.publishedAt) : "—"}
+                </time>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
+                <Clock className="w-4 h-4 text-purple-400" />
                 {post.readTime || 5} dk okuma
               </div>
-              <div>{post.views} görüntüleme</div>
+              <div className="hidden sm:block text-gray-600">|</div>
+              <div 
+                className="bg-white/5 px-3 py-1 rounded-lg border border-white/10 italic font-medium"
+                suppressHydrationWarning
+              >
+                {post.views} görüntüleme
+              </div>
             </div>
-          </motion.div>
+          </BlogMotionWrapper>
         </div>
       </section>
 
-      {/* Content */}
-      <section className="py-12 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <article className="prose prose-invert prose-lg max-w-none">
-            {post.content?.html && (
-              <div
-                dangerouslySetInnerHTML={{ __html: post.content.html }}
-                className="text-gray-300 leading-relaxed"
-              />
-            )}
+      {/* Content Layout */}
+      <section className="py-20 bg-black relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative w-full">
+            
+            {/* Left Sidebar - Table of Contents */}
+            <div className="hidden lg:block lg:col-span-3 self-start">
+              <TableOfContents headings={headings} />
+            </div>
 
-            {/* Render components if any */}
-            {post.components && Array.isArray(post.components) && (
-              <div className="mt-12 space-y-12">
-                {post.components.map((component, index) => (
-                  <div key={component.id || index}>
-                    {/* Component rendering would go here */}
-                    {/* For now, we'll just show a placeholder */}
-                    <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-                      <p className="text-gray-400 text-sm mb-2">
-                        Component: {component.type}
-                      </p>
-                      <pre className="text-xs text-gray-500 overflow-auto">
-                        {JSON.stringify(component.data, null, 2)}
-                      </pre>
+            {/* Main Content Area */}
+            <div className="lg:col-span-6 min-w-0 w-full">
+              <article className="blog-content w-full">
+                {processedHtml && (
+                  <div
+                    className="prose prose-invert max-w-none"
+                    dangerouslySetInnerHTML={{ __html: processedHtml }}
+                  />
+                )}
+
+                {/* Tags Section */}
+                {post.tags && post.tags.length > 0 && (
+                  <div className="mt-16 pt-10 border-t border-white/10">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <Tag className="w-4 h-4 text-blue-400" />
+                      {post.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-4 py-1.5 bg-white/5 text-gray-300 rounded-full text-xs font-medium border border-white/5 hover:border-white/20 transition-colors"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                ))}
-              </div>
-            )}
+                )}
+              </article>
+              
+              <BlogNavigation currentSlug={post.slug} />
+            </div>
 
-            {/* Tags */}
-            {post.tags && post.tags.length > 0 && (
-              <div className="mt-12 pt-8 border-t border-gray-800">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <Tag className="w-4 h-4 text-gray-400" />
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+            {/* Right Sidebar */}
+            <div className="lg:col-span-3 self-start space-y-8">
+              <div className="lg:hidden">
+                <TableOfContents headings={headings} />
               </div>
-            )}
-          </article>
+              <BlogSidebar category={post.category} />
+            </div>
+
+          </div>
         </div>
       </section>
 
       <SEOAuditSection />
-      <ContactForm
-        title="Sorularınız mı var?"
-        description="Blog yazısı hakkında sorularınız varsa bana ulaşabilirsiniz!"
-        showTitle={true}
-      />
+      
+      <div className="max-w-7xl mx-auto px-4 py-20 border-t border-white/5">
+        <ContactForm
+          title="Konuyla İlgili Sorun mu Var?"
+          description="Ekim Demirci olarak tüm dijital büyüme süreçlerinizde yanınızdayız."
+          showTitle={true}
+        />
+      </div>
     </>
   );
 }
-

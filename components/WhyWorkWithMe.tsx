@@ -6,26 +6,26 @@ import { Target, TrendingUp, Settings, Zap } from "lucide-react";
 const reasons = [
   {
     number: "01",
-    title: "Strategic Work",
-    description: "After preliminary research, I develop strategies that are most suitable for you and allow you to compete in the market.",
+    title: "Stratejik Çalışma",
+    description: "Ön araştırmaların ardından size en uygun ve sizi pazarda rekabet edebilir duruma getirecek stratejiler geliştiriyorum.",
     icon: Target,
   },
   {
     number: "02",
-    title: "Organic Growth",
-    description: "Sustainable, long-term growth strategies that build genuine authority and trust with search engines.",
+    title: "Organik Büyüme",
+    description: "Arama motorlarında gerçek otorite ve güven oluşturan sürdürülebilir, uzun vadeli büyüme stratejileri.",
     icon: TrendingUp,
   },
   {
     number: "03",
-    title: "Website Optimization",
-    description: "Comprehensive technical and on-page optimizations to ensure your site performs at its peak potential.",
+    title: "Web Sitesi Optimizasyonu",
+    description: "Sitenizin en yüksek potansiyelinde performans göstermesini sağlamak için kapsamlı teknik ve sayfa içi optimizasyonlar.",
     icon: Settings,
   },
   {
     number: "04",
-    title: "Organic Traffic Increase",
-    description: "Data-driven approaches to significantly boost your organic search visibility and visitor numbers.",
+    title: "Organik Trafik Artışı",
+    description: "Organik arama görünürlüğünüzü ve ziyaretçi sayılarınızı önemli ölçüde artırmak için veri odaklı yaklaşımlar.",
     icon: Zap,
   },
 ];
@@ -43,11 +43,11 @@ export default function WhyWorkWithMe() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Why Work With Me?
+              Neden Benimle Çalışmalısınız?
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            A proven approach that delivers measurable results
+            Ölçülebilir sonuçlar veren kanıtlanmış bir yaklaşım
           </p>
         </motion.div>
 

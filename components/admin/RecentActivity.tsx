@@ -6,39 +6,39 @@ function getTimeAgo(date: Date): string {
   const now = new Date();
   const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
   
-  if (diffInSeconds < 60) return "just now";
-  if (diffInSeconds < 3600) return `${Math.floor(diffInSeconds / 60)} minutes ago`;
-  if (diffInSeconds < 86400) return `${Math.floor(diffInSeconds / 3600)} hours ago`;
-  if (diffInSeconds < 2592000) return `${Math.floor(diffInSeconds / 86400)} days ago`;
-  return `${Math.floor(diffInSeconds / 2592000)} months ago`;
+  if (diffInSeconds < 60) return "az önce";
+  if (diffInSeconds < 3600) return `${Math.floor(diffInSeconds / 60)} dakika önce`;
+  if (diffInSeconds < 86400) return `${Math.floor(diffInSeconds / 3600)} saat önce`;
+  if (diffInSeconds < 2592000) return `${Math.floor(diffInSeconds / 86400)} gün önce`;
+  return `${Math.floor(diffInSeconds / 2592000)} ay önce`;
 }
 
 const activities = [
   {
     type: "page",
-    action: "created",
-    title: "About Us Page",
+    action: "oluşturuldu",
+    title: "Hakkımızda Sayfası",
     time: new Date(Date.now() - 2 * 60 * 60 * 1000),
     icon: Plus,
   },
   {
     type: "seo",
-    action: "updated",
-    title: "SEO Settings",
+    action: "güncellendi",
+    title: "SEO Ayarları",
     time: new Date(Date.now() - 5 * 60 * 60 * 1000),
     icon: Search,
   },
   {
     type: "page",
-    action: "edited",
-    title: "Home Page",
+    action: "düzenlendi",
+    title: "Ana Sayfa",
     time: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
     icon: Edit,
   },
   {
     type: "page",
-    action: "created",
-    title: "Services Page",
+    action: "oluşturuldu",
+    title: "Hizmetler Sayfası",
     time: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
     icon: FileText,
   },
@@ -48,7 +48,7 @@ export default function RecentActivity() {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6">
       <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-        Recent Activity
+        Son Aktiviteler
       </h2>
       <div className="space-y-4">
         {activities.map((activity, index) => {

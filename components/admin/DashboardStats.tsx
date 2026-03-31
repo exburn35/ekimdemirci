@@ -4,30 +4,30 @@ import { FileText, Search, Eye, TrendingUp } from "lucide-react";
 
 const stats = [
   {
-    title: "Total Pages",
+    title: "Toplam Sayfa",
     value: "12",
-    change: "+2 this month",
+    change: "bu ay +2",
     icon: FileText,
     color: "blue",
   },
   {
-    title: "SEO Score",
+    title: "SEO Skoru",
     value: "87%",
-    change: "+5% this month",
+    change: "bu ay +5%",
     icon: Search,
     color: "green",
   },
   {
-    title: "Total Views",
+    title: "Toplam Görüntülenme",
     value: "24.5K",
-    change: "+12% this month",
+    change: "bu ay +12%",
     icon: Eye,
     color: "purple",
   },
   {
-    title: "Growth Rate",
+    title: "Büyüme Oranı",
     value: "18%",
-    change: "+3% this month",
+    change: "bu ay +3%",
     icon: TrendingUp,
     color: "orange",
   },

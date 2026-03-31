@@ -38,7 +38,7 @@ export default function ContentBlocksList() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this content block?")) return;
+    if (!confirm("Bu içerik bloğunu silmek istediğinizden emin misiniz?")) return;
 
     try {
       const response = await fetch(`/api/admin/content-blocks/${id}`, {
@@ -67,10 +67,10 @@ export default function ContentBlocksList() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Content Blocks
+            İçerik Blokları
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-2">
-            Manage reusable content blocks for your website
+            Web siteniz için tekrar kullanılabilir içerik bloklarını yönetin
           </p>
         </div>
         <Link
@@ -78,7 +78,7 @@ export default function ContentBlocksList() {
           className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center gap-2"
         >
           <Plus className="w-5 h-5" />
-          New Block
+          Yeni Blok
         </Link>
       </div>
 
@@ -87,14 +87,14 @@ export default function ContentBlocksList() {
         <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
           <Layers className="w-16 h-16 text-gray-400 mx-auto mb-4" />
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            No content blocks yet. Create your first block!
+            Henüz içerik bloğu yok. İlk bloğunuzu oluşturun!
           </p>
           <Link
             href="/admin/content-blocks/new"
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             <Plus className="w-5 h-5" />
-            Create Block
+            Blok Oluştur
           </Link>
         </div>
       ) : (
@@ -122,18 +122,18 @@ export default function ContentBlocksList() {
                       : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
                   }`}
                 >
-                  {block.published ? "Published" : "Draft"}
+                  {block.published ? "Yayında" : "Taslak"}
                 </span>
               </div>
 
               <div className="space-y-2 mb-4">
                 <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                  <span className="font-medium">Type:</span>
+                  <span className="font-medium">Tür:</span>
                   <span className="capitalize">{block.type}</span>
                 </div>
                 {block.location && (
                   <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                    <span className="font-medium">Location:</span>
+                    <span className="font-medium">Konum:</span>
                     <span className="capitalize">{block.location}</span>
                   </div>
                 )}
@@ -145,7 +145,7 @@ export default function ContentBlocksList() {
                   className="flex-1 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors flex items-center justify-center gap-2"
                 >
                   <Edit className="w-4 h-4" />
-                  Edit
+                  Düzenle
                 </Link>
                 <button
                   onClick={() => handleDelete(block.id)}

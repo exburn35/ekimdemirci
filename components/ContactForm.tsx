@@ -11,8 +11,8 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({
-  title = "Get in Touch",
-  description = "Fill out the form below and I'll get back to you as soon as possible.",
+  title = "İletişime Geçin",
+  description = "Aşağıdaki formu doldurun, size en kısa sürede döneceğim.",
   showTitle = true,
 }: ContactFormProps) {
   const [formData, setFormData] = useState({
@@ -38,9 +38,20 @@ export default function ContactForm({
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // Simulate form submission - replace with actual API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          formType: "contact",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Gönderim başarısız");
+      }
+
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
@@ -51,29 +62,29 @@ export default function ContactForm({
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-black to-gray-900">
+    <section className="py-24 bg-[#0a0f25] border-t border-white/5 relative z-10">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass-strong rounded-3xl p-8 md:p-12"
+          className="bg-[#111836] rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20 relative"
         >
           {showTitle && (
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white tracking-tight">
                 {title}
               </h2>
-              <p className="text-gray-400 text-lg">{description}</p>
+              <p className="text-gray-400 text-lg font-medium">{description}</p>
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                <User className="w-4 h-4 inline mr-2" />
-                Full Name *
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
+                <User className="w-4 h-4 inline mr-2 text-purple-400" />
+                Ad Soyad *
               </label>
               <input
                 type="text"
@@ -82,15 +93,15 @@ export default function ContactForm({
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 glass rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                placeholder="John Doe"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm"
+                placeholder="Adınız Soyadınız"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                <Mail className="w-4 h-4 inline mr-2" />
-                Email Address *
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
+                <Mail className="w-4 h-4 inline mr-2 text-purple-400" />
+                E-posta Adresi *
               </label>
               <input
                 type="email"
@@ -99,14 +110,14 @@ export default function ContactForm({
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 glass rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                placeholder="john@example.com"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm"
+                placeholder="ornek@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                Phone Number
+              <label htmlFor="phone" className="block text-sm font-semibold text-gray-300 mb-2">
+                Telefon Numarası
               </label>
               <input
                 type="tel"
@@ -114,15 +125,15 @@ export default function ContactForm({
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 glass rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm"
                 placeholder="+90 555 123 4567"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                <MessageSquare className="w-4 h-4 inline mr-2" />
-                Message *
+              <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
+                <MessageSquare className="w-4 h-4 inline mr-2 text-purple-400" />
+                Mesajınız *
               </label>
               <textarea
                 id="message"
@@ -131,8 +142,8 @@ export default function ContactForm({
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 glass rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none"
-                placeholder="Tell me about your project..."
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm resize-none"
+                placeholder="Projenizden bahsedin..."
               />
             </div>
 
@@ -140,9 +151,9 @@ export default function ContactForm({
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-4 bg-green-500/20 border border-green-500/50 rounded-xl text-green-400 text-sm"
+                className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-400 text-sm font-medium shadow-sm"
               >
-                Thank you! Your message has been sent. I&apos;ll get back to you soon.
+                Teşekkürler! Mesajınız gönderildi. En kısa sürede size döneceğim.
               </motion.div>
             )}
 
@@ -150,25 +161,25 @@ export default function ContactForm({
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400 text-sm"
+                className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-medium shadow-sm"
               >
-                Something went wrong. Please try again or contact me directly.
+                Bir şeyler yanlış gitti. Lütfen tekrar deneyin veya benimle doğrudan iletişime geçin.
               </motion.div>
             )}
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-8 py-4 bg-white text-black rounded-full font-semibold text-lg hover:bg-gray-200 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full px-8 py-4 bg-purple-600 text-white rounded-xl font-bold text-lg hover:bg-purple-700 transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
-                  Sending...
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Gönderiliyor...
                 </>
               ) : (
                 <>
-                  Send Message
+                  Mesajı Gönder
                   <Send className="w-5 h-5" />
                 </>
               )}

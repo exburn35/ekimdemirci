@@ -58,11 +58,11 @@ export default function NotFound() {
             className="space-y-4"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Page Not Found
+              Sayfa Bulunamadı
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Oops! The page you&apos;re looking for seems to have wandered off into the digital void. 
-              Don&apos;t worry, let&apos;s get you back on track.
+              Maalesef aradığınız sayfa dijital boşlukta kaybolmuş gibi görünüyor. 
+              Endişelenmeyin, sizi tekrar doğru yola sokalım.
             </p>
           </motion.div>
 
@@ -78,21 +78,21 @@ export default function NotFound() {
               className="group px-8 py-4 bg-white text-black rounded-full font-semibold text-lg hover:bg-gray-200 transition-all duration-300 hover:scale-105 flex items-center gap-2"
             >
               <Home className="w-5 h-5" />
-              Go Home
+              Ana Sayfaya Dön
             </Link>
             <Link
-              href="/contact"
+              href="/iletisim"
               className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
             >
               <Search className="w-5 h-5" />
-              Contact Me
+              İletişime Geç
             </Link>
             <button
               onClick={() => window.history.back()}
               className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
             >
               <ArrowLeft className="w-5 h-5" />
-              Go Back
+              Geri Git
             </button>
           </motion.div>
 
@@ -103,13 +103,13 @@ export default function NotFound() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="pt-12"
           >
-            <p className="text-gray-500 text-sm mb-6">Or explore these pages:</p>
+            <p className="text-gray-500 text-sm mb-6">Veya şu sayfaları keşfedin:</p>
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                { name: "About", href: "/about" },
-                { name: "Case Studies", href: "/case-studies" },
+                { name: "Hakkımda", href: "/hakkimda" },
+                { name: "Başarı Hikayeleri", href: "/basari-hikayeleri" },
                 { name: "Blog", href: "/blog" },
-                { name: "Services", href: "/#services" },
+                { name: "Hizmetler", href: "/#services" },
               ].map((link, index) => (
                 <motion.div
                   key={link.name}

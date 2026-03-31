@@ -21,14 +21,14 @@ const defaultEntries: SitemapEntry[] = [
   },
   {
     id: "2",
-    url: "https://ekimdemirci.com/about",
+    url: "https://ekimdemirci.com/hakkimda",
     lastModified: new Date().toISOString().split("T")[0],
     changeFrequency: "monthly",
     priority: 0.8,
   },
   {
     id: "3",
-    url: "https://ekimdemirci.com/services",
+    url: "https://ekimdemirci.com/seo-hizmetleri",
     lastModified: new Date().toISOString().split("T")[0],
     changeFrequency: "weekly",
     priority: 0.9,

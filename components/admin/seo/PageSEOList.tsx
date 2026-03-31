@@ -31,21 +31,21 @@ const mockPages: PageSEO[] = [
   },
   {
     id: "2",
-    path: "/about",
-    title: "About",
-    metaTitle: "About | Ekim Demirci",
-    metaDescription: "Learn about Ekim Demirci, an experienced SEO Specialist",
+    path: "/hakkimda",
+    title: "Hakkımda",
+    metaTitle: "Hakkımda | Ekim Demirci",
+    metaDescription: "Deneyimli SEO Uzmanı Ekim Demirci hakkında bilgi edinin",
     ogImage: "",
-    canonicalUrl: "https://ekimdemirci.com/about",
+    canonicalUrl: "https://ekimdemirci.com/hakkimda",
     seoScore: 78,
     issues: ["Missing OG Image", "Meta description too short"],
   },
   {
     id: "3",
-    path: "/services",
-    title: "Services",
-    metaTitle: "SEO Services",
-    metaDescription: "Comprehensive SEO services",
+    path: "/seo-hizmetleri",
+    title: "SEO Hizmetleri",
+    metaTitle: "SEO Hizmetleri Services",
+    metaDescription: "Kapsamlı SEO hizmetleri",
     ogImage: "",
     canonicalUrl: "",
     seoScore: 65,
@@ -98,10 +98,10 @@ export default function PageSEOList() {
 
   const getIssues = (page: any): string[] => {
     const issues: string[] = [];
-    if (!page.metaTitle) issues.push("Missing meta title");
-    if (!page.metaDescription) issues.push("Missing meta description");
-    if (!page.ogImage) issues.push("Missing OG image");
-    if (!page.canonicalUrl) issues.push("Missing canonical URL");
+    if (!page.metaTitle) issues.push("Meta başlığı eksik");
+    if (!page.metaDescription) issues.push("Meta açıklaması eksik");
+    if (!page.ogImage) issues.push("OG görseli eksik");
+    if (!page.canonicalUrl) issues.push("Kanonik URL eksik");
     return issues;
   };
 
@@ -136,16 +136,16 @@ export default function PageSEOList() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Page SEO Overview
+              Sayfa SEO Genel Bakış
             </h2>
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-              Manage SEO settings for all pages
+              Tüm sayfalar için SEO ayarlarını yönetin
             </p>
           </div>
           <div className="flex items-center gap-2">
             <div className="px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
               <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                Average Score: {Math.round(pages.reduce((acc, p) => acc + p.seoScore, 0) / pages.length)}%
+                Ortalama Skor: {Math.round(pages.reduce((acc, p) => acc + p.seoScore, 0) / pages.length)}%
               </span>
             </div>
           </div>
@@ -172,18 +172,18 @@ export default function PageSEOList() {
                 <div className="space-y-2 mb-4">
                   <div>
                     <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                      Meta Title:{" "}
+                      Meta Başlık:{" "}
                     </span>
                     <span className="text-sm text-gray-900 dark:text-white">
-                      {page.metaTitle || "Not set"}
+                      {page.metaTitle || "Ayarlanmamış"}
                     </span>
                   </div>
                   <div>
                     <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                      Meta Description:{" "}
+                      Meta Açıklama:{" "}
                     </span>
                     <span className="text-sm text-gray-900 dark:text-white">
-                      {page.metaDescription || "Not set"}
+                      {page.metaDescription || "Ayarlanmamış"}
                     </span>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function PageSEOList() {
                       {page.seoScore}%
                     </span>
                   </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">SEO Score</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">SEO Skoru</p>
                 </div>
 
                 <button
@@ -223,7 +223,7 @@ export default function PageSEOList() {
                   className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
                 >
                   <Edit className="w-4 h-4" />
-                  Edit SEO
+                  SEO Düzenle
                 </button>
               </div>
             </div>

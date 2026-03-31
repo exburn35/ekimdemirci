@@ -5,29 +5,29 @@ import { Plus, FileText, Search, Settings } from "lucide-react";
 
 const actions = [
   {
-    title: "Create New Page",
-    description: "Build a new page using the visual editor",
+    title: "Yeni Sayfa Oluştur",
+    description: "Görsel editör ile yeni bir sayfa inşa edin",
     href: "/admin/pages/builder",
     icon: Plus,
     color: "blue",
   },
   {
-    title: "Manage SEO",
-    description: "Update robots.txt and sitemap",
+    title: "SEO Yönetimi",
+    description: "Robots.txt ve site haritasını güncelleyin",
     href: "/admin/seo",
     icon: Search,
     color: "green",
   },
   {
-    title: "View All Pages",
-    description: "Browse and edit existing pages",
+    title: "Tüm Sayfaları Gör",
+    description: "Mevcut sayfalara göz atın ve düzenleyin",
     href: "/admin/pages",
     icon: FileText,
     color: "purple",
   },
   {
-    title: "Settings",
-    description: "Configure site settings",
+    title: "Ayarlar",
+    description: "Site ayarlarını yapılandırın",
     href: "/admin/settings",
     icon: Settings,
     color: "orange",
@@ -38,7 +38,7 @@ export default function QuickActions() {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6">
       <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-        Quick Actions
+        Hızlı İşlemler
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {actions.map((action) => {

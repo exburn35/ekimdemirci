@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { Bold, Italic, Underline, Link as LinkIcon, Image as ImageIcon, List, AlignLeft, Save } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -15,7 +16,7 @@ export default function RichTextEditor({
   content,
   onChange,
   onSave,
-  placeholder = "Start typing...",
+  placeholder = "Yazmaya başlayın...",
 }: RichTextEditorProps) {
   const editorRef = useRef<HTMLDivElement>(null);
   const [showLinkDialog, setShowLinkDialog] = useState(false);
@@ -88,21 +89,21 @@ export default function RichTextEditor({
         <button
           onClick={() => execCommand("bold")}
           className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors"
-          title="Bold"
+          title="Kalın"
         >
           <Bold className="w-4 h-4" />
         </button>
         <button
           onClick={() => execCommand("italic")}
           className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors"
-          title="Italic"
+          title="İtalik"
         >
           <Italic className="w-4 h-4" />
         </button>
         <button
           onClick={() => execCommand("underline")}
           className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors"
-          title="Underline"
+          title="Altı Çizili"
         >
           <Underline className="w-4 h-4" />
         </button>
@@ -110,14 +111,14 @@ export default function RichTextEditor({
         <button
           onClick={() => execCommand("insertUnorderedList")}
           className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors"
-          title="Bullet List"
+          title="Liste"
         >
           <List className="w-4 h-4" />
         </button>
         <button
           onClick={() => execCommand("justifyLeft")}
           className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors"
-          title="Align Left"
+          title="Sola Hizala"
         >
           <AlignLeft className="w-4 h-4" />
         </button>
@@ -125,14 +126,14 @@ export default function RichTextEditor({
         <button
           onClick={handleLink}
           className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors"
-          title="Insert Link"
+          title="Bağlantı Ekle"
         >
           <LinkIcon className="w-4 h-4" />
         </button>
         <button
           onClick={() => setShowImageDialog(true)}
           className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors"
-          title="Insert Image"
+          title="Görsel Ekle"
         >
           <ImageIcon className="w-4 h-4" />
         </button>
@@ -142,7 +143,7 @@ export default function RichTextEditor({
             <button
               onClick={onSave}
               className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors"
-              title="Save"
+              title="Kaydet"
             >
               <Save className="w-4 h-4" />
             </button>
@@ -178,19 +179,19 @@ export default function RichTextEditor({
             className="bg-white dark:bg-gray-800 rounded-xl p-6 max-w-md w-full"
           >
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
-              Insert Link
+              Bağlantı Ekle
             </h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Link Text
+                  Bağlantı Metni
                 </label>
                 <input
                   type="text"
                   value={linkText}
                   onChange={(e) => setLinkText(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-                  placeholder="Link text"
+                  placeholder="Link metni"
                 />
               </div>
               <div>
@@ -210,13 +211,13 @@ export default function RichTextEditor({
                   onClick={insertLink}
                   className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 >
-                  Insert
+                  Ekle
                 </button>
                 <button
                   onClick={() => setShowLinkDialog(false)}
                   className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                 >
-                  Cancel
+                  İptal
                 </button>
               </div>
             </div>
@@ -239,12 +240,12 @@ export default function RichTextEditor({
             className="bg-white dark:bg-gray-800 rounded-xl p-6 max-w-md w-full"
           >
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
-              Insert Image
+              Görsel Ekle
             </h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Image URL
+                  Görsel URL&apos;si
                 </label>
                 <input
                   type="url"
@@ -255,11 +256,12 @@ export default function RichTextEditor({
                 />
               </div>
               {imageUrl && (
-                <div className="border border-gray-300 dark:border-gray-600 rounded-lg p-2">
-                  <img
+                <div className="border border-gray-300 dark:border-gray-600 rounded-lg p-2 h-48 relative overflow-hidden">
+                  <Image
                     src={imageUrl}
-                    alt="Preview"
-                    className="max-w-full h-auto rounded"
+                    alt="Önizleme"
+                    fill
+                    className="object-contain"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = "none";
                     }}
@@ -271,13 +273,13 @@ export default function RichTextEditor({
                   onClick={insertImage}
                   className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 >
-                  Insert
+                  Ekle
                 </button>
                 <button
                   onClick={() => setShowImageDialog(false)}
                   className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                 >
-                  Cancel
+                  İptal
                 </button>
               </div>
             </div>

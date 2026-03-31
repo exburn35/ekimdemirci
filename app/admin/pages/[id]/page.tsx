@@ -25,11 +25,11 @@ export default function EditPagePage() {
             : [];
         setInitialComponents(components);
       } else {
-        setError("Page not found");
+        setError("Sayfa bulunamadı");
       }
     } catch (error) {
       console.error("Error loading page:", error);
-      setError("Failed to load page");
+      setError("Sayfa yüklenemedi");
     } finally {
       setIsLoading(false);
     }
@@ -64,7 +64,7 @@ export default function EditPagePage() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <div className="text-gray-600 dark:text-gray-400">Loading page...</div>
+        <div className="text-gray-600 dark:text-gray-400">Sayfa yükleniyor...</div>
       </div>
     );
   }

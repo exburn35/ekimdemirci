@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import SEOOverview from "@/components/admin/seo/SEOOverview";
 
 export const metadata: Metadata = {
-  title: "SEO Management",
-  description: "Manage SEO settings and optimization",
+  title: "SEO Yönetimi",
+  description: "SEO ayarlarını ve optimizasyonunu yönetin",
   robots: {
     index: false,
     follow: false,
@@ -15,10 +15,10 @@ export default function SEOPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-          SEO Management
+          SEO Yönetimi
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mt-2">
-          Manage your site&apos;s SEO settings, robots.txt, sitemap, and page-level SEO
+          Sitenin SEO ayarlarını, robots.txt dosyasını, site haritasını ve sayfa düzeyi SEO&apos;yu yönetin
         </p>
       </div>
 

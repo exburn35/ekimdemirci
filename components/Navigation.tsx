@@ -4,30 +4,39 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-];
+import Logo from "./Logo";
 
 const seoServices = [
-  { name: "All Services", href: "/services" },
-  { name: "AI SEO", href: "/services/ai-seo" },
-  { name: "Technical SEO", href: "/services/technical-seo" },
-  { name: "On-Page SEO", href: "/services/on-page" },
-  { name: "Off-Page SEO", href: "/services/off-page" },
+  { name: "Tüm Hizmetler", href: "/seo-hizmetleri" },
+  { name: "Yapay Zeka SEO", href: "/seo-hizmetleri/yapay-zeka-seo" },
+  { name: "Teknik SEO", href: "/seo-hizmetleri/teknik-seo" },
+  { name: "Site İçi SEO", href: "/seo-hizmetleri/sayfa-ici-seo" },
+  { name: "Site Dışı SEO", href: "/seo-hizmetleri/sayfa-disi-seo" },
 ];
 
 const sectoralServices = [
   { name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" },
-  { name: "Diş Hekimleri için SEO", href: "/sektorel-seo-hizmetleri/dis-hekimleri-icin-seo-2" },
+  {
+    name: "Diş Hekimleri için SEO",
+    href: "/sektorel-seo-hizmetleri/dis-hekimleri-icin-seo-2",
+  },
   { name: "E-Ticaret SEO", href: "/sektorel-seo-hizmetleri/e-ticaret-seo" },
-  { name: "Avukatlar için SEO", href: "/sektorel-seo-hizmetleri/avukatlar-icin-seo-hizmeti" },
-  { name: "Güzellik Merkezleri için SEO", href: "/sektorel-seo-hizmetleri/guzellik-merkezleri-icin-seo-2" },
-  { name: "Doktorlar için SEO", href: "/sektorel-seo-hizmetleri/doktorlar-icin-seo-2" },
-  { name: "Hastaneler için SEO", href: "/sektorel-seo-hizmetleri/hastaneler-icin-seo-2" },
+  {
+    name: "Avukatlar için SEO",
+    href: "/sektorel-seo-hizmetleri/avukatlar-icin-seo-hizmeti",
+  },
+  {
+    name: "Güzellik Merkezleri için SEO",
+    href: "/sektorel-seo-hizmetleri/guzellik-merkezleri-icin-seo-2",
+  },
+  {
+    name: "Doktorlar için SEO",
+    href: "/sektorel-seo-hizmetleri/doktorlar-icin-seo-2",
+  },
+  {
+    name: "Hastaneler için SEO",
+    href: "/sektorel-seo-hizmetleri/hastaneler-icin-seo-2",
+  },
 ];
 
 const otherServices = [
@@ -35,7 +44,7 @@ const otherServices = [
   { name: "İçerik Yazımı", href: "/icerik-yazimi" },
   { name: "Audit Talebi", href: "/audit-talebi" },
   { name: "Başarı Hikayeleri", href: "/basari-hikayeleri" },
-  { name: "FAQ", href: "/faq" },
+  { name: "SSS", href: "/sikca-sorulan-sorular" },
 ];
 
 export default function Navigation() {
@@ -58,13 +67,22 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+      if (
+        servicesRef.current &&
+        !servicesRef.current.contains(event.target as Node)
+      ) {
         setIsServicesOpen(false);
       }
-      if (sectoralRef.current && !sectoralRef.current.contains(event.target as Node)) {
+      if (
+        sectoralRef.current &&
+        !sectoralRef.current.contains(event.target as Node)
+      ) {
         setIsSectoralOpen(false);
       }
-      if (otherRef.current && !otherRef.current.contains(event.target as Node)) {
+      if (
+        otherRef.current &&
+        !otherRef.current.contains(event.target as Node)
+      ) {
         setIsOtherOpen(false);
       }
     };
@@ -74,36 +92,49 @@ export default function Navigation() {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ y: -100, x: "-50%" }}
+      animate={{ y: 0, x: "-50%" }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-strong py-3" : "glass py-4"
-      }`}
+      className={`fixed top-4 left-1/2 z-50 w-full max-w-7xl transition-all duration-300 px-4`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`mx-auto px-6 py-3.5 rounded-full border transition-all duration-300 ${
+        isScrolled 
+          ? "bg-[#0a0f25]/90 backdrop-blur-lg border-purple-500/30 shadow-[0_0_30px_rgba(139,92,246,0.25)]" 
+          : "bg-[#0a0f25]/70 backdrop-blur-md border-purple-500/20 shadow-[0_0_20px_rgba(139,92,246,0.15)]"
+      }`}>
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link
-            href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent hover:from-white hover:to-white transition-all duration-300"
-          >
-            Ekim Demirci
+          <Link href="/" className="flex items-center">
+            <Logo 
+              className="h-10 w-auto object-contain mr-4"
+              textClassName="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent hover:from-white hover:to-white transition-all duration-300 tracking-tight"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
-            
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <Link
+              href="/"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
+            >
+              Anasayfa
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link
+              href="/hakkimda"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
+            >
+              Hakkımda
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link
+              href="/blog"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
+            >
+              Blog
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+            </Link>
+
             {/* SEO Services Dropdown */}
             <div ref={servicesRef} className="relative">
               <button
@@ -111,8 +142,10 @@ export default function Navigation() {
                 onMouseLeave={() => setIsServicesOpen(false)}
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1"
               >
-                SEO Services
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
+                SEO Hizmetleri
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+                />
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
               </button>
 
@@ -125,7 +158,7 @@ export default function Navigation() {
                     transition={{ duration: 0.2 }}
                     onMouseEnter={() => setIsServicesOpen(true)}
                     onMouseLeave={() => setIsServicesOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-56 glass-strong rounded-xl overflow-hidden shadow-xl"
+                    className="absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-xl"
                   >
                     <div className="py-2">
                       {seoServices.map((service) => (
@@ -151,7 +184,9 @@ export default function Navigation() {
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1"
               >
                 Sektörel SEO
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isSectoralOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${isSectoralOpen ? "rotate-180" : ""}`}
+                />
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
               </button>
 
@@ -164,7 +199,7 @@ export default function Navigation() {
                     transition={{ duration: 0.2 }}
                     onMouseEnter={() => setIsSectoralOpen(true)}
                     onMouseLeave={() => setIsSectoralOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-64 glass-strong rounded-xl overflow-hidden shadow-xl"
+                    className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-xl"
                   >
                     <div className="py-2">
                       {sectoralServices.map((service) => (
@@ -190,7 +225,9 @@ export default function Navigation() {
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1"
               >
                 Daha Fazla
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOtherOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${isOtherOpen ? "rotate-180" : ""}`}
+                />
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
               </button>
 
@@ -203,7 +240,7 @@ export default function Navigation() {
                     transition={{ duration: 0.2 }}
                     onMouseEnter={() => setIsOtherOpen(true)}
                     onMouseLeave={() => setIsOtherOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-56 glass-strong rounded-xl overflow-hidden shadow-xl"
+                    className="absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-xl"
                   >
                     <div className="py-2">
                       {otherServices.map((service) => (
@@ -222,18 +259,26 @@ export default function Navigation() {
             </div>
 
             <Link
-              href="/contact"
-              className="px-6 py-2 bg-white text-black rounded-full font-semibold text-sm hover:bg-gray-200 transition-all duration-300 hover:scale-105"
+              href="/iletisim"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
             >
-              Get Started
+              İletişim
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+            </Link>
+
+            <Link
+              href="/iletisim"
+              className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold text-sm hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 hover:scale-105 shadow-[0_0_15px_rgba(139,92,246,0.4)]"
+            >
+              Başla
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2"
-            aria-label="Toggle menu"
+            className="md:hidden text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+            aria-label="Menüyü aç/kapa"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -244,28 +289,46 @@ export default function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, height: 0, y: -10 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden glass-strong border-t border-white/10"
+            className="md:hidden bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl mt-2 overflow-hidden"
           >
             <div className="px-4 py-6 space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
-                >
-                  {item.name}
-                </Link>
-              ))}
-              
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
+              >
+                Anasayfa
+              </Link>
+              <Link
+                href="/hakkimda"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
+              >
+                Hakkımda
+              </Link>
+              <Link
+                href="/blog"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/iletisim"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
+              >
+                İletişim
+              </Link>
+
               {/* Mobile SEO Services */}
               <div className="space-y-2">
                 <div className="text-gray-500 text-sm font-semibold uppercase tracking-wider px-2 py-1">
-                  SEO Services
+                  SEO Hizmetleri
                 </div>
                 {seoServices.map((service) => (
                   <Link
@@ -314,11 +377,11 @@ export default function Navigation() {
               </div>
 
               <Link
-                href="/contact"
+                href="/iletisim"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block px-6 py-2 bg-white text-black rounded-full font-semibold text-sm text-center hover:bg-gray-200 transition-all duration-300"
               >
-                Get Started
+                Başla
               </Link>
             </div>
           </motion.div>
@@ -327,4 +390,3 @@ export default function Navigation() {
     </motion.nav>
   );
 }
-

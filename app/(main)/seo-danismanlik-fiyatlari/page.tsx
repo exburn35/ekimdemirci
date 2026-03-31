@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Zap, Target, TrendingUp, Shield } from "lucide-react";
 import Link from "next/link";
 import SEOAuditSection from "@/components/SEOAuditSection";
+import RelatedPages from "@/components/RelatedPages";
 import ContactForm from "@/components/ContactForm";
 
 const pricingPlans = [
   {
     name: "Başlangıç",
-    price: "₺5.000",
+    price: "₺10.000",
     period: "aylık",
     description: "Küçük işletmeler ve yeni başlayanlar için",
     features: [
@@ -25,7 +26,7 @@ const pricingPlans = [
   },
   {
     name: "Profesyonel",
-    price: "₺10.000",
+    price: "₺12.500",
     period: "aylık",
     description: "Büyüyen işletmeler için kapsamlı çözüm",
     features: [
@@ -43,9 +44,9 @@ const pricingPlans = [
     popular: true,
   },
   {
-    name: "Kurumsal",
-    price: "Özel Fiyat",
-    period: "özel",
+    name: "Kapsamlı",
+    price: "₺15.000",
+    period: "aylık",
     description: "Büyük kuruluşlar için özelleştirilmiş çözüm",
     features: [
       "Kapsamlı SEO Stratejisi",
@@ -154,7 +155,7 @@ export default function SEOConsultingPrices() {
                   ))}
                 </ul>
                 <Link
-                  href="/contact"
+                  href="/iletisim"
                   className={`block w-full text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                     plan.popular
                       ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:scale-105"
@@ -233,6 +234,8 @@ export default function SEOConsultingPrices() {
 
       {/* SEO Audit Section */}
       <SEOAuditSection />
+
+      <RelatedPages />
 
       {/* Contact Form */}
       <ContactForm

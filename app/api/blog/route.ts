@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import fs from "fs";
+import path from "path";
 
 export const dynamic = "force-dynamic";
 
@@ -10,32 +11,31 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get("limit") || "10");
     const offset = parseInt(searchParams.get("offset") || "0");
 
-    const where: any = { published: true };
-    if (category && category !== "Tümü") {
-      where.category = category;
+    // Read index data
+    const indexPath = path.join(process.cwd(), "data", "blogs", "_index.json");
+    let allPosts: any[] = [];
+    
+    try {
+      if (fs.existsSync(indexPath)) {
+        const fileData = fs.readFileSync(indexPath, "utf-8");
+        allPosts = JSON.parse(fileData);
+      }
+    } catch (e) {
+      console.error("Failed to read blog index", e);
     }
 
-    const [posts, total] = await Promise.all([
-      prisma.blogPost.findMany({
-        where,
-        orderBy: { publishedAt: "desc" },
-        take: limit,
-        skip: offset,
-        select: {
-          id: true,
-          title: true,
-          slug: true,
-          excerpt: true,
-          category: true,
-          featuredImage: true,
-          publishedAt: true,
-          readTime: true,
-          views: true,
-          tags: true,
-        },
-      }),
-      prisma.blogPost.count({ where }),
-    ]);
+    // Sort by date (descending)
+    allPosts.sort((a: any, b: any) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+
+    // Filter by category
+    let filteredPosts = allPosts;
+    if (category && category !== "Tümü") {
+      filteredPosts = allPosts.filter((post: any) => post.category === category);
+    }
+
+    // Apply pagination
+    const total = filteredPosts.length;
+    const posts = filteredPosts.slice(offset, offset + limit);
 
     return NextResponse.json({ posts, total });
   } catch (error) {

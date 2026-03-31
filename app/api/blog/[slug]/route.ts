@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import fs from "fs";
+import path from "path";
 
 export const dynamic = "force-dynamic";
 
@@ -8,24 +9,25 @@ export async function GET(
   { params }: { params: { slug: string } }
 ) {
   try {
-    const post = await prisma.blogPost.findUnique({
-      where: { slug: params.slug, published: true },
-    });
-
-    if (!post) {
+    const filePath = path.join(process.cwd(), "data", "blogs", `${params.slug}.json`);
+    
+    if (!fs.existsSync(filePath)) {
       return NextResponse.json(
         { error: "Blog post not found" },
         { status: 404 }
       );
     }
 
-    // Increment views
-    await prisma.blogPost.update({
-      where: { id: post.id },
-      data: { views: { increment: 1 } },
-    });
+    const fileData = fs.readFileSync(filePath, "utf-8");
+    const post = JSON.parse(fileData);
 
-    return NextResponse.json(post);
+    // Provide default fallback values for ID
+    const responsePost = {
+      id: params.slug,
+      ...post
+    };
+
+    return NextResponse.json(responsePost);
   } catch (error) {
     console.error("Error fetching blog post:", error);
     return NextResponse.json(

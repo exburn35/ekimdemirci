@@ -18,13 +18,13 @@ export default function PageBuilderPage() {
 
   const handleSave = async (components: PageComponent[]) => {
     if (!pageData.title || !pageData.slug) {
-      alert("Please fill in title and slug before saving");
+      alert("Lütfen kaydetmeden önce başlık ve URL slug alanlarını doldurun");
       setShowForm(true);
       return;
     }
 
     if (components.length === 0) {
-      alert("Please add at least one component to the page");
+      alert("Lütfen sayfaya en az bir bileşen ekleyin");
       return;
     }
 
@@ -50,7 +50,7 @@ export default function PageBuilderPage() {
       }
     } catch (error) {
       console.error("Error creating page:", error);
-      alert("Failed to create page. Please try again.");
+      alert("Sayfa oluşturulamadı. Lütfen tekrar deneyin.");
     } finally {
       setIsCreating(false);
     }
@@ -66,13 +66,13 @@ export default function PageBuilderPage() {
             className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-2"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Pages
+            Sayfalara Geri Dön
           </Link>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-            Page Builder
+            Sayfa Oluşturucu
           </h1>
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-            Create a new page by adding components and configuring settings
+            Bileşenler ekleyerek ve ayarları yapılandırarak yeni bir sayfa oluşturun
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -81,7 +81,7 @@ export default function PageBuilderPage() {
               onClick={() => setShowForm(true)}
               className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             >
-              Page Settings
+              Sayfa Ayarları
             </button>
           )}
           <button
@@ -90,7 +90,7 @@ export default function PageBuilderPage() {
             className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
           >
             <Plus className="w-4 h-4" />
-            Configure & Save
+            Yapılandır ve Kaydet
           </button>
         </div>
       </div>
@@ -100,7 +100,7 @@ export default function PageBuilderPage() {
         <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-              Page Information
+              Sayfa Bilgileri
             </h2>
             <button
               onClick={() => setShowForm(false)}
@@ -112,7 +112,7 @@ export default function PageBuilderPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Page Title *
+                Sayfa Başlığı *
               </label>
               <input
                 type="text"
@@ -121,12 +121,12 @@ export default function PageBuilderPage() {
                   setPageData({ ...pageData, title: e.target.value })
                 }
                 className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-                placeholder="Enter page title..."
+                placeholder="Sayfa başlığını girin..."
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                URL Slug *
+                URL Slug (Kısa Ad) *
               </label>
               <input
                 type="text"
@@ -138,10 +138,10 @@ export default function PageBuilderPage() {
                   })
                 }
                 className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-                placeholder="page-url-slug"
+                placeholder="sayfa-url-slug"
               />
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                Will be accessible at: /{pageData.slug || "..."}
+                Erişim adresi: /{pageData.slug || "..."}
               </p>
             </div>
           </div>

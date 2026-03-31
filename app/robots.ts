@@ -1,41 +1,20 @@
-import { MetadataRoute } from 'next'
-import { prisma } from '@/lib/prisma'
+import { MetadataRoute } from "next";
 
-export const dynamic = 'force-dynamic'
-
-export default async function robots(): Promise<MetadataRoute.Robots> {
-  try {
-    // Try to fetch custom robots.txt from database
-    if (process.env.DATABASE_URL) {
-      const config = await prisma.sEOConfig.findUnique({
-        where: { type: "robots" },
-      });
-      
-      if (config?.content) {
-        // Parse robots.txt content (simplified - in production you'd want a proper parser)
-        return {
-          rules: {
-            userAgent: '*',
-            allow: '/',
-            disallow: ['/api/', '/admin/'],
-          },
-          sitemap: 'https://ekimdemirci.com/sitemap.xml',
-        };
-      }
-    }
-  } catch (error) {
-    console.error('Error fetching robots config:', error);
-    // Fall through to default
-  }
-
-  // Default fallback
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/admin/'],
+      userAgent: "*",
+      // İzin verilen genel dizinler
+      allow: "/",
+      // Admin paneli ve parametreli URL'lerin (/bilmemne?q=merhaba) indexlenmesini engelle
+      disallow: [
+        "/admin", 
+        "/admin/*", 
+        "/api/*", 
+        "/*?*" // Parametre alan (örneğin arama veya filtreleme result) sayfalarını botlara kapatır
+      ],
     },
-    sitemap: 'https://ekimdemirci.com/sitemap.xml',
-  }
+    // Sitemap URL'sini arama motorlarına bildirin
+    sitemap: "https://ekimdemirci.com/sitemap.xml",
+  };
 }
-

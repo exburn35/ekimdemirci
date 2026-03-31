@@ -21,7 +21,7 @@ export default function AdminHeader() {
             href="/admin"
             className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
           >
-            Admin Panel
+            Yönetim Paneli
           </Link>
         </div>
 
@@ -37,10 +37,10 @@ export default function AdminHeader() {
             </div>
             <div className="hidden md:block">
               <p className="text-sm font-medium text-gray-900 dark:text-white">
-                Admin User
+                Yönetici
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-400">
-                Administrator
+                Sistem Yöneticisi
               </p>
             </div>
             <button

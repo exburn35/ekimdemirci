@@ -28,10 +28,10 @@ export default function AdminLogin() {
         sessionStorage.setItem("admin_role", "ADMIN");
         router.push("/admin");
       } else {
-        setError("Invalid email or password");
+        setError("Geçersiz e-posta veya şifre");
       }
     } catch (err) {
-      setError("An error occurred. Please try again.");
+      setError("Bir hata oluştu. Lütfen tekrar deneyin.");
     } finally {
       setIsLoading(false);
     }
@@ -59,13 +59,13 @@ export default function AdminLogin() {
             className="text-5xl font-bold mb-4"
             style={{ color: '#ffffff', fontFamily: 'sans-serif' }}
           >
-            ADMIN LOGIN
+            YÖNETİCİ GİRİŞİ
           </h1>
           <p 
             className="text-lg"
             style={{ color: '#ffffff', fontFamily: 'sans-serif' }}
           >
-            Hello there, Sign in and start managing your website
+            Merhaba, Giriş yapın ve web sitenizi yönetmeye başlayın
           </p>
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function AdminLogin() {
                   className="block text-sm font-medium mb-2"
                   style={{ color: '#4b5563', fontFamily: 'sans-serif' }}
                 >
-                  Username
+                  Kullanıcı Adı
                 </label>
                 <div className="relative">
                   <Mail 
@@ -125,7 +125,7 @@ export default function AdminLogin() {
                       borderBottomColor: email ? '#9333ea' : '#d1d5db',
                       fontFamily: 'sans-serif'
                     }}
-                    placeholder="Enter your email"
+                    placeholder="E-posta adresinizi girin"
                   />
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function AdminLogin() {
                   className="block text-sm font-medium mb-2"
                   style={{ color: '#4b5563', fontFamily: 'sans-serif' }}
                 >
-                  Password
+                  Şifre
                 </label>
                 <div className="relative">
                   <Lock 
@@ -154,7 +154,7 @@ export default function AdminLogin() {
                       borderBottomColor: password ? '#9333ea' : '#d1d5db',
                       fontFamily: 'sans-serif'
                     }}
-                    placeholder="Enter your password"
+                    placeholder="Şifrenizi girin"
                   />
                 </div>
               </div>
@@ -173,7 +173,7 @@ export default function AdminLogin() {
                     className="ml-2 text-sm"
                     style={{ color: '#4b5563', fontFamily: 'sans-serif' }}
                   >
-                    Remember Me
+                    Beni Hatırla
                   </span>
                 </label>
                 <a 
@@ -181,7 +181,7 @@ export default function AdminLogin() {
                   className="text-sm hover:underline"
                   style={{ color: '#2563eb', fontFamily: 'sans-serif' }}
                 >
-                  Forgot Password?
+                  Şifremi Unuttum?
                 </a>
               </div>
 
@@ -214,11 +214,11 @@ export default function AdminLogin() {
                       className="w-5 h-5 border-2 border-t-transparent rounded-full animate-spin"
                       style={{ borderColor: '#9ca3af' }}
                     />
-                    <span>Signing in...</span>
+                    <span>Giriş yapılıyor...</span>
                   </>
                 ) : (
                   <>
-                    <span>LOGIN</span>
+                    <span>GİRİŞ YAP</span>
                     <svg 
                       className="w-5 h-5" 
                       fill="none" 

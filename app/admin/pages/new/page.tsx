@@ -15,7 +15,7 @@ export default function NewPagePage() {
 
   const handleSave = async (components: any[]) => {
     if (!pageData.title || !pageData.slug) {
-      alert("Please fill in title and slug");
+      alert("Lütfen başlık ve URL slug alanlarını doldurun");
       return;
     }
 
@@ -41,7 +41,7 @@ export default function NewPagePage() {
       }
     } catch (error) {
       console.error("Error creating page:", error);
-      alert("Failed to create page. Please try again.");
+      alert("Sayfa oluşturulamadı. Lütfen tekrar deneyin.");
     } finally {
       setIsCreating(false);
     }
@@ -52,12 +52,12 @@ export default function NewPagePage() {
       {/* Page Info Form */}
       <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-          Page Information
+          Sayfa Bilgileri
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Page Title
+              Sayfa Başlığı
             </label>
             <input
               type="text"
@@ -66,12 +66,12 @@ export default function NewPagePage() {
                 setPageData({ ...pageData, title: e.target.value })
               }
               className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-              placeholder="Enter page title..."
+              placeholder="Sayfa başlığını girin..."
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              URL Slug
+              URL Slug (Kısa Ad)
             </label>
             <input
               type="text"
@@ -80,10 +80,10 @@ export default function NewPagePage() {
                 setPageData({ ...pageData, slug: e.target.value })
               }
               className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-              placeholder="page-url-slug"
+              placeholder="sayfa-url-slug"
             />
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              Will be accessible at: /{pageData.slug || "..."}
+              Erişim adresi: /{pageData.slug || "..."}
             </p>
           </div>
         </div>

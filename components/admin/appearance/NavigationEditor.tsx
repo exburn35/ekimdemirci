@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Plus, GripVertical, Edit, Trash2, ChevronDown, ChevronRight, Link as LinkIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -24,16 +24,11 @@ export default function NavigationEditor() {
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [menuType, setMenuType] = useState<"main" | "footer" | "mobile">("main");
 
-  useEffect(() => {
-    loadNavigation();
-  }, [menuType]);
-
-  const loadNavigation = async () => {
+  const loadNavigation = useCallback(async () => {
     try {
       const response = await fetch(`/api/admin/navigation?type=${menuType}`);
       if (response.ok) {
         const data = await response.json();
-        // Organize into tree structure
         const tree = buildTree(data);
         setItems(tree);
       }
@@ -42,7 +37,11 @@ export default function NavigationEditor() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [menuType]);
+
+  useEffect(() => {
+    loadNavigation();
+  }, [loadNavigation]);
 
   const buildTree = (items: NavigationItem[]): NavigationItem[] => {
     const map = new Map<string, NavigationItem>();
@@ -92,7 +91,7 @@ export default function NavigationEditor() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this menu item?")) return;
+    if (!confirm("Bu menü öğesini silmek istediğinizden emin misiniz?")) return;
 
     try {
       const response = await fetch(`/api/admin/navigation/${id}`, {
@@ -119,7 +118,7 @@ export default function NavigationEditor() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-          Navigation Menu Editor
+          Navigasyon Menü Düzenleyici
         </h2>
         <div className="flex gap-2">
           <select
@@ -127,9 +126,9 @@ export default function NavigationEditor() {
             onChange={(e) => setMenuType(e.target.value as any)}
             className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
           >
-            <option value="main">Main Menu</option>
-            <option value="footer">Footer Menu</option>
-            <option value="mobile">Mobile Menu</option>
+            <option value="main">Ana Menü</option>
+            <option value="footer">Alt Menü (Footer)</option>
+            <option value="mobile">Mobil Menü</option>
           </select>
           <button
             onClick={() => {
@@ -147,7 +146,7 @@ export default function NavigationEditor() {
             className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
           >
             <Plus className="w-4 h-4" />
-            Add Item
+            Öğe Ekle
           </button>
         </div>
       </div>
@@ -157,7 +156,7 @@ export default function NavigationEditor() {
           <div className="text-center py-12">
             <LinkIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
             <p className="text-gray-600 dark:text-gray-400">
-              No menu items yet. Add your first menu item!
+              Henüz menü öğesi yok. İlk menü öğenizi ekleyin!
             </p>
           </div>
         ) : (
@@ -337,13 +336,13 @@ function NavigationItemDialog({
         className="bg-white dark:bg-gray-800 rounded-xl p-6 max-w-md w-full max-h-[90vh] overflow-auto"
       >
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-          {item.id ? "Edit Menu Item" : "Add Menu Item"}
+          {item.id ? "Menü Öğesini Düzenle" : "Menü Öğesi Ekle"}
         </h3>
 
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Label *
+              Etiket *
             </label>
             <input
               type="text"
@@ -352,7 +351,7 @@ function NavigationItemDialog({
                 setFormData({ ...formData, label: e.target.value })
               }
               className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-              placeholder="Menu Item Label"
+              placeholder="Menü Öğesi Etiketi"
             />
           </div>
 
@@ -373,7 +372,7 @@ function NavigationItemDialog({
 
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Parent Item (optional)
+              Üst Öğe (isteğe bağlı)
             </label>
             <select
               value={formData.parentId || ""}
@@ -385,7 +384,7 @@ function NavigationItemDialog({
               }
               className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
             >
-              <option value="">None (Top Level)</option>
+              <option value="">Yok (Üst Seviye)</option>
               {getAllParents(parentItems, item.id).map((parent) => (
                 <option key={parent.id} value={parent.id}>
                   {parent.label}
@@ -396,7 +395,7 @@ function NavigationItemDialog({
 
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Open In
+              Açılış Şekli
             </label>
             <select
               value={formData.target}
@@ -405,8 +404,8 @@ function NavigationItemDialog({
               }
               className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
             >
-              <option value="_self">Same Window</option>
-              <option value="_blank">New Window</option>
+              <option value="_self">Aynı Pencere</option>
+              <option value="_blank">Yeni Pencere</option>
             </select>
           </div>
 
@@ -424,7 +423,7 @@ function NavigationItemDialog({
               htmlFor="published"
               className="text-sm font-medium text-gray-700 dark:text-gray-300"
             >
-              Published
+              Yayında
             </label>
           </div>
 
@@ -433,13 +432,13 @@ function NavigationItemDialog({
               onClick={() => onSave(formData)}
               className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
-              Save
+              Kaydet
             </button>
             <button
               onClick={onClose}
               className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
             >
-              Cancel
+              İptal
             </button>
           </div>
         </div>

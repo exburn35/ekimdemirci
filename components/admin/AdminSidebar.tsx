@@ -20,17 +20,17 @@ import { cn } from "@/lib/utils";
 
 const menuItems = [
   {
-    title: "Dashboard",
+    title: "Panel",
     href: "/admin",
     icon: LayoutDashboard,
   },
   {
-    title: "Pages",
+    title: "Sayfalar",
     href: "/admin/pages",
     icon: FolderOpen,
     children: [
-      { title: "All Pages", href: "/admin/pages" },
-      { title: "Page Builder", href: "/admin/pages/builder" },
+      { title: "Tüm Sayfalar", href: "/admin/pages" },
+      { title: "Sayfa Oluşturucu", href: "/admin/pages/builder" },
     ],
   },
   {
@@ -39,23 +39,23 @@ const menuItems = [
     icon: FileText,
   },
   {
-    title: "Content Blocks",
+    title: "İçerik Blokları",
     href: "/admin/content-blocks",
     icon: Layers,
   },
   {
-    title: "Media Library",
+    title: "Medya Kütüphanesi",
     href: "/admin/media",
     icon: ImageIcon,
   },
   {
-    title: "Appearance",
+    title: "Görünüm",
     href: "/admin/appearance",
     icon: Palette,
     children: [
-      { title: "Theme Settings", href: "/admin/appearance" },
-      { title: "Navigation", href: "/admin/appearance?tab=navigation" },
-      { title: "Footer", href: "/admin/appearance?tab=footer" },
+      { title: "Tema Ayarları", href: "/admin/appearance" },
+      { title: "Navigasyon", href: "/admin/appearance?tab=navigation" },
+      { title: "Alt Bilgi (Footer)", href: "/admin/appearance?tab=footer" },
     ],
   },
   {
@@ -63,14 +63,14 @@ const menuItems = [
     href: "/admin/seo",
     icon: Search,
     children: [
-      { title: "SEO Overview", href: "/admin/seo" },
+      { title: "SEO Genel Bakış", href: "/admin/seo" },
       { title: "Robots.txt", href: "/admin/seo/robots" },
-      { title: "Sitemap", href: "/admin/seo/sitemap" },
-      { title: "Page SEO", href: "/admin/seo/pages" },
+      { title: "Site Haritası", href: "/admin/seo/sitemap" },
+      { title: "Sayfa SEO", href: "/admin/seo/pages" },
     ],
   },
   {
-    title: "Settings",
+    title: "Ayarlar",
     href: "/admin/settings",
     icon: Settings,
   },

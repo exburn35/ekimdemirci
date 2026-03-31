@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { Search, BarChart3, FileSearch, TrendingUp, Activity } from "lucide-react";
 
 const tools = [
-  { name: "SEMrush", icon: Search, description: "Comprehensive SEO toolkit" },
-  { name: "Screaming Frog", icon: FileSearch, description: "Technical SEO crawler" },
-  { name: "Ahrefs", icon: TrendingUp, description: "Backlink analysis & research" },
-  { name: "Google Search Console", icon: BarChart3, description: "Search performance insights" },
-  { name: "Google Analytics 4", icon: Activity, description: "Advanced data analytics" },
+  { name: "SEMrush", icon: Search, description: "Kapsamlı SEO araç seti" },
+  { name: "Screaming Frog", icon: FileSearch, description: "Teknik SEO tarayıcısı" },
+  { name: "Ahrefs", icon: TrendingUp, description: "Backlink analizi & araştırması" },
+  { name: "Google Search Console", icon: BarChart3, description: "Arama performansı içgörüleri" },
+  { name: "Google Analytics 4", icon: Activity, description: "Gelişmiş veri analitiği" },
 ];
 
 export default function ToolsSection() {
@@ -24,11 +24,11 @@ export default function ToolsSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Tools I Use
+              Kullandığım Araçlar
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Industry-leading tools to deliver exceptional SEO results
+            Olağanüstü SEO sonuçları sunmak için sektör lideri araçlar
           </p>
         </motion.div>
 

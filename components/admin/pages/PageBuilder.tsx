@@ -52,114 +52,114 @@ const componentTemplates: Record<
   { name: string; icon: any; defaultData: Record<string, any> }
 > = {
   hero: {
-    name: "Hero Section",
+    name: "Hero Bölümü",
     icon: Heading,
     defaultData: {
-      title: "Welcome to Our Website",
-      subtitle: "Your compelling subtitle here",
-      description: "Add a description to engage your visitors",
-      buttonText: "Get Started",
+      title: "Web Sitemize Hoş Geldiniz",
+      subtitle: "Çarpıcı alt başlığınız buraya",
+      description: "Ziyaretçilerinizi etkilemek için bir açıklama ekleyin",
+      buttonText: "Hemen Başlayın",
       buttonLink: "/",
       backgroundImage: "",
     },
   },
   features: {
-    name: "Features",
+    name: "Özellikler",
     icon: List,
     defaultData: {
-      title: "Our Features",
-      subtitle: "What we offer",
+      title: "Özelliklerimiz",
+      subtitle: "Neler sunuyoruz",
       items: [
-        { title: "Feature 1", description: "Description 1", icon: "✓" },
-        { title: "Feature 2", description: "Description 2", icon: "✓" },
-        { title: "Feature 3", description: "Description 3", icon: "✓" },
+        { title: "Özellik 1", description: "Açıklama 1", icon: "✓" },
+        { title: "Özellik 2", description: "Açıklama 2", icon: "✓" },
+        { title: "Özellik 3", description: "Açıklama 3", icon: "✓" },
       ],
     },
   },
   pricing: {
-    name: "Pricing",
+    name: "Fiyatlandırma",
     icon: FileText,
     defaultData: {
-      title: "Pricing Plans",
-      subtitle: "Choose the perfect plan",
+      title: "Fiyatlandırma Paketleri",
+      subtitle: "Mükemmel planı seçin",
       plans: [
         {
-          name: "Basic",
-          price: "$29",
-          features: ["Feature 1", "Feature 2", "Feature 3"],
+          name: "Başlangıç",
+          price: "₺29",
+          features: ["Özellik 1", "Özellik 2", "Özellik 3"],
         },
       ],
     },
   },
   testimonials: {
-    name: "Testimonials",
+    name: "Müşteri Yorumları",
     icon: Type,
     defaultData: {
-      title: "What Our Clients Say",
+      title: "Müşterilerimiz Ne Diyor?",
       items: [
         {
-          name: "Client Name",
+          name: "Müşteri Adı",
           role: "CEO",
-          content: "Great service!",
+          content: "Harika hizmet!",
           avatar: "",
         },
       ],
     },
   },
   cta: {
-    name: "Call to Action",
+    name: "Eylem Çağrısı (CTA)",
     icon: Link2,
     defaultData: {
-      title: "Ready to Get Started?",
-      description: "Join us today",
-      buttonText: "Sign Up",
-      buttonLink: "/signup",
+      title: "Başlamaya Hazır mısınız?",
+      description: "Bugün bize katılın",
+      buttonText: "Kaydol",
+      buttonLink: "/kayit",
     },
   },
   content: {
-    name: "Content Block",
+    name: "İçerik Bloğu",
     icon: FileText,
     defaultData: {
-      title: "Content Title",
-      content: "Your content here...",
+      title: "İçerik Başlığı",
+      content: "İçeriğiniz buraya...",
     },
   },
   gallery: {
-    name: "Image Gallery",
+    name: "Resim Galerisi",
     icon: ImageIcon,
     defaultData: {
-      title: "Gallery",
+      title: "Galeri",
       images: [],
     },
   },
   faq: {
-    name: "FAQ",
+    name: "SSS",
     icon: Layout,
     defaultData: {
-      title: "Frequently Asked Questions",
+      title: "Sıkça Sorulan Sorular",
       items: [
-        { question: "Question 1?", answer: "Answer 1" },
-        { question: "Question 2?", answer: "Answer 2" },
+        { question: "Soru 1?", answer: "Cevap 1" },
+        { question: "Soru 2?", answer: "Cevap 2" },
       ],
     },
   },
   stats: {
-    name: "Statistics",
+    name: "İstatistikler",
     icon: Code,
     defaultData: {
-      title: "Our Stats",
+      title: "Rakamlarla Biz",
       items: [
-        { label: "Clients", value: "100+" },
-        { label: "Projects", value: "500+" },
+        { label: "Müşteriler", value: "100+" },
+        { label: "Projeler", value: "500+" },
       ],
     },
   },
   contact: {
-    name: "Contact Form",
+    name: "İletişim Formu",
     icon: Video,
     defaultData: {
-      title: "Get in Touch",
-      description: "Fill out the form below",
+      title: "İletişime Geçin",
+      description: "Aşağıdaki formu doldurun",
     },
   },
 };
@@ -247,10 +247,10 @@ export default function PageBuilder({
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-            Page Builder
+            Sayfa Oluşturucu
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mt-1">
-            Drag and drop components to build your page
+            Sayfanızı oluşturmak için bileşenleri sürükleyip bırakın
           </p>
         </div>
         <div className="flex gap-3">
@@ -259,7 +259,7 @@ export default function PageBuilder({
             className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
           >
             <Plus className="w-4 h-4" />
-            Add Component
+            Bileşen Ekle
           </button>
           <button
             onClick={handleSave}
@@ -267,7 +267,7 @@ export default function PageBuilder({
             className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors disabled:opacity-50"
           >
             <Save className="w-4 h-4" />
-            {isSaving ? "Saving..." : "Save Page"}
+            {isSaving ? "Kaydediliyor..." : "Sayfayı Kaydet"}
           </button>
         </div>
       </div>
@@ -308,7 +308,7 @@ export default function PageBuilder({
           <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
             <Layout className="w-12 h-12 text-gray-400 mx-auto mb-4" />
             <p className="text-gray-600 dark:text-gray-400">
-              No components yet. Click &quot;Add Component&quot; to get started.
+              Henüz bileşen yok. Başlamak için &quot;Bileşen Ekle&quot; butonuna tıklayın.
             </p>
           </div>
         ) : (
@@ -459,7 +459,7 @@ function ComponentEditor({
               value={String(value || "")}
               onChange={(e) => handleChange(key, e.target.value)}
               className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-              placeholder={`Enter ${key}...`}
+              placeholder={`${key} girin...`}
             />
           </div>
         );
@@ -476,7 +476,7 @@ function ComponentPreview({ component }: { component: PageComponent }) {
     <div className="text-sm text-gray-600 dark:text-gray-400">
       <p>
         <strong>{template.name}:</strong>{" "}
-        {component.data.title || component.data.name || "No title"}
+        {component.data.title || component.data.name || "Başlık Yok"}
       </p>
     </div>
   );

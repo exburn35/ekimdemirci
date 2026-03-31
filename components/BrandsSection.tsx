@@ -21,11 +21,11 @@ export default function BrandsSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Brands I&apos;ve Consulted
+               Danışmanlık Verdiğim Markalar
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Trusted by leading brands across multiple industries
+             Farklı sektörlerdeki lider markalar tarafından tercih edilen
           </p>
         </motion.div>
 

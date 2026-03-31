@@ -36,7 +36,7 @@ export default function PageList() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this page?")) return;
+    if (!confirm("Bu sayfayı silmek istediğinizden emin misiniz?")) return;
 
     try {
       const response = await fetch(`/api/admin/pages/${id}`, {
@@ -59,7 +59,7 @@ export default function PageList() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <div className="text-gray-600 dark:text-gray-400">Loading pages...</div>
+        <div className="text-gray-600 dark:text-gray-400">Sayfalar yükleniyor...</div>
       </div>
     );
   }
@@ -70,10 +70,10 @@ export default function PageList() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-            All Pages
+            Tüm Sayfalar
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mt-1">
-            Manage your website pages
+            Web sitesi sayfalarını yönetin
           </p>
         </div>
         <Link
@@ -81,7 +81,7 @@ export default function PageList() {
           className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
         >
           <Plus className="w-4 h-4" />
-          New Page
+          Yeni Sayfa
         </Link>
       </div>
 
@@ -90,7 +90,7 @@ export default function PageList() {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
         <input
           type="text"
-          placeholder="Search pages..."
+          placeholder="Sayfalarda ara..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -102,7 +102,7 @@ export default function PageList() {
         <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
           <FileText className="w-12 h-12 text-gray-400 mx-auto mb-4" />
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            {searchQuery ? "No pages found" : "No pages yet"}
+            {searchQuery ? "Sayfa bulunamadı" : "Henüz sayfa yok"}
           </p>
           {!searchQuery && (
             <Link
@@ -110,7 +110,7 @@ export default function PageList() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
             >
               <Plus className="w-4 h-4" />
-              Create Your First Page
+              İlk Sayfanızı Oluşturun
             </Link>
           )}
         </div>
@@ -120,19 +120,19 @@ export default function PageList() {
             <thead className="bg-gray-50 dark:bg-gray-900">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Title
+                  Başlık
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Slug
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Status
+                  Durum
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Updated
+                  Güncellenme
                 </th>
                 <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Actions
+                  İşlemler
                 </th>
               </tr>
             </thead>
@@ -157,7 +157,7 @@ export default function PageList() {
                           : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
                       }`}
                     >
-                      {page.published ? "Published" : "Draft"}
+                      {page.published ? "Yayında" : "Taslak"}
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">
@@ -169,21 +169,21 @@ export default function PageList() {
                         href={`/${page.slug}`}
                         target="_blank"
                         className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
-                        title="View"
+                        title="Görüntüle"
                       >
                         <Eye className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                       </Link>
                       <Link
                         href={`/admin/pages/${page.id}`}
                         className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
-                        title="Edit"
+                        title="Düzenle"
                       >
                         <Edit className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                       </Link>
                       <button
                         onClick={() => handleDelete(page.id)}
                         className="p-2 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
-                        title="Delete"
+                        title="Sil"
                       >
                         <Trash2 className="w-4 h-4 text-red-600 dark:text-red-400" />
                       </button>

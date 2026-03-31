@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { TrendingUp, Users, Target, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SEOAuditSection from "@/components/SEOAuditSection";
+import RelatedPages from "@/components/RelatedPages";
 import ContactForm from "@/components/ContactForm";
 
 const successStories = [
@@ -204,7 +205,7 @@ export default function SuccessStories() {
                 SEO hizmetlerimiz ile dijital varlığınızı güçlendirin ve ölçülebilir sonuçlar elde edin.
               </p>
               <Link
-                href="/contact"
+                href="/iletisim"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full font-semibold text-lg hover:bg-gray-200 transition-all duration-300 hover:scale-105"
               >
                 Hemen Başlayın
@@ -217,6 +218,8 @@ export default function SuccessStories() {
 
       {/* SEO Audit Section */}
       <SEOAuditSection />
+
+      <RelatedPages />
 
       {/* Contact Form */}
       <ContactForm

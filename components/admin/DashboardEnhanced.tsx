@@ -50,7 +50,7 @@ export default function DashboardEnhanced() {
 
   const statCards = [
     {
-      title: "Total Views",
+      title: "Toplam Görüntülenme",
       value: formatNumber(stats.totalViews),
       change: stats.viewsChange,
       icon: Eye,
@@ -59,7 +59,7 @@ export default function DashboardEnhanced() {
       iconColor: "text-green-600 dark:text-green-400",
     },
     {
-      title: "Total Profit",
+      title: "Toplam Kazanç",
       value: formatCurrency(stats.totalProfit),
       change: stats.profitChange,
       icon: DollarSign,
@@ -68,7 +68,7 @@ export default function DashboardEnhanced() {
       iconColor: "text-orange-600 dark:text-orange-400",
     },
     {
-      title: "Total Products",
+      title: "Toplam Ürün",
       value: formatNumber(stats.totalProducts),
       change: stats.productsChange,
       icon: Package,
@@ -77,7 +77,7 @@ export default function DashboardEnhanced() {
       iconColor: "text-purple-600 dark:text-purple-400",
     },
     {
-      title: "Total Users",
+      title: "Toplam Kullanıcı",
       value: formatNumber(stats.totalUsers),
       change: stats.usersChange,
       icon: Users,

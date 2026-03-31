@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Upload, Image as ImageIcon, File, Search, Trash2, Eye, Download, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -58,11 +59,11 @@ export default function MediaLibrary() {
       if (response.ok) {
         await loadMedia();
       } else {
-        alert("Failed to upload files");
+        alert("Dosyalar yüklenemedi");
       }
     } catch (error) {
       console.error("Error uploading:", error);
-      alert("Error uploading files");
+      alert("Dosyalar yüklenirken hata oluştu");
     } finally {
       setIsUploading(false);
       // Reset input
@@ -71,7 +72,7 @@ export default function MediaLibrary() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this file?")) return;
+    if (!confirm("Bu dosyayı silmek istediğinizden emin misiniz?")) return;
 
     try {
       const response = await fetch(`/api/admin/media/${id}`, {
@@ -118,15 +119,15 @@ export default function MediaLibrary() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Media Library
+            Medya Kütüphanesi
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-2">
-            Manage your images, documents, and other media files
+            Görüntülerinizi, belgelerinizi ve diğer medya dosyalarınızı yönetin
           </p>
         </div>
         <label className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors cursor-pointer flex items-center gap-2">
           <Upload className="w-5 h-5" />
-          Upload Files
+          Dosya Yükle
           <input
             type="file"
             multiple
@@ -144,7 +145,7 @@ export default function MediaLibrary() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
           <input
             type="text"
-            placeholder="Search media..."
+            placeholder="Medyalarda ara..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -159,7 +160,7 @@ export default function MediaLibrary() {
                 : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
             }`}
           >
-            All
+            Hepsi
           </button>
           <button
             onClick={() => setFilter("images")}
@@ -169,7 +170,7 @@ export default function MediaLibrary() {
                 : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
             }`}
           >
-            Images
+            Görseller
           </button>
           <button
             onClick={() => setFilter("documents")}
@@ -179,7 +180,7 @@ export default function MediaLibrary() {
                 : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
             }`}
           >
-            Documents
+            Belgeler
           </button>
         </div>
       </div>
@@ -189,7 +190,7 @@ export default function MediaLibrary() {
         <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
           <div className="flex items-center gap-3">
             <div className="w-5 h-5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
-            <span className="text-blue-600 dark:text-blue-400">Uploading files...</span>
+            <span className="text-blue-600 dark:text-blue-400">Dosyalar yükleniyor...</span>
           </div>
         </div>
       )}
@@ -199,7 +200,7 @@ export default function MediaLibrary() {
         <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
           <ImageIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
           <p className="text-gray-600 dark:text-gray-400">
-            {searchQuery ? "No media found matching your search" : "No media files yet. Upload your first file!"}
+            {searchQuery ? "Aramanızla eşleşen medya bulunamadı" : "Henüz medya dosyası yok. İlk dosyanızı yükleyin!"}
           </p>
         </div>
       ) : (
@@ -214,10 +215,11 @@ export default function MediaLibrary() {
             >
               {isImage(item.mimeType) ? (
                 <div className="aspect-square relative bg-gray-100 dark:bg-gray-900">
-                  <img
+                  <Image
                     src={item.url}
                     alt={item.alt || item.originalName}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
               ) : (
@@ -300,21 +302,24 @@ export default function MediaLibrary() {
 
               <div className="p-6">
                 {isImage(selectedMedia.mimeType) ? (
-                  <img
-                    src={selectedMedia.url}
-                    alt={selectedMedia.alt || selectedMedia.originalName}
-                    className="w-full rounded-lg mb-4"
-                  />
+                  <div className="h-64 relative rounded-lg overflow-hidden mb-4">
+                    <Image
+                      src={selectedMedia.url}
+                      alt={selectedMedia.alt || selectedMedia.originalName}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 ) : (
-                  <div className="flex items-center justify-center h-64 bg-gray-100 dark:bg-gray-900 rounded-lg mb-4">
-                    <File className="w-24 h-24 text-gray-400" />
+                  <div className="h-64 relative rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-900 mb-4">
+                    <File className="w-24 h-24 text-gray-400 absolute inset-0 m-auto" />
                   </div>
                 )}
 
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      File URL
+                      Dosya URL&apos;si
                     </label>
                     <div className="flex items-center gap-2">
                       <input
@@ -326,11 +331,11 @@ export default function MediaLibrary() {
                       <button
                         onClick={() => {
                           navigator.clipboard.writeText(selectedMedia.url);
-                          alert("URL copied to clipboard!");
+                          alert("URL panoya kopyalandı!");
                         }}
                         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                       >
-                        Copy
+                        Kopyala
                       </button>
                     </div>
                   </div>
@@ -338,7 +343,7 @@ export default function MediaLibrary() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        File Size
+                        Dosya Boyutu
                       </label>
                       <p className="text-gray-900 dark:text-white">
                         {formatFileSize(selectedMedia.size)}
@@ -346,7 +351,7 @@ export default function MediaLibrary() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        MIME Type
+                        MIME Türü
                       </label>
                       <p className="text-gray-900 dark:text-white">
                         {selectedMedia.mimeType}
@@ -360,13 +365,13 @@ export default function MediaLibrary() {
                       download
                       className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center"
                     >
-                      Download
+                      İndir
                     </a>
                     <button
                       onClick={() => handleDelete(selectedMedia.id)}
                       className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
                     >
-                      Delete
+                      Sil
                     </button>
                   </div>
                 </div>

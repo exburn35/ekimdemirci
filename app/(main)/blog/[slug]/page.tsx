@@ -1,43 +1,24 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { prisma } from "@/lib/prisma";
 import BlogPostContent from "@/components/blog/BlogPostContent";
+import BlogPostingSchema from "@/components/schemas/BlogPostingSchema";
+import { getBlogPostBySlug, cleanAndProcessHtml } from "@/lib/blog";
 
 export const dynamic = "force-dynamic";
 
-async function getBlogPost(slug: string) {
-  try {
-    const post = await prisma.blogPost.findUnique({
-      where: { slug, published: true },
-    });
 
-    if (!post) {
-      return null;
-    }
 
-    // Increment views
-    await prisma.blogPost.update({
-      where: { id: post.id },
-      data: { views: { increment: 1 } },
-    });
-
-    return post;
-  } catch (error) {
-    console.error("Error fetching blog post:", error);
-    return null;
-  }
-}
 
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+  const post = await getBlogPostBySlug(params.slug);
 
   if (!post) {
     return {
-      title: "Post Not Found",
+      title: "Makale Bulunamadı",
     };
   }
 
@@ -57,12 +38,26 @@ export default async function BlogPostPage({
 }: {
   params: { slug: string };
 }) {
-  const post = await getBlogPost(params.slug);
+  const post = await getBlogPostBySlug(params.slug);
 
   if (!post) {
     notFound();
   }
 
-  return <BlogPostContent post={post} />;
+  const { cleanHtml, headings } = cleanAndProcessHtml(typeof post.content === 'string' ? post.content : (post.content.html || ""));
+
+  return (
+    <>
+      <BlogPostingSchema post={{
+        title: post.title.replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
+        description: post.excerpt,
+        publishedAt: post.publishedAt,
+        updatedAt: post.updatedAt,
+        slug: post.slug,
+        featuredImage: post.featuredImage
+      }} />
+      <BlogPostContent post={post} processedHtml={cleanHtml} headings={headings} />
+    </>
+  );
 }
 

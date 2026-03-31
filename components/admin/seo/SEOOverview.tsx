@@ -6,21 +6,21 @@ import { FileCode, Network, FileText, CheckCircle2, AlertCircle } from "lucide-r
 const seoCards = [
   {
     title: "Robots.txt",
-    description: "Manage search engine crawling rules",
+    description: "Arama motoru tarama kurallarını yönetin",
     href: "/admin/seo/robots",
     icon: FileCode,
     status: "configured",
   },
   {
-    title: "Sitemap",
-    description: "Manage XML sitemap configuration",
+    title: "Site Haritası",
+    description: "XML site haritası yapılandırmasını yönetin",
     href: "/admin/seo/sitemap",
     icon: Network,
     status: "configured",
   },
   {
-    title: "Page SEO",
-    description: "Manage SEO settings for all pages",
+    title: "Sayfa SEO",
+    description: "Tüm sayfalar için SEO ayarlarını yönetin",
     href: "/admin/seo/pages",
     icon: FileText,
     status: "needs-review",

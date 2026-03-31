@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import RobotsEditor from "@/components/admin/seo/RobotsEditor";
 
 export const metadata: Metadata = {
-  title: "Robots.txt Editor",
+  title: "Robots.txt Düzenleyici",
   robots: {
     index: false,
     follow: false,
@@ -14,10 +14,10 @@ export default function RobotsPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-          Robots.txt Editor
+          Robots.txt Düzenleyici
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mt-2">
-          Manage your robots.txt file to control search engine crawling
+          Arama motoru taramasını kontrol etmek için robots.txt dosyanızı yönetin
         </p>
       </div>
 

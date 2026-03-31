@@ -8,17 +8,17 @@ const auditFeatures = [
   {
     icon: Search,
     title: "Kapsamlı Analiz",
-    description: "Web sitenizin tüm SEO faktörlerini detaylı şekilde analiz ediyoruz",
+    description: "Web sitenizin tüm SEO faktörlerini detaylı şekilde analiz ediyorum",
   },
   {
     icon: BarChart3,
     title: "Teknik SEO Kontrolü",
-    description: "Site hızı, mobil uyumluluk ve teknik SEO sorunlarını tespit ediyoruz",
+    description: "Site hızı, mobil uyumluluk ve teknik SEO sorunlarını tespit ediyorum",
   },
   {
     icon: FileText,
     title: "Detaylı Rapor",
-    description: "48 saat içinde kapsamlı bir SEO audit raporu hazırlıyoruz",
+    description: "48 saat içinde kapsamlı bir SEO audit raporu hazırlıyorum",
   },
   {
     icon: Clock,
@@ -35,7 +35,7 @@ const auditChecklist = [
   "İçerik kalitesi değerlendirmesi",
   "Backlink analizi",
   "Rakip analizi",
-  "Core Web Vitals kontrolü",
+  "Potansiyel kelimeler",
   "Schema markup kontrolü",
   "Yerel SEO değerlendirmesi",
 ];
@@ -90,7 +90,7 @@ export default function AuditRequest() {
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Web sitenizi kapsamlı şekilde analiz ediyoruz
+              Web sitenizi kapsamlı şekilde analiz ediyorum
             </p>
           </motion.div>
 
@@ -172,18 +172,18 @@ export default function AuditRequest() {
               },
               {
                 step: "2",
-                title: "Analiz Yapıyoruz",
-                description: "Web sitenizi kapsamlı şekilde analiz ediyoruz. Teknik SEO, içerik, backlink ve performans metriklerini inceliyoruz.",
+                title: "Analizi Yapıyorum",
+                description: "Web sitenizi kapsamlı şekilde analiz ediyorum. Teknik SEO, içerik, backlink ve performans metriklerini inceliyoruz.",
               },
               {
                 step: "3",
                 title: "Rapor Hazırlanıyor",
-                description: "48 saat içinde detaylı bir SEO audit raporu hazırlıyoruz. Rapor, bulgular, öncelikli öneriler ve iyileştirme planını içerir.",
+                description: "48 saat içinde detaylı bir SEO audit raporu hazırlıyorum. Rapor, bulgular, öncelikli öneriler ve iyileştirme planını içerir.",
               },
               {
                 step: "4",
                 title: "Raporu Alıyorsunuz",
-                description: "Hazırlanan raporu e-posta adresinize gönderiyoruz. Raporu inceleyebilir ve önerileri uygulamaya başlayabilirsiniz.",
+                description: "Hazırlanan raporu e-posta adresinize gönderiyorum. Raporu inceleyebilir ve önerileri uygulamaya başlayabilirsiniz.",
               },
             ].map((item, index) => (
               <motion.div

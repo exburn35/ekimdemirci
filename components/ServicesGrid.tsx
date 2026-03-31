@@ -7,39 +7,39 @@ import { Brain, Settings, FileText, Link2, ArrowRight } from "lucide-react";
 const services = [
   {
     id: "ai-seo",
-    title: "AI SEO",
-    description: "Leverage artificial intelligence and machine learning to optimize your SEO strategy. AI-powered keyword research, content optimization, and predictive analytics.",
+    title: "Yapay Zeka SEO",
+    description: "SEO stratejinizi optimize etmek için yapay zeka ve makine öğreniminden yararlanın. Yapay zeka destekli anahtar kelime araştırması, içerik optimizasyonu ve tahmine dayalı analizler.",
     icon: Brain,
-    href: "/services/ai-seo",
+    href: "/seo-hizmetleri/yapay-zeka-seo",
     gradient: "from-blue-500 to-cyan-500",
-    features: ["AI Keyword Research", "Content Optimization", "Predictive Analytics"],
+    features: ["YZ Anahtar Kelime Araştırması", "İçerik Optimizasyonu", "Tahmine Dayalı Analiz"],
   },
   {
     id: "technical-seo",
-    title: "Technical SEO",
-    description: "Comprehensive technical audits and optimizations. Site speed, crawlability, indexability, and core web vitals to ensure search engines can efficiently access and understand your site.",
+    title: "Teknik SEO",
+    description: "Kapsamlı teknik denetimler ve optimizasyonlar. Arama motorlarının sitenize verimli bir şekilde erişmesini ve anlamasını sağlamak için site hızı, taranabilirlik, dizine eklenebilirlik ve önemli web verileri.",
     icon: Settings,
-    href: "/services/technical-seo",
+    href: "/seo-hizmetleri/teknik-seo",
     gradient: "from-purple-500 to-pink-500",
-    features: ["Site Audits", "Core Web Vitals", "Schema Markup"],
+    features: ["Site Denetimleri", "Önemli Web Verileri", "Şema İşaretlemesi"],
   },
   {
     id: "on-page",
-    title: "On-Page SEO",
-    description: "Optimize every element on your pages for maximum search visibility. Meta tags, headings, content structure, and internal linking strategies.",
+    title: "Site İçi SEO",
+    description: "Maksimum arama görünürlüğü için sayfalarınızdaki her bir öğeyi optimize edin. Meta etiketler, başlıklar, içerik yapısı ve site içi linkleme stratejileri.",
     icon: FileText,
-    href: "/services/on-page",
+    href: "/seo-hizmetleri/sayfa-ici-seo",
     gradient: "from-green-500 to-emerald-500",
-    features: ["Content Optimization", "Meta Tags", "Internal Linking"],
+    features: ["İçerik Optimizasyonu", "Meta Etiketler", "Site İçi Linkleme"],
   },
   {
     id: "off-page",
-    title: "Off-Page SEO",
-    description: "Build authority and credibility through strategic link building, brand mentions, and relationship building. Quality backlinks that drive rankings.",
+    title: "Site Dışı SEO",
+    description: "Stratejik link inşası, marka bahsetmeleri ve ilişki geliştirme yoluyla otorite ve güvenilirlik oluşturun. Sıralamaları artıran kaliteli geri bağlantılar.",
     icon: Link2,
-    href: "/services/off-page",
+    href: "/seo-hizmetleri/sayfa-disi-seo",
     gradient: "from-orange-500 to-red-500",
-    features: ["Link Building", "Brand Mentions", "Authority Building"],
+    features: ["Link İnşası", "Marka Bahsetmeleri", "Otorite Oluşturma"],
   },
 ];
 
@@ -56,11 +56,11 @@ export default function ServicesGrid() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Our SEO Services
+              SEO Hizmetlerimiz
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Comprehensive solutions tailored to your business needs
+            İşinizin ihtiyaçlarına özel kapsamlı çözümler
           </p>
         </motion.div>
 
@@ -103,7 +103,7 @@ export default function ServicesGrid() {
                     </div>
 
                     <div className="flex items-center text-blue-400 font-semibold group-hover:gap-3 transition-all">
-                      Learn More
+                      Daha Fazla Bilgi
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>

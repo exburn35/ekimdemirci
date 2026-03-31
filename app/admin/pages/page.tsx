@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import PageList from "@/components/admin/pages/PageList";
 
 export const metadata: Metadata = {
-  title: "Pages",
+  title: "Sayfalar",
   robots: {
     index: false,
     follow: false,

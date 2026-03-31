@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Plus, Edit, Trash2, Eye, Calendar, Clock, FileText } from "lucide-react";
 import { motion } from "framer-motion";
@@ -24,11 +24,7 @@ export default function BlogList() {
   const [isLoading, setIsLoading] = useState(true);
   const [filter, setFilter] = useState<"all" | "published" | "draft">("all");
 
-  useEffect(() => {
-    loadPosts();
-  }, [filter]);
-
-  const loadPosts = async () => {
+  const loadPosts = useCallback(async () => {
     try {
       const response = await fetch(`/api/admin/blog?filter=${filter}`);
       if (response.ok) {
@@ -40,10 +36,14 @@ export default function BlogList() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [filter]);
+
+  useEffect(() => {
+    loadPosts();
+  }, [loadPosts]);
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this blog post?")) return;
+    if (!confirm("Bu blog yazısını silmek istediğinizden emin misiniz?")) return;
 
     try {
       const response = await fetch(`/api/admin/blog/${id}`, {
@@ -88,10 +88,10 @@ export default function BlogList() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Blog Posts
+            Blog Yazıları
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-2">
-            Manage your blog posts and content
+            Blog yazılarınızı ve içeriklerinizi yönetin
           </p>
         </div>
         <Link
@@ -99,7 +99,7 @@ export default function BlogList() {
           className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center gap-2"
         >
           <Plus className="w-5 h-5" />
-          New Post
+          Yeni Yazı
         </Link>
       </div>
 
@@ -113,7 +113,7 @@ export default function BlogList() {
               : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
           }`}
         >
-          All Posts
+          Tüm Yazılar
         </button>
         <button
           onClick={() => setFilter("published")}
@@ -123,7 +123,7 @@ export default function BlogList() {
               : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
           }`}
         >
-          Published
+          Yayında
         </button>
         <button
           onClick={() => setFilter("draft")}
@@ -133,7 +133,7 @@ export default function BlogList() {
               : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
           }`}
         >
-          Drafts
+          Taslaklar
         </button>
       </div>
 
@@ -142,14 +142,14 @@ export default function BlogList() {
         <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
           <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            No blog posts yet. Create your first post!
+            Henüz blog yazısı yok. İlk yazınızı oluşturun!
           </p>
           <Link
             href="/admin/blog/new"
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             <Plus className="w-5 h-5" />
-            Create Post
+            Yazı Oluştur
           </Link>
         </div>
       ) : (
@@ -159,22 +159,22 @@ export default function BlogList() {
               <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Title
+                    Başlık
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Category
+                    Kategori
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Status
+                    Durum
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Views
+                    Görüntülenme
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Date
+                    Tarih
                   </th>
                   <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Actions
+                    İşlemler
                   </th>
                 </tr>
               </thead>
@@ -216,7 +216,7 @@ export default function BlogList() {
                             : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-400"
                         }`}
                       >
-                        {post.published ? "Published" : "Draft"}
+                        {post.published ? "Yayında" : "Taslak"}
                       </button>
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">

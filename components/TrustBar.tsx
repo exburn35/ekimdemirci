@@ -2,19 +2,19 @@
 
 import { motion } from "framer-motion";
 
-// Placeholder client logos - replace with actual client logos
+// Yer tutucu müşteri logoları - gerçek müşteri logolarıyla değiştirin
 const clients = [
-  "Client A",
-  "Client B",
-  "Client C",
-  "Client D",
-  "Client E",
-  "Client F",
+  "Enza Home",
+  "LTB Jeans",
+  "Levis",
+  "Vans",
+  "Timberland",
+  "Dockers",
 ];
 
 export default function TrustBar() {
   return (
-    <section className="py-16 bg-black/30 border-y border-white/10">
+    <section className="py-16 bg-[#0a0f25] border-y border-white/5 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,8 +23,8 @@ export default function TrustBar() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-gray-400 text-sm uppercase tracking-wider mb-2">
-            Trusted By Industry Leaders
+          <p className="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-2">
+            Sektör Liderleri Tarafından Güvenilen
           </p>
         </motion.div>
 
@@ -36,9 +36,9 @@ export default function TrustBar() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="flex items-center justify-center h-16 glass rounded-lg hover:bg-white/10 transition-all duration-300"
+              className="flex items-center justify-center h-16 bg-white/5 border border-white/10 rounded-lg hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] hover:border-purple-500/20 transition-all duration-300"
             >
-              <span className="text-gray-400 text-sm font-medium">{client}</span>
+              <span className="text-gray-500 font-bold tracking-widest uppercase text-sm">{client}</span>
             </motion.div>
           ))}
         </div>
