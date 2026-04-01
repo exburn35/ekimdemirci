@@ -7,7 +7,7 @@ export default function GoogleAIOverviewSection() {
   const features = [
     {
       title: "Sıfırıncı Konum (Position Zero) Hedefleme",
-      description: "İçeriğinizi Google'ın yapay zeka tarafından üretilen özetlerinde (GEO) görünecek şekilde optimize ediyoruz."
+      description: "İçeriğinizi Google AI Overview'da (GEO) görünecek şekilde optimize ediyorum."
     },
     {
       title: "Soru-Cevap Optimizasyonu",
@@ -62,7 +62,7 @@ export default function GoogleAIOverviewSection() {
                     {/* Content Text Simulation */}
                     <div className="space-y-3 mb-6">
                       <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                        Ekim Demirci SEO ajansı, yapay zeka destekli araçları kullanarak markaların dijital görünürlüğünü organik olarak artırır. Geleneksel SEO stratejilerini makine öğrenimi ile birleştirerek:
+                        Ekim Demirci SEO, yapay zeka destekli araçları kullanarak markaların dijital görünürlüğünü organik olarak artırır. Geleneksel SEO stratejilerini makine öğrenimi ile birleştirerek:
                       </p>
                       <ul className="list-disc pl-5 text-gray-300 text-sm sm:text-base space-y-2">
                         <li>Gelişmiş veri analizi ile doğru hedef kitle tespiti,</li>
