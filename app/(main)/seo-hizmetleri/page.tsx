@@ -8,6 +8,9 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "SEO Hizmetleri",
   description: "Yapay Zeka SEO, Teknik SEO, Site İçi SEO ve Site Dışı SEO dahil kapsamlı SEO hizmetleri. Arama sıralamalarınızı ve organik trafiğinizi artırmak için uzman stratejiler.",
+  alternates: {
+    canonical: "/seo-hizmetleri",
+  },
   openGraph: {
     title: "SEO Hizmetleri | Ekim Demirci",
     description: "Arama sıralamalarınızı ve organik trafiğinizi artırmak için kapsamlı SEO hizmetleri.",

@@ -4,6 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Avukatlar için SEO | Ekim Demirci",
   description: "Hukuk bürolarınız için yerel ve ulusal SEO hizmetleri ile potansiyel müvekkillerinize ulaşın. Hukuk alanında uzmanlaşmış SEO çözümleri.",
+  alternates: {
+    canonical: "/sektorel-seo-hizmetleri/avukatlar-icin-seo-hizmeti",
+  },
   openGraph: {
     title: "Avukatlar için SEO Hizmetleri | Ekim Demirci",
     description: "Hukuk bürolarınız için özelleştirilmiş SEO çözümleri.",

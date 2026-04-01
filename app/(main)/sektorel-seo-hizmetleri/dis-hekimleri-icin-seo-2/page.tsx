@@ -5,6 +5,9 @@ import { Stethoscope } from "lucide-react";
 export const metadata: Metadata = {
   title: "Diş Hekimleri için SEO | Ekim Demirci",
   description: "Diş hekimi klinikleriniz için özelleştirilmiş SEO stratejileri ile daha fazla hasta kazanın. Yerel SEO, teknik SEO ve içerik optimizasyonu.",
+  alternates: {
+    canonical: "/sektorel-seo-hizmetleri/dis-hekimleri-icin-seo-2",
+  },
   openGraph: {
     title: "Diş Hekimleri için SEO Hizmetleri | Ekim Demirci",
     description: "Diş hekimi klinikleriniz için özelleştirilmiş SEO çözümleri.",

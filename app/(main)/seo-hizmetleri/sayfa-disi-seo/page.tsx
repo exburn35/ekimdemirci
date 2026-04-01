@@ -4,6 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Sayfa Dışı SEO (Off-Page)",
   description: "Stratejik bağlantı kurma, marka anılmaları ve ilişki kurma yoluyla otorite ve güvenilirlik oluşturun. Sıralamaları yönlendiren kaliteli backlinkler.",
+  alternates: {
+    canonical: "/seo-hizmetleri/sayfa-disi-seo",
+  },
   openGraph: {
     title: "Sayfa Dışı SEO Hizmetleri | Ekim Demirci",
     description: "Daha iyi sıralamalar için stratejik bağlantı kurma ve otorite oluşturma.",

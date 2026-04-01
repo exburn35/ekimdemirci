@@ -4,6 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Teknik SEO Hizmetleri",
   description: "Kapsamlı teknik SEO denetimleri ve optimizasyonları. Arama motorlarının sitenize verimli bir şekilde erişmesini sağlayan site hızı, taranabilirlik ve Core Web Vitals iyileştirmeleri.",
+  alternates: {
+    canonical: "/seo-hizmetleri/teknik-seo",
+  },
   openGraph: {
     title: "Teknik SEO Hizmetleri | Ekim Demirci",
     description: "Maksimum arama motoru görünürlüğü için uzman teknik SEO optimizasyonu.",

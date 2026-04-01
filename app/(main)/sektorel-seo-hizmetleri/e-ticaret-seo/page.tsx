@@ -4,6 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "E-Ticaret SEO | Ekim Demirci",
   description: "Online mağazanız için teknik ve içerik SEO optimizasyonu ile satışlarınızı artırın. Ürün sayfaları, kategori optimizasyonu ve teknik SEO.",
+  alternates: {
+    canonical: "/sektorel-seo-hizmetleri/e-ticaret-seo",
+  },
   openGraph: {
     title: "E-Ticaret SEO Hizmetleri | Ekim Demirci",
     description: "E-ticaret siteniz için kapsamlı SEO çözümleri ile satışlarınızı artırın.",

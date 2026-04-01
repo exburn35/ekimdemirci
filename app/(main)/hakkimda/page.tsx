@@ -14,6 +14,9 @@ import SocialMediaEmbed from "@/components/SocialMediaEmbed";
 export const metadata: Metadata = {
   title: "Hakkımda",
   description: "Markaların potansiyeline ulaşmasına yardımcı olan, 5+ yıllık deneyime sahip Uzman SEO Uzmanı ve Danışmanı Ekim Demirci hakkında bilgi edinin.",
+  alternates: {
+    canonical: "/hakkimda",
+  },
   openGraph: {
     title: "Hakkımda | Ekim Demirci",
     description: "Markaların potansiyeline ulaşmasına yardımcı olan, 5+ yıllık deneyime sahip Uzman SEO Uzmanı ve Danışmanı Ekim Demirci hakkında bilgi edinin.",

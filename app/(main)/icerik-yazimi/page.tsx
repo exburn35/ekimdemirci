@@ -4,6 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "İçerik Yazımı | Ekim Demirci",
   description: "SEO uyumlu, kaliteli içerik yazımı hizmetleri. Blog yazıları, web sayfası içerikleri ve dijital pazarlama içerikleri.",
+  alternates: {
+    canonical: "/icerik-yazimi",
+  },
   openGraph: {
     title: "İçerik Yazımı Hizmetleri | Ekim Demirci",
     description: "SEO uyumlu, kaliteli içerik yazımı ile dijital varlığınızı güçlendirin.",

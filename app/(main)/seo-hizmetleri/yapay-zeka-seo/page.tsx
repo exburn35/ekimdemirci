@@ -6,6 +6,9 @@ import GoogleAIOverviewSection from "@/components/GoogleAIOverviewSection";
 export const metadata: Metadata = {
   title: "Yapay Zeka SEO",
   description: "SEO stratejinizi optimize etmek için yapay zeka ve makine öğreniminden yararlanın. Yapay zeka destekli anahtar kelime araştırması, içerik optimizasyonu ve tahmine dayalı analitik.",
+  alternates: {
+    canonical: "/seo-hizmetleri/yapay-zeka-seo",
+  },
   openGraph: {
     title: "Yapay Zeka SEO Hizmetleri | Ekim Demirci",
     description: "Makine öğrenimi ve gelişmiş analitik kullanarak yapay zeka destekli SEO optimizasyonu.",

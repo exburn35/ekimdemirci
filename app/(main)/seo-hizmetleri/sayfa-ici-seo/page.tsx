@@ -4,6 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Sayfa İçi SEO (On-Page)",
   description: "Maksimum arama görünürlüğü için sayfalarınızdaki her öğeyi optimize edin. Meta etiketleri, başlıklar, içerik yapısı ve dahili bağlantı stratejileri.",
+  alternates: {
+    canonical: "/seo-hizmetleri/sayfa-ici-seo",
+  },
   openGraph: {
     title: "Sayfa İçi SEO Hizmetleri | Ekim Demirci",
     description: "Daha iyi arama sıralamaları için kapsamlı sayfa içi optimizasyon.",

@@ -4,6 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Güzellik Merkezleri için SEO | Ekim Demirci",
   description: "Güzellik ve estetik merkezleriniz için SEO ile müşteri portföyünüzü genişletin. Yerel SEO, görsel optimizasyon ve randevu odaklı stratejiler.",
+  alternates: {
+    canonical: "/sektorel-seo-hizmetleri/guzellik-merkezleri-icin-seo-2",
+  },
   openGraph: {
     title: "Güzellik Merkezleri için SEO Hizmetleri | Ekim Demirci",
     description: "Güzellik ve estetik merkezleriniz için özelleştirilmiş SEO çözümleri.",

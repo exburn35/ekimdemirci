@@ -4,6 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Doktorlar için SEO | Ekim Demirci",
   description: "Tıp doktorları ve uzman hekimler için özelleştirilmiş SEO hizmetleri. Yerel SEO, hasta kazanımı ve dijital varlık güçlendirme.",
+  alternates: {
+    canonical: "/sektorel-seo-hizmetleri/doktorlar-icin-seo-2",
+  },
   openGraph: {
     title: "Doktorlar için SEO Hizmetleri | Ekim Demirci",
     description: "Tıp doktorları ve uzman hekimler için özelleştirilmiş SEO çözümleri.",
