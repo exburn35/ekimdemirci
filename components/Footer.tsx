@@ -46,9 +46,9 @@ const resources = [
 ];
 
 const legal = [
-  { name: "Gizlilik Politikası", href: "/privacy" },
-  { name: "Kullanım Şartları", href: "/terms" },
-  { name: "Çerez Politikası", href: "/cookies" },
+  { name: "Gizlilik Politikası", href: "/gizlilik-politikasi" },
+  { name: "Kullanım Şartları", href: "/kullanim-kosullari" },
+  { name: "Çerez Politikası", href: "/cerez-politikasi" },
 ];
 
 export default function Footer() {

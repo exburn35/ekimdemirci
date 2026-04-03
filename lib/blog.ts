@@ -113,9 +113,9 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
     return `<${tag} id="${id}">${content}</${tag}>`;
   });
 
-  // 4. Rewrite WordPress image paths to /uploads
-  processedHtml = processedHtml.replace(/https?:\/\/(www\.)?ekimdemirci\.com\/wp-content\/uploads/g, '/uploads')
-      .replace(/\/wp-content\/uploads/g, '/uploads');
+  // 4. Rewrite WordPress image paths to /uploads (Handling flat structure by stripping year/month folders)
+  processedHtml = processedHtml.replace(/https?:\/\/(www\.)?ekimdemirci\.com\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/')
+      .replace(/\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/');
 
   return { cleanHtml: processedHtml, headings };
 }

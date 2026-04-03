@@ -62,7 +62,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
             </h1>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-gray-400 text-sm">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2" suppressHydrationWarning>
                 <Calendar className="w-4 h-4 text-blue-400" />
                 <time dateTime={post.publishedAt}>
                   {post.publishedAt ? formatDate(post.publishedAt) : "—"}
