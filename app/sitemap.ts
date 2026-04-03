@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 import { getAllBlogPosts } from "../lib/blog";
 
+export const dynamic = "force-dynamic";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://ekimdemirci.com";
 
@@ -41,7 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Sitemap Blog Error:", error);
   }
 
-  let pageRoutes: any[] = [];
+  let pageRoutes: MetadataRoute.Sitemap = [];
   try {
     // 2. Fetch standard Pages (Dynamically Generated Pages)
     const customPages = await prisma.page.findMany({
