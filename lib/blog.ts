@@ -113,6 +113,10 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
     return `<${tag} id="${id}">${content}</${tag}>`;
   });
 
+  // 4. Rewrite WordPress image paths to /uploads
+  processedHtml = processedHtml.replace(/https?:\/\/(www\.)?ekimdemirci\.com\/wp-content\/uploads/g, '/uploads')
+      .replace(/\/wp-content\/uploads/g, '/uploads');
+
   return { cleanHtml: processedHtml, headings };
 }
 
