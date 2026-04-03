@@ -87,7 +87,7 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
   // 2. Strip unwanted elements
   processedHtml = processedHtml
     .replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "")
-    .replace(/<div[^>]*class="[^"]*(user-info|bs-img|b-author|date|single-info|single-content-full|bs-desc)[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
+    .replace(/<div[^>]*class="[^"]*(user-info|bs-img|single-info)[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
     .replace(/<div[^>]*class="[^"]*(toc|ez-toc|table-of-contents|lwptoc|toc_container)[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
     .replace(/<h2[^>]*>İçindekiler<\/h2>\s*<ul[^>]*>[\s\S]*?<\/ul>/i, '');
 

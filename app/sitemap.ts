@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import prisma from "@/lib/prisma"; // Assuming you have a prisma instance configured here, adjust if needed
+import { prisma } from "@/lib/prisma"; // Assuming you have a prisma instance configured here, adjust if needed
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://ekimdemirci.com";
@@ -26,15 +26,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   try {
-    // 1. Fetch dynamic Blog Posts
-    const blogs = await prisma.blogPost.findMany({
-      where: { published: true },
-      select: { slug: true, updatedAt: true },
-    });
+    // 1. Fetch dynamic Blog Posts from JSON files
+    const { getAllBlogPosts } = await import("@/lib/blog");
+    const blogs = getAllBlogPosts();
 
-    const blogRoutes = blogs.map((blog) => ({
-      url: `${baseUrl}/blog/${blog.slug}`,
-      lastModified: blog.updatedAt,
+    const blogRoutes = blogs.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }));
