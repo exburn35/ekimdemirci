@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -58,11 +59,12 @@ export default function BlogListClient({ initialPosts }: BlogListClientProps) {
               >
                 <Link href={`/blog/${post.slug}`}>
                   {post.featuredImage && (
-                    <div className="w-full h-48 overflow-hidden">
-                      <img
+                    <div className="w-full h-48 overflow-hidden relative">
+                      <Image
                         src={post.featuredImage}
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        alt={post.title || "Blog görseli"}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   )}
@@ -85,7 +87,7 @@ export default function BlogListClient({ initialPosts }: BlogListClientProps) {
                       </div>
                     </div>
                     <h2 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                      {post.title.replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&')}
+                      {(post.title || "Adsız Yazı").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&')}
                     </h2>
                     {post.excerpt && (
                       <p className="text-gray-400 text-sm mb-4 line-clamp-3">

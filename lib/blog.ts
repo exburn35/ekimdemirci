@@ -31,21 +31,28 @@ export function getAllBlogPosts(): BlogPost[] {
 
   const files = fs.readdirSync(blogsDir);
   return files
-    .filter((file) => file.endsWith(".json"))
+    .filter((file) => file.endsWith(".json") && file !== "_index.json")
     .map((file) => {
-      const filePath = path.join(blogsDir, file);
-      const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-      return {
-        id: file.replace(".json", ""),
-        ...data,
-      };
+      try {
+        const filePath = path.join(blogsDir, file);
+        const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+        return {
+          id: file.replace(".json", ""),
+          ...data,
+        };
+      } catch (err) {
+        console.error(`Error loading blog file ${file}:`, err);
+        return null;
+      }
     })
+    .filter((post): post is BlogPost => post !== null)
     .sort((a, b) => {
       return new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime();
     });
 }
 
 export function getBlogPostBySlug(slug: string): BlogPost | null {
+  if (slug === "_index") return null;
   try {
     const filePath = path.join(process.cwd(), "data", "blogs", `${slug}.json`);
     if (!fs.existsSync(filePath)) return null;

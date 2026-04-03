@@ -23,13 +23,13 @@ export async function generateMetadata({
   }
 
   return {
-    title: post.metaTitle || post.title,
+    title: post.metaTitle || post.title || "Makale",
     description: post.metaDescription || post.excerpt || undefined,
     alternates: {
       canonical: `/blog/${params.slug}`,
     },
     openGraph: {
-      title: post.metaTitle || post.title,
+      title: post.metaTitle || post.title || "Makale",
       description: post.metaDescription || post.excerpt || undefined,
       images: post.ogImage || post.featuredImage ? [post.ogImage || post.featuredImage!] : undefined,
     },
@@ -52,7 +52,7 @@ export default async function BlogPostPage({
   return (
     <>
       <BlogPostingSchema post={{
-        title: post.title.replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
+        title: (post.title || "Makale").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
         description: post.excerpt,
         publishedAt: post.publishedAt,
         updatedAt: post.updatedAt,
