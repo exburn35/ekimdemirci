@@ -23,7 +23,22 @@ export default function BlogPostingSchema({ post }: BlogPostingSchemaProps) {
     "author": {
       "@type": "Person",
       "name": "Ekim Demirci",
-      "url": "https://ekimdemirci.com/hakkimda"
+      "url": "https://ekimdemirci.com/hakkimda",
+      "telephone": "+90 507 047 47 02",
+      "email": "ekmdmrci@gmail.com",
+      "birthDate": "1991-11-02",
+      "sameAs": [
+        "https://www.linkedin.com/in/ekim-demirci/",
+        "https://www.instagram.com/ekimdemircii/",
+        "https://tr.pinterest.com/ekimdemirciseo/",
+        "https://www.youtube.com/@ekimdemirciseo",
+        "https://medium.com/@ekimdemirci"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "İstanbul",
+        "addressCountry": "Türkiye"
+      }
     },
     "publisher": {
       "@type": "Organization",

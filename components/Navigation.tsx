@@ -42,6 +42,7 @@ const sectoralServices = [
 const otherServices = [
   { name: "Fiyatlar", href: "/seo-danismanlik-fiyatlari" },
   { name: "İçerik Yazımı", href: "/icerik-yazimi" },
+  { name: "SEO Sözlüğü", href: "/seo-sozlugu" },
   { name: "Audit Talebi", href: "/audit-talebi" },
   { name: "Başarı Hikayeleri", href: "/basari-hikayeleri" },
   { name: "SSS", href: "/sikca-sorulan-sorular" },

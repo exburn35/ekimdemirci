@@ -13,10 +13,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ekim Demirci | SEO Uzmanı | Yüksek Performanslı SEO Çözümleri",
+    default: "SEO Uzmanı Ekim Demirci",
     template: "%s | Ekim Demirci"
   },
-  description: "İşletmelerin arama sıralamalarını yükseltmelerine ve organik büyüme sağlamalarına yardımcı olan uzman SEO Danışmanı. Veri odaklı SEO stratejileri ile kanıtlanmış sonuçlar.",
+  description: "İşletmelerin arama sıralamalarında üst sıralara çıkmasına ve veri odaklı stratejilerle organik büyüme elde etmesine yardımcı olan en iyi SEO Uzmanı.",
   keywords: ["SEO Uzmanı", "Arama Motoru Optimizasyonu", "SEO Danışmanı", "Organik Trafik", "SEO Hizmetleri"],
   authors: [{ name: "Ekim Demirci" }],
   creator: "Ekim Demirci",
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: "https://ekimdemirci.com",
     siteName: "Ekim Demirci - SEO Uzmanı",
-    title: "Ekim Demirci | SEO Uzmanı | Yüksek Performanslı SEO Çözümleri",
-    description: "İşletmelerin arama sıralamalarını yükseltmelerine ve organik büyüme sağlamalarına yardımcı olan uzman SEO Danışmanı.",
+    title: "SEO Uzmanı Ekim Demirci",
+    description: "İşletmelerin arama sıralamalarında üst sıralara çıkmasına ve veri odaklı stratejilerle organik büyüme elde etmesine yardımcı olan en iyi SEO Uzmanı.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ekim Demirci | SEO Uzmanı",
-    description: "İşletmelerin arama sıralamalarını yükseltmelerine ve organik büyüme sağlamalarına yardımcı olan uzman SEO Danışmanı.",
+    title: "SEO Uzmanı Ekim Demirci",
+    description: "İşletmelerin arama sıralamalarında üst sıralara çıkmasına ve veri odaklı stratejilerle organik büyüme elde etmesine yardımcı olan en iyi SEO Uzmanı.",
   },
   robots: {
     index: true,
