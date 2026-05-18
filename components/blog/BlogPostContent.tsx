@@ -68,6 +68,12 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                   {post.publishedAt ? formatDate(post.publishedAt) : "—"}
                 </time>
               </div>
+              {post.updatedAt && post.publishedAt && new Date(post.updatedAt).toDateString() !== new Date(post.publishedAt).toDateString() && (
+                <div className="flex items-center gap-2" suppressHydrationWarning>
+                  <Calendar className="w-4 h-4 text-emerald-400" />
+                  <span>Son Güncelleme: {formatDate(post.updatedAt)}</span>
+                </div>
+              )}
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-purple-400" />
                 {post.readTime || 5} dk okuma
