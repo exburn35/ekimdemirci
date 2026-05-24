@@ -21,7 +21,7 @@ export default function AISEOFAQ() {
       question: "Generative Engine Optimization (GEO) Nedir ve Neden Hayatidir?",
       answer: (
         <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-          <strong>Generative Engine Optimization (GEO)</strong> (Üretken Arama Motoru Optimizasyonu), web sitenizin Google Search Generative Experience (SGE), ChatGPT, Claude, Gemini ve Perplexity gibi üretken yapay zeka motorları tarafından taranıp en güvenilir kaynak olarak gösterilmesi ve önerilmesi için yapılan yeni nesil SEO çalışmasıdır. Geleneksel SEO, sitenize doğrudan arama motoru tıklamaları çekmeye çalışırken; GEO, yapay zekanın ürettiği sentezlenmiş akıllı yanıtlarda markanızın referans kaynak gösterilmesini ve bu sayede doğrudan yüksek dönüşüm potansiyelli kitleye ulaşmanızı hedefler.
+          <strong>Generative Engine Optimization (GEO)</strong> (Üretken Arama Motoru Optimizasyonu), web sitenizin Google AI Overview, ChatGPT, Claude, Gemini ve Perplexity gibi üretken yapay zeka motorları tarafından taranıp en güvenilir kaynak olarak gösterilmesi ve önerilmesi için yapılan yeni nesil SEO çalışmasıdır. Geleneksel SEO, sitenize doğrudan arama motoru tıklamaları çekmeye çalışırken; GEO, yapay zekanın ürettiği sentezlenmiş akıllı yanıtlarda markanızın referans kaynak gösterilmesini ve bu sayede doğrudan yüksek dönüşüm potansiyelli kitleye ulaşmanızı hedefler.
         </p>
       ),
     },
@@ -32,7 +32,7 @@ export default function AISEOFAQ() {
       answer: (
         <div className="space-y-3 text-gray-300 text-sm md:text-base leading-relaxed">
           <p>
-            <strong>Answer Engine Optimization (AEO)</strong> (Cevap Motoru Optimizasyonu), kullanıcıların sesli (Siri, Google Assistant) veya yazılı olarak sorduğu doğrudan sorulara arama motorlarının verdiği &quot;sıfırıncı sıra&quot; (Featured Snippets) ve yapay zeka cevap kutularına yönelik optimizasyon sürecidir.
+            <strong>Answer Engine Optimization (AEO)</strong> (Cevap Motoru Optimizasyonu), aslında yine doğrudan AI&apos;ın yani yapay zekanın yanıtlarında web sitenizi seçmesi ve güvenilir bir kaynak olması için yapılan optimizasyondur.
           </p>
           <p>
             AEO çalışmasının amacı, sitenizdeki içerikleri arama motorlarının ve yapay zekaların kolayca ayrıştırıp doğrudan cevap olarak sunabileceği net soru-cevap formlarına, tablolara ve yapılandırılmış verilere dönüştürerek sitenizin otoritesini kanıtlamaktır.
