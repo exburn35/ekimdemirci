@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import AIVisual from "@/components/AIVisual";
 import GoogleAIOverviewSection from "@/components/GoogleAIOverviewSection";
+import AILogosSection from "@/components/AILogosSection";
 import AISEOFAQ from "@/components/AISEOFAQ";
 
 export const metadata: Metadata = {
@@ -84,8 +85,8 @@ export default function AISEO() {
                 </div>
             </div>
         </section>
+        <AILogosSection />
         <AISEOFAQ />
     </ServicePageLayout>
   );
 }
-
