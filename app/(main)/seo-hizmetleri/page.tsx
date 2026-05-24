@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import ServicesHero from "@/components/ServicesHero";
 import ServicesGrid from "@/components/ServicesGrid";
+import ServicesFAQ from "@/components/ServicesFAQ";
 import ServicesCTA from "@/components/ServicesCTA";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
@@ -22,6 +23,7 @@ export default function Services() {
     <>
       <ServicesHero />
       <ServicesGrid />
+      <ServicesFAQ />
       <SEOAuditSection />
       <ContactForm
         title="Hemen Başlayın"

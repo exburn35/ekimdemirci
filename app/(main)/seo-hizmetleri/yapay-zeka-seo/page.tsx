@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import AIVisual from "@/components/AIVisual";
 import GoogleAIOverviewSection from "@/components/GoogleAIOverviewSection";
+import AISEOFAQ from "@/components/AISEOFAQ";
 
 export const metadata: Metadata = {
   title: "Yapay Zeka SEO",
@@ -83,6 +84,7 @@ export default function AISEO() {
                 </div>
             </div>
         </section>
+        <AISEOFAQ />
     </ServicePageLayout>
   );
 }
