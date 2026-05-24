@@ -36,11 +36,11 @@ export default function TechnicalSEO() {
       benefits={[
         {
           title: "Crawl Budget Optimizasyonu",
-          description: "Arama motorlarının tüm önemli sayfalarınızı verimli bir şekilde keşfedip dizine ekleyebilmesini sağlayın. Tarama hatalarını düzeltiyor, site yapısını optimize ediyor ve arama motorlarının içeriğinize erişmesini engelleyen bariyerleri kaldırıyoruz.",
+          description: "Arama motorlarının tüm önemli sayfalarınızı verimli bir şekilde keşfedip dizine ekleyebilmesini sağlayın. Tarama hatalarını düzeltiyor, site yapısını optimize ediyor ve arama motorlarının içeriğinize erişmesini engelleyen bariyerleri kaldırıyorum.",
         },
         {
           title: "Daha Hızlı Sayfa Yükleme Süreleri",
-          description: "Hız, kritik bir sıralama faktörüdür. Sitenizin yükleme hızını önemli ölçüde artırmak için görselleri optimize ediyor, kodu küçültüyor, tarayıcı önbelleklemesini kullanıyor ve CDN çözümleri uyguluyoruz.",
+          description: "Hız, kritik bir sıralama faktörüdür. Sitenizin yükleme hızını önemli ölçüde artırmak için görselleri optimize ediyor, kodu küçültüyor, tarayıcı önbelleklemesini kullanıyor ve CDN çözümleri uyguluyorum.",
         },
         {
           title: "Daha İyi Kullanıcı Deneyimi",
@@ -55,22 +55,22 @@ export default function TechnicalSEO() {
         {
           step: "1",
           title: "Kapsamlı Teknik Denetim",
-          description: "Sektör lideri araçları kullanarak site hızı, mobil kullanılabilirlik, taranabilirlik, indeksleme ve Core Web Vitals ile ilgili sorunları tanımlayan derinlemesine teknik denetimler gerçekleştiriyoruz.",
+          description: "Sektör lideri araçları kullanarak site hızı, mobil kullanılabilirlik, taranabilirlik, indeksleme ve Core Web Vitals ile ilgili sorunları tanımlayan derinlemesine teknik denetimler gerçekleştiriyorum.",
         },
         {
           step: "2",
           title: "Öncelikli Sorun Giderme",
-          description: "Sitenizin iyi sıralanmasını engelleyen kritik teknik sorunları önceliklendiriyor ve en etkili olanlardan başlayarak çözüme kavuşturuyoruz.",
+          description: "Sitenizin iyi sıralanmasını engelleyen kritik teknik sorunları önceliklendiriyor ve en etkili olanlardan başlayarak çözüme kavuşturuyorum.",
         },
         {
           step: "3",
           title: "Performans Optimizasyonu",
-          description: "Performansı maksimuma çıkarmak için sunucu yapılandırması, kod optimizasyonu, görsel sıkıştırma ve önbellekleme stratejileri dahil olmak üzere sitenizin teknik altyapısını optimize ediyoruz.",
+          description: "Performansı maksimuma çıkarmak için sunucu yapılandırması, kod optimizasyonu, görsel sıkıştırma ve önbellekleme stratejileri dahil olmak üzere sitenizin teknik altyapısını optimize ediyorum.",
         },
         {
           step: "4",
           title: "Sürekli İzleme",
-          description: "Teknik sorunları erkenden yakalamak, Core Web Vitals metriklerini takip etmek ve sitenizin optimal teknik durumunu korumasını sağlamak için sürekli izleme sistemleri kuruyoruz.",
+          description: "Teknik sorunları erkenden yakalamak, Core Web Vitals metriklerini takip etmek ve sitenizin optimal teknik durumunu korumasını sağlamak için sürekli izleme sistemleri kuruyorum.",
         },
       ]}
       blogCategory="teknik-seo"

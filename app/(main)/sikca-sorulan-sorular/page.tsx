@@ -104,7 +104,7 @@ export default function FAQ() {
               Sorunuzun Cevabını Bulamadınız mı?
             </h2>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Bizimle iletişime geçin, size yardımcı olmaktan mutluluk duyarız.
+              Benimle iletişime geçin, size yardımcı olmaktan mutluluk duyarım.
             </p>
             <a
               href="/iletisim"
@@ -125,7 +125,7 @@ export default function FAQ() {
       {/* Contact Form */}
       <ContactForm
         title="Başka Sorularınız mı Var?"
-        description="SEO hizmetleri hakkında daha fazla bilgi almak için bizimle iletişime geçin."
+        description="SEO hizmetleri hakkında daha fazla bilgi almak için benimle iletişime geçin."
         showTitle={true}
       />
     </>

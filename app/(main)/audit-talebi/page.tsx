@@ -173,7 +173,7 @@ export default function AuditRequest() {
               {
                 step: "2",
                 title: "Analizi Yapıyorum",
-                description: "Web sitenizi kapsamlı şekilde analiz ediyorum. Teknik SEO, içerik, backlink ve performans metriklerini inceliyoruz.",
+                description: "Web sitenizi kapsamlı şekilde analiz ediyorum. Teknik SEO, içerik, backlink ve performans metriklerini inceliyorum.",
               },
               {
                 step: "3",

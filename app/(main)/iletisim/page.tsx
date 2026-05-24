@@ -3,13 +3,13 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "İletişim | Ekim Demirci",
-  description: "SEO hizmetlerimiz hakkında bilgi almak ve projenizi konuşmak için bizimle iletişime geçin. Ücretsiz ön analiz ve strateji görüşmesi için formu doldurun.",
+  description: "SEO hizmetlerim hakkında bilgi almak ve projenizi konuşmak için benimle iletişime geçin. Ücretsiz ön analiz ve strateji görüşmesi için formu doldurun.",
   alternates: {
     canonical: "/iletisim",
   },
   openGraph: {
     title: "İletişim | Ekim Demirci - SEO Uzmanı",
-    description: "SEO hizmetlerimiz hakkında bilgi almak için bizimle iletişime geçin.",
+    description: "SEO hizmetlerim hakkında bilgi almak için benimle iletişime geçin.",
   },
 };
 
@@ -40,7 +40,7 @@ export default function ContactPage() {
 
       <ContactForm
         title="Projenizi Anlatın"
-        description="Aşağıdaki formu doldurarak projeniz hakkında detaylı bilgi verebilirsiniz. En kısa sürede size dönüş yapacağız."
+        description="Aşağıdaki formu doldurarak projeniz hakkında detaylı bilgi verebilirsiniz. En kısa sürede size dönüş yapacağım."
         showTitle={true}
       />
     </>

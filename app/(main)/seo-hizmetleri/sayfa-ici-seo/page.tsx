@@ -18,7 +18,7 @@ export default function OnPageSEO() {
     <ServicePageLayout
       title="Sayfa İçi SEO"
       subtitle="İçerik ve Optimizasyon"
-      description="Sayfa içi SEO (On-page SEO), arama sıralamalarını ve kullanıcı deneyimini iyileştirmek için web sitenizin sayfalarındaki her bir öğenin optimize edilmesini içerir. Meta etiketlerden içerik yapısına kadar, her sayfanın hem arama motorları hem de kullanıcılar için mükemmel şekilde optimize edilmesini sağlıyoruz."
+      description="Sayfa içi SEO (On-page SEO), arama sıralamalarını ve kullanıcı deneyimini iyileştirmek için web sitenizin sayfalarındaki her bir öğenin optimize edilmesini içerir. Meta etiketlerden içerik yapısına kadar, her sayfanın hem arama motorları hem de kullanıcılar için mükemmel şekilde optimize edilmesini sağlıyorum."
       icon="FileText"
       gradient="from-green-500 to-emerald-500"
       features={[
@@ -55,22 +55,22 @@ export default function OnPageSEO() {
         {
           step: "1",
           title: "Sayfa Bazlı Analiz",
-          description: "Web sitenizin her sayfasını analiz ediyor; meta etiketleri, içerik yapısı, anahtar kelime kullanımı ve dahili bağlantılarda optimizasyon fırsatlarını belirliyoruz.",
+          description: "Web sitenizin her sayfasını analiz ediyor; meta etiketleri, içerik yapısı, anahtar kelime kullanımı ve dahili bağlantılarda optimizasyon fırsatlarını belirliyorum.",
         },
         {
           step: "2",
           title: "İçerik Optimizasyonu",
-          description: "İçeriğinizi kullanıcı niyetine uyacak şekilde optimize ediyor, anahtar kelime uygunluğunu artırıyor, okunabilirliği geliştiriyor ve hedef kitlenize gerçek değer sunmasını sağlıyoruz.",
+          description: "İçeriğinizi kullanıcı niyetine uyacak şekilde optimize ediyor, anahtar kelime uygunluğunu artırıyor, okunabilirliği geliştiriyor ve hedef kitlenize gerçek değer sunmasını sağlıyorum.",
         },
         {
           step: "3",
           title: "Teknik Öğeler",
-          description: "Başlık etiketleri, meta açıklamaları, başlık hiyerarşisi, görsel alt metinleri ve URL yapıları dahil olmak üzere tüm sayfa içi teknik öğeleri optimize ediyoruz.",
+          description: "Başlık etiketleri, meta açıklamaları, başlık hiyerarşisi, görsel alt metinleri ve URL yapıları dahil olmak üzere tüm sayfa içi teknik öğeleri optimize ediyorum.",
         },
         {
           step: "4",
           title: "Dahili Bağlantı Stratejisi",
-          description: "Sayfa otoritesini dağıtan, taranabilirliği artıran ve kullanıcı navigasyonunu geliştiren stratejik bir dahili bağlantı yapısı geliştiriyor ve uyguluyoruz.",
+          description: "Sayfa otoritesini dağıtan, taranabilirliği artıran ve kullanıcı navigasyonunu geliştiren stratejik bir dahili bağlantı yapısı geliştiriyor ve uyguluyorum.",
         },
       ]}
       blogCategory="sayfa-ici-seo"

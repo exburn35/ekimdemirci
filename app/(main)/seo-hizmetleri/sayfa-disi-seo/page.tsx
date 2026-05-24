@@ -18,7 +18,7 @@ export default function OffPageSEO() {
     <ServicePageLayout
       title="Sayfa Dışı SEO"
       subtitle="Otorite ve Bağlantı Kurma"
-      description="Sayfa dışı SEO (Off-page SEO), harici sinyaller aracılığıyla web sitenizin otoritesini ve güvenilirliğini oluşturmaya odaklanır. Stratejik bağlantı kurma kampanyaları geliştiriyor, marka anılmalarını artırıyor ve sitenizi sektörünüzde yetkili bir kaynak olarak konumlandıran ilişkiler kuruyoruz."
+      description="Sayfa dışı SEO (Off-page SEO), harici sinyaller aracılığıyla web sitenizin otoritesini ve güvenilirliğini oluşturmaya odaklanır. Stratejik bağlantı kurma kampanyaları geliştiriyor, marka anılmalarını artırıyor ve sitenizi sektörünüzde yetkili bir kaynak olarak konumlandıran ilişkiler kuruyorum."
       icon="Link2"
       gradient="from-orange-500 to-red-500"
       features={[
@@ -55,22 +55,22 @@ export default function OffPageSEO() {
         {
           step: "1",
           title: "Bağlantı Profili Analizi",
-          description: "Mevcut backlink profilinizi analiz ederek güçlü yanları, zayıf noktaları ve fırsatları belirliyoruz. Ayrıca potansiyel bağlantı fırsatlarını keşfetmek için rakip bağlantı profillerini inceliyoruz.",
+          description: "Mevcut backlink profilinizi analiz ederek güçlü yanları, zayıf noktaları ve fırsatları belirliyorum. Ayrıca potansiyel bağlantı fırsatlarını keşfetmek için rakip bağlantı profillerini inceliyorum.",
         },
         {
           step: "2",
           title: "Tanıtım Stratejisi Geliştirme",
-          description: "Sektörünüze, hedef kitlenize ve iş hedeflerinize dayalı, en iyi bağlantı fırsatlarını belirleyen ve kişiselleştirilmiş tanıtım kampanyaları içeren özel bir strateji geliştiriyoruz.",
+          description: "Sektörünüze, hedef kitlenize ve iş hedeflerinize dayalı, en iyi bağlantı fırsatlarını belirleyen ve kişiselleştirilmiş tanıtım kampanyaları içeren özel bir strateji geliştiriyorum.",
         },
         {
           step: "3",
           title: "Bağlantı Edinme",
-          description: "Misafir yazarlık, kaynak sayfası tanıtımı, kırık bağlantı inşası ve sektör etkileyicileriyle ilişki kurma gibi çeşitli yöntemlerle stratejik bağlantı kurma kampanyaları yürütüyoruz.",
+          description: "Misafir yazarlık, kaynak sayfası tanıtımı, kırık bağlantı inşası ve sektör etkileyicileriyle ilişki kurma gibi çeşitli yöntemlerle stratejik bağlantı kurma kampanyaları yürütüyorum.",
         },
         {
           step: "4",
           title: "İzleme ve Bakım",
-          description: "Sürdürülebilir ve uzun vadeli bağlantı büyümesi sağlamak için backlink profilinizi sürekli izliyor, bağlantı kalitesini takip ediyor, zararlı bağlantıları reddediyor ve ilişkileri sürdürüyoruz.",
+          description: "Sürdürülebilir ve uzun vadeli bağlantı büyümesi sağlamak için backlink profilinizi sürekli izliyor, bağlantı kalitesini takip ediyor, zararlı bağlantıları reddediyor ve ilişkileri sürdürüyorum.",
         },
       ]}
       blogCategory="sayfa-disi-seo"
