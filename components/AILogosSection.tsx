@@ -8,7 +8,7 @@ export default function AILogosSection() {
     {
       name: "ChatGPT",
       company: "OpenAI",
-      description: "AIO (Yapay Zeka Optimizasyonu) ile ChatGPT'nin arama yanıtlarında markanızın ve içeriklerinizin birincil kaynak olarak gösterilmesini hedefliyoruz.",
+      description: "AIO (Yapay Zeka Optimizasyonu) ile ChatGPT'nin arama yanıtlarında markanızın ve içeriklerinizin birincil kaynak olarak gösterilmesini hedefliyorum.",
       color: "from-emerald-500 to-teal-600",
       textColor: "text-emerald-400",
       borderColor: "group-hover:border-emerald-500/30",
@@ -18,7 +18,7 @@ export default function AILogosSection() {
     {
       name: "Gemini",
       company: "Google",
-      description: "Google'ın yapay zeka destekli arama özetlerinde (AI Overview) ve Gemini arama motoru entegrasyonlarında üst sıralarda konumlanmanızı sağlıyoruz.",
+      description: "Google'ın yapay zeka destekli arama özetlerinde (AI Overview) ve Gemini arama motoru entegrasyonlarında üst sıralarda konumlanmanızı sağlıyorum.",
       color: "from-blue-500 via-purple-500 to-pink-500",
       textColor: "text-blue-400",
       borderColor: "group-hover:border-blue-500/30",
@@ -28,7 +28,7 @@ export default function AILogosSection() {
     {
       name: "Claude",
       company: "Anthropic",
-      description: "Claude'un anlamsal (semantik) derinlik ve veri analizi süreçlerine uygun, yüksek otoriteli kaynaklar ve zengin yapılar kurguluyoruz.",
+      description: "Claude'un anlamsal (semantik) derinlik ve veri analizi süreçlerine uygun, yüksek otoriteli kaynaklar ve zengin yapılar kurguluyorum.",
       color: "from-amber-600 to-orange-700",
       textColor: "text-amber-500",
       borderColor: "group-hover:border-amber-500/30",
@@ -38,7 +38,7 @@ export default function AILogosSection() {
     {
       name: "Perplexity",
       company: "Perplexity AI",
-      description: "Doğrudan kaynak gösteren ve yapay zeka arama motoru olan Perplexity'de içeriklerinizin ana referans kaynağı olması için optimizasyon yapıyoruz.",
+      description: "Doğrudan kaynak gösteren ve yapay zeka arama motoru olan Perplexity'de içeriklerinizin ana referans kaynağı olması için optimizasyon yapıyorum.",
       color: "from-teal-600 to-cyan-700",
       textColor: "text-teal-400",
       borderColor: "group-hover:border-teal-500/30",
@@ -67,12 +67,12 @@ export default function AILogosSection() {
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">
             <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-              Yapay Zeka Arama Motorları ve Modelleri
+              Yapay Zeka Modelleri ve GEO'nun Önemi
             </span>
           </h2>
           
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Web sitenizi sadece geleneksel arama motorlarına değil; kullanıcıların doğrudan bilgi aldığı ve sorgu yaptığı en popüler yapay zeka asistanlarına da optimize ediyoruz.
+            Web sitenizi sadece geleneksel arama motorlarına değil; kullanıcıların doğrudan bilgi aldığı ve sorgu yaptığı en popüler yapay zeka asistanlarına da optimize ediyorum.
           </p>
         </motion.div>
 
