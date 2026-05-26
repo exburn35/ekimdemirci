@@ -8,7 +8,7 @@ import ContactForm from "@/components/ContactForm";
 import PersonSchema from "@/components/schemas/PersonSchema";
 
 export const metadata = {
-  title: "Ekim Demirci - SEO Uzmanı ve SEO Danışmanlığı",
+  title: "SEO ve GEO Danışmanı Ekim Demirci",
   description: "Ben Ekim Demirci, markanızın Google sıralamalarında zirveye ulaşmasını sağlayan, veri ve yapay zeka odaklı modern SEO danışmanlığı hizmetleri sunuyorum.",
 };
 
