@@ -30,15 +30,17 @@ export default function Globe() {
 
     if (!canvasRef.current) return;
 
+    const ratio = Math.min(typeof window !== "undefined" ? window.devicePixelRatio : 1, 1.5);
+
     const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: width * 2,
-      height: width * 2,
+      devicePixelRatio: ratio,
+      width: width * ratio,
+      height: width * ratio,
       phi: 0,
       theta: 0.3,
       dark: 1, // Magic UI tarzı karanlık küre
       diffuse: 1.2,
-      mapSamples: 16000,
+      mapSamples: 8000, // Dot density reduced from 16000 to 8000 for dramatic CPU performance boost
       mapBrightness: 6,
       baseColor: [0.1, 0.1, 0.2], // Koyu arka planla uyumlu zemin
       markerColor: [0.6, 0.2, 0.9], // Mor/Pembe Magic UI vurguları
@@ -54,8 +56,8 @@ export default function Globe() {
         // Otomatik dönüş animasyonu
         state.phi = phi;
         phi += 0.003;
-        state.width = width * 2;
-        state.height = width * 2;
+        state.width = width * ratio;
+        state.height = width * ratio;
       },
     });
 

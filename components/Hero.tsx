@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp, Search, BarChart3 } from "lucide-react";
 import Link from "next/link";
-import Globe from "./magicui/Globe";
+import dynamic from "next/dynamic";
+
+const Globe = dynamic(() => import("./magicui/Globe"), {
+  ssr: false,
+});
 
 const containerVariants = {
   hidden: { opacity: 0 },
