@@ -9,43 +9,43 @@ const services = [
   {
     icon: Search,
     title: "Teknik SEO",
-    expandedTitle: "Teknik SEO ile Kusursuz Altyapı",
-    description: "Kapsamlı denetimler, site hızı optimizasyonu ve teknik altyapı iyileştirmelerini içeren bu hizmet, web sitenizin arama motorları tarafından mükemmel şekilde taranmasını ve dizine eklenmesini sağlar.",
+    expandedTitle: "Teknik SEO ile Kusursuz Altyapı İnşa Ediyorum",
+    description: "Web sitenizin Google botları tarafından kusursuz şekilde taranıp dizine eklenmesi için kapsamlı teknik denetimler gerçekleştiriyor, site hızı ve Core Web Vitals metriklerini en üst seviyeye çıkarıyorum.",
     href: "/seo-hizmetleri/teknik-seo"
   },
   {
     icon: BarChart3,
     title: "SEO Analitiği",
-    expandedTitle: "SEO Analitiği ile Stratejinizi Ölçün",
-    description: "Veri odaklı içgörüler ile SEO yarışında öne geçin. Yatırım getirinizi ölçmek ve stratejilerinizi sürekli iyileştirmek için derinlemesine performans takibi sunuyoruz.",
+    expandedTitle: "SEO Analitiği ile Stratejinizi Anlamlandırıyorum",
+    description: "Yatırım getirinizi (ROI) net şekilde ölçmek ve büyüme fırsatlarını belirlemek amacıyla veri odaklı derinlemesine performans takibi yapıyor, analiz süreçlerinizi şeffaf şekilde yönetiyorum.",
     href: "/seo-hizmetleri"
   },
   {
     icon: FileText,
     title: "İçerik Stratejisi",
-    expandedTitle: "İçerik Stratejisiyle Dönüşüm Sağlayın",
-    description: "Kullanıcıların ve arama motorlarının sevdiği içerikler oluşturun. Sadece sıralama alan değil, aynı zamanda dönüşüm sağlayan anahtar kelime araştırması ve içerik optimizasyonu yapıyoruz.",
+    expandedTitle: "Semantik İçerik Stratejisiyle Dönüşüm Sağlıyorum",
+    description: "Kullanıcıların arama niyetini (search intent) ve semantik ilişkileri analiz ederek, sadece sıralama alan değil, aynı zamanda doğrudan dönüşüm getiren anahtar kelime araştırmaları ve içerik optimizasyonları yapıyorum.",
     href: "/seo-hizmetleri/sayfa-ici-seo"
   },
   {
     icon: Target,
     title: "Yerel SEO",
-    expandedTitle: "Yerel SEO ile Yakınınızda Bulunun",
-    description: "Bölgenizdeki rekabeti geride bırakın. Yerel arama sonuçlarında hakimiyet kurarak yakınınızdaki potansiyel müşterilerin sizi anında bulmasını ve tercih etmesini sağlayın.",
+    expandedTitle: "Yerel SEO ile Bölgenizde Lider Olmanızı Sağlıyorum",
+    description: "Bölgesel rekabette öne çıkmanız için Google Haritalar (GMB) ve yerel arama sonuçlarında tam hakimiyet kurarak, yakın çevrenizdeki potansiyel müşterilerin size doğrudan ulaşmasını sağlıyorum.",
     href: "/sektorel-seo-hizmetleri"
   },
   {
     icon: Zap,
     title: "Link İnşası",
-    expandedTitle: "Link İnşasıyla Otoritenizi Artırın",
-    description: "Sektörünüzde otorite olun. Yüksek kaliteli, güvenilir kaynaklardan gelen stratejik bağlantılar ile web sitenizin gücünü ve arama görünürlüğünü sürdürülebilir şekilde artırın.",
+    expandedTitle: "Stratejik Link İnşasıyla Otoritenizi Artırıyorum",
+    description: "Sektörünüzün en saygın ve yüksek otoriteli kaynaklarından stratejik bağlantılar (backlink) elde ederek, web sitenizin güvenilirlik skorunu ve arama motorlarındaki genel gücünü sürdürülebilir şekilde yükseltiyorum.",
     href: "/seo-hizmetleri/sayfa-disi-seo"
   },
   {
     icon: TrendingUp,
     title: "SEO Danışmanlığı",
-    expandedTitle: "SEO Danışmanlığı ile Şirketinizi Büyütün",
-    description: "Mevcut dijital varlığınızı analiz ederek, işletmenize özgü, büyüme odaklı ve kanıtlanmış bir SEO stratejisi için birlikte çalışalım.",
+    expandedTitle: "SEO Danışmanlığı ile Şirketinizi Büyütüyorum",
+    description: "Mevcut dijital varlığınızı uçtan uca analiz ederek, işletmenizin hedeflerine en uygun, veri ve yapay zeka odaklı, kanıtlanmış butik SEO yol haritaları oluşturuyor ve süreci doğrudan kendim yürütüyorum.",
     href: "/iletisim"
   },
 ];
@@ -67,10 +67,10 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white tracking-tight">
-            Kapsamlı <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">SEO Hizmetleri</span>
+            Kapsamlı <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">SEO Hizmetlerim</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto font-medium">
-            Arama varlığınızı yükseltmek ve sürdürülebilir büyüme sağlamak için tasarlanmış uçtan uca etkileşimli SEO çözümleri.
+            Arama görünürlüğünüzü en üst düzeye çıkarmak ve sürdürülebilir organik büyüme sağlamak için tasarladığım, kişiselleştirilmiş ve uçtan uca SEO çözümlerim.
           </p>
         </motion.div>
 

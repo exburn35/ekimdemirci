@@ -58,7 +58,7 @@ export default function Hero() {
           <motion.div variants={itemVariants}>
             <span className="inline-flex items-center px-5 py-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-xl text-sm font-bold text-blue-200 mb-8 shadow-[0_0_20px_rgba(59,130,246,0.2)] animate-pulse-slow">
               <span className="w-2.5 h-2.5 bg-blue-400 rounded-full mr-3 shadow-[0_0_12px_#60a5fa] animate-ping" />
-              Sınırlı Kontenjan ile Yeni Projeler Kabul Ediliyor
+              Sınırlı Kontenjan ile Yeni Projeler Kabul Ediyorum
             </span>
           </motion.div>
 
@@ -67,8 +67,8 @@ export default function Hero() {
             variants={itemVariants}
             className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold mb-6 leading-tight text-white tracking-tight"
           >
-            Arama Görünürlüğünüzü <br className="hidden md:block" />
-            Şimdi <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Hızlandırın</span>
+            Algoritmaların Ötesinde,<br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Gerçek Organik Büyüme</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -76,7 +76,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Akıllı iş akışları, derinlemesine analizler ve kusursuz stratejiler ile dönüşüm huninizi ileriye taşıyın ve organik büyümenizi garantiye alın.
+            Ben Ekim Demirci. Yapay zeka destekli GEO (Generative Engine Optimization) ve semantik SEO stratejileriyle, web sitenizin arama görünürlüğünü ve dönüşümlerini birinci şahıs uzmanlığıyla sürdürülebilir şekilde artırıyorum.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -88,14 +88,14 @@ export default function Hero() {
               href="/iletisim"
               className="group px-8 py-4 bg-gradient-to-r from-emerald-400 to-green-500 text-black rounded-full font-bold text-lg hover:from-emerald-300 hover:to-green-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] flex items-center gap-2"
             >
-              Hemen Ücretsiz Başla
+              Benimle Başlayın
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/iletisim"
               className="px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-full font-semibold text-lg text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
             >
-              Danışmanlık Randevusu
+              SEO Danışmanlığı Al
             </Link>
           </motion.div>
         </motion.div>

@@ -56,7 +56,7 @@ export default function AISEOFAQ() {
       question: "Yapay Zeka SEO (AI SEO) Hizmeti Klasik SEO'dan Nasıl Ayrılır?",
       answer: (
         <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-          Klasik SEO çalışmaları sadece anahtar kelime sıklığı, meta etiketler ve temel teknik analizlere odaklanırken; <strong>Yapay Zeka SEO hizmeti</strong> (AI SEO), büyük veri setlerini, Doğal Dil İşlemeyi (NLP) ve Google&apos;ın RankBrain ile BERT gibi gelişmiş semantik yapay zeka algoritmalarını temel alır. Yapay zeka destekli optimizasyon süreçlerinde, kullanıcıların sadece ne aradığını değil, <strong>arama niyetini (search intent)</strong> ve kelimeler arasındaki semantik ilişkileri derinlemesine analiz ederek çok daha doyurucu, niş ve otoriter içerik yapıları oluştururuz.
+          Klasik SEO çalışmaları sadece anahtar kelime sıklığı, meta etiketler ve temel teknik analizlere odaklanırken; <strong>Yapay Zeka SEO hizmeti</strong> (AI SEO), büyük veri setlerini, Doğal Dil İşlemeyi (NLP) ve Google&apos;ın RankBrain ile BERT gibi gelişmiş semantik yapay zeka algoritmalarını temel alır. Yapay zeka destekli optimizasyon süreçlerinde, kullanıcıların sadece ne aradığını değil, <strong>arama niyetini (search intent)</strong> ve kelimeler arasındaki semantik ilişkileri derinlemesine analiz ederek çok daha doyurucu, niş ve otoriter içerik yapıları oluşturuyorum.
         </p>
       ),
     },
@@ -70,10 +70,10 @@ export default function AISEOFAQ() {
             Yapay zekanın (Google SGE, ChatGPT vb.) web sitenizi referans göstermesi ve yanıtlarda öne çıkarması için şu stratejik adımları uyguluyorum:
           </p>
           <ul className="space-y-2 pl-5 list-disc marker:text-cyan-400">
-            <li><strong>Semantik Derinlik ve Kapsam:</strong> Sadece yüzeysel yanıtlar yerine, konuyu tüm alt başlıklarıyla ele alan kapsamlı ve uzman içerikler üretiyoruz.</li>
-            <li><strong>Zengin Şema İşaretlemesi:</strong> Web sitenizi yapay zeka botlarının en rahat okuyacağı JSON-LD ve şema kodlarıyla donatıyoruz.</li>
-            <li><strong>E-E-A-T (Deneyim, Uzmanlık, Otoriterlik, Güvenilirlik):</strong> İçeriğin gerçek bir uzman tarafından yazıldığını ve kanıtlara dayalı olduğunu yapay zeka algoritmalarına kanıtlıyoruz.</li>
-            <li><strong>Soru-Cevap Odaklı Yapı (AEO):</strong> Kullanıcıların yapay zekaya sorabileceği spesifik soruları öngörüp, bunlara net, doğrudan ve doğrulanabilir yanıtlar entegre ediyoruz.</li>
+            <li><strong>Semantik Derinlik ve Kapsam:</strong> Sadece yüzeysel yanıtlar yerine, konuyu tüm alt başlıklarıyla ele alan kapsamlı ve uzman içerikler üretiyorum.</li>
+            <li><strong>Zengin Şema İşaretlemesi:</strong> Web sitenizi yapay zeka botlarının en rahat okuyacağı JSON-LD ve şema kodlarıyla donatıyorum.</li>
+            <li><strong>E-E-A-T (Deneyim, Uzmanlık, Otoriterlik, Güvenilirlik):</strong> İçeriğin gerçek bir uzman tarafından yazıldığını ve kanıtlara dayalı olduğunu yapay zeka algoritmalarına kanıtlıyorum.</li>
+            <li><strong>Soru-Cevap Odaklı Yapı (AEO):</strong> Kullanıcıların yapay zekaya sorabileceği spesifik soruları öngörüp, bunlara net, doğrudan ve doğrulanabilir yanıtlar entegre ediyorum.</li>
           </ul>
         </div>
       ),

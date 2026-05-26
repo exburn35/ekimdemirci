@@ -92,7 +92,7 @@ export default function SuccessStories() {
               </span>
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Müşterilerimizin SEO hizmetlerimiz ile elde ettiği başarılar ve gerçek sonuçlar. 
+              Danışanlarımın SEO hizmetlerim ile elde ettiği başarılar ve gerçek sonuçlar. 
               Siz de bu başarıların bir parçası olun.
             </p>
           </motion.div>
@@ -142,7 +142,7 @@ export default function SuccessStories() {
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Müşterilerimizin elde ettiği başarılar ve ölçülebilir sonuçlar
+              Danışanlarımın elde ettiği başarılar ve ölçülebilir sonuçlar
             </p>
           </motion.div>
 
@@ -202,7 +202,7 @@ export default function SuccessStories() {
                 Siz de Bu Başarıların Bir Parçası Olun
               </h2>
               <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                SEO hizmetlerimiz ile dijital varlığınızı güçlendirin ve ölçülebilir sonuçlar elde edin.
+                SEO hizmetlerim ile dijital varlığınızı güçlendirin ve ölçülebilir sonuçlar elde edin.
               </p>
               <Link
                 href="/iletisim"
@@ -224,7 +224,7 @@ export default function SuccessStories() {
       {/* Contact Form */}
       <ContactForm
         title="Başarı Hikayenizi Birlikte Yazalım"
-        description="SEO hizmetlerimiz ile dijital varlığınızı güçlendirin ve ölçülebilir sonuçlar elde edin."
+        description="SEO hizmetlerim ile dijital varlığınızı güçlendirin ve ölçülebilir sonuçlar elde edin."
         showTitle={true}
       />
     </>

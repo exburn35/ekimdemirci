@@ -15,7 +15,7 @@ export default function GoogleAIOverviewSection() {
     },
     {
       title: "Varlık (Entity) Tabanlı SEO",
-      description: "Arama motorlarının markanızı ve içeriklerinizi birbiriyle ilişkili varlıklar olarak anlamasını sağlıyoruz."
+      description: "Arama motorlarının markanızı ve içeriklerinizi birbiriyle ilişkili varlıklar olarak anlamasını sağlıyorum."
     }
   ];
 

@@ -40,7 +40,7 @@ export default function BlogSidebar({ category }: BlogSidebarProps) {
         <div className="relative p-8 text-center">
           <h3 className="text-2xl font-bold text-white mb-3">SEO Hizmetleri</h3>
           <p className="text-gray-200 text-sm mb-6 leading-relaxed">
-            Sıralamalarınızı yükseltmek ve organik trafiğinizi artırmak için profesyonel SEO hizmetlerimizle tanışın.
+            Sıralamalarınızı yükseltmek ve organik trafiğinizi artırmak için profesyonel SEO hizmetlerimle tanışın.
           </p>
           <Link
             href="/seo-hizmetleri"

@@ -52,12 +52,11 @@ export default function SEOAuditSection() {
                 </div>
 
                 <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white tracking-tight">
-                  Ücretsiz SEO Analizini Alın
+                  Ücretsiz SEO Analizinizi Alın
                 </h2>
 
                 <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                  Web sitenizin daha üst sıralarda yer almasını neyin engellediğini keşfedin. 
-                  İyileştirme fırsatlarını belirleyen kapsamlı bir SEO denetimi ve arama görünürlüğünüzü artıracak eyleme geçirilebilir içgörüler edinin.
+                  Web sitenizin Google sıralamalarında daha üst sıralara çıkmasını engelleyen kritik hataları ve büyüme fırsatlarını birlikte keşfedelim. Sitenize özel hazırlayacağım detaylı bir analiz raporuyla arama görünürlüğünüzü nasıl artırabileceğinizi gösteriyorum.
                 </p>
 
                 <div className="space-y-4 mb-8">

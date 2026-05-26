@@ -24,7 +24,7 @@ export default function ServicesCTA() {
               Arama Sıralamalarınızı Artırmaya Hazır mısınız?
             </h2>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              SEO hizmetlerimizin çevrimiçi varlığınızı nasıl dönüştürebileceğini ve işletmeniz için ölçülebilir sonuçlar sağlayabileceğini konuşalım.
+              SEO hizmetlerimin çevrimiçi varlığınızı nasıl dönüştürebileceğini ve işletmeniz için ölçülebilir sonuçlar sağlayabileceğini konuşalım.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

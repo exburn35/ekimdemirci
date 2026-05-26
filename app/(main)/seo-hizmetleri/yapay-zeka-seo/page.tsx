@@ -22,7 +22,7 @@ export default function AISEO() {
     <ServicePageLayout
       title="Yapay Zeka SEO"
       subtitle="Yapay Zeka"
-      description="SEO stratejinizi modernleştirmek için yapay zeka ve makine öğreniminin gücünden yararlanın. Yapay zeka destekli SEO hizmetlerimiz, arama kalıplarını analiz etmek, trendleri tahmin etmek ve içeriğinizi maksimum görünürlük ve etkileşim için optimize etmek amacıyla gelişmiş algoritmalar kullanır."
+      description="SEO stratejinizi modernleştirmek için yapay zeka ve makine öğreniminin gücünden yararlanın. Yapay zeka destekli SEO hizmetlerim, arama kalıplarını analiz etmek, trendleri tahmin etmek ve içeriğinizi maksimum görünürlük ve etkileşim için optimize etmek amacıyla gelişmiş algoritmalar kullanır."
       icon="Brain"
       gradient="from-blue-500 to-cyan-500"
       features={[
@@ -50,7 +50,7 @@ export default function AISEO() {
         },
         {
           title: "Sürekli Öğrenme",
-          description: "Yapay zeka sistemlerimiz, arama motoru güncellemelerinden, algoritma değişikliklerinden ve performans verilerinden sürekli olarak öğrenerek SEO stratejinizin dijital ortamla birlikte gelişmesini sağlar.",
+          description: "Kullandığım yapay zeka sistemi, arama motoru güncellemelerinden, algoritma değişikliklerinden ve performans verilerinden sürekli olarak öğrenerek SEO stratejinizin dijital ortamla birlikte gelişmesini sağlar.",
         },
       ]}
       process={[
