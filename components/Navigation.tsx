@@ -140,6 +140,13 @@ export default function Navigation() {
               Blog
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
             </Link>
+            <Link
+              href="/geo-danismanligi"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
+            >
+              GEO Danışmanlığı
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+            </Link>
 
             {/* SEO Services Dropdown */}
             <div ref={servicesRef} className="relative">
@@ -311,6 +318,9 @@ export default function Navigation() {
               </Link>
               <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
                 Blog
+              </Link>
+              <Link href="/geo-danismanligi" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
+                GEO Danışmanlığı
               </Link>
               <Link href="/iletisim" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
                 İletişim

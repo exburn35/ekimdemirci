@@ -63,8 +63,8 @@ const successStories = [
 ];
 
 const stats = [
-  { label: "Mutlu Müşteri", value: "50+", icon: Users },
-  { label: "Başarılı Proje", value: "100+", icon: Award },
+  { label: "Mutlu Danışan", value: "50+", icon: Users },
+  { label: "Tamamlanan Proje", value: "100+", icon: Award },
   { label: "Trafik Artışı", value: "%200+", icon: TrendingUp },
   { label: "Dönüşüm Artışı", value: "%150+", icon: Target },
 ];
@@ -199,16 +199,16 @@ export default function SuccessStories() {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                Siz de Bu Başarıların Bir Parçası Olun
+                Sıradaki Başarı Hikayesi Sizin Olsun
               </h2>
               <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                SEO hizmetlerim ile dijital varlığınızı güçlendirin ve ölçülebilir sonuçlar elde edin.
+                Bireysel SEO danışmanlığı hizmetlerimle dijital dünyadaki görünürlüğünüzü artırın ve rakiplerinizin önüne geçin.
               </p>
               <Link
                 href="/iletisim"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full font-semibold text-lg hover:bg-gray-200 transition-all duration-300 hover:scale-105"
               >
-                Hemen Başlayın
+                Benimle İletişime Geçin
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -223,8 +223,8 @@ export default function SuccessStories() {
 
       {/* Contact Form */}
       <ContactForm
-        title="Başarı Hikayenizi Birlikte Yazalım"
-        description="SEO hizmetlerim ile dijital varlığınızı güçlendirin ve ölçülebilir sonuçlar elde edin."
+        title="Yeni Başarı Hikayenizi Birlikte İnşa Edelim"
+        description="Bireysel SEO çözümlerimle web sitenizin arama sonuçlarındaki performansını zirveye taşıyalım."
         showTitle={true}
       />
     </>

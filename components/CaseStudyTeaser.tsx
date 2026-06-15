@@ -28,12 +28,11 @@ export default function CaseStudyTeaser() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white tracking-tight">
-              Organik Trafiği Nasıl <span className="text-purple-400">%250 Artırdık</span>
+              Organik Trafiği Nasıl <span className="text-purple-400">%250 Artırdım</span>
             </h2>
 
             <p className="text-gray-400 text-lg mb-8 max-w-2xl leading-relaxed">
-              Stratejik SEO uygulamasının bir müşterinin çevrimiçi varlığını nasıl dönüştürdüğünü, 
-              önemli trafik büyümesi ve iyileştirilmiş arama sıralamaları sağladığını keşfedin.
+              Geliştirdiğim stratejik SEO metodolojisinin, danışanlarımın web sitelerini nasıl organik birer büyüme makinesine dönüştürdüğünü ve arama sonuçlarında nasıl zirveye taşıdığını görün.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -55,7 +54,7 @@ export default function CaseStudyTeaser() {
               href="/basari-hikayeleri"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-bold hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 hover:-translate-y-1 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] group"
             >
-              Tüm Başarı Hikayesini İncele
+              Tüm Başarı Hikayelerimi İnceleyin
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

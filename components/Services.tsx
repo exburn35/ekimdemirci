@@ -54,7 +54,7 @@ export default function Services() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="py-24 overflow-hidden relative border-t border-white/5 mt-16">
+    <section id="hizmetler" className="py-24 overflow-hidden relative border-t border-white/5 mt-16">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-900/10 to-transparent skew-x-12 -z-10" />
 

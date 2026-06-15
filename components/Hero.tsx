@@ -80,7 +80,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Ben Ekim Demirci. Yapay zeka destekli GEO (Generative Engine Optimization) ve semantik SEO stratejileriyle, web sitenizin arama görünürlüğünü ve dönüşümlerini birinci şahıs uzmanlığıyla sürdürülebilir şekilde artırıyorum.
+            Ben Ekim Demirci. Yapay zeka destekli <Link href="/seo-hizmetleri/yapay-zeka-seo" className="text-emerald-400 hover:underline">GEO (Generative Engine Optimization)</Link> ve modern <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-emerald-400 hover:underline">semantik SEO</Link> stratejileriyle web sitenizin arama görünürlüğünü ve dönüşümlerini bireysel uzmanlığımla sürdürülebilir şekilde artırıyorum.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -89,17 +89,17 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 relative z-30"
           >
              <Link
-              href="/iletisim"
+              href="#seo-analizi"
               className="group px-8 py-4 bg-gradient-to-r from-emerald-400 to-green-500 text-black rounded-full font-bold text-lg hover:from-emerald-300 hover:to-green-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] flex items-center gap-2"
             >
-              Benimle Başlayın
+              Ücretsiz SEO Analizi Al
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/iletisim"
+              href="#hizmetler"
               className="px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-full font-semibold text-lg text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
             >
-              SEO Danışmanlığı Al
+              Hizmetlerimi İncele
             </Link>
           </motion.div>
         </motion.div>
