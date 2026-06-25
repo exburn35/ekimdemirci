@@ -7,6 +7,7 @@ import { Fragment } from "react";
 
 const routeMapping: Record<string, string> = {
   "seo-hizmetleri": "SEO Hizmetleri",
+  "geo-danismanligi": "GEO Danışmanlığı",
   "yapay-zeka-seo": "Yapay Zeka SEO",
   "teknik-seo": "Teknik SEO",
   "sayfa-ici-seo": "Site İçi SEO",

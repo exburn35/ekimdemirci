@@ -197,7 +197,7 @@ export default function ServicePageLayout({
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                Avantajlar
+                {pathname === "/geo-danismanligi" ? "GEO'nun Avantajları" : "Avantajlar"}
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">

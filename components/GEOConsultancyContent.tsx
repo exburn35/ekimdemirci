@@ -275,7 +275,7 @@ export function WhyItMattersData({
           NEDEN ŞİMDİ
         </div>
         <h2 className="text-[36px] md:text-[48px] font-bold text-white tracking-tight mb-4">
-          Arama Ekonomisi Geri Dönüşü Olmayacak Şekilde Değişti
+          Arama Ekosistemi Geri Dönüşü Olmayacak Şekilde Değişti
         </h2>
         <p className="text-[16px] text-gray-400 max-w-[720px] mx-auto leading-relaxed">
           Klasik sıralamaya yatırım yapan markalar, kullanıcıların artık ulaşmadığı bir alanı optimize ediyor. Aşağıdaki üç gerçek, bu kaymanın neden ertelenemez olduğunu gösteriyor.
@@ -366,6 +366,107 @@ export function WhyItMattersData({
           </div>
         </article>
 
+      </div>
+
+      {/* Model Stats Section */}
+      <div className="mt-20 border-t border-white/5 pt-16 section-2-models-header">
+        <div className="text-center mb-12">
+          <h3 className="text-[24px] md:text-[28px] font-semibold text-white tracking-tight mb-3">
+            Yapay Zeka Motorlarının Yükselişi ve Hacmi
+          </h3>
+          <p className="text-[15px] text-gray-400 max-w-[640px] mx-auto leading-relaxed">
+            Kullanıcıların bilgiye ulaşmak için tercih ettiği en büyük üç yapay zeka modelinin güncel kullanıcı hacmi ve son iki yıldaki büyüme trendi.
+          </p>
+        </div>
+
+        {/* Model Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Card 1: ChatGPT */}
+          <article className="relative rounded-2xl bg-white/[0.02] border border-white/[0.06] p-8 transition-colors duration-300 model-card flex flex-col h-full justify-between hover:border-white/[0.12] hover:bg-white/[0.03]">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[12px] uppercase tracking-widest font-semibold text-emerald-400">
+                  ChatGPT Search
+                </span>
+                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-emerald-400">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="text-[48px] font-bold text-white leading-none mb-2">
+                <span className="sr-only">250M+</span>
+                <span aria-hidden="true" className="model-num-1 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+                  0
+                </span>
+              </div>
+              <div className="text-[13px] font-semibold text-purple-400 mb-4">
+                Son 2 yılda %250+ artış
+              </div>
+              <p className="text-[14px] leading-[1.55] text-gray-400">
+                Haftalık 250 milyondan fazla aktif kullanıcısıyla, arama motoru entegrasyonu sayesinde geleneksel arama davranışını en çok dönüştüren modeldir.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 2: Claude */}
+          <article className="relative rounded-2xl bg-white/[0.02] border border-white/[0.06] p-8 transition-colors duration-300 model-card flex flex-col h-full justify-between hover:border-white/[0.12] hover:bg-white/[0.03]">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[12px] uppercase tracking-widest font-semibold text-orange-400">
+                  Claude 3.5
+                </span>
+                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-orange-400">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+              </div>
+              <div className="text-[48px] font-bold text-white leading-none mb-2">
+                <span className="sr-only">30M+</span>
+                <span aria-hidden="true" className="model-num-2 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+                  0
+                </span>
+              </div>
+              <div className="text-[13px] font-semibold text-purple-400 mb-4">
+                Son 2 yılda %400+ artış
+              </div>
+              <p className="text-[14px] leading-[1.55] text-gray-400">
+                Aylık 30 milyondan fazla aktif kullanıcısı ile karmaşık yazılım, derinlemesine analiz ve profesyonel sorgularda en güvenilen alıntı kaynaklarından biridir.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 3: Gemini */}
+          <article className="relative rounded-2xl bg-white/[0.02] border border-white/[0.06] p-8 transition-colors duration-300 model-card flex flex-col h-full justify-between hover:border-white/[0.12] hover:bg-white/[0.03]">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[12px] uppercase tracking-widest font-semibold text-blue-400">
+                  Google Gemini
+                </span>
+                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-blue-400">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+              </div>
+              <div className="text-[48px] font-bold text-white leading-none mb-2">
+                <span className="sr-only">1B+</span>
+                <span aria-hidden="true" className="model-num-3 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+                  0
+                </span>
+              </div>
+              <div className="text-[13px] font-semibold text-purple-400 mb-4">
+                Son 2 yılda %250+ arama entegrasyonu
+              </div>
+              <p className="text-[14px] leading-[1.55] text-gray-400">
+                1 milyardan fazla Google kullanıcısına Android ve Chrome üzerinden doğrudan ulaşarak, AI Overviews altyapısı sayesinde en geniş kitleye hitap eden modeldir.
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   );
@@ -695,7 +796,7 @@ export default function GEOConsultancyContent() {
     if (prefersReducedMotion) {
       // Set all elements to final state instantly
       gsap.set(".underline-path", { strokeDashoffset: 0 });
-      gsap.set(".bento-card, .data-card, .industry-card, .cta-strip-card, .closing-cta-card", { scale: 1, opacity: 1, y: 0 });
+      gsap.set(".bento-card, .data-card, .model-card, .industry-card, .cta-strip-card, .closing-cta-card", { scale: 1, opacity: 1, y: 0 });
       gsap.set(".bento-card .icon-container", { scale: 1 });
       gsap.set(".industry-card .top-border-line", { width: "100%" });
       
@@ -712,6 +813,13 @@ export default function GEOConsultancyContent() {
       if (num1) num1.textContent = "%80";
       if (num2) num2.textContent = "100M+";
       if (num3) num3.textContent = "3x";
+
+      const mNum1 = document.querySelector(".model-num-1");
+      const mNum2 = document.querySelector(".model-num-2");
+      const mNum3 = document.querySelector(".model-num-3");
+      if (mNum1) mNum1.textContent = "250M+";
+      if (mNum2) mNum2.textContent = "30M+";
+      if (mNum3) mNum3.textContent = "1B+";
 
       gsap.set(".data-line-1, .data-line-2, .data-line-3", { width: 48 });
 
@@ -758,6 +866,12 @@ export default function GEOConsultancyContent() {
             { y: 32, opacity: 0 },
             { y: 0, opacity: 1, stagger: 0.15, duration: 0.6, ease: "power2.out" },
             "-=0.4"
+          )
+          .fromTo(".section-2-models-header", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.2")
+          .fromTo(".model-card",
+            { y: 24, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.12, duration: 0.5, ease: "power2.out" },
+            "-=0.3"
           );
 
     sec2TL.call(() => {
@@ -803,6 +917,42 @@ export default function GEOConsultancyContent() {
         },
         onComplete: () => {
           gsap.to(".data-line-3", { width: 48, duration: 0.6, ease: "power2.out" });
+        }
+      });
+
+      // Model Counter 1 (ChatGPT)
+      const valModel1 = { value: 0 };
+      gsap.to(valModel1, {
+        value: 250,
+        duration: 1.5,
+        ease: "power2.out",
+        onUpdate: () => {
+          const el = document.querySelector(".model-num-1");
+          if (el) el.textContent = `${Math.round(valModel1.value)}M+`;
+        }
+      });
+
+      // Model Counter 2 (Claude)
+      const valModel2 = { value: 0 };
+      gsap.to(valModel2, {
+        value: 30,
+        duration: 1.5,
+        ease: "power2.out",
+        onUpdate: () => {
+          const el = document.querySelector(".model-num-2");
+          if (el) el.textContent = `${Math.round(valModel2.value)}M+`;
+        }
+      });
+
+      // Model Counter 3 (Gemini)
+      const valModel3 = { value: 0 };
+      gsap.to(valModel3, {
+        value: 1,
+        duration: 1.5,
+        ease: "power2.out",
+        onUpdate: () => {
+          const el = document.querySelector(".model-num-3");
+          if (el) el.textContent = `${valModel3.value >= 1 ? "1B+" : (valModel3.value).toFixed(1) + "B+"}`;
         }
       });
     }, [], "-=0.2");
