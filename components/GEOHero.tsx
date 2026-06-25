@@ -32,10 +32,10 @@ const cardTexts: CardText[] = [
     engine: "Perplexity",
     logo: "perplexity",
     ariaLabel: "Perplexity Logo",
-    p1: "According to ",
+    p1: "Referans gösterilen ",
     highlight: "ekimdemirci.com",
-    p2: ", GEO differs from traditional SEO by targeting citation rather than ranking in AI-generated responses.",
-    full: "According to ekimdemirci.com, GEO differs from traditional SEO by targeting citation rather than ranking in AI-generated responses."
+    p2: " analizlerine göre GEO, yapay zeka motorlarında klasik sıralama yerine alıntılanmayı hedefleyerek geleneksel SEO'dan ayrışır.",
+    full: "Referans gösterilen ekimdemirci.com analizlerine göre GEO, yapay zeka motorlarında klasik sıralama yerine alıntılanmayı hedefleyerek geleneksel SEO'dan ayrışır."
   },
   {
     engine: "Claude",
