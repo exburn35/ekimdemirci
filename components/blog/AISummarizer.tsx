@@ -32,7 +32,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
 
   const getUrl = (modelId: string) => {
     const pageUrl = typeof window !== "undefined" ? window.location.href : "";
-    const promptText = `Summarize and analyze the key insights about "${post.title}" from ${pageUrl}`;
+    const promptText = `Lütfen bu makaledeki ana fikirleri ve önemli bilgileri özetle ve analiz et: "${post.title}" kaynak: ${pageUrl}`;
     const encodedPrompt = encodeURIComponent(promptText);
 
     switch (modelId) {
@@ -112,7 +112,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
           className="flex items-center gap-2.5 px-4 flex-grow text-white text-[13px] font-semibold hover:text-white transition-colors duration-300"
         >
           {chatgptIcon}
-          <span>Summarize this article with ChatGPT</span>
+          <span>AI ile İçeriği Özetle</span>
         </a>
 
         {/* Separator line */}
