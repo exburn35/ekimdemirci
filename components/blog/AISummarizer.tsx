@@ -57,7 +57,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
     {
       id: "perplexity",
       name: "Perplexity",
-      label: "with Perplexity",
+      label: "Perplexity ile",
       icon: (
         <img src="/perplexity-logo.avif" alt="Perplexity" className="w-5 h-5 rounded-full object-cover" />
       )
@@ -65,7 +65,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
     {
       id: "aimode",
       name: "AI Mode",
-      label: "with AI Mode",
+      label: "AI Mode ile",
       icon: (
         <img src="/google-ai-mode-logo.webp" alt="AI Mode" className="w-5 h-5 rounded-full object-cover" />
       )
@@ -73,7 +73,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
     {
       id: "claude",
       name: "Claude",
-      label: "with Claude",
+      label: "Claude ile",
       icon: (
         <img src="/claude-logo.png" alt="Claude" className="w-5 h-5 rounded-full object-cover" />
       )
@@ -81,7 +81,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
     {
       id: "grok",
       name: "Grok",
-      label: "with Grok",
+      label: "Grok ile",
       icon: (
         <img src="/grok-logo.png" alt="Grok" className="w-5 h-5 rounded-full object-cover" />
       )
@@ -89,7 +89,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
     {
       id: "gemini",
       name: "Gemini",
-      label: "with Gemini",
+      label: "Gemini ile",
       icon: (
         <img src="/gemini-logo.jpg" alt="Gemini" className="w-5 h-5 rounded-full object-cover" />
       )
@@ -141,7 +141,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
               className="flex items-center gap-3 px-4 py-2.5 text-[13px] text-gray-400 hover:bg-white/[0.04] hover:text-white transition-all duration-300 border-b border-white/[0.02] last:border-0"
             >
               <span className="flex-shrink-0">{model.icon}</span>
-              <span>with {model.name}</span>
+              <span>{model.label}</span>
             </a>
           ))}
         </div>
