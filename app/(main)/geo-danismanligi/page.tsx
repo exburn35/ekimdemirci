@@ -3,6 +3,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { Sparkles, Brain, Cpu, ArrowRight, Zap, Target, Search, BarChart3 } from "lucide-react";
 import Link from "next/link";
+import GEOHero from "@/components/GEOHero";
+import ServiceLeadForm from "@/components/ServiceLeadForm";
+import GEOConsultancyContent from "@/components/GEOConsultancyContent";
 
 export const metadata: Metadata = {
   title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
@@ -64,7 +67,12 @@ export default function GEODanismanligi() {
     <>
       <FAQSchema items={faqItems} />
       
+      <GEOHero />
+
       <ServicePageLayout
+        hideHero={true}
+        hideFeatures={true}
+        afterHeroNode={<GEOConsultancyContent />}
         title="GEO Danışmanlığı"
         subtitle="Generative Engine Optimization"
         description="Yapay zeka arama motorları çağında yerinizi alın. Google AI Overviews, Perplexity, ChatGPT ve Claude gibi üretken yapay zeka motorlarında markanızın güvenilir bir kaynak olarak önerilmesini, alıntılanmasını ve organik trafiğini artırmasını sağlıyorum."
@@ -121,6 +129,14 @@ export default function GEODanismanligi() {
           },
         ]}
       >
+        {/* Relocated Form Section */}
+        <section id="analiz" className="py-20 bg-[#0a0f25] border-t border-white/5 relative">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.02)_0%,transparent_70%)] pointer-events-none" />
+          <div className="max-w-xl mx-auto px-4 relative z-10">
+            <ServiceLeadForm />
+          </div>
+        </section>
+
         {/* GEO Detailed Content Sections */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-24">
           

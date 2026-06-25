@@ -31,6 +31,8 @@ interface ServicePageLayoutProps {
   blogCategory?: string;
   children?: ReactNode;
   afterHeroNode?: ReactNode;
+  hideHero?: boolean;
+  hideFeatures?: boolean;
 }
 
 export default function ServicePageLayout({
@@ -45,6 +47,8 @@ export default function ServicePageLayout({
   blogCategory,
   children,
   afterHeroNode,
+  hideHero = false,
+  hideFeatures = false,
 }: ServicePageLayoutProps) {
   const Icon = iconMap[icon];
   const pathname = usePathname();
@@ -54,127 +58,131 @@ export default function ServicePageLayout({
     <>
       <ServiceSchema name={title} description={description} url={fullUrl} />
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-[#020617]">
-        {/* Advanced Background Elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,1)_0%,rgba(2,6,23,1)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-        
-        {/* Animated Orbs */}
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
-            x: [0, 50, 0],
-            y: [0, -50, 0]
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px]" 
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.1, 0.2, 0.1],
-            x: [0, -50, 0],
-            y: [0, 50, 0]
-          }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px]" 
-        />
+      {!hideHero && (
+        <section className="relative pt-32 pb-20 overflow-hidden bg-[#020617]">
+          {/* Advanced Background Elements */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,1)_0%,rgba(2,6,23,1)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+          
+          {/* Animated Orbs */}
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.1, 0.2, 0.1],
+              x: [0, 50, 0],
+              y: [0, -50, 0]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px]" 
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1.2, 1, 1.2],
+              opacity: [0.1, 0.2, 0.1],
+              x: [0, -50, 0],
+              y: [0, 50, 0]
+            }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px]" 
+          />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <Link
-                href="/seo-hizmetleri"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass hover:bg-white/10 text-gray-400 hover:text-white mb-8 transition-all duration-300 group"
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              {/* Left Content */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                Hizmetlere Dön
-              </Link>
+                <Link
+                  href="/seo-hizmetleri"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass hover:bg-white/10 text-gray-400 hover:text-white mb-8 transition-all duration-300 group"
+                >
+                  <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                  Hizmetlere Dön
+                </Link>
 
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-blue-400 uppercase tracking-widest mb-6"
+                >
+                  <Sparkles className="w-3 h-3" />
+                  {subtitle}
+                </motion.div>
+
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]">
+                  <span className="bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
+                    {title}
+                  </span>
+                </h1>
+
+                <p className="text-xl text-gray-400 leading-relaxed mb-8 max-w-xl">
+                  {description}
+                </p>
+
+                <div className="flex flex-wrap gap-4">
+                  {features.slice(0, 3).map((feature) => (
+                    <div key={feature} className="flex items-center gap-2 text-sm text-gray-400">
+                      <CheckCircle2 className="w-4 h-4 text-green-500/50" />
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Right Content - Form */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-blue-400 uppercase tracking-widest mb-6"
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <Sparkles className="w-3 h-3" />
-                {subtitle}
+                <ServiceLeadForm />
               </motion.div>
-
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]">
-                <span className="bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-                  {title}
-                </span>
-              </h1>
-
-              <p className="text-xl text-gray-400 leading-relaxed mb-8 max-w-xl">
-                {description}
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                {features.slice(0, 3).map((feature) => (
-                  <div key={feature} className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle2 className="w-4 h-4 text-green-500/50" />
-                    {feature}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right Content - Form */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <ServiceLeadForm />
-            </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {afterHeroNode}
 
       {/* Features Section */}
-      <section className="py-24 bg-[#0a0f25] border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                Özellikler
-              </span>
-            </h2>
-          </motion.div>
+      {!hideFeatures && (
+        <section className="py-24 bg-[#0a0f25] border-t border-white/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                  Özellikler
+                </span>
+              </h2>
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-[#111836] border border-white/5 p-6 rounded-xl hover:border-purple-500/30 hover:shadow-[0_0_20px_rgba(139,92,246,0.1)] transition-all duration-300"
-              >
-                <CheckCircle2 className="w-6 h-6 text-blue-400 mb-3" />
-                <h3 className="text-lg font-semibold text-white mb-2">{feature}</h3>
-              </motion.div>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="bg-[#111836] border border-white/5 p-6 rounded-xl hover:border-purple-500/30 hover:shadow-[0_0_20px_rgba(139,92,246,0.1)] transition-all duration-300"
+                >
+                  <CheckCircle2 className="w-6 h-6 text-blue-400 mb-3" />
+                  <h3 className="text-lg font-semibold text-white mb-2">{feature}</h3>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Benefits Section */}
       <section className="py-24 bg-[#0a0f25] border-t border-white/5 relative">
