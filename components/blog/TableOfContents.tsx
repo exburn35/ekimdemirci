@@ -17,7 +17,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   if (!headings || headings.length === 0) return null;
 
   return (
-    <div className="glass-strong rounded-2xl p-6 mb-8 sticky top-24">
+    <div className="glass-strong rounded-2xl p-6">
       <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
         <Link2 className="w-5 h-5 text-blue-400" />
         İçindekiler

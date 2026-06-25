@@ -9,6 +9,8 @@ import TableOfContents from "./TableOfContents";
 import BlogNavigation from "./BlogNavigation";
 import BlogLinkPreview from "./BlogLinkPreview";
 import BlogMotionWrapper from "./BlogMotionWrapper";
+import AISummarizer from "./AISummarizer";
+import BlogSocialShare from "./BlogSocialShare";
 
 interface BlogPostContentProps {
   post: BlogPost;
@@ -92,17 +94,21 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
 
       {/* Content Layout */}
       <section className="py-20 bg-black relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl lg:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative w-full">
             
-            {/* Left Sidebar - Table of Contents */}
-            <div className="hidden lg:block lg:col-span-3 self-start">
+            {/* Left Sidebar - Table of Contents & Sharing */}
+            <div className="hidden lg:block lg:col-span-3 sticky top-28 self-start space-y-6">
               <TableOfContents headings={headings} />
+              <BlogSocialShare title={post.title} slug={post.slug} />
             </div>
 
             {/* Main Content Area */}
             <div className="lg:col-span-6 min-w-0 w-full">
               <article className="blog-content w-full">
+                {/* AI Summarizer Component */}
+                <AISummarizer post={post} />
+
                 {processedHtml && (
                   <div
                     className="prose prose-invert max-w-none"

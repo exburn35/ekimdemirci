@@ -21,7 +21,7 @@ export default function BlogSidebar({ category }: BlogSidebarProps) {
           </div>
           <div>
             <h4 className="text-lg font-bold text-white">Ekim Demirci</h4>
-            <p className="text-sm text-blue-400">SEO Uzmanı</p>
+            <p className="text-sm text-blue-400">SEO ve GEO Uzmanı</p>
           </div>
         </div>
         <p className="text-gray-400 text-sm leading-relaxed mb-4">
@@ -47,6 +47,25 @@ export default function BlogSidebar({ category }: BlogSidebarProps) {
             className="inline-block px-6 py-3 bg-white text-black font-semibold rounded-full text-sm hover:scale-105 transition-transform"
           >
             Hizmetleri İncele
+          </Link>
+        </div>
+      </div>
+
+      {/* GEO Consultancy Banner Embed */}
+      <div className="relative rounded-2xl overflow-hidden group">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#7b5cff] to-[#4a9eff] opacity-90 transition-opacity group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:12px_12px]" />
+        
+        <div className="relative p-8 text-center">
+          <h3 className="text-2xl font-bold text-white mb-3">GEO Danışmanlığı</h3>
+          <p className="text-gray-200 text-sm mb-6 leading-relaxed">
+            Yapay zeka arama motorlarında markanızın alıntılanması ve önerilmesi için profesyonel GEO danışmanlığı alın.
+          </p>
+          <Link
+            href="/geo-danismanligi"
+            className="inline-block px-6 py-3 bg-white text-black font-semibold rounded-full text-sm hover:scale-105 transition-transform"
+          >
+            Hizmeti İncele
           </Link>
         </div>
       </div>
