@@ -99,6 +99,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
             
             {/* Left Sidebar - Table of Contents & Sharing */}
             <div className="hidden lg:block lg:col-span-3 sticky top-28 self-start space-y-6">
+              <AISummarizer post={post} />
               <TableOfContents headings={headings} />
               <BlogSocialShare title={post.title} slug={post.slug} />
             </div>
@@ -106,9 +107,6 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
             {/* Main Content Area */}
             <div className="lg:col-span-6 min-w-0 w-full">
               <article className="blog-content w-full">
-                {/* AI Summarizer Component */}
-                <AISummarizer post={post} />
-
                 {processedHtml && (
                   <div
                     className="prose prose-invert max-w-none"
