@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Tag, Zap } from "lucide-react";
 import { BlogPost, Heading, formatDate } from "@/lib/blog";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
@@ -107,6 +107,38 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
             {/* Main Content Area */}
             <div className="lg:col-span-6 min-w-0 w-full">
               <article className="blog-content w-full">
+                {/* TL;DR Section */}
+                {((post as any).tldr || post.excerpt) && (
+                  <div className="mb-10 p-6 bg-purple-500/[0.03] backdrop-blur-md rounded-2xl border border-purple-500/20 relative overflow-hidden group">
+                    {/* Visual Accent */}
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-purple-500 to-cyan-500" />
+                    
+                    <div className="flex items-center gap-2 mb-3 text-purple-400 font-bold uppercase tracking-wider text-sm">
+                      <Zap className="w-4 h-4 text-purple-400 animate-pulse" />
+                      <span>TL;DR (Özet)</span>
+                    </div>
+
+                    {(post as any).tldr ? (
+                      <ul className="space-y-2 text-gray-300 text-sm md:text-base">
+                        {Array.isArray((post as any).tldr) ? (
+                          (post as any).tldr.map((item: string, idx: number) => (
+                            <li key={idx} className="flex items-start gap-2.5">
+                              <span className="text-purple-400 mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-purple-400" />
+                              <span className="leading-relaxed">{item}</span>
+                            </li>
+                          ))
+                        ) : (
+                          <li className="leading-relaxed">{(post as any).tldr}</li>
+                        )}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-300 text-sm md:text-base leading-relaxed italic">
+                        {post.excerpt}
+                      </p>
+                    )}
+                  </div>
+                )}
+
                 {processedHtml && (
                   <div
                     className="prose prose-invert max-w-none"
