@@ -111,11 +111,13 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                 {((post as any).tldr || post.excerpt) && (
                   <div className="mb-10 p-6 bg-purple-500/[0.03] backdrop-blur-md rounded-2xl border border-purple-500/20 relative overflow-hidden group">
                     {/* Visual Accent */}
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-purple-500 to-cyan-500" />
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#7b5cff] to-[#4a9eff]" />
                     
-                    <div className="flex items-center gap-2 mb-3 text-purple-400 font-bold uppercase tracking-wider text-sm">
-                      <Zap className="w-4 h-4 text-purple-400 animate-pulse" />
-                      <span>TL;DR (Özet)</span>
+                    <div className="text-xl md:text-2xl font-extrabold tracking-tight mb-4 flex items-center gap-2">
+                      <Zap className="w-5 h-5 text-[#7b5cff] animate-pulse flex-shrink-0" />
+                      <span className="bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+                        TL;DR (Özet)
+                      </span>
                     </div>
 
                     {(post as any).tldr ? (
