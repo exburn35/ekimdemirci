@@ -38,7 +38,7 @@ export default function TrustBar() {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="flex items-center justify-center h-16 bg-white/5 border border-white/10 rounded-lg hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] hover:border-purple-500/20 transition-all duration-300"
             >
-              <span className="text-gray-500 font-bold tracking-widest uppercase text-sm">{client}</span>
+              <span className="font-extrabold tracking-widest uppercase text-base md:text-lg bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">{client}</span>
             </motion.div>
           ))}
         </div>

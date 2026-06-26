@@ -48,7 +48,7 @@ export default function BrandsSection() {
                   transition={{ delay: (groupIndex * 0.2) + (index * 0.1), duration: 0.4 }}
                   className="glass p-6 rounded-xl text-center hover:bg-white/10 transition-all duration-300 hover:scale-105"
                 >
-                  <span className="text-gray-300 font-medium text-sm">{brand}</span>
+                  <span className="font-extrabold tracking-wider uppercase text-sm md:text-base bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">{brand}</span>
                 </motion.div>
               ))}
             </motion.div>
