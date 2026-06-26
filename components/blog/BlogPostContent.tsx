@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Clock, ArrowLeft, Tag, Zap } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Tag, Zap, CheckCircle2 } from "lucide-react";
 import { BlogPost, Heading, formatDate } from "@/lib/blog";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
@@ -116,27 +116,56 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                     <div className="text-xl md:text-2xl font-extrabold tracking-tight mb-4 flex items-center gap-2">
                       <Zap className="w-5 h-5 text-[#7b5cff] animate-pulse flex-shrink-0" />
                       <span className="bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                        TL;DR (Özet)
+                        TL;DR & Önemli Çıkarımlar
                       </span>
                     </div>
 
-                    {(post as any).tldr ? (
-                      <ul className="space-y-2 text-gray-300 text-sm md:text-base">
-                        {Array.isArray((post as any).tldr) ? (
-                          (post as any).tldr.map((item: string, idx: number) => (
-                            <li key={idx} className="flex items-start gap-2.5">
-                              <span className="text-purple-400 mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-purple-400" />
-                              <span className="leading-relaxed">{item}</span>
-                            </li>
-                          ))
-                        ) : (
-                          <li className="leading-relaxed">{(post as any).tldr}</li>
-                        )}
-                      </ul>
-                    ) : (
-                      <p className="text-gray-300 text-sm md:text-base leading-relaxed italic">
+                    {/* Introductory Summary (Excerpt) */}
+                    {post.excerpt && (
+                      <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
                         {post.excerpt}
                       </p>
+                    )}
+
+                    {/* Bullet Points / Key Takeaways */}
+                    {(post as any).tldr ? (
+                      <>
+                        <div className="my-4 border-t border-white/5" />
+                        <ul className="space-y-2.5 text-gray-300 text-sm md:text-base">
+                          {Array.isArray((post as any).tldr) ? (
+                            (post as any).tldr.map((item: string, idx: number) => (
+                              <li key={idx} className="flex items-start gap-2.5">
+                                <CheckCircle2 className="w-4 h-4 text-[#4a9eff] mt-1 flex-shrink-0" />
+                                <span className="leading-relaxed">{item}</span>
+                              </li>
+                            ))
+                          ) : (
+                            <li className="flex items-start gap-2.5">
+                              <CheckCircle2 className="w-4 h-4 text-[#4a9eff] mt-1 flex-shrink-0" />
+                              <span className="leading-relaxed">{(post as any).tldr}</span>
+                            </li>
+                          )}
+                        </ul>
+                      </>
+                    ) : (
+                      (() => {
+                        const keyPoints = headings.filter(h => h.level === 2).slice(0, 4);
+                        if (keyPoints.length === 0) return null;
+                        return (
+                          <>
+                            <div className="my-4 border-t border-white/5" />
+                            <div className="text-xs font-semibold text-purple-400/80 uppercase tracking-wider mb-3">Yazıda Ele Alınan Önemli Konular</div>
+                            <ul className="space-y-2.5 text-gray-300 text-sm md:text-base">
+                              {keyPoints.map((item) => (
+                                <li key={item.id} className="flex items-start gap-2.5">
+                                  <CheckCircle2 className="w-4 h-4 text-[#4a9eff] mt-1 flex-shrink-0" />
+                                  <span className="leading-relaxed font-medium">{item.text}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        );
+                      })()
                     )}
                   </div>
                 )}
