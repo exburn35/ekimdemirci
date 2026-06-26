@@ -6,6 +6,8 @@ import SEOAuditSection from "@/components/SEOAuditSection";
 import HomeFAQ from "@/components/HomeFAQ";
 import ContactForm from "@/components/ContactForm";
 import PersonSchema from "@/components/schemas/PersonSchema";
+import { getAllBlogPosts } from "@/lib/blog";
+import LatestPostsSlider from "@/components/blog/LatestPostsSlider";
 
 export const metadata = {
   title: "SEO ve GEO Danışmanı Ekim Demirci",
@@ -13,6 +15,9 @@ export const metadata = {
 };
 
 export default function Home() {
+  const allPosts = getAllBlogPosts();
+  const latestPosts = allPosts.slice(0, 9);
+
   return (
     <>
       <PersonSchema />
@@ -22,6 +27,7 @@ export default function Home() {
       <CaseStudyTeaser />
       <SEOAuditSection />
       <HomeFAQ />
+      <LatestPostsSlider posts={latestPosts} />
       <ContactForm
         title="İşinizi Büyütmeye Hazır Mısınız?"
         description="Arama sıralamalarınızı nasıl yükseltebileceğimizi ve web sitenize daha fazla organik trafik nasıl çekebileceğimizi görüşmek için hemen benimle iletişime geçin."
