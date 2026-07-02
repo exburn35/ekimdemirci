@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
+import { formatDate } from "@/lib/blog-utils";
 
 interface BlogPost {
   title: string;
@@ -72,7 +73,7 @@ export default function RelatedBlogPosts({ category }: RelatedBlogPostsProps) {
               <div className="glass-strong border border-white/5 p-5 rounded-2xl hover:border-purple-500/30 hover:shadow-[0_0_20px_rgba(139,92,246,0.1)] transition-all duration-300 group cursor-pointer flex flex-col">
                 <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
                   <Calendar className="w-3 h-3" />
-                  <time>{new Date(post.publishedAt).toLocaleDateString("tr-TR", { year: "numeric", month: "long", day: "numeric" })}</time>
+                  <time>{formatDate(post.publishedAt)}</time>
                 </div>
                 <h4 className="text-base font-bold text-white mb-2 group-hover:text-blue-400 transition-colors line-clamp-2">
                   {post.title.replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&')}

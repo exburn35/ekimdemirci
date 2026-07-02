@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
 import { BlogPost } from "@/lib/blog";
+import { formatDate } from "@/lib/blog-utils";
 
 interface LatestPostsSliderProps {
   posts: BlogPost[];
@@ -196,13 +197,7 @@ export default function LatestPostsSlider({ posts }: LatestPostsSliderProps) {
                             <div className="flex items-center gap-3 text-xs text-gray-400 mb-3">
                               <div className="flex items-center gap-1">
                                 <Calendar className="w-3.5 h-3.5 text-purple-400" />
-                                {post.publishedAt
-                                  ? new Date(post.publishedAt).toLocaleDateString("tr-TR", {
-                                      year: "numeric",
-                                      month: "long",
-                                      day: "numeric",
-                                    })
-                                  : "—"}
+                                {post.publishedAt ? formatDate(post.publishedAt) : "—"}
                               </div>
                               <span className="text-gray-600">•</span>
                               <div className="flex items-center gap-1">

@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
 import Image from "next/image";
+import { formatDateShort } from "@/lib/blog-utils";
 
 interface PreviewData {
   title: string;
@@ -152,7 +152,7 @@ export default function BlogLinkPreview() {
               <div className="p-5 relative">
                 <div className="flex items-center gap-2 text-[10px] text-blue-400 font-medium mb-3 uppercase tracking-wider">
                   <Calendar className="w-3.5 h-3.5" />
-                  {data.publishedAt && new Date(data.publishedAt).toLocaleDateString("tr-TR")}
+                  {data.publishedAt && formatDateShort(data.publishedAt)}
                   <span className="mx-1 text-gray-600">•</span>
                   <Clock className="w-3.5 h-3.5" />
                   {data.readTime || 5} dk okuma

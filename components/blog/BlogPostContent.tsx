@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock, ArrowLeft, Tag, Zap, CheckCircle2 } from "lucide-react";
-import { BlogPost, Heading, formatDate } from "@/lib/blog";
+import { BlogPost, Heading } from "@/lib/blog";
+import { formatDate, isSameDay } from "@/lib/blog-utils";
+import BlogScrollProgress from "./BlogScrollProgress";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
 import BlogSidebar from "./BlogSidebar";
@@ -21,6 +23,7 @@ interface BlogPostContentProps {
 export default function BlogPostContent({ post, processedHtml, headings }: BlogPostContentProps) {
   return (
     <>
+      <BlogScrollProgress />
       <BlogLinkPreview />
       
       {/* Hero Section */}
@@ -64,14 +67,14 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
             </h1>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-gray-400 text-sm">
-              <div className="flex items-center gap-2" suppressHydrationWarning>
+              <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-blue-400" />
                 <time dateTime={post.publishedAt}>
                   {post.publishedAt ? formatDate(post.publishedAt) : "—"}
                 </time>
               </div>
-              {post.updatedAt && post.publishedAt && new Date(post.updatedAt).toDateString() !== new Date(post.publishedAt).toDateString() && (
-                <div className="flex items-center gap-2" suppressHydrationWarning>
+              {post.updatedAt && post.publishedAt && !isSameDay(post.updatedAt, post.publishedAt) && (
+                <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-emerald-400" />
                   <span>Son Güncelleme: {formatDate(post.updatedAt)}</span>
                 </div>
@@ -81,11 +84,12 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                 {post.readTime || 5} dk okuma
               </div>
               <div className="hidden sm:block text-gray-600">|</div>
-              <div 
-                className="bg-white/5 px-3 py-1 rounded-lg border border-white/10 italic font-medium"
-                suppressHydrationWarning
-              >
-                {post.views} görüntüleme
+              <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs font-semibold select-none">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Güncel İçerik</span>
               </div>
             </div>
           </BlogMotionWrapper>

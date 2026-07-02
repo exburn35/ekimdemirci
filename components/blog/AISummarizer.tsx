@@ -17,10 +17,12 @@ interface ModelOption {
 
 export default function AISummarizer({ post }: AISummarizerProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown on click outside
   useEffect(() => {
+    setMounted(true);
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -31,7 +33,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
   }, []);
 
   const getUrl = (modelId: string) => {
-    const pageUrl = typeof window !== "undefined" ? window.location.href : "";
+    const pageUrl = mounted && typeof window !== "undefined" ? window.location.href : "";
     const promptText = `Lütfen bu makaledeki ana fikirleri ve önemli bilgileri özetle ve analiz et: "${post.title}" kaynak: ${pageUrl}`;
     const encodedPrompt = encodeURIComponent(promptText);
 

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { BlogPost } from "@/lib/blog";
+import { formatDate } from "@/lib/blog-utils";
 
 interface BlogListClientProps {
   initialPosts: BlogPost[];
@@ -77,13 +78,7 @@ export default function BlogListClient({ initialPosts }: BlogListClientProps) {
                       )}
                       <div className="flex items-center gap-2 text-gray-400 text-xs">
                         <Calendar className="w-3 h-3" />
-                        {post.publishedAt
-                          ? new Date(post.publishedAt).toLocaleDateString("tr-TR", {
-                              year: "numeric",
-                              month: "long",
-                              day: "numeric",
-                            })
-                          : "—"}
+                        {post.publishedAt ? formatDate(post.publishedAt) : "—"}
                       </div>
                     </div>
                     <h2 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">

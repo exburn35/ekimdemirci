@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { decodeHtmlEntities } from "./blog-utils";
 
 export interface BlogPost {
   id: string;
@@ -68,6 +69,67 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
   }
 }
 
+function stripElementByPattern(html: string, pattern: RegExp): string {
+  let match = pattern.exec(html);
+  while (match) {
+    const matchIndex = match.index;
+    const matchedText = match[0];
+    
+    let startTagPos = html.lastIndexOf("<", matchIndex);
+    if (startTagPos === -1) {
+      pattern.lastIndex = matchIndex + matchedText.length;
+      match = pattern.exec(html);
+      continue;
+    }
+    
+    let tagMatch = html.substring(startTagPos + 1).match(/^[a-zA-Z0-9]+/);
+    if (!tagMatch) {
+      pattern.lastIndex = matchIndex + matchedText.length;
+      match = pattern.exec(html);
+      continue;
+    }
+    const tagName = tagMatch[0];
+    const openTagStr = `<${tagName}`;
+    const closeTagStr = `</${tagName}>`;
+    
+    let openingTagEnd = html.indexOf(">", startTagPos);
+    if (openingTagEnd === -1) {
+      pattern.lastIndex = matchIndex + matchedText.length;
+      match = pattern.exec(html);
+      continue;
+    }
+    
+    let depth = 1;
+    let pos = openingTagEnd + 1;
+    let endTagPos = -1;
+    
+    while (pos < html.length) {
+      if (html.substring(pos, pos + openTagStr.length) === openTagStr && !/[a-zA-Z0-9]/.test(html.charAt(pos + openTagStr.length))) {
+        depth++;
+        pos += openTagStr.length;
+      } else if (html.substring(pos, pos + closeTagStr.length) === closeTagStr) {
+        depth--;
+        if (depth === 0) {
+          endTagPos = pos;
+          break;
+        }
+        pos += closeTagStr.length;
+      } else {
+        pos++;
+      }
+    }
+    
+    if (endTagPos !== -1) {
+      html = html.substring(0, startTagPos) + html.substring(endTagPos + closeTagStr.length);
+      pattern.lastIndex = 0;
+    } else {
+      pattern.lastIndex = matchIndex + matchedText.length;
+    }
+    match = pattern.exec(html);
+  }
+  return html;
+}
+
 export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings: Heading[] } {
   if (!html) return { cleanHtml: "", headings: [] };
 
@@ -91,14 +153,17 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
     return `<a ${newHref} ${cleanedExtra}>`;
   });
 
-  // 2. Strip unwanted elements
-  processedHtml = processedHtml
-    .replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "")
-    .replace(/<div[^>]*class="[^"]*(user-info|bs-img|single-info)[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
-    .replace(/<div[^>]*id="ez-toc-container"[^>]*>[\s\S]*?<\/nav>\s*<\/div>/gi, "")
-    .replace(/<div[^>]*class="[^"]*ez-toc-container[^"]*"[^>]*>[\s\S]*?<\/nav>\s*<\/div>/gi, "")
-    .replace(/<div[^>]*class="[^"]*(toc|ez-toc|table-of-contents|lwptoc|toc_container)[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
-    .replace(/<h2[^>]*>İçindekiler<\/h2>\s*<ul[^>]*>[\s\S]*?<\/ul>/i, '');
+  // 2. Strip unwanted elements using safe balance parser
+  processedHtml = processedHtml.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "");
+  
+  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*user-info[^"]*"/g);
+  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*bs-img[^"]*"/g);
+  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*single-info[^"]*"/g);
+  processedHtml = stripElementByPattern(processedHtml, /id="ez-toc-container"/g);
+  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*ez-toc-container[^"]*"/g);
+  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*(toc|table-of-contents|lwptoc|toc_container)[^"]*"/g);
+  
+  processedHtml = processedHtml.replace(/<h2[^>]*>İçindekiler<\/h2>\s*<ul[^>]*>[\s\S]*?<\/ul>/i, '');
 
   // 3. Extract Headings and add IDs
   const headings: Heading[] = [];
@@ -109,25 +174,17 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
     const id = `heading-${headingCount++}`;
     headings.push({
       id,
-      text,
+      text: decodeHtmlEntities(text),
       level: tag.toLowerCase() === "h2" ? 2 : 3
     });
     return `<${tag} id="${id}">${content}</${tag}>`;
   });
 
-  // 4. Rewrite WordPress image paths to /uploads (Handling flat structure by stripping year/month folders)
+  // 4. Rewrite WordPress image paths to /uploads
   processedHtml = processedHtml.replace(/https?:\/\/(www\.)?ekimdemirci\.com\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/')
       .replace(/\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/');
 
-  return { cleanHtml: processedHtml, headings };
+  return { cleanHtml: decodeHtmlEntities(processedHtml), headings };
 }
 
-export function formatDate(dateStr: string): string {
-  if (!dateStr) return "";
-  const d = new Date(dateStr);
-  const months = [
-    "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
-    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
-  ];
-  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
-}
+export { decodeHtmlEntities, formatDate, formatDateShort, isSameDay } from "./blog-utils";
