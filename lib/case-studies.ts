@@ -73,8 +73,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     narrativeTitle: "Gösterim Odaklı Büyüme Süreci",
     narrativeBody: [
-      "Online eğitim platformunun arama motorlarındaki görünürlüğünü artırmak amacıyla teknik altyapı iyileştirmeleri ve semantik içerik çalışmaları gerçekleştirdik",
-      "Çalışma sürecinde sitenin gösterim hacminde çok hızlı bir büyüme elde ettik. Toplam gösterim 462K seviyesine ulaşırken tıklama sayısı da 3.18K seviyesine yükseldi",
+      "Online eğitim platformunun arama motorlarındaki görünürlüğünü artırmak amacıyla teknik altyapı iyileştirmeleri ve semantik içerik çalışmaları gerçekleştirdim",
+      "Çalışma sürecinde sitenin gösterim hacminde çok hızlı bir büyüme elde ettim. Toplam gösterim 462K seviyesine ulaşırken tıklama sayısı da 3.18K seviyesine yükseldi",
       "Gösterim hacminin bu denli hızlı artması ve sitenin yeni kelimelerde görünür olması ortalama tıklanma oranını geçici olarak yüzde 0.7 seviyesine çekmiştir. Bu durum yeni sorgularda yer edinmenin doğal ve beklenen bir aşamasıdır ve uzun kuyruk sorgularda görünürlük yerleştikçe tıklanma oranları tekrar toparlanacaktır",
       "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
     ],
@@ -127,10 +127,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     narrativeTitle: "Dengeli ve Kararlı Büyüme Analizi",
     narrativeBody: [
-      "E ticaret sitesinde hem organik trafiği hem de dönüşüm potansiyelini aynı anda büyütmek amacıyla kapsamlı bir optimizasyon süreci yürüttük",
-      "Ürün kategori sayfalarındaki yapısal düzenlemeler sayesinde tıklama gösterim CTR ve pozisyon değerlerinde eş zamanlı olarak pozitif bir ilerleme kaydettik",
+      "E ticaret sitesinde hem organik trafiği hem de dönüşüm potansiyelini aynı anda büyütmek amacıyla kapsamlı bir optimizasyon süreci yürüttüm",
+      "Ürün kategori sayfalarındaki yapısal düzenlemeler sayesinde tıklama gösterim CTR ve pozisyon değerlerinde eş zamanlı olarak pozitif bir ilerleme kaydettim",
       "Tıklama sayısı 80.4K seviyesine çıkarken ortalama pozisyonumuz 6.5 seviyesine gelerek yüzde 20.73 oranında iyileşti",
-      "Elde edilen veriler e ticaret sektöründe doğru strateji ile hem hacim hem de kalite artışının bir arada sağlanabileceğini açıkça göstermektedir",
+      "Elde ettiğim veriler e ticaret sektöründe doğru strateji ile hem hacim hem de kalite artışının bir arada sağlanabileceğini açıkça göstermektedir",
       "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
     ],
     nextActionsTitle: "Gelecek Dönem Planlanan Adımlar",
@@ -181,10 +181,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     narrativeTitle: "Büyük Görünürlük Sıçraması",
     narrativeBody: [
-      "Motosiklet aksesuarı satan web sitesinde gösterim hacmini yüzde 125 oranında artırarak görünürlüğü zirveye taşıdık ve gösterimi 1.02M seviyesine çıkardık",
+      "Motosiklet aksesuarı satan web sitesinde gösterim hacmini yüzde 125 oranında artırarak görünürlüğü zirveye taşıdım ve gösterimi 1.02M seviyesine çıkardım",
       "Kategori sayfalarının genişletilmesi ve yeni içeriklerin üretilmesi gösterim artışını doğrudan destekleyen temel faktörler olmuştur",
       "Tıklanma oranındaki geçici düşüş sitenin çok sayıda yeni ve keşfedilmemiş sorguda listelenmeye başlamasından kaynaklanan doğal bir seyrelmedir",
-      "Elde ettiğimiz ortalama pozisyon iyileşmesi rekabet düzeyi yüksek bir alanda kalıcı başarı yakaladığımızın kanıtıdır",
+      "Elde ettiğim ortalama pozisyon iyileşmesi rekabet düzeyi yüksek bir alanda kalıcı başarı yakaladığımın kanıtıdır",
       "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
     ],
     nextActionsTitle: "Gelecek Dönem Planlanan Adımlar",
@@ -235,7 +235,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     narrativeTitle: "Yeni Sitelerde İlk Aşama Optimizasyonu",
     narrativeBody: [
-      "Sıfırdan yayına başlayan yeni bir web sitesinde doğru teknik temel ve entity odaklı kurulum ile kısa sürede organik performans elde ettik",
+      "Sıfırdan yayına başlayan yeni bir web sitesinde doğru teknik temel ve entity odaklı kurulum ile kısa sürede organik performans elde ettim",
       "Mutlak rakamlar başlangıç aşamasında küçük görünse de gösterilen büyüme oranları yeni bir site için oldukça güçlüdür",
       "Yeni web sitesi sahiplerinin ilk dönemdeki düşük hacimli verileri doğru okuması ve teknik disiplinden ödün vermemesi başarı için kritiktir",
       "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
@@ -288,8 +288,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     narrativeTitle: "Yerel Görünürlük ve Hasta Artışı",
     narrativeBody: [
-      "Özel diş kliniğinin yerel aramalardaki gücünü artırmak ve hasta başvurularını büyütmek amacıyla yerel SEO odaklı bir çalışma başlattık",
-      "Klinik tedavi sayfalarını kullanıcıların sıkça sorduğu sorulara göre yeniden tasarladık ve arama niyetini karşılayan içerikler ekledik",
+      "Özel diş kliniğinin yerel aramalardaki gücünü artırmak ve hasta başvurularını büyütmek amacıyla yerel SEO odaklı bir çalışma başlattım",
+      "Klinik tedavi sayfalarını kullanıcıların sıkça sorduğu sorulara göre yeniden tasarladım ve arama niyetini karşılayan içerikler ekledim",
       "Elde edilen yerel sıralama başarıları sayesinde fiziksel klinik ziyaretlerinde ve randevu taleplerinde ciddi bir büyüme gözlemlendi",
       "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
     ],
