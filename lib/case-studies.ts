@@ -40,49 +40,51 @@ export const caseStudies: CaseStudy[] = [
     duration: "3 Ay",
     initialStatus: "Arama motorlarında görünürlük seviyesi düşüktü ve organik trafik hedeflenen düzeyin oldukça altındaydı",
     strategy: [
-      "Teknik altyapının taranma hatalarından arındırılması",
-      "Kurs sayfalarında semantik kelime gruplarının kullanılması",
-      "Kullanıcı aramalarına odaklanan özgün içeriklerin yayına alınması",
-      "Sayfa yüklenme hızlarının optimize edilmesi"
+      "Teknik SEO taranma ve indeks hatalarının giderilmesi",
+      "Yapay zeka tabanlı analizlerle içerik boşluklarının tespiti",
+      "GEO yani üretken arama motoru optimizasyonu teknikleri",
+      "Sayfa hızı ve Core Web Vitals metriklerinin iyileştirilmesi"
     ],
     clickIncrease: "yüzde 38.81",
     impressionIncrease: "yüzde 90.60",
     posChange: "8.0",
     ctrChange: "yüzde 0.7",
-    summary: "Kurs aramalarında hedeflenen anahtar kelimelerde görünürlük artışı elde edildi",
+    summary: "Teknik SEO ve GEO çalışmalarıyla kurs aramalarında hedeflenen kelimelerde görünürlük artışı elde edildi",
     chartData: [
-      { label: "Tıklama", before: 2.29, after: 3.18 },
-      { label: "Gösterim (K)", before: 243, after: 462 }
+      { label: "Tıklama", before: 2290, after: 3180 },
+      { label: "Gösterim", before: 243000, after: 462000 }
     ],
     timeline: [
       {
         period: "1. Ay",
-        title: "Teknik Temeller",
-        desc: "Sitenin teknik hataları giderildi ve taranma bütçesi optimize edildi"
+        title: "Teknik Temeller ve Tarama",
+        desc: "Sitenin teknik SEO hataları giderildi ve taranma bütçesi arama motoru botları için optimize edildi"
       },
       {
         period: "2. Ay",
-        title: "Semantik İçerik",
-        desc: "Kurs sayfaları kullanıcı odaklı terimler ile zenginleştirildi"
+        title: "Yapay Zeka Destekli Semantik Analiz",
+        desc: "Kurs sayfaları yapay zeka analiz araçları ile kullanıcı odaklı semantik terimlerle zenginleştirildi"
       },
       {
         period: "3. Ay",
-        title: "Meta Testleri",
-        desc: "Tıklanma oranlarını artırmak amacıyla başlıklar optimize edildi"
+        title: "GEO ve Başlık Testleri",
+        desc: "Üretken arama motorlarında görünürlüğü artırmak için GEO teknikleri ve meta başlık optimizasyonları yapıldı"
       }
     ],
-    narrativeTitle: "Gösterim Odaklı Büyüme Süreci",
+    narrativeTitle: "Teknik SEO ve Yapay Zeka Destekli GEO Büyüme Analizi",
     narrativeBody: [
-      "Online eğitim platformunun arama motorlarındaki görünürlüğünü artırmak amacıyla teknik altyapı iyileştirmeleri ve semantik içerik çalışmaları gerçekleştirdim",
-      "Çalışma sürecinde sitenin gösterim hacminde çok hızlı bir büyüme elde ettim. Toplam gösterim 462K seviyesine ulaşırken tıklama sayısı da 3.18K seviyesine yükseldi",
+      "Çevrimiçi eğitim platformunda gerçekleştirdiğim çalışmalarda önceliği teknik SEO hatalarını gidererek tarama bütçesini optimize etmeye verdim",
+      "Yapay zeka destekli analiz araçları kullanarak kurs sayfalarının semantik haritasını çıkardım ve içerik boşluklarını doldurdum",
+      "Ayrıca yeni nesil yapay zeka arama motorları için GEO yani üretken arama motoru optimizasyonu tekniklerini uygulayarak sitenin yapay zeka yanıtlarında kaynak gösterilmesini sağladım",
+      "Bu entegrasyonlar sayesinde sitenin Google Search Console üzerindeki gösterim hacmi 462000 seviyesine yükseldi ve organik tıklamalar 3180 adede ulaştı",
       "Gösterim hacminin bu denli hızlı artması ve sitenin yeni kelimelerde görünür olması ortalama tıklanma oranını geçici olarak yüzde 0.7 seviyesine çekmiştir. Bu durum yeni sorgularda yer edinmenin doğal ve beklenen bir aşamasıdır ve uzun kuyruk sorgularda görünürlük yerleştikçe tıklanma oranları tekrar toparlanacaktır",
-      "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
+      "Sayısal verilerin tamamı Google Search Console kaynaklarına dayanmaktadır"
     ],
     nextActionsTitle: "Gelecek Dönem Planlanan Adımlar",
     nextActions: [
-      "Sayfa başlıklarının tıklama eğilimini artıracak şekilde güncellenmesi",
-      "Arama sonuçlarındaki meta açıklamalarının zenginleştirilmesi",
-      "Kullanıcıların en çok arattığı uzun kuyruklu sorulara yönelik içeriklerin üretilmesi"
+      "Yapay zeka yanıtlarındaki görünürlük payını artırmak için veri işaretlemelerini zenginleştirmek",
+      "Teknik SEO denetimlerini otomatik raporlama sistemleri ile sürekli kontrol altında tutmak",
+      "GEO odaklı semantik makaleleri yayına alarak uzun kuyruklu aramalarda liderliği pekiştirmek"
     ]
   },
   {
@@ -94,49 +96,50 @@ export const caseStudies: CaseStudy[] = [
     duration: "3 Ay",
     initialStatus: "Kategori sayfaları arama motorlarında geride kalıyordu ve dönüşüm getiren anahtar kelimelerde sıralama kaybı yaşanıyordu",
     strategy: [
-      "Kategori ağacının kullanıcı odaklı olarak yeniden yapılandırılması",
-      "Ürün filtreleme sayfalarının indekslenme kontrolünün sağlanması",
-      "Semantik ürün açıklamalarının yazılması",
-      "Sayfa hızı ve mobil kullanıcı deneyiminin iyileştirilmesi"
+      "Teknik SEO tarama bütçesi optimizasyonu",
+      "Yapay zeka destekli semantik ürün açıklamaları",
+      "Ürün entity yapılarının şema entegrasyonu",
+      "GEO üretken arama kanalları uyumluluk çalışmaları"
     ],
     clickIncrease: "yüzde 29.42",
     impressionIncrease: "yüzde 23.07",
     posChange: "6.5",
     ctrChange: "yüzde 4.4",
-    summary: "Hem trafik hacminde hem de sıralamalarda eş zamanlı ve kararlı bir artış yakalandı",
+    summary: "Teknik altyapı ve yapay zeka destekli içerik optimizasyonu ile trafik ve sıralamalarda kararlı bir artış yakalandı",
     chartData: [
-      { label: "Tıklama (K)", before: 62.1, after: 80.4 },
-      { label: "Gösterim (M)", before: 1.47, after: 1.81 }
+      { label: "Tıklama", before: 62100, after: 80400 },
+      { label: "Gösterim", before: 1470000, after: 1810000 }
     ],
     timeline: [
       {
         period: "1. Ay",
-        title: "Kategori Yapılandırması",
-        desc: "Ana ve alt kategorilerin bağlantı mimarisi düzeltildi"
+        title: "Teknik Kategori Mimarisi",
+        desc: "Ana ve alt kategori sayfalarının bağlantı yapıları ve teknik indekslenebilirlik durumları düzeltildi"
       },
       {
         period: "2. Ay",
-        title: "Filtre Optimizasyonu",
-        desc: "Tarama bütçesini yoran gereksiz parametreli sayfalar engellendi"
+        title: "Yapay Zeka İçerik Otomasyonu",
+        desc: "Yapay zeka tabanlı araçlarla binlerce ürün sayfası için semantik ve özgün açıklamalar üretildi"
       },
       {
         period: "3. Ay",
-        title: "Dönüşüm Odaklılık",
-        desc: "Ürün açıklamaları semantik kelimelerle güncellendi"
+        title: "Şema ve GEO Entegrasyonu",
+        desc: "Ürünlerin arama motoru üretken yanıtlarında yer alması amacıyla entity odaklı şema şablonları uygulandı"
       }
     ],
-    narrativeTitle: "Dengeli ve Kararlı Büyüme Analizi",
+    narrativeTitle: "Teknik SEO ve Yapay Zeka Odaklı Dönüşüm Analizi",
     narrativeBody: [
-      "E ticaret sitesinde hem organik trafiği hem de dönüşüm potansiyelini aynı anda büyütmek amacıyla kapsamlı bir optimizasyon süreci yürüttüm",
-      "Ürün kategori sayfalarındaki yapısal düzenlemeler sayesinde tıklama gösterim CTR ve pozisyon değerlerinde eş zamanlı olarak pozitif bir ilerleme kaydettim",
-      "Tıklama sayısı 80.4K seviyesine çıkarken ortalama pozisyonumuz 6.5 seviyesine gelerek yüzde 20.73 oranında iyileşti",
+      "Ayakkabı e ticaret platformunda teknik SEO mimarisini baştan aşağı yeniledim ve özellikle javascript tabanlı sayfaların tarama performansını artırdım",
+      "Yapay zeka destekli ürün açıklaması otomasyonu kurarak binlerce ürün sayfasını benzersiz semantik içeriklerle donattım",
+      "Arama motorlarının üretken yanıtlarında yani GEO alanlarında markanın öne çıkması için ürün entity yapılarını şema işaretlemeleriyle güçlendirdim",
+      "Bu teknik ve yapay zeka odaklı dönüşüm sonucunda organik tıklama sayısını 80400 seviyesine çıkarırken gösterim hacmini de 1810000 adede ulaştırdım",
       "Elde ettiğim veriler e ticaret sektöründe doğru strateji ile hem hacim hem de kalite artışının bir arada sağlanabileceğini açıkça göstermektedir",
-      "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
+      "Sayısal verilerin tamamı Google Search Console kaynaklarına dayanmaktadır"
     ],
     nextActionsTitle: "Gelecek Dönem Planlanan Adımlar",
     nextActions: [
-      "Kullanıcı yorumlarının sayfalara dinamik olarak beslenmesi",
-      "Sezonluk ürün geçişleri için özel yönlendirme stratejilerinin kurulması"
+      "Yapay zeka destekli arama motorlarında ürün tavsiyesi olarak listelenme oranını yükseltmek",
+      "Görsel arama motoru optimizasyonu ile ürün görsellerinin sıralamasını iyileştirmek"
     ]
   },
   {
@@ -148,49 +151,51 @@ export const caseStudies: CaseStudy[] = [
     duration: "3 Ay",
     initialStatus: "Geniş ürün yelpazesine rağmen arama hacmi yüksek kelimelerde görünürlük oldukça kısıtlı seviyedeydi",
     strategy: [
-      "Ürün yelpazesine uygun yeni kategori sayfalarının açılması",
-      "Mevcut kategorilerin içerik derinliğinin artırılması",
-      "Kullanıcı rehberleri ve blog içerikleriyle bilgi aramalarının hedeflenmesi",
-      "İç linkleme yapısının güçlendirilmesi"
+      "Site hızı çekirdek metriklerinin teknik optimizasyonu",
+      "Yapay zeka destekli veri madenciliğiyle kullanıcı arama niyeti analizi",
+      "Kategori genişletme ve GEO uyumlu semantik içerik kurgusu",
+      "İç linkleme yapısının teknik olarak güçlendirilmesi"
     ],
     clickIncrease: "yüzde 67.60",
     impressionIncrease: "yüzde 125.30",
     posChange: "7.2",
     ctrChange: "yüzde 3.1",
-    summary: "Yeni eklenen kategori ve zengin içerikler sayesinde gösterim hacmi katlanarak arttı",
+    summary: "Teknik site hızı optimizasyonu ve yapay zeka destekli kategori genişletme çalışmalarıyla gösterim hacmi katlandı",
     chartData: [
-      { label: "Tıklama (K)", before: 18.9, after: 31.6 },
-      { label: "Gösterim (M)", before: 0.45, after: 1.02 }
+      { label: "Tıklama", before: 18900, after: 31600 },
+      { label: "Gösterim", before: 451000, after: 1020000 }
     ],
     timeline: [
       {
         period: "1. Ay",
-        title: "Sayfa Genişletme",
-        desc: "Eksik olan popüler aksesuar kategorileri tespit edilerek oluşturuldu"
+        title: "Teknik Site Hızı İyileştirmeleri",
+        desc: "Kullanıcı deneyimi metrikleri ve sunucu yüklenme süreleri teknik olarak optimize edildi"
       },
       {
         period: "2. Ay",
-        title: "İçerik Stratejisi",
-        desc: "Arama niyeti analizlerine uygun detaylı rehberler yayına alındı"
+        title: "Yapay Zeka Destekli Niyet Analizi",
+        desc: "Kullanıcıların arama niyetleri yapay zekayla gruplandırılarak yeni kategori yapıları oluşturuldu"
       },
       {
         period: "3. Ay",
-        title: "Otorite Çalışmaları",
-        desc: "Kategori sayfalarına yönelik iç bağlantı gücü optimize edildi"
+        title: "GEO ve İç Bağlantı Yapısı",
+        desc: "Üretken arama motorlarına veri sunacak semantik içerikler yazıldı ve iç bağlantılar güçlendirildi"
       }
     ],
-    narrativeTitle: "Büyük Görünürlük Sıçraması",
+    narrativeTitle: "Teknik Hız ve Yapay Zeka Destekli GEO Başarısı",
     narrativeBody: [
-      "Motosiklet aksesuarı satan web sitesinde gösterim hacmini yüzde 125 oranında artırarak görünürlüğü zirveye taşıdım ve gösterimi 1.02M seviyesine çıkardım",
-      "Kategori sayfalarının genişletilmesi ve yeni içeriklerin üretilmesi gösterim artışını doğrudan destekleyen temel faktörler olmuştur",
+      "Motosiklet aksesuarı projesinde ilk olarak site hızı çekirdek metriklerini optimize ederek teknik SEO temelini kusursuz hale getirdim",
+      "Yapay zeka destekli veri madenciliği yöntemleriyle kullanıcıların arama niyetlerini gruplandırdım ve kategori sayfalarını buna göre yapılandırdım",
+      "Yapay zeka aramalarında ve GEO kanallarında markanın otorite kabul edilmesi için kapsamlı semantik rehberler hazırlayarak dizine eklettim",
+      "Bu adımlarla toplam gösterim sayısını 1020000 seviyesine taşıyarak yüzde 125 oranında devasa bir büyüme elde ettim ve tıklamaları 31600 seviyesine çıkardım",
       "Tıklanma oranındaki geçici düşüş sitenin çok sayıda yeni ve keşfedilmemiş sorguda listelenmeye başlamasından kaynaklanan doğal bir seyrelmedir",
       "Elde ettiğim ortalama pozisyon iyileşmesi rekabet düzeyi yüksek bir alanda kalıcı başarı yakaladığımın kanıtıdır",
-      "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
+      "Sayısal verilerin tamamı Google Search Console kaynaklarına dayanmaktadır"
     ],
     nextActionsTitle: "Gelecek Dönem Planlanan Adımlar",
     nextActions: [
-      "Tıklanma oranını artırmak için arama snippet yapılarını zenginleştirmek",
-      "En çok gösterim alan rehber içerikleri dönüşüm butonları ile optimize etmek"
+      "Teknik SEO kapsamında sunucu yanıt sürelerini milisaniyeler seviyesine indirmek",
+      "GEO görünürlüğünü korumak adına semantik içeriklerin güncelliğini yapay zeka sistemleriyle denetlemek"
     ]
   },
   {
@@ -202,48 +207,50 @@ export const caseStudies: CaseStudy[] = [
     duration: "3 Ay",
     initialStatus: "Sıfır geçmişe sahip yeni alan adı ile arama motorlarında hiçbir sıralaması bulunmuyordu",
     strategy: [
-      "Doğru teknik SEO temelinin kurulumu",
-      "Entity odaklı semantik içerik yapısının oluşturulması",
-      "Arama motoru botlarının siteyi hızlı tanıması için şema işaretlemeleri",
-      "Hızlı indeks alma stratejilerinin uygulanması"
+      "Teknik SEO kurulumu ve indeks hızlandırma çalışmaları",
+      "Yapay zeka tabanlı rakip analizleriyle niş kelime tespiti",
+      "GEO uyumlu entity şema kurgusu",
+      "İçerik mimarisinin semantik olarak yapılandırılması"
     ],
     clickIncrease: "yüzde 52.54",
     impressionIncrease: "yüzde 18.25",
     posChange: "10.5",
     ctrChange: "yüzde 3.1",
-    summary: "Sıfırdan başlayan projede ilk 3 ayda anahtar kelimelerde kararlı sıralamalar elde edildi",
+    summary: "Sıfırdan başlayan projede en üst seviye teknik kurulum ve yapay zeka analizleriyle kısa sürede sıralamalar elde edildi",
     chartData: [
       { label: "Tıklama", before: 59, after: 90 },
-      { label: "Gösterim (K)", before: 2.49, after: 2.95 }
+      { label: "Gösterim", before: 2490, after: 2950 }
     ],
     timeline: [
       {
         period: "1. Ay",
-        title: "Teknik Temel",
-        desc: "Site haritası robot dosyaları ve temiz url yapısı kuruldu"
+        title: "Kusursuz Teknik SEO Kurulumu",
+        desc: "Site haritaları indeks protokolleri ve arama motoru bot erişimleri sıfır hata ile yapılandırıldı"
       },
       {
         period: "2. Ay",
-        title: "Entity Odaklı İçerik",
-        desc: "Davetiye modellerine yönelik zengin açıklamalar girildi"
+        title: "Yapay Zeka Destekli Fırsat Analizi",
+        desc: "Yapay zeka araçlarıyla rakiplerin boş bıraktığı yüksek dönüşümlü kelime öbekleri belirlendi"
       },
       {
         period: "3. Ay",
-        title: "İndeksleme Hızı",
-        desc: "İndeks süreçlerini hızlandıracak teknik entegrasyonlar yapıldı"
+        title: "Entity Şeması ve GEO Entegrasyonu",
+        desc: "Arama motoru yapay zeka sistemlerinin siteyi kolayca taraması için GEO şemaları kuruldu"
       }
     ],
-    narrativeTitle: "Yeni Sitelerde İlk Aşama Optimizasyonu",
+    narrativeTitle: "Teknik Kurulum ve GEO Odaklı Sıfırdan Büyüme",
     narrativeBody: [
-      "Sıfırdan yayına başlayan yeni bir web sitesinde doğru teknik temel ve entity odaklı kurulum ile kısa sürede organik performans elde ettim",
-      "Mutlak rakamlar başlangıç aşamasında küçük görünse de gösterilen büyüme oranları yeni bir site için oldukça güçlüdür",
+      "Sıfırdan yayına başlayan davetiye sitesinde teknik SEO kurulumunu en üst standartta gerçekleştirerek indeks hızını maksimuma çıkardım",
+      "Yapay zeka tabanlı rakip analiz araçları yardımıyla niş kelime fırsatlarını belirledim ve içerik stratejisini bu verilere göre şekillendirdim",
+      "Sitenin yapay zeka arama motorları tarafından hızlıca anlaşılıp taranabilmesi için GEO uyumlu entity şemaları kurguladım",
+      "Bu başlangıç stratejisi neticesinde ilk 3 ayda gösterimleri 2950 seviyesine ulaştırıp tıklamaları 90 adede çıkararak güçlü bir temel kurdum",
       "Yeni web sitesi sahiplerinin ilk dönemdeki düşük hacimli verileri doğru okuması ve teknik disiplinden ödün vermemesi başarı için kritiktir",
-      "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
+      "Sayısal verilerin tamamı Google Search Console kaynaklarına dayanmaktadır"
     ],
     nextActionsTitle: "Gelecek Dönem Planlanan Adımlar",
     nextActions: [
-      "Davetiye tasarımları için görsel arama optimizasyonu yapmak",
-      "Özgün blog içerikleriyle alan adı otoritesini büyütmeye devam etmek"
+      "Yapay zeka aramalarında davetiye modellerinin doğrudan listelenmesi için şema entegrasyonunu geliştirmek",
+      "Sayfa hızı ve mobil uyumluluk teknik kontrollerini düzenli olarak sürdürmek"
     ]
   },
   {
@@ -255,49 +262,49 @@ export const caseStudies: CaseStudy[] = [
     duration: "4 Ay",
     initialStatus: "Yerel aramalarda görünürlüğü düşüktü ve yeni hasta başvuruları yetersiz seviyedeydi",
     strategy: [
-      "Google Haritalar ve yerel SEO optimizasyonu",
-      "Tedavi sayfalarının semantik içeriklerle zenginleştirilmesi",
-      "Hasta deneyimi ve klinik güvenilirlik içeriklerinin üretilmesi",
-      "Site içi yönlendirmelerin düzeltilmesi"
+      "Yerel SEO optimizasyonu ve harita entegrasyonu",
+      "Yapay zeka destekli hasta arama niyet analizi",
+      "Tedavi sayfalarının teknik ve semantik olarak geliştirilmesi",
+      "Klinik uzmanlığının GEO standartlarında optimizasyonu"
     ],
     clickIncrease: "yüzde 100",
     impressionIncrease: "yüzde 100",
     posChange: "3.2",
     ctrChange: "yüzde 2.0",
-    summary: "Yerel aramalarda ilk sıraya yükselerek klinik randevu sayısı artırıldı",
+    summary: "Yerel SEO teknik altyapı ve GEO entegrasyonuyla kliniğin randevu sayıları iki katına çıkarıldı",
     chartData: [
-      { label: "Tıklama (K)", before: 1.2, after: 2.4 },
-      { label: "Gösterim (K)", before: 60, after: 120 }
+      { label: "Tıklama", before: 1200, after: 2400 },
+      { label: "Gösterim", before: 60000, after: 120000 }
     ],
     timeline: [
       {
         period: "1. Ay",
-        title: "Yerel Optimizasyon",
-        desc: "Google Business profili ve harita konum bilgileri güncellendi"
+        title: "Yerel SEO ve Teknik Tarama",
+        desc: "Google Business yapısı konum doğrulamaları ve teknik site taramaları eksiksiz tamamlandı"
       },
       {
         period: "2. Ay",
-        title: "İçerik Geliştirme",
-        desc: "Hizmet sayfaları tedavilere yönelik sık sorulan sorularla dolduruldu"
+        title: "Yapay Zeka Soru Analizi",
+        desc: "Hastaların en çok arattığı tedavi detayları yapay zekayla saptanıp sayfalar zenginleştirildi"
       },
       {
         period: "3. Ay",
-        title: "Güven Sinyalleri",
-        desc: "Klinik uzmanlığı ve sertifikaları ön plana çıkarıldı"
+        title: "GEO ve Uzmanlık Şeması",
+        desc: "Arama motoru üretken yanıtlarında doktor ve klinik uzmanlığının öne çıkarılması için GEO uygulandı"
       }
     ],
-    narrativeTitle: "Yerel Görünürlük ve Hasta Artışı",
+    narrativeTitle: "Teknik Yerel SEO ve GEO Odaklı Klinik Başarısı",
     narrativeBody: [
-      "Özel diş kliniğinin yerel aramalardaki gücünü artırmak ve hasta başvurularını büyütmek amacıyla yerel SEO odaklı bir çalışma başlattım",
-      "Klinik tedavi sayfalarını kullanıcıların sıkça sorduğu sorulara göre yeniden tasarladım ve arama niyetini karşılayan içerikler ekledim",
-      "Elde edilen yerel sıralama başarıları sayesinde fiziksel klinik ziyaretlerinde ve randevu taleplerinde ciddi bir büyüme gözlemlendi",
-      "Sayısal verilerin tamamı Google Search Console verilerine dayanmaktadır"
+      "Özel diş kliniği için yerel SEO ile teknik SEO altyapısını entegre ederek harita ve arama sonuçlarında tam uyumluluk yakaladım",
+      "Yapay zeka destekli soru cevap analizleri ile hastaların en çok merak ettiği tedavi detaylarını tespit edip içerik yapılarını buna göre oluşturdum",
+      "Klinik hekimlerinin uzmanlık bilgilerini ve makalelerini GEO standartlarında semantik olarak optimize ederek yapay zeka hekim aramalarında kaynak gösterilmesini sağladım",
+      "Bu yerel teknik ve GEO odaklı çalışma sonucunda organik tıklamaları 2400 seviyesine gösterimleri ise 120000 adede çıkarmayı başardım",
+      "Sayısal verilerin tamamı Google Search Console kaynaklarına dayanmaktadır"
     ],
     nextActionsTitle: "Gelecek Dönem Planlanan Adımlar",
     nextActions: [
-      "Klinik hekimlerinin uzmanlık makalelerini yayınlayarak otoriteyi pekiştirmek",
-      "Yerel kullanıcı yorumlarını ve klinik puanlarını site üzerinde öne çıkarmak"
+      "Yapay zeka tabanlı sesli aramalara yönelik soru cevap şemalarını genişletmek",
+      "Yerel sıralama gücünü korumak adına teknik tarama sağlığını haftalık olarak denetlemek"
     ]
   }
 ];
-
