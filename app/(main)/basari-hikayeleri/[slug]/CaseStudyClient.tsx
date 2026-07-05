@@ -115,6 +115,18 @@ export default function CaseStudyClient({ study, relatedStories }: { study: Case
                   </div>
                 ))}
               </div>
+
+              {/* Gerçek Search Console Görseli */}
+              <div className="mt-8 pt-8 border-t border-white/5">
+                <span className="text-[10px] text-gray-500 block uppercase tracking-wider font-bold mb-3">Gerçek Arama Konsolu Verisi</span>
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 group bg-black/40">
+                  <img 
+                    src={study.imageUrl} 
+                    alt={`${study.company} Google Search Console`}
+                    className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              </div>
             </motion.div>
 
             {/* Metrik Kartları */}

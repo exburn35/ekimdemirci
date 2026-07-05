@@ -27,11 +27,13 @@ export interface CaseStudy {
   narrativeBody: string[];
   nextActionsTitle: string;
   nextActions: string[];
+  imageUrl: string;
 }
 
 export const caseStudies: CaseStudy[] = [
   {
     slug: "cevrimici-egitim-platformu",
+    imageUrl: "/kurs-sitesi-kiyas.png",
     company: "Online Eğitim Platformu",
     category: "Eğitim Platformları",
     sector: "Online eğitim ve kurs platformu",
@@ -85,6 +87,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "ayakkabi-e-ticaret-magazasi",
+    imageUrl: "/ayakkabi-e-ticaret-kiyas.png",
     company: "E Ticaret Ayakkabı Markası",
     category: "E-ticaret",
     sector: "Ayakkabı ürünleri satan e ticaret sitesi",
@@ -138,6 +141,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "motosiklet-aksesuarlari-magazasi",
+    imageUrl: "/motosiklet-aksesuar-kiyas.png",
     company: "Motosiklet Aksesuar Firması",
     category: "E-ticaret",
     sector: "Motosiklet aksesuarı ve giyim ürünleri satan firma",
@@ -191,6 +195,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "yeni-davetiye-tasarim-sitesi",
+    imageUrl: "/yeni-davetiye-kiyas.png",
     company: "Yeni Açılan Davetiye Sitesi",
     category: "Yeni Açılan Siteler",
     sector: "Yeni açılan davetiye tasarım ve satış sitesi",
@@ -243,6 +248,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "hizmet-klinik-seo",
+    imageUrl: "/google-search-console.webp",
     company: "Özel Diş Kliniği",
     category: "Kurumsal ve Hizmet Siteleri",
     sector: "Diş hekimliği ve sağlık hizmetleri",

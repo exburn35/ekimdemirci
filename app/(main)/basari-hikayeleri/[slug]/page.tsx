@@ -20,6 +20,9 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: `${study.company} Başarı Hikayesi | Ekim Demirci`,
     description: `${study.company} için uygulanan SEO stratejisi ve elde edilen organik arama sonuçları.`,
+    alternates: {
+      canonical: `https://ekimdemirci.com/basari-hikayeleri/${study.slug}`,
+    },
   };
 }
 
