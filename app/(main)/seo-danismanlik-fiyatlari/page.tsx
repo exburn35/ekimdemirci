@@ -602,6 +602,49 @@ export default function SEOConsultingPrices() {
         description="İhtiyaçlarınıza uygun SEO paketini belirlemek için benimle iletişime geçin."
         showTitle={true}
       />
+
+      {/* Service ve FAQ Schema Entegrasyonu */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "SEO Danışmanlığı",
+            "serviceType": "SEO Danışmanlığı",
+            "provider": {
+              "@type": "Person",
+              "name": "Ekim Demirci",
+              "url": "https://ekimdemirci.com"
+            },
+            "areaServed": "TR",
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "TRY",
+              "lowPrice": "20000",
+              "highPrice": "40000",
+              "offerCount": "3"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqList.map((faq) => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          })
+        }}
+      />
     </>
   );
 }

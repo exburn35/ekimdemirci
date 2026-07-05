@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 import { getAllBlogPosts } from "../lib/blog";
+import { caseStudies } from "../lib/case-studies";
 
 export const dynamic = "force-dynamic";
 
@@ -61,5 +62,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Sitemap Page Error:", error);
   }
 
-  return [...staticRoutes, ...blogRoutes, ...pageRoutes];
+  // 3. Dynamic Success Stories
+  const successStoryRoutes = caseStudies.map((study) => ({
+    url: `${baseUrl}/basari-hikayeleri/${study.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...blogRoutes, ...pageRoutes, ...successStoryRoutes];
 }
+
