@@ -144,7 +144,7 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
       else {
         const sectoralServices = ["sektorel-seo-hizmetleri", "e-ticaret-seo", "avukatlar-icin-seo-hizmeti", "doktorlar-icin-seo-2", "dis-hekimleri-icin-seo-2", "guzellik-merkezleri-icin-seo-2", "hastaneler-icin-seo-2"];
         if (sectoralServices.includes(slug)) newHref = `href="/sektorel-seo-hizmetleri/${slug}"`;
-        else if (["iletisim", "hakkimda", "blog", "basari-hikayeleri"].includes(slug)) newHref = `href="/${slug}"`;
+        else if (["iletisim", "hakkimda", "blog", "basari-hikayeleri", "geo-danismanligi", "audit-talebi", "cerez-politikasi", "gizlilik-politikasi", "kullanim-kosullari", "seo-danismanlik-fiyatlari", "sikca-sorulan-sorular", "tools"].includes(slug)) newHref = `href="/${slug}"`;
         else newHref = `href="/blog/${slug}"`;
       }
     }
