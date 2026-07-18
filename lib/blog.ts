@@ -130,6 +130,53 @@ function stripElementByPattern(html: string, pattern: RegExp): string {
   return html;
 }
 
+function stripFirstElementByPattern(html: string, pattern: RegExp): string {
+  let match = pattern.exec(html);
+  if (match) {
+    const matchIndex = match.index;
+    const matchedText = match[0];
+    
+    let startTagPos = html.lastIndexOf("<", matchIndex);
+    if (startTagPos !== -1) {
+      let tagMatch = html.substring(startTagPos + 1).match(/^[a-zA-Z0-9]+/);
+      if (tagMatch) {
+        const tagName = tagMatch[0];
+        const openTagStr = `<${tagName}`;
+        const closeTagStr = `</${tagName}>`;
+        
+        let openingTagEnd = html.indexOf(">", startTagPos);
+        if (openingTagEnd !== -1) {
+          let depth = 1;
+          let pos = openingTagEnd + 1;
+          let endTagPos = -1;
+          
+          while (pos < html.length) {
+            if (html.substring(pos, pos + openTagStr.length) === openTagStr && !/[a-zA-Z0-9]/.test(html.charAt(pos + openTagStr.length))) {
+              depth++;
+              pos += openTagStr.length;
+            } else if (html.substring(pos, pos + closeTagStr.length) === closeTagStr) {
+              depth--;
+              if (depth === 0) {
+                endTagPos = pos;
+                break;
+              }
+              pos += closeTagStr.length;
+            } else {
+              pos++;
+            }
+          }
+          
+          if (endTagPos !== -1) {
+            html = html.substring(0, startTagPos) + html.substring(endTagPos + closeTagStr.length);
+          }
+        }
+      }
+    }
+  }
+  return html;
+}
+
+
 export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings: Heading[] } {
   if (!html) return { cleanHtml: "", headings: [] };
 
@@ -157,7 +204,7 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
   processedHtml = processedHtml.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "");
   
   processedHtml = stripElementByPattern(processedHtml, /class="[^"]*user-info[^"]*"/g);
-  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*bs-img[^"]*"/g);
+  processedHtml = stripFirstElementByPattern(processedHtml, /class="[^"]*bs-img[^"]*"/g);
   processedHtml = stripElementByPattern(processedHtml, /class="[^"]*single-info[^"]*"/g);
   processedHtml = stripElementByPattern(processedHtml, /id="ez-toc-container"/g);
   processedHtml = stripElementByPattern(processedHtml, /class="[^"]*ez-toc-container[^"]*"/g);
