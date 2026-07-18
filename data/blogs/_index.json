@@ -1,5 +1,27 @@
 [
   {
+    "title": "GEO Audit Nedir ve Nasıl Yapılır? Adım Adım Denetim Rehberi",
+    "slug": "geo-audit-nedir-nasil-yapilir",
+    "excerpt": "GEO Audit nedir ve nasıl yapılır? Bot erişilebilirliğinden entity kristalleşmesine, içerik yapısından atıf ağına kadar on adımlık denetim sürecini anlattığım yazıyı okuyabilirsiniz.",
+    "featuredImage": "/uploads/GEO-Audit-Nedir-Nasil-Yapilir.webp",
+    "ogImage": "/uploads/GEO-Audit-Nedir-Nasil-Yapilir.webp",
+    "metaTitle": "GEO Audit Nedir ve Nasıl Yapılır? Adım Adım Denetim Rehberi | Ekim Demirci",
+    "metaDescription": "GEO Audit nedir ve nasıl yapılır? Bot erişilebilirliğinden entity kristalleşmesine, içerik yapısından atıf ağına kadar on adımlık denetim sürecini anlattığım yazıyı okuyabilirsiniz.",
+    "publishedAt": "2026-07-18T10:50:00+03:00",
+    "updatedAt": "2026-07-18T10:50:00+03:00",
+    "published": true,
+    "category": "GEO",
+    "readTime": 7,
+    "tags": [
+      "GEO",
+      "Yapay Zeka SEO",
+      "AEO",
+      "SEO",
+      "GEO Audit"
+    ],
+    "views": 0
+  },
+  {
     "title": "Türkiye'nin En İyi 15 GEO Ajansı",
     "slug": "turkiyenin-en-iyi-geo-ajanslari",
     "excerpt": "ChatGPT, Gemini ve Perplexity gibi yapay zeka motorlarında görünürlük sağlayan Türkiye’nin en iyi 15 GEO (Generative Engine Optimization) ajansını, uzmanlık alanlarını ve marka profillerini keşfedin.",
@@ -12,7 +34,13 @@
     "published": true,
     "category": "SEO",
     "readTime": 8,
-    "tags": ["GEO", "Yapay Zeka SEO", "AEO", "SEO", "GEO Ajansları"],
+    "tags": [
+      "GEO",
+      "Yapay Zeka SEO",
+      "AEO",
+      "SEO",
+      "GEO Ajansları"
+    ],
     "views": 0
   },
   {
@@ -28,7 +56,13 @@
     "published": true,
     "category": "SEO",
     "readTime": 6,
-    "tags": ["Yapay Zeka", "GEO", "SEO", "Cloudflare", "Entity SEO"],
+    "tags": [
+      "Yapay Zeka",
+      "GEO",
+      "SEO",
+      "Cloudflare",
+      "Entity SEO"
+    ],
     "views": 0
   },
   {
