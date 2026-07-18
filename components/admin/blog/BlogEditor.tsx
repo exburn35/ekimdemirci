@@ -36,7 +36,11 @@ export default function BlogEditor({ onSave, isSaving, initialData }: BlogEditor
       setTitle(initialData.title || "");
       setSlug(initialData.slug || "");
       setExcerpt(initialData.excerpt || "");
-      setContent((initialData.content as any)?.html || "");
+      setContent(
+        typeof initialData.content === "string"
+          ? initialData.content
+          : (initialData.content as any)?.html || ""
+      );
       setComponents(
         Array.isArray(initialData.components) ? initialData.components : []
       );
