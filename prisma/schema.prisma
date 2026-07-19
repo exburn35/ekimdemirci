@@ -163,3 +163,15 @@ model BlogPost {
   @@map("blog_posts")
 }
 
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String?  // Optional for newsletter
+  email     String
+  phone     String?
+  website   String?
+  message   String?
+  formType  String   // "contact", "lead", "newsletter"
+  createdAt DateTime @default(now())
+
+  @@map("contact_messages")
+}

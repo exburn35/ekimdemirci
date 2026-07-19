@@ -86,11 +86,11 @@ export default function SEOGlossaryPage() {
     let listToGroup = rawTerms;
     
     if (search.trim()) {
-      const normalizedQuery = search.toLowerCase('tr-TR');
+      const normalizedQuery = search.toLocaleLowerCase('tr-TR');
       listToGroup = rawTerms.filter(
         item => 
-          item.term.toLowerCase('tr-TR').includes(normalizedQuery) || 
-          item.desc.toLowerCase('tr-TR').includes(normalizedQuery)
+          item.term.toLocaleLowerCase('tr-TR').includes(normalizedQuery) || 
+          item.desc.toLocaleLowerCase('tr-TR').includes(normalizedQuery)
       );
     }
     
