@@ -8,6 +8,7 @@ import Link from "next/link";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedPages from "@/components/RelatedPages";
 import ContactForm from "@/components/ContactForm";
+import GEOPricingSection from "@/components/GEOPricingSection";
 
 // Fiyatlandırma paket verileri
 const pricingPlans = [
@@ -385,6 +386,9 @@ export default function SEOConsultingPrices() {
           </motion.div>
         </div>
       </section>
+
+      {/* GEO Fiyatlandırma ve Bilgi Kutusu Bölümü */}
+      <GEOPricingSection showGeoInfoBox={true} />
 
       {/* Neden Beni Seçmelisiniz Bölümü */}
       <section className="py-24 bg-gradient-to-b from-[#050814] to-[#0a0f25] relative overflow-hidden">

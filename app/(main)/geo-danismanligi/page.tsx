@@ -7,6 +7,7 @@ import GEOHero from "@/components/GEOHero";
 import ServiceLeadForm from "@/components/ServiceLeadForm";
 import GEOConsultancyContent from "@/components/GEOConsultancyContent";
 import GEODetailedContent from "@/components/GEODetailedContent";
+import GEOPricingSection from "@/components/GEOPricingSection";
 
 export const metadata: Metadata = {
   title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
@@ -140,6 +141,9 @@ export default function GEODanismanligi() {
           },
         ]}
       >
+        {/* GEO Pricing Section */}
+        <GEOPricingSection showGeoInfoBox={false} />
+
         {/* Relocated Form Section */}
         <section id="analiz" className="py-20 bg-[#0a0f25] border-t border-white/5 relative">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.02)_0%,transparent_70%)] pointer-events-none" />
