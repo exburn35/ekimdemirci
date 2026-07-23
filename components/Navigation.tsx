@@ -40,7 +40,6 @@ const sectoralServices = [
 ];
 
 const otherServices = [
-  { name: "Fiyatlar", href: "/seo-danismanlik-fiyatlari" },
   { name: "İçerik Yazımı", href: "/icerik-yazimi" },
   { name: "SEO Sözlüğü", href: "/seo-sozlugu" },
   { name: "Audit Talebi", href: "/audit-talebi" },
@@ -101,7 +100,7 @@ export default function Navigation() {
       initial={{ y: -100, x: "-50%" }}
       animate={{ y: 0, x: "-50%" }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-4 left-1/2 z-50 w-full max-w-7xl transition-all duration-300 px-4`}
+      className={`fixed top-4 left-1/2 z-50 w-full max-w-[1400px] transition-all duration-300 px-4`}
     >
       <div className={`mx-auto px-6 py-3.5 rounded-full border transition-all duration-300 ${
         isScrolled 
@@ -118,33 +117,40 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden lg:flex items-center space-x-3.5 xl:space-x-6">
             <Link
               href="/"
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
             >
               Anasayfa
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
             </Link>
             <Link
               href="/hakkimda"
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
             >
               Hakkımda
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
             </Link>
             <Link
               href="/blog"
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
             >
               Blog
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
             </Link>
             <Link
               href="/geo-danismanligi"
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
             >
               GEO Danışmanlığı
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link
+              href="/seo-danismanlik-fiyatlari"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
+            >
+              SEO & GEO Fiyatları
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
             </Link>
 
@@ -153,7 +159,7 @@ export default function Navigation() {
               <button
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1 whitespace-nowrap"
               >
                 SEO Hizmetleri
                 <ChevronDown
@@ -194,7 +200,7 @@ export default function Navigation() {
               <button
                 onMouseEnter={() => setIsSectoralOpen(true)}
                 onMouseLeave={() => setIsSectoralOpen(false)}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1 whitespace-nowrap"
               >
                 Sektörel SEO
                 <ChevronDown
@@ -235,7 +241,7 @@ export default function Navigation() {
               <button
                 onMouseEnter={() => setIsOtherOpen(true)}
                 onMouseLeave={() => setIsOtherOpen(false)}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1 whitespace-nowrap"
               >
                 Daha Fazla
                 <ChevronDown
@@ -273,7 +279,7 @@ export default function Navigation() {
 
             <Link
               href="/iletisim"
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
             >
               İletişim
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
@@ -281,7 +287,7 @@ export default function Navigation() {
 
             <Link
               href="/iletisim"
-              className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold text-sm hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 hover:scale-105 shadow-[0_0_15px_rgba(139,92,246,0.4)]"
+              className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold text-sm hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 hover:scale-105 shadow-[0_0_15px_rgba(139,92,246,0.4)] whitespace-nowrap"
             >
               Başla
             </Link>
@@ -290,7 +296,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+            className="lg:hidden text-white p-2 hover:bg-white/10 rounded-full transition-colors"
             aria-label="Menüyü aç/kapa"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -306,7 +312,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: "auto", y: 0 }}
             exit={{ opacity: 0, height: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#0a0f25]/98 backdrop-blur-2xl border border-white/10 rounded-2xl mt-2 overflow-hidden shadow-2xl flex flex-col"
+            className="lg:hidden bg-[#0a0f25]/98 backdrop-blur-2xl border border-white/10 rounded-2xl mt-2 overflow-hidden shadow-2xl flex flex-col"
           >
             {/* Scrollable Nav Area */}
             <div className="px-3 py-4 space-y-1 max-h-[65vh] overflow-y-auto hidden-scrollbar">
@@ -321,6 +327,9 @@ export default function Navigation() {
               </Link>
               <Link href="/geo-danismanligi" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
                 GEO Danışmanlığı
+              </Link>
+              <Link href="/seo-danismanlik-fiyatlari" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
+                SEO & GEO Fiyatları
               </Link>
               <Link href="/iletisim" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5">
                 İletişim
