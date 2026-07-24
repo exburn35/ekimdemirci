@@ -2,79 +2,137 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Sayfa Dışı SEO (Off-Page)",
-  description: "Stratejik bağlantı kurma, marka anılmaları ve ilişki kurma yoluyla otorite ve güvenilirlik oluşturun. Sıralamaları yönlendiren kaliteli backlinkler.",
+  title: "Sayfa Dışı (Off-Page) SEO Danışmanlığı | Ekim Demirci",
+  description: "Organik marka otoritesi inşası, dijital PR, doğal backlink profil yönetimi ve zararlı link temizliği içeren uzman Sayfa Dışı SEO danışmanlığı.",
   alternates: {
     canonical: "/seo-hizmetleri/sayfa-disi-seo",
   },
   openGraph: {
-    title: "Sayfa Dışı SEO Hizmetleri | Ekim Demirci",
-    description: "Daha iyi sıralamalar için stratejik bağlantı kurma ve otorite oluşturma.",
+    title: "Sayfa Dışı (Off-Page) SEO Danışmanlığı | Ekim Demirci",
+    description: "Markanızın sektördeki dijital otoritesini ve arama motoru güvenini artıran çözümler.",
   },
 };
 
 export default function OffPageSEO() {
+  const faqItems = [
+    {
+      question: "Sayfa Dışı (Off-Page) SEO nedir ve neden gereklidir?",
+      answer: "Sayfa Dışı SEO, web sitenizin dışında gerçekleşen ve Google'a sitenizin popüler, otoriter ve güvenilir olduğunu kanıtlayan çalışmalardır. Yüksek kaliteli backlink edinimi, dijital PR, marka anılmaları ve sosyal sinyaller bu kapsama girer."
+    },
+    {
+      question: "Satın alınan toplu backlink paketleri siteme zarar verir mi?",
+      answer: "Kesinlikle evet. Otomatik panellerden alınan kalitesiz ve spam backlinkler, Google'ın SpamBrain algoritması tarafından tespit edilerek manuel işlem (penalty) veya sıralamadan tamamen silinme ile sonuçlanır. Ben sadece doğal ve editoryal bağlantı stratejileri yürütüyorum."
+    },
+    {
+      question: "Zararlı Backlink Temizliği (Disavow) nasıl yapılır?",
+      answer: "Ahrefs ve Semrush analizleriyle sitenize yönlenen spam veya rakip saldırısı kaynaklı bağlantılar tespit edilir. Ardından hazırlanan Disavow dosyası Google Search Console üzerinden iletilerek sitenizin otoritesi koruma altına alınır."
+    },
+    {
+      question: "Digital PR ve Marka Anılmaları (Unlinked Mentions) nedir?",
+      answer: "Sektörel haber siteleri ve mecralarda markanızdan bağlantı verilmeksizin bahsedilmesi dahi Google ve yapay zeka botları (GEO) için güçlü bir Varlık (Entity) doğrulama sinyalidir. Bu anılmaları linke dönüştürmek en güvenli backlink yöntemidir."
+    }
+  ];
+
   return (
     <ServicePageLayout
-      title="Sayfa Dışı SEO"
-      subtitle="Otorite ve Bağlantı Kurma"
-      description="Sayfa dışı SEO (Off-page SEO), harici sinyaller aracılığıyla web sitenizin otoritesini ve güvenilirliğini oluşturmaya odaklanır. Stratejik bağlantı kurma kampanyaları geliştiriyor, marka anılmalarını artırıyor ve sitenizi sektörünüzde yetkili bir kaynak olarak konumlandıran ilişkiler kuruyorum."
+      title="Sayfa Dışı (Off-Page) SEO Danışmanlığı"
+      subtitle="Otorite Mimarısı & Dijital PR"
+      description="Spam riski taşımayan, doğal editoryal backlink stratejileri, dijital PR ve marka bilinirliği çalışmalarıyla domain otoritenizi ve arama sıralamalarınızı zirveye taşıyorum."
       icon="Link2"
-      gradient="from-orange-500 to-red-500"
-      features={[
-        "Stratejik Bağlantı Kurma",
-        "Misafir Yazarlık (Guest Posting)",
-        "Kırık Bağlantı İnşası",
-        "Kaynak Sayfası Tanıtımı",
-        "Marka Anılmaları Oluşturma",
-        "Influencer Ortaklıkları",
-        "PR ve Medya İlişkileri",
-        "Dizin Kayıtları",
-        "Sosyal Sinyaller",
-        "Yerel Alıntılar (Citations)",
-      ]}
-      benefits={[
+      gradient="from-orange-600 via-amber-600 to-red-600"
+      definition={{
+        question: "Sayfa Dışı (Off-Page) SEO Nedir?",
+        answer: "Sayfa Dışı (Off-Page) SEO; web sitenizin arama motorları ve yapay zeka sistemleri gözündeki dijital güvenilirliğini (Trust), saygınlığını ve otoritesini (Authority) artırmak amacıyla site haricindeki mecralarda yürütülen bağlantı inşası, dijital PR ve marka algısı yönetimidir.",
+        paragraph: "Arama motorları, bir sitenin değerini sadece kendi söylediklerine bakarak değil, diğer saygın sitelerin ona nasıl referans verdiğine bakarak ölçer. Doğru kurgulanan bir Off-Page SEO stratejisi, rekabetin çok yüksek olduğu sektörlerde birinci sayfadaki sıralama belirleyicidir."
+      }}
+      scope={[
         {
-          title: "Artan Alan Adı Otoritesi",
-          description: "Yetkili web sitelerinden gelen yüksek kaliteli backlinkler, arama motorlarına içeriğinizin değerli ve güvenilir olduğunu göstererek alan adı otoritenizi ve arama sıralamalarınızı doğrudan iyileştirir.",
+          title: "Doğal & Editoryal Backlink İnşası",
+          description: "Toplu ve otomatik paketlerden uzak, tamamen sektörünüzle ilgili otoriter haber portalı ve bloglardan doğal bağlantı edinimi yürütüyorum."
         },
         {
-          title: "Yönlendirme Trafiği",
-          description: "Kaliteli backlinkler sadece sıralamaları iyileştirmekle kalmaz, aynı zamanda bağlantı veren sitelerden doğrudan yönlendirme trafiği çekerek hedef kitlenizi ve potansiyel müşteri tabanınızı genişletir.",
+          title: "Dijital PR & Sektörel Basın Bültenleri",
+          description: "Markanızın yenilikçi vaka çalışmalarını ve sektör verilerini dijital basına taşıyarak organik haber alıntıları ve marka görünürlüğü sağlıyorum."
         },
         {
-          title: "Marka Görünürlüğü",
-          description: "Stratejik sayfa dışı SEO, markanızın web üzerindeki görünürlüğünü artırır; marka bilinirliği oluşturur ve işletmenizi sektörünüzde bir düşünce lideri olarak konumlandırır.",
+          title: "Zararlı Link Analizi & Disavow Temizliği",
+          description: "Sitenize yönlenen negatif SEO saldırılarını ve kalitesiz bağlantıları düzenli tarayarak Google Search Console Disavow aracıyla etkisiz hale getiriyorum."
         },
         {
-          title: "Rekabet Avantajı",
-          description: "Kaliteli backlinklerle desteklenen güçlü bir sayfa dışı SEO stratejisi, özellikle sayfa içi optimizasyonun tek başına yeterli olmadığı rekabetçi sektörlerde size önemli bir avantaj sağlar.",
+          title: "Bağlantısız Marka Anılmaları (Unlinked Mentions)",
+          description: "İnternet genelinde markanızın adının geçtiği ancak link verilmemiş sayfaları tespit edip iletişime geçerek bu anılmaları kaliteli backlinke çeviriyorum."
         },
+        {
+          title: "Kırık Bağlantı İnşası (Broken Link Building)",
+          description: "Sektörünüzdeki kırık linkleri tespit edip site sahiplerine kendi kaliteli içeriklerimizi önererek kazan-kazan modeliyle backlink topluyorum."
+        },
+        {
+          title: "Çapa Metin (Anchor Text) Dengesi",
+          description: "Aşırı optimize edilmiş anahtar kelime çapa metinlerinin yol açacağı algoritma cezalarını önlemek için marka adı ve genel URL ağırlıklı doğal çapa profilini koruyorum."
+        }
       ]}
       process={[
         {
           step: "1",
-          title: "Bağlantı Profili Analizi",
-          description: "Mevcut backlink profilinizi analiz ederek güçlü yanları, zayıf noktaları ve fırsatları belirliyorum. Ayrıca potansiyel bağlantı fırsatlarını keşfetmek için rakip bağlantı profillerini inceliyorum.",
+          title: "Backlink Profil & Risk Analizi",
+          description: "Mevcut bağlantı haritanızı, Toxic Score değerlerinizi ve rakiplerinizin backlink kaynaklarını Ahrefs / Semrush ile inceliyorum."
         },
         {
           step: "2",
-          title: "Tanıtım Stratejisi Geliştirme",
-          description: "Sektörünüze, hedef kitlenize ve iş hedeflerinize dayalı, en iyi bağlantı fırsatlarını belirleyen ve kişiselleştirilmiş tanıtım kampanyaları içeren özel bir strateji geliştiriyorum.",
+          title: "Spam Temizliği & Disavow",
+          description: "Zararlı ve algoritmik ceza riski taşıyan linkleri Google Disavow aracıyla engelliyorum."
         },
         {
           step: "3",
-          title: "Bağlantı Edinme",
-          description: "Misafir yazarlık, kaynak sayfası tanıtımı, kırık bağlantı inşası ve sektör etkileyicileriyle ilişki kurma gibi çeşitli yöntemlerle stratejik bağlantı kurma kampanyaları yürütüyorum.",
+          title: "Outreach & Editoryal İletişim",
+          description: "Sektörel yayıncılar ve basın mensuplarıyla iletişim kurarak doğal içerik yayınları ve bağlamsal linkler ediniyorum."
         },
         {
           step: "4",
-          title: "İzleme ve Bakım",
-          description: "Sürdürülebilir ve uzun vadeli bağlantı büyümesi sağlamak için backlink profilinizi sürekli izliyor, bağlantı kalitesini takip ediyor, zararlı bağlantıları reddediyor ve ilişkileri sürdürüyorum.",
-        },
+          title: "Otorite Artışı & Raporlama",
+          description: "Domain Rating (DR / DA) artışını, kazanılan bağlantıların indekslenme durumunu ve organik sıralama yükselişlerini aylık raporluyorum."
+        }
       ]}
+      targetAudience={[
+        {
+          audience: "Yoğun Rekabetçi Sektörler",
+          benefit: "On-Page çalışmaların doyuma ulaştığı zorlu sektörlerde rakiplerin önüne geçecek otorite sıçraması."
+        },
+        {
+          audience: "Yeni Kurulan Web Siteleri",
+          benefit: "Google sandbox engellerini aşmak için güvenilir ve temiz bir alan adı reputasyonu inşa etme."
+        },
+        {
+          audience: "Marka Bilinirliğini Artırmak İsteyenler",
+          benefit: "Dijital basında yer alarak hem organik trafik hem de güçlü müşteri güveni kazanma."
+        },
+        {
+          audience: "Negatif SEO Saldırısına Uğrayanlar",
+          benefit: "Rakip saldırısı kaynaklı spam link dalgalarını temizleyerek sıralama kayıplarını telafi etme."
+        }
+      ]}
+      evidence={[
+        {
+          projectCode: "PROJE D-1",
+          metric: "DR 18 -> DR 45",
+          detail: "6 aylık editoryal link inşası ve dijital PR stratejisi sonrası yakalanan Domain Rating sıçraması.",
+          source: "Kaynak: Ahrefs Domain Rating Analizi 2025"
+        },
+        {
+          projectCode: "SPAM TEMİZLİĞİ",
+          metric: "%0 Toxic Score",
+          detail: "Hazırlanan Disavow dosyası sonrası sitenin zararlı bağlantı skorunun sıfırlanması.",
+          source: "Kaynak: Semrush Backlink Audit Panel"
+        },
+        {
+          projectCode: "DÖNÜŞÜM KATKISI",
+          metric: "+%140 Yönlendirme Trafiği",
+          detail: "Sektörel haber sitelerinden gelen doğrudan nitelikli ziyaretçi trafiğindeki artış.",
+          source: "Kaynak: Google Analytics 4 Referrals"
+        }
+      ]}
+      faqItems={faqItems}
       blogCategory="sayfa-disi-seo"
     />
   );
 }
-
