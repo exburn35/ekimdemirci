@@ -1,10 +1,8 @@
 import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import FAQSchema from "@/components/schemas/FAQSchema";
-import GEOHero from "@/components/GEOHero";
-import GEOConsultancyContent from "@/components/GEOConsultancyContent";
-import GEODetailedContent from "@/components/GEODetailedContent";
 import GEOPricingSection from "@/components/GEOPricingSection";
+import GEODetailedContent from "@/components/GEODetailedContent";
 
 export const metadata: Metadata = {
   title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
@@ -22,15 +20,11 @@ export default function GEODanismanligi() {
   const faqItems = [
     {
       question: "GEO (Generative Engine Optimization) Nedir?",
-      answer: "GEO, web sitelerinin ChatGPT, Gemini, Perplexity ve Google AI Overviews gibi yapay zeka tabanlı üretken arama motorlarında kaynak gösterilmesi, alıntılanması ve doğrudan önerilmesi amacıyla yapılan yeni nesil optimizasyon sürecidir."
+      answer: "GEO, web sitelerinin ChatGPT, Gemini, Perplexity ve Google AI Overviews gibi yapay zeka tabanlı üretken arama motorlarında kaynak gösterilmesi, alıntılanması ve doğrudan önerilmesi amacıyla yapılan yeni nesil şemsiye optimizasyon sürecidir."
     },
     {
       question: "GEO'nun klasik SEO'dan farkı nedir?",
-      answer: "Klasik SEO, anahtar kelimelere ve arama motoru sıralamalarına odaklanarak doğrudan tıklama çekmeyi hedefler. GEO ise yapay zekanın ürettiği sentezlenmiş yanıtlarda markanızın güvenilir bir kaynak olarak referans gösterilmesini sağlar."
-    },
-    {
-      question: "AI Overviews ve ChatGPT'de görünmek ne kazandırır?",
-      answer: "AI Overviews veya ChatGPT yanıtlarında alıntılanan kaynaklar, araştırma sürecini tamamlamış ve satın almaya en yakın yüksek kaliteli dönüşüm trafiğini çeker."
+      answer: "Klasik SEO, anahtar kelimelere ve arama motoru sıralamalarına odaklanarak mavi bağlantılardan tıklama çekmeyi hedefler. GEO ise yapay zekanın ürettiği sentezlenmiş yanıtlarda markanızın güvenilir bir kaynak olarak referans gösterilmesini sağlar."
     },
     {
       question: "Semantik Triple (Özne-Yüklem-Nesne) yapısının GEO ile ilişkisi nedir?",
@@ -53,13 +47,13 @@ export default function GEODanismanligi() {
         icon="Brain"
         gradient="from-emerald-500 via-teal-500 to-cyan-500"
         definition={{
-          question: "GEO (Generative Engine Optimization) Danışmanlığı Nedir?",
-          answer: "GEO (Generative Engine Optimization - Üretken Motor Optimizasyonu), web sitenizin bilgi yapısını ChatGPT, Perplexity, Claude ve Google AI Overviews gibi yapay zeka arama sistemlerinin doğrudan yanıtlarına kaynak olarak girecek şekilde yapılandıran danışmanlık sürecidir.",
-          paragraph: "Geleneksel SEO sonuç sayfasındaki 10 mavi bağlantıda yer almaya odaklanırken, GEO yapay zeka yanıtının tam içinde güvenilir marka olarak tavsiye edilmenizi sağlar. Reuters, OpenAI ve Semrush raporları, arama trafiğinin hızla üretken motor özetlerine kaydığını kanıtlamaktadır."
+          question: "GEO Danışmanlığı Nedir?",
+          answer: "GEO (Generative Engine Optimization), web sitenizin bilgi yapısını ChatGPT, Perplexity, Claude ve Google AI Overviews gibi yapay zeka arama sistemlerinin doğrudan yanıtlarına kaynak olarak girecek şekilde yapılandıran temel şemsiye danışmanlık sürecidir.",
+          paragraph: "Geleneksel SEO arama sonuç sayfasındaki 10 mavi bağlantıda yer almaya odaklanırken, GEO yapay zeka yanıtının tam içinde güvenilir marka olarak tavsiye edilmenizi sağlar. Kavramsal metodolojiyi kavradıktan sonra, platform bazlı yapay zeka motorlarına özel uygulama stratejileri sayfasını inceleyerek somut teknik adımları öğrenebilirsiniz."
         }}
         scope={[
           {
-            title: "Semantik Varlık & Knowledge Graph Bağlantısı",
+            title: "Semantik Varlık ve Knowledge Graph Bağlantısı",
             description: "Markanızı ve ürünlerinizi Büyük Dil Modellerinin (LLMs) hafızasında birbiriyle ilişkili güvenilir bir bilgi düğümü (Entity) olarak kurguluyorum."
           },
           {
@@ -79,7 +73,7 @@ export default function GEODanismanligi() {
             description: "Karmaşık teknik terimleri Doğal Dil İşleme (NLP) kurallarına uyarlayarak yapay zekanın içeriğinizi hatasız çözümlemesini temin ediyorum."
           },
           {
-            title: "Dijital PR & Marka Birlikteliği (Co-citation)",
+            title: "Dijital PR ve Marka Birlikteliği (Co-citation)",
             description: "Dış mecralarda ve sektörel yayınlarda markanızın adının doğru kavramlarla birlikte anılmasını sağlayarak AI güven skorunuzu yükseltiyorum."
           }
         ]}
@@ -91,7 +85,7 @@ export default function GEODanismanligi() {
           },
           {
             step: "2",
-            title: "Entity & Knowledge Graph Yapılandırması",
+            title: "Entity ve Knowledge Graph Yapılandırması",
             description: "Markanızın dijital dünyadaki varlığını tekil ve yetkili bir nesne (Entity) olarak tanımlıyorum."
           },
           {
@@ -106,25 +100,25 @@ export default function GEODanismanligi() {
           },
           {
             step: "5",
-            title: "Sürekli AI Model Takibi & Raporlama",
+            title: "Sürekli AI Model Takibi ve Raporlama",
             description: "Yapay zeka modellerinden gelen yönlendirme trafiğini ve marka tavsiye oranlarını aylık raporlarla sunuyorum."
           }
         ]}
         targetAudience={[
           {
-            audience: "E-Ticaret & Perakende Markaları",
+            audience: "E-Ticaret ve Perakende Markaları",
             benefit: "Ürünlerin ChatGPT Search ve Perplexity sorgularında doğrudan satın alma önerisi olarak listelenmesi."
           },
           {
-            audience: "SaaS & Teknoloji Girişimleri",
+            audience: "SaaS ve Teknoloji Girişimleri",
             benefit: "Yazılım çözümlerinizin yapay zeka arama motorlarında kategorinin en iyi alternatifi olarak tavsiye edilmesi."
           },
           {
-            audience: "Sağlık & Medikal Kuruluşlar",
+            audience: "Sağlık ve Medikal Kuruluşlar",
             benefit: "Tedavi ve uzmanlık alanlarınızın yapay zeka sağlık özetlerinde doğrulanmış kaynak gösterilmesi."
           },
           {
-            audience: "B2B & Kurumsal Şirketler",
+            audience: "B2B ve Kurumsal Şirketler",
             benefit: "Sektörel rapor ve çözümlerinizin yapay zeka yanıtlarında alıntılanarak kurumsal otoritenin pekişmesi."
           }
         ]}
@@ -151,6 +145,25 @@ export default function GEODanismanligi() {
         faqItems={faqItems}
         blogCategory="yapay-zeka-seo"
       >
+        {/* Contextual Internal Link Banner to Sub-Page */}
+        <section className="py-12 bg-[#0d1433] border-t border-b border-cyan-500/20">
+          <div className="max-w-5xl mx-auto px-4 text-center">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+              Platform Bazlı Uygulama Taktiklerini Keşfedin
+            </h3>
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+              Generative Engine Optimization'ın ne olduğunu ve genel metodolojisini kavradıktan sonra, her bir platform için özel kurgulanan{" "}
+              <a 
+                href="/seo-hizmetleri/yapay-zeka-seo" 
+                className="text-cyan-400 font-semibold underline hover:text-cyan-300 transition-colors"
+              >
+                yapay zeka motorlarına özel uygulama stratejileri
+              </a>{" "}
+              sayfamızı inceleyebilir, ChatGPT, Perplexity, Claude ve Google AI Overviews optimizasyon adımlarını uygulayabilirsiniz.
+            </p>
+          </div>
+        </section>
+
         <GEOPricingSection showGeoInfoBox={false} />
         <GEODetailedContent faqItems={faqItems} />
       </ServicePageLayout>
