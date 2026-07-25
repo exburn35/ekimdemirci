@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
-import { getAllBlogPosts } from "../lib/blog";
+import { getAllBlogPosts, getAllCategories } from "../lib/blog";
 import { caseStudies } from "../lib/case-studies";
 
 export const dynamic = "force-dynamic";
@@ -36,8 +36,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   let blogRoutes: MetadataRoute.Sitemap = [];
+  let categoryRoutes: MetadataRoute.Sitemap = [];
   try {
-    // 1. Fetch dynamic Blog Posts from JSON files
+    // 1. Fetch dynamic Blog Posts & Categories from JSON files
     const blogs = getAllBlogPosts();
 
     blogRoutes = blogs.map((post) => ({
@@ -45,6 +46,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    }));
+
+    const categories = getAllCategories();
+    categoryRoutes = categories.map((cat) => ({
+      url: `${baseUrl}/kategori/${cat.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
     }));
   } catch (error) {
     console.error("Sitemap Blog Error:", error);
@@ -76,6 +85,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes, ...pageRoutes, ...successStoryRoutes];
+  return [...staticRoutes, ...categoryRoutes, ...blogRoutes, ...pageRoutes, ...successStoryRoutes];
 }
 

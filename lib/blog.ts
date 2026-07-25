@@ -26,6 +26,80 @@ export interface Heading {
   level: number;
 }
 
+export interface CategoryDetails {
+  name: string;
+  slug: string;
+  description: string;
+}
+
+export const CATEGORY_DESCRIPTIONS: Record<string, CategoryDetails> = {
+  "google-patentler": {
+    name: "Google Patentler",
+    slug: "google-patentler",
+    description: "Google'ın arama algoritmasının temelini oluşturan patentleri tek tek ele alan, teknik derinlikli bir SEO inceleme serisi.",
+  },
+  "geo": {
+    name: "GEO",
+    slug: "geo",
+    description: "Generative Engine Optimization, yapay zeka arama motorları ve AEO görünürlük stratejileri rehberi.",
+  },
+  "seo": {
+    name: "SEO",
+    slug: "seo",
+    description: "Arama motoru optimizasyonu, sıralama algoritmaları ve organik büyüme stratejileri.",
+  },
+};
+
+export function slugifyCategory(category: string): string {
+  return category
+    .toLowerCase()
+    .replace(/ğ/g, "g")
+    .replace(/ü/g, "u")
+    .replace(/ş/g, "s")
+    .replace(/ı/g, "i")
+    .replace(/ö/g, "o")
+    .replace(/ç/g, "c")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function getCategoryBySlug(slug: string): CategoryDetails | null {
+  const normalizedSlug = slug.toLowerCase();
+  if (CATEGORY_DESCRIPTIONS[normalizedSlug]) {
+    return CATEGORY_DESCRIPTIONS[normalizedSlug];
+  }
+  const allPosts = getAllBlogPosts();
+  const matchedPost = allPosts.find(p => p.category && slugifyCategory(p.category) === normalizedSlug);
+  if (matchedPost && matchedPost.category) {
+    return {
+      name: matchedPost.category,
+      slug: normalizedSlug,
+      description: `${matchedPost.category} alanında teknik derinlikli rehberler, incelemeler ve stratejiler.`,
+    };
+  }
+  return null;
+}
+
+export function getPostsByCategory(categorySlug: string): BlogPost[] {
+  const normalizedSlug = categorySlug.toLowerCase();
+  const allPosts = getAllBlogPosts();
+  return allPosts.filter(p => p.category && slugifyCategory(p.category) === normalizedSlug);
+}
+
+export function getAllCategories(): CategoryDetails[] {
+  const allPosts = getAllBlogPosts();
+  const categoryNames = Array.from(new Set(allPosts.map(p => p.category).filter(Boolean) as string[]));
+  
+  return categoryNames.map(name => {
+    const slug = slugifyCategory(name);
+    return getCategoryBySlug(slug) || {
+      name,
+      slug,
+      description: `${name} alanında teknik derinlikli rehberler ve incelemeler.`,
+    };
+  });
+}
+
 export function getAllBlogPosts(): BlogPost[] {
   const blogsDir = path.join(process.cwd(), "data", "blogs");
   if (!fs.existsSync(blogsDir)) return [];
@@ -193,7 +267,7 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
       else {
         const sectoralServices = ["sektorel-seo-hizmetleri", "e-ticaret-seo", "saglik-ve-klinik-seo", "yerel-isletme-seo", "kurumsal-b2b-seo", "avukatlar-icin-seo-hizmeti", "doktorlar-icin-seo-2", "dis-hekimleri-icin-seo-2", "guzellik-merkezleri-icin-seo-2", "hastaneler-icin-seo-2"];
         if (sectoralServices.includes(slug)) newHref = `href="/sektorel-seo-hizmetleri/${slug}"`;
-        else if (["iletisim", "hakkimda", "blog", "basari-hikayeleri", "geo-danismanligi", "audit-talebi", "cerez-politikasi", "gizlilik-politikasi", "kullanim-kosullari", "seo-danismanlik-fiyatlari", "sikca-sorulan-sorular", "tools"].includes(slug)) newHref = `href="/${slug}"`;
+        else if (["iletisim", "hakkimda", "blog", "basari-hikayeleri", "geo-danismanligi", "audit-talebi", "cerez-politikasi", "gizlilik-politikasi", "kullanim-kosullari", "seo-danismanlik-fiyatlari", "sikca-sorulan-sorular", "tools"].includes(slug) || slug.startsWith("kategori/")) newHref = `href="/${slug}"`;
         else newHref = `href="/blog/${slug}"`;
       }
     }
