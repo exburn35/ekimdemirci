@@ -52,6 +52,7 @@ const nextConfig = {
   },
   async redirects() {
     const blogSlugs = [
+      "yapay-zeka-gorunurlugunuzu-olcmek-icin-en-iyi-araclar",
       "2026-yilinda-kullanabileceginiz-en-iyi-10-yapay-zeka-seo-araclari",
       "anahtar-kelime-nedir",
       "arama-motoru-nedir-en-cok-hangisi-kullaniliyor",
