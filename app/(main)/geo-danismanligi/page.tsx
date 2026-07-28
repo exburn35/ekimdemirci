@@ -66,11 +66,6 @@ export default function GEODanismanligi() {
         description="Google'ın 8 resmi patentine ve RAG altyapısına dayalı bilimsel GEO danışmanlığı. ChatGPT, Google AI Overviews, Perplexity ve Claude'da markanızın tavsiye edilen birincil kaynak olmasını sağlıyorum."
         icon="Brain"
         gradient="from-emerald-500 via-teal-500 to-cyan-500"
-        definition={{
-          question: "GEO Danışmanlığı Nedir?",
-          answer: "GEO (Generative Engine Optimization), web sitenizin içerik ve veri yapısını yapay zeka arama motorlarının (ChatGPT Search, Perplexity, Google AI Overviews) RAG vektör arama ve Knowledge Graph indekslerine tam uyumlu hale getiren bilimsel danışmanlık sürecidir.",
-          paragraph: "Rakipleriniz geleneksel SEO ile 10 mavi bağlantıda tıklama yarışındayken, patent bazlı GEO stratejimiz ile markanızı yapay zekanın kullanıcıya sunduğu tek doğrudan yanıta birincil otoriter kaynak olarak yerleştiriyoruz."
-        }}
         scope={[
           {
             title: "Semantik Varlık (Entity) & Knowledge Graph",
