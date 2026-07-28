@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import FAQSchema from "@/components/schemas/FAQSchema";
+import ProductSchema from "@/components/schemas/ProductSchema";
 import GEOPricingSection from "@/components/GEOPricingSection";
 import GEOAIToolsSection from "@/components/GEOAIToolsSection";
 import GEODetailedContent from "@/components/GEODetailedContent";
@@ -48,6 +49,16 @@ export default function GEODanismanligi() {
   return (
     <>
       <FAQSchema items={faqItems} />
+      <ProductSchema
+        name="GEO (Generative Engine Optimization) Danışmanlığı"
+        description="Google'ın 8 resmi patenti ve RAG altyapısına dayalı teknik GEO danışmanlık hizmet paketi. ChatGPT Search, Google AI Overviews ve Perplexity'de birincil kaynak olun."
+        url="https://ekimdemirci.com/geo-danismanligi"
+        image="https://ekimdemirci.com/uploads/geo-visual-semantic-patent-diagram.png"
+        lowPrice={25000}
+        highPrice={75000}
+        ratingValue={4.9}
+        reviewCount={48}
+      />
 
       <ServicePageLayout
         title="GEO Danışmanlığı"
