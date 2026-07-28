@@ -2,7 +2,9 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import GEOPricingSection from "@/components/GEOPricingSection";
+import GEOAIToolsSection from "@/components/GEOAIToolsSection";
 import GEODetailedContent from "@/components/GEODetailedContent";
+
 
 export const metadata: Metadata = {
   title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
@@ -165,6 +167,7 @@ export default function GEODanismanligi() {
         </section>
 
         <GEOPricingSection showGeoInfoBox={false} />
+        <GEOAIToolsSection />
         <GEODetailedContent faqItems={faqItems} />
       </ServicePageLayout>
     </>
