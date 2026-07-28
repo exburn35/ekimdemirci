@@ -16,41 +16,57 @@ export function decodeHtmlEntities(str: string): string {
 
 export function formatDate(dateStr: string): string {
   if (!dateStr) return "";
-  const d = new Date(dateStr);
-  return new Intl.DateTimeFormat("tr-TR", {
-    timeZone: "Europe/Istanbul",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(d);
+  try {
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return "";
+    return new Intl.DateTimeFormat("tr-TR", {
+      timeZone: "Europe/Istanbul",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }).format(d);
+  } catch (e) {
+    return "";
+  }
 }
 
 export function formatDateShort(dateStr: string): string {
   if (!dateStr) return "";
-  const d = new Date(dateStr);
-  return new Intl.DateTimeFormat("tr-TR", {
-    timeZone: "Europe/Istanbul",
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  }).format(d);
+  try {
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return "";
+    return new Intl.DateTimeFormat("tr-TR", {
+      timeZone: "Europe/Istanbul",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }).format(d);
+  } catch (e) {
+    return "";
+  }
 }
 
 export function isSameDay(dateStr1: string, dateStr2: string): boolean {
   if (!dateStr1 || !dateStr2) return false;
-  const d1 = new Date(dateStr1);
-  const d2 = new Date(dateStr2);
-  const format = (d: Date) => 
-    new Intl.DateTimeFormat("en-US", {
-      timeZone: "Europe/Istanbul",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    }).format(d);
-  return format(d1) === format(d2);
+  try {
+    const d1 = new Date(dateStr1);
+    const d2 = new Date(dateStr2);
+    if (isNaN(d1.getTime()) || isNaN(d2.getTime())) return false;
+    const format = (d: Date) => 
+      new Intl.DateTimeFormat("en-US", {
+        timeZone: "Europe/Istanbul",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).format(d);
+    return format(d1) === format(d2);
+  } catch (e) {
+    return false;
+  }
 }
 
 export function slugifyCategory(category: string): string {
+  if (!category) return "";
   return category
     .toLowerCase()
     .replace(/ğ/g, "g")

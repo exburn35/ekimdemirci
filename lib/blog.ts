@@ -244,60 +244,65 @@ function stripFirstElementByPattern(html: string, pattern: RegExp): string {
 export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings: Heading[] } {
   if (!html) return { cleanHtml: "", headings: [] };
 
-  // 1. Rewrite internal links
-  let processedHtml = html.replace(/<a\s+(?:[^>]*?\s+)?href="https?:\/\/(www\.)?ekimdemirci\.com\/([^"]*)"([^>]*)>/g, (match, www, pathPart, extra) => {
-    const slug = pathPart.replace(/\/$/, "");
-    let newHref = 'href="/"';
-    
-    if (slug) {
-      const seoServices = ["teknik-seo", "sayfa-ici-seo", "sayfa-disi-seo", "yapay-zeka-seo", "seo-hizmetleri"];
-      if (slug === "on-page-seo" || slug === "sayfa-ici-seo") newHref = 'href="/seo-hizmetleri/sayfa-ici-seo"';
-      else if (slug === "off-page-seo" || slug === "sayfa-disi-seo") newHref = 'href="/seo-hizmetleri/sayfa-disi-seo"';
-      else if (seoServices.includes(slug)) newHref = `href="/seo-hizmetleri/${slug}"`;
-      else {
-        const sectoralServices = ["sektorel-seo-hizmetleri", "e-ticaret-seo", "saglik-ve-klinik-seo", "yerel-isletme-seo", "kurumsal-b2b-seo", "avukatlar-icin-seo-hizmeti", "doktorlar-icin-seo-2", "dis-hekimleri-icin-seo-2", "guzellik-merkezleri-icin-seo-2", "hastaneler-icin-seo-2"];
-        if (sectoralServices.includes(slug)) newHref = `href="/sektorel-seo-hizmetleri/${slug}"`;
-        else if (["iletisim", "hakkimda", "blog", "basari-hikayeleri", "geo-danismanligi", "audit-talebi", "cerez-politikasi", "gizlilik-politikasi", "kullanim-kosullari", "seo-danismanlik-fiyatlari", "sikca-sorulan-sorular", "tools"].includes(slug) || slug.startsWith("kategori/")) newHref = `href="/${slug}"`;
-        else newHref = `href="/blog/${slug}"`;
+  try {
+    // 1. Rewrite internal links
+    let processedHtml = html.replace(/<a\s+(?:[^>]*?\s+)?href="https?:\/\/(www\.)?ekimdemirci\.com\/([^"]*)"([^>]*)>/g, (match, www, pathPart, extra) => {
+      const slug = pathPart.replace(/\/$/, "");
+      let newHref = 'href="/"';
+      
+      if (slug) {
+        const seoServices = ["teknik-seo", "sayfa-ici-seo", "sayfa-disi-seo", "yapay-zeka-seo", "seo-hizmetleri"];
+        if (slug === "on-page-seo" || slug === "sayfa-ici-seo") newHref = 'href="/seo-hizmetleri/sayfa-ici-seo"';
+        else if (slug === "off-page-seo" || slug === "sayfa-disi-seo") newHref = 'href="/seo-hizmetleri/sayfa-disi-seo"';
+        else if (seoServices.includes(slug)) newHref = `href="/seo-hizmetleri/${slug}"`;
+        else {
+          const sectoralServices = ["sektorel-seo-hizmetleri", "e-ticaret-seo", "saglik-ve-klinik-seo", "yerel-isletme-seo", "kurumsal-b2b-seo", "avukatlar-icin-seo-hizmeti", "doktorlar-icin-seo-2", "dis-hekimleri-icin-seo-2", "guzellik-merkezleri-icin-seo-2", "hastaneler-icin-seo-2"];
+          if (sectoralServices.includes(slug)) newHref = `href="/sektorel-seo-hizmetleri/${slug}"`;
+          else if (["iletisim", "hakkimda", "blog", "basari-hikayeleri", "geo-danismanligi", "audit-talebi", "cerez-politikasi", "gizlilik-politikasi", "kullanim-kosullari", "seo-danismanlik-fiyatlari", "sikca-sorulan-sorular", "tools"].includes(slug) || slug.startsWith("kategori/")) newHref = `href="/${slug}"`;
+          else newHref = `href="/blog/${slug}"`;
+        }
       }
-    }
-    
-    const cleanedExtra = extra.replace(/target="_blank"/g, "").replace(/rel="[^"]*"/g, "").trim();
-    return `<a ${newHref} ${cleanedExtra}>`;
-  });
-
-  // 2. Strip unwanted elements using safe balance parser
-  processedHtml = processedHtml.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "");
-  
-  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*user-info[^"]*"/g);
-  processedHtml = stripFirstElementByPattern(processedHtml, /class="[^"]*bs-img[^"]*"/g);
-  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*single-info[^"]*"/g);
-  processedHtml = stripElementByPattern(processedHtml, /id="ez-toc-container"/g);
-  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*ez-toc-container[^"]*"/g);
-  processedHtml = stripElementByPattern(processedHtml, /class="[^"]*(toc|table-of-contents|lwptoc|toc_container)[^"]*"/g);
-  
-  processedHtml = processedHtml.replace(/<h2[^>]*>İçindekiler<\/h2>\s*<ul[^>]*>[\s\S]*?<\/ul>/i, '');
-
-  // 3. Extract Headings and add IDs
-  const headings: Heading[] = [];
-  let headingCount = 0;
-  
-  processedHtml = processedHtml.replace(/<(h2|h3)[^>]*>([\s\S]*?)<\/\1>/gi, (match, tag, content) => {
-    const text = content.replace(/<[^>]*>/g, "").trim();
-    const id = `heading-${headingCount++}`;
-    headings.push({
-      id,
-      text: decodeHtmlEntities(text),
-      level: tag.toLowerCase() === "h2" ? 2 : 3
+      
+      const cleanedExtra = extra.replace(/target="_blank"/g, "").replace(/rel="[^"]*"/g, "").trim();
+      return `<a ${newHref} ${cleanedExtra}>`;
     });
-    return `<${tag} id="${id}">${content}</${tag}>`;
-  });
 
-  // 4. Rewrite WordPress image paths to /uploads
-  processedHtml = processedHtml.replace(/https?:\/\/(www\.)?ekimdemirci\.com\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/')
-      .replace(/\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/');
+    // 2. Strip unwanted elements using safe balance parser
+    processedHtml = processedHtml.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "");
+    
+    try { processedHtml = stripElementByPattern(processedHtml, /class="[^"]*user-info[^"]*"/g); } catch (e) {}
+    try { processedHtml = stripFirstElementByPattern(processedHtml, /class="[^"]*bs-img[^"]*"/g); } catch (e) {}
+    try { processedHtml = stripElementByPattern(processedHtml, /class="[^"]*single-info[^"]*"/g); } catch (e) {}
+    try { processedHtml = stripElementByPattern(processedHtml, /id="ez-toc-container"/g); } catch (e) {}
+    try { processedHtml = stripElementByPattern(processedHtml, /class="[^"]*ez-toc-container[^"]*"/g); } catch (e) {}
+    try { processedHtml = stripElementByPattern(processedHtml, /class="[^"]*(toc|table-of-contents|lwptoc|toc_container)[^"]*"/g); } catch (e) {}
+    
+    processedHtml = processedHtml.replace(/<h2[^>]*>İçindekiler<\/h2>\s*<ul[^>]*>[\s\S]*?<\/ul>/i, '');
 
-  return { cleanHtml: decodeHtmlEntities(processedHtml), headings };
+    // 3. Extract Headings and add IDs
+    const headings: Heading[] = [];
+    let headingCount = 0;
+    
+    processedHtml = processedHtml.replace(/<(h2|h3)[^>]*>([\s\S]*?)<\/\1>/gi, (match, tag, content) => {
+      const text = content.replace(/<[^>]*>/g, "").trim();
+      const id = `heading-${headingCount++}`;
+      headings.push({
+        id,
+        text: decodeHtmlEntities(text),
+        level: tag.toLowerCase() === "h2" ? 2 : 3
+      });
+      return `<${tag} id="${id}">${content}</${tag}>`;
+    });
+
+    // 4. Rewrite WordPress image paths to /uploads
+    processedHtml = processedHtml.replace(/https?:\/\/(www\.)?ekimdemirci\.com\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/')
+        .replace(/\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/');
+
+    return { cleanHtml: decodeHtmlEntities(processedHtml), headings };
+  } catch (error) {
+    console.error("Error processing blog HTML:", error);
+    return { cleanHtml: decodeHtmlEntities(html), headings: [] };
+  }
 }
 
 export { decodeHtmlEntities, formatDate, formatDateShort, isSameDay } from "./blog-utils";

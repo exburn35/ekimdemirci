@@ -9,6 +9,16 @@ interface BlogPostingSchemaProps {
   };
 }
 
+function safeISOString(dateVal?: Date | string | null): string | undefined {
+  if (!dateVal) return undefined;
+  try {
+    const d = new Date(dateVal);
+    return isNaN(d.getTime()) ? undefined : d.toISOString();
+  } catch (e) {
+    return undefined;
+  }
+}
+
 export default function BlogPostingSchema({ post }: BlogPostingSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -48,8 +58,8 @@ export default function BlogPostingSchema({ post }: BlogPostingSchemaProps) {
         "url": "https://ekimdemirci.com/logo.png"
       }
     },
-    "datePublished": post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
-    "dateModified": post.updatedAt ? new Date(post.updatedAt).toISOString() : (post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined),
+    "datePublished": safeISOString(post.publishedAt),
+    "dateModified": safeISOString(post.updatedAt) || safeISOString(post.publishedAt),
   };
 
   return (

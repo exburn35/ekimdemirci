@@ -6,34 +6,37 @@ import { getBlogPostBySlug, cleanAndProcessHtml } from "@/lib/blog";
 
 export const dynamic = "force-dynamic";
 
-
-
-
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const post = await getBlogPostBySlug(params.slug);
+  try {
+    const post = await getBlogPostBySlug(params.slug);
 
-  if (!post) {
+    if (!post) {
+      return {
+        title: "Makale Bulunamadı",
+      };
+    }
+
     return {
-      title: "Makale Bulunamadı",
-    };
-  }
-
-  return {
-    title: post.metaTitle || post.title || "Makale",
-    description: post.metaDescription || post.excerpt || undefined,
-    alternates: {
-      canonical: `/blog/${params.slug}`,
-    },
-    openGraph: {
       title: post.metaTitle || post.title || "Makale",
       description: post.metaDescription || post.excerpt || undefined,
-      images: post.ogImage || post.featuredImage ? [post.ogImage || post.featuredImage!] : undefined,
-    },
-  };
+      alternates: {
+        canonical: `/blog/${params.slug}`,
+      },
+      openGraph: {
+        title: post.metaTitle || post.title || "Makale",
+        description: post.metaDescription || post.excerpt || undefined,
+        images: post.ogImage || post.featuredImage ? [post.ogImage || post.featuredImage!] : undefined,
+      },
+    };
+  } catch (error) {
+    return {
+      title: "Makale",
+    };
+  }
 }
 
 export default async function BlogPostPage({
@@ -41,26 +44,31 @@ export default async function BlogPostPage({
 }: {
   params: { slug: string };
 }) {
-  const post = await getBlogPostBySlug(params.slug);
+  try {
+    const post = await getBlogPostBySlug(params.slug);
 
-  if (!post) {
+    if (!post) {
+      notFound();
+    }
+
+    const rawContent = typeof post.content === 'string' ? post.content : (post.content?.html || "");
+    const { cleanHtml, headings } = cleanAndProcessHtml(rawContent);
+
+    return (
+      <>
+        <BlogPostingSchema post={{
+          title: (post.title || "Makale").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
+          description: post.excerpt,
+          publishedAt: post.publishedAt,
+          updatedAt: post.updatedAt,
+          slug: post.slug,
+          featuredImage: post.featuredImage
+        }} />
+        <BlogPostContent post={post} processedHtml={cleanHtml} headings={headings} />
+      </>
+    );
+  } catch (error) {
+    console.error("Error rendering blog post page:", error);
     notFound();
   }
-
-  const { cleanHtml, headings } = cleanAndProcessHtml(typeof post.content === 'string' ? post.content : (post.content.html || ""));
-
-  return (
-    <>
-      <BlogPostingSchema post={{
-        title: (post.title || "Makale").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
-        description: post.excerpt,
-        publishedAt: post.publishedAt,
-        updatedAt: post.updatedAt,
-        slug: post.slug,
-        featuredImage: post.featuredImage
-      }} />
-      <BlogPostContent post={post} processedHtml={cleanHtml} headings={headings} />
-    </>
-  );
 }
-
