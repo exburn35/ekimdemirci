@@ -162,11 +162,9 @@ export default function AISEO() {
       </section>
 
       {/* Visual Component */}
-      <section className="py-12 bg-[#0a0f25]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-2xl overflow-hidden glass-strong shadow-[0_0_50px_rgba(139,92,246,0.1)] border border-purple-500/20 group transition-all duration-300">
-            <AIVisual />
-          </div>
+      <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AIVisual />
         </div>
       </section>
       <AILogosSection />
