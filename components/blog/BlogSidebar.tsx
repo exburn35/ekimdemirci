@@ -74,7 +74,7 @@ export default function BlogSidebar({ category }: BlogSidebarProps) {
 
       {/* Related Posts in Sidebar */}
       <div className="mt-8">
-        <RelatedBlogPosts category={category || "SEO"} />
+        <RelatedBlogPosts category={category || "SEO"} variant="sidebar" />
       </div>
     </aside>
   );

@@ -4,7 +4,8 @@ import { Calendar, Clock, ArrowLeft, Tag, Zap, CheckCircle2 } from "lucide-react
 import type { BlogPost, Heading } from "@/lib/blog";
 import { formatDate, isSameDay, slugifyCategory } from "@/lib/blog-utils";
 import BlogScrollProgress from "./BlogScrollProgress";
-import SEOAuditSection from "@/components/SEOAuditSection";
+import RelatedPages from "@/components/RelatedPages";
+import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import ContactForm from "@/components/ContactForm";
 import BlogSidebar from "./BlogSidebar";
 import TableOfContents from "./TableOfContents";
@@ -216,6 +217,9 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
           </div>
         </div>
       </section>
+
+      {/* Related Blog Posts Full Slider */}
+      <RelatedBlogPosts category={post.category} variant="slider" />
 
       <SEOAuditSection />
       
