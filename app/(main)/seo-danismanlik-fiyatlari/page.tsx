@@ -7,6 +7,7 @@ import { CheckCircle2, ArrowRight, Zap, Target, TrendingUp, Shield, Sliders, Sca
 import Link from "next/link";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedPages from "@/components/RelatedPages";
+import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import ContactForm from "@/components/ContactForm";
 import GEOPricingSection from "@/components/GEOPricingSection";
 
@@ -596,6 +597,9 @@ export default function SEOConsultingPrices() {
 
       {/* SEO Audit Bölümü */}
       <SEOAuditSection />
+
+      {/* İlgili Blog Yazıları Slider */}
+      <RelatedBlogPosts />
 
       {/* İlgili Sayfalar */}
       <RelatedPages />

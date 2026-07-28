@@ -10,9 +10,19 @@ import { formatDate, slugifyCategory } from "@/lib/blog-utils";
 
 interface LatestPostsSliderProps {
   posts: BlogPost[];
+  title?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+  badgeText?: string;
 }
 
-export default function LatestPostsSlider({ posts }: LatestPostsSliderProps) {
+export default function LatestPostsSlider({
+  posts,
+  title = "Önemli",
+  titleHighlight = "Blog İçerikleri",
+  subtitle = "SEO, semantik web ve yapay zeka entegrasyonu (GEO) hakkında en son güncellemeleri ve stratejik analizlerimi paylaştığım rehberlerim.",
+  badgeText = "BLOG",
+}: LatestPostsSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleItems, setVisibleItems] = useState(3);
   const [isMounted, setIsMounted] = useState(false);
@@ -36,7 +46,7 @@ export default function LatestPostsSlider({ posts }: LatestPostsSliderProps) {
     return () => window.removeEventListener("resize", updateVisibleItems);
   }, []);
 
-  const totalPosts = posts.length;
+  const totalPosts = posts ? posts.length : 0;
   const maxIndex = Math.max(0, totalPosts - visibleItems);
 
   // Automatically wrap-around if items per view change
@@ -59,7 +69,7 @@ export default function LatestPostsSlider({ posts }: LatestPostsSliderProps) {
   };
 
   // Drag-to-swipe handling
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (_: any, info: any) => {
     const swipeThreshold = 50;
     if (info.offset.x < -swipeThreshold) {
       handleNext();
@@ -70,6 +80,9 @@ export default function LatestPostsSlider({ posts }: LatestPostsSliderProps) {
 
   // Generate page dots count
   const dotsCount = maxIndex + 1;
+  const itemWidthPercent = 100 / visibleItems;
+
+  if (!posts || posts.length === 0) return null;
 
   return (
     <section className="py-24 bg-[#0a0f25] relative z-10 overflow-hidden border-t border-white/5">
@@ -89,13 +102,13 @@ export default function LatestPostsSlider({ posts }: LatestPostsSliderProps) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-400 mb-6 uppercase tracking-wider">
               <BookOpen className="w-4 h-4" />
-              Blog
+              {badgeText}
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-              Son <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Yazılar</span>
+              {title} <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">{titleHighlight}</span>
             </h2>
             <p className="text-gray-400 mt-3 text-sm md:text-base max-w-xl leading-relaxed">
-              SEO, semantik web ve yapay zeka entegrasyonu (GEO) hakkında en son güncellemeleri ve stratejik analizlerimi paylaştığım güncel yazılarım.
+              {subtitle}
             </p>
           </motion.div>
 
@@ -160,16 +173,15 @@ export default function LatestPostsSlider({ posts }: LatestPostsSliderProps) {
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 onDragEnd={handleDragEnd}
-                animate={{ x: `-${currentIndex * (100 / visibleItems)}%` }}
+                animate={{ x: `-${currentIndex * itemWidthPercent}%` }}
                 transition={{ type: "spring", stiffness: 220, damping: 26 }}
                 className="flex"
-                style={{ width: `${(totalPosts / visibleItems) * 100}%` }}
               >
                 {posts.map((post) => (
                   <div
-                    key={post.id}
+                    key={post.id || post.slug}
                     className="shrink-0 px-4"
-                    style={{ width: `${100 / totalPosts}%` }}
+                    style={{ width: `${itemWidthPercent}%` }}
                   >
                     <article className="bg-[#111836]/30 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden hover:border-purple-500/30 hover:bg-[#111836]/60 transition-all duration-300 group flex flex-col h-full shadow-[0_4px_30px_rgba(0,0,0,0.2)]">
                       <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">

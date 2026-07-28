@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedPages from "@/components/RelatedPages";
+import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import ContactForm from "@/components/ContactForm";
 
 const sectors = [
@@ -192,6 +193,9 @@ export default function SectoralSEOServices() {
           </div>
         </div>
       </section>
+
+      {/* Related Blog Posts Slider */}
+      <RelatedBlogPosts />
 
       {/* Related Pages */}
       <RelatedPages />
