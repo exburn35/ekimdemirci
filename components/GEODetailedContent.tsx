@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight, ChevronDown, CheckCircle2, Cpu, ShieldCheck, Sparkles, BookOpen, Layers, Zap, Database, Terminal, FileCode2 } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ChevronDown, Cpu, ShieldCheck, Sparkles, BookOpen, Database, FileCode2, Eye, GitBranch, Network, Layers3 } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -17,10 +18,10 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const tocItems = [
-    { id: "nedir", num: "01", title: "GEO Nedir & LLM Mantığı" },
-    { id: "patentler", num: "02", title: "8 Google Patenti ve GEO" },
-    { id: "farklar", num: "03", title: "SEO vs GEO Mukayesesi" },
-    { id: "platformlar", num: "04", title: "Platform Bazlı Stratejiler" },
+    { id: "nedir", num: "01", title: "GEO & Visual Semantics Mimarisi" },
+    { id: "patentler", num: "02", title: "8 Google Patenti ve İnfografikler" },
+    { id: "farklar", num: "03", title: "SEO vs GEO Mukayese Matrixi" },
+    { id: "platformlar", num: "04", title: "Query Fan-Out & AI Motorları" },
     { id: "surec", num: "05", title: "6 Adımlı GEO Metodolojisi" },
     { id: "sss", num: "06", title: "Patent Referanslı SSS" }
   ];
@@ -210,7 +211,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
           <section id="nedir" className="scroll-mt-24">
             <span className="text-[11px] font-mono text-cyan-400 tracking-wider block mb-2">01 · TANIM VE MİMARİ</span>
             <h2 className="text-[32px] sm:text-[38px] font-extrabold text-white mb-6 tracking-tight leading-tight">
-              GEO (Generative Engine Optimization) Nedir?
+              GEO (Generative Engine Optimization) & Visual Semantics Mimarisi
             </h2>
             
             {/* IN ONE SENTENCE (TEK CÜMLEDE GEO) */}
@@ -229,9 +230,35 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
                 Geleneksel arama motorları kullanıcıya link listesi sunup tıklama beklerken, üretken yapay zeka sistemleri (Büyük Dil Modelleri / LLMs) web üzerindeki verileri **RAG (Retrieval-Augmented Generation)** mimarisiyle anlık olarak tarar, doğrular, sentezler ve kullanıcıya tek bir nihai cevap üretir.
               </p>
               <p>
-                Bu yeni arama ekosisteminde var olmak için web sitenizin sadece indekslenmesi yetmez; yapay zeka modellerinin **Knowledge Graph (Bilgi Grafiği)** veritabanlarında tanımlı, semantik triple yapısıyla doğrulanmış bir **Entity (Varlık)** haline gelmesi gerekir.
+                Bu yeni arama ekosisteminde var olmak için web sitenizin sadece indekslenmesi yetmez; yapay zeka modellerinin **Knowledge Graph (Bilgi Grafiği)** veritabanlarında tanımlı, semantik triple yapısıyla doğrulanmış bir **Entity (Varlık)** haline gelmesi ve **Visual Semantics (Görsel Semantik)** standartlarına uyum sağlaması gerekir.
               </p>
             </div>
+
+            {/* VISUAL SEMANTICS PATENT DIAGRAM INFOGRAPHIC */}
+            <figure className="my-10 rounded-2xl bg-slate-900/90 border border-cyan-500/30 p-4 sm:p-6 overflow-hidden shadow-2xl backdrop-blur-xl">
+              <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
+                  <Eye className="w-4 h-4 text-cyan-300" />
+                  Visual Semantics & Multimodal Entity Extraction Patent Şeması
+                </div>
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                  Multimodal AI Analysis
+                </span>
+              </div>
+              
+              <div className="relative w-full h-[260px] sm:h-[360px] md:h-[420px] rounded-xl overflow-hidden mb-4 border border-white/10">
+                <Image
+                  src="/uploads/geo-visual-semantic-patent-diagram.png"
+                  alt="Visual Semantics and Multimodal Entity Extraction Diagram in GEO"
+                  fill
+                  className="object-contain bg-[#070b19] p-2"
+                />
+              </div>
+
+              <figcaption className="text-xs text-gray-300 leading-relaxed font-sans bg-white/5 p-4 rounded-xl border border-white/5">
+                <strong className="text-white block mb-1">Görsel Semantik Patent Analizi:</strong> Yapay zeka arama tarayıcıları (Google AI Overviews, Lens ve ChatGPT Vision) web sayfalarını sadece düz metin olarak değil; sayfa hiyerarşisi, görsel layout sınırlayıcı kutuları (bounding boxes), OCR metinleri ve semantik bağlam pencereleri ile çok modlu (multimodal) olarak çözümler.
+              </figcaption>
+            </figure>
 
             {/* Content sub-grid cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-8">
@@ -265,9 +292,9 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
             </div>
           </section>
 
-          {/* Section 2: PATENTLER */}
+          {/* Section 2: PATENTLER & INFOGRAPHICS */}
           <section id="patentler" className="scroll-mt-24">
-            <span className="text-[11px] font-mono text-cyan-400 tracking-wider block mb-2">02 · BİLİMSEL TEMELLENDİRME</span>
+            <span className="text-[11px] font-mono text-cyan-400 tracking-wider block mb-2">02 · BİLİMSEL TEMELLENDİRME & İNFOGRAFİKLER</span>
             <h2 className="text-[32px] sm:text-[38px] font-extrabold text-white mb-4 tracking-tight leading-tight">
               Google'ın 8 Resmi Patenti İle GEO Mimarisi
             </h2>
@@ -275,8 +302,60 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               Piyasadaki yüzeysel GEO anlatılarının aksine, sunduğum danışmanlık hizmeti doğrudan Google'ın yapay zeka arama, vektör indeksleme, RAG ve bilgi grafiği sistemleri için tescillediği 8 temel patente dayanmaktadır:
             </p>
 
+            {/* TIERED INDEXING INFOGRAPHIC DIAGRAM */}
+            <figure className="my-8 rounded-2xl bg-slate-900/90 border border-cyan-500/30 p-4 sm:p-6 overflow-hidden shadow-2xl backdrop-blur-xl">
+              <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
+                  <Layers3 className="w-4 h-4 text-cyan-300" />
+                  Tiered & Sharded Vector Index Architecture (Patent US7693813B1)
+                </div>
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/30">
+                  Tier 1 Node Indexing
+                </span>
+              </div>
+              
+              <div className="relative w-full h-[260px] sm:h-[360px] md:h-[400px] rounded-xl overflow-hidden mb-4 border border-white/10">
+                <Image
+                  src="/uploads/geo-tiered-indexing-patent-diagram.png"
+                  alt="Tiered and Sharded Vector Index Architecture Patent Diagram in GEO"
+                  fill
+                  className="object-contain bg-[#050814] p-2"
+                />
+              </div>
+
+              <figcaption className="text-xs text-gray-300 leading-relaxed font-sans bg-white/5 p-4 rounded-xl border border-white/5">
+                <strong className="text-white block mb-1">US7693813B1 Şema Analizi:</strong> Yapay zeka arama sunucuları tüm web verilerini tek bir havuzda tutmaz. Yüksek otoriteye, semantik netliğe sahip GEO sayfaları **Tier 1 (Birincil Hızlı Erişim)** sunucu gruplarında konumlanır ve RAG sorgularında ilk tercih edilen kaynak olur.
+              </figcaption>
+            </figure>
+
+            {/* SEMANTIC TRIPLETS INFOGRAPHIC DIAGRAM */}
+            <figure className="my-8 rounded-2xl bg-slate-900/90 border border-cyan-500/30 p-4 sm:p-6 overflow-hidden shadow-2xl backdrop-blur-xl">
+              <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
+                  <Network className="w-4 h-4 text-cyan-300" />
+                  Semantic Triplets & Knowledge Graph Entity Grounding (Patent US8554769B1 & US10210256B2)
+                </div>
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
+                  Zero Hallucination
+                </span>
+              </div>
+              
+              <div className="relative w-full h-[260px] sm:h-[360px] md:h-[400px] rounded-xl overflow-hidden mb-4 border border-white/10">
+                <Image
+                  src="/uploads/geo-semantic-triplets-patent-diagram.png"
+                  alt="Semantic Triplets and Knowledge Graph Entity Grounding Diagram in GEO"
+                  fill
+                  className="object-contain bg-[#050814] p-2"
+                />
+              </div>
+
+              <figcaption className="text-xs text-gray-300 leading-relaxed font-sans bg-white/5 p-4 rounded-xl border border-white/5">
+                <strong className="text-white block mb-1">US8554769B1 & US10210256B2 Şema Analizi:</strong> Dil modelleri metinleri kelime kelime okumaz; **Özne (Subject) - Yüklem (Predicate) - Nesne (Object)** düğümleri halinde Knowledge Graph veri ağlarına entegre eder. Bu kurgu ile markanız halüsinasyonsuz doğrulanmış veri olarak AI belleğine kaydolur.
+              </figcaption>
+            </figure>
+
             {/* Patent Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
               {googlePatents.map((patent) => (
                 <div 
                   key={patent.id}
@@ -340,7 +419,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
           <section id="farklar" className="scroll-mt-24">
             <span className="text-[11px] font-mono text-cyan-400 tracking-wider block mb-2">03 · MUKAYESELER</span>
             <h2 className="text-[32px] sm:text-[38px] font-extrabold text-white mb-6 tracking-tight leading-tight">
-              Geleneksel SEO vs Yapay Zeka SEO (GEO)
+              Geleneksel SEO vs Yapay Zeka SEO (GEO) Mukayese Matrixi
             </h2>
             
             <div className="relative bg-slate-900/80 border border-cyan-500/30 p-6 rounded-2xl mb-8 overflow-hidden backdrop-blur-xl">
@@ -394,14 +473,40 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
             </div>
           </section>
 
-          {/* Section 4: PLATFORMLAR */}
+          {/* Section 4: PLATFORMLAR & QUERY FAN-OUT */}
           <section id="platformlar" className="scroll-mt-24">
-            <span className="text-[11px] font-mono text-cyan-400 tracking-wider block mb-2">04 · MOTOR UYUMLULUĞU</span>
+            <span className="text-[11px] font-mono text-cyan-400 tracking-wider block mb-2">04 · MOTOR UYUMLULUĞU & QUERY FAN-OUT</span>
             <h2 className="text-[32px] sm:text-[38px] font-extrabold text-white mb-6 tracking-tight leading-tight">
-              Yapay Zeka Motorlarına Özel Optimizasyon
+              AI Query Fan-Out Mimarisi ve Platform Stratejileri
             </h2>
+
+            {/* QUERY FAN OUT INFOGRAPHIC DIAGRAM */}
+            <figure className="my-8 rounded-2xl bg-slate-900/90 border border-cyan-500/30 p-4 sm:p-6 overflow-hidden shadow-2xl backdrop-blur-xl">
+              <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
+                  <GitBranch className="w-4 h-4 text-cyan-300" />
+                  Query Augmentation & AI Query Fan-Out Tree Architecture (Patent US9916366B1)
+                </div>
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
+                  Sub-Query Tree
+                </span>
+              </div>
+              
+              <div className="relative w-full h-[260px] sm:h-[360px] md:h-[400px] rounded-xl overflow-hidden mb-4 border border-white/10">
+                <Image
+                  src="/uploads/geo-query-fanout-patent-diagram.png"
+                  alt="Query Augmentation and AI Query Fan-Out Tree Architecture Diagram in GEO"
+                  fill
+                  className="object-contain bg-[#050814] p-2"
+                />
+              </div>
+
+              <figcaption className="text-xs text-gray-300 leading-relaxed font-sans bg-white/5 p-4 rounded-xl border border-white/5">
+                <strong className="text-white block mb-1">US9916366B1 Şema Analizi:</strong> Kullanıcı ChatGPT veya Google AI Overviews'a tek bir soru sorduğunda, yapay zeka motoru bu prompt'u arka planda 5 ila 15 farklı alt sorguya (Sub-queries) dönüştürür. GEO kurgumuz içerikleri bu alt sorgu ağacının tamamını kapsayacak çok açılı bilgi modülleri olarak tasarlar.
+              </figcaption>
+            </figure>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <div className="p-6 rounded-2xl bg-slate-900/60 border border-white/10 space-y-3">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-white">Google AI Overviews & Gemini</h3>
