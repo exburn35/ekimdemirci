@@ -156,7 +156,6 @@ export default function GEODanismanligi() {
             source: "Kaynak: Semrush 2025 AI Search Study"
           }
         ]}
-        faqItems={faqItems}
         blogCategory="yapay-zeka-seo"
       >
         {/* Contextual Internal Link Banner to Sub-Page */}
