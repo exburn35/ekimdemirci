@@ -3,6 +3,7 @@ import AboutHero from "@/components/AboutHero";
 import AboutContent from "@/components/AboutContent";
 import RelatedPages from "@/components/RelatedPages";
 import ToolsSection from "@/components/ToolsSection";
+import GEOAIToolsSection from "@/components/GEOAIToolsSection";
 import BrandsSection from "@/components/BrandsSection";
 import WhyWorkWithMe from "@/components/WhyWorkWithMe";
 import StatsSection from "@/components/StatsSection";
@@ -30,6 +31,7 @@ export default function About() {
       <AboutHero />
       <AboutContent />
       <ToolsSection />
+      <GEOAIToolsSection />
       <BrandsSection />
       <WhyWorkWithMe />
       <StatsSection />
