@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import { BlogPost } from "@/lib/blog";
+import type { BlogPost } from "@/lib/blog";
 
 interface AISummarizerProps {
   post: BlogPost;

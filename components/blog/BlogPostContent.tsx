@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock, ArrowLeft, Tag, Zap, CheckCircle2 } from "lucide-react";
-import { BlogPost, Heading, slugifyCategory } from "@/lib/blog";
-import { formatDate, isSameDay } from "@/lib/blog-utils";
+import type { BlogPost, Heading } from "@/lib/blog";
+import { formatDate, isSameDay, slugifyCategory } from "@/lib/blog-utils";
 import BlogScrollProgress from "./BlogScrollProgress";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";

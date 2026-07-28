@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
-import { BlogPost } from "@/lib/blog";
-import { formatDate } from "@/lib/blog-utils";
+import type { BlogPost } from "@/lib/blog";
+import { formatDate, slugifyCategory } from "@/lib/blog-utils";
 
 interface LatestPostsSliderProps {
   posts: BlogPost[];

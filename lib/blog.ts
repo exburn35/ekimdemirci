@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { decodeHtmlEntities } from "./blog-utils";
+import { decodeHtmlEntities, slugifyCategory } from "./blog-utils";
+export { slugifyCategory };
 
 export interface BlogPost {
   id: string;
@@ -50,18 +51,7 @@ export const CATEGORY_DESCRIPTIONS: Record<string, CategoryDetails> = {
   },
 };
 
-export function slugifyCategory(category: string): string {
-  return category
-    .toLowerCase()
-    .replace(/ğ/g, "g")
-    .replace(/ü/g, "u")
-    .replace(/ş/g, "s")
-    .replace(/ı/g, "i")
-    .replace(/ö/g, "o")
-    .replace(/ç/g, "c")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
+
 
 export function getCategoryBySlug(slug: string): CategoryDetails | null {
   const normalizedSlug = slug.toLowerCase();

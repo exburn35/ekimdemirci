@@ -5,8 +5,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
-import { BlogPost, slugifyCategory } from "@/lib/blog";
-import { formatDate } from "@/lib/blog-utils";
+import type { BlogPost } from "@/lib/blog";
+import { formatDate, slugifyCategory } from "@/lib/blog-utils";
 
 interface BlogListClientProps {
   initialPosts: BlogPost[];
