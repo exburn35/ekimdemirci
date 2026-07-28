@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock, ArrowLeft, Tag, Zap, CheckCircle2 } from "lucide-react";
-import { BlogPost, Heading } from "@/lib/blog";
+import { BlogPost, Heading, slugifyCategory } from "@/lib/blog";
 import { formatDate, isSameDay } from "@/lib/blog-utils";
 import BlogScrollProgress from "./BlogScrollProgress";
 import SEOAuditSection from "@/components/SEOAuditSection";
@@ -27,8 +27,8 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
       <BlogLinkPreview />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden min-h-[60vh] flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+      <section className="relative pt-32 pb-20 overflow-hidden min-h-[60vh] flex items-center bg-[#211b39]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#211b39] via-[#1a152e] to-[#211b39]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         
         {post.featuredImage && (
@@ -40,7 +40,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
               className="object-cover transition-opacity duration-1000"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#211b39] via-[#211b39]/70 to-transparent" />
           </div>
         )}
 
@@ -55,9 +55,12 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
             </Link>
 
             {post.category && (
-              <div className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-bold mb-8 uppercase tracking-widest">
+              <Link
+                href={`/kategori/${slugifyCategory(post.category)}`}
+                className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 hover:text-white transition-colors rounded-full text-xs font-bold mb-8 uppercase tracking-widest"
+              >
                 {post.category}
-              </div>
+              </Link>
             )}
 
             <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tight">
@@ -97,7 +100,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
       </section>
 
       {/* Content Layout */}
-      <section className="py-20 bg-black relative">
+      <section className="py-20 bg-[#211b39] relative">
         <div className="max-w-7xl lg:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative w-full">
             
