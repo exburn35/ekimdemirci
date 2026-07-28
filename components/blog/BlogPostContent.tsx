@@ -4,6 +4,7 @@ import { Calendar, Clock, ArrowLeft, Tag, Zap, CheckCircle2 } from "lucide-react
 import type { BlogPost, Heading } from "@/lib/blog";
 import { formatDate, isSameDay, slugifyCategory } from "@/lib/blog-utils";
 import BlogScrollProgress from "./BlogScrollProgress";
+import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedPages from "@/components/RelatedPages";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import ContactForm from "@/components/ContactForm";
