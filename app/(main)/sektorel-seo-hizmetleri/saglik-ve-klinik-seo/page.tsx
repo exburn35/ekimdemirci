@@ -19,7 +19,8 @@ import {
   Scale,
   Building,
   BarChart3,
-  PackageCheck
+  PackageCheck,
+  TrendingUp
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -263,6 +264,32 @@ export default function HealthAndClinicSEOPage() {
                     <p className="text-xs text-gray-300 leading-relaxed">
                       Hekim biyografisi, yayınlanan tıbbi makale bilimsel atıfları ve etik kurallarla Google kalite standartlarına tam uyum.
                     </p>
+                  </div>
+                </div>
+
+                {/* DR. ERSOY KOCABIÇAK CASE STUDY & AHREFS CHART */}
+                <div className="mt-8 pt-6 border-t border-white/10">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                    <div>
+                      <div className="text-xs font-mono font-semibold text-emerald-400 mb-1">GERÇEK SAĞLIK VAKA ÇALIŞMASI (drersoykocabicak.com)</div>
+                      <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                        <TrendingUp className="w-5 h-5 text-emerald-400" />
+                        Dr. Ersoy Kocabıçak Ahrefs Organik Trafik Büyüme Grafiği
+                      </h3>
+                    </div>
+                    <div className="text-xs text-gray-300 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg inline-block">
+                      Başlangıç <span className="text-emerald-400 font-semibold">Mart 2025</span> | Büyüme <span className="text-emerald-400 font-semibold">Günlük 500'den 45.000 Tıklamaya</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                    <a href="https://drersoykocabicak.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-semibold underline">drersoykocabicak.com</a> web sitesi için Mart 2025 tarihinde başlattığımız medikal YMYL ve E-E-A-T optimizasyon çalışmaları neticesinde, başlangıçta günlük 500 olan organik tıklama 1 yıl içerisinde günlük 45.000 tıklama seviyesine yükseltilmiştir.
+                  </p>
+                  <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#111836] p-2 shadow-2xl">
+                    <img 
+                      src="/dr-ersoy-kocabicak-ahrefs-verisi.png" 
+                      alt="Dr Ersoy Kocabıçak Ahrefs Organik Trafik Büyüme Grafiği" 
+                      className="w-full h-auto rounded-xl object-cover"
+                    />
                   </div>
                 </div>
               </div>
