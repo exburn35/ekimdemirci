@@ -52,6 +52,8 @@ const nextConfig = {
   },
   async redirects() {
     const blogSlugs = [
+      "en-iyi-anahtar-kelime-arastirma-araclari-2026",
+      "en-iyi-backlink-analiz-araclari-2026",
       "yapay-zeka-gorunurlugunuzu-olcmek-icin-en-iyi-araclar",
       "2026-yilinda-kullanabileceginiz-en-iyi-10-yapay-zeka-seo-araclari",
       "anahtar-kelime-nedir",
