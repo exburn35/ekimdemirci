@@ -8,13 +8,13 @@ import GEODetailedContent from "@/components/GEODetailedContent";
 
 export const metadata: Metadata = {
   title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
-  description: "Google'ın 8 patentine ve RAG mimarisine dayalı teknik GEO danışmanlığı. Google AI Overviews, ChatGPT Search ve Perplexity'de birincil kaynak olun.",
+  description: "Google'ın güncel arama ve RAG mimarisine dayalı teknik GEO danışmanlığı. Google AI Overviews, ChatGPT Search ve Perplexity'de birincil kaynak olun.",
   alternates: {
     canonical: "/geo-danismanligi",
   },
   openGraph: {
     title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
-    description: "Yapay zeka arama motorları için patent bazlı GEO danışmanlığı. Markanızı ChatGPT, Gemini ve Perplexity'de önerilen marka yapın.",
+    description: "Yapay zeka arama motorları için ileri seviye GEO danışmanlığı. Markanızı ChatGPT, Gemini ve Perplexity'de önerilen marka yapın.",
   },
 };
 
@@ -22,23 +22,23 @@ export default function GEODanismanligi() {
   const faqItems = [
     {
       question: "GEO (Generative Engine Optimization) Danışmanlığı Nedir?",
-      answer: "GEO (Generative Engine Optimization), web sitenizin bilgi mimarisini ChatGPT Search, Perplexity, Claude ve Google AI Overviews gibi yapay zeka arama sistemlerinin RAG (Retrieval-Augmented Generation) mekanizmalarına uyarlayarak yanıt metinlerinde güvenilir kaynak (source citation) olarak alıntılanmasını sağlayan patent bazlı danışmanlık disiplinidir."
+      answer: "GEO (Generative Engine Optimization), web sitenizin bilgi mimarisini ChatGPT Search, Perplexity, Claude ve Google AI Overviews gibi yapay zeka arama sistemlerinin RAG (Retrieval-Augmented Generation) mekanizmalarına uyarlayarak yanıt metinlerinde güvenilir kaynak (source citation) olarak alıntılanmasını sağlayan bilimsel ve teknik danışmanlık disiplinidir."
     },
     {
       question: "GEO danışmanlığının klasik SEO çalışmalarından farkı nedir?",
-      answer: "Klasik SEO, arama sonuç sayfasındaki 10 mavi bağlantıda üst sıralara yerleşip tıklama almayı hedefler. GEO ise yapay zekanın ürettiği sentezlenmiş yanıtın tam içinde markanızın birincil tavsiye ve güvenilir referans kartı olarak yer almasını sağlar (US20240289407A1)."
+      answer: "Klasik SEO, arama sonuç sayfasındaki 10 mavi bağlantıda üst sıralara yerleşip tıklama almayı hedefler. GEO ise yapay zekanın ürettiği sentezlenmiş yanıtın tam içinde markanızın birincil tavsiye ve güvenilir referans kartı olarak yer almasını sağlar."
     },
     {
       question: "Semantik Üçlüler (Semantic Triplets - Özne-Yüklem-Nesne) GEO ile nasıl ilişkilidir?",
-      answer: "Büyük Dil Modelleri (LLMs) bilgiyi ilişkisel grafikler (Knowledge Graphs) üzerinden işler (US8554769B1). Sitenizdeki verileri Özne-Yüklem-Nesne formatında yapılandırdığımızda, modeller sitenizdeki gerçekleri halüsinasyona düşmeden hatasız anlar ve alıntılar."
+      answer: "Büyük Dil Modelleri (LLMs) bilgiyi ilişkisel grafikler (Knowledge Graphs) üzerinden işler. Sitenizdeki verileri Özne-Yüklem-Nesne formatında yapılandırdığımızda, modeller sitenizdeki gerçekleri halüsinasyona düşmeden hatasız anlar ve alıntılar."
     },
     {
       question: "AI Query Fan-Out tekniği GEO stratejisinde neden önemlidir?",
-      answer: "Google patentlerine göre (US9916366B1), kullanıcı bir arama yaptığında yapay zeka motoru arka planda bu aramayı onlarca alt sorguya (sub-queries) böler. GEO çalışması ile içeriğinizi bu alt sorgu ağacının tamamını kapsayacak şekilde optimize ederiz."
+      answer: "Yapay zeka arama mimarisine göre, kullanıcı bir arama yaptığında yapay zeka motoru arka planda bu aramayı onlarca alt sorguya (sub-queries) böler. GEO çalışması ile içeriğinizi bu alt sorgu ağacının tamamını kapsayacak şekilde optimize ederiz."
     },
     {
       question: "Co-Citation (Marka Birlikteliği) AI güven skorunu nasıl etkiler?",
-      answer: "Yapay zeka motorları bir markanın yetkinliğini dış web kaynaklarında o markanın adının hangi kavramlar ve sektör liderleriyle birlikte anıldığına bakarak ölçer (US7536408B2). Otoriter mecralarda kurguladığımız co-citation yapısı AI güven skorunuzu doğrudan yükseltir."
+      answer: "Yapay zeka motorları bir markanın yetkinliğini dış web kaynaklarında o markanın adının hangi kavramlar ve sektör liderleriyle birlikte anıldığına bakarak ölçer. Otoriter mecralarda kurguladığımız co-citation yapısı AI güven skorunuzu doğrudan yükseltir."
     },
     {
       question: "GEO optimizasyonu ne kadar sürede somut sonuç verir?",
@@ -51,7 +51,7 @@ export default function GEODanismanligi() {
       <FAQSchema items={faqItems} />
       <ProductSchema
         name="GEO (Generative Engine Optimization) Danışmanlığı"
-        description="Google'ın 8 resmi patenti ve RAG altyapısına dayalı teknik GEO danışmanlık hizmet paketi. ChatGPT Search, Google AI Overviews ve Perplexity'de birincil kaynak olun."
+        description="Google'ın güncel arama mimarisi ve RAG altyapısına dayalı teknik GEO danışmanlık hizmet paketi. ChatGPT Search, Google AI Overviews ve Perplexity'de birincil kaynak olun."
         url="https://ekimdemirci.com/geo-danismanligi"
         image="https://ekimdemirci.com/uploads/geo-visual-semantic-patent-diagram.png"
         lowPrice={25000}
@@ -63,21 +63,21 @@ export default function GEODanismanligi() {
       <ServicePageLayout
         title="GEO Danışmanlığı"
         subtitle="Generative Engine Optimization & RAG Mimarisi"
-        description="Google'ın 8 resmi patentine ve RAG altyapısına dayalı bilimsel GEO danışmanlığı. ChatGPT, Google AI Overviews, Perplexity ve Claude'da markanızın tavsiye edilen birincil kaynak olmasını sağlıyorum."
+        description="Google'ın gelişmiş arama ve RAG altyapısına dayalı teknik GEO danışmanlığı. ChatGPT, Google AI Overviews, Perplexity ve Claude'da markanızın tavsiye edilen birincil kaynak olmasını sağlıyorum."
         icon="Brain"
         gradient="from-emerald-500 via-teal-500 to-cyan-500"
         scope={[
           {
             title: "Semantik Varlık (Entity) & Knowledge Graph",
-            description: "Markanızı Wikidata, Wikipedia ve otoriter dizinlerde tanımlayarak LLM hafızasında sarsılmaz bir ilişkisel varlık düğümü (US10210256B2) yapıyorum."
+            description: "Markanızı Wikidata, Wikipedia ve otoriter dizinlerde tanımlayarak LLM hafızasında sarsılmaz bir ilişkisel varlık yapısı (Entity) olarak konumlandırıyorum."
           },
           {
             title: "RAG & Source Citation Optimizasyonu",
-            description: "İçeriklerinizi yapay zeka botlarının doğrudan yanıt kartlarına çekebileceği yüksek bilgi yoğunluklu soru-cevap ve tablo bloklarına dönüştürüyorum (US20240289407A1)."
+            description: "İçeriklerinizi yapay zeka botlarının doğrudan yanıt kartlarına çekebileceği yüksek bilgi yoğunluklu soru-cevap ve tablo bloklarına dönüştürüyorum."
           },
           {
             title: "AI Query Fan-Out Kapsama Stratejisi",
-            description: "Kullanıcı prompt'larından türeyen tüm alt sorgu ağaçlarını (sub-queries) hedefleyen çok açılı semantik içerik mimarisi inşa ediyorum (US9916366B1)."
+            description: "Kullanıcı prompt'larından türeyen tüm alt sorgu ağaçlarını (sub-queries) hedefleyen çok açılı semantik içerik mimarisi inşa ediyorum."
           },
           {
             title: "Share of Model Voice (SoMV) Ölçümü",
@@ -85,11 +85,11 @@ export default function GEODanismanligi() {
           },
           {
             title: "Co-Citation & AI Otorite Güven Ağları",
-            description: "Sektörel basın ve otoriter yayınlarda markanızın doğru kavramlarla anılmasını sağlayarak AI güven skorunu (US7536408B2) üst seviyeye çıkarıyorum."
+            description: "Sektörel basın ve otoriter yayınlarda markanızın doğru kavramlarla anılmasını sağlayarak AI güven skorunu üst seviyeye çıkarıyorum."
           },
           {
             title: "AI Crawl & llms.txt Mimari Yönetimi",
-            description: "GPTBot, ClaudeBot ve PerplexityBot erişim izinlerini düzenleyip sitenize özel llms.txt ve vektör tarama kurgularını yapılandırıyorum (US7693813B1)."
+            description: "GPTBot, ClaudeBot ve PerplexityBot erişim izinlerini düzenleyip sitenize özel llms.txt ve vektör tarama kurgularını yapılandırıyorum."
           }
         ]}
         process={[
@@ -101,12 +101,12 @@ export default function GEODanismanligi() {
           {
             step: "2",
             title: "Entity & Knowledge Graph Yapılandırması",
-            description: "Markanızı dijital dünyada tekil, yetkili ve ilişkisel bir varlık (Entity) olarak tanımlıyorum (US10210256B2)."
+            description: "Markanızı dijital dünyada tekil, yetkili ve ilişkisel bir varlık (Entity) olarak tanımlıyorum."
           },
           {
             step: "3",
             title: "Semantik Triple & RAG Dönüşümü",
-            description: "Sayfalarınızı yapay zekanın en rahat okuduğu Özne-Yüklem-Nesne semantik formatına kavuşturuyorum (US8554769B1)."
+            description: "Sayfalarınızı yapay zekanın en rahat okuduğu Özne-Yüklem-Nesne semantik formatına kavuşturuyorum."
           },
           {
             step: "4",
@@ -116,7 +116,7 @@ export default function GEODanismanligi() {
           {
             step: "5",
             title: "Co-Citation PR & Güven Ağları",
-            description: "Dış mecralarda marka birlikteliklerini kurgulayarak yapay zeka otorite katsayısını artırıyorum (US7536408B2)."
+            description: "Dış mecralarda marka birlikteliklerini kurgulayarak yapay zeka otorite katsayısını artırıyorum."
           },
           {
             step: "6",

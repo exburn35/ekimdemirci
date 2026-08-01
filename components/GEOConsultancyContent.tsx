@@ -106,7 +106,7 @@ export function ServiceBentoGrid({
           gridClass="card-2"
           paddingClass="p-9"
           title="Knowledge Graph Integration"
-          body="Google'ın Knowledge Graph altyapısı ve LLM'lerin eğitim verisi sentezi sırasında markanızın doğru ilişkilerle yer almasını sağlıyorum. Wikidata, Wikipedia, otoriter veri tabanları ve sektörel kaynaklar arasında bağlantılı bir bilgi mimarisi inşa ediyorum. Bu sayede yapay zeka, markanızı yalnız bir isim olarak değil, ilişkili bir bilgi düğümü olarak işliyor."
+          body="Google'ın Knowledge Graph altyapısı ve LLM'lerin eğitim verisi sentezi sırasında markanızın doğru ilişkilerle yer almasını sağlıyorum. Wikidata, Wikipedia, otoriter veri tabanları ve sektörel kaynaklar arasında bağlantılı bir bilgi mimarisi inşa ediyorum. Bu sayede yapay zeka, markanızı yalnız bir isim olarak değil, ilişkili bir bilgi varlığı (Entity) olarak işliyor."
           icon={
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
               <circle cx="12" cy="5" r="2" />
@@ -145,7 +145,7 @@ export function ServiceBentoGrid({
           gridClass="card-4"
           paddingClass="p-7"
           title="Semantic Content Architecture"
-          body="İçeriği topical authority haritası, semantik kümeler ve özne-yüklem-nesne üçlüleriyle yapılandırıyorum. AI motorları sayfanızı tek başına değil, geniş bir anlam ağının düğümü olarak görüyor."
+          body="İçeriği topical authority haritası, semantik kümeler ve özne-yüklem-nesne üçlüleriyle yapılandırıyorum. AI motorları sayfanızı tek başına değil, geniş bir anlam ağının parçası olarak görüyor."
           icon={
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
               <rect x="3" y="3" width="7" height="9" rx="1" />

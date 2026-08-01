@@ -19,11 +19,11 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
 
   const tocItems = [
     { id: "nedir", num: "01", title: "GEO & Visual Semantics Mimarisi" },
-    { id: "patentler", num: "02", title: "8 Google Patenti ve İnfografikler" },
+    { id: "patentler", num: "02", title: "Yapay Zeka Arama Mimarisi ve İnfografikler" },
     { id: "farklar", num: "03", title: "SEO vs GEO Mukayese Matrixi" },
     { id: "platformlar", num: "04", title: "Query Fan-Out & AI Motorları" },
     { id: "surec", num: "05", title: "6 Adımlı GEO Metodolojisi" },
-    { id: "sss", num: "06", title: "Patent Referanslı SSS" }
+    { id: "sss", num: "06", title: "Sıkça Sorulan Sorular" }
   ];
 
   useEffect(() => {
@@ -78,56 +78,56 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
 
   const googlePatents = [
     {
-      id: "US6615209B1",
+      id: "Contextual Filter",
       title: "Query-Specific Duplicate Documents",
       focus: "Contextual Information Density",
       description: "Arama motoru ve LLM RAG hatlarının sorgu niyetine göre tekrarlanan bilgileri eleme algoritması. GEO optimizasyonu ile içeriğin sorgu özelindeki veri yoğunluğunu artırarak filtreleri aşmasını sağlıyorum.",
       badge: "Contextual Pruning"
     },
     {
-      id: "US7693813B1",
+      id: "Tiered Index",
       title: "Tiered & Sharded Phrase Posting Lists",
       focus: "RAG & Vector Tiering",
       description: "Vektör indeksleme sunucularının bilgiyi Tier 1 (Birincil Güvenilir Bilgi) ve alt kademelere bölme mimarisi. Sayfalarınızı Tier 1 sunucu gruplarında indekslenecek yetkinlikte kurguluyorum.",
       badge: "Index Architecture"
     },
     {
-      id: "US9916366B1",
+      id: "Query Fan-Out",
       title: "Query Augmentation & Fan-Out",
       focus: "AI Sub-Query Trees",
       description: "ChatGPT ve AI Overviews'ın tek bir kullanıcı prompt'undan onlarca alt sorgu (query fan-out) türetme mekanizması. İçeriği tüm alt sorgu ağacını yanıtlayacak çok açılı bilgi bloklarına dönüştürüyorum.",
       badge: "Query Expansion"
     },
     {
-      id: "US20240289407A1",
+      id: "RAG Retrieval",
       title: "Generative Answer & Context Retrieval",
       focus: "RAG Answer Generation",
-      description: "Google AI Overviews'ın web sayfalarından doğrulanmış paragraf ve verileri çekerek yanıt kartı oluşturma patenti. Doğrudan alıntı yapılabilir soru-cevap ve tablo formatları entegre ediyorum.",
+      description: "Google AI Overviews'ın web sayfalarından doğrulanmış paragraf ve verileri çekerek yanıt kartı oluşturma altyapısı. Doğrudan alıntı yapılabilir soru-cevap ve tablo formatları entegre ediyorum.",
       badge: "Generative Search"
     },
     {
-      id: "US10210256B2",
+      id: "Entity Extraction",
       title: "Phrase-Based Indexing & Entity Linking",
-      focus: "Knowledge Graph Nodes",
-      description: "LLM'lerin metinlerdeki varlıkları (Entity) ve ilişkileri tespit etme patenti. Markanızı ve ürünlerinizi Büyük Dil Modellerinin hafızasında sarsılmaz bir nesne düğümü (Entity Node) olarak işliyorum.",
+      focus: "Knowledge Graph Entities",
+      description: "LLM'lerin metinlerdeki varlıkları (Entity) ve ilişkileri tespit etme altyapısı. Markanızı ve ürünlerinizi Büyük Dil Modellerinin hafızasında sarsılmaz bir ilişkisel varlık (Entity) olarak işliyorum.",
       badge: "Entity Extraction"
     },
     {
-      id: "US8554769B1",
+      id: "Semantic Triplets",
       title: "Information Extraction & Semantic Triplets",
       focus: "Özne-Yüklem-Nesne Mimarisi",
       description: "Modellerin sıfır halüsinasyonla gerçek bilgi çıkarmasını sağlayan semantik üçlüler (Semantic Triplets). Sayfa metinlerini makineler arası dilde hatasız işlenebilir yapıya kavuşturuyorum.",
       badge: "Semantic Triples"
     },
     {
-      id: "US7536408B2",
+      id: "Authority Score",
       title: "Document Ranking & Authority Scoring",
       focus: "Co-Citation & AI Trust",
       description: "Yapay zeka motorlarının web sitelerine atadığı otorite ve semantik güven skoru. Dış mecralarda marka birliktelikleri (co-citation) kurgulayarak AI güven katsayısını yükseltiyorum.",
       badge: "Authority Score"
     },
     {
-      id: "US12393768B2",
+      id: "Source Citation",
       title: "Generative Engine Citation Selection",
       focus: "Source Link Selection",
       description: "Üretken arama motorlarının yanıt metninin yanına ekleyeceği tıklanabilir kaynak bağlantı kartlarını seçme algoritması. Sitenizin alıntı önceliğini üst seviyeye taşıyorum.",
@@ -239,7 +239,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
                   <Eye className="w-4 h-4 text-cyan-300" />
-                  Visual Semantics & Multimodal Entity Extraction Patent Şeması
+                  Visual Semantics & Multimodal Entity Extraction Şeması
                 </div>
                 <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
                   Multimodal AI Analysis
@@ -256,7 +256,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               </div>
 
               <figcaption className="text-xs text-gray-300 leading-relaxed font-sans bg-white/5 p-4 rounded-xl border border-white/5">
-                <strong className="text-white block mb-1">Görsel Semantik Patent Analizi:</strong> Yapay zeka arama tarayıcıları (Google AI Overviews, Lens ve ChatGPT Vision) web sayfalarını sadece düz metin olarak değil; sayfa hiyerarşisi, görsel layout sınırlayıcı kutuları (bounding boxes), OCR metinleri ve semantik bağlam pencereleri ile çok modlu (multimodal) olarak çözümler.
+                <strong className="text-white block mb-1">Görsel Semantik Analizi:</strong> Yapay zeka arama tarayıcıları (Google AI Overviews, Lens ve ChatGPT Vision) web sayfalarını sadece düz metin olarak değil; sayfa hiyerarşisi, görsel layout sınırlayıcı kutuları (bounding boxes), OCR metinleri ve semantik bağlam pencereleri ile çok modlu (multimodal) olarak çözümler.
               </figcaption>
             </figure>
 
@@ -296,10 +296,10 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
           <section id="patentler" className="scroll-mt-24">
             <span className="text-[11px] font-mono text-cyan-400 tracking-wider block mb-2">02 · BİLİMSEL TEMELLENDİRME & İNFOGRAFİKLER</span>
             <h2 className="text-[32px] sm:text-[38px] font-extrabold text-white mb-4 tracking-tight leading-tight">
-              Google'ın 8 Resmi Patenti İle GEO Mimarisi
+              Yapay Zeka Arama ve Semantik İndeks Mimarisi
             </h2>
             <p className="text-gray-300 text-[15px] sm:text-[16px] leading-relaxed mb-8">
-              Piyasadaki yüzeysel GEO anlatılarının aksine, sunduğum danışmanlık hizmeti doğrudan Google'ın yapay zeka arama, vektör indeksleme, RAG ve bilgi grafiği sistemleri için tescillediği 8 temel patente dayanmaktadır:
+              Piyasadaki yüzeysel GEO anlatılarının aksine, sunduğum danışmanlık hizmeti yapay zeka arama motorlarının, vektör indeksleme, RAG (Retrieval-Augmented Generation) ve bilgi grafiği sistemlerinin çalışma prensiplerine dayanmaktadır:
             </p>
 
             {/* TIERED INDEXING INFOGRAPHIC DIAGRAM */}
@@ -307,24 +307,24 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
                   <Layers3 className="w-4 h-4 text-cyan-300" />
-                  Tiered & Sharded Vector Index Architecture (Patent US7693813B1)
+                  Tiered & Sharded Vector Index Architecture
                 </div>
                 <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/30">
-                  Tier 1 Node Indexing
+                  Tier 1 Vector Indexing
                 </span>
               </div>
               
               <div className="relative w-full h-[260px] sm:h-[360px] md:h-[400px] rounded-xl overflow-hidden mb-4 border border-white/10">
                 <Image
                   src="/uploads/geo-tiered-indexing-patent-diagram.png"
-                  alt="Tiered and Sharded Vector Index Architecture Patent Diagram in GEO"
+                  alt="Tiered and Sharded Vector Index Architecture Diagram in GEO"
                   fill
                   className="object-contain bg-[#050814] p-2"
                 />
               </div>
 
               <figcaption className="text-xs text-gray-300 leading-relaxed font-sans bg-white/5 p-4 rounded-xl border border-white/5">
-                <strong className="text-white block mb-1">US7693813B1 Şema Analizi:</strong> Yapay zeka arama sunucuları tüm web verilerini tek bir havuzda tutmaz. Yüksek otoriteye, semantik netliğe sahip GEO sayfaları **Tier 1 (Birincil Hızlı Erişim)** sunucu gruplarında konumlanır ve RAG sorgularında ilk tercih edilen kaynak olur.
+                <strong className="text-white block mb-1">Vektör İndeks Mimarisi Analizi:</strong> Yapay zeka arama sunucuları tüm web verilerini tek bir havuzda tutmaz. Yüksek otoriteye, semantik netliğe sahip GEO sayfaları **Tier 1 (Birincil Hızlı Erişim)** sunucu gruplarında konumlanır ve RAG sorgularında ilk tercih edilen kaynak olur.
               </figcaption>
             </figure>
 
@@ -333,7 +333,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
                   <Network className="w-4 h-4 text-cyan-300" />
-                  Semantic Triplets & Knowledge Graph Entity Grounding (Patent US8554769B1 & US10210256B2)
+                  Semantic Triplets & Knowledge Graph Entity Grounding
                 </div>
                 <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
                   Zero Hallucination
@@ -350,22 +350,19 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               </div>
 
               <figcaption className="text-xs text-gray-300 leading-relaxed font-sans bg-white/5 p-4 rounded-xl border border-white/5">
-                <strong className="text-white block mb-1">US8554769B1 & US10210256B2 Şema Analizi:</strong> Dil modelleri metinleri kelime kelime okumaz; **Özne (Subject) - Yüklem (Predicate) - Nesne (Object)** düğümleri halinde Knowledge Graph veri ağlarına entegre eder. Bu kurgu ile markanız halüsinasyonsuz doğrulanmış veri olarak AI belleğine kaydolur.
+                <strong className="text-white block mb-1">Semantik Yapı & Bilgi Grafiği Analizi:</strong> Dil modelleri metinleri kelime kelime okumaz; **Özne (Subject) - Yüklem (Predicate) - Nesne (Object)** semantik yapıları halinde Knowledge Graph veri ağlarına entegre eder. Bu kurgu ile markanız halüsinasyonsuz doğrulanmış veri olarak AI belleğine kaydolur.
               </figcaption>
             </figure>
 
             {/* Patent Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
-              {googlePatents.map((patent) => (
+              {googlePatents.map((patent, idx) => (
                 <div 
-                  key={patent.id}
+                  key={idx}
                   className="rounded-2xl bg-slate-900/70 border border-cyan-500/20 hover:border-cyan-400/50 p-6 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-xs font-mono font-extrabold px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">
-                        {patent.id}
-                      </span>
                       <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300">
                         {patent.badge}
                       </span>
@@ -389,7 +386,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-800">
                 <div className="flex items-center gap-2 text-xs font-mono text-cyan-400">
                   <FileCode2 className="w-4 h-4" />
-                  Semantic Triplet & JSON-LD Entity Grounding (US8554769B1 & US10210256B2)
+                  Semantic Triplet & JSON-LD Entity Grounding
                 </div>
                 <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   Valid Schema.org
@@ -485,7 +482,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
                   <GitBranch className="w-4 h-4 text-cyan-300" />
-                  Query Augmentation & AI Query Fan-Out Tree Architecture (Patent US9916366B1)
+                  Query Augmentation & AI Query Fan-Out Tree Architecture
                 </div>
                 <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
                   Sub-Query Tree
@@ -502,7 +499,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               </div>
 
               <figcaption className="text-xs text-gray-300 leading-relaxed font-sans bg-white/5 p-4 rounded-xl border border-white/5">
-                <strong className="text-white block mb-1">US9916366B1 Şema Analizi:</strong> Kullanıcı ChatGPT veya Google AI Overviews'a tek bir soru sorduğunda, yapay zeka motoru bu prompt'u arka planda 5 ila 15 farklı alt sorguya (Sub-queries) dönüştürür. GEO kurgumuz içerikleri bu alt sorgu ağacının tamamını kapsayacak çok açılı bilgi modülleri olarak tasarlar.
+                <strong className="text-white block mb-1">Sorgu Genişletme (Fan-Out) Mimarisi:</strong> Kullanıcı ChatGPT veya Google AI Overviews'a tek bir soru sorduğunda, yapay zeka motoru bu prompt'u arka planda 5 ila 15 farklı alt sorguya (Sub-queries) dönüştürür. GEO kurgumuz içerikleri bu alt sorgu ağacının tamamını kapsayacak çok açılı bilgi modülleri olarak tasarlar.
               </figcaption>
             </figure>
             
@@ -510,7 +507,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               <div className="p-6 rounded-2xl bg-slate-900/60 border border-white/10 space-y-3">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-white">Google AI Overviews & Gemini</h3>
-                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">US20240289407A1</span>
+                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">AI Overviews</span>
                 </div>
                 <p className="text-xs text-gray-300 leading-relaxed">
                   Google'ın kendi Knowledge Graph ve RAG altyapısıyla çalışır. Sayfa içi Schema.org mimarisi ve semantik triple yapısıyla doğrudan AI yanıt kartlarına kaynak olarak yerleştirilir.
@@ -520,7 +517,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               <div className="p-6 rounded-2xl bg-slate-900/60 border border-white/10 space-y-3">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-white">ChatGPT Search & OpenAI</h3>
-                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">US9916366B1</span>
+                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Query Expansion</span>
                 </div>
                 <p className="text-xs text-gray-300 leading-relaxed">
                   GPTBot ve O1 mimarisinin canlı web aramalarını hedefler. Sitenizdeki llms.txt yapılandırması ve marka co-citation atıfları ile ürün/hizmet tavsiyelerinde ilk sırada yer alması sağlanır.
@@ -530,7 +527,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               <div className="p-6 rounded-2xl bg-slate-900/60 border border-white/10 space-y-3">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-white">Perplexity AI & Sonar</h3>
-                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">US7693813B1</span>
+                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">Real-time RAG</span>
                 </div>
                 <p className="text-xs text-gray-300 leading-relaxed">
                   Canlı web taraması ve akademik/sektörel kaynak atıflarına odaklanır. Perplexity'nin tercih ettiği tablo ve rakamsal veri formatlarıyla doğrudan alıntı oranı yükseltilir.
@@ -540,7 +537,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
               <div className="p-6 rounded-2xl bg-slate-900/60 border border-white/10 space-y-3">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-white">Claude (Anthropic)</h3>
-                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">US8554769B1</span>
+                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">Semantic Triples</span>
                 </div>
                 <p className="text-xs text-gray-300 leading-relaxed">
                   Derin semantik bağlam ve etik bilgi kurgularını önemser. ClaudeBot erişim izinleri ve yüksek otoriteli marka varlık (Entity) tanımlamalarıyla uyumlandırılır.
@@ -553,7 +550,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
           <section id="surec" className="scroll-mt-24">
             <span className="text-[11px] font-mono text-cyan-400 tracking-wider block mb-2">05 · UYGULAMA METODOLOJİSİ</span>
             <h2 className="text-[32px] sm:text-[38px] font-extrabold text-white mb-6 tracking-tight leading-tight">
-              6 Adımlı Patent Uyumlu GEO Yol Haritası
+              6 Adımlı GEO Yol Haritası
             </h2>
             
             <div className="space-y-4">
@@ -572,7 +569,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
                 <div>
                   <h4 className="text-base font-bold text-white mb-1">Semantik Varlık (Entity) & Knowledge Graph Yapılandırması</h4>
                   <p className="text-xs text-gray-300 leading-relaxed">
-                    Markanızı Wikipedia, Wikidata ve sektörel yetkili veri dizinlerinde tanımlayarak LLM hafızasında bağımsız bir nesne düğümü (Entity) olarak kurguluyorum (US10210256B2).
+                    Markanızı Wikipedia, Wikidata ve sektörel yetkili veri dizinlerinde tanımlayarak LLM hafızasında bağımsız ve tanımlı bir varlık (Entity) olarak kurguluyorum.
                   </p>
                 </div>
               </div>
@@ -582,7 +579,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
                 <div>
                   <h4 className="text-base font-bold text-white mb-1">Direct Answer Chunking & RAG Optimizasyonu</h4>
                   <p className="text-xs text-gray-300 leading-relaxed">
-                    Sayfa metinlerinizi yapay zeka botlarının doğrudan yanıt olarak çekebileceği soru-cevap ve tablo formatlı veri bloklarına bölümlendiriyorum (US20240289407A1).
+                    Sayfa metinlerinizi yapay zeka botlarının doğrudan yanıt olarak çekebileceği soru-cevap ve tablo formatlı veri bloklarına bölümlendiriyorum.
                   </p>
                 </div>
               </div>
@@ -602,7 +599,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
                 <div>
                   <h4 className="text-base font-bold text-white mb-1">Co-Citation & Basın/Dijital PR Güven Ağları</h4>
                   <p className="text-xs text-gray-300 leading-relaxed">
-                    Dış mecralarda markanızın adının doğru anahtar kelimeler ve sektör liderleriyle birlikte geçmesini sağlayarak AI güven katsayısını yükseltiyorum (US7536408B2).
+                    Dış mecralarda markanızın adının doğru anahtar kelimeler ve sektör liderleriyle birlikte geçmesini sağlayarak AI güven katsayısını yükseltiyorum.
                   </p>
                 </div>
               </div>
@@ -612,7 +609,7 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
                 <div>
                   <h4 className="text-base font-bold text-white mb-1">AI Bot Erişim & llms.txt Yönetimi</h4>
                   <p className="text-xs text-gray-300 leading-relaxed">
-                    GPTBot, ClaudeBot, PerplexityBot tarayıcılarının erişim kurgularını optimize ediyor, sitenize özel llms.txt mimarisini yayına alıyorum (US7693813B1).
+                    GPTBot, ClaudeBot, PerplexityBot tarayıcılarının erişim kurgularını optimize ediyor, sitenize özel llms.txt mimarisini yayına alıyorum.
                   </p>
                 </div>
               </div>
