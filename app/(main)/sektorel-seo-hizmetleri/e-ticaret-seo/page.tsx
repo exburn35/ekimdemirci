@@ -45,7 +45,7 @@ export default function ECommerceSEOPage() {
     },
     {
       question: "Hangi e-ticaret altyapılarıyla çalışıyorsunuz?",
-      answer: "Shopify, WooCommerce, Ticimax, İkas ve IdeaSoft başta olmak üzere özel yazılımlı tüm e-ticaret platformlarında teknik tarama engellerini kaldırıp semantik optimizasyon kurguluyorum."
+      answer: "Shopify, WooCommerce, Ticimax, T-Soft, İkas ve IdeaSoft başta olmak üzere özel yazılımlı tüm e-ticaret platformlarında teknik tarama engellerini kaldırıp semantik optimizasyon kurguluyorum."
     },
     {
       question: "Reklamsız organik satış ve ciro büyümesi gerçekten mümkün mü?",
@@ -73,7 +73,7 @@ export default function ECommerceSEOPage() {
       desc: "Veritabanı yükünü hafifleten sorgu optimizasyonları, gelişmiş taksonomi ve katmanlı şema entegrasyonu sağlıyorum."
     },
     {
-      name: "Ticimax & IdeaSoft",
+      name: "Ticimax, T-Soft & IdeaSoft",
       tag: "Yerel Güç",
       desc: "Hazır altyapıların canonical, parametre ve blokaj sınırlamalarını aşan özel SEO teknikleri uyguluyorum."
     },
