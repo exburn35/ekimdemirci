@@ -270,6 +270,21 @@ export default function ECommerceSEOPage() {
                     </p>
                   </div>
                 </div>
+
+                {/* ARS MOTOR PERFORMANCE CHART */}
+                <div className="mt-8 pt-6 border-t border-white/10">
+                  <div className="text-sm font-semibold text-gray-300 mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-emerald-400" />
+                    Ars Motor 3 Aylık Performans & Karşılaştırma Grafiği (Google Search Console)
+                  </div>
+                  <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#111836] p-2 shadow-2xl">
+                    <img 
+                      src="/ars-motor-3-aylik-karsilastirma-grafigi.png" 
+                      alt="Ars Motor 3 Aylık Karşılaştırma Grafiği" 
+                      className="w-full h-auto rounded-xl object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
