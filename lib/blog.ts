@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { decodeHtmlEntities, slugifyCategory } from "./blog-utils";
+import { processSourceBadgesInHtml } from "./source-badges";
 export { slugifyCategory };
 
 export interface BlogPost {
@@ -297,6 +298,9 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
     // 4. Rewrite WordPress image paths to /uploads
     processedHtml = processedHtml.replace(/https?:\/\/(www\.)?ekimdemirci\.com\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/')
         .replace(/\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?/g, '/uploads/');
+
+    // 5. Process Source Badges for Kaynaklar section
+    processedHtml = processSourceBadgesInHtml(processedHtml);
 
     return { cleanHtml: decodeHtmlEntities(processedHtml), headings };
   } catch (error) {
