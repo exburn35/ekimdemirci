@@ -31,12 +31,12 @@ foreach ($file in $files) {
         }
         $posts += $postObj
     } catch {
-        Write-Warning "Error reading $($file.Name): $_"
+        Write-Host "Error reading $($file.Name): $_"
     }
 }
 
 # Sort descending by publishedAt date
-$sortedPosts = $posts | Sort-Object -Property @{ Expression = { [DateTime]::Parse($_.publishedAt) } } -Descending
+$sortedPosts = $posts | Sort-Object -Property @{ Expression = { [DateTimeOffset]::Parse($_.publishedAt) } } -Descending
 
 $jsonOutput = $sortedPosts | ConvertTo-Json -Depth 100 -Compress:$false
 [System.IO.File]::WriteAllText($indexPath, $jsonOutput, $utf8NoBom)
