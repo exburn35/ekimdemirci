@@ -1,5 +1,31 @@
 [
     {
+        "title":  "SEO İçin En İyi React Framework Hangisi? Next.js, Astro, Remix ve Gatsby Karşılaştırması",
+        "slug":  "seo-icin-en-iyi-react-framework-hangisi-nextjs-astro-remix-ve-gatsby-karsilastirmasi",
+        "excerpt":  "2026 güncel verileriyle SEO için en iyi React framework\u0027ünü seçiyoruz: Next.js, Astro, Remix (React Router 7) ve Gatsby karşılaştırması, rendering modelleri ve kaçınılması gereken 9 kritik SEO hatası.",
+        "featuredImage":  "/uploads/seo-icin-en-iyi-react-framework-hangisi-nextjs-astro-remix-ve-gatsby-karsilastirmasi.webp",
+        "ogImage":  "/uploads/seo-icin-en-iyi-react-framework-hangisi-nextjs-astro-remix-ve-gatsby-karsilastirmasi.webp",
+        "metaTitle":  "SEO İçin En İyi React Framework Hangisi? Next.js, Astro, Remix Karşılaştırması | Ekim Demirci",
+        "metaDescription":  "SEO için en iyi React framework hangisi? 2026 güncel verileriyle Next.js, Astro, Remix ve Gatsby karşılaştırması, Core Web Vitals performansları ve 9 kritik SEO hatası.",
+        "publishedAt":  "2026-09-14T21:00:00+03:00",
+        "updatedAt":  "2026-09-14T21:00:00+03:00",
+        "published":  true,
+        "category":  "SEO",
+        "readTime":  8,
+        "tags":  [
+                     "React SEO",
+                     "Next.js SEO",
+                     "Astro SEO",
+                     "Remix SEO",
+                     "Gatsby",
+                     "Teknik SEO",
+                     "Core Web Vitals",
+                     "Server Side Rendering",
+                     "Client Side Rendering"
+                 ],
+        "views":  0
+    },
+    {
         "title":  "Turizm Sektörü İçin GEO Nasıl Yapılmalı?",
         "slug":  "turizm-sektoru-icin-geo-nasil-yapilmali",
         "excerpt":  "Turizm sektörü, GEO\u0027nun en hızlı ve acımasız vurduğu alanlardan biri. ChatGPT\u0027nin Booking.com entegrasyonundan yapay zeka görünürlüğüne ve oteller için 4 adımlık GEO rehberi.",
@@ -403,20 +429,27 @@
         "views":  0
     },
     {
-        "title":  "ChatGPT\u0026#8217;de Nasıl Görünür Olunur? Tüm Bilmeniz Gerekenler",
+        "title":  "ChatGPT\u0027de Nasıl Görünür Olunur? Tüm Bilmeniz Gerekenler",
         "slug":  "chatgptde-nasil-gorunur-olunur",
-        "excerpt":  "ChatGPT sizden bahsetsin mi istiyorsunuz? O halde hem teknik hem de kavramsal tüm soruların yanıtını verdiğim içeriğimi okuyabilirsiniz.",
+        "excerpt":  "ChatGPT\u0027de nasıl görünür olunur? GPTBot, OAI-SearchBot ve ChatGPT-User ayrımı, WAF engelleri, eğitim verisi kesim tarihi, semantik otorite ve 2026 güncel GEO rehberi.",
         "featuredImage":  "/uploads/ChatGPTde-Nasil-Gorunur-Olunur.webp",
         "ogImage":  "/uploads/ChatGPTde-Nasil-Gorunur-Olunur.webp",
         "metaTitle":  "ChatGPT\u0027de Nasıl Görünür Olunur? Tüm Bilmeniz Gerekenler | Ekim Demirci",
-        "metaDescription":  "ChatGPT sizden bahsetsin mi istiyorsunuz? O halde hem teknik hem de kavramsal tüm soruların yanıtını verdiğim içeriğimi okuyabilirsiniz.",
+        "metaDescription":  "ChatGPT sizden bahsetsin mi istiyorsunuz? GPTBot ve OAI-SearchBot ayrımı, WAF engelleri, eğitim verisi kesim tarihi ve görünürlük stratejileri rehberi.",
         "publishedAt":  "2026-01-29T15:04:44+03:00",
-        "updatedAt":  "2026-05-18T21:25:52+03:00",
+        "updatedAt":  "2026-09-14T21:35:00+03:00",
         "published":  true,
-        "category":  "SEO",
-        "readTime":  22,
+        "category":  "GEO",
+        "readTime":  11,
         "tags":  [
-
+                     "ChatGPT",
+                     "GEO",
+                     "Generative Engine Optimization",
+                     "GPTBot",
+                     "OAI-SearchBot",
+                     "Yapay Zeka SEO",
+                     "LLM SEO",
+                     "Semantik Otorite"
                  ],
         "views":  0
     },
