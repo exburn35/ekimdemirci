@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -15,7 +16,12 @@ export const metadata: Metadata = {
 
 export default function HospitalsSEO() {
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[
+        { name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" },
+        { name: "Hastaneler için SEO", href: "/sektorel-seo-hizmetleri/hastaneler-icin-seo-2" }
+      ]} />
+      <ServicePageLayout
       title="Hastaneler için SEO"
       subtitle="Sektörel SEO"
       description="Hastaneler ve sağlık kuruluşları için kapsamlı SEO çözümleri. Yerel ve ulusal arama sonuçlarında üst sıralarda yer alın, hasta sayılarınızı artırın ve dijital varlığınızı güçlendirin."
@@ -72,6 +78,7 @@ export default function HospitalsSEO() {
         },
       ]}
     />
+    </>
   );
 }
 

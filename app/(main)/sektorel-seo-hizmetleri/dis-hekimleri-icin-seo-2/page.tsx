@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { Stethoscope } from "lucide-react";
 
@@ -16,7 +17,12 @@ export const metadata: Metadata = {
 
 export default function DentistsSEO() {
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[
+        { name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" },
+        { name: "Diş Hekimleri için SEO", href: "/sektorel-seo-hizmetleri/dis-hekimleri-icin-seo-2" }
+      ]} />
+      <ServicePageLayout
       title="Diş Hekimleri için SEO"
       subtitle="Sektörel SEO"
       description="Diş hekimi klinikleriniz için özelleştirilmiş SEO stratejileri ile daha fazla hasta kazanın. Yerel arama sonuçlarında üst sıralarda yer alın, randevu sayılarınızı artırın ve dijital varlığınızı güçlendirin."
@@ -73,6 +79,7 @@ export default function DentistsSEO() {
         },
       ]}
     />
+    </>
   );
 }
 

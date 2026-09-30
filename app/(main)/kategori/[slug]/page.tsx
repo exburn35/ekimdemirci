@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 import { Calendar, Clock, ArrowRight, Folder } from "lucide-react";
 import { getCategoryBySlug, getPostsByCategory, slugifyCategory } from "@/lib/blog";
 import { formatDate } from "@/lib/blog-utils";
@@ -49,8 +50,14 @@ export default async function CategoryPage({
 
   const posts = getPostsByCategory(params.slug);
 
+  const breadcrumbItems = [
+    { name: "Blog", href: "/blog" },
+    { name: category.name, href: `/kategori/${params.slug}` }
+  ];
+
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       <section className="relative pt-32 pb-20 overflow-hidden bg-[#211b39]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#211b39] via-[#1a152e] to-[#211b39]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]" />

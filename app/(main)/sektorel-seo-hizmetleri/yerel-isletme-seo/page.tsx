@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import Link from "next/link";
 import { 
@@ -114,6 +115,10 @@ export default function LocalBusinessSEOPage() {
 
   return (
     <>
+      <Breadcrumb items={[
+        { name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" },
+        { name: "Yerel İşletme SEO", href: "/sektorel-seo-hizmetleri/yerel-isletme-seo" }
+      ]} />
       <ServicePageLayout
         title="Yerel İşletme SEO Danışmanlığı"
         subtitle="Sektörel SEO Çözümleri"

@@ -12,6 +12,7 @@ import {
   ArrowRight,
   CheckCircle2
 } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedPages from "@/components/RelatedPages";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
@@ -74,6 +75,7 @@ const benefits = [
 export default function SectoralSEOServices() {
   return (
     <>
+      <Breadcrumb items={[{ name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" }]} />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />

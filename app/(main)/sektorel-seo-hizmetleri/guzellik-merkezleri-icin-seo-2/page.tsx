@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -15,7 +16,12 @@ export const metadata: Metadata = {
 
 export default function BeautyCentersSEO() {
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[
+        { name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" },
+        { name: "Güzellik Merkezleri için SEO", href: "/sektorel-seo-hizmetleri/guzellik-merkezleri-icin-seo-2" }
+      ]} />
+      <ServicePageLayout
       title="Güzellik Merkezleri için SEO"
       subtitle="Sektörel SEO"
       description="Güzellik ve estetik merkezleriniz için SEO ile müşteri portföyünüzü genişletin. Yerel arama sonuçlarında üst sıralarda yer alın, randevu sayılarınızı artırın ve dijital varlığınızı güçlendirin."
@@ -72,6 +78,7 @@ export default function BeautyCentersSEO() {
         },
       ]}
     />
+    </>
   );
 }
 

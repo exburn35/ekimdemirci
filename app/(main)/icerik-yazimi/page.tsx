@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -15,7 +16,9 @@ export const metadata: Metadata = {
 
 export default function ContentWriting() {
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[{ name: "İçerik Yazımı", href: "/icerik-yazimi" }]} />
+      <ServicePageLayout
       title="İçerik Yazımı"
       subtitle="İçerik Hizmetleri"
       description="SEO uyumlu, kaliteli içerik yazımı hizmetleri ile dijital varlığınızı güçlendirin. Blog yazıları, web sayfası içerikleri ve dijital pazarlama içerikleri ile hedef kitlenize ulaşın."
@@ -72,6 +75,7 @@ export default function ContentWriting() {
         },
       ]}
     />
+    </>
   );
 }
 

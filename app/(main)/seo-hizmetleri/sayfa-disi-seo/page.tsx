@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -34,7 +35,12 @@ export default function OffPageSEO() {
   ];
 
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[
+        { name: "SEO Hizmetleri", href: "/seo-hizmetleri" },
+        { name: "Site Dışı SEO", href: "/seo-hizmetleri/sayfa-disi-seo" }
+      ]} />
+      <ServicePageLayout
       title="Sayfa Dışı (Off-Page) SEO Danışmanlığı"
       subtitle="Otorite Mimarısı & Dijital PR"
       description="Spam riski taşımayan, doğal editoryal backlink stratejileri, dijital PR ve marka bilinirliği çalışmalarıyla domain otoritenizi ve arama sıralamalarınızı zirveye taşıyorum."
@@ -134,5 +140,6 @@ export default function OffPageSEO() {
       faqItems={faqItems}
       blogCategory="sayfa-disi-seo"
     />
+    </>
   );
 }

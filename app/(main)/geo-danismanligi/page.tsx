@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import ProductSchema from "@/components/schemas/ProductSchema";
 import GEOPricingSection from "@/components/GEOPricingSection";
@@ -47,6 +48,7 @@ export default function GEODanismanligi() {
 
   return (
     <>
+      <Breadcrumb items={[{ name: "GEO Danışmanlığı", href: "/geo-danismanligi" }]} />
       <ProductSchema
         name="GEO (Generative Engine Optimization) Danışmanlığı"
         description="Google'ın güncel arama mimarisi ve RAG altyapısına dayalı teknik GEO danışmanlık hizmet paketi. ChatGPT Search, Google AI Overviews ve Perplexity'de birincil kaynak olun."

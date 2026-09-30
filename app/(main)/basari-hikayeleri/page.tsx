@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { TrendingUp, Users, Target, Award, ArrowRight, Sparkles, BookOpen, Building2, Zap, Gem } from "lucide-react";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedPages from "@/components/RelatedPages";
 import ContactForm from "@/components/ContactForm";
@@ -38,6 +39,7 @@ export default function SuccessStories() {
 
   return (
     <>
+      <Breadcrumb items={[{ name: "Başarı Hikayeleri", href: "/basari-hikayeleri" }]} />
       {/* Hero Bölümü */}
       <section className="relative pt-36 pb-24 overflow-hidden bg-[#0a0f25]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f25] via-[#0d153a] to-[#050814]" />

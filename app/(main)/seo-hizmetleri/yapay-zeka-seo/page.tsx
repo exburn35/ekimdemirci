@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import AIVisual from "@/components/AIVisual";
 import GoogleAIOverviewSection from "@/components/GoogleAIOverviewSection";
@@ -37,7 +38,12 @@ export default function AISEO() {
   ];
 
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[
+        { name: "SEO Hizmetleri", href: "/seo-hizmetleri" },
+        { name: "Yapay Zeka SEO", href: "/seo-hizmetleri/yapay-zeka-seo" }
+      ]} />
+      <ServicePageLayout
       title="Yapay Zeka SEO Uygulama Stratejileri"
       subtitle="Platform Bazlı Optimizasyon Taktikleri"
       description="ChatGPT, Perplexity, Claude ve Google AI Overviews motorlarının çalışma mekanizmalarına göre kurgulanan somut teknik ve taktiksel optimizasyon adımları."
@@ -169,5 +175,6 @@ export default function AISEO() {
       </section>
       <AILogosSection />
     </ServicePageLayout>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Gizlilik Politikası | Ekim Demirci",
@@ -7,15 +8,18 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="pt-32 pb-24 bg-black">
-      <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-8">Gizlilik Politikası</h1>
-        <div className="prose prose-invert max-w-none text-gray-300">
-          <p>
-            Bu sayfa henüz hazırlık aşamasında. Çok yakında buraya ekimdemirci.com gizlilik politikası eklenecektir.
-          </p>
+    <>
+      <Breadcrumb items={[{ name: "Gizlilik Politikası", href: "/gizlilik-politikasi" }]} />
+      <div className="pt-32 pb-24 bg-black">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl font-bold mb-8">Gizlilik Politikası</h1>
+          <div className="prose prose-invert max-w-none text-gray-300">
+            <p>
+              Bu sayfa henüz hazırlık aşamasında. Çok yakında buraya ekimdemirci.com gizlilik politikası eklenecektir.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

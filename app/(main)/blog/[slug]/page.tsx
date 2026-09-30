@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Breadcrumb from "@/components/Breadcrumb";
 import BlogPostContent from "@/components/blog/BlogPostContent";
 import BlogPostingSchema from "@/components/schemas/BlogPostingSchema";
 import { getBlogPostBySlug, cleanAndProcessHtml } from "@/lib/blog";
@@ -54,10 +55,21 @@ export default async function BlogPostPage({
     const rawContent = typeof post.content === 'string' ? post.content : (post.content?.html || "");
     const { cleanHtml, headings } = cleanAndProcessHtml(rawContent);
 
+    const postTitle = (post.title || "Makale")
+      .replace(/&#8217;/g, "'")
+      .replace(/&quot;/g, '"')
+      .replace(/&amp;/g, '&');
+
+    const breadcrumbItems = [
+      { name: "Blog", href: "/blog" },
+      { name: postTitle, href: `/blog/${post.slug}` }
+    ];
+
     return (
       <>
+        <Breadcrumb items={breadcrumbItems} />
         <BlogPostingSchema post={{
-          title: (post.title || "Makale").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
+          title: postTitle,
           description: post.excerpt,
           publishedAt: post.publishedAt,
           updatedAt: post.updatedAt,

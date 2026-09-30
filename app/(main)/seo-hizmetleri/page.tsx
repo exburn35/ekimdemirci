@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -34,7 +35,9 @@ export default function ServicesPage() {
   ];
 
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[{ name: "SEO Hizmetleri", href: "/seo-hizmetleri" }]} />
+      <ServicePageLayout
       title="Kapsamlı SEO Danışmanlığı Hizmetleri"
       subtitle="Arama Motoru & Yapay Zeka Optimizasyonu"
       description="Markanızın arama motorlarında ve yapay zeka yanıtlarında üst sıralara çıkması, nitelikli ziyaretçi çekmesi ve sürdürülebilir ciro büyümesi elde etmesi için uçtan uca uzman danışmanlık."
@@ -134,5 +137,6 @@ export default function ServicesPage() {
       faqItems={faqItems}
       blogCategory="SEO Hizmetleri"
     />
+    </>
   );
 }

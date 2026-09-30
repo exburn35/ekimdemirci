@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
 import RelatedPages from "@/components/RelatedPages";
@@ -54,6 +55,7 @@ const faqs = [
 export default function FAQPage() {
   return (
     <>
+      <Breadcrumb items={[{ name: "Sıkça Sorulan Sorular", href: "/sikca-sorulan-sorular" }]} />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import Link from "next/link";
 import { 
@@ -119,6 +120,10 @@ export default function ECommerceSEOPage() {
 
   return (
     <>
+      <Breadcrumb items={[
+        { name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" },
+        { name: "E-Ticaret SEO", href: "/sektorel-seo-hizmetleri/e-ticaret-seo" }
+      ]} />
       <ServicePageLayout
         title="E-Ticaret SEO Danışmanlığı"
         subtitle="Sektörel SEO Çözümleri"

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Zap, Target, TrendingUp, Shield, Sliders, Scale, Gem, Building2, Calendar, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedPages from "@/components/RelatedPages";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
@@ -217,6 +218,7 @@ export default function SEOConsultingPrices() {
 
   return (
     <>
+      <Breadcrumb items={[{ name: "SEO Danışmanlık Fiyatları", href: "/seo-danismanlik-fiyatlari" }]} />
       {/* Hero Bölümü */}
       <section className="relative pt-36 pb-24 overflow-hidden">
         {/* Arka plan katmanı */}

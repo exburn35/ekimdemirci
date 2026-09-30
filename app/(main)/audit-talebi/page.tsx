@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Search, CheckCircle2, BarChart3, FileText, Clock, ArrowRight } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 import ContactForm from "@/components/ContactForm";
 
 const auditFeatures = [
@@ -43,6 +44,7 @@ const auditChecklist = [
 export default function AuditRequest() {
   return (
     <>
+      <Breadcrumb items={[{ name: "Audit Talebi", href: "/audit-talebi" }]} />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Breadcrumb from "@/components/Breadcrumb";
 import { caseStudies } from "@/lib/case-studies";
 import CaseStudyClient from "./CaseStudyClient";
 
@@ -37,5 +38,13 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
     .filter((s) => s.slug !== study.slug)
     .slice(0, 2);
 
-  return <CaseStudyClient study={study} relatedStories={relatedStories} />;
+  return (
+    <>
+      <Breadcrumb items={[
+        { name: "Başarı Hikayeleri", href: "/basari-hikayeleri" },
+        { name: study.company, href: `/basari-hikayeleri/${study.slug}` }
+      ]} />
+      <CaseStudyClient study={study} relatedStories={relatedStories} />
+    </>
+  );
 }

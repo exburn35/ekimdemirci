@@ -1,4 +1,5 @@
 import { getAllBlogPosts } from "@/lib/blog";
+import Breadcrumb from "@/components/Breadcrumb";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import BlogHero from "@/components/blog/BlogHero";
 import BlogListClient from "@/components/blog/BlogListClient";
@@ -12,6 +13,7 @@ export default async function BlogPage() {
 
   return (
     <>
+      <Breadcrumb items={[{ name: "Blog", href: "/blog" }]} />
       <BlogHero />
       <BlogListClient initialPosts={blogPosts} />
       <BlogNewsletter />

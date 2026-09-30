@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -15,7 +16,12 @@ export const metadata: Metadata = {
 
 export default function LawyersSEO() {
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[
+        { name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" },
+        { name: "Avukatlar için SEO", href: "/sektorel-seo-hizmetleri/avukatlar-icin-seo-hizmeti" }
+      ]} />
+      <ServicePageLayout
       title="Avukatlar için SEO"
       subtitle="Sektörel SEO"
       description="Hukuk bürolarınız için yerel ve ulusal SEO hizmetleri ile potansiyel müvekkillerinize ulaşın. Hukuk alanında uzmanlaşmış SEO stratejileri ile dijital varlığınızı güçlendirin."
@@ -72,6 +78,7 @@ export default function LawyersSEO() {
         },
       ]}
     />
+    </>
   );
 }
 

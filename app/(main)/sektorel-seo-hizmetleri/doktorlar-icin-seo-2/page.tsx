@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -15,7 +16,12 @@ export const metadata: Metadata = {
 
 export default function DoctorsSEO() {
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[
+        { name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" },
+        { name: "Doktorlar için SEO", href: "/sektorel-seo-hizmetleri/doktorlar-icin-seo-2" }
+      ]} />
+      <ServicePageLayout
       title="Doktorlar için SEO"
       subtitle="Sektörel SEO"
       description="Tıp doktorları ve uzman hekimler için özelleştirilmiş SEO hizmetleri. Yerel arama sonuçlarında üst sıralarda yer alın, hasta sayılarınızı artırın ve dijital varlığınızı güçlendirin."
@@ -72,6 +78,7 @@ export default function DoctorsSEO() {
         },
       ]}
     />
+    </>
   );
 }
 

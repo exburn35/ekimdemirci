@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import AboutHero from "@/components/AboutHero";
 import AboutContent from "@/components/AboutContent";
 import RelatedPages from "@/components/RelatedPages";
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
+      <Breadcrumb items={[{ name: "Hakkımda", href: "/hakkimda" }]} />
       <PersonSchema />
       <AboutHero />
       <AboutContent />

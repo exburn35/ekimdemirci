@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -34,7 +35,12 @@ export default function TechnicalSEO() {
   ];
 
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[
+        { name: "SEO Hizmetleri", href: "/seo-hizmetleri" },
+        { name: "Teknik SEO", href: "/seo-hizmetleri/teknik-seo" }
+      ]} />
+      <ServicePageLayout
       title="Teknik SEO Danışmanlığı"
       subtitle="Altyapı & Performans Mühendisliği"
       description="Googlebot ve yapay zeka tarayıcılarının web sitenizi sıfır engelle taraması, hızlı indekslemesi ve yüksek Core Web Vitals skorları elde etmesi için uçtan uca teknik optimizasyon."
@@ -134,5 +140,6 @@ export default function TechnicalSEO() {
       faqItems={faqItems}
       blogCategory="teknik-seo"
     />
+    </>
   );
 }

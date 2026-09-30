@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -34,7 +35,12 @@ export default function OnPageSEO() {
   ];
 
   return (
-    <ServicePageLayout
+    <>
+      <Breadcrumb items={[
+        { name: "SEO Hizmetleri", href: "/seo-hizmetleri" },
+        { name: "Site İçi SEO", href: "/seo-hizmetleri/sayfa-ici-seo" }
+      ]} />
+      <ServicePageLayout
       title="Sayfa İçi (On-Page) SEO Danışmanlığı"
       subtitle="Semantik İçerik & Niyet Optimizasyonu"
       description="Arama niyetini %100 karşılayan semantik içerik mimarisi, güçlü iç bağlantı ağları ve dönüşüm odaklı sayfa tasarımları ile organik trafiğinizi ciroya dönüştürün."
@@ -134,5 +140,6 @@ export default function OnPageSEO() {
       faqItems={faqItems}
       blogCategory="sayfa-ici-seo"
     />
+    </>
   );
 }
