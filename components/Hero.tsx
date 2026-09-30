@@ -40,7 +40,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[120vh] flex flex-col items-center pt-24 md:pt-32 overflow-hidden bg-[#0a0f25]">
+    <section className="relative min-h-[min(120vh,1050px)] flex flex-col items-center pt-24 md:pt-32 overflow-hidden bg-[#0a0f25]">
       {/* Dark Space Background Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#111836] via-[#0a0f25] to-black z-0" />
       
@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 flex flex-col items-center">
         <motion.div
           variants={containerVariants}
-          initial="hidden"
+          initial={false}
           animate="visible"
           className="text-center w-full max-w-4xl"
         >
@@ -119,7 +119,7 @@ export default function Hero() {
          
          {/* Stats overlapping the globe slightly */}
          <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
             className="absolute bottom-32 left-0 right-0 z-30 hidden md:flex justify-center gap-12 px-4"

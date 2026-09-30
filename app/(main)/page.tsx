@@ -3,7 +3,8 @@ import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import CentralResultsEvidence from "@/components/CentralResultsEvidence";
 import SEOAuditSection from "@/components/SEOAuditSection";
-import HomeFAQ from "@/components/HomeFAQ";
+import FAQ from "@/components/FAQ";
+import { homeFaqs } from "@/data/homeFaqs";
 import ContactForm from "@/components/ContactForm";
 import PersonSchema from "@/components/schemas/PersonSchema";
 import { getAllBlogPosts } from "@/lib/blog";
@@ -42,7 +43,21 @@ export default function Home() {
       <Services />
       <CentralResultsEvidence />
       <SEOAuditSection />
-      <HomeFAQ />
+      <FAQ
+        items={homeFaqs}
+        badge="SSS (Sıkça Sorulan Sorular)"
+        title={
+          <>
+            SEO Danışmanlığı{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              Hakkında Merak Edilenler
+            </span>
+          </>
+        }
+        subtitle="Semantik SEO, yapay zeka odaklı görünürlük stratejileri ve SEO danışmanlığı süreçlerime dair aklınıza takılan tüm soruların doğrudan ve açık yanıtları."
+        name="home-faq"
+        defaultOpenIndex={0}
+      />
       <LatestPostsSlider posts={homePosts} />
       <ContactForm
         title="İşinizi Büyütmeye Hazır Mısınız?"

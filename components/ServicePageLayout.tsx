@@ -23,7 +23,7 @@ import ContactForm from "./ContactForm";
 import RelatedBlogPosts from "./RelatedBlogPosts";
 import RelatedPages from "./RelatedPages";
 import ServiceSchema from "./schemas/ServiceSchema";
-import FAQSchema from "./schemas/FAQSchema";
+import FAQ from "./FAQ";
 import ServiceLeadForm from "./ServiceLeadForm";
 
 const iconMap = {
@@ -91,7 +91,6 @@ export default function ServicePageLayout({
   return (
     <>
       <ServiceSchema name={title} description={description} url={fullUrl} />
-      {faqItems && faqItems.length > 0 && <FAQSchema items={faqItems} />}
 
       {/* 1. HERO SECTION */}
       {!hideHero && (
@@ -125,7 +124,7 @@ export default function ServicePageLayout({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Left Column */}
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={false}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
@@ -138,7 +137,7 @@ export default function ServicePageLayout({
                 </Link>
 
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={false}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-blue-400 uppercase tracking-widest mb-6"
@@ -171,7 +170,7 @@ export default function ServicePageLayout({
 
               {/* Right Column - Form */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={false}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
@@ -419,44 +418,14 @@ export default function ServicePageLayout({
 
       {/* 7. SERVICE SPECIFIC FAQ SECTION */}
       {faqItems && faqItems.length > 0 && (
-        <section className="py-20 bg-[#0a0f25] border-t border-white/5">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                Sıkça Sorulan Sorular
-              </h2>
-              <p className="text-gray-400 text-base md:text-lg">
-                {title} hakkında en çok merak edilen konular.
-              </p>
-            </motion.div>
-
-            <div className="space-y-6">
-              {faqItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-[#111836] border border-white/10 p-6 md:p-8 rounded-2xl"
-                >
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-3">
-                    {item.question}
-                  </h3>
-                  <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                    {item.answer}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQ
+          items={faqItems}
+          title="Sıkça Sorulan Sorular"
+          subtitle={`${title} hakkında en çok merak edilen konular.`}
+          name="service-faq"
+          defaultOpenIndex={0}
+          includeSchema={true}
+        />
       )}
 
       {/* 8. RELATED BLOG POSTS LINK BLOCK */}

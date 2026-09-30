@@ -6,7 +6,7 @@ import { Home, Search, ArrowLeft, AlertCircle } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-[min(100svh,800px)] flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
       
@@ -19,14 +19,14 @@ export default function NotFound() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="space-y-8"
         >
           {/* 404 Number */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import FAQSchema from "@/components/schemas/FAQSchema";
 import Link from "next/link";
 import { 
   Stethoscope, 
@@ -118,8 +117,6 @@ export default function HealthAndClinicSEOPage() {
 
   return (
     <>
-      <FAQSchema items={faqItems} />
-
       <ServicePageLayout
         title="Sağlık ve Klinik SEO Danışmanlığı"
         subtitle="Sektörel SEO Çözümleri"

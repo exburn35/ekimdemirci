@@ -10,6 +10,7 @@ import RelatedPages from "@/components/RelatedPages";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import ContactForm from "@/components/ContactForm";
 import GEOPricingSection from "@/components/GEOPricingSection";
+import FAQ from "@/components/FAQ";
 
 // Fiyatlandırma paket verileri
 const pricingPlans = [
@@ -181,46 +182,7 @@ const faqList = [
   },
 ];
 
-// SSS Akordeon Elemanı Bileşeni
-function FAQItem({ question, answer }: { question: string; answer: string }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const shouldReduceMotion = useReducedMotion();
 
-  return (
-    <div className="border-b border-white/10 py-4 last:border-0">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex justify-between items-center w-full text-left font-semibold text-base md:text-lg text-white hover:text-purple-300 transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded px-2"
-        aria-expanded={isOpen}
-      >
-        <span>{question}</span>
-        {/* rotasyon mikro etkileşimi */}
-        <motion.span
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
-          className="text-gray-400 flex-shrink-0 ml-4"
-        >
-          <ChevronDown className="w-5 h-5" />
-        </motion.span>
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <p className="text-gray-300 text-sm leading-relaxed mt-2 px-2 pb-2 font-light">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
 
 export default function SEOConsultingPrices() {
   const shouldReduceMotion = useReducedMotion();
@@ -585,11 +547,13 @@ export default function SEOConsultingPrices() {
             <h3 className="text-xl md:text-2xl font-bold text-white mb-8 text-center tracking-tight">
               Sıkça Sorulan Sorular
             </h3>
-            <div className="bg-white/[0.01] border border-white/[0.06] rounded-3xl p-6 md:p-8 backdrop-blur-md">
-              {faqList.map((faq) => (
-                <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
-              ))}
-            </div>
+            <FAQ
+              items={faqList}
+              renderSection={false}
+              name="pricing-faq"
+              defaultOpenIndex={0}
+              includeSchema={true}
+            />
           </motion.div>
 
         </div>
@@ -633,23 +597,6 @@ export default function SEOConsultingPrices() {
               "highPrice": "40000",
               "offerCount": "3"
             }
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqList.map((faq) => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
           })
         }}
       />

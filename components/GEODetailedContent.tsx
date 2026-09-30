@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowRight, ChevronDown, Cpu, ShieldCheck, Sparkles, BookOpen, Database, FileCode2, Eye, GitBranch, Network, Layers3 } from "lucide-react";
+import FAQ from "./FAQ";
 
 interface FAQItem {
   question: string;
@@ -15,7 +16,6 @@ interface GEODetailedContentProps {
 
 export default function GEODetailedContent({ faqItems }: GEODetailedContentProps) {
   const [activeSection, setActiveSection] = useState("nedir");
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const tocItems = [
     { id: "nedir", num: "01", title: "GEO & Visual Semantics Mimarisi" },
@@ -70,10 +70,6 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
       });
       setActiveSection(id);
     }
-  };
-
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
   const googlePatents = [
@@ -617,42 +613,21 @@ export default function GEODetailedContent({ faqItems }: GEODetailedContentProps
           </section>
 
           {/* Section 6: SSS */}
+          {/* SSS */}
           <section id="sss" className="scroll-mt-24">
             <span className="text-[11px] font-mono text-cyan-400 tracking-wider block mb-2">06 · SORU & CEVAP</span>
             <h2 className="text-[32px] sm:text-[38px] font-extrabold text-white mb-6 tracking-tight leading-tight">
               Sıkça Sorulan Sorular
             </h2>
             
-            <div className="space-y-4">
-              {faqItems.map((faq, index) => {
-                const isOpen = openFaqIndex === index;
-                return (
-                  <div
-                    key={index}
-                    className="rounded-2xl border border-white/10 bg-slate-900/60 overflow-hidden transition-all duration-300"
-                  >
-                    <button
-                      onClick={() => toggleFaq(index)}
-                      className="flex items-center justify-between w-full p-5 sm:p-6 text-left text-white hover:bg-white/5 font-bold text-[15px] sm:text-[16px] transition-colors focus:outline-none"
-                    >
-                      <span>{faq.question}</span>
-                      <ChevronDown className={`w-5 h-5 text-cyan-400 transition-transform duration-300 shrink-0 ${isOpen ? "rotate-180 text-white" : ""}`} />
-                    </button>
-                    <div
-                      className="transition-all duration-300 ease-in-out"
-                      style={{
-                        maxHeight: isOpen ? "400px" : "0px",
-                        opacity: isOpen ? 1 : 0
-                      }}
-                    >
-                      <div className="p-5 sm:p-6 pt-0 border-t border-white/5 text-[14px] leading-relaxed text-gray-300 bg-white/[0.01]">
-                        {faq.answer}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <FAQ
+              items={faqItems}
+              renderSection={false}
+              name="geo-faq"
+              theme="cyan"
+              defaultOpenIndex={0}
+              includeSchema={true}
+            />
           </section>
 
         </div>

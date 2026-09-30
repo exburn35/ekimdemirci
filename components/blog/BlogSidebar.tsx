@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Logo from "../Logo";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
@@ -14,9 +15,15 @@ export default function BlogSidebar({ category }: BlogSidebarProps) {
       <div className="glass-strong rounded-2xl p-6">
         <h3 className="text-xl font-bold text-white mb-4">Yazar Hakkında</h3>
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-0.5">
-            <div className="w-full h-full bg-black rounded-full flex items-center justify-center overflow-hidden">
-              <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">ED</span>
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-0.5 shrink-0">
+            <div className="w-full h-full rounded-full overflow-hidden relative">
+              <Image
+                src="/uploads/ekim.jpg"
+                alt="Ekim Demirci"
+                width={64}
+                height={64}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div>

@@ -5,7 +5,7 @@ import { ChevronDown, HelpCircle } from "lucide-react";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
 import RelatedPages from "@/components/RelatedPages";
-import FAQClient from "./FAQClient";
+import FAQ from "@/components/FAQ";
 
 const faqs = [
   {
@@ -51,7 +51,7 @@ const faqs = [
 ];
 
 
-export default function FAQ() {
+export default function FAQPage() {
   return (
     <>
       {/* Hero Section */}
@@ -86,7 +86,13 @@ export default function FAQ() {
       {/* FAQ Section */}
       <section className="py-24 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FAQClient faqs={faqs} />
+          <FAQ
+            items={faqs}
+            renderSection={false}
+            name="faq-page-accordion"
+            defaultOpenIndex={0}
+            includeSchema={true}
+          />
         </div>
       </section>
 

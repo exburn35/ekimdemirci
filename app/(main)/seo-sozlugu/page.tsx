@@ -137,7 +137,7 @@ export default function SEOGlossaryPage() {
   };
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-[#020617] relative overflow-hidden">
+    <div className="pt-32 pb-24 min-h-[min(100svh,900px)] bg-[#020617] relative overflow-hidden">
       {/* Background Ambience Layers */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[150px] pointer-events-none" />
@@ -148,7 +148,7 @@ export default function SEOGlossaryPage() {
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 uppercase tracking-widest mb-6"
@@ -158,7 +158,7 @@ export default function SEOGlossaryPage() {
           </motion.div>
           
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight text-white leading-[1.1]"
@@ -168,7 +168,7 @@ export default function SEOGlossaryPage() {
           </motion.h1>
           
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl lg:text-2xl text-gray-400 leading-relaxed max-w-2xl mx-auto font-light"

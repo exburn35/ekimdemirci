@@ -15,8 +15,8 @@ export default function AboutHero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
-    <section ref={containerRef} className="relative h-[150vh] bg-[#0a0f25]">
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center border-b border-white/5">
+    <section ref={containerRef} className="relative h-[min(150vh,1200px)] bg-[#0a0f25]">
+      <div className="sticky top-0 h-[min(100svh,800px)] w-full overflow-hidden flex items-center justify-center border-b border-white/5">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a0f25] via-[#111836] to-[#0a0f25]" />
         
@@ -32,7 +32,7 @@ export default function AboutHero() {
           className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >

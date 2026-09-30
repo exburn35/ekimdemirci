@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, Fragment } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { 
   TrendingUp, 
@@ -9,7 +9,6 @@ import {
   Stethoscope, 
   MapPin, 
   Sparkles, 
-  ArrowRight, 
   Search, 
   Calendar, 
   BarChart3, 
@@ -117,10 +116,33 @@ const caseData: Record<string, { title: string; icon: any; data: CaseMetric }> =
   }
 };
 
+const caseKeys = Object.keys(caseData);
+
 export default function CentralResultsEvidence() {
   const [activeTab, setActiveTab] = useState<string>("e-ticaret");
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
-  const currentCase = caseData[activeTab].data;
+  const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
+    let nextIndex = index;
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+      e.preventDefault();
+      nextIndex = (index + 1) % caseKeys.length;
+    } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+      e.preventDefault();
+      nextIndex = (index - 1 + caseKeys.length) % caseKeys.length;
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      nextIndex = 0;
+    } else if (e.key === "End") {
+      e.preventDefault();
+      nextIndex = caseKeys.length - 1;
+    } else {
+      return;
+    }
+    const nextKey = caseKeys[nextIndex];
+    setActiveTab(nextKey);
+    tabRefs.current[nextIndex]?.focus();
+  };
 
   return (
     <section className="py-24 bg-[#0a0f25] relative overflow-hidden border-t border-white/5">
@@ -148,8 +170,12 @@ export default function CentralResultsEvidence() {
         </motion.div>
 
         {/* Interactive Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {Object.keys(caseData).map((key) => {
+        <div 
+          role="tablist"
+          aria-label="Sektörel SEO Başarı Kanıtları"
+          className="flex flex-wrap justify-center gap-3 mb-10"
+        >
+          {caseKeys.map((key, idx) => {
             const tab = caseData[key];
             const Icon = tab.icon;
             const isActive = activeTab === key;
@@ -157,8 +183,15 @@ export default function CentralResultsEvidence() {
             return (
               <button
                 key={key}
+                ref={(el) => { tabRefs.current[idx] = el; }}
+                role="tab"
+                id={`case-tab-${key}`}
+                aria-selected={isActive}
+                aria-controls={`case-panel-${key}`}
+                tabIndex={isActive ? 0 : -1}
                 onClick={() => setActiveTab(key)}
-                className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 cursor-pointer ${
+                onKeyDown={(e) => handleKeyDown(e, idx)}
+                className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
                   isActive
                     ? "bg-purple-600 text-white shadow-[0_0_25px_rgba(147,51,234,0.4)] border border-purple-400/30 scale-105"
                     : "bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border border-white/10"
@@ -171,118 +204,133 @@ export default function CentralResultsEvidence() {
           })}
         </div>
 
-        {/* Tab Content Panel */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.4 }}
-            className="bg-[#111836]/90 border border-purple-500/20 rounded-3xl p-6 md:p-10 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.5)]"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Left Column: Project Info & Main Growth Card */}
-              <div className="lg:col-span-5 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-500/20 text-purple-300 text-xs font-mono font-semibold border border-purple-500/30">
-                  <Calendar className="w-3.5 h-3.5" />
-                  {currentCase.projectCode} &bull; {currentCase.durationMonths} Ay Çalışma
+        {/* Tab Content Panels (All SSR rendered with CSS grid stacking) */}
+        <div className="grid grid-cols-1 grid-rows-1 w-full">
+          {caseKeys.map((key) => {
+            const currentCase = caseData[key].data;
+            const isActive = activeTab === key;
+
+            return (
+              <Fragment key={key}>
+                {"\n"}
+                <div
+                  role="tabpanel"
+                  id={`case-panel-${key}`}
+                  aria-labelledby={`case-tab-${key}`}
+                  tabIndex={isActive ? 0 : -1}
+                  aria-hidden={!isActive}
+                  className={`col-start-1 row-start-1 bg-[#111836]/90 border border-purple-500/20 rounded-3xl p-6 md:p-10 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                    isActive
+                      ? "opacity-100 visible z-10 translate-y-0"
+                      : "opacity-0 invisible pointer-events-none -z-10 translate-y-2"
+                  }`}
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    {/* Left Column: Project Info & Main Growth Card */}
+                    <div className="lg:col-span-5 space-y-6">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-500/20 text-purple-300 text-xs font-mono font-semibold border border-purple-500/30">
+                        <Calendar className="w-3.5 h-3.5" />
+                        {currentCase.projectCode} &bull; {currentCase.durationMonths} Ay Çalışma
+                      </div>
+
+                      <h3 className="text-2xl md:text-3xl font-extrabold text-white leading-tight">
+                        {currentCase.categoryName}
+                      </h3>
+
+                      <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                        {currentCase.summary}
+                      </p>
+
+                      {/* Big Metric Box */}
+                      <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-950/60 to-indigo-950/60 border border-purple-500/30 flex items-center justify-between">
+                        <div>
+                          <div className="text-xs uppercase tracking-wider text-purple-300 font-semibold mb-1">
+                            Organik Trafik / Görünürlük Artışı
+                          </div>
+                          <div className="text-4xl md:text-5xl font-black text-emerald-400 tracking-tight">
+                            {currentCase.trafficGrowth}
+                          </div>
+                        </div>
+                        <BarChart3 className="w-12 h-12 text-emerald-400/40" />
+                      </div>
+                    </div>
+
+                    {/* Right Column: Key Details Grid */}
+                    <div className="lg:col-span-7 space-y-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {/* Keyword Box */}
+                        <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                          <div className="flex items-center gap-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                            <Search className="w-4 h-4 text-purple-400" />
+                            Hedef Odak Sorgu
+                          </div>
+                          <div className="text-white font-bold text-sm md:text-base">
+                            {currentCase.targetKeyword}
+                          </div>
+                        </div>
+
+                        {/* Duration Box */}
+                        <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                          <div className="flex items-center gap-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                            <Calendar className="w-4 h-4 text-blue-400" />
+                            Süreç Süresi
+                          </div>
+                          <div className="text-white font-bold text-sm md:text-base">
+                            {currentCase.durationMonths} Ay Kesintisiz Optimizasyon
+                          </div>
+                        </div>
+
+                        {/* Initial Rank */}
+                        <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                          <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
+                            Başlangıç Sırası
+                          </div>
+                          <div className="text-xl font-bold text-red-400">
+                            {currentCase.initialRank}
+                          </div>
+                        </div>
+
+                        {/* Current Rank */}
+                        <div className="p-5 rounded-2xl bg-white/5 border border-white/10 bg-emerald-950/20 border-emerald-500/20">
+                          <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-1">
+                            Güncel Sıra (Zirve)
+                          </div>
+                          <div className="text-xl font-bold text-emerald-300">
+                            {currentCase.currentRank}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Highlights List */}
+                      <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2.5">
+                        <div className="text-xs font-semibold text-purple-300 uppercase tracking-wider mb-2">
+                          Uygulanan Kritik Teknik & Semantik Adımlar
+                        </div>
+                        {currentCase.highlights.map((item, idx) => (
+                          <div key={idx} className="flex items-start gap-2.5 text-xs md:text-sm text-gray-300">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Case Study CTA Link */}
+                      <div className="pt-2 flex justify-end">
+                        <Link
+                          href={currentCase.link || "/basari-hikayeleri"}
+                          tabIndex={isActive ? 0 : -1}
+                          className="inline-flex items-center gap-2 text-sm font-bold text-purple-300 hover:text-white transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-md"
+                        >
+                          Detaylı Vaka İncelemesini Gör &rarr;
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white leading-tight">
-                  {currentCase.categoryName}
-                </h3>
-
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                  {currentCase.summary}
-                </p>
-
-                {/* Big Metric Box */}
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-950/60 to-indigo-950/60 border border-purple-500/30 flex items-center justify-between">
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-purple-300 font-semibold mb-1">
-                      Organik Trafik / Görünürlük Artışı
-                    </div>
-                    <div className="text-4xl md:text-5xl font-black text-emerald-400 tracking-tight">
-                      {currentCase.trafficGrowth}
-                    </div>
-                  </div>
-                  <BarChart3 className="w-12 h-12 text-emerald-400/40" />
-                </div>
-              </div>
-
-              {/* Right Column: Key Details Grid */}
-              <div className="lg:col-span-7 space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Keyword Box */}
-                  <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                      <Search className="w-4 h-4 text-purple-400" />
-                      Hedef Odak Sorgu
-                    </div>
-                    <div className="text-white font-bold text-sm md:text-base">
-                      {currentCase.targetKeyword}
-                    </div>
-                  </div>
-
-                  {/* Duration Box */}
-                  <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                      <Calendar className="w-4 h-4 text-blue-400" />
-                      Süreç Süresi
-                    </div>
-                    <div className="text-white font-bold text-sm md:text-base">
-                      {currentCase.durationMonths} Ay Kesintisiz Optimizasyon
-                    </div>
-                  </div>
-
-                  {/* Initial Rank */}
-                  <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                    <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
-                      Başlangıç Sırası
-                    </div>
-                    <div className="text-xl font-bold text-red-400">
-                      {currentCase.initialRank}
-                    </div>
-                  </div>
-
-                  {/* Current Rank */}
-                  <div className="p-5 rounded-2xl bg-white/5 border border-white/10 bg-emerald-950/20 border-emerald-500/20">
-                    <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-1">
-                      Güncel Sıra (Zirve)
-                    </div>
-                    <div className="text-xl font-bold text-emerald-300">
-                      {currentCase.currentRank}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Highlights List */}
-                <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2.5">
-                  <div className="text-xs font-semibold text-purple-300 uppercase tracking-wider mb-2">
-                    Uygulanan Kritik Teknik & Semantik Adımlar
-                  </div>
-                  {currentCase.highlights.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 text-xs md:text-sm text-gray-300">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Case Study CTA Link */}
-                <div className="pt-2 flex justify-end">
-                  <Link
-                    href={currentCase.link || "/basari-hikayeleri"}
-                    className="inline-flex items-center gap-2 text-sm font-bold text-purple-300 hover:text-white transition-colors group"
-                  >
-                    Detaylı Vaka İncelemesini Gör &rarr;
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+              </Fragment>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import FAQSchema from "@/components/schemas/FAQSchema";
 import Link from "next/link";
 import { 
   ShoppingBag, 
@@ -120,8 +119,6 @@ export default function ECommerceSEOPage() {
 
   return (
     <>
-      <FAQSchema items={faqItems} />
-
       <ServicePageLayout
         title="E-Ticaret SEO Danışmanlığı"
         subtitle="Sektörel SEO Çözümleri"

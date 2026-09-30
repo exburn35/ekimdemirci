@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, Fragment } from "react";
+import { motion } from "framer-motion";
 import { Search, BarChart3, FileText, Target, Zap, TrendingUp, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -52,6 +52,28 @@ const services = [
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState(0);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
+    let nextIndex = index;
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+      e.preventDefault();
+      nextIndex = (index + 1) % services.length;
+    } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      nextIndex = (index - 1 + services.length) % services.length;
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      nextIndex = 0;
+    } else if (e.key === "End") {
+      e.preventDefault();
+      nextIndex = services.length - 1;
+    } else {
+      return;
+    }
+    setActiveTab(nextIndex);
+    tabRefs.current[nextIndex]?.focus();
+  };
 
   return (
     <section id="hizmetler" className="py-24 overflow-hidden relative border-t border-white/5 mt-16">
@@ -77,14 +99,26 @@ export default function Services() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
           
           {/* Tabs Menu (Left Side) */}
-          <div className="lg:col-span-5 flex flex-col space-y-3">
+          <div 
+            role="tablist"
+            aria-label="SEO Hizmetleri"
+            aria-orientation="vertical"
+            className="lg:col-span-5 flex flex-col space-y-3"
+          >
             {services.map((service, index) => {
               const isActive = activeTab === index;
               return (
                 <button
                   key={service.title}
+                  ref={(el) => { tabRefs.current[index] = el; }}
+                  role="tab"
+                  id={`service-tab-${index}`}
+                  aria-selected={isActive}
+                  aria-controls={`service-panel-${index}`}
+                  tabIndex={isActive ? 0 : -1}
                   onClick={() => setActiveTab(index)}
-                  className={`text-left p-5 rounded-2xl transition-all duration-300 relative overflow-hidden group border ${
+                  onKeyDown={(e) => handleKeyDown(e, index)}
+                  className={`text-left p-5 rounded-2xl transition-all duration-300 relative overflow-hidden group border focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
                     isActive 
                       ? "bg-[#111836] shadow-[0_0_20px_rgba(139,92,246,0.15)] border-purple-500/30" 
                       : "bg-transparent border-transparent hover:bg-white/5 hover:border-white/10"
@@ -99,9 +133,9 @@ export default function Services() {
                     />
                   )}
                   <div className="flex items-center gap-4">
-                    <h3 className={`text-xl font-bold transition-colors duration-300 ${isActive ? "text-purple-400" : "text-gray-400 group-hover:text-white"}`}>
+                    <span className={`text-xl font-bold transition-colors duration-300 ${isActive ? "text-purple-400" : "text-gray-400 group-hover:text-white"}`}>
                       {service.title}
-                    </h3>
+                    </span>
                   </div>
                 </button>
               );
@@ -112,42 +146,50 @@ export default function Services() {
           <div className="lg:col-span-7 bg-[#111836] rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20 min-h-[400px] flex flex-col justify-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl opacity-50 -z-0" />
             
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, x: 20, filter: "blur(4px)" }}
-                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, x: -20, filter: "blur(4px)" }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="relative z-10"
-              >
-                {(() => {
-                  const activeService = services[activeTab];
-                  const Icon = activeService.icon;
-                  return (
-                    <>
+            <div className="grid grid-cols-1 grid-rows-1 relative z-10 w-full">
+              {services.map((service, index) => {
+                const isActive = activeTab === index;
+                const Icon = service.icon;
+                return (
+                  <Fragment key={service.title}>
+                    {"\n"}
+                    <div
+                      role="tabpanel"
+                      id={`service-panel-${index}`}
+                      aria-labelledby={`service-tab-${index}`}
+                      tabIndex={isActive ? 0 : -1}
+                      aria-hidden={!isActive}
+                      className={`col-start-1 row-start-1 flex flex-col justify-center transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-xl ${
+                        isActive
+                          ? "opacity-100 visible z-10 translate-x-0"
+                          : "opacity-0 invisible pointer-events-none -z-10 translate-x-4"
+                      }`}
+                    >
                       <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-2xl flex items-center justify-center mb-8 border border-purple-500/30">
                         <Icon className="w-8 h-8 text-purple-400" />
                       </div>
                       <h3 className="text-3xl font-bold text-white mb-6 tracking-tight">
-                        {activeService.expandedTitle}
+                        {service.expandedTitle}
                       </h3>
                       <p className="text-lg text-gray-400 leading-relaxed mb-8">
-                        {activeService.description}
+                        {service.description}
                       </p>
                       
-                      <Link 
-                        href={activeService.href}
-                        className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-purple-500/30"
-                      >
-                         Daha fazla bilgi edinin
-                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </>
-                  );
-                })()}
-              </motion.div>
-            </AnimatePresence>
+                      <div>
+                        <Link 
+                          href={service.href}
+                          tabIndex={isActive ? 0 : -1}
+                          className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-purple-500/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+                        >
+                          Daha fazla bilgi edinin
+                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </div>
+                    </div>
+                  </Fragment>
+                );
+              })}
+            </div>
           </div>
 
         </div>

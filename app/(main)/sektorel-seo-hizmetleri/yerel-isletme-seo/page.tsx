@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import FAQSchema from "@/components/schemas/FAQSchema";
 import Link from "next/link";
 import { 
   MapPin, 
@@ -115,8 +114,6 @@ export default function LocalBusinessSEOPage() {
 
   return (
     <>
-      <FAQSchema items={faqItems} />
-
       <ServicePageLayout
         title="Yerel İşletme SEO Danışmanlığı"
         subtitle="Sektörel SEO Çözümleri"

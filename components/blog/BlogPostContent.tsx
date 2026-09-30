@@ -29,7 +29,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
       <BlogLinkPreview />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden min-h-[60vh] flex items-center bg-[#211b39]">
+      <section className="relative pt-32 pb-20 overflow-hidden min-h-[min(60vh,640px)] flex items-center bg-[#211b39]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#211b39] via-[#1a152e] to-[#211b39]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         

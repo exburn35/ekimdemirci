@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import FAQSchema from "@/components/schemas/FAQSchema";
 import ProductSchema from "@/components/schemas/ProductSchema";
 import GEOPricingSection from "@/components/GEOPricingSection";
 import GEOAIToolsSection from "@/components/GEOAIToolsSection";
@@ -48,7 +47,6 @@ export default function GEODanismanligi() {
 
   return (
     <>
-      <FAQSchema items={faqItems} />
       <ProductSchema
         name="GEO (Generative Engine Optimization) Danışmanlığı"
         description="Google'ın güncel arama mimarisi ve RAG altyapısına dayalı teknik GEO danışmanlık hizmet paketi. ChatGPT Search, Google AI Overviews ve Perplexity'de birincil kaynak olun."

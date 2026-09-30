@@ -12,7 +12,7 @@ export default function MainLayout({
     <>
       <Navigation />
       <Breadcrumb />
-      <main className="min-h-screen">
+      <main className="min-h-[min(100svh,900px)]">
         {children}
       </main>
       <Footer />
