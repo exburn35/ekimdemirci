@@ -118,25 +118,20 @@ export default function Hero() {
          <Globe />
          
          {/* Stats overlapping the globe slightly */}
-         <motion.div
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="absolute bottom-32 left-0 right-0 z-30 hidden md:flex justify-center gap-12 px-4"
-          >
-            {stats.map((stat, index) => {
+         <div className="absolute bottom-16 sm:bottom-24 md:bottom-32 left-0 right-0 z-30 flex justify-center gap-6 sm:gap-8 md:gap-12 px-4">
+            {stats.map((stat) => {
               const Icon = stat.icon;
               return (
                 <div key={stat.label} className="flex flex-col items-center text-center">
-                   <div className="text-3xl font-bold text-white mb-1 shadow-black drop-shadow-lg">{stat.value}</div>
-                   <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 flex items-center gap-1">
+                   <div className="text-2xl sm:text-3xl font-bold text-white mb-1 shadow-black drop-shadow-lg">{stat.value}</div>
+                   <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-gray-400 flex items-center gap-1">
                      <Icon className="w-3 h-3" />
-                     {stat.label}
+                     <span>{stat.label}</span>
                    </div>
                 </div>
               );
             })}
-          </motion.div>
+         </div>
       </div>
 
       {/* Smooth gradient transition into the dark theme of the next section */}

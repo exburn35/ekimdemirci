@@ -188,7 +188,7 @@ export default function ServicePageLayout({
         <section className="py-20 bg-[#0a0f25] border-t border-white/5">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
@@ -219,7 +219,7 @@ export default function ServicePageLayout({
         <section className="py-20 bg-[#0a0f25] border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
@@ -238,7 +238,7 @@ export default function ServicePageLayout({
               {scope.map((item, index) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={false}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08, duration: 0.5 }}
@@ -286,7 +286,7 @@ export default function ServicePageLayout({
         <section className="py-20 bg-[#0a0f25] border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
@@ -304,7 +304,7 @@ export default function ServicePageLayout({
               {process.map((item, index) => (
                 <motion.div
                   key={item.step}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={false}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -331,7 +331,7 @@ export default function ServicePageLayout({
         <section className="py-20 bg-[#0a0f25] border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
@@ -350,7 +350,7 @@ export default function ServicePageLayout({
               {targetAudience.map((item, index) => (
                 <motion.div
                   key={item.audience}
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={false}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
@@ -373,13 +373,7 @@ export default function ServicePageLayout({
       {evidence && evidence.length > 0 && (
         <section className="py-20 bg-[#0a0f25] border-t border-white/5">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12"
-            >
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
               <div className="flex items-center gap-3 mb-6">
                 <Award className="w-8 h-8 text-amber-400 flex-shrink-0" />
                 <h2 className="text-2xl md:text-4xl font-bold text-white">
@@ -408,7 +402,7 @@ export default function ServicePageLayout({
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       )}

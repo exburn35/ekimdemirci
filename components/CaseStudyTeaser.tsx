@@ -9,7 +9,7 @@ export default function CaseStudyTeaser() {
     <section className="py-24 bg-[#0a0f25] relative z-10 overflow-hidden border-t border-white/5 mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}

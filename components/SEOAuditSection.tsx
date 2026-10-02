@@ -32,7 +32,7 @@ export default function SEOAuditSection() {
     <section id="seo-analizi" className="py-24 bg-[#0a0f25] relative z-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -65,7 +65,7 @@ export default function SEOAuditSection() {
                     return (
                       <motion.div
                         key={feature.title}
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={false}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -99,36 +99,32 @@ export default function SEOAuditSection() {
               <div className="relative">
                 <div className="bg-[#0a0f25]/50 border border-white/5 p-8 rounded-3xl shadow-inner">
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-purple-500/30 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all">
+                    <div className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-purple-500/30 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all">
                       <div className="flex items-center gap-3">
                         <CheckCircle2 className="w-6 h-6 text-emerald-400" />
                         <span className="text-white font-semibold">Site Hızı</span>
                       </div>
-                      <span className="text-purple-400 text-sm font-medium bg-purple-500/20 px-3 py-1 rounded-full">Analiz ediliyor...</span>
                     </div>
 
-                    <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-purple-500/30 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all">
+                    <div className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-purple-500/30 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all">
                       <div className="flex items-center gap-3">
                         <CheckCircle2 className="w-6 h-6 text-emerald-400" />
                         <span className="text-white font-semibold">Mobil Uyumluluk</span>
                       </div>
-                      <span className="text-purple-400 text-sm font-medium bg-purple-500/20 px-3 py-1 rounded-full">Analiz ediliyor...</span>
                     </div>
 
-                    <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-purple-500/30 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all">
+                    <div className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-purple-500/30 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all">
                       <div className="flex items-center gap-3">
                         <CheckCircle2 className="w-6 h-6 text-emerald-400" />
                         <span className="text-white font-semibold">Sayfa İçi SEO</span>
                       </div>
-                      <span className="text-purple-400 text-sm font-medium bg-purple-500/20 px-3 py-1 rounded-full">Analiz ediliyor...</span>
                     </div>
 
-                    <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-purple-500/30 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all">
+                    <div className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-purple-500/30 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all">
                       <div className="flex items-center gap-3">
                         <CheckCircle2 className="w-6 h-6 text-emerald-400" />
                         <span className="text-white font-semibold">Backlinkler</span>
                       </div>
-                      <span className="text-purple-400 text-sm font-medium bg-purple-500/20 px-3 py-1 rounded-full">Analiz ediliyor...</span>
                     </div>
 
                     <div className="mt-6 p-5 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 rounded-2xl border border-purple-500/20 shadow-sm">

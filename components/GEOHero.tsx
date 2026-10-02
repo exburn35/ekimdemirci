@@ -130,39 +130,8 @@ export default function GEOHero() {
         }
       });
 
-      // Set counters instantly to final values
-      const el1 = document.querySelector(".metric-val-1");
-      const el2 = document.querySelector(".metric-val-2");
-      const el3 = document.querySelector(".metric-val-3");
-      if (el1) el1.textContent = "%320";
-      if (el2) el2.textContent = "4";
-      if (el3) el3.textContent = "48 saat";
-
       return;
     }
-
-    // ScrollTrigger counting animation
-    const countData = { val1: 0, val2: 0, val3: 0 };
-    gsap.to(countData, {
-      val1: 320,
-      val2: 4,
-      val3: 48,
-      duration: 1.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: trustStripRef.current,
-        start: "top 95%",
-        once: true
-      },
-      onUpdate: () => {
-        const el1 = document.querySelector(".metric-val-1");
-        const el2 = document.querySelector(".metric-val-2");
-        const el3 = document.querySelector(".metric-val-3");
-        if (el1) el1.textContent = `%${Math.round(countData.val1)}`;
-        if (el2) el2.textContent = `${Math.round(countData.val2)}`;
-        if (el3) el3.textContent = `${Math.round(countData.val3)} saat`;
-      }
-    });
 
     const mm = gsap.matchMedia();
 
@@ -730,7 +699,7 @@ export default function GEOHero() {
                   {/* Metric 1 */}
                   <div className="flex flex-col text-left">
                     <span className="metric-val-1 text-[28px] font-medium bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                      %0
+                      %320
                     </span>
                     <span className="text-[12px] text-white/60 mt-1 leading-tight">
                       ChatGPT alıntı artışı
@@ -739,7 +708,7 @@ export default function GEOHero() {
                   {/* Divider */}
                   <div className="flex flex-col text-left border-l border-white/10 pl-4">
                     <span className="metric-val-2 text-[28px] font-medium bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                      0
+                      4
                     </span>
                     <span className="text-[12px] text-white/60 mt-1 leading-tight">
                       AI motorunda görünürlük
@@ -748,7 +717,7 @@ export default function GEOHero() {
                   {/* Divider */}
                   <div className="flex flex-col text-left border-l border-white/10 pl-4">
                     <span className="metric-val-3 text-[28px] font-medium bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                      0 saat
+                      48 saat
                     </span>
                     <span className="text-[12px] text-white/60 mt-1 leading-tight">
                       Hızlı analiz teslimi

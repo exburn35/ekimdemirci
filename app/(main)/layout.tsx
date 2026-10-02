@@ -9,7 +9,7 @@ export default function MainLayout({
   return (
     <>
       <Navigation />
-      <main className="min-h-[min(100svh,900px)]">
+      <main className="min-h-screen">
         {children}
       </main>
       <Footer />

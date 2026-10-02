@@ -295,12 +295,12 @@ export function WhyItMattersData({
             <div className="text-[64px] font-semibold text-white flex items-center gap-1 leading-none">
               <span className="sr-only">%80</span>
               <span aria-hidden="true" className="data-num-1 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                %0
+                %80
               </span>
             </div>
             
             {/* Draw Line */}
-            <div className="h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] my-6 transition-all duration-500 data-line-1" style={{ width: "0px" }} />
+            <div className="h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] my-6 transition-all duration-500 data-line-1" style={{ width: "48px" }} />
 
             <h3 className="text-[18px] font-medium text-white mb-3">
               Bilgi sorgularında AI yanıtı gösteriliyor
@@ -322,15 +322,15 @@ export function WhyItMattersData({
             <div className="text-[64px] font-semibold text-white flex items-center gap-1 leading-none">
               <span className="sr-only">100M+</span>
               <span aria-hidden="true" className="data-num-2 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                0
+                100M+
               </span>
             </div>
             
             {/* Draw Line */}
-            <div className="h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] my-6 transition-all duration-500 data-line-2" style={{ width: "0px" }} />
+            <div className="h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] my-6 transition-all duration-500 data-line-2" style={{ width: "48px" }} />
 
             <h3 className="text-[18px] font-medium text-white mb-3">
-              Aylık sorgu Perplexity'de işleniyor
+              Aylık sorgu Perplexity&apos;de işleniyor
             </h3>
             
             <p className="text-[14px] leading-[1.55] text-gray-400">
@@ -349,12 +349,12 @@ export function WhyItMattersData({
             <div className="text-[64px] font-semibold text-white flex items-center gap-1 leading-none">
               <span className="sr-only">3x</span>
               <span aria-hidden="true" className="data-num-3 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                0
+                3x
               </span>
             </div>
             
             {/* Draw Line */}
-            <div className="h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] my-6 transition-all duration-500 data-line-3" style={{ width: "0px" }} />
+            <div className="h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] my-6 transition-all duration-500 data-line-3" style={{ width: "48px" }} />
 
             <h3 className="text-[18px] font-medium text-white mb-3">
               Dönüşüm oranı AI alıntısından gelen trafikte
@@ -399,7 +399,7 @@ export function WhyItMattersData({
               <div className="text-[48px] font-bold text-white leading-none mb-2">
                 <span className="sr-only">250M+</span>
                 <span aria-hidden="true" className="model-num-1 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                  0
+                  250M+
                 </span>
               </div>
               <div className="text-[13px] font-semibold text-purple-400 mb-4">
@@ -427,7 +427,7 @@ export function WhyItMattersData({
               <div className="text-[48px] font-bold text-white leading-none mb-2">
                 <span className="sr-only">30M+</span>
                 <span aria-hidden="true" className="model-num-2 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                  0
+                  30M+
                 </span>
               </div>
               <div className="text-[13px] font-semibold text-purple-400 mb-4">
@@ -455,7 +455,7 @@ export function WhyItMattersData({
               <div className="text-[48px] font-bold text-white leading-none mb-2">
                 <span className="sr-only">1B+</span>
                 <span aria-hidden="true" className="model-num-3 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
-                  0
+                  1B+
                 </span>
               </div>
               <div className="text-[13px] font-semibold text-purple-400 mb-4">
@@ -800,12 +800,6 @@ export default function GEOConsultancyContent() {
       gsap.set(".bento-card .icon-container", { scale: 1 });
       gsap.set(".industry-card .top-border-line", { width: "100%" });
       
-      const el1 = document.querySelector(".metric-val-1");
-      const el2 = document.querySelector(".metric-val-2");
-      const el3 = document.querySelector(".metric-val-3");
-      if (el1) el1.textContent = "%320";
-      if (el2) el2.textContent = "4";
-      if (el3) el3.textContent = "48 saat";
 
       const num1 = document.querySelector(".data-num-1");
       const num2 = document.querySelector(".data-num-2");
