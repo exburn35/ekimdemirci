@@ -60,8 +60,8 @@ export async function GET(req: NextRequest) {
       const result = await pingIndexNow(allUrls);
 
       return NextResponse.json({
-        message: `Bulk IndexNow submission triggered for ${allUrls.length} URLs.`,
         ...result,
+        summary: `Bulk IndexNow submission triggered for ${allUrls.length} URLs.`,
       });
     }
 

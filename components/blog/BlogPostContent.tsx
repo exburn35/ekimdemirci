@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock, ArrowLeft, Tag, Zap, CheckCircle2 } from "lucide-react";
 import type { BlogPost, Heading } from "@/lib/blog";
-import { formatDate, isSameDay, slugifyCategory } from "@/lib/blog-utils";
+import { getRelatedBlogPosts } from "@/lib/blog";
+import { formatDate, isSameDay, slugifyCategory, decodeHtmlEntities } from "@/lib/blog-utils";
 import BlogScrollProgress from "./BlogScrollProgress";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedPages from "@/components/RelatedPages";
@@ -23,6 +24,20 @@ interface BlogPostContentProps {
 }
 
 export default function BlogPostContent({ post, processedHtml, headings }: BlogPostContentProps) {
+  const sidebarPosts = getRelatedBlogPosts({
+    currentSlug: post.slug,
+    category: post.category,
+    tags: post.tags,
+    limit: 3,
+  });
+  const sidebarSlugs = sidebarPosts.map((p) => p.slug);
+  const sliderPosts = getRelatedBlogPosts({
+    currentSlug: post.slug,
+    category: post.category,
+    tags: post.tags,
+    limit: 9,
+    excludeSlugs: sidebarSlugs,
+  });
   return (
     <>
       <BlogScrollProgress />
@@ -67,7 +82,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
 
             <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tight">
               <span className="bg-gradient-to-r from-white via-white to-gray-500 bg-clip-text text-transparent">
-                {post.title.replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&')}
+                {decodeHtmlEntities(post.title)}
               </span>
             </h1>
 
@@ -168,7 +183,12 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                               {keyPoints.map((item) => (
                                 <li key={item.id} className="flex items-start gap-2.5">
                                   <CheckCircle2 className="w-4 h-4 text-[#4a9eff] mt-1 flex-shrink-0" />
-                                  <span className="leading-relaxed font-medium">{item.text}</span>
+                                  <a
+                                    href={`#${item.id}`}
+                                    className="leading-relaxed font-medium hover:text-[#4a9eff] transition-colors"
+                                  >
+                                    {item.text}
+                                  </a>
                                 </li>
                               ))}
                             </ul>
@@ -212,7 +232,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
               <div className="lg:hidden">
                 <TableOfContents headings={headings} />
               </div>
-              <BlogSidebar category={post.category} />
+              <BlogSidebar category={post.category} posts={sidebarPosts} />
             </div>
 
           </div>
@@ -220,7 +240,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
       </section>
 
       {/* Related Blog Posts Full Slider */}
-      <RelatedBlogPosts category={post.category} variant="slider" />
+      <RelatedBlogPosts posts={sliderPosts} category={post.category} variant="slider" />
 
       <SEOAuditSection />
       

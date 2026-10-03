@@ -28,7 +28,7 @@ export default function CaseStudyTeaser() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white tracking-tight">
-              Organik Trafiği Nasıl <span className="text-purple-400">%250 Artırdım</span>
+              Organik Trafiği Nasıl{" "}<span className="text-purple-400">%250 Artırdım</span>
             </h2>
 
             <p className="text-gray-400 text-lg mb-8 max-w-2xl leading-relaxed">

@@ -71,8 +71,8 @@ export default function Hero() {
             variants={itemVariants}
             className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold mb-4 leading-tight text-white tracking-tight"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">SEO ve GEO Danışmanı</span><br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"> Ekim Demirci</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">SEO ve GEO Danışmanı</span>{" "}<br className="hidden md:block" />{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Ekim Demirci</span>
           </motion.h1>
 
           {/* Slogan Subtitle */}

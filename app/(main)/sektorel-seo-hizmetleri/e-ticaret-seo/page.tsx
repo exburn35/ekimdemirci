@@ -19,7 +19,6 @@ import {
   Tag,
   BarChart3
 } from "lucide-react";
-import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 
 export const metadata: Metadata = {
   title: "E-Ticaret SEO Danışmanlığı | Ekim Demirci",

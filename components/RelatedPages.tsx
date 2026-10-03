@@ -161,7 +161,7 @@ export default function RelatedPages() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-white"
           >
-            Yolculuğunuza <span className="text-purple-400">Devam Edin</span>
+            Yolculuğunuza{" "}<span className="text-purple-400">Devam Edin</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

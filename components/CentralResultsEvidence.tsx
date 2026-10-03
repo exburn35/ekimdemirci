@@ -162,7 +162,7 @@ export default function CentralResultsEvidence() {
             Şeffaf & Veriye Dayalı Başarı Kanıtları
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Organik Trafiği Nasıl <span className="bg-gradient-to-r from-purple-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">%250+ Artırdım?</span>
+            Organik Trafiği Nasıl{" "}<span className="bg-gradient-to-r from-purple-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">%250+ Artırdım?</span>
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
             Statik iddialar yerine sektörel bazda kanıtlanmış ölçülebilir sıralama, trafik ve yapay zeka görünürlük verileri.

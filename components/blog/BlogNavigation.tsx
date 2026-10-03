@@ -1,50 +1,9 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-
-interface NavPost {
-  title: string;
-  slug: string;
-}
+import { getBlogNavigation } from "@/lib/blog";
 
 export default function BlogNavigation({ currentSlug }: { currentSlug: string }) {
-  const [prevPost, setPrevPost] = useState<NavPost | null>(null);
-  const [nextPost, setNextPost] = useState<NavPost | null>(null);
-
-  useEffect(() => {
-    async function fetchNav() {
-      try {
-        const res = await fetch("/api/blog?limit=50");
-        if (res.ok) {
-          const data = await res.json();
-          const posts = data.posts || [];
-          const currentIndex = posts.findIndex((p: any) => p.slug === currentSlug);
-          
-          if (currentIndex !== -1) {
-            // "Next" is the newer post (index - 1), "Prev" is older post (index + 1)
-            // since posts are sorted descending by date
-            if (currentIndex > 0) {
-              setNextPost({
-                title: posts[currentIndex - 1].title.replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
-                slug: posts[currentIndex - 1].slug,
-              });
-            }
-            if (currentIndex < posts.length - 1) {
-              setPrevPost({
-                title: posts[currentIndex + 1].title.replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
-                slug: posts[currentIndex + 1].slug,
-              });
-            }
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching blog navigation", error);
-      }
-    }
-    fetchNav();
-  }, [currentSlug]);
+  const { prevPost, nextPost } = getBlogNavigation(currentSlug);
 
   if (!prevPost && !nextPost) return null;
 

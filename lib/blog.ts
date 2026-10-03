@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { decodeHtmlEntities, slugifyCategory } from "./blog-utils";
+import { decodeHtmlEntities, slugifyCategory, slugifyHeading, isNearlySameTitle } from "./blog-utils";
 import { processSourceBadgesInHtml } from "./source-badges";
-export { slugifyCategory };
+export { slugifyCategory, slugifyHeading };
 
 export interface BlogPost {
   id: string;
@@ -242,7 +242,7 @@ function stripFirstElementByPattern(html: string, pattern: RegExp): string {
 }
 
 
-export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings: Heading[] } {
+export function cleanAndProcessHtml(html: string, postTitle?: string): { cleanHtml: string; headings: Heading[] } {
   if (!html) return { cleanHtml: "", headings: [] };
 
   try {
@@ -280,19 +280,56 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
     
     processedHtml = processedHtml.replace(/<h2[^>]*>İçindekiler<\/h2>\s*<ul[^>]*>[\s\S]*?<\/ul>/i, '');
 
-    // 3. Extract Headings and add IDs
+    // 2.5 Handle body <h1> tags:
+    // If text matches or nearly matches postTitle -> remove it.
+    // If different -> convert to <h2> so the page maintains exactly one <h1>.
+    processedHtml = processedHtml.replace(/<h1(\s[^>]*)?>([\s\S]*?)<\/h1>/gi, (match, attrs, content) => {
+      const h1Text = decodeHtmlEntities(content.replace(/<[^>]*>/g, "").trim());
+      if (postTitle && isNearlySameTitle(h1Text, postTitle)) {
+        return "";
+      }
+      return `<h2${attrs || ""}>${content}</h2>`;
+    });
+
+    // 3. Extract Headings and add semantic slug IDs
     const headings: Heading[] = [];
-    let headingCount = 0;
+    const usedIds = new Map<string, number>();
     
-    processedHtml = processedHtml.replace(/<(h2|h3)[^>]*>([\s\S]*?)<\/\1>/gi, (match, tag, content) => {
-      const text = content.replace(/<[^>]*>/g, "").trim();
-      const id = `heading-${headingCount++}`;
+    processedHtml = processedHtml.replace(/<(h2|h3)(\s[^>]*)?>([\s\S]*?)<\/\1>/gi, (match, tag, rawAttrs, content) => {
+      const text = decodeHtmlEntities(content.replace(/<[^>]*>/g, "").trim());
+      const baseSlug = slugifyHeading(text);
+      const count = (usedIds.get(baseSlug) || 0) + 1;
+      usedIds.set(baseSlug, count);
+      const id = count === 1 ? baseSlug : `${baseSlug}-${count}`;
+
       headings.push({
         id,
-        text: decodeHtmlEntities(text),
+        text,
         level: tag.toLowerCase() === "h2" ? 2 : 3
       });
-      return `<${tag} id="${id}">${content}</${tag}>`;
+
+      // Clean existing id attribute from rawAttrs
+      let cleanAttrs = (rawAttrs || "").replace(/\s*id=["'][^"']*["']/gi, "").trim();
+
+      // Ensure scroll-mt-28 is included in class
+      if (/class=["']/i.test(cleanAttrs)) {
+        cleanAttrs = cleanAttrs.replace(/class=["']([^"']*)["']/i, (_: string, cls: string) => {
+          return `class="${cls} scroll-mt-28"`;
+        });
+      } else {
+        cleanAttrs = `${cleanAttrs} class="scroll-mt-28"`.trim();
+      }
+
+      // Add scroll-margin-top inline style to guarantee safe offset below fixed header
+      if (/style=["']/i.test(cleanAttrs)) {
+        cleanAttrs = cleanAttrs.replace(/style=["']([^"']*)["']/i, (_: string, stl: string) => {
+          return `style="${stl}; scroll-margin-top: 100px;"`;
+        });
+      } else {
+        cleanAttrs = `${cleanAttrs} style="scroll-margin-top: 100px;"`.trim();
+      }
+
+      return `<${tag} id="${id}" ${cleanAttrs}>${content}</${tag}>`;
     });
 
     // 4. Rewrite WordPress image paths to /uploads
@@ -309,4 +346,108 @@ export function cleanAndProcessHtml(html: string): { cleanHtml: string; headings
   }
 }
 
+export interface RelatedPostScore {
+  post: BlogPost;
+  sharedTagCount: number;
+  sameCategory: boolean;
+  pubDate: number;
+}
+
+export function getRelatedBlogPostsWithScore({
+  currentSlug,
+  category,
+  tags = [],
+  limit = 9,
+  excludeSlugs = [],
+}: {
+  currentSlug?: string;
+  category?: string;
+  tags?: string[];
+  limit?: number;
+  excludeSlugs?: string[];
+} = {}): RelatedPostScore[] {
+  const allPosts = getAllBlogPosts();
+  const currentPost = currentSlug ? allPosts.find((p) => p.slug === currentSlug) : null;
+  const targetCategory = category || (currentPost ? currentPost.category : undefined);
+  const targetTags = (tags && tags.length > 0) ? tags : (currentPost && currentPost.tags ? currentPost.tags : []);
+
+  const normalizedTargetTags = (targetTags || []).map((t) => t.toLowerCase().trim());
+  const normalizedTargetCategory = targetCategory ? targetCategory.toLowerCase().trim() : "";
+
+  const excluded = new Set([
+    ...(currentSlug ? [currentSlug] : []),
+    ...(excludeSlugs || []),
+  ]);
+
+  const candidates = allPosts.filter((p) => !excluded.has(p.slug));
+
+  const scored: RelatedPostScore[] = candidates.map((post) => {
+    const postTags = (post.tags || []).map((t) => t.toLowerCase().trim());
+    const sharedTagCount = postTags.filter((t) => normalizedTargetTags.includes(t)).length;
+    const sameCategory = Boolean(
+      post.category &&
+      normalizedTargetCategory &&
+      post.category.toLowerCase().trim() === normalizedTargetCategory
+    );
+    const pubDate = new Date(post.publishedAt || 0).getTime();
+
+    return {
+      post,
+      sharedTagCount,
+      sameCategory,
+      pubDate,
+    };
+  });
+
+  scored.sort((a, b) => {
+    // 1. Highest number of shared tags
+    if (b.sharedTagCount !== a.sharedTagCount) {
+      return b.sharedTagCount - a.sharedTagCount;
+    }
+    // 2. In case of tie, same category
+    if (a.sameCategory !== b.sameCategory) {
+      return b.sameCategory ? 1 : -1;
+    }
+    // 3. In case of tie, newest publication date
+    return b.pubDate - a.pubDate;
+  });
+
+  return scored.slice(0, limit);
+}
+
+export function getRelatedBlogPosts(options?: {
+  currentSlug?: string;
+  category?: string;
+  tags?: string[];
+  limit?: number;
+  excludeSlugs?: string[];
+}): BlogPost[] {
+  return getRelatedBlogPostsWithScore(options).map((s) => s.post);
+}
+
+export function getBlogNavigation(currentSlug: string): {
+  prevPost: { title: string; slug: string } | null;
+  nextPost: { title: string; slug: string } | null;
+} {
+  const posts = getAllBlogPosts();
+  const currentIndex = posts.findIndex((p) => p.slug === currentSlug);
+  if (currentIndex === -1) {
+    return { prevPost: null, nextPost: null };
+  }
+
+  // Next is newer (index - 1), Prev is older (index + 1)
+  const nextPost = currentIndex > 0 ? {
+    title: (posts[currentIndex - 1].title || "").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
+    slug: posts[currentIndex - 1].slug,
+  } : null;
+
+  const prevPost = currentIndex < posts.length - 1 ? {
+    title: (posts[currentIndex + 1].title || "").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
+    slug: posts[currentIndex + 1].slug,
+  } : null;
+
+  return { prevPost, nextPost };
+}
+
 export { decodeHtmlEntities, formatDate, formatDateShort, isSameDay } from "./blog-utils";
+

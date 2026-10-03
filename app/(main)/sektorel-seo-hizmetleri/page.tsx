@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { 
   Stethoscope, 
@@ -17,6 +14,14 @@ import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedPages from "@/components/RelatedPages";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import ContactForm from "@/components/ContactForm";
+
+export const metadata = {
+  title: "Sektörel SEO Hizmetleri | Ekim Demirci",
+  description: "Diş hekimliği, e-ticaret, hukuk, estetik, sağlık ve kurumsal B2B gibi farklı sektörler için özelleştirilmiş veri odaklı SEO danışmanlığı.",
+  alternates: {
+    canonical: "/sektorel-seo-hizmetleri",
+  },
+};
 
 const sectors = [
   {
@@ -84,11 +89,7 @@ export default function SectoralSEOServices() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 Sektörel SEO Hizmetleri
@@ -98,20 +99,14 @@ export default function SectoralSEOServices() {
               Her sektörün kendine özgü ihtiyaçları vardır. Sektörünüze özel SEO stratejileri ile 
               dijital varlığınızı güçlendirin ve hedef kitlenize daha etkili şekilde ulaşın.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Sectors Grid */}
       <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 Hizmet Verdiğimiz Sektörler
@@ -120,19 +115,13 @@ export default function SectoralSEOServices() {
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Sektörünüze özel SEO çözümleri ile dijital pazarda öne çıkın
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sectors.map((sector, index) => {
+            {sectors.map((sector) => {
               const Icon = sector.icon;
               return (
-                <motion.div
-                  key={sector.href}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                >
+                <div key={sector.href}>
                   <Link
                     href={sector.href}
                     className="block glass-strong p-8 rounded-xl hover:bg-white/10 transition-all duration-300 group"
@@ -151,7 +140,7 @@ export default function SectoralSEOServices() {
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -161,13 +150,7 @@ export default function SectoralSEOServices() {
       {/* Benefits Section */}
       <section className="py-24 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 Neden Sektörel SEO?
@@ -176,21 +159,17 @@ export default function SectoralSEOServices() {
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Her sektörün kendine özgü SEO ihtiyaçları vardır
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div
+            {benefits.map((benefit) => (
+              <div
                 key={benefit}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="glass-strong p-6 rounded-xl hover:bg-white/10 transition-all duration-300"
               >
                 <CheckCircle2 className="w-6 h-6 text-blue-400 mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">{benefit}</h3>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -214,4 +193,3 @@ export default function SectoralSEOServices() {
     </>
   );
 }
-

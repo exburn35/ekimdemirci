@@ -1,8 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { 
   ArrowLeft, 
@@ -22,7 +18,8 @@ import SEOAuditSection from "./SEOAuditSection";
 import ContactForm from "./ContactForm";
 import RelatedBlogPosts from "./RelatedBlogPosts";
 import RelatedPages from "./RelatedPages";
-import ServiceSchema from "./schemas/ServiceSchema";
+import ClientServiceSchema from "./schemas/ClientServiceSchema";
+import ServiceGlowOrbs from "./ServiceGlowOrbs";
 import FAQ from "./FAQ";
 import ServiceLeadForm from "./ServiceLeadForm";
 
@@ -85,12 +82,10 @@ export default function ServicePageLayout({
   hideHero = false,
 }: ServicePageLayoutProps) {
   const Icon = iconMap[icon] || Settings;
-  const pathname = usePathname();
-  const fullUrl = `https://ekimdemirci.com${pathname || ""}`;
 
   return (
     <>
-      <ServiceSchema name={title} description={description} url={fullUrl} />
+      <ClientServiceSchema name={title} description={description} />
 
       {/* 1. HERO SECTION */}
       {!hideHero && (
@@ -99,35 +94,12 @@ export default function ServicePageLayout({
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,1)_0%,rgba(2,6,23,1)_100%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
           
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.1, 0.2, 0.1],
-              x: [0, 50, 0],
-              y: [0, -50, 0]
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px]" 
-          />
-          <motion.div 
-            animate={{ 
-              scale: [1.2, 1, 1.2],
-              opacity: [0.1, 0.2, 0.1],
-              x: [0, -50, 0],
-              y: [0, 50, 0]
-            }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px]" 
-          />
+          <ServiceGlowOrbs />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Left Column */}
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
+              <div>
                 <Link
                   href="/seo-hizmetleri"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass hover:bg-white/10 text-gray-400 hover:text-white mb-8 transition-all duration-300 group text-sm"
@@ -136,15 +108,10 @@ export default function ServicePageLayout({
                   SEO Hizmetlerine Dön
                 </Link>
 
-                <motion.div
-                  initial={false}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-blue-400 uppercase tracking-widest mb-6"
-                >
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-blue-400 uppercase tracking-widest mb-6">
                   <Sparkles className="w-3.5 h-3.5" />
                   {subtitle}
-                </motion.div>
+                </div>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight leading-[1.15]">
                   <span className="bg-gradient-to-r from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">
@@ -166,16 +133,12 @@ export default function ServicePageLayout({
                     ))}
                   </div>
                 )}
-              </motion.div>
+              </div>
 
               {/* Right Column - Form */}
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
+              <div>
                 <ServiceLeadForm />
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -187,13 +150,7 @@ export default function ServicePageLayout({
       {definition && (
         <section className="py-20 bg-[#0a0f25] border-t border-white/5">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-[#111836] border border-blue-500/20 rounded-3xl p-8 md:p-12 shadow-[0_0_30px_rgba(59,130,246,0.1)] relative overflow-hidden"
-            >
+            <div className="bg-[#111836] border border-blue-500/20 rounded-3xl p-8 md:p-12 shadow-[0_0_30px_rgba(59,130,246,0.1)] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
                 <HelpCircle className="w-8 h-8 text-blue-400 flex-shrink-0" />
@@ -209,7 +166,7 @@ export default function ServicePageLayout({
                   </p>
                 )}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       )}
@@ -218,13 +175,7 @@ export default function ServicePageLayout({
       {scope && scope.length > 0 && (
         <section className="py-20 bg-[#0a0f25] border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">
                 <Layers className="w-3.5 h-3.5" />
                 Kapsam Mimarisi
@@ -232,16 +183,12 @@ export default function ServicePageLayout({
               <h2 className="text-3xl md:text-5xl font-bold text-white">
                 {title} Kapsamında Neler Sunuyorum?
               </h2>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {scope.map((item, index) => (
-                <motion.div
+                <div
                   key={item.title}
-                  initial={false}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.08, duration: 0.5 }}
                   className="bg-[#111836] border border-white/10 p-8 rounded-2xl hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(139,92,246,0.15)] transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
@@ -255,7 +202,7 @@ export default function ServicePageLayout({
                       {item.description}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -285,29 +232,19 @@ export default function ServicePageLayout({
       {process && process.length > 0 && (
         <section className="py-20 bg-[#0a0f25] border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 Çalışma Süreci ve Adımlar
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
                 Uçtan uca şeffaf ve ölçülebilir aşamalardan oluşan danışmanlık metodolojim.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {process.map((item, index) => (
-                <motion.div
+              {process.map((item) => (
+                <div
                   key={item.step}
-                  initial={false}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="bg-[#111836] border border-white/10 p-6 rounded-2xl hover:border-blue-500/40 transition-all duration-300 relative group"
                 >
                   <div className={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center font-bold text-white text-lg mb-5 shadow-lg`}>
@@ -319,7 +256,7 @@ export default function ServicePageLayout({
                   <p className="text-gray-300 text-sm leading-relaxed">
                     {item.description}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -330,13 +267,7 @@ export default function ServicePageLayout({
       {targetAudience && targetAudience.length > 0 && (
         <section className="py-20 bg-[#0a0f25] border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">
                 <Users className="w-3.5 h-3.5" />
                 Hedef Kitle & Sektörler
@@ -344,16 +275,12 @@ export default function ServicePageLayout({
               <h2 className="text-3xl md:text-5xl font-bold text-white">
                 Bu Hizmetten Kimler Faydalanabilir?
               </h2>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {targetAudience.map((item, index) => (
-                <motion.div
+              {targetAudience.map((item) => (
+                <div
                   key={item.audience}
-                  initial={false}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
                   className="bg-[#111836] border border-white/10 p-6 rounded-2xl hover:border-emerald-500/30 transition-all duration-300"
                 >
                   <h3 className="text-lg font-bold text-emerald-400 mb-2">
@@ -362,7 +289,7 @@ export default function ServicePageLayout({
                   <p className="text-gray-300 text-sm leading-relaxed">
                     {item.benefit}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

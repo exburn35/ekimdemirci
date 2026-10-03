@@ -2,6 +2,7 @@ export function decodeHtmlEntities(str: string): string {
   if (!str) return "";
   return str
     .replace(/&amp;/g, "&")
+    .replace(/&#x27;|&#39;|&#039;|&apos;/g, "'")
     .replace(/&lsquo;|&#8216;/g, "‘")
     .replace(/&rsquo;|&#8217;/g, "’")
     .replace(/&ldquo;|&#8220;/g, "“")
@@ -10,7 +11,6 @@ export function decodeHtmlEntities(str: string): string {
     .replace(/&mdash;|&#8212;/g, "—")
     .replace(/&middot;|&#183;/g, "·")
     .replace(/&quot;|&#34;/g, '"')
-    .replace(/&apos;|&#39;/g, "'")
     .replace(/&nbsp;|&#160;/g, "\u00a0");
 }
 
@@ -78,3 +78,51 @@ export function slugifyCategory(category: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 }
+
+export function slugifyHeading(text: string): string {
+  if (!text) return "bolum";
+  return text
+    .replace(/İ/g, "i")
+    .replace(/I/g, "i")
+    .toLowerCase()
+    .replace(/ç/g, "c")
+    .replace(/ğ/g, "g")
+    .replace(/ı/g, "i")
+    .replace(/ö/g, "o")
+    .replace(/ş/g, "s")
+    .replace(/ü/g, "u")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-") || "bolum";
+}
+
+export function normalizeTitleForComparison(t: string): string {
+  if (!t) return "";
+  return t
+    .replace(/İ/g, "i")
+    .replace(/I/g, "i")
+    .toLowerCase()
+    .replace(/ç/g, "c")
+    .replace(/ğ/g, "g")
+    .replace(/ı/g, "i")
+    .replace(/ö/g, "o")
+    .replace(/ş/g, "s")
+    .replace(/ü/g, "u")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+export function isNearlySameTitle(titleA: string, titleB: string): boolean {
+  if (!titleA || !titleB) return false;
+  const a = normalizeTitleForComparison(titleA);
+  const b = normalizeTitleForComparison(titleB);
+  if (!a || !b) return false;
+  if (a === b) return true;
+  if (a.length > 5 && (a.includes(b) || b.includes(a))) {
+    const minLen = Math.min(a.length, b.length);
+    const maxLen = Math.max(a.length, b.length);
+    if (minLen / maxLen >= 0.8) return true;
+  }
+  return false;
+}
+

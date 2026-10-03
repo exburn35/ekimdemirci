@@ -7,7 +7,7 @@ import FAQ from "@/components/FAQ";
 import { homeFaqs } from "@/data/homeFaqs";
 import ContactForm from "@/components/ContactForm";
 import PersonSchema from "@/components/schemas/PersonSchema";
-import { getAllBlogPosts } from "@/lib/blog";
+import { getAllBlogPosts, type BlogPost } from "@/lib/blog";
 import LatestPostsSlider from "@/components/blog/LatestPostsSlider";
 
 export const metadata = {
@@ -28,7 +28,7 @@ export default function Home() {
 
   const pinnedPosts = pinnedSlugs
     .map(slug => allPosts.find(p => p.slug === slug || p.id === slug))
-    .filter(Boolean);
+    .filter((p): p is BlogPost => Boolean(p));
 
   const remainingPosts = allPosts.filter(p => !pinnedSlugs.includes(p.slug) && !pinnedSlugs.includes(p.id));
   

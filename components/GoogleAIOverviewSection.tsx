@@ -145,7 +145,7 @@ export default function GoogleAIOverviewSection() {
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Arama Sonuçlarının Yeni Yüzü: <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Google AI Overview</span>
+              Arama Sonuçlarının Yeni Yüzü:{" "}<span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Google AI Overview</span>
             </h2>
             
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">

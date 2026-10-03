@@ -4,11 +4,14 @@ import { ArrowRight } from "lucide-react";
 import Logo from "../Logo";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 
+import type { BlogPost } from "@/lib/blog";
+
 interface BlogSidebarProps {
   category?: string;
+  posts?: BlogPost[];
 }
 
-export default function BlogSidebar({ category }: BlogSidebarProps) {
+export default function BlogSidebar({ category, posts }: BlogSidebarProps) {
   return (
     <aside className="space-y-8 sticky top-24 pb-12">
       {/* Author Box */}
@@ -81,7 +84,7 @@ export default function BlogSidebar({ category }: BlogSidebarProps) {
 
       {/* Related Posts in Sidebar */}
       <div className="mt-8">
-        <RelatedBlogPosts category={category || "SEO"} variant="sidebar" />
+        <RelatedBlogPosts posts={posts} category={category || "SEO"} variant="sidebar" />
       </div>
     </aside>
   );

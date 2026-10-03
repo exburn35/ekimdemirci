@@ -89,7 +89,7 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white tracking-tight">
-            Kapsamlı <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">SEO Hizmetlerim</span>
+            Kapsamlı{" "}<span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">SEO Hizmetlerim</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto font-medium">
             Arama görünürlüğünüzü en üst düzeye çıkarmak ve sürdürülebilir organik büyüme sağlamak için tasarladığım, kişiselleştirilmiş ve uçtan uca SEO çözümlerim.

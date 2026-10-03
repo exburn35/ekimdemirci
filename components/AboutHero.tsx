@@ -39,7 +39,7 @@ export default function AboutHero() {
             <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-extrabold mb-6 tracking-tighter">
               <span className="text-white block leading-none">
                 Ben Kimim?
-              </span>
+              </span>{" "}
               <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent block mt-2 pb-4 leading-none">
                 Ekim Demirci
               </span>

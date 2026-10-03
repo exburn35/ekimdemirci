@@ -52,13 +52,13 @@ export default async function BlogPostPage({
       notFound();
     }
 
-    const rawContent = typeof post.content === 'string' ? post.content : (post.content?.html || "");
-    const { cleanHtml, headings } = cleanAndProcessHtml(rawContent);
-
     const postTitle = (post.title || "Makale")
       .replace(/&#8217;/g, "'")
       .replace(/&quot;/g, '"')
       .replace(/&amp;/g, '&');
+
+    const rawContent = typeof post.content === 'string' ? post.content : (post.content?.html || "");
+    const { cleanHtml, headings } = cleanAndProcessHtml(rawContent, postTitle);
 
     const breadcrumbItems = [
       { name: "Blog", href: "/blog" },

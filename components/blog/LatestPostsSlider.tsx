@@ -105,7 +105,7 @@ export default function LatestPostsSlider({
               {badgeText}
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-              {title} <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">{titleHighlight}</span>
+              {title}{" "}<span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">{titleHighlight}</span>
             </h2>
             <p className="text-gray-400 mt-3 text-sm md:text-base max-w-xl leading-relaxed">
               {subtitle}
@@ -141,109 +141,81 @@ export default function LatestPostsSlider({
 
         {/* Carousel Container */}
         <div ref={containerRef} className="relative w-full">
-          {!isMounted ? (
-            // SSR Fallback (Static Grid/Flex scrollable)
-            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
-              {posts.slice(0, 3).map((post) => (
-                <div key={post.id} className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-2">
-                  <div className="bg-[#111836]/40 rounded-2xl border border-white/5 overflow-hidden h-full flex flex-col">
-                    {post.featuredImage && (
-                      <div className="w-full h-52 relative">
-                        <img
-                          src={post.featuredImage}
-                          alt={post.title}
-                          className="w-full h-full object-cover"
-                        />
+          <div className="overflow-hidden cursor-grab active:cursor-grabbing -mx-4 px-4 py-2">
+            <motion.div
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={handleDragEnd}
+              animate={{ x: `-${currentIndex * itemWidthPercent}%` }}
+              transition={{ type: "spring", stiffness: 220, damping: 26 }}
+              className="flex"
+            >
+              {posts.map((post) => (
+                <div
+                  key={post.id || post.slug}
+                  className="shrink-0 px-4"
+                  style={{ width: `${itemWidthPercent}%` }}
+                >
+                  <article className="bg-[#111836]/30 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden hover:border-purple-500/30 hover:bg-[#111836]/60 transition-all duration-300 group flex flex-col h-full shadow-[0_4px_30px_rgba(0,0,0,0.2)]">
+                    <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
+                      {post.featuredImage && (
+                        <div className="w-full h-52 overflow-hidden relative">
+                          <Image
+                            src={post.featuredImage}
+                            alt={post.title || "Blog görseli"}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                          {post.category && (
+                            <div className="absolute top-4 left-4 z-10">
+                              <span className="px-3 py-1 bg-purple-500/80 backdrop-blur-md text-white rounded-full text-xs font-semibold uppercase tracking-wider border border-purple-400/30">
+                                {post.category}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                      <div className="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                          {/* Meta Info */}
+                          <div className="flex items-center gap-3 text-xs text-gray-400 mb-3">
+                            <div className="flex items-center gap-1">
+                              <Calendar className="w-3.5 h-3.5 text-purple-400" />
+                              {post.publishedAt ? formatDate(post.publishedAt) : "—"}
+                            </div>
+                            <span className="text-gray-600">•</span>
+                            <div className="flex items-center gap-1">
+                              <Clock className="w-3.5 h-3.5 text-cyan-400" />
+                              {post.readTime || 5} dk okuma
+                            </div>
+                          </div>
+
+                          {/* Title & Excerpt */}
+                          <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors line-clamp-2 leading-tight">
+                            {(post.title || "").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&')}
+                          </h3>
+                          {post.excerpt && (
+                            <p className="text-gray-400 text-sm line-clamp-3 mb-6 leading-relaxed">
+                              {post.excerpt}
+                            </p>
+                          )}
+                        </div>
+
+                        {/* Footer Action */}
+                        <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
+                          <span className="text-sm font-semibold text-purple-400 group-hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5">
+                            Devamını Oku
+                            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                          </span>
+                        </div>
                       </div>
-                    )}
-                    <div className="p-6 flex-grow flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-2">{post.title}</h3>
-                        <p className="text-gray-400 text-sm line-clamp-3">{post.excerpt}</p>
-                      </div>
-                    </div>
-                  </div>
+                    </Link>
+                  </article>
                 </div>
               ))}
-            </div>
-          ) : (
-            // Interactive Framer Motion Carousel
-            <div className="overflow-hidden cursor-grab active:cursor-grabbing -mx-4 px-4 py-2">
-              <motion.div
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                onDragEnd={handleDragEnd}
-                animate={{ x: `-${currentIndex * itemWidthPercent}%` }}
-                transition={{ type: "spring", stiffness: 220, damping: 26 }}
-                className="flex"
-              >
-                {posts.map((post) => (
-                  <div
-                    key={post.id || post.slug}
-                    className="shrink-0 px-4"
-                    style={{ width: `${itemWidthPercent}%` }}
-                  >
-                    <article className="bg-[#111836]/30 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden hover:border-purple-500/30 hover:bg-[#111836]/60 transition-all duration-300 group flex flex-col h-full shadow-[0_4px_30px_rgba(0,0,0,0.2)]">
-                      <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
-                        {post.featuredImage && (
-                          <div className="w-full h-52 overflow-hidden relative">
-                            <Image
-                              src={post.featuredImage}
-                              alt={post.title || "Blog görseli"}
-                              fill
-                              className="object-cover group-hover:scale-105 transition-transform duration-500"
-                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            />
-                            {post.category && (
-                              <div className="absolute top-4 left-4 z-10">
-                                <span className="px-3 py-1 bg-purple-500/80 backdrop-blur-md text-white rounded-full text-xs font-semibold uppercase tracking-wider border border-purple-400/30">
-                                  {post.category}
-                                </span>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                        <div className="p-6 flex-grow flex flex-col justify-between">
-                          <div>
-                            {/* Meta Info */}
-                            <div className="flex items-center gap-3 text-xs text-gray-400 mb-3">
-                              <div className="flex items-center gap-1">
-                                <Calendar className="w-3.5 h-3.5 text-purple-400" />
-                                {post.publishedAt ? formatDate(post.publishedAt) : "—"}
-                              </div>
-                              <span className="text-gray-600">•</span>
-                              <div className="flex items-center gap-1">
-                                <Clock className="w-3.5 h-3.5 text-cyan-400" />
-                                {post.readTime || 5} dk okuma
-                              </div>
-                            </div>
-
-                            {/* Title & Excerpt */}
-                            <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors line-clamp-2 leading-tight">
-                              {(post.title || "").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&')}
-                            </h3>
-                            {post.excerpt && (
-                              <p className="text-gray-400 text-sm line-clamp-3 mb-6 leading-relaxed">
-                                {post.excerpt}
-                              </p>
-                            )}
-                          </div>
-
-                          {/* Footer Action */}
-                          <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
-                            <span className="text-sm font-semibold text-purple-400 group-hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5">
-                              Devamını Oku
-                              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                            </span>
-                          </div>
-                        </div>
-                      </Link>
-                    </article>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          )}
+            </motion.div>
+          </div>
         </div>
 
         {/* Mobile & Dot Navigation Controls */}

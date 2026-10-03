@@ -54,7 +54,7 @@ export default function ServicesHero() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]">
               <span className="bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent block">
                 Sonuç Odaklı
-              </span>
+              </span>{" "}
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block mt-2">
                 SEO Hizmetleri
               </span>
