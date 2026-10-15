@@ -2,68 +2,92 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
+export async function GET() {
+  return NextResponse.json(
+    { status: "ok", endpoint: "/api/contact", methods: ["POST"] },
+    { status: 200 }
+  );
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { name, email, phone, message, website, formType } = body;
-
-    // Validate required fields based on formType
-    const isNewsletter = formType === "newsletter";
-    
-    if (isNewsletter) {
-      if (!email) {
-        return NextResponse.json(
-          { error: "E-posta alanı zorunludur." },
-          { status: 400 }
-        );
-      }
-    } else {
-      if (!name || !email) {
-        return NextResponse.json(
-          { error: "Ad ve e-posta alanları zorunludur." },
-          { status: 400 }
-        );
-      }
+    let body: any;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json(
+        { error: "Geçersiz istek formatı. JSON verisi bekleniyor." },
+        { status: 400 }
+      );
     }
 
-    // 1. Try to save the submission to the database (robustly)
+    const { name, email, phone, message, website, formType } = body || {};
+
+    const cleanEmail = typeof email === "string" ? email.trim() : "";
+    const cleanName = typeof name === "string" ? name.trim() : "";
+    const cleanPhone = typeof phone === "string" ? phone.trim() : "";
+    const cleanMessage = typeof message === "string" ? message.trim() : "";
+    const cleanWebsite = typeof website === "string" ? website.trim() : "";
+    const cleanFormType = formType || "contact";
+
+    // 1. Validation
+    const isNewsletter = cleanFormType === "newsletter";
+
+    if (!cleanEmail || !cleanEmail.includes("@")) {
+      return NextResponse.json(
+        { error: "Geçerli bir e-posta adresi zorunludur." },
+        { status: 400 }
+      );
+    }
+
+    if (!isNewsletter && !cleanName) {
+      return NextResponse.json(
+        { error: "Ad Soyad alanı zorunludur." },
+        { status: 400 }
+      );
+    }
+
+    // 2. Save submission to database (Robust & Isolated)
     let isSavedToDb = false;
     try {
       if (process.env.DATABASE_URL) {
         await prisma.contactMessage.create({
           data: {
-            name: name || null,
-            email,
-            phone: phone || null,
-            website: website || null,
-            message: message || null,
-            formType: formType || "contact",
+            name: cleanName || null,
+            email: cleanEmail.toLowerCase(),
+            phone: cleanPhone || null,
+            website: cleanWebsite || null,
+            message: cleanMessage || null,
+            formType: cleanFormType,
           },
         });
         isSavedToDb = true;
       } else {
-        console.warn("DATABASE_URL is not set. Skipping DB submission save.");
+        console.warn("[Contact API] DATABASE_URL is not set. Skipping DB submission save.");
       }
     } catch (dbError) {
-      // Don't crash the route if DB saving fails (e.g. database hasn't been pushed/migrated yet)
-      console.error("Failed to save contact submission to database:", dbError);
+      console.error("[Contact API] Failed to save contact submission to database:", dbError);
     }
 
-    // 2. Determine subject and contents based on form type
+    // 3. Prepare email subject and contents
     let subject = "";
-    if (formType === "lead") {
-      subject = `🔍 Yeni Analiz Talebi - ${name}`;
-    } else if (formType === "newsletter") {
-      subject = `📰 Yeni Bülten Aboneliği - ${email}`;
+    if (cleanFormType === "lead") {
+      subject = `🔍 Yeni Analiz Talebi - ${cleanName || cleanEmail}`;
+    } else if (cleanFormType === "newsletter") {
+      subject = `📰 Yeni Bülten Aboneliği - ${cleanEmail}`;
+    } else if (cleanFormType === "audit") {
+      subject = `📊 Yeni Audit Talebi - ${cleanName || cleanEmail}`;
     } else {
-      subject = `📩 Yeni İletişim Formu - ${name}`;
+      subject = `📩 Yeni İletişim Formu - ${cleanName || cleanEmail}`;
     }
 
-    // Build HTML email content
+    // HTML email template
     let htmlContent = "";
     if (isNewsletter) {
       htmlContent = `
-        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0a0f25; color: #ffffff; border-radius: 16px; overflow: hidden;">
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0a0f25; color: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
           <div style="background: linear-gradient(135deg, #7c3aed, #3b82f6); padding: 32px; text-align: center;">
             <h1 style="margin: 0; font-size: 24px; color: #ffffff;">
               📰 Yeni Bülten Aboneliği
@@ -75,23 +99,23 @@ export async function POST(request: NextRequest) {
               <tr>
                 <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #a78bfa; font-weight: bold; width: 140px;">E-posta</td>
                 <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #e2e8f0;">
-                  <a href="mailto:${email}" style="color: #818cf8; text-decoration: none;">${email}</a>
+                  <a href="mailto:${cleanEmail}" style="color: #818cf8; text-decoration: none;">${cleanEmail}</a>
                 </td>
               </tr>
             </table>
           </div>
           
           <div style="padding: 16px 32px; text-align: center; color: #64748b; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.05);">
-            Bu mesaj ekimdemirci.com web sitesinden gönderilmiştir.
+            Bu bildirim ekimdemirci.com web sitesinden otomatik olarak gönderilmiştir.
           </div>
         </div>
       `;
     } else {
       htmlContent = `
-        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0a0f25; color: #ffffff; border-radius: 16px; overflow: hidden;">
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0a0f25; color: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
           <div style="background: linear-gradient(135deg, #7c3aed, #3b82f6); padding: 32px; text-align: center;">
             <h1 style="margin: 0; font-size: 24px; color: #ffffff;">
-              ${formType === "lead" ? "🔍 Yeni Analiz Talebi" : "📩 Yeni İletişim Mesajı"}
+              ${cleanFormType === "lead" ? "🔍 Yeni Analiz Talebi" : cleanFormType === "audit" ? "📊 Yeni Audit Talebi" : "📩 Yeni İletişim Mesajı"}
             </h1>
           </div>
           
@@ -99,39 +123,39 @@ export async function POST(request: NextRequest) {
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #a78bfa; font-weight: bold; width: 140px;">Ad Soyad</td>
-                <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #e2e8f0;">${name}</td>
+                <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #e2e8f0;">${cleanName}</td>
               </tr>
               <tr>
                 <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #a78bfa; font-weight: bold;">E-posta</td>
                 <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #e2e8f0;">
-                  <a href="mailto:${email}" style="color: #818cf8; text-decoration: none;">${email}</a>
+                  <a href="mailto:${cleanEmail}" style="color: #818cf8; text-decoration: none;">${cleanEmail}</a>
                 </td>
               </tr>
               ${
-                phone
+                cleanPhone
                   ? `<tr>
                 <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #a78bfa; font-weight: bold;">Telefon</td>
                 <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #e2e8f0;">
-                  <a href="tel:${phone}" style="color: #818cf8; text-decoration: none;">${phone}</a>
+                  <a href="tel:${cleanPhone}" style="color: #818cf8; text-decoration: none;">${cleanPhone}</a>
                 </td>
               </tr>`
                   : ""
               }
               ${
-                website
+                cleanWebsite
                   ? `<tr>
                 <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #a78bfa; font-weight: bold;">Web Sitesi</td>
                 <td style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #e2e8f0;">
-                  <a href="${website}" style="color: #818cf8; text-decoration: none;" target="_blank">${website}</a>
+                  <a href="${cleanWebsite.startsWith("http") ? cleanWebsite : "https://" + cleanWebsite}" style="color: #818cf8; text-decoration: none;" target="_blank" rel="noopener noreferrer">${cleanWebsite}</a>
                 </td>
               </tr>`
                   : ""
               }
               ${
-                message
+                cleanMessage
                   ? `<tr>
                 <td style="padding: 12px 16px; color: #a78bfa; font-weight: bold; vertical-align: top;">Mesaj</td>
-                <td style="padding: 12px 16px; color: #e2e8f0; line-height: 1.6;">${message.replace(/\n/g, "<br>")}</td>
+                <td style="padding: 12px 16px; color: #e2e8f0; line-height: 1.6;">${cleanMessage.replace(/\n/g, "<br>")}</td>
               </tr>`
                   : ""
               }
@@ -139,96 +163,113 @@ export async function POST(request: NextRequest) {
           </div>
           
           <div style="padding: 16px 32px; text-align: center; color: #64748b; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.05);">
-            Bu mesaj ekimdemirci.com web sitesinden gönderilmiştir.
+            Bu bildirim ekimdemirci.com web sitesinden otomatik olarak gönderilmiştir.
           </div>
         </div>
       `;
     }
 
-    // Plain text fallback
+    // Plain text content
     let textContent = "";
     if (isNewsletter) {
-      textContent = `
-Yeni Bülten Aboneliği
-${"=".repeat(40)}
-
-E-posta: ${email}
-
----
-Bu mesaj ekimdemirci.com web sitesinden gönderilmiştir.
-      `.trim();
+      textContent = `Yeni Bülten Aboneliği\n${"=".repeat(40)}\nE-posta: ${cleanEmail}\n\n---\nBu mesaj ekimdemirci.com web sitesinden gönderilmiştir.`;
     } else {
-      textContent = `
-${formType === "lead" ? "Yeni Analiz Talebi" : "Yeni İletişim Mesajı"}
-${"=".repeat(40)}
-
-Ad Soyad: ${name}
-E-posta: ${email}
-${phone ? `Telefon: ${phone}` : ""}
-${website ? `Web Sitesi: ${website}` : ""}
-${message ? `\nMesaj:\n${message}` : ""}
-
----
-Bu mesaj ekimdemirci.com web sitesinden gönderilmiştir.
-      `.trim();
+      textContent = `${subject}\n${"=".repeat(40)}\nAd Soyad: ${cleanName}\nE-posta: ${cleanEmail}\n${cleanPhone ? `Telefon: ${cleanPhone}\n` : ""}${cleanWebsite ? `Web Sitesi: ${cleanWebsite}\n` : ""}${cleanMessage ? `\nMesaj:\n${cleanMessage}\n` : ""}\n---\nBu mesaj ekimdemirci.com web sitesinden gönderilmiştir.`;
     }
 
-    // 3. Email sending with local development fallback
-    const isDev = process.env.NODE_ENV === "development";
-    const hasSmtpCredentials = process.env.SMTP_USER && process.env.SMTP_PASS;
+    // 4. Email Sending (Isolated & Resilient)
+    const hasSmtpCredentials = Boolean(
+      process.env.SMTP_USER && process.env.SMTP_PASS
+    );
+    let isEmailSent = false;
 
-    if (isDev && !hasSmtpCredentials) {
-      console.log("\n================ [DEVELOPMENT MODE: Form Submission] ================");
-      console.log(`Form Type: ${formType || "contact"}`);
-      console.log(`Subject: ${subject}`);
-      console.log(`Email Content:\n${textContent}`);
-      console.log("======================================================================\n");
+    if (hasSmtpCredentials) {
+      try {
+        const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
+        const smtpPort = Number(process.env.SMTP_PORT) || 465;
+        const smtpSecure =
+          process.env.SMTP_SECURE !== undefined
+            ? process.env.SMTP_SECURE === "true"
+            : smtpPort === 465;
 
-      return NextResponse.json(
-        { 
-          message: "Mesajınız (Geliştirici Modu) başarıyla kaydedildi ve konsola yazdırıldı!",
-          savedToDb: isSavedToDb
-        },
-        { status: 200 }
+        const transporter = nodemailer.createTransport({
+          host: smtpHost,
+          port: smtpPort,
+          secure: smtpSecure,
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+          },
+          connectionTimeout: 10000,
+          greetingTimeout: 10000,
+          socketTimeout: 10000,
+        });
+
+        const contactEmail = process.env.CONTACT_EMAIL || "ekmdmrci@gmail.com";
+
+        await transporter.sendMail({
+          from: `"Ekim Demirci Web Site" <${process.env.SMTP_FROM || process.env.SMTP_USER || contactEmail}>`,
+          to: contactEmail,
+          replyTo: cleanEmail,
+          subject,
+          text: textContent,
+          html: htmlContent,
+        });
+
+        isEmailSent = true;
+        console.log(`[Contact API] Email notification successfully sent to ${contactEmail}`);
+      } catch (err: any) {
+        console.error("[Contact API] Nodemailer email dispatch error:", err?.message || err);
+      }
+    } else {
+      console.warn(
+        "[Contact API] SMTP credentials (SMTP_USER / SMTP_PASS) not set. Email dispatch skipped."
       );
+      if (process.env.NODE_ENV === "development") {
+        console.log("\n================ [DEV MODE: Form Submission] ================");
+        console.log(`Type: ${cleanFormType}`);
+        console.log(`Subject: ${subject}`);
+        console.log(textContent);
+        console.log("==============================================================\n");
+      }
     }
 
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    // 5. Optional Webhook Notification (Discord / Slack / Telegram)
+    if (process.env.CONTACT_WEBHOOK_URL) {
+      try {
+        await fetch(process.env.CONTACT_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            content: `📬 **${subject}**\n- **Ad:** ${cleanName || "-"}\n- **E-posta:** ${cleanEmail}\n- **Telefon:** ${cleanPhone || "-"}\n- **Site:** ${cleanWebsite || "-"}\n- **Mesaj:** ${cleanMessage || "-"}`,
+          }),
+        }).catch((err) => console.error("[Contact API] Webhook failed:", err));
+      } catch {
+        // Ignore webhook error
+      }
+    }
 
-    const contactEmail = process.env.CONTACT_EMAIL || "ekmdmrci@gmail.com";
-
-    // Send email
-    await transporter.sendMail({
-      from: `"Ekim Demirci Web Site" <${process.env.SMTP_USER || contactEmail}>`,
-      to: contactEmail,
-      replyTo: email,
-      subject,
-      text: textContent,
-      html: htmlContent,
-    });
-
+    // 6. Return success response
     return NextResponse.json(
-      { 
-        message: "Mesajınız başarıyla gönderildi!",
-        savedToDb: isSavedToDb
+      {
+        success: true,
+        message: isNewsletter
+          ? "Bülten aboneliğiniz başarıyla tamamlandı!"
+          : "Mesajınız başarıyla iletildi! En kısa sürede dönüş yapacağım.",
+        savedToDb: isSavedToDb,
+        emailSent: isEmailSent,
+        ...((!hasSmtpCredentials && !isSavedToDb)
+          ? { warning: "Sunucu tarafında SMTP veya Veritabanı yapılandırması bekleniyor." }
+          : {}),
       },
       { status: 200 }
     );
   } catch (error: any) {
-    console.error("E-posta veya Form İşleme Hatası:", error);
+    console.error("[Contact API] Unexpected error in form processing:", error);
     return NextResponse.json(
-      { 
+      {
         error: "İşlem sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
-        details: error?.message || error
+        details: error?.message || String(error),
       },
       { status: 500 }
     );

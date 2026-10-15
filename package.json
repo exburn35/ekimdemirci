@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma db push && next build",
+    "build": "prisma generate && node -e \"if(process.env.DATABASE_URL && process.env.DIRECT_URL){try{require('child_process').execSync('npx prisma db push --skip-generate',{stdio:'inherit'})}catch(e){console.warn('DB push skipped:',e.message)}}\" && next build",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate",

@@ -12,6 +12,7 @@ export default function ServiceLeadForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -24,25 +25,38 @@ export default function ServiceLeadForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus("idle");
+    setErrorMessage("");
 
     try {
+      // Auto-format website URL if user didn't enter protocol
+      let cleanWebsite = formData.website.trim();
+      if (cleanWebsite && !/^https?:\/\//i.test(cleanWebsite)) {
+        cleanWebsite = `https://${cleanWebsite}`;
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name.trim(),
+          website: cleanWebsite,
+          email: formData.email.trim(),
           formType: "lead",
         }),
       });
 
+      const data = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error("Gönderim başarısız");
+        throw new Error(data.error || "Gönderim sırasında bir hata oluştu.");
       }
 
       setStatus("success");
       setFormData({ name: "", website: "", email: "" });
-    } catch (error) {
+    } catch (error: any) {
       setStatus("error");
+      setErrorMessage(error?.message || "Bir hata oluştu. Lütfen tekrar deneyin.");
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -94,7 +108,7 @@ export default function ServiceLeadForm() {
             <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
             <input
               required
-              type="url"
+              type="text"
               name="website"
               value={formData.website}
               onChange={handleChange}
@@ -122,7 +136,7 @@ export default function ServiceLeadForm() {
               animate={{ opacity: 1, y: 0 }}
               className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-medium"
             >
-              Bir hata oluştu. Lütfen tekrar deneyin.
+              {errorMessage || "Bir hata oluştu. Lütfen tekrar deneyin."}
             </motion.div>
           )}
 

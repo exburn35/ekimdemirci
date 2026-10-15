@@ -7,30 +7,36 @@ export default function BlogNewsletter() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus("idle");
+    setErrorMessage("");
 
     try {
+      const cleanEmail = email.trim();
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email,
+          email: cleanEmail,
           formType: "newsletter",
         }),
       });
 
+      const data = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error("Abonelik başarısız");
+        throw new Error(data.error || "Abonelik işlemi sırasında bir hata oluştu.");
       }
 
       setStatus("success");
       setEmail("");
-    } catch (error) {
+    } catch (error: any) {
       setStatus("error");
+      setErrorMessage(error?.message || "Bir hata oluştu. Lütfen tekrar deneyin.");
     } finally {
       setIsSubmitting(false);
     }
@@ -74,7 +80,7 @@ export default function BlogNewsletter() {
                 />
                 {status === "error" && (
                   <span className="text-red-400 text-xs mt-2 text-left px-4">
-                    Bir hata oluştu. Lütfen tekrar deneyin.
+                    {errorMessage || "Bir hata oluştu. Lütfen tekrar deneyin."}
                   </span>
                 )}
               </div>

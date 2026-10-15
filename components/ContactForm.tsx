@@ -2,27 +2,35 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, User, MessageSquare } from "lucide-react";
+import { Send, Mail, User, MessageSquare, Globe } from "lucide-react";
 
 interface ContactFormProps {
   title?: string;
   description?: string;
   showTitle?: boolean;
+  showWebsite?: boolean;
+  formType?: string;
+  buttonText?: string;
 }
 
 export default function ContactForm({
   title = "İletişime Geçin",
   description = "Aşağıdaki formu doldurun, size en kısa sürede döneceğim.",
   showTitle = true,
+  showWebsite = false,
+  formType = "contact",
+  buttonText = "Mesajı Gönder",
 }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    website: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -37,25 +45,39 @@ export default function ContactForm({
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus("idle");
+    setErrorMessage("");
 
     try {
+      // Auto-format website if provided
+      let cleanWebsite = formData.website.trim();
+      if (cleanWebsite && !/^https?:\/\//i.test(cleanWebsite)) {
+        cleanWebsite = `https://${cleanWebsite}`;
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,
-          formType: "contact",
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          website: cleanWebsite,
+          message: formData.message.trim(),
+          formType,
         }),
       });
 
+      const data = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error("Gönderim başarısız");
+        throw new Error(data.error || "Gönderim sırasında bir hata oluştu.");
       }
 
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
+      setFormData({ name: "", email: "", phone: "", website: "", message: "" });
+    } catch (error: any) {
       setSubmitStatus("error");
+      setErrorMessage(error?.message || "Bir şeyler yanlış gitti. Lütfen tekrar deneyin veya doğrudan iletişime geçin.");
     } finally {
       setIsSubmitting(false);
     }
@@ -130,6 +152,24 @@ export default function ContactForm({
               />
             </div>
 
+            {showWebsite && (
+              <div>
+                <label htmlFor="website" className="block text-sm font-semibold text-gray-300 mb-2">
+                  <Globe className="w-4 h-4 inline mr-2 text-purple-400" />
+                  Web Sitesi (Opsiyonel)
+                </label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm"
+                  placeholder="ekimdemirci.com"
+                />
+              </div>
+            )}
+
             <div>
               <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
                 <MessageSquare className="w-4 h-4 inline mr-2 text-purple-400" />
@@ -143,7 +183,7 @@ export default function ContactForm({
                 value={formData.message}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm resize-none"
-                placeholder="Projenizden bahsedin..."
+                placeholder="Projenizden veya talebinizden bahsedin..."
               />
             </div>
 
@@ -153,7 +193,7 @@ export default function ContactForm({
                 animate={{ opacity: 1, y: 0 }}
                 className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-400 text-sm font-medium shadow-sm"
               >
-                Teşekkürler! Mesajınız gönderildi. En kısa sürede size döneceğim.
+                Teşekkürler! Mesajınız başarıyla iletildi. En kısa sürede size geri dönüş yapacağım.
               </motion.div>
             )}
 
@@ -163,7 +203,7 @@ export default function ContactForm({
                 animate={{ opacity: 1, y: 0 }}
                 className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-medium shadow-sm"
               >
-                Bir şeyler yanlış gitti. Lütfen tekrar deneyin veya benimle doğrudan iletişime geçin.
+                {errorMessage || "Bir şeyler yanlış gitti. Lütfen tekrar deneyin veya doğrudan iletişime geçin."}
               </motion.div>
             )}
 
@@ -179,7 +219,7 @@ export default function ContactForm({
                 </>
               ) : (
                 <>
-                  Mesajı Gönder
+                  {buttonText}
                   <Send className="w-5 h-5" />
                 </>
               )}
@@ -190,9 +230,3 @@ export default function ContactForm({
     </section>
   );
 }
-
-
-
-
-
-

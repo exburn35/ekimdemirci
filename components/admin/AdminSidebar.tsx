@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LayoutDashboard,
+  Inbox,
   FileText,
   Search,
   Settings,
@@ -23,6 +24,11 @@ const menuItems = [
     title: "Panel",
     href: "/admin",
     icon: LayoutDashboard,
+  },
+  {
+    title: "Mesajlar & Talepler",
+    href: "/admin/messages",
+    icon: Inbox,
   },
   {
     title: "Sayfalar",
