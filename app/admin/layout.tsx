@@ -29,8 +29,25 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
 
       if (authenticated === "true" && role === "ADMIN") {
         setIsAuthorized(true);
+        setIsLoading(false);
       } else {
-        router.push("/admin/login");
+        fetch("/api/admin/auth/me")
+          .then((res) => {
+            if (res.ok) {
+              sessionStorage.setItem("admin_authenticated", "true");
+              sessionStorage.setItem("admin_role", "ADMIN");
+              setIsAuthorized(true);
+            } else {
+              router.push("/admin/login");
+            }
+          })
+          .catch(() => {
+            router.push("/admin/login");
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+        return;
       }
     }
     setIsLoading(false);

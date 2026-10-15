@@ -1,10 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { verifyAdminRequest } from "@/lib/adminAuth";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
+    const isAuthed = await verifyAdminRequest(request);
+    if (!isAuthed) {
+      return NextResponse.json(
+        { error: "Yetkisiz erişim.", code: "UNAUTHORIZED" },
+        { status: 401 }
+      );
+    }
+
     const settings = await prisma.siteSetting.findMany({
       orderBy: { category: "asc" },
     });
@@ -21,6 +30,14 @@ export async function GET() {
 
 export async function PUT(request: NextRequest) {
   try {
+    const isAuthed = await verifyAdminRequest(request);
+    if (!isAuthed) {
+      return NextResponse.json(
+        { error: "Yetkisiz erişim.", code: "UNAUTHORIZED" },
+        { status: 401 }
+      );
+    }
+
     const settings = await request.json();
 
     const updates = await Promise.all(
@@ -55,4 +72,3 @@ export async function PUT(request: NextRequest) {
     );
   }
 }
-

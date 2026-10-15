@@ -17,21 +17,28 @@ export default function AdminLogin() {
     setError("");
     setIsLoading(true);
 
-    const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || "admin@ekimdemirci.com";
-    const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "admin123";
-
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const res = await fetch("/api/admin/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-      if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-        sessionStorage.setItem("admin_authenticated", "true");
-        sessionStorage.setItem("admin_role", "ADMIN");
-        router.push("/admin");
-      } else {
-        setError("Geçersiz e-posta veya şifre");
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setError(data.error || "Geçersiz e-posta veya şifre");
+        return;
       }
+
+      sessionStorage.setItem("admin_authenticated", "true");
+      sessionStorage.setItem("admin_role", "ADMIN");
+
+      const params = new URLSearchParams(window.location.search);
+      const destination = params.get("from") || "/admin";
+      router.push(destination);
     } catch (err) {
-      setError("Bir hata oluştu. Lütfen tekrar deneyin.");
+      setError("Giriş yapılırken bir hata oluştu. Lütfen tekrar deneyin.");
     } finally {
       setIsLoading(false);
     }

@@ -7,7 +7,12 @@ import { Bell, User, LogOut } from "lucide-react";
 export default function AdminHeader() {
   const router = useRouter();
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/admin/auth/logout", { method: "POST" });
+    } catch (err) {
+      console.error("Logout error:", err);
+    }
     sessionStorage.removeItem("admin_authenticated");
     sessionStorage.removeItem("admin_role");
     router.push("/admin/login");

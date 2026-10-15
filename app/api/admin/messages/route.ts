@@ -1,10 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { verifyAdminRequest } from "@/lib/adminAuth";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
   try {
+    // Defense-in-depth: Route-level auth check
+    const isAuthed = await verifyAdminRequest(request);
+    if (!isAuthed) {
+      return NextResponse.json(
+        { error: "Yetkisiz erişim. Oturum bulunamadı.", code: "UNAUTHORIZED" },
+        { status: 401 }
+      );
+    }
+
     if (!process.env.DATABASE_URL) {
       return NextResponse.json({ messages: [], total: 0 }, { status: 200 });
     }
@@ -37,6 +47,15 @@ export async function GET(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
   try {
+    // Defense-in-depth: Route-level auth check
+    const isAuthed = await verifyAdminRequest(request);
+    if (!isAuthed) {
+      return NextResponse.json(
+        { error: "Yetkisiz erişim. Oturum bulunamadı.", code: "UNAUTHORIZED" },
+        { status: 401 }
+      );
+    }
+
     const { searchParams } = new URL(request.url);
     const id = searchParams.get("id");
 
