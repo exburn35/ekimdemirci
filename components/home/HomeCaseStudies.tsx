@@ -81,8 +81,8 @@ export default function HomeCaseStudies() {
                 key={c.id}
                 className="rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden flex flex-col justify-between hover:border-purple-500/30 transition-all duration-300"
               >
-                {/* Görsel Alanı (/public/vakalar/*.webp veya fs.existsSync Yer Tutucu) */}
-                <div className="relative w-full h-48 bg-gradient-to-br from-white/5 to-white/[0.02] border-b border-white/10 flex items-center justify-center overflow-hidden">
+                {/* Görsel Alanı (/public/vakalar/*.webp veya Şık İkon Banner) */}
+                <div className="relative w-full h-40 bg-gradient-to-br from-white/[0.05] via-white/[0.02] to-transparent border-b border-white/10 flex items-center justify-center overflow-hidden">
                   {imageExists ? (
                     <Image
                       src={`/vakalar/${c.imageFileName}`}
@@ -91,16 +91,11 @@ export default function HomeCaseStudies() {
                       className="object-cover"
                     />
                   ) : (
-                    <div className="flex flex-col items-center justify-center p-4 text-center">
-                      <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-2">
-                        <Icon className="w-6 h-6 text-purple-400" />
+                    <div className="relative flex items-center justify-center">
+                      <div className="absolute w-20 h-20 bg-purple-500/10 rounded-full blur-xl pointer-events-none" />
+                      <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:border-purple-500/30 transition-all duration-300">
+                        <Icon className="w-7 h-7 text-purple-400 group-hover:text-purple-300 transition-colors" />
                       </div>
-                      <span className="text-xs text-gray-400 font-mono">
-                        /public/vakalar/{c.imageFileName}
-                      </span>
-                      <span className="text-[11px] text-gray-400 mt-1">
-                        (Görsel Yer Tutucu)
-                      </span>
                     </div>
                   )}
 
