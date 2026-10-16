@@ -6,12 +6,7 @@ import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
 
 export default function HomeHero() {
   const webpPath = path.join(process.cwd(), "public", "ekim-demirci.webp");
-  const jpgPath = path.join(process.cwd(), "public", "ekim.jpg");
-  const photoSrc = fs.existsSync(webpPath)
-    ? "/ekim-demirci.webp"
-    : fs.existsSync(jpgPath)
-    ? "/ekim.jpg"
-    : null;
+  const photoSrc = fs.existsSync(webpPath) ? "/ekim-demirci.webp" : "/ekim.jpg";
 
   return (
     <section className="relative bg-[#0a0f25] border-b border-white/5 pt-28 pb-12 md:pt-36 md:pb-16 overflow-hidden">

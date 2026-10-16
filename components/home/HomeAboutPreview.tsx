@@ -16,12 +16,7 @@ const tools = [
 
 export default function HomeAboutPreview() {
   const webpPath = path.join(process.cwd(), "public", "ekim-demirci.webp");
-  const jpgPath = path.join(process.cwd(), "public", "ekim.jpg");
-  const photoSrc = fs.existsSync(webpPath)
-    ? "/ekim-demirci.webp"
-    : fs.existsSync(jpgPath)
-    ? "/ekim.jpg"
-    : null;
+  const photoSrc = fs.existsSync(webpPath) ? "/ekim-demirci.webp" : "/ekim.jpg";
 
   const defaultBio = "Ben Ekim Demirci; markaların Google arama sonuçlarında ve yeni nesil yapay zeka arama motorlarında organik olarak büyümesini sağlayan bağımsız SEO ve GEO danışmanıyım. 5 yılı aşkın süredir e-ticaretten sağlığa onlarca sektörde veriye dayalı stratejilerle sürdürülebilir trafik ve ciro artışı yönetiyorum. Teknik mükemmellik, semantik içerik mimarisi ve varlık tabanlı optimizasyonu tek elden kurgulayarak doğrudan sonuç odaklı çalışıyorum.";
 
@@ -29,34 +24,26 @@ export default function HomeAboutPreview() {
     <section className="bg-[#0d153a] border-b border-white/5 py-12 md:py-16 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Sol Kolon: Fotoğraf veya Baş Harfli (ED) Şık Avatar Fallback'i */}
+          {/* Sol Kolon: Fotoğraf Kartı */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/10 to-white/5 shadow-2xl flex items-center justify-center">
-              {photoSrc ? (
-                <Image
-                  src={photoSrc}
-                  alt="SEO ve GEO Danışmanı Ekim Demirci"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
-                  className="object-cover object-top"
-                />
-              ) : (
-                <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center select-none">
-                  <div className="w-28 h-28 rounded-3xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-blue-500 p-1 shadow-[0_0_40px_rgba(139,92,246,0.3)] mb-5 flex items-center justify-center">
-                    <div className="w-full h-full rounded-[22px] bg-[#0d153a] flex items-center justify-center">
-                      <span className="text-3xl font-extrabold bg-gradient-to-r from-purple-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                        ED
-                      </span>
-                    </div>
-                  </div>
-                  <div className="text-xl font-bold text-white mb-1">
-                    Ekim Demirci
-                  </div>
-                  <div className="text-xs font-semibold text-purple-300">
-                    SEO & GEO Danışmanı
-                  </div>
+            <div className="relative w-full max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/10 to-white/5 shadow-2xl group flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f25] via-transparent to-transparent z-10 opacity-70" />
+              <Image
+                src={photoSrc}
+                alt="SEO ve GEO Danışmanı Ekim Demirci"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+
+              {/* Fotoğraf kartı üzerindeki alt rozet */}
+              <div className="absolute bottom-4 left-4 right-4 z-20 p-3.5 rounded-2xl bg-[#0a0f25]/90 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                <div>
+                  <div className="text-sm font-bold text-white">Ekim Demirci</div>
+                  <div className="text-xs text-gray-400">SEO & GEO Danışmanı</div>
                 </div>
-              )}
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
+              </div>
             </div>
           </div>
 
