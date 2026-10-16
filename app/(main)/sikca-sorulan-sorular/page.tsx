@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import SEOAuditSection from "@/components/SEOAuditSection";
@@ -64,12 +61,7 @@ export default function FAQPage() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
+          <div className="text-center">
             <div className="inline-flex items-center gap-3 mb-6">
               <HelpCircle className="w-12 h-12 text-blue-400" />
             </div>
@@ -81,7 +73,7 @@ export default function FAQPage() {
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               SEO hizmetleri hakkında merak ettiğiniz soruların cevaplarını burada bulabilirsiniz.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -101,13 +93,7 @@ export default function FAQPage() {
       {/* Additional Help Section */}
       <section className="py-24 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="glass-strong rounded-2xl p-8 md:p-12 text-center"
-          >
+          <div className="glass-strong rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Sorunuzun Cevabını Bulamadınız mı?
             </h2>
@@ -120,7 +106,7 @@ export default function FAQPage() {
             >
               İletişime Geç
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
 

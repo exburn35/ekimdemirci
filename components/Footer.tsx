@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { 
   Instagram, 
   Linkedin, 
@@ -10,6 +9,7 @@ import {
   Phone
 } from "lucide-react";
 import Logo from "./Logo";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 
 const quickLinks = [
   { name: "Anasayfa", href: "/" },
@@ -152,11 +152,11 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm">İletişim</h3>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:ekmdmrci@gmail.com" className="group flex items-center gap-3 text-gray-400 hover:text-purple-400 transition-colors">
+                <a href={`mailto:${SITE_CONFIG.email}`} className="group flex items-center gap-3 text-gray-400 hover:text-purple-400 transition-colors">
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-purple-500/10 group-hover:border-purple-500/30 transition-all">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <span>ekmdmrci@gmail.com</span>
+                  <span>{SITE_CONFIG.email}</span>
                 </a>
               </li>
               <li>
@@ -164,7 +164,7 @@ export default function Footer() {
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
                     <MapPin className="w-5 h-5" />
                   </div>
-                  <span>İstanbul, Türkiye</span>
+                  <span>{SITE_CONFIG.address}</span>
                 </div>
               </li>
             </ul>

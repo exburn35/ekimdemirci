@@ -1,10 +1,14 @@
 interface ServiceSchemaProps {
   name: string;
   description: string;
-  url: string;
+  url?: string;
 }
 
 export default function ServiceSchema({ name, description, url }: ServiceSchemaProps) {
+  const fullUrl = url
+    ? (url.startsWith("http") ? url : `https://ekimdemirci.com${url.startsWith("/") ? "" : "/"}${url}`)
+    : "https://ekimdemirci.com";
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -16,7 +20,7 @@ export default function ServiceSchema({ name, description, url }: ServiceSchemaP
       "url": "https://ekimdemirci.com"
     },
     "serviceType": "SEO Hizmeti",
-    "url": url
+    "url": fullUrl
   };
 
   return (

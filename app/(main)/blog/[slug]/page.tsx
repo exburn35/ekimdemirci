@@ -3,9 +3,16 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import BlogPostContent from "@/components/blog/BlogPostContent";
 import BlogPostingSchema from "@/components/schemas/BlogPostingSchema";
-import { getBlogPostBySlug, cleanAndProcessHtml } from "@/lib/blog";
+import { getAllBlogPosts, getBlogPostBySlug, cleanAndProcessHtml } from "@/lib/blog";
 
-export const dynamic = "force-dynamic";
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const posts = getAllBlogPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export async function generateMetadata({
   params,

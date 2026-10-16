@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import type { BlogPost } from "@/lib/blog";
-import { formatDate, slugifyCategory } from "@/lib/blog-utils";
+import { formatDate, slugifyCategory, decodeHtmlEntities } from "@/lib/blog-utils";
 
 interface BlogListClientProps {
   initialPosts: BlogPost[];
@@ -105,7 +105,7 @@ export default function BlogListClient({ initialPosts }: BlogListClientProps) {
                       </Link>
                       {post.excerpt && (
                         <p className="text-gray-400 text-sm mb-4 line-clamp-3">
-                          {post.excerpt}
+                          {decodeHtmlEntities(post.excerpt)}
                         </p>
                       )}
                     </div>

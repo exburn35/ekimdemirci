@@ -105,6 +105,8 @@ export function getAllBlogPosts(): BlogPost[] {
         return {
           id: file.replace(".json", ""),
           ...data,
+          title: data.title ? decodeHtmlEntities(data.title) : "",
+          excerpt: data.excerpt ? decodeHtmlEntities(data.excerpt) : "",
         };
       } catch (err) {
         console.error(`Error loading blog file ${file}:`, err);
@@ -128,6 +130,8 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
     return {
       id: slug,
       ...post,
+      title: post.title ? decodeHtmlEntities(post.title) : "",
+      excerpt: post.excerpt ? decodeHtmlEntities(post.excerpt) : "",
     };
   } catch (err) {
     return null;

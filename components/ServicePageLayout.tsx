@@ -18,7 +18,7 @@ import SEOAuditSection from "./SEOAuditSection";
 import ContactForm from "./ContactForm";
 import RelatedBlogPosts from "./RelatedBlogPosts";
 import RelatedPages from "./RelatedPages";
-import ClientServiceSchema from "./schemas/ClientServiceSchema";
+import ServiceSchema from "./schemas/ServiceSchema";
 import ServiceGlowOrbs from "./ServiceGlowOrbs";
 import FAQ from "./FAQ";
 import ServiceLeadForm from "./ServiceLeadForm";
@@ -53,7 +53,7 @@ interface ServicePageLayoutProps {
   // 6. FAQ Items
   faqItems?: { question: string; answer: string }[];
   
-  // Legacy / Optional props for backwards compatibility
+  canonicalUrl?: string;
   features?: string[];
   benefits?: { title: string; description: string }[];
   blogCategory?: string;
@@ -74,6 +74,7 @@ export default function ServicePageLayout({
   targetAudience,
   evidence,
   faqItems,
+  canonicalUrl,
   features,
   benefits,
   blogCategory,
@@ -85,7 +86,7 @@ export default function ServicePageLayout({
 
   return (
     <>
-      <ClientServiceSchema name={title} description={description} />
+      <ServiceSchema name={title} description={description} url={canonicalUrl} />
 
       {/* 1. HERO SECTION */}
       {!hideHero && (

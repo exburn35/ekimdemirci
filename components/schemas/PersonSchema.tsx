@@ -1,27 +1,53 @@
+import { SITE_CONFIG } from "@/lib/siteConfig";
+
 export default function PersonSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ekim Demirci",
-    "jobTitle": "SEO Uzmanı ve Danışmanı",
-    "url": "https://ekimdemirci.com",
-    "telephone": "+90 507 047 47 02",
-    "email": "ekmdmrci@gmail.com",
-    "birthDate": "1991-11-02",
-    "sameAs": [
-      "https://www.linkedin.com/in/ekim-demirci/",
-      "https://www.instagram.com/ekimdemircii/",
-      "https://tr.pinterest.com/ekimdemirciseo/",
-      "https://www.youtube.com/@ekimdemirciseo",
-      "https://medium.com/@ekimdemirci"
-    ],
-    "description": "Markaların potansiyeline ulaşmasına yardımcı olan, 5+ yıllık deneyime sahip Uzman SEO Uzmanı ve Danışmanı.",
-    "knowsAbout": ["SEO", "Arama Motoru Optimizasyonu", "Teknik SEO", "İçerik Stratejisi", "Yapay Zeka SEO", "Site İçi SEO", "Site Dışı SEO"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "İstanbul",
-      "addressCountry": "Türkiye"
-    }
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${SITE_CONFIG.url}/#person`,
+        "name": SITE_CONFIG.name,
+        "jobTitle": "SEO ve GEO Danışmanı",
+        "url": SITE_CONFIG.url,
+        "telephone": SITE_CONFIG.phone,
+        "email": SITE_CONFIG.email,
+        "birthDate": "1991-11-02",
+        "sameAs": SITE_CONFIG.sameAs,
+        "description": "İşletmelerin organik arama motorlarında ve yapay zeka (GEO) yanıtlarında üst sıralara çıkmasını sağlayan bağımsız SEO ve GEO Danışmanı.",
+        "knowsAbout": [
+          "SEO",
+          "GEO (Generative Engine Optimization)",
+          "Arama Motoru Optimizasyonu",
+          "Teknik SEO",
+          "Semantik SEO",
+          "Yapay Zeka SEO",
+          "Site İçi SEO",
+          "Site Dışı SEO"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": SITE_CONFIG.addressLocality,
+          "addressCountry": SITE_CONFIG.addressCountry
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${SITE_CONFIG.url}/#organization`,
+        "name": `${SITE_CONFIG.name} - SEO & GEO Danışmanlığı`,
+        "url": SITE_CONFIG.url,
+        "telephone": SITE_CONFIG.phone,
+        "email": SITE_CONFIG.email,
+        "priceRange": "$$$",
+        "image": `${SITE_CONFIG.url}/ekim-demirci.webp`,
+        "sameAs": SITE_CONFIG.sameAs,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": SITE_CONFIG.addressLocality,
+          "addressCountry": SITE_CONFIG.addressCountry
+        }
+      }
+    ]
   };
 
   return (

@@ -4,12 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Calendar, Clock, ArrowRight, Folder } from "lucide-react";
-import { getCategoryBySlug, getPostsByCategory, slugifyCategory } from "@/lib/blog";
-import { formatDate } from "@/lib/blog-utils";
+import { getAllCategories, getCategoryBySlug, getPostsByCategory, slugifyCategory } from "@/lib/blog";
+import { formatDate, decodeHtmlEntities } from "@/lib/blog-utils";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import BlogNewsletter from "@/components/blog/BlogNewsletter";
 
-export const dynamic = "force-dynamic";
+export const dynamicParams = true;
+
+export function generateStaticParams() {
+  const categories = getAllCategories();
+  return categories.map((cat) => ({
+    slug: cat.slug,
+  }));
+}
 
 export async function generateMetadata({
   params,
@@ -134,7 +141,7 @@ export default async function CategoryPage({
                         </Link>
                         {post.excerpt && (
                           <p className="text-gray-400 text-sm mb-4 line-clamp-3">
-                            {post.excerpt}
+                            {decodeHtmlEntities(post.excerpt)}
                           </p>
                         )}
                       </div>

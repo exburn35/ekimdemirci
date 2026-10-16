@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
 
 export default function BlogHero() {
@@ -12,12 +9,7 @@ export default function BlogHero() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
+        <div className="text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-blue-400 mb-6 border border-blue-500/20">
             <FileText className="w-4 h-4" />
             Blog
@@ -30,7 +22,7 @@ export default function BlogHero() {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             SEO, dijital pazarlama ve web geliştirme hakkında güncel makaleler, ipuçları ve rehberler.
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { Search, CheckCircle2, ArrowRight, BarChart3, Zap, Target } from "lucide-react";
 
@@ -31,13 +28,7 @@ export default function SEOAuditSection() {
   return (
     <section id="seo-analizi" className="py-24 bg-[#0a0f25] relative z-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-[#111836] rounded-3xl p-8 md:p-12 overflow-hidden relative shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20"
-        >
+        <div className="bg-[#111836] rounded-3xl p-8 md:p-12 overflow-hidden relative shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20">
           {/* Background Pattern */}
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff15_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl opacity-50 -z-0" />
@@ -60,15 +51,11 @@ export default function SEOAuditSection() {
                 </p>
 
                 <div className="space-y-4 mb-8">
-                  {auditFeatures.map((feature, index) => {
+                  {auditFeatures.map((feature) => {
                     const Icon = feature.icon;
                     return (
-                      <motion.div
+                      <div
                         key={feature.title}
-                        initial={false}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1, duration: 0.5 }}
                         className="flex items-start gap-4"
                       >
                         <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-xl flex items-center justify-center flex-shrink-0 shadow-inner border border-purple-500/30">
@@ -82,7 +69,7 @@ export default function SEOAuditSection() {
                             {feature.description}
                           </p>
                         </div>
-                      </motion.div>
+                      </div>
                     );
                   })}
                 </div>
@@ -137,7 +124,7 @@ export default function SEOAuditSection() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

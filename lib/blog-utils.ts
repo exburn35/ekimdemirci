@@ -1,17 +1,29 @@
 export function decodeHtmlEntities(str: string): string {
   if (!str) return "";
-  return str
-    .replace(/&amp;/g, "&")
-    .replace(/&#x27;|&#39;|&#039;|&apos;/g, "'")
-    .replace(/&lsquo;|&#8216;/g, "‘")
-    .replace(/&rsquo;|&#8217;/g, "’")
-    .replace(/&ldquo;|&#8220;/g, "“")
-    .replace(/&rdquo;|&#8221;/g, "”")
-    .replace(/&ndash;|&#8211;/g, "–")
-    .replace(/&mdash;|&#8212;/g, "—")
-    .replace(/&middot;|&#183;/g, "·")
-    .replace(/&quot;|&#34;/g, '"')
-    .replace(/&nbsp;|&#160;/g, "\u00a0");
+  let decoded = str;
+  // Handle double encoded entities (e.g. &amp;#8217; -> &#8217; -> ')
+  for (let i = 0; i < 2; i++) {
+    decoded = decoded
+      .replace(/&amp;/g, "&")
+      .replace(/&#x27;|&#39;|&#039;|&apos;/g, "'")
+      .replace(/&lsquo;|&#8216;/g, "‘")
+      .replace(/&rsquo;|&#8217;/g, "’")
+      .replace(/&ldquo;|&#8220;/g, "“")
+      .replace(/&rdquo;|&#8221;/g, "”")
+      .replace(/&ndash;|&#8211;/g, "–")
+      .replace(/&mdash;|&#8212;/g, "—")
+      .replace(/&middot;|&#183;/g, "·")
+      .replace(/&quot;|&#34;/g, '"')
+      .replace(/&nbsp;|&#160;/g, "\u00a0")
+      .replace(/&#(\d+);/g, (_, dec) => {
+        try {
+          return String.fromCodePoint(Number(dec));
+        } catch {
+          return "";
+        }
+      });
+  }
+  return decoded;
 }
 
 export function formatDate(dateStr: string): string {

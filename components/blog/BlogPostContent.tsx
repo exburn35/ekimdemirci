@@ -147,7 +147,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                     {/* Introductory Summary (Excerpt) */}
                     {post.excerpt && (
                       <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
-                        {post.excerpt}
+                        {decodeHtmlEntities(post.excerpt)}
                       </p>
                     )}
 

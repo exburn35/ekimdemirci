@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Target, TrendingUp, Settings, Zap } from "lucide-react";
 
 const reasons = [
@@ -34,13 +31,7 @@ export default function WhyWorkWithMe() {
   return (
     <section className="py-24 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               Neden Benimle Çalışmalısınız?
@@ -49,18 +40,14 @@ export default function WhyWorkWithMe() {
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Ölçülebilir sonuçlar veren kanıtlanmış bir yaklaşım
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {reasons.map((reason, index) => {
+          {reasons.map((reason) => {
             const Icon = reason.icon;
             return (
-              <motion.div
+              <div
                 key={reason.number}
-                initial={false}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="glass-strong p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 group"
               >
                 <div className="flex items-start gap-6">
@@ -77,7 +64,7 @@ export default function WhyWorkWithMe() {
                     <p className="text-gray-400 leading-relaxed">{reason.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
