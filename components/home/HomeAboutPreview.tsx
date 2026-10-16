@@ -15,8 +15,13 @@ const tools = [
 ];
 
 export default function HomeAboutPreview() {
-  const photoPath = path.join(process.cwd(), "public", "ekim-demirci.webp");
-  const hasPhoto = fs.existsSync(photoPath);
+  const webpPath = path.join(process.cwd(), "public", "ekim-demirci.webp");
+  const jpgPath = path.join(process.cwd(), "public", "ekim.jpg");
+  const photoSrc = fs.existsSync(webpPath)
+    ? "/ekim-demirci.webp"
+    : fs.existsSync(jpgPath)
+    ? "/ekim.jpg"
+    : null;
 
   const defaultBio = "Ben Ekim Demirci; markaların Google arama sonuçlarında ve yeni nesil yapay zeka arama motorlarında organik olarak büyümesini sağlayan bağımsız SEO ve GEO danışmanıyım. 5 yılı aşkın süredir e-ticaretten sağlığa onlarca sektörde veriye dayalı stratejilerle sürdürülebilir trafik ve ciro artışı yönetiyorum. Teknik mükemmellik, semantik içerik mimarisi ve varlık tabanlı optimizasyonu tek elden kurgulayarak doğrudan sonuç odaklı çalışıyorum.";
 
@@ -27,9 +32,9 @@ export default function HomeAboutPreview() {
           {/* Sol Kolon: Fotoğraf veya Baş Harfli (ED) Şık Avatar Fallback'i */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/10 to-white/5 shadow-2xl flex items-center justify-center">
-              {hasPhoto ? (
+              {photoSrc ? (
                 <Image
-                  src="/ekim-demirci.webp"
+                  src={photoSrc}
                   alt="SEO ve GEO Danışmanı Ekim Demirci"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
@@ -61,7 +66,7 @@ export default function HomeAboutPreview() {
               Ekim Demirci Kimdir?
             </h2>
 
-            {/* Biyografi Metni (bioText doluysa onu, boşsa defaultBio'yu gösterir; placeholder yazısı canlıda görünmez) */}
+            {/* Biyografi Metni (bioText doluysa onu, boşsa defaultBio'yu gösterir) */}
             <div className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
               <p>{SITE_CONFIG.bioText || defaultBio}</p>
             </div>

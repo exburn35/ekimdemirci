@@ -5,8 +5,13 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
 
 export default function HomeHero() {
-  const photoPath = path.join(process.cwd(), "public", "ekim-demirci.webp");
-  const hasPhoto = fs.existsSync(photoPath);
+  const webpPath = path.join(process.cwd(), "public", "ekim-demirci.webp");
+  const jpgPath = path.join(process.cwd(), "public", "ekim.jpg");
+  const photoSrc = fs.existsSync(webpPath)
+    ? "/ekim-demirci.webp"
+    : fs.existsSync(jpgPath)
+    ? "/ekim.jpg"
+    : null;
 
   return (
     <section className="relative bg-[#0a0f25] border-b border-white/5 pt-28 pb-12 md:pt-36 md:pb-16 overflow-hidden">
@@ -28,7 +33,7 @@ export default function HomeHero() {
 
             {/* 2 Cümle (freelance SEO uzmanı ifadesi içeren açıklama) */}
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl font-normal">
-              Arama motorlarında ve üretken yapay zeka yanıtlarında işletmenizin görünürlüğünü kalıcı olarak artıran bağımsız danışmanlık hizmeti sunuyorum. Deneyimli bir freelance SEO uzmanı olarak, veri odaklı semantik stratejiler ve doğrudan iletişimle markanızı dijitalde zirveye taşıyorum.
+              Arama motorlarında ve üretken yapay zeka yanıtlarında işletmeninizin görünürlüğünü kalıcı olarak artıran bağımsız danışmanlık hizmeti sunuyorum. Deneyimli bir freelance SEO uzmanı olarak, veri odaklı semantik stratejiler ve doğrudan iletişimle markanızı dijitalde zirveye taşıyorum.
             </p>
 
             {/* CTA Butonları: /#analiz ve /#vakalar */}
@@ -65,14 +70,14 @@ export default function HomeHero() {
             </div>
           </div>
 
-          {/* Sağ Kolon: Fotoğraf Kartı veya Baş Harfli (ED) Şık Avatar Fallback'i */}
+          {/* Sağ Kolon: Fotoğraf Kartı */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden border border-white/15 bg-gradient-to-b from-white/10 to-white/5 shadow-2xl group flex items-center justify-center">
-              {hasPhoto ? (
+              {photoSrc ? (
                 <>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f25] via-transparent to-transparent z-10 opacity-70" />
                   <Image
-                    src="/ekim-demirci.webp"
+                    src={photoSrc}
                     alt="SEO ve GEO Danışmanı Ekim Demirci"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 420px"
