@@ -6,12 +6,16 @@ import GoogleAIOverviewSection from "@/components/GoogleAIOverviewSection";
 import AILogosSection from "@/components/AILogosSection";
 
 export const metadata: Metadata = {
-  title: "Yapay Zeka SEO Uygulama Stratejileri | Ekim Demirci",
+  title: "Yapay Zeka SEO Uygulama Stratejileri",
   description: "ChatGPT, Perplexity, Claude ve Google AI Overviews için platform bazlı teknik optimizasyonlar, alıntı mekanizmaları ve uygulama stratejileri.",
   alternates: {
     canonical: "/seo-hizmetleri/yapay-zeka-seo",
   },
   openGraph: {
+    title: "Yapay Zeka SEO Uygulama Stratejileri | Ekim Demirci",
+    description: "Yapay zeka arama motorları için platforma özel somut optimizasyon rehberi.",
+  },
+  twitter: {
     title: "Yapay Zeka SEO Uygulama Stratejileri | Ekim Demirci",
     description: "Yapay zeka arama motorları için platforma özel somut optimizasyon rehberi.",
   },

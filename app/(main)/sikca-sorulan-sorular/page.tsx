@@ -1,9 +1,26 @@
+import type { Metadata } from "next";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import ContactForm from "@/components/ContactForm";
 import RelatedPages from "@/components/RelatedPages";
 import FAQ from "@/components/FAQ";
+
+export const metadata: Metadata = {
+  title: "Sıkça Sorulan Sorular",
+  description: "SEO hizmetleri hakkında merak ettiğiniz soruların cevaplarını burada bulabilirsiniz.",
+  alternates: {
+    canonical: "/sikca-sorulan-sorular",
+  },
+  openGraph: {
+    title: "Sıkça Sorulan Sorular | Ekim Demirci",
+    description: "SEO hizmetleri hakkında merak ettiğiniz soruların cevaplarını burada bulabilirsiniz.",
+  },
+  twitter: {
+    title: "Sıkça Sorulan Sorular | Ekim Demirci",
+    description: "SEO hizmetleri hakkında merak ettiğiniz soruların cevaplarını burada bulabilirsiniz.",
+  },
+};
 
 const faqs = [
   {

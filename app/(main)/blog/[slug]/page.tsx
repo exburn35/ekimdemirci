@@ -28,14 +28,22 @@ export async function generateMetadata({
       };
     }
 
+    const rawTitle = post.metaTitle || post.title || "Makale";
+    const cleanTitle = rawTitle.replace(/\s*(?:\||-)\s*Ekim Demirci\s*$/i, "").trim();
+
     return {
-      title: post.metaTitle || post.title || "Makale",
+      title: cleanTitle,
       description: post.metaDescription || post.excerpt || undefined,
       alternates: {
         canonical: `/blog/${params.slug}`,
       },
       openGraph: {
-        title: post.metaTitle || post.title || "Makale",
+        title: `${cleanTitle} | Ekim Demirci`,
+        description: post.metaDescription || post.excerpt || undefined,
+        images: post.ogImage || post.featuredImage ? [post.ogImage || post.featuredImage!] : undefined,
+      },
+      twitter: {
+        title: `${cleanTitle} | Ekim Demirci`,
         description: post.metaDescription || post.excerpt || undefined,
         images: post.ogImage || post.featuredImage ? [post.ogImage || post.featuredImage!] : undefined,
       },

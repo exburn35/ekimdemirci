@@ -23,12 +23,16 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Kurumsal ve B2B SEO Danışmanlığı | Ekim Demirci",
+  title: "Kurumsal ve B2B SEO Danışmanlığı",
   description: "B2B markaları, sanayi kuruluşları ve kurumsal şirketler için uzun karar alma süreçlerine özel dönüşüm odaklı Kurumsal SEO danışmanlığı.",
   alternates: {
     canonical: "/sektorel-seo-hizmetleri/kurumsal-b2b-seo",
   },
   openGraph: {
+    title: "Kurumsal ve B2B SEO Danışmanlığı | Ekim Demirci",
+    description: "B2B şirketleri ve kurumsal markalar için karar verici odaklı B2B SEO çözümleri.",
+  },
+  twitter: {
     title: "Kurumsal ve B2B SEO Danışmanlığı | Ekim Demirci",
     description: "B2B şirketleri ve kurumsal markalar için karar verici odaklı B2B SEO çözümleri.",
   },

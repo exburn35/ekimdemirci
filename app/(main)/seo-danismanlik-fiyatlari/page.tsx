@@ -6,10 +6,18 @@ import RelatedPages from "@/components/RelatedPages";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "SEO Danışmanlık Fiyatları 2026 | Ekim Demirci",
+  title: "SEO Danışmanlık Fiyatları 2026",
   description: "Şeffaf SEO danışmanlık fiyatları ve paketleri. Küçük işletmelerden kurumsal markalara kadar bütçenize uygun profesyonel SEO fiyatlandırma modelleri.",
   alternates: {
     canonical: "/seo-danismanlik-fiyatlari",
+  },
+  openGraph: {
+    title: "SEO Danışmanlık Fiyatları 2026 | Ekim Demirci",
+    description: "Şeffaf SEO danışmanlık fiyatları ve paketleri. Küçük işletmelerden kurumsal markalara kadar bütçenize uygun profesyonel SEO fiyatlandırma modelleri.",
+  },
+  twitter: {
+    title: "SEO Danışmanlık Fiyatları 2026 | Ekim Demirci",
+    description: "Şeffaf SEO danışmanlık fiyatları ve paketleri. Küçük işletmelerden kurumsal markalara kadar bütçenize uygun profesyonel SEO fiyatlandırma modelleri.",
   },
 };
 

@@ -2,8 +2,16 @@ import { Metadata } from "next";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Kullanım Koşulları | Ekim Demirci",
+  title: "Kullanım Koşulları",
   description: "Ekim Demirci web sitesi kullanım koşulları ve şartları.",
+  openGraph: {
+    title: "Kullanım Koşulları | Ekim Demirci",
+    description: "Ekim Demirci web sitesi kullanım koşulları ve şartları.",
+  },
+  twitter: {
+    title: "Kullanım Koşulları | Ekim Demirci",
+    description: "Ekim Demirci web sitesi kullanım koşulları ve şartları.",
+  },
 };
 
 export default function TermsOfUsePage() {

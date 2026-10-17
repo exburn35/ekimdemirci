@@ -2,8 +2,16 @@ import { Metadata } from "next";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Gizlilik Politikası | Ekim Demirci",
+  title: "Gizlilik Politikası",
   description: "Ekim Demirci web sitesi gizlilik politikası ve çerez kullanımı bilgileri.",
+  openGraph: {
+    title: "Gizlilik Politikası | Ekim Demirci",
+    description: "Ekim Demirci web sitesi gizlilik politikası ve çerez kullanımı bilgileri.",
+  },
+  twitter: {
+    title: "Gizlilik Politikası | Ekim Demirci",
+    description: "Ekim Demirci web sitesi gizlilik politikası ve çerez kullanımı bilgileri.",
+  },
 };
 
 export default function PrivacyPolicyPage() {

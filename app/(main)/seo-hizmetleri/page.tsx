@@ -3,12 +3,16 @@ import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Kapsamlı SEO Hizmetleri | Ekim Demirci",
+  title: "Kapsamlı SEO Hizmetleri",
   description: "Google arama sıralamalarında ve yapay zeka yanıtlarında görünürlüğünüzü artırmak için Teknik SEO, Sayfa İçi SEO, Sayfa Dışı SEO ve Yapay Zeka SEO (GEO) danışmanlık hizmetleri.",
   alternates: {
     canonical: "/seo-hizmetleri",
   },
   openGraph: {
+    title: "Kapsamlı SEO Hizmetleri | Ekim Demirci",
+    description: "Web siteniz için veri ve yapay zeka odaklı modern SEO danışmanlığı çözümleri.",
+  },
+  twitter: {
     title: "Kapsamlı SEO Hizmetleri | Ekim Demirci",
     description: "Web siteniz için veri ve yapay zeka odaklı modern SEO danışmanlığı çözümleri.",
   },

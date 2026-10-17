@@ -1,8 +1,16 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ücretsiz SEO Araçları | Ekim Demirci",
+  title: "Ücretsiz SEO Araçları",
   description: "Web sitenizi analiz edebileceğiniz ücretsiz SEO araçları rehberi.",
+  openGraph: {
+    title: "Ücretsiz SEO Araçları | Ekim Demirci",
+    description: "Web sitenizi analiz edebileceğiniz ücretsiz SEO araçları rehberi.",
+  },
+  twitter: {
+    title: "Ücretsiz SEO Araçları | Ekim Demirci",
+    description: "Web sitenizi analiz edebileceğiniz ücretsiz SEO araçları rehberi.",
+  },
 };
 
 export default function ToolsPage() {

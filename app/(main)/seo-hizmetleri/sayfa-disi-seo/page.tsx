@@ -3,12 +3,16 @@ import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Sayfa Dışı (Off-Page) SEO Danışmanlığı | Ekim Demirci",
+  title: "Sayfa Dışı (Off-Page) SEO Danışmanlığı",
   description: "Organik marka otoritesi inşası, dijital PR, doğal backlink profil yönetimi ve zararlı link temizliği içeren uzman Sayfa Dışı SEO danışmanlığı.",
   alternates: {
     canonical: "/seo-hizmetleri/sayfa-disi-seo",
   },
   openGraph: {
+    title: "Sayfa Dışı (Off-Page) SEO Danışmanlığı | Ekim Demirci",
+    description: "Markanızın sektördeki dijital otoritesini ve arama motoru güvenini artıran çözümler.",
+  },
+  twitter: {
     title: "Sayfa Dışı (Off-Page) SEO Danışmanlığı | Ekim Demirci",
     description: "Markanızın sektördeki dijital otoritesini ve arama motoru güvenini artıran çözümler.",
   },

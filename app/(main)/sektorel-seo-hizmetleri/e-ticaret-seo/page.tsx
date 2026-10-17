@@ -21,12 +21,16 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "E-Ticaret SEO Danışmanlığı | Ekim Demirci",
+  title: "E-Ticaret SEO Danışmanlığı",
   description: "Online satışlarınızı ve organik cironuzu artırmak için ürün ve kategori şemaları, filtre optimizasyonu ve semantik içerik odaklı E-Ticaret SEO danışmanlığı.",
   alternates: {
     canonical: "/sektorel-seo-hizmetleri/e-ticaret-seo",
   },
   openGraph: {
+    title: "E-Ticaret SEO Danışmanlığı | Ekim Demirci",
+    description: "E-ticaret siteleri için kurguladığım semantik şema ve dönüşüm odaklı SEO çözümleri.",
+  },
+  twitter: {
     title: "E-Ticaret SEO Danışmanlığı | Ekim Demirci",
     description: "E-ticaret siteleri için kurguladığım semantik şema ve dönüşüm odaklı SEO çözümleri.",
   },

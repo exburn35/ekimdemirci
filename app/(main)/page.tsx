@@ -11,11 +11,22 @@ import HomePricingFactors from "@/components/home/HomePricingFactors";
 import HomeAuditForm from "@/components/home/HomeAuditForm";
 import HomeFaq from "@/components/home/HomeFaq";
 import HomeLatestBlog from "@/components/home/HomeLatestBlog";
+import type { Metadata } from "next";
 import { getAllBlogPosts } from "@/lib/blog";
 
-export const metadata = {
-  title: "SEO ve GEO Danışmanı Ekim Demirci",
+export const metadata: Metadata = {
+  title: {
+    absolute: "SEO ve GEO Danışmanı Ekim Demirci",
+  },
   description: "Arama motorlarında ve üretken yapay zeka (GEO) yanıtlarında işletmenizin görünürlüğünü artıran bağımsız freelance SEO uzmanı Ekim Demirci.",
+  openGraph: {
+    title: "SEO ve GEO Danışmanı Ekim Demirci",
+    description: "Arama motorlarında ve üretken yapay zeka (GEO) yanıtlarında işletmenizin görünürlüğünü artıran bağımsız freelance SEO uzmanı Ekim Demirci.",
+  },
+  twitter: {
+    title: "SEO ve GEO Danışmanı Ekim Demirci",
+    description: "Arama motorlarında ve üretken yapay zeka (GEO) yanıtlarında işletmenizin görünürlüğünü artıran bağımsız freelance SEO uzmanı Ekim Demirci.",
+  },
 };
 
 export default function Home() {

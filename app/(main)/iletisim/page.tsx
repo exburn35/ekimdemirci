@@ -3,13 +3,17 @@ import Breadcrumb from "@/components/Breadcrumb";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "İletişim | Ekim Demirci",
+  title: "İletişim",
   description: "SEO hizmetlerim hakkında bilgi almak ve projenizi konuşmak için benimle iletişime geçin. Ücretsiz ön analiz ve strateji görüşmesi için formu doldurun.",
   alternates: {
     canonical: "/iletisim",
   },
   openGraph: {
-    title: "İletişim | Ekim Demirci - SEO Uzmanı",
+    title: "İletişim | Ekim Demirci",
+    description: "SEO hizmetlerim hakkında bilgi almak için benimle iletişime geçin.",
+  },
+  twitter: {
+    title: "İletişim | Ekim Demirci",
     description: "SEO hizmetlerim hakkında bilgi almak için benimle iletişime geçin.",
   },
 };

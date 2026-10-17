@@ -16,10 +16,18 @@ import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Sektörel SEO Hizmetleri | Ekim Demirci",
+  title: "Sektörel SEO Hizmetleri",
   description: "Diş hekimliği, e-ticaret, hukuk, estetik, sağlık ve kurumsal B2B gibi farklı sektörler için özelleştirilmiş veri odaklı SEO danışmanlığı.",
   alternates: {
     canonical: "/sektorel-seo-hizmetleri",
+  },
+  openGraph: {
+    title: "Sektörel SEO Hizmetleri | Ekim Demirci",
+    description: "Diş hekimliği, e-ticaret, hukuk, estetik, sağlık ve kurumsal B2B gibi farklı sektörler için özelleştirilmiş veri odaklı SEO danışmanlığı.",
+  },
+  twitter: {
+    title: "Sektörel SEO Hizmetleri | Ekim Demirci",
+    description: "Diş hekimliği, e-ticaret, hukuk, estetik, sağlık ve kurumsal B2B gibi farklı sektörler için özelleştirilmiş veri odaklı SEO danışmanlığı.",
   },
 };
 

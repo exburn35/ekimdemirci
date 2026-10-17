@@ -21,12 +21,16 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Yerel İşletme SEO Danışmanlığı | Ekim Demirci",
+  title: "Yerel İşletme SEO Danışmanlığı",
   description: "Bölgesel işletmeniz, hizmet merkeziniz ve çoklu şubeleriniz için Google Haritalar (GMB), NAP tutarlılığı ve konuma özel Local SEO danışmanlığı.",
   alternates: {
     canonical: "/sektorel-seo-hizmetleri/yerel-isletme-seo",
   },
   openGraph: {
+    title: "Yerel İşletme SEO Danışmanlığı | Ekim Demirci",
+    description: "Yerel işletmeler ve bölgesel hizmet sunan markalar için harita ve lokal arama görünürlüğü.",
+  },
+  twitter: {
     title: "Yerel İşletme SEO Danışmanlığı | Ekim Demirci",
     description: "Yerel işletmeler ve bölgesel hizmet sunan markalar için harita ve lokal arama görünürlüğü.",
   },

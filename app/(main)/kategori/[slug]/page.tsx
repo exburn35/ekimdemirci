@@ -31,14 +31,20 @@ export async function generateMetadata({
     };
   }
 
+  const pageTitle = `${category.name} - SEO Makaleleri & Rehberler`;
+
   return {
-    title: `${category.name} - SEO Makaleleri & Rehberler | Ekim Demirci`,
+    title: pageTitle,
     description: category.description,
     alternates: {
       canonical: `/kategori/${params.slug}`,
     },
     openGraph: {
-      title: `${category.name} - SEO Makaleleri & Rehberler | Ekim Demirci`,
+      title: `${pageTitle} | Ekim Demirci`,
+      description: category.description,
+    },
+    twitter: {
+      title: `${pageTitle} | Ekim Demirci`,
       description: category.description,
     },
   };

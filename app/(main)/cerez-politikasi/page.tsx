@@ -2,8 +2,16 @@ import { Metadata } from "next";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Çerez Politikası | Ekim Demirci",
+  title: "Çerez Politikası",
   description: "Ekim Demirci web sitesi çerez kullanımı ve politikası.",
+  openGraph: {
+    title: "Çerez Politikası | Ekim Demirci",
+    description: "Ekim Demirci web sitesi çerez kullanımı ve politikası.",
+  },
+  twitter: {
+    title: "Çerez Politikası | Ekim Demirci",
+    description: "Ekim Demirci web sitesi çerez kullanımı ve politikası.",
+  },
 };
 
 export default function CookiesPolicyPage() {

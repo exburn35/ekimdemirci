@@ -7,12 +7,16 @@ import GEOAIToolsSection from "@/components/GEOAIToolsSection";
 import GEODetailedContent from "@/components/GEODetailedContent";
 
 export const metadata: Metadata = {
-  title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
+  title: "GEO (Generative Engine Optimization) Danışmanlığı",
   description: "Google'ın güncel arama ve RAG mimarisine dayalı teknik GEO danışmanlığı. Google AI Overviews, ChatGPT Search ve Perplexity'de birincil kaynak olun.",
   alternates: {
     canonical: "/geo-danismanligi",
   },
   openGraph: {
+    title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
+    description: "Yapay zeka arama motorları için ileri seviye GEO danışmanlığı. Markanızı ChatGPT, Gemini ve Perplexity'de önerilen marka yapın.",
+  },
+  twitter: {
     title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
     description: "Yapay zeka arama motorları için ileri seviye GEO danışmanlığı. Markanızı ChatGPT, Gemini ve Perplexity'de önerilen marka yapın.",
   },

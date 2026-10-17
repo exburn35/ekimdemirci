@@ -24,12 +24,16 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Sağlık ve Klinik SEO Danışmanlığı | Ekim Demirci",
+  title: "Sağlık ve Klinik SEO Danışmanlığı",
   description: "Doktorlar, hastaneler ve diş klinikleri için YMYL, E-E-A-T ve MedicalWebPage şeması uyumlu Sağlık ve Klinik SEO danışmanlığı hizmetleri.",
   alternates: {
     canonical: "/sektorel-seo-hizmetleri/saglik-ve-klinik-seo",
   },
   openGraph: {
+    title: "Sağlık ve Klinik SEO Danışmanlığı | Ekim Demirci",
+    description: "Medikal sektör ve klinikler için Google YMYL ve E-E-A-T standartlarında SEO uzmanlığı.",
+  },
+  twitter: {
     title: "Sağlık ve Klinik SEO Danışmanlığı | Ekim Demirci",
     description: "Medikal sektör ve klinikler için Google YMYL ve E-E-A-T standartlarında SEO uzmanlığı.",
   },

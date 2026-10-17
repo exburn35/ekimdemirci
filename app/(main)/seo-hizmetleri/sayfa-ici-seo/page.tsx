@@ -3,12 +3,16 @@ import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Sayfa İçi (On-Page) SEO Danışmanlığı | Ekim Demirci",
+  title: "Sayfa İçi (On-Page) SEO Danışmanlığı",
   description: "Arama niyetine (Search Intent) tam uyumlu semantik içerik kurgusu, iç linkleme ağı, H1-H6 hiyerarşisi ve meta optimizasyonu sunan Sayfa İçi SEO danışmanlığı.",
   alternates: {
     canonical: "/seo-hizmetleri/sayfa-ici-seo",
   },
   openGraph: {
+    title: "Sayfa İçi (On-Page) SEO Danışmanlığı | Ekim Demirci",
+    description: "İçeriklerinizi hem Google botları hem de kullanıcılar için dönüşüm odaklı optimize edin.",
+  },
+  twitter: {
     title: "Sayfa İçi (On-Page) SEO Danışmanlığı | Ekim Demirci",
     description: "İçeriklerinizi hem Google botları hem de kullanıcılar için dönüşüm odaklı optimize edin.",
   },

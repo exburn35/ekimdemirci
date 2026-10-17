@@ -3,12 +3,16 @@ import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Teknik SEO Danışmanlığı | Ekim Demirci",
+  title: "Teknik SEO Danışmanlığı",
   description: "Core Web Vitals, tarama bütçesi (crawl budget), JSON-LD şema kodlaması ve sunucu altyapı iyileştirmeleri içeren uzman Teknik SEO danışmanlığı.",
   alternates: {
     canonical: "/seo-hizmetleri/teknik-seo",
   },
   openGraph: {
+    title: "Teknik SEO Danışmanlığı | Ekim Demirci",
+    description: "Arama motoru botlarının sitenizi engelsiz taraması ve indekslemesi için teknik SEO çözümleri.",
+  },
+  twitter: {
     title: "Teknik SEO Danışmanlığı | Ekim Demirci",
     description: "Arama motoru botlarının sitenizi engelsiz taraması ve indekslemesi için teknik SEO çözümleri.",
   },

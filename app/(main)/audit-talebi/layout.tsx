@@ -1,12 +1,16 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SEO Audit Talebi | Ekim Demirci",
+  title: "SEO Audit Talebi",
   description: "Web sitenizin SEO durumunu ücretsiz analiz edin. Detaylı rapor ve öncelikli öneriler ile iyileştirme fırsatlarını keşfedin.",
   alternates: {
     canonical: "/audit-talebi",
   },
   openGraph: {
+    title: "SEO Audit Talebi | Ekim Demirci",
+    description: "Web sitenizin SEO durumunu ücretsiz analiz edin.",
+  },
+  twitter: {
     title: "SEO Audit Talebi | Ekim Demirci",
     description: "Web sitenizin SEO durumunu ücretsiz analiz edin.",
   },

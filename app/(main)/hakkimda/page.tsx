@@ -23,6 +23,10 @@ export const metadata: Metadata = {
     title: "Hakkımda | Ekim Demirci",
     description: "Markaların potansiyeline ulaşmasına yardımcı olan, 5+ yıllık deneyime sahip Uzman SEO Uzmanı ve Danışmanı Ekim Demirci hakkında bilgi edinin.",
   },
+  twitter: {
+    title: "Hakkımda | Ekim Demirci",
+    description: "Markaların potansiyeline ulaşmasına yardımcı olan, 5+ yıllık deneyime sahip Uzman SEO Uzmanı ve Danışmanı Ekim Demirci hakkında bilgi edinin.",
+  },
 };
 
 export default function About() {
