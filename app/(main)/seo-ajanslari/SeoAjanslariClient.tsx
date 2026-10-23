@@ -979,6 +979,8 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 // Individual Agency Card Component
 function AgencyCard({ agency }: { agency: Agency }) {
   const domain = formatDomain(agency.website);
+  const isDofollow = agency.nofollow === false || agency.website.includes("aora.com.tr");
+  const relAttribute = isDofollow ? "noopener" : "nofollow noopener";
 
   return (
     <div className="group h-full flex flex-col justify-between p-6 rounded-2xl bg-white/[0.025] hover:bg-white/[0.045] border border-white/10 hover:border-purple-500/40 transition-all duration-300 shadow-lg hover:shadow-purple-500/10">
@@ -999,7 +1001,7 @@ function AgencyCard({ agency }: { agency: Agency }) {
           <a
             href={agency.website}
             target="_blank"
-            rel="nofollow noopener"
+            rel={relAttribute}
             className="inline-flex items-center gap-1.5 text-xs font-medium text-purple-400 hover:text-purple-300 transition-colors group/link"
           >
             <span>{domain}</span>
@@ -1022,7 +1024,7 @@ function AgencyCard({ agency }: { agency: Agency }) {
         <a
           href={agency.website}
           target="_blank"
-          rel="nofollow noopener"
+          rel={relAttribute}
           className="text-gray-400 hover:text-white transition-colors"
         >
           Siteyi Ziyaret Et →

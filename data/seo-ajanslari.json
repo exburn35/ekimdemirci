@@ -8,7 +8,7 @@
       "website": "https://www.adsera.co",
       "city": "İstanbul",
       "description": "Adsera, İstanbul merkezli bir dijital pazarlama ajansıdır ve performans pazarlama, veri analizi, dönüşüm optimizasyonu ve medya planlama hizmetleri sunar. SEO tarafında teknik SEO, site içi ve site dışı SEO, e-ticaret SEO, yerel SEO ve GEO çalışmaları yürütür.",
-      "nofollow": false
+      "nofollow": true
     },
     {
       "slug": "adverpeak",
@@ -120,7 +120,7 @@
       "website": "https://www.crabsmedia.com",
       "city": "İstanbul",
       "description": "Crabs Media, Şişli'de ofisi bulunan ve web tasarım, SEO ve dijital pazarlama hizmetleri veren bir ajanstır. Teknik, site içi, site dışı ve yerel SEO ile GEO, backlink, reklam yönetimi, itibar yönetimi ve sağlık turizmi pazarlaması alanlarında çalışır.",
-      "nofollow": false
+      "nofollow": true
     },
     {
       "slug": "creatives-data",
