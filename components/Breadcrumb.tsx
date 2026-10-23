@@ -4,9 +4,11 @@ import { decodeHtmlEntities, type BreadcrumbItem } from "@/lib/breadcrumbs";
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
+  className?: string;
+  containerClassName?: string;
 }
 
-export default function Breadcrumb({ items }: BreadcrumbProps) {
+export default function Breadcrumb({ items, className, containerClassName }: BreadcrumbProps) {
   if (!items || items.length === 0) return null;
 
   // Ensure items start with Anasayfa
@@ -48,8 +50,8 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <nav aria-label="Breadcrumb" className="w-full pt-24 pb-4 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto">
+      <nav aria-label="Breadcrumb" className={`w-full pt-24 pb-4 px-4 sm:px-6 lg:px-8 relative z-10 ${className || ""}`}>
+        <div className={containerClassName || "max-w-7xl mx-auto"}>
           <div className="inline-flex max-w-full">
             <ol className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-900/70 border border-white/10 backdrop-blur-xl shadow-lg shadow-black/40 text-xs sm:text-sm max-w-full overflow-hidden">
               {normalizedItems.map((item, index) => {

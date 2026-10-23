@@ -104,7 +104,10 @@ export default function SeoAjanslariPage() {
   return (
     <>
       {/* Breadcrumb with schema */}
-      <Breadcrumb items={[{ name: "SEO Ajansları", href: "/seo-ajanslari" }]} />
+      <Breadcrumb
+        items={[{ name: "SEO Ajansları", href: "/seo-ajanslari" }]}
+        containerClassName="max-w-[1920px] mx-auto xl:px-4 2xl:px-8"
+      />
 
       {/* JSON-LD Schemas */}
       <script

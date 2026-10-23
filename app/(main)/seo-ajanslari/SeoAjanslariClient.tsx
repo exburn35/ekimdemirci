@@ -8,18 +8,12 @@ import {
   Building2,
   MapPin,
   CheckCircle2,
-  HelpCircle,
   ChevronDown,
   ArrowDown,
   Send,
   Loader2,
   Calendar,
-  Sparkles,
   ShieldCheck,
-  Layers,
-  TrendingUp,
-  FileText,
-  DollarSign,
   AlertCircle,
   Filter,
 } from "lucide-react";
@@ -194,8 +188,8 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+        <div className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="text-center max-w-4xl mx-auto">
             {/* Badges */}
             <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20">
@@ -244,29 +238,24 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
       </section>
 
       {/* Guide & Content Section */}
-      <section className="py-12 relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="py-12 relative z-10 max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 space-y-16">
         {/* TL;DR & Önemli Çıkarımlar */}
         <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-950/30 via-white/[0.02] to-blue-950/30 border border-purple-500/20 backdrop-blur-sm relative overflow-hidden shadow-xl">
           <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-purple-500 via-blue-500 to-indigo-500" />
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-              <Sparkles className="w-5 h-5" />
-            </div>
-            <h2 className="text-2xl font-bold text-white tracking-tight">TL;DR & Önemli Çıkarımlar</h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-6">TL;DR & Önemli Çıkarımlar</h2>
 
           <ul className="space-y-3.5 mb-6 text-gray-300">
             <li className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
-              <span>Bu sayfa, Türkiye&apos;de SEO hizmeti veren ajansların şehir bazlı listesini ve doğru ajansı seçmek için pratik bir rehberi bir arada sunar.</span>
+              <span>Bu sayfa, Türkiye&apos;de SEO hizmeti veren ajansların şehir bazlı listesini ve doğru ajansı seçmek için pratik bir rehber niteliğindedir.</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
-              <span>Listede sıralama yoktur. Ajanslar şehre ve alfabetik sıraya göre dizilmiştir; hiçbir ajans listede yer almak için ücret ödemez.</span>
+              <span>Listede herhangi bir sıralama yoktur. Ajanslar şehre ve alfabetik sıraya göre dizilmiştir.</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
-              <span>Dizindeki her ajansın web sitesi açılarak SEO hizmeti verdiği doğrulanmıştır.</span>
+              <span>Bu sayfada bulunan her ajansın web sitesi açılarak SEO hizmeti verdiği doğrulanarak eklenmiştir.</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
@@ -288,22 +277,23 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
           </div>
 
           {/* Şeffaflık Notu */}
-          <div className="mt-6 p-4 rounded-xl bg-purple-500/[0.07] border border-purple-500/20 text-sm text-purple-200/90 leading-relaxed flex items-start gap-3">
-            <ShieldCheck className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
+          <div className="mt-6 p-4 rounded-xl bg-purple-500/[0.07] border border-purple-500/20 text-sm text-purple-200/90 leading-relaxed">
             <p>
-              <strong className="text-white font-semibold">Şeffaflık notu:</strong> Ben de bağımsız bir SEO ve GEO danışmanıyım. Bu nedenle listede kimseyi öne çıkarmıyor, sıralama yapmıyor ve ajans tanıtımlarında yalnızca doğrulanabilir bilgilere yer veriyorum. Dizin düzenli olarak güncellenir; son güncelleme tarihi sayfanın üst kısmında yer alır.
+              <strong className="text-white font-semibold">Şeffaflık notu:</strong> Ben de bağımsız bir{" "}
+              <Link
+                href="/hakkimda"
+                className="text-purple-300 hover:text-purple-200 font-semibold underline underline-offset-2"
+              >
+                SEO ve GEO danışmanıyım
+              </Link>
+              . Bu nedenle listede kimseyi öne çıkarmıyor, sıralama yapmıyor ve ajans tanıtımlarında yalnızca doğrulanabilir bilgilere yer veriyorum.
             </p>
           </div>
         </div>
 
         {/* SEO Ajansı Nedir, Ne Yapar? */}
         <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-              <Layers className="w-5 h-5" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">SEO Ajansı Nedir, Ne Yapar?</h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">SEO Ajansı Nedir, Ne Yapar?</h2>
 
           <p className="text-gray-300 leading-relaxed">
             SEO ajansı, bir web sitesinin organik arama görünürlüğünü artırmak için teknik altyapıyı, içeriği ve site dışı otoriteyi birlikte yöneten hizmet firmasıdır. İyi bir ajans yalnızca sıralama takibi yapmaz; arama trafiğini iş sonuçlarına (form, satış, randevu) bağlar.
@@ -365,12 +355,9 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
         {/* SEO Ajansı Seçerken Nelere Dikkat Edilmeli? */}
         <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-              <TrendingUp className="w-5 h-5" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">SEO Ajansı Seçerken Nelere Dikkat Edilmeli?</h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            SEO Ajansı Seçerken Nelere Dikkat Edilmeli?
+          </h2>
 
           <p className="text-gray-300 leading-relaxed">
             Doğru SEO ajansı; sektörünüzü tanıyan, ne yaptığını şeffaf biçimde raporlayan ve sonuçları sıralamayla değil iş hedeflerinizle ölçen ajanstır. Teklifleri karşılaştırırken şu yedi kritere bakın:
@@ -378,70 +365,49 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all">
-              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs flex items-center justify-center font-bold">1</span>
-                Sektör Deneyimi
-              </h3>
+              <h3 className="font-semibold text-white mb-2">1. Sektör Deneyimi</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 E-ticaret, sağlık, B2B ve yerel işletme SEO&apos;su birbirinden çok farklıdır. Ajanstan sizin sektörünüzdeki somut vaka örneklerini isteyin.
               </p>
             </div>
 
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all">
-              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs flex items-center justify-center font-bold">2</span>
-                Teknik Yetkinlik
-              </h3>
+              <h3 className="font-semibold text-white mb-2">2. Teknik Yetkinlik</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 Ajansın sitenizin altyapısını (Next.js, WordPress, Shopify, özel yazılım) anlayıp anlamadığını ve geliştirici ekibinizle nasıl çalışacağını sorun.
               </p>
             </div>
 
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all">
-              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs flex items-center justify-center font-bold">3</span>
-                Strateji Önce, İş Listesi Sonra
-              </h3>
+              <h3 className="font-semibold text-white mb-2">3. Strateji Önce, İş Listesi Sonra</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 İyi bir teklif &quot;ayda X içerik, Y backlink&quot; ile başlamaz; sitenizin durumuna dair bir analiz ve önceliklendirilmiş bir plan içerir.
               </p>
             </div>
 
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all">
-              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs flex items-center justify-center font-bold">4</span>
-                Raporlama Şeffaflığı
-              </h3>
+              <h3 className="font-semibold text-white mb-2">4. Raporlama Şeffaflığı</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 Raporların neyi ölçtüğünü sorun. Yalnızca sıralama raporu yetersizdir; organik trafik, dönüşüm ve gelir etkisi de raporlanmalıdır.
               </p>
             </div>
 
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all">
-              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs flex items-center justify-center font-bold">5</span>
-                Garanti Vaadi Yok
-              </h3>
+              <h3 className="font-semibold text-white mb-2">5. Garanti Vaadi Yok</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 &quot;İlk sıra garantisi&quot; veren ajanstan uzak durun. Google sıralamayı kimsenin garanti edemeyeceğini açıkça belirtir.
               </p>
             </div>
 
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all">
-              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs flex items-center justify-center font-bold">6</span>
-                Backlink Yöntemi
-              </h3>
+              <h3 className="font-semibold text-white mb-2">6. Backlink Yöntemi</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 Satın alınmış link ağları kısa vadede sonuç verse de cezaya yol açabilir. Ajansın link kazanma yöntemini ve örnek yayınları görmek isteyin.
               </p>
             </div>
 
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all md:col-span-2">
-              <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs flex items-center justify-center font-bold">7</span>
-                Sözleşme ve Veri Sahipliği
-              </h3>
+              <h3 className="font-semibold text-white mb-2">7. Sözleşme ve Veri Sahipliği</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 Asgari süreyi, fesih şartlarını ve Search Console, GA4, içerik gibi varlıkların size ait kalıp kalmayacağını yazılı olarak netleştirin.
               </p>
@@ -451,12 +417,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
         {/* SEO Ajansına Sorulması Gereken Sorular */}
         <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-sm space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-              <HelpCircle className="w-5 h-5" />
-            </div>
-            <h2 className="text-2xl font-bold text-white tracking-tight">SEO Ajansına Sorulması Gereken Sorular</h2>
-          </div>
+          <h2 className="text-2xl font-bold text-white tracking-tight">SEO Ajansına Sorulması Gereken Sorular</h2>
 
           <p className="text-gray-300">
             İlk görüşmede şu soruların cevabı, ajansın nasıl çalıştığını hızla gösterir:
@@ -484,14 +445,9 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
         {/* SEO Ajansı mı, Freelance Danışman mı, Kurum İçi Ekip mi? */}
         <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-              <Building2 className="w-5 h-5" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              SEO Ajansı mı, Freelance Danışman mı, Kurum İçi Ekip mi?
-            </h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            SEO Ajansı mı, Freelance Danışman mı, Kurum İçi Ekip mi?
+          </h2>
 
           <p className="text-gray-300 leading-relaxed">
             Ajans; geniş ekip ve çok kanallı hizmet ister, danışman; kıdemli bir uzmanla doğrudan çalışmak ister, kurum içi ekip ise SEO&apos;yu şirketin günlük işinin parçası yapmak isteyen işletmeler için uygundur. Doğru seçim bütçenize, sitenizin büyüklüğüne ve iç ekibinizin teknik kapasitesine bağlıdır.
@@ -553,14 +509,9 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
         {/* SEO Ajansı Fiyatları Neye Göre Belirlenir? */}
         <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-              <DollarSign className="w-5 h-5" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              SEO Ajansı Fiyatları Neye Göre Belirlenir?
-            </h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            SEO Ajansı Fiyatları Neye Göre Belirlenir?
+          </h2>
 
           <p className="text-gray-300 leading-relaxed">
             SEO ajansı fiyatları sabit bir tarifeye göre değil; sitenin büyüklüğüne, rekabet düzeyine, hedef pazar sayısına ve hizmetin kapsamına göre belirlenir. Aynı sektörde iki teklif arasında birkaç kat fark olması normaldir, çünkü teklifler genellikle farklı işleri kapsar.
@@ -604,7 +555,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
       {/* Directory Section Anchor */}
       <section id="ajans-dizini" className="py-16 relative bg-[#070b1a] border-t border-white/5 scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           {/* Section Header */}
           <div className="mb-10 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">
@@ -700,11 +651,10 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
                 const cityAgencies = cityGroups[cityObj.name] || [];
                 return (
                   <div key={cityObj.name} className="space-y-6">
-                    <div className="flex items-center gap-3 pb-3 border-b border-white/10">
-                      <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
-                        <MapPin className="w-5 h-5 text-purple-400" />
+                    <div className="pb-3 border-b border-white/10">
+                      <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                         <span>{cityObj.name} SEO Ajansları</span>
-                        <span className="text-sm font-normal text-gray-400">· {cityAgencies.length} ajans</span>
+                        <span className="text-sm font-normal text-gray-400 ml-2">· {cityAgencies.length} ajans</span>
                       </h2>
                     </div>
 
@@ -723,9 +673,8 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
               {/* Selected city headline if specific city without search query */}
               {selectedCity !== "all" && !searchQuery && (
                 <div className="mb-6 flex items-center justify-between pb-3 border-b border-white/10">
-                  <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
-                    <MapPin className="w-5 h-5 text-purple-400" />
-                    <span>{selectedCity} SEO Ajansları</span>
+                  <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    {selectedCity} SEO Ajansları
                   </h2>
                   <span className="text-sm text-gray-400">{matchingCount} ajans listeleniyor</span>
                 </div>
@@ -768,14 +717,13 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
       {/* Directory Submission / Edit Section */}
       <section id="dizine-ekleme" className="py-20 relative bg-[#050814] scroll-mt-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-purple-950/20 via-white/[0.02] to-blue-950/20 border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="max-w-5xl mx-auto p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-purple-950/20 via-white/[0.02] to-blue-950/20 border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden">
             {/* Ambient glow */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 mb-4">
-                <Building2 className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 mb-4">
                 Ücretsiz Dizin Kaydı
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-4">
@@ -788,8 +736,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
             {/* Conditions Card */}
             <div className="mb-8 p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-sm text-gray-300 space-y-2.5">
-              <h3 className="font-semibold text-white flex items-center gap-2 text-sm">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <h3 className="font-semibold text-white text-sm">
                 Dizine eklenmek için üç koşul aranır:
               </h3>
               <ol className="list-decimal list-inside space-y-1.5 text-gray-400 text-xs sm:text-sm pl-1">
@@ -944,50 +891,52 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
       {/* SSS (Sıkça Sorulan Sorular) Section */}
       <section className="py-20 relative bg-[#070b1a] border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-white mb-3 tracking-tight">Sıkça Sorulan Sorular</h2>
-            <p className="text-gray-400 text-sm sm:text-base">
-              SEO ajansları ve seçim süreçleri hakkında merak edilen en temel soruların yanıtları.
-            </p>
-          </div>
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-extrabold text-white mb-3 tracking-tight">Sıkça Sorulan Sorular</h2>
+              <p className="text-gray-400 text-sm sm:text-base">
+                SEO ajansları ve seçim süreçleri hakkında merak edilen en temel soruların yanıtları.
+              </p>
+            </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => {
-              const isOpen = openFaqIndex === index;
-              return (
-                <div
-                  key={index}
-                  className="rounded-2xl bg-white/[0.02] border border-white/10 overflow-hidden transition-all duration-200 hover:border-white/20"
-                >
-                  <button
-                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
-                    aria-expanded={isOpen}
+            <div className="space-y-4">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaqIndex === index;
+                return (
+                  <div
+                    key={index}
+                    className="rounded-2xl bg-white/[0.02] border border-white/10 overflow-hidden transition-all duration-200 hover:border-white/20"
                   >
-                    <span className="font-semibold text-white text-base sm:text-lg">{faq.question}</span>
-                    <ChevronDown
-                      className={`w-5 h-5 text-purple-400 transition-transform duration-200 flex-shrink-0 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-sm text-gray-300 leading-relaxed border-t border-white/5">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                    <button
+                      onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                      className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="font-semibold text-white text-base sm:text-lg">{faq.question}</span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-purple-400 transition-transform duration-200 flex-shrink-0 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="px-5 pb-5 pt-1 text-sm text-gray-300 leading-relaxed border-t border-white/5">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Closing / Son Adım Section */}
       <section className="py-20 relative bg-[#050814] border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-purple-900/20 via-white/[0.02] to-blue-900/20 border border-white/10 backdrop-blur-md text-center space-y-6">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="max-w-5xl mx-auto p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-purple-900/20 via-white/[0.02] to-blue-900/20 border border-white/10 backdrop-blur-md text-center space-y-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
               Doğru Ajansı Bulmak İçin Son Adım
             </h2>
