@@ -20,6 +20,7 @@ export interface BlogPost {
   updatedAt?: string;
   readTime?: number;
   views: number;
+  tldr?: string[] | string;
 }
 
 export interface Heading {

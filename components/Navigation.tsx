@@ -75,6 +75,12 @@ export default function Navigation() {
           Blog
         </Link>
         <Link
+          href="/seo-sozlugu"
+          className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5"
+        >
+          SEO Sözlüğü
+        </Link>
+        <Link
           href="/hakkimda"
           className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5"
         >
@@ -105,7 +111,7 @@ export default function Navigation() {
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+      <div className="hidden lg:flex items-center space-x-5 xl:space-x-7">
         {/* Mega Menu: Hizmetler */}
         <NavDropdown
           id="services-mega-dropdown"
@@ -151,6 +157,14 @@ export default function Navigation() {
           className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
         >
           Blog
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+        </Link>
+
+        <Link
+          href="/seo-sozlugu"
+          className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
+        >
+          SEO Sözlüğü
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
         </Link>
 

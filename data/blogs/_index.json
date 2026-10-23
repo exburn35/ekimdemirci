@@ -599,19 +599,24 @@
     },
     {
         "title":  "Generative Engine Optimization (GEO) Nedir?",
-        "slug":  "generative-engine-optimization-geo-nedir",
-        "excerpt":  "Generative Engine Optimization yani GEO nedir? GEO hakkında merak ettiğiniz detaylara içeriğimden erişebilirsiniz. Detaylar için tıklayınız.",
+        "slug":  "geo-nedir",
+        "excerpt":  "Generative Engine Optimization (GEO), web içeriğinin ChatGPT, Gemini, Perplexity ve Google AI Modu gibi üretken yapay zekâ motorlarında alıntılanmasını sağlayan yeni nesil optimizasyon rehberi.",
         "featuredImage":  "/uploads/Generative-Engine-Optimization-GEO-Nedir.webp",
         "ogImage":  "/uploads/Generative-Engine-Optimization-GEO-Nedir.webp",
-        "metaTitle":  "Generative Engine Optimization (GEO) Nedir?",
-        "metaDescription":  "Generative Engine Optimization yani GEO nedir? GEO hakkında merak ettiğiniz detaylara içeriğimden erişebilirsiniz. Detaylar için tıklayınız.",
+        "metaTitle":  "Generative Engine Optimization (GEO) Nedir? Kapsamlı Rehber",
+        "metaDescription":  "Generative Engine Optimization (GEO) nedir, nasıl uygulanır? ChatGPT, Gemini ve Google AI Modu yanıtlarında kaynak olarak alıntılanma stratejileri ve ölçüm yöntemleri.",
         "publishedAt":  "2025-11-28T14:57:52+03:00",
-        "updatedAt":  "2026-05-18T21:25:52+03:00",
+        "updatedAt":  "2026-10-23T18:11:17.192Z",
         "published":  true,
-        "category":  "SEO",
-        "readTime":  19,
+        "category":  "GEO",
+        "readTime":  14,
         "tags":  [
-
+                     "GEO",
+                     "Yapay Zeka SEO",
+                     "AEO",
+                     "ChatGPT",
+                     "Google AI Modu",
+                     "Perplexity"
                  ],
         "views":  0
     },
@@ -754,24 +759,6 @@
         "published":  true,
         "category":  "SEO",
         "readTime":  21,
-        "tags":  [
-
-                 ],
-        "views":  0
-    },
-    {
-        "title":  "Türkiye\u0026#8217;nin En İyi 15 SEO Ajansı",
-        "slug":  "turkiyenin-en-iyi-15-seo-ajansi",
-        "excerpt":  "2026 yılında Türkiye’nin en iyi 15 SEO ajansını keşfedin. En güçlü stratejilere, uzman ekiplere ve markanızı zirveye taşıyacak dijital partnerlere göz atın!",
-        "featuredImage":  "/uploads/Turkiyenin-En-Iyi-15-SEO-Ajansi.webp",
-        "ogImage":  "/uploads/Turkiyenin-En-Iyi-15-SEO-Ajansi.webp",
-        "metaTitle":  "Türkiye\u0027nin En İyi 15 SEO Ajansı - Güncel 2026",
-        "metaDescription":  "2026 yılında Türkiye’nin en iyi 15 SEO ajansını keşfedin. En güçlü stratejilere, uzman ekiplere ve markanızı zirveye taşıyacak dijital partnerlere göz atın!",
-        "publishedAt":  "2025-10-17T13:04:59+03:00",
-        "updatedAt":  "2026-06-26T19:50:28+03:00",
-        "published":  true,
-        "category":  "SEO",
-        "readTime":  7,
         "tags":  [
 
                  ],

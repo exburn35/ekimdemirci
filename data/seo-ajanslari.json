@@ -1,0 +1,1094 @@
+{
+  "updatedAt": "2026-10-23",
+  "count": 136,
+  "agencies": [
+    {
+      "slug": "adsera",
+      "name": "Adsera",
+      "website": "https://www.adsera.co",
+      "city": "İstanbul",
+      "description": "Adsera, İstanbul merkezli bir dijital pazarlama ajansıdır ve performans pazarlama, veri analizi, dönüşüm optimizasyonu ve medya planlama hizmetleri sunar. SEO tarafında teknik SEO, site içi ve site dışı SEO, e-ticaret SEO, yerel SEO ve GEO çalışmaları yürütür.",
+      "nofollow": false
+    },
+    {
+      "slug": "adverpeak",
+      "name": "Adverpeak",
+      "website": "https://www.adverpeak.com",
+      "city": "İstanbul",
+      "description": "Adverpeak, Maltepe'de ofisi bulunan ve SEO danışmanlığı, Google Ads ve sosyal medya reklamcılığı alanlarında hizmet veren bir dijital pazarlama ajansıdır. Anahtar kelime araştırması, teknik SEO, içerik üretimi ve bağlantı çalışmalarının yanı sıra GEO danışmanlığı ve web tasarım hizmetleri de sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "ajans-replik",
+      "name": "Ajans Replik",
+      "website": "https://ajansreplik.com",
+      "city": "İstanbul",
+      "description": "Ajans Replik, dijital danışmanlık, grafik tasarım, kurumsal kimlik, medya satın alma ve basılı iş üretimi yapan bir reklam ajansıdır. Hizmet listesinde web sitesi, influencer iş birlikleri ve SEO ile Google Ads çalışmaları da yer alıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "analytica-house",
+      "name": "Analytica House",
+      "website": "https://analyticahouse.com",
+      "city": "İstanbul",
+      "description": "Analytica House, Levent'te ofisi bulunan ve performans pazarlama, veri analitiği, pazarlama teknolojileri ve medya planlama alanlarında çalışan bir dijital ajanstır. SEO & ASO danışmanlığı kapsamında teknik SEO, site taşıma yönetimi, içerik analizi, rakip analizi ve backlink stratejisi hizmetleri verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "aora-digital-agency",
+      "name": "Aora Digital Agency",
+      "website": "https://www.aora.com.tr",
+      "city": "İstanbul",
+      "description": "Ataşehir'de bulunan AORA Digital Agency; web tasarım, dijital reklam, e-ticaret danışmanlığı ve içerik hizmetleri veren bir dijital ajanstır. SEO hizmeti anahtar kelime analizi, teknik SEO, sayfa içi ve sayfa dışı optimizasyon, raporlama ile sağlık ve WordPress gibi alanlara özel SEO paketlerini kapsar.",
+      "nofollow": false
+    },
+    {
+      "slug": "arina-digital",
+      "name": "Arina Digital",
+      "website": "https://arinadigital.com",
+      "city": "İstanbul",
+      "description": "Arina Digital; web tasarımı, SEO ve GEO, Google Ads, sosyal medya yönetimi, içerik üretimi ve kurumsal video alanlarında hizmet veren bir dijital ajanstır. Ofisi İstanbul Kartal'da bulunan ajans, yurt içi ve yurt dışındaki markalarla çalıştığını belirtiyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "arvech",
+      "name": "Arvech",
+      "website": "https://arvech.com",
+      "city": "İstanbul",
+      "description": "Arvech, teknoloji ve B2B şirketlerine büyüme pazarlaması danışmanlığı veren bir ajanstır. Ücretli medya, HubSpot CRM, içerik ve e-posta çalışmalarının yanında SEO hizmeti de sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "bigbang-digital",
+      "name": "Bigbang Digital",
+      "website": "https://www.bigbang-digital.com",
+      "city": "İstanbul",
+      "description": "Kadıköy'de ofisi bulunan, Barselona'da da temsilciliği olan bir dijital pazarlama ajansı. Teknik SEO denetimi, Türkçe anahtar kelime araştırması, link building, yerel SEO ve GEO hizmetleri veriyor; Türkiye pazarına girmek isteyen yabancı şirketler ve e-ticaret markalarıyla çalışıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "boosmart",
+      "name": "Boosmart",
+      "website": "https://boosmart.com",
+      "city": "İstanbul",
+      "description": "Boosmart, İstanbul'da faaliyet gösteren ve SEO odaklı hizmetler sunan bir dijital pazarlama ajansıdır. Teknik site içi SEO, site dışı SEO, içerik yönetimi, uluslararası SEO ve içerik pazarlaması alanlarında çalışır.",
+      "nofollow": true
+    },
+    {
+      "slug": "brandaft",
+      "name": "Brandaft",
+      "website": "https://brandaft.com",
+      "city": "İstanbul",
+      "description": "Brandaft, merkezi İstanbul'da olan ve SEO, teknik analiz ile dijital pazarlama hizmetleri veren bir ajanstır. Sağlık, hukuk ve e-ticaret gibi sektörlere ayrı SEO sayfaları bulunuyor; iletişim sayfasında Ankara, Antalya ve Eskişehir adresleri de yer alıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "bwa-digital",
+      "name": "BWA Digital",
+      "website": "https://www.bwa.com.tr",
+      "city": "İstanbul",
+      "description": "BWA Digital, kurumsal web tasarımı, web tabanlı özel yazılım ve mobil uygulama geliştirme yapan İstanbul merkezli bir dijital ajanstır. Hizmetleri arasında belirlenen anahtar kelimelere yönelik arama motoru optimizasyonu da yer alıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "byte-digital",
+      "name": "Byte Digital",
+      "website": "https://bytedigital.com",
+      "city": "İstanbul",
+      "description": "Byte Digital, İstanbul'da faaliyet gösteren, Shopify ve Shopify Plus üzerinde mağaza kurulumu, taşıma ve özel geliştirme yapan bir e-ticaret ajansıdır. Dijital pazarlama tarafında Shopify SEO'su ve GEO dahil SEO hizmetlerinin yanında performans reklamcılığı ve e-posta pazarlaması sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "clicks-us-digital",
+      "name": "Clicks'us Digital",
+      "website": "https://www.clicksus.com",
+      "city": "İstanbul",
+      "description": "Clicks'us Digital; SEO, GEO, Google Ads, performans pazarlaması, sosyal medya yönetimi ve içerik pazarlaması alanlarında çalışan bir dijital pazarlama ajansıdır. SEO tarafında teknik SEO, içerik optimizasyonu, backlink ve e-ticaret SEO hizmetleri veriyor; ofisi İstanbul 4. Levent'te bulunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "clickzone",
+      "name": "clickzone",
+      "website": "https://clickzone.io",
+      "city": "İstanbul",
+      "description": "Kendini büyüme pazarlaması ajansı olarak tanımlayan, İstanbul Beşiktaş'ta bulunan bir ajans. Hizmetleri arasında site içi ve teknik SEO var; teknik tarafta site hızı, tarama ve indeksleme sorunları, yönlendirmeler ve log analizi ele alınıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "crabs-media",
+      "name": "Crabs Media",
+      "website": "https://www.crabsmedia.com",
+      "city": "İstanbul",
+      "description": "Crabs Media, Şişli'de ofisi bulunan ve web tasarım, SEO ve dijital pazarlama hizmetleri veren bir ajanstır. Teknik, site içi, site dışı ve yerel SEO ile GEO, backlink, reklam yönetimi, itibar yönetimi ve sağlık turizmi pazarlaması alanlarında çalışır.",
+      "nofollow": false
+    },
+    {
+      "slug": "creatives-data",
+      "name": "Creatives Data",
+      "website": "https://creativesdata.com",
+      "city": "İstanbul",
+      "description": "Creatives Data, Kadıköy'de bulunan, marka kimliği, web geliştirme ve Shopify tabanlı e-ticaret projeleri yürüten bir dijital ajans ve teknoloji şirketidir. Hizmetleri arasında SEO ve arama görünürlüğü, ücretli medya, veri analitiği ve yapay zekâ otomasyonu yer alır.",
+      "nofollow": true
+    },
+    {
+      "slug": "cremicro",
+      "name": "Cremicro",
+      "website": "https://cremicro.com",
+      "city": "İstanbul",
+      "description": "Şişli Levent'te ofisi bulunan, SEO'yu ana hizmeti olarak konumlandıran bir dijital pazarlama ajansı. Teknik SEO, içerik stratejisi, e-ticaret, yerel ve uluslararası SEO çalışmalarının yanında ayrı bir hizmet olarak GEO da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "d-option",
+      "name": "D-Option",
+      "website": "https://d-option.com",
+      "city": "İstanbul",
+      "description": "D-Option; SEO, performans pazarlaması, veri analitiği ve dönüşüm optimizasyonunu tek bir ekip içinde yürüten, İstanbul merkezli bir büyüme ajansıdır. Organik büyüme hizmeti teknik altyapı, kategori ve ürün yapısı, içerik stratejisi ve otorite çalışmalarına odaklanır.",
+      "nofollow": true
+    },
+    {
+      "slug": "dcp-crea",
+      "name": "DCP Crea",
+      "website": "https://dcpcrea.com",
+      "city": "İstanbul",
+      "description": "DCP Crea; marka stratejisi, sosyal medya, içerik üretimi, dijital reklam, web tasarım ve mobil uygulama hizmetleri veren bir dijital ajanstır ve İstanbul, İzmir ile Los Angeles'ta ofisi bulunur. SEO danışmanlığı strateji, teknik SEO, içerik SEO'su, yerel SEO ve rakip analizinden oluşur.",
+      "nofollow": true
+    },
+    {
+      "slug": "dgtl-agence",
+      "name": "DGTL Agence",
+      "website": "https://dgtlagence.com",
+      "city": "İstanbul",
+      "description": "Beşiktaş'ta bulunan DGTL Agence; web ve mobil tasarım, dijital markalaşma, reklam, itibar yönetimi ve yapay zekâ ajanı geliştirme alanlarında çalışan bir dijital ajanstır. SEO hizmeti teknik SEO, anahtar kelime ve içerik optimizasyonu ile yapay zekâ arama motorlarına yönelik GEO ve AEO çalışmalarını birlikte ele alır.",
+      "nofollow": true
+    },
+    {
+      "slug": "digimetri",
+      "name": "Digimetri",
+      "website": "https://digimetri.com",
+      "city": "İstanbul",
+      "description": "Digimetri, organik arama (SEO), performans pazarlaması ve veri hizmetleri veren bir pazarlama ajansıdır. Teknik SEO denetimleri ve anahtar kelime araştırması gibi hizmetler sunuyor, ofisi İstanbul Şişhane'de bulunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "digipeak",
+      "name": "Digipeak",
+      "website": "https://digipeak.org",
+      "city": "İstanbul",
+      "description": "İstanbul merkezli bir dijital pazarlama ajansı; SEO hizmetini web sitesinde ayrı bir sayfada sunuyor. Site içi SEO, e-ticaret SEO'su ve yapay zekâ aramalarında görünürlük konularında da içerik yayımlıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "digital-exchange",
+      "name": "Digital Exchange",
+      "website": "https://www.digitalexchange.com.tr",
+      "city": "İstanbul",
+      "description": "Digital Exchange; performans pazarlaması, teknoloji, içerik ve analiz hizmetlerini birlikte sunan, merkezi İstanbul'da olan bir dijital pazarlama ve teknoloji ajansıdır. SEO tarafında kurumsal, e-ticaret ve yerel SEO danışmanlığı, teknik, sayfa içi ve sayfa dışı SEO, SEO denetimi ve raporlama hizmetleri verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "digitexa",
+      "name": "Digitexa",
+      "website": "https://www.digitexa.com",
+      "city": "İstanbul",
+      "description": "İstanbul merkezli, yazılım geliştirme ile SEO hizmetlerini birlikte sunan bir dijital ajans. SEO kapsamında teknik SEO, içerik SEO'su, link building, yerel SEO ve Google İşletme Profili yönetimi yer alıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "ela-design",
+      "name": "Ela Design",
+      "website": "https://www.eladesign.org",
+      "city": "İstanbul",
+      "description": "Ela Teknoloji (Ela Design), kurumsal web tasarımı, e-ticaret altyapısı, SEO ve yapay zekâ aramalarına yönelik GEO çalışmaları yapan bir web ajansıdır. Next.js tabanlı siteler geliştiren şirketin ofisi İstanbul Ataşehir'de bulunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "fernex-media",
+      "name": "Fernex Media",
+      "website": "https://fernexmedia.com",
+      "city": "İstanbul",
+      "description": "Fernex Media, Zeytinburnu'nda bulunan ve 2022'den bu yana faaliyet gösteren bir dijital pazarlama ajansıdır. SEO ve site optimizasyonunun yanında sosyal medya yönetimi, Meta ve Google reklamları ile web tasarım hizmetleri verir; klinik, e-ticaret, inşaat ve gayrimenkul gibi sektörlerle çalışır.",
+      "nofollow": true
+    },
+    {
+      "slug": "gri-creative",
+      "name": "Gri Creative",
+      "website": "https://www.gricreative.com",
+      "city": "İstanbul",
+      "description": "Kozyatağı'nda bulunan Gri Creative; dijital iletişim, kreatif kampanya, sosyal medya yönetimi, marka kimliği, web ve mobil uygulama işleri yapan bir ajanstır. Hizmetleri arasında teknik ve içerik odaklı SEO ile yapay zekâ aramalarına yönelik SEO çalışmaları da yer alır.",
+      "nofollow": true
+    },
+    {
+      "slug": "kriko",
+      "name": "Kriko",
+      "website": "https://kriko.io",
+      "city": "İstanbul",
+      "description": "Kriko, Ataşehir'de ofisi bulunan ve performans pazarlama ile veri analitiği alanlarında çalışan bir dijital pazarlama ajansıdır. SEO ve yapay zeka arama optimizasyonu kapsamında teknik SEO, içerik stratejisi, dijital PR ve e-ticaret SEO hizmetleri verir; ASO ve dönüşüm optimizasyonu da sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "kubix-digital",
+      "name": "Kubix Digital",
+      "website": "https://kubix.digital",
+      "city": "İstanbul",
+      "description": "2007'de İstanbul Tarabya'da kurulan, İstanbul ve Berlin'de ofisleri olan bir arama motoru pazarlaması ajansı. Organik pazarlama başlığı altında teknik SEO denetimi, anahtar kelime eşleme, içerik ve uluslararası SEO çalışmalarını PPC ve analitik hizmetleriyle birlikte yürütüyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "lein-digital",
+      "name": "Lein Digital",
+      "website": "https://www.leindigital.com",
+      "city": "İstanbul",
+      "description": "Lein Digital, 2016'da kurulan ve Beşiktaş'ta ofisi bulunan bir dijital pazarlama ajansıdır. Teknik SEO denetimi, anahtar kelime ve içerik stratejisi, bağlantı kurma ve dijital PR hizmetlerini GEO, Google Ads ve Meta reklamlarıyla birlikte sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "longway-media",
+      "name": "Longway Media",
+      "website": "https://longwaymedia.com",
+      "city": "İstanbul",
+      "description": "Longway Media; SEO, Google Ads, sosyal medya reklamları, web tasarımı ve grafik tasarım hizmetleri veren bir dijital ajanstır. Kurumsal, yerel ve e-ticaret SEO için ayrı hizmet sayfaları bulunan ajansın ofisi İstanbul Kadıköy'de.",
+      "nofollow": true
+    },
+    {
+      "slug": "lugat",
+      "name": "Lugat",
+      "website": "https://lugat.net",
+      "city": "İstanbul",
+      "description": "Lugat, 2017'den bu yana İstanbul Esentepe'de faaliyet gösteren, içerik pazarlamasına odaklı bir ajanstır. İçerik stratejisi, metin yazarlığı ve çeviri hizmetlerini SEO uyumlu içerik üretimi ve SEO stratejisiyle birlikte sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "magna-dijital",
+      "name": "Magna Dijital",
+      "website": "https://www.magnadijital.com.tr",
+      "city": "İstanbul",
+      "description": "Merkezi Beşiktaş'ta olan, ABD'de de ofisi bulunan bir dijital pazarlama ajansı. SEO hizmetleri anahtar kelime stratejisi, teknik ve site içi SEO, içerik, link building, yerel SEO ve e-ticaret SEO'sunu kapsıyor; GEO ve uluslararası SEO da hizmetleri arasında.",
+      "nofollow": true
+    },
+    {
+      "slug": "marketiff",
+      "name": "Marketiff",
+      "website": "https://marketiff.com",
+      "city": "İstanbul",
+      "description": "Şişli'de ofisi bulunan bir dijital pazarlama ajansı. Web tasarım, SEO, SEM, sosyal medya pazarlaması, grafik tasarım ve dijital strateji hizmetleri veriyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "metafor-agency",
+      "name": "Metafor Agency",
+      "website": "https://www.metafor.com",
+      "city": "İstanbul",
+      "description": "Şişli'de bulunan, SEO danışmanlığını merkezine alan bir dijital pazarlama ajansı. Yerel SEO, site taşıma, uluslararası SEO ve GEO hizmetleri veriyor; e-ticaret, sağlık, eğitim, turizm, SaaS ve sanayi B2B gibi sektörlere yönelik çalışmaları var.",
+      "nofollow": true
+    },
+    {
+      "slug": "mobitek",
+      "name": "Mobitek",
+      "website": "https://mobitek.com",
+      "city": "İstanbul",
+      "description": "2003'te kurulan bir SEO ve dijital pazarlama ajansı. Teknik SEO, e-ticaret ve Shopify SEO'su, kurumsal SEO, içerik, dijital PR, yerel ve uluslararası SEO, site taşıma ve GEO hizmetleri sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "moda-kreatif",
+      "name": "Moda Kreatif",
+      "website": "https://www.modakreatif.com",
+      "city": "İstanbul",
+      "description": "Moda Kreatif, Kadıköy Caferağa'da bulunan bir dijital medya ve içerik ajansıdır. Web ve e-ticaret sitesi tasarımı, kurumsal kimlik, sosyal medya ve reklam yönetiminin yanında SEO danışmanlığı da verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "mosanta",
+      "name": "Mosanta",
+      "website": "https://www.mosanta.com",
+      "city": "İstanbul",
+      "description": "Mosanta, İlyas Teker'in kurduğu ve sınırlı sayıda müşteriyle çalışan bir SEO danışmanlık şirketidir. SEO denetimi, uluslararası SEO, stratejik danışmanlık, eğitim, yıllık proje desteği ve Google manuel işlem cezalarının kaldırılması gibi hizmetler sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "naklov-digital-agency",
+      "name": "Naklov Digital Agency",
+      "website": "https://naklov.com",
+      "city": "İstanbul",
+      "description": "İstanbul'da faaliyet gösteren, web tasarım ve dijital pazarlama hizmetleri veren bir ajans. SEO kapsamında site içi ve site dışı çalışmalar, anahtar kelime takibi ve kurumsal SEO hizmetleri sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "nodus-works",
+      "name": "Nodus Works",
+      "website": "https://nodusworks.com",
+      "city": "İstanbul",
+      "description": "Nodus Works, İstanbul'da faaliyet gösteren ve yalnızca Shopify üzerine çalışan bir e-ticaret ajansıdır. Shopify mağaza kurulumu, entegrasyon ve reklam yönetiminin yanı sıra SEO, yapay zeka arama optimizasyonu, site dışı SEO ve SEO raporlama hizmetleri sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "noxen-digital",
+      "name": "Noxen Digital",
+      "website": "https://noxendigital.com",
+      "city": "İstanbul",
+      "description": "Noxen Digital, İstanbul merkezli bir dijital ajanstır ve Türkiye ile Orta Doğu pazarlarındaki işletmelere hizmet verir. Teknik, yerel ve e-ticaret SEO ile Türkçe, İngilizce ve Arapça çok dilli SEO, GEO, web geliştirme ve dijital reklam hizmetleri sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "oppmind",
+      "name": "Oppmind",
+      "website": "https://oppmind.com",
+      "city": "İstanbul",
+      "description": "Oppmind, İstanbul'da faaliyet gösteren ve yapay zeka destekli dijital pazarlama hizmetleri sunan bir ajanstır. Kurumsal, teknik, e-ticaret, yerel ve pazaryeri SEO'nun yanı sıra performans reklamcılığı, içerik üretimi ve web geliştirme hizmetleri verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "pixelon",
+      "name": "Pixelon",
+      "website": "https://pixelon.com.tr",
+      "city": "İstanbul",
+      "description": "Pixelon, Kadıköy'de bulunan, web tasarım, sosyal medya, dijital reklam ve SEO ile içerik pazarlaması hizmetleri veren bir dijital ajanstır. Sağlık kurumları, klinikler, sağlık turizmi ve estetik sektöründeki markalarla çalışmaya ağırlık verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "prosis-digital-solutions",
+      "name": "Prosis Digital Solutions",
+      "website": "https://prosisdigital.com",
+      "city": "İstanbul",
+      "description": "Şişli'de bulunan, reklam, CRM, otomasyon ve yazılım gibi alanlarda yapay zekâ destekli sistemler kuran bir dijital dönüşüm şirketi. Teknik SEO, sayfa mimarisi, içerik stratejisi ve temel GEO kurulumunu bir arada sunan bir organik büyüme hizmeti var.",
+      "nofollow": true
+    },
+    {
+      "slug": "rayorca",
+      "name": "Rayorca",
+      "website": "https://rayorca.com",
+      "city": "İstanbul",
+      "description": "İstanbul'da faaliyet gösteren bir dijital pazarlama ajansı. SEO hizmeti teknik analiz, rakip analizi, anahtar kelime araştırması, site içi ve site dışı optimizasyon ile aylık raporlamayı kapsıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "rekclick",
+      "name": "RekClick",
+      "website": "https://www.rekclick.com",
+      "city": "İstanbul",
+      "description": "RekClick, İstanbul Levent'te ofisi ve Köln'de ikinci bir ofisi bulunan 360 derece dijital pazarlama ajansıdır. Performans pazarlaması kapsamında SEO, ücretli medya ve dijital PR hizmetleri verir; sosyal medya yönetimi, e-ticaret ve web tasarım da hizmetleri arasındadır.",
+      "nofollow": true
+    },
+    {
+      "slug": "reklam5",
+      "name": "Reklam5",
+      "website": "https://www.reklam5.com",
+      "city": "İstanbul",
+      "description": "2007'de İstanbul'da kurulan, Zeytinburnu'nda ve New York'ta ofisleri olan bir dijital ajans. Teknik SEO, içerik stratejisi, dijital PR, yerel ve e-ticaret SEO'su ile ekiplerin uygulamayı üstlendiği SEO danışmanlığı sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "roible",
+      "name": "ROIBLE",
+      "website": "https://roible.com",
+      "city": "İstanbul",
+      "description": "Kadıköy'de ofisi bulunan bir dijital pazarlama ajansı. SEO sürecini strateji, teknik SEO, içerik pazarlaması ve site dışı çalışmalarla uçtan uca yönetiyor; Shopify SEO ve SEO eğitimi de hizmetleri arasında.",
+      "nofollow": true
+    },
+    {
+      "slug": "roicool",
+      "name": "Roicool",
+      "website": "https://www.roicool.com",
+      "city": "İstanbul",
+      "description": "Roicool, Maslak'ta ofisi bulunan, SEO, performans reklamcılığı ve Webflow ile web geliştirme hizmetleri veren bir dijital pazarlama ajansıdır. Teknik, uluslararası ve B2B SEO çalışmalarında finans, SaaS, sağlık turizmi, üretim ve otelcilik gibi sektörlere odaklanır.",
+      "nofollow": true
+    },
+    {
+      "slug": "roipublic",
+      "name": "ROIPUBLIC",
+      "website": "https://www.roipublic.com",
+      "city": "İstanbul",
+      "description": "ROIPUBLIC, 2012'de kurulan, İstanbul Ataşehir merkezli ve İzmir ile Bursa'da da ofisi olan bir performans pazarlama ve SEO ajansıdır. SEO danışmanlığı, içerik pazarlaması, GEO (üretken arama optimizasyonu) ve dijital reklam yönetimi hizmetleri verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "sakka-dijital",
+      "name": "Sakka Dijital",
+      "website": "https://sakka.com.tr",
+      "city": "İstanbul",
+      "description": "Beykoz'da bulunan Sakka Dijital; SEO, GEO, reklam yönetimi, sosyal medya ve web tasarımını tek bir büyüme planı içinde ele alan bir dijital ajanstır. SEO tarafında teknik iyileştirme, sayfa içi düzenleme, içerik ve anahtar kelime planlaması, bağlantı çalışması ve yerel SEO hizmeti verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "scarlet-media",
+      "name": "Scarlet Media",
+      "website": "https://scarletmedia.net",
+      "city": "İstanbul",
+      "description": "Scarlet Media, 2006'da kurulan, Dubai ve İstanbul (Kadıköy) ofisleri olan tam hizmetli bir dijital reklam ajansıdır. Medya planlama ve satın alma, sosyal medya ve prodüksiyonun yanında teknik SEO, anahtar kelime araştırması ve bağlantı kurma gibi SEO hizmetleri de sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "sempeak",
+      "name": "Sempeak",
+      "website": "https://www.sempeak.com",
+      "city": "İstanbul",
+      "description": "2011'de kurulan, Avcılar ve Üsküdar'da ofisleri olan bir dijital pazarlama ajansı. SEO danışmanlığı kapsamında site denetimi, teknik ve site içi SEO, içerik optimizasyonu, site taşıma, yerel ve uluslararası SEO hizmetleri veriyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "sentez-bilisim",
+      "name": "Sentez Bilişim",
+      "website": "https://www.sentezbilisim.com",
+      "city": "İstanbul",
+      "description": "Sentez Bilişim, Başakşehir'de bulunan, kurumsal web sitesi ve WooCommerce, OpenCart tabanlı e-ticaret siteleri geliştiren bir web tasarım ve dijital pazarlama firmasıdır. Dijital pazarlama kapsamında anahtar kelime optimizasyonu, teknik SEO ve sayfa içi SEO hizmetleri verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "seo-kaos",
+      "name": "SEO Kaos",
+      "website": "https://www.seokaos.com",
+      "city": "İstanbul",
+      "description": "Ataşehir'de bulunan, dijital pazarlama ve SEO danışmanlığı veren bir işletme. SEO analizi, site içi optimizasyon, backlink analizi ve e-ticaret dönüşüm optimizasyonu gibi hizmetler sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "seoart",
+      "name": "SEOArt",
+      "website": "https://www.seoart.com",
+      "city": "İstanbul",
+      "description": "2016'da kurulan, Maslak'ta ve Konya Teknokent'te bulunan bir SEO ajansı. Yüksek trafikli e-ticaret, medya ve SaaS sitelerine teknik SEO, içerik, backlink/dijital PR, uluslararası SEO ve GEO hizmetleri veriyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "seobify",
+      "name": "Seobify",
+      "website": "https://seobify.com",
+      "city": "İstanbul",
+      "description": "İstanbul merkezli Seobify, teknik SEO denetimi, içerik mimarisi, yerel ve e-ticaret SEO'su ile GEO danışmanlığı sunan küçük bir ajanstır. Ağırlıklı olarak B2B firmalar, KOBİ'ler ve kurum içi SEO ekibi olan şirketlerle çalışır; web tasarım ve reklam hizmetleri de verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "seoroas",
+      "name": "SEOROAS",
+      "website": "https://seoroas.com",
+      "city": "İstanbul",
+      "description": "İstanbul merkezli, teknik SEO, içerik ve raporlamayı tek planda yürüten bir SEO ajansı. Kurumsal SEO ve içerik SEO'su hizmetleri veriyor, müşterinin kendi yazılım ve içerik ekipleriyle birlikte çalışabiliyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "simur-digital",
+      "name": "Simur Digital",
+      "website": "https://simur.org",
+      "city": "İstanbul",
+      "description": "Simur Digital A.Ş., Teknopol İstanbul Teknoparkı'nda bulunan, kurumsal, uluslararası, e-ticaret, yerel ve sağlık turizmi SEO'su sunan bir dijital performans ve yazılım şirketidir. Çok dilli SEO çalışmalarının yanında Google Ads, itibar yönetimi, web yazılımı ve KAF AI adlı kendi SEO analiz aracını da sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "smartkid-agency",
+      "name": "Smartkid Agency",
+      "website": "https://www.smartkid.agency",
+      "city": "İstanbul",
+      "description": "Merkezi Levent'te olan, Kadıköy'de ve Londra'da da ofisleri bulunan bir dijital pazarlama ajansı. SEO'yu web tasarımı ve sektöre özel dijital pazarlama hizmetleriyle birlikte sunuyor; e-ticaret, gayrimenkul ve otomotiv gibi sektörlere yönelik sayfaları var.",
+      "nofollow": true
+    },
+    {
+      "slug": "stebilisim",
+      "name": "STEBİLİŞİM",
+      "website": "https://stebilisim.com",
+      "city": "İstanbul",
+      "description": "STEBİLİŞİM; kurumsal web sitesi tasarımı, özel yazılım, mobil uygulama ve SEO hizmetleri veren bir dijital medya ajansı ve yazılım ofisidir. SEO çalışmalarında anahtar kelime araştırması, rakip analizi ve aylık raporlama yaptığını belirtiyor; adresi İstanbul Beylikdüzü'nde.",
+      "nofollow": true
+    },
+    {
+      "slug": "stradiji",
+      "name": "Stradiji",
+      "website": "https://www.stradiji.com",
+      "city": "İstanbul",
+      "description": "Stradiji, 2010'da Mert Erkal tarafından kurulan ve İstanbul merkezli çalışan bir SEO ve GEO danışmanlık şirketidir. Teknik SEO denetimi, önceliklendirilmiş SEO danışmanlığı, Google Ads, web analitiği ve eğitim hizmetleri sunar; Türkçe ve İngilizce pazarlarda çalışır.",
+      "nofollow": true
+    },
+    {
+      "slug": "stratejik-seo",
+      "name": "Stratejik SEO",
+      "website": "https://www.stratejikseo.com",
+      "city": "İstanbul",
+      "description": "Şişli'de bulunan, SEO'nun yanında yazılım, tasarım ve dijital pazarlama hizmetleri veren bir ajans. Teknik SEO, mobil SEO, e-ticaret SEO'su, yerel ve uluslararası SEO ile site dışı çalışmalar sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "syp-digital",
+      "name": "SYP Digital",
+      "website": "https://syp.digital",
+      "city": "İstanbul",
+      "description": "İstanbul merkezli, 2022'de kurulan bir dijital ajans. Performans reklamcılığı, sosyal medya ve yazılımın yanında SEO ve ASO başlığı altında teknik SEO ile organik arama hizmetleri sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "turk-sem",
+      "name": "Türk SEM",
+      "website": "https://www.turksem.com",
+      "city": "İstanbul",
+      "description": "Türk SEM; SEO, yapay zekâ asistanlarında görünürlük (AIO), Google Ads yönetimi ve web tasarımı hizmetleri veren bir dijital pazarlama ajansıdır. Google Partner olan ajans, müşterilerine sitelerinin teknik durumunu ve arama verilerini izleyebilecekleri ücretsiz bir üye paneli de sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "unit-istanbul",
+      "name": "UNIT İstanbul",
+      "website": "https://unitistanbul.com",
+      "city": "İstanbul",
+      "description": "Ataşehir'de bulunan UNIT İstanbul; arama, reklam, içerik, sosyal medya ve yazılım alanlarında hizmet veren bir dijital pazarlama ajansıdır. SEO hizmeti teknik altyapı, niyet odaklı anahtar kelime çalışması, içerik mimarisi, otorite inşası, yerel SEO ve aylık raporlamayı kapsar.",
+      "nofollow": true
+    },
+    {
+      "slug": "vayes-digital",
+      "name": "Vayes Digital",
+      "website": "https://www.vayes.com.tr",
+      "city": "İstanbul",
+      "description": "Beylikdüzü'nde bulunan Vayes Digital; web tasarım, yazılım, dijital reklam ve sosyal medya hizmetleri veren bir ajanstır ve çoğunlukla KOBİ'lerle çalışır. SEO hizmeti teknik SEO, içerik ve anahtar kelime stratejisi, yerel SEO, bağlantı kazanımı ve çok dilli SEO çalışmalarını içerir.",
+      "nofollow": true
+    },
+    {
+      "slug": "vera-bilisim",
+      "name": "Vera Bilişim",
+      "website": "https://verabilisim.com",
+      "city": "İstanbul",
+      "description": "Kartal'da bulunan Vera Bilişim; web tasarım, dijital pazarlama, yapay zekâ otomasyonu ve ERP/CRM yazılımı alanlarında çalışan bir bilişim şirketidir. Dijital pazarlama hizmetleri arasında Google Ads, sosyal medya ve e-ticaretin yanı sıra organik görünürlüğe yönelik SEO da bulunur.",
+      "nofollow": true
+    },
+    {
+      "slug": "vers-consultancy",
+      "name": "Vers Consultancy",
+      "website": "https://www.versconsultancy.com",
+      "city": "İstanbul",
+      "description": "Vers Consultancy; performans reklam yönetimi, SEO ve yapay zekâ optimizasyonu, CRM entegrasyonu ve dönüşüm oranı optimizasyonu alanlarında çalışan bir dijital pazarlama danışmanlığıdır. Sitesinde sağlık turizmi ve saç ekimi klinikleri gibi sektörlere yönelik içerikler bulunuyor; adresi İstanbul Beşiktaş'ta.",
+      "nofollow": true
+    },
+    {
+      "slug": "webonya",
+      "name": "Webonya",
+      "website": "https://webonya.com",
+      "city": "İstanbul",
+      "description": "Kadıköy'de bulunan bir dijital pazarlama ve SEO ajansı. SEO danışmanlığı, performans pazarlaması, web tasarım, online itibar yönetimi ve sosyal medya yönetimi hizmetleri veriyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "webtex-seo-ajans",
+      "name": "Webtex SEO Ajans",
+      "website": "https://seoajans.com.tr",
+      "city": "İstanbul",
+      "description": "Webtex markası altında hizmet veren bir SEO ve dijital pazarlama ajansı. Anahtar kelime araştırması, teknik, yerel ve global SEO hizmetleri sunuyor; Türkiye'nin yanında İngilizce, Almanca ve Fransızca projelerde de çalışıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "webtures",
+      "name": "Webtures",
+      "website": "https://www.webtures.com",
+      "city": "İstanbul",
+      "description": "2011'de kurulan, İstanbul ve Londra'da ofisleri olan bir arama pazarlaması danışmanlık şirketi. Klasik SEO'yu Google AI Overviews ve ChatGPT gibi yapay zekâ arama araçlarındaki görünürlükle birleştiren SEO ve GEO danışmanlığı, ayrıca analitik ve reklam hizmetleri sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "work-medya",
+      "name": "Work Medya",
+      "website": "https://www.workmedya.com",
+      "city": "İstanbul",
+      "description": "Work Medya, Beşiktaş Gayrettepe'de bulunan ve Özkeskin Reklam bünyesinde 2017'den bu yana dijital reklamcılık hizmeti veren bir ajanstır. Teknik, sayfa içi ve sayfa dışı SEO'nun yanında Google ve Meta reklamları, web tasarım ile e-ticaret çözümleri sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "yoo-digital",
+      "name": "Yoo Digital",
+      "website": "https://yoodigital.co",
+      "city": "İstanbul",
+      "description": "Maltepe'de ofisi bulunan, web tasarım ve SEO hizmetleri veren bir dijital ajans. SEO tarafında teknik analiz, ilçe bazlı anahtar kelime yapısı, yerel SEO ve Google İşletme Profili optimizasyonu öne çıkıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "zeo",
+      "name": "ZEO",
+      "website": "https://zeo.org",
+      "city": "İstanbul",
+      "description": "İstanbul, Ankara ve Londra'da ofisleri olan bir dijital pazarlama ajansı. Yüksek trafikli sitelere SEO stratejisi geliştiriyor; GEO, PPC, içerik pazarlaması ve veri analizi hizmetleri de veriyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "zeymedya",
+      "name": "Zeymedya",
+      "website": "https://zeymedya.com",
+      "city": "İstanbul",
+      "description": "Zeymedya, Kağıthane'de bulunan, SEO, Google Haritalar optimizasyonu ve GEO hizmetleri veren bir reklam ve dijital pazarlama ajansıdır. Bunların yanında Google Ads ve Meta reklam yönetimi, içerik stratejisi ve WordPress web tasarım hizmetleri de sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "cukurova-dijital-ajans",
+      "name": "Çukurova Dijital Ajans",
+      "website": "https://cukurovadijitalajans.com",
+      "city": "Adana",
+      "description": "Adana Seyhan'da ofisi bulunan dijital ajans; Google Ads yönetimi, e-ticaret odaklı dijital pazarlama ve SEO optimizasyonu sunuyor. Web sitesi tasarımı, sosyal medya yönetimi ile fotoğraf ve video prodüksiyonu da hizmetleri arasında.",
+      "nofollow": true
+    },
+    {
+      "slug": "hobi-ajans",
+      "name": "Hobi Ajans",
+      "website": "https://www.hobiajans.com",
+      "city": "Adana",
+      "description": "Adana Çukurova'da bulunan ajans; web tasarım, web yazılım ve e-ticaret sitesi geliştirme hizmetleri veriyor. SEO danışmanlığının yanında Google Ads yönetimi ile logo, katalog ve ambalaj gibi grafik tasarım işleri de yapıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "tasarimevi",
+      "name": "Tasarımevi",
+      "website": "https://www.tasarimevi.com.tr",
+      "city": "Adana",
+      "description": "Adana Seyhan merkezli ajans; kurumsal, e-ticaret ve kampanya odaklı web siteleri ile WordPress ve özel yazılım projeleri geliştiriyor. Hizmetleri arasında Google SEO, sosyal medya yönetimi, dijital reklam ve ürün fotoğrafı çekimi bulunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "blue-ajans",
+      "name": "Blue Ajans",
+      "website": "https://www.blueajans.com.tr",
+      "city": "Ankara",
+      "description": "Ankara Yenimahalle'de bulunan web tasarım ve dijital pazarlama ajansı; web ve e-ticaret yazılımı, pazaryeri entegrasyonu ve ERP/CRM gibi yazılım işleri yapıyor. SEO ve rakip analizi, Google Ads, Google İşletme Profili yönetimi ve blog yazımı da hizmetleri arasında.",
+      "nofollow": true
+    },
+    {
+      "slug": "camdalio",
+      "name": "Camdalio",
+      "website": "https://camdalio.com",
+      "city": "Ankara",
+      "description": "Merkezi Ankara Çankaya'da olan bir dijital pazarlama ajansı. Teknik SEO, içerik optimizasyonu, yerel SEO, anahtar kelime stratejisi ve link building hizmetlerinin yanı sıra SEO ile Google Ads'i birlikte yürüten çalışmalar da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "dijitarya",
+      "name": "Dijitarya",
+      "website": "https://www.dijitarya.com",
+      "city": "Ankara",
+      "description": "Ankara Çankaya merkezli dijital pazarlama ajansı; Meta, Google Ads, TikTok ve LinkedIn reklam yönetimi ile sosyal medya yönetimi yapıyor. SEO ve organik trafik çalışmalarının yanında kurumsal web sitesi, e-ticaret ve Google Haritalar hizmetleri de veriyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "innova-dijital",
+      "name": "İnnova Dijital",
+      "website": "https://www.innovajans.com",
+      "city": "Ankara",
+      "description": "İnnova Dijital Pazarlama Ajansı, Ankara merkezli bir dijital pazarlama ajansıdır. Teknik ve içerik odaklı SEO çalışmalarını diğer dijital pazarlama hizmetleriyle birlikte sunar ve e-ticaret SEO'su gibi konularda içerik de yayımlar.",
+      "nofollow": true
+    },
+    {
+      "slug": "ket-web",
+      "name": "Ket Web",
+      "website": "https://www.ketweb.com.tr",
+      "city": "Ankara",
+      "description": "Ankara Ostim'de bulunan dijital medya ajansı; web tasarım ve SEO hizmetlerini farklı şehirlerdeki müşterilere de sunuyor. SEO kapsamında anahtar kelime araştırması, içerik optimizasyonu, teknik SEO ve backlink çalışmaları yapıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "mikroarea-digital",
+      "name": "Mikroarea Digital",
+      "website": "https://mikroarea.com.tr",
+      "city": "Ankara",
+      "description": "ODTÜ Teknokent'te bulunan Mikroarea Bilgi Teknolojileri'nin reklam ajansı markası; web tasarım, özel yazılım ve mobil uygulama geliştiriyor. SEO geliştirme ve danışmanlık, sosyal medya yönetimi ve dijital reklam da hizmetleri arasında.",
+      "nofollow": true
+    },
+    {
+      "slug": "mui-medya",
+      "name": "Mui Medya",
+      "website": "https://muimedya.com",
+      "city": "Ankara",
+      "description": "Çankaya merkezli web tasarım ve dijital reklam ajansı; web geliştirme, Meta ve Google Ads yönetimi ile sosyal medya yönetimi yapıyor. SEO hizmeti anahtar kelime analizi, teknik SEO ve içerik stratejisini kapsıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "nano-medya",
+      "name": "Nano Medya",
+      "website": "https://www.nanomedya.com.tr",
+      "city": "Ankara",
+      "description": "Ankara Çankaya'da ofisi olan dijital ajans; web tasarım, grafik tasarım, sosyal medya ve Google/Meta reklam yönetimi hizmetleri veriyor. SEO ve GEO çalışmalarının yanı sıra özel yazılım, e-ticaret ve video prodüksiyonu da yapıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "nokta-art",
+      "name": "Nokta Art",
+      "website": "https://www.noktart.com",
+      "city": "Ankara",
+      "description": "Ankara Çankaya'da bulunan tasarım, yazılım ve dijital pazarlama firması; web tasarım, e-ticaret siteleri ve online ödeme çözümleri geliştiriyor. SEO ve SEO danışmanlığı, Google reklam yönetimi, sosyal medya ve marka-patent danışmanlığı da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "orsa-medya",
+      "name": "ORSA Medya",
+      "website": "https://orsamedya.com",
+      "city": "Ankara",
+      "description": "Ankara Çankaya'da bulunan dijital pazarlama ajansı; Google SEO danışmanlığı, Google Ads kampanyaları ve sosyal medya reklamcılığı yapıyor. Web sitesi tasarımı ve içerik üretiminin yanında yapay zekâ arama sonuçlarında görünürlüğe (GEO) yönelik çalışmalar da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "seo-kurdu",
+      "name": "SEO Kurdu",
+      "website": "https://www.seokurdu.com",
+      "city": "Ankara",
+      "description": "Ankara Çankaya'da ofisi bulunan bir SEO firması. Teknik ve site içi SEO, Google Haritalar SEO'su, KOBİ SEO'su ve yapay zekâ aramalarına yönelik optimizasyon hizmetleri veriyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "webtaktik",
+      "name": "Webtaktik",
+      "website": "https://webtaktik.com",
+      "city": "Ankara",
+      "description": "Ankara Yenimahalle'de ofisi bulunan dijital pazarlama ajansı; Google ve Meta reklamları, web tasarım ve yazılım geliştirme hizmetleri veriyor. SEO, sosyal medya yönetimi ve yapay zekâ danışmanlığı da hizmetleri arasında; Eskişehir gibi farklı şehirlere de çalışıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "antalya-medya-ajans",
+      "name": "Antalya Medya Ajans",
+      "website": "https://www.antalyamedyaajans.com",
+      "city": "Antalya",
+      "description": "Antalya Kepez'de bulunan ajans; web sitesi tasarımı, web uygulaması geliştirme ve kurumsal kimlik çalışmaları yapıyor. SEO hizmetinin yanı sıra sosyal medya yönetimi, Google Ads, prodüksiyon ve drone çekimi de sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "awa-web-ajans",
+      "name": "AWA Web Ajans",
+      "website": "https://awawebajans.com",
+      "city": "Antalya",
+      "description": "ATA Ventures Ltd. Şti. bünyesinde Antalya Muratpaşa'da faaliyet gösteren ajans; web tasarım, yazılım geliştirme ve marka tasarımı yapıyor. SEO ve GEO, Google Ads ve Meta reklamları, içerik geliştirme ve yapay zekâ tabanlı otomasyon çözümleri de sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "majesty-ajans",
+      "name": "Majesty Ajans",
+      "website": "https://majestyajans.com",
+      "city": "Antalya",
+      "description": "Antalya Muratpaşa merkezli entegre reklam ajansı; web tasarım, sosyal medya, grafik tasarım, açık hava ve basılı reklam işleri yapıyor. SEO kapsamında teknik denetim, yerel SEO, e-ticaret SEO'su, içerik üretimi ve bağlantı edinimi sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "ref-dijital",
+      "name": "Ref Dijital",
+      "website": "https://www.refdijital.com",
+      "city": "Antalya",
+      "description": "Antalya Muratpaşa merkezli dijital pazarlama ajansı; Google Ads ve Meta Ads yönetimi, sosyal medya yönetimi ve web tasarım hizmetleri veriyor. SEO danışmanlığı teknik SEO, yerel SEO, içerik stratejisi ve yapay zekâ aramalarında görünürlüğü kapsıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "bursa-web-tasarim",
+      "name": "Bursa Web Tasarım",
+      "website": "https://bursawebtasarimseo.com.tr",
+      "city": "Bursa",
+      "description": "Bursa merkezli, ağırlıklı olarak kurumsal web sitesi tasarımı yapan bir dijital ajans. Bursa'daki işletmelere aylık paketlerle SEO hizmeti veriyor ve projelerinde temel SEO düzenlemelerini standart olarak uyguluyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "emixhas-yazilim",
+      "name": "EMIXHAS Yazılım",
+      "website": "https://emixhas.com",
+      "city": "Bursa",
+      "description": "Bursa Karacabey'de adresi bulunan yazılım ve dijital hizmet firması; web tasarım, mobil uygulama, e-ticaret yazılımı ve ERP/CRM çözümleri geliştiriyor. SEO ve dijital pazarlama hizmetini farklı il ve ilçelerdeki işletmelere paket olarak sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "medya-siber",
+      "name": "Medya Siber",
+      "website": "https://www.medyasiber.com",
+      "city": "Bursa",
+      "description": "Bursa merkezli dijital reklam ve SEO ajansı; teknik SEO, içerik SEO'su, yerel SEO ve kurumsal SEO çalışmaları yapıyor. Meta, TikTok ve Google Ads yönetimi, e-ticaret reklamcılığı ve dönüşüm odaklı landing page tasarımı da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "webkod",
+      "name": "Webkod",
+      "website": "https://www.webkod.com.tr",
+      "city": "Bursa",
+      "description": "Bursa Nilüfer'de ofisi bulunan web tasarım ajansı; kurumsal web siteleri, UX tasarımı, kurumsal e-posta ve alan adı/hosting hizmetleri sunuyor. Arama motoru optimizasyonu, Google Ads ve sosyal medya çalışmaları da hizmetleri arasında.",
+      "nofollow": true
+    },
+    {
+      "slug": "ithinkso",
+      "name": "ithinkso",
+      "website": "https://www.ithinkso.co",
+      "city": "Çanakkale",
+      "description": "Çanakkale merkezli, SEO, Google Ads, web tasarım ve yazılım hizmetleri veren bir dijital ajans. SEO tarafında kurumsal SEO, e-ticaret SEO'su, yerel SEO ve yapay zekâ aramaları için GEO hizmetleri sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "three-dots-web",
+      "name": "Three Dots Web",
+      "website": "https://threedotsweb.com",
+      "city": "Denizli",
+      "description": "Three Dots Web, Denizli merkezli bir web tasarım ve dijital pazarlama ajansıdır. Sayfa içi ve sayfa dışı SEO'nun yanında web geliştirme, sosyal medya yönetimi, Google ve Facebook reklamları ile marka kimliği çalışmaları yürütür.",
+      "nofollow": true
+    },
+    {
+      "slug": "venti-dijital-ajans",
+      "name": "Venti Dijital Ajans",
+      "website": "https://www.ventiajans.com",
+      "city": "Denizli",
+      "description": "Denizli Pamukkale'de bulunan web tasarım ajansı; kurumsal web siteleri ve dijital pazarlama hizmetleri sunuyor. SEO'nun yanı sıra Google reklam yönetimi, sosyal medya reklamları ve sosyal medya yönetimi yapıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "eskisehir-web-ajans",
+      "name": "Eskişehir Web Ajans",
+      "website": "https://eskisehirwebajans.com",
+      "city": "Eskişehir",
+      "description": "Eskişehir'de ofisi bulunan kreatif ajans; web tasarım, e-ticaret çözümleri, grafik tasarım ve mobil uygulama geliştirme hizmetleri veriyor. SEO ve dijital pazarlamanın yanı sıra 3D ürün modelleme de yapıyor ve kendi web platformlarını işletiyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "mod-grafik",
+      "name": "Mod Grafik",
+      "website": "https://www.modgrafik.com",
+      "city": "Eskişehir",
+      "description": "Eskişehir Tepebaşı'nda bulunan grafik ve web tasarım ajansı; logo, kurumsal kimlik, ambalaj ve katalog tasarımının yanında web sitesi ve e-ticaret projeleri geliştiriyor. SEO, yerel SEO ve içerik pazarlamasıyla birlikte sosyal medya ve video prodüksiyonu da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "anatolmedia",
+      "name": "Anatolmedia",
+      "website": "https://www.anatolmedia.net",
+      "city": "Gaziantep",
+      "description": "Anatolmedia, Gaziantep Şehitkamil'de bulunan bir dijital ajanstır; web tasarım, e-ticaret, hosting ve kurumsal kimlik çalışmalarının yanında SEO hizmeti sunar. Google, Facebook ve Instagram reklam yönetimi ile sosyal medya danışmanlığı da hizmetleri arasındadır.",
+      "nofollow": true
+    },
+    {
+      "slug": "bilgesem",
+      "name": "Bilgesem",
+      "website": "https://www.bilgesem.com",
+      "city": "İzmir",
+      "description": "İzmir Konak'ta bulunan dijital pazarlama ajansı; yerel ve ulusal ölçekte SEO, GEO ve e-ticaret SEO paketleri sunuyor. Google Ads, web tasarım, online itibar yönetimi, sosyal medya reklamları ve video pazarlama da hizmetleri arasında.",
+      "nofollow": true
+    },
+    {
+      "slug": "collified",
+      "name": "Collified",
+      "website": "https://collified.com",
+      "city": "İzmir",
+      "description": "Collified, İzmir Konak'ta bulunan ve ağırlıklı olarak doktorlar, klinikler, hastaneler ve sağlık turizmi firmalarıyla çalışan bir dijital pazarlama ajansıdır. Çok dilli SEO ve GEO çalışmalarının yanında reklam yönetimi, içerik pazarlaması ve web tasarım hizmetleri sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "demir-medya-dijital",
+      "name": "Demir Medya Dijital",
+      "website": "https://demirmedyadijital.com",
+      "city": "İzmir",
+      "description": "İzmir Bornova'da bulunan bir ajans; kurumsal web sitesi, özel yazılım, mobil uygulama ve e-ticaret projeleri geliştiriyor. SEO ve Google Haritalar (yerel 3-Pack) çalışmalarının yanında Google Ads, Meta reklamları ve WhatsApp otomasyonu da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "go-dijital",
+      "name": "GO Dijital",
+      "website": "https://godijital.net",
+      "city": "İzmir",
+      "description": "İzmir Karşıyaka'da bulunan web tasarım ve reklam ajansı; kurumsal ve e-ticaret siteleri, kurumsal kimlik ve sosyal medya hizmetleri veriyor. Google SEO kapsamında rakip analizi, anahtar kelime araştırması, site içi SEO ve SEO içerikleri hazırlıyor; avukat, klinik ve otel gibi sektörlere özel web çözümleri de sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "goiz-dijital",
+      "name": "Goiz Dijital",
+      "website": "https://www.goizdijital.com",
+      "city": "İzmir",
+      "description": "İzmir Bornova'da faaliyet gösteren web tasarım ve reklam ajansı; kurumsal web tasarım, Google Ads danışmanlığı ve sosyal medya hizmetleri veriyor. SEO kapsamında site analizi, içerik ve performans optimizasyonu, yerel SEO ve Google Haritalar çalışmaları yapıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "paddma",
+      "name": "Paddma",
+      "website": "https://paddma.com",
+      "city": "İzmir",
+      "description": "Paddma, İzmir Konak merkezli bir dijital pazarlama ve SEO ajansıdır; SEO'nun yanında Google Ads, web tasarım, sosyal medya ve online itibar yönetimi hizmetleri verir. Hazır paket yerine her projeye özel analizle çalıştığını vurgular ve Türkiye dışında ABD ile Avusturya'daki müşterilere de hizmet verdiğini belirtir.",
+      "nofollow": true
+    },
+    {
+      "slug": "stark-ajans",
+      "name": "Stark Ajans",
+      "website": "https://starkajans.com",
+      "city": "İzmir",
+      "description": "Merkezi İzmir'de olan, Londra ve San Francisco'da da ofisi bulunduğunu belirten bir dijital ajans; mobil uygulama, özel yazılım ve yapay zekâ ürünleri geliştiriyor. SEO ve GEO'yu teknik denetim, atıf (citation) stratejisi ve schema işaretlemesini kapsayan tek bir hizmet olarak sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "the-base-digital",
+      "name": "The Base Digital",
+      "website": "https://www.thebasedigital.com.tr",
+      "city": "İzmir",
+      "description": "İzmir Bornova merkezli bir dijital ajans. Teknik SEO, site içi SEO, içerik ve anahtar kelime stratejisi, dijital PR, yerel SEO ve e-ticaret SEO'su hizmetlerini Google Ads ve sosyal medya çalışmalarıyla birlikte sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "a2a-dijital",
+      "name": "A2A Dijital",
+      "website": "https://a2adijital.com",
+      "city": "Kayseri",
+      "description": "Kayseri merkezli dijital ajans; web tasarım ve dijital pazarlama hizmetlerini farklı şehirlerdeki markalara da sunuyor. SEO hizmeti teknik SEO, sayfa içi SEO, yerel SEO, bağlantı inşası, e-ticaret SEO'su ve danışmanlığı kapsıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "advin-creative-agency",
+      "name": "Advin Creative Agency",
+      "website": "https://www.advinajans.com",
+      "city": "Kayseri",
+      "description": "Kayseri Melikgazi'de bulunan kreatif ajans; marka stratejisi, kurumsal kimlik, web ve e-ticaret tasarımı ile video ve fotoğraf prodüksiyonu yapıyor. SEO'nun yanı sıra Google Ads, Meta Ads ve sosyal medya yönetimi sunuyor, yapay zekâ destekli görsel üretimden de yararlanıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "bario-creative-agency",
+      "name": "Bario Creative Agency",
+      "website": "https://bario.com.tr",
+      "city": "Kocaeli",
+      "description": "İzmit'te bulunan reklam ajansı; grafik tasarım, kurumsal kimlik, video prodüksiyonu ve 360° sanal tur gibi işler yapıyor. Web tasarım ve yazılımın yanında SEO ve Google Ads çalışmaları ile Meta reklam yönetimi de sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "kocaeli-dijital",
+      "name": "Kocaeli Dijital",
+      "website": "https://kocaelidijital.com",
+      "city": "Kocaeli",
+      "description": "Webadam Yazılım & Dijital Medya Ltd. Şti.'ye ait, İzmit'te ofisi bulunan dijital ajans markası; web tasarım, e-ticaret ve özel yazılım projeleri yürütüyor. SEO kapsamında anahtar kelime araştırması, teknik SEO, içerik ve Google İşletme Profili dahil yerel SEO çalışmaları yapıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "marmara-dijital-medya",
+      "name": "Marmara Dijital Medya",
+      "website": "https://marmaradijitalmedya.com",
+      "city": "Kocaeli",
+      "description": "Marmara Dijital Medya, Kadıköy'de kurulan ve bugün Gebze'de çalışan, ağırlıklı olarak İstanbul, Kocaeli ve Bursa'daki işletmelere hizmet veren küçük bir dijital ajanstır. Yerel arama dahil SEO ve GEO danışmanlığının yanında Google ve Meta reklamları, web tasarım ve e-ticaret yönetimi sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "ramses-dijital",
+      "name": "Ramses Dijital",
+      "website": "https://ramsesdigital.com",
+      "city": "Kocaeli",
+      "description": "Kocaeli merkezli bir yazılım ve dijital pazarlama ajansı; İzmir ve Bursa gibi farklı şehirlerdeki işletmelere de SEO hizmeti veriyor. Çalışmaları yerel SEO, teknik SEO ve yapay zekâ aramalarına yönelik GEO/AEO optimizasyonunu kapsıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "time-seo-agency",
+      "name": "Time SEO Agency",
+      "website": "https://www.timeseoagency.com.tr",
+      "city": "Kocaeli",
+      "description": "Time SEO Agency, İzmit merkezli ve Time Group bünyesinde faaliyet gösteren bir SEO ve dijital pazarlama ajansıdır. E-ticaret SEO'su, yapay zekâ aramalarına yönelik GEO çalışmaları, Google Ads, web tasarım ve sosyal medya yönetimi hizmetleri sunar.",
+      "nofollow": true
+    },
+    {
+      "slug": "imza",
+      "name": "İmza",
+      "website": "https://www.imza.com",
+      "city": "Konya",
+      "description": "2011'de SEO hizmeti vermek amacıyla kurulan bir SEO ajansı. Site denetimi, teknik SEO, içerik pazarlaması, backlink ve AI SEO (GEO) hizmetleri sunuyor; B2B, B2C, e-ticaret ve inşaat gibi farklı sektörlerle çalışıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "konya-dijital-ajans",
+      "name": "Konya Dijital Ajans",
+      "website": "https://konyadijitalajans.com",
+      "city": "Konya",
+      "description": "Merkez ofisi Konya Karatay'da bulunan dijital ajans; kurumsal web tasarım, özel yazılım ve haber sitesi gibi projeler geliştiriyor. SEO ve Google sıralama çalışmalarının yanında sosyal medya yönetimi, reklam optimizasyonu ve site bakımı da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "sekiz-interactive",
+      "name": "Sekiz Interactive",
+      "website": "https://sekizinteractive.com",
+      "city": "Konya",
+      "description": "Konya Meram'da bulunan ajans; web tasarım, özel yazılım ve web uygulamaları geliştiriyor. SEO ve dijital pazarlama hizmetlerini de kendi ekibiyle yürütüyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "eforweb",
+      "name": "EFORWEB",
+      "website": "https://www.eforweb.com",
+      "city": "Mersin",
+      "description": "Mersin Yenişehir'de bulunan internet çözümleri firması; kurumsal web siteleri, e-ticaret siteleri ve mobil uygulama geliştiriyor. SEO ve SEM, Google Ads danışmanlığı ve sosyal medya pazarlaması da hizmetleri arasında.",
+      "nofollow": true
+    },
+    {
+      "slug": "mersin-seo-ajans",
+      "name": "Mersin SEO Ajans",
+      "website": "https://mersinseoajans.com",
+      "city": "Mersin",
+      "description": "Mersin Mezitli'de adresi bulunan ve kendini bağımsız bir SEO ekibi olarak tanımlayan ajans; ana hizmeti arama motoru optimizasyonu. Bunun yanında Google Ads yönetimi, web tasarım, sosyal medya yönetimi ve yapay zekâ asistanlarında görünürlüğe yönelik GEO çalışmaları sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "mersin-web-ajans",
+      "name": "Mersin Web Ajans",
+      "website": "https://www.mersinwebajans.com",
+      "city": "Mersin",
+      "description": "Mersin merkezli web ajansı; kurumsal web tasarım, e-ticaret kurulumu ve WordPress tema/eklenti geliştirme yapıyor. Teknik ve yerel SEO, site hızı optimizasyonu ve Google Ads yönetimi de hizmetleri arasında.",
+      "nofollow": true
+    },
+    {
+      "slug": "seobaz",
+      "name": "Seobaz",
+      "website": "https://seobaz.com",
+      "city": "Mersin",
+      "description": "Seobaz Bilişim Ltd. Şti. çatısı altında, Mersin ve İstanbul'da ofisleri olan bir SEO ve strateji ajansı. Aylık paketlerle teknik SEO, içerik üretimi, anahtar kelime takibi, backlink ve GEO/AEO çalışmaları sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "icerik-reklam",
+      "name": "İçerik Reklam",
+      "website": "https://icerikreklam.com",
+      "city": "Muğla",
+      "description": "Muğla Fethiye'de bulunan dijital reklam ajansı; sosyal medya yönetimi, Google Ads ve Meta reklam yönetimi yapıyor. SEO, web tasarım, e-ticaret yönetimi ve kurumsal kimlik çalışmaları da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "mugla-teknoloji",
+      "name": "Muğla Teknoloji",
+      "website": "https://muglateknoloji.com",
+      "city": "Muğla",
+      "description": "Muğla'da faaliyet gösteren yazılım ajansı; web sitesi, e-ticaret, özel yazılım ve mobil uygulama geliştiriyor. E-fatura ve POS entegrasyonlarının yanında teknik SEO, yerel SEO ve içerik stratejisi içeren SEO hizmeti de veriyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "seyo-reklam-ajansi",
+      "name": "SEYO Reklam Ajansı",
+      "website": "https://seyoweb.com",
+      "city": "Muğla",
+      "description": "Muğla Milas'ta adresi bulunan, Bodrum odaklı çalışan reklam ajansı; kurumsal web siteleri, e-ticaret ve özel yazılım geliştiriyor. SEO ve Google İşletme Profili çalışmalarının yanında marka kimliği, ikas tema tasarımı ve QR menü gibi çözümler sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "plus-dijital",
+      "name": "Plus Dijital",
+      "website": "https://plusdijital.com",
+      "city": "Sakarya",
+      "description": "Sakarya Serdivan'da bulunan dijital reklam ajansı; Google Ads, Meta ve TikTok reklam danışmanlığı ile video prodüksiyonu ve sosyal medya yönetimi yapıyor. SEO ve GEO danışmanlığı kapsamında teknik SEO, Google İşletme Profili optimizasyonu ve ilçe bazlı yerel SEO sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "dijitasyon",
+      "name": "Dijitasyon",
+      "website": "https://dijitasyon.com.tr",
+      "city": "Samsun",
+      "description": "Samsun İlkadım'da bulunan ajans; web tasarım, özel yazılım, e-ticaret ve mobil uygulama geliştirme hizmetleri veriyor. Teknik SEO ve içerik mimarisini kapsayan SEO hizmetinin yanında Google ve Meta reklamları ile sosyal medya yönetimi de yapıyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "pwr-dijital",
+      "name": "PWR Dijital",
+      "website": "https://pwrdijital.com",
+      "city": "Samsun",
+      "description": "PWR Dijital, Samsun Atakum'da bulunan, web tasarım, sosyal medya, performans reklamcılığı ve SEO hizmetleri veren bir dijital büyüme stüdyosudur. Otel ve konaklama işletmelerine yönelik rezervasyon odaklı web siteleri ve dijital pazarlama çalışmalarına ayrıca yer verir.",
+      "nofollow": true
+    },
+    {
+      "slug": "samsun-dijital-yazilim",
+      "name": "Samsun Dijital Yazılım",
+      "website": "https://samsundijital.com",
+      "city": "Samsun",
+      "description": "Samsun Atakum'da faaliyet gösteren yazılım ve dijital hizmet firması; kurumsal web siteleri, e-ticaret, randevu-rezervasyon sistemleri ve özel web yazılımları geliştiriyor. SEO, yerel SEO, web performans optimizasyonu ve Google Ads danışmanlığı da sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "weblife-adworks",
+      "name": "WEBLIFE Adworks",
+      "website": "https://www.weblife.com.tr",
+      "city": "Trabzon",
+      "description": "Trabzon Yomra'da merkezi, Mersin'de ikinci ofisi bulunan reklam ajansı; web tasarım, logo ve kurumsal kimlik, ambalaj ve grafik tasarım işleri yapıyor. SEO ve Google Ads, sosyal medya yönetimi, tanıtım filmi ve restoranlar için QR menü hizmetleri de sunuyor.",
+      "nofollow": true
+    },
+    {
+      "slug": "yuldu-dijital",
+      "name": "YULDU Dijital",
+      "website": "https://www.yuldu.com",
+      "city": "Trabzon",
+      "description": "Trabzon Ortahisar'da kurulan bilgi teknolojileri ve dijital pazarlama ajansı; sosyal medya yönetimi, Google ve sosyal medya reklamları ile video içerik üretimi yapıyor. Web tasarım, yazılım geliştirme ve SEO ile e-ticaret çözümleri de hizmetleri arasında.",
+      "nofollow": true
+    }
+  ]
+}

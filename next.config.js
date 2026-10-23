@@ -60,6 +60,34 @@ const nextConfig = {
     ];
   },
   async redirects() {
+    const legacyRedirects = [
+      {
+        source: '/blog/generative-engine-optimization-geo-nedir',
+        destination: '/blog/geo-nedir',
+        permanent: true,
+      },
+      {
+        source: '/generative-engine-optimization-geo-nedir',
+        destination: '/blog/geo-nedir',
+        permanent: true,
+      },
+      {
+        source: '/blog/turkiyenin-en-iyi-15-seo-ajansi',
+        destination: '/seo-ajanslari',
+        permanent: true,
+      },
+      {
+        source: '/turkiyenin-en-iyi-15-seo-ajansi',
+        destination: '/seo-ajanslari',
+        permanent: true,
+      },
+      {
+        source: '/blog/seo-ajanslari',
+        destination: '/seo-ajanslari',
+        permanent: true,
+      },
+    ];
+
     const blogSlugs = [
       "en-iyi-anahtar-kelime-arastirma-araclari-2026",
       "en-iyi-backlink-analiz-araclari-2026",
@@ -76,7 +104,7 @@ const nextConfig = {
       "client-side-rendering-csr-nedir",
       "dis-klinigi-seo-nedir-dis-hekimleri-icin-neden-onemlidir",
       "e-ticaret-seo-nasil-yapilir",
-      "generative-engine-optimization-geo-nedir",
+      "geo-nedir",
       "google-algoritma-guncellemeleri",
       "google-analytics-4-nedir-nasil-kullanilir",
       "google-ban-kontrolu-nedir-ve-nasil-yapilir",
@@ -105,17 +133,18 @@ const nextConfig = {
       "seoda-dogru-bilinen-yanlislar-artik-gercekleri-ogrenmenin-zamani-geldi",
       "seoda-otorite-nedir",
       "server-side-rendering-nedir",
-      "turkiyenin-en-iyi-15-seo-ajansi",
       "yapilandirilmis-veri-nedir",
       "yazar-otoritesi-nedir-seodaki-onemi-nedir",
       "yerel-seo-nedir"
     ];
 
-    return blogSlugs.map((slug) => ({
+    const slugRedirects = blogSlugs.map((slug) => ({
       source: `/${slug}`,
       destination: `/blog/${slug}`,
       permanent: true,
     }));
+
+    return [...legacyRedirects, ...slugRedirects];
   },
 }
 

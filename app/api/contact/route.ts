@@ -79,6 +79,8 @@ export async function POST(request: NextRequest) {
       subject = `📰 Yeni Bülten Aboneliği - ${cleanEmail}`;
     } else if (cleanFormType === "audit") {
       subject = `📊 Yeni Audit Talebi - ${cleanName || cleanEmail}`;
+    } else if (cleanFormType === "directory") {
+      subject = `🏢 Dizin Talebi - ${cleanName || cleanEmail}`;
     } else {
       subject = `📩 Yeni İletişim Formu - ${cleanName || cleanEmail}`;
     }
@@ -115,7 +117,7 @@ export async function POST(request: NextRequest) {
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0a0f25; color: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
           <div style="background: linear-gradient(135deg, #7c3aed, #3b82f6); padding: 32px; text-align: center;">
             <h1 style="margin: 0; font-size: 24px; color: #ffffff;">
-              ${cleanFormType === "lead" ? "🔍 Yeni Analiz Talebi" : cleanFormType === "audit" ? "📊 Yeni Audit Talebi" : "📩 Yeni İletişim Mesajı"}
+              ${cleanFormType === "lead" ? "🔍 Yeni Analiz Talebi" : cleanFormType === "audit" ? "📊 Yeni Audit Talebi" : cleanFormType === "directory" ? "🏢 Dizin Talebi" : "📩 Yeni İletişim Mesajı"}
             </h1>
           </div>
           

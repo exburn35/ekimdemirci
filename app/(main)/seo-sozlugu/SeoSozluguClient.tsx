@@ -161,10 +161,11 @@ export default function SEOGlossaryPage() {
             initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight text-white leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]"
           >
-            Arama Deneyiminin <br className="hidden sm:block" />{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400">Dev Sözlüğü</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400">
+              SEO Sözlüğü
+            </span>
           </motion.h1>
           
           <motion.p 

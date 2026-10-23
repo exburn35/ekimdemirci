@@ -23,6 +23,22 @@ interface BlogPostContentProps {
   headings: Heading[];
 }
 
+function formatTldrText(text: string) {
+  if (!text || typeof text !== "string") return text;
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  if (parts.length === 1) return text;
+  return parts.map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="text-white font-semibold">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+}
+
 export default function BlogPostContent({ post, processedHtml, headings }: BlogPostContentProps) {
   const sidebarPosts = getRelatedBlogPosts({
     currentSlug: post.slug,
@@ -160,13 +176,13 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                             (post as any).tldr.map((item: string, idx: number) => (
                               <li key={idx} className="flex items-start gap-2.5">
                                 <CheckCircle2 className="w-4 h-4 text-[#4a9eff] mt-1 flex-shrink-0" />
-                                <span className="leading-relaxed">{item}</span>
+                                <span className="leading-relaxed">{formatTldrText(item)}</span>
                               </li>
                             ))
                           ) : (
                             <li className="flex items-start gap-2.5">
                               <CheckCircle2 className="w-4 h-4 text-[#4a9eff] mt-1 flex-shrink-0" />
-                              <span className="leading-relaxed">{(post as any).tldr}</span>
+                              <span className="leading-relaxed">{formatTldrText((post as any).tldr)}</span>
                             </li>
                           )}
                         </ul>

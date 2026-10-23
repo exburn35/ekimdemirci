@@ -43,6 +43,8 @@ export async function GET(req: NextRequest) {
         "/seo-hizmetleri/yapay-zeka-seo",
         "/geo-danismanligi",
         "/seo-danismanlik-fiyatlari",
+        "/seo-sozlugu",
+        "/seo-ajanslari",
         "/sektorel-seo-hizmetleri",
         "/sektorel-seo-hizmetleri/e-ticaret-seo",
         "/sektorel-seo-hizmetleri/saglik-ve-klinik-seo",
