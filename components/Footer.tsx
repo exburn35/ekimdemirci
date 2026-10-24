@@ -44,6 +44,7 @@ const resources = [
   { name: "SEO Araçları", href: "/tools" },
   { name: "Sıkça Sorulan Sorular", href: "/sikca-sorulan-sorular" },
   { name: "Sözlük", href: "/seo-sozlugu" },
+  { name: "SEO Ajansları", href: "/seo-ajanslari" },
 ];
 
 const legal = [

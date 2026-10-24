@@ -69,6 +69,12 @@ export default function Navigation() {
           Fiyatlar
         </Link>
         <Link
+          href="/seo-ajanslari"
+          className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5"
+        >
+          SEO Ajansları
+        </Link>
+        <Link
           href="/blog"
           className="block text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all p-3.5 font-medium border border-transparent hover:border-white/5"
         >
@@ -111,7 +117,7 @@ export default function Navigation() {
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden lg:flex items-center space-x-5 xl:space-x-7">
+      <div className="hidden lg:flex items-center space-x-3.5 xl:space-x-6 text-[13px] xl:text-sm">
         {/* Mega Menu: Hizmetler */}
         <NavDropdown
           id="services-mega-dropdown"
@@ -138,7 +144,7 @@ export default function Navigation() {
 
         <Link
           href="/basari-hikayeleri"
-          className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
+          className="font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
         >
           Vaka Analizleri
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
@@ -146,15 +152,23 @@ export default function Navigation() {
 
         <Link
           href="/seo-danismanlik-fiyatlari"
-          className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
+          className="font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
         >
           Fiyatlar
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
         </Link>
 
         <Link
+          href="/seo-ajanslari"
+          className="font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
+        >
+          SEO Ajansları
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+        </Link>
+
+        <Link
           href="/blog"
-          className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
+          className="font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
         >
           Blog
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
@@ -162,7 +176,7 @@ export default function Navigation() {
 
         <Link
           href="/seo-sozlugu"
-          className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
+          className="font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
         >
           SEO Sözlüğü
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
@@ -170,7 +184,7 @@ export default function Navigation() {
 
         <Link
           href="/hakkimda"
-          className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
+          className="font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group whitespace-nowrap"
         >
           Hakkımda
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
@@ -179,7 +193,7 @@ export default function Navigation() {
         {/* Tek CTA: "Ücretsiz Analiz" (#analiz) */}
         <Link
           href="/#analiz"
-          className="px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold text-sm hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 hover:scale-105 shadow-[0_0_15px_rgba(139,92,246,0.4)] whitespace-nowrap"
+          className="px-4 xl:px-5 py-2 xl:py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold text-xs xl:text-sm hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 hover:scale-105 shadow-[0_0_15px_rgba(139,92,246,0.4)] whitespace-nowrap"
         >
           Ücretsiz Analiz
         </Link>

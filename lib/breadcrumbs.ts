@@ -37,6 +37,7 @@ export const ROUTE_LABELS: Record<string, string> = {
   "hakkimda": "Hakkımda",
   "iletisim": "İletişim",
   "seo-sozlugu": "SEO Sözlüğü",
+  "seo-ajanslari": "SEO Ajansları",
   "gizlilik-politikasi": "Gizlilik Politikası",
   "kullanim-kosullari": "Kullanım Koşulları",
   "cerez-politikasi": "Çerez Politikası",
