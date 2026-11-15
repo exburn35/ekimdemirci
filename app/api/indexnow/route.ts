@@ -2,7 +2,28 @@ import { NextRequest, NextResponse } from "next/server";
 import { pingIndexNow, SITE_HOST } from "@/lib/indexnow";
 import { getAllBlogPosts } from "@/lib/blog";
 
+/**
+ * INDEXNOW_SECRET tanımlı değilse rota kapalıdır. Çağrı için
+ * "Authorization: Bearer <secret>" başlığı veya ?secret=<secret> gerekir.
+ */
+function authorize(req: NextRequest): NextResponse | null {
+  const secret = process.env.INDEXNOW_SECRET;
+  if (!secret) {
+    return NextResponse.json({ success: false, error: "Not found" }, { status: 404 });
+  }
+  const provided =
+    req.headers.get("authorization")?.replace(/^Bearer\s+/i, "") ||
+    new URL(req.url).searchParams.get("secret");
+  if (provided !== secret) {
+    return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+  }
+  return null;
+}
+
 export async function POST(req: NextRequest) {
+  const denied = authorize(req);
+  if (denied) return denied;
+
   try {
     const body = await req.json().catch(() => ({}));
     const urls = body.urls || body.url;
@@ -25,6 +46,9 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET(req: NextRequest) {
+  const denied = authorize(req);
+  if (denied) return denied;
+
   try {
     const { searchParams } = new URL(req.url);
     const targetUrl = searchParams.get("url");

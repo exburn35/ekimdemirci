@@ -1,9 +1,8 @@
 import { MetadataRoute } from "next";
-import { prisma } from "@/lib/prisma";
 import { getAllBlogPosts, getAllCategories } from "../lib/blog";
 import { caseStudies } from "../lib/case-studies";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://ekimdemirci.com";
@@ -65,25 +64,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Sitemap Blog Error:", error);
   }
 
-  let pageRoutes: MetadataRoute.Sitemap = [];
-  try {
-    // 2. Fetch standard Pages (Dynamically Generated Pages)
-    const customPages = await prisma.page.findMany({
-      where: { published: true },
-      select: { slug: true, updatedAt: true },
-    });
-
-    pageRoutes = customPages.map((page: any) => ({
-      url: `${baseUrl}${page.slug.startsWith("/") ? page.slug : "/" + page.slug}`,
-      lastModified: page.updatedAt,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    }));
-  } catch (error) {
-    console.error("Sitemap Page Error:", error);
-  }
-
-  // 3. Dynamic Success Stories
+  // 2. Dynamic Success Stories
   const successStoryRoutes = caseStudies.map((study) => ({
     url: `${baseUrl}/basari-hikayeleri/${study.slug}`,
     lastModified: new Date(),
@@ -91,6 +72,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...blogRoutes, ...pageRoutes, ...successStoryRoutes];
+  return [...staticRoutes, ...categoryRoutes, ...blogRoutes, ...successStoryRoutes];
 }
 

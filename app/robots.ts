@@ -12,11 +12,8 @@ export default function robots(): MetadataRoute.Robots {
         "/api/blog/*"
       ],
       disallow: [
-        "/admin",
-        "/admin/*",
-        "/api/admin",
-        "/api/admin/*",
-        "/api/contact"
+        "/api/contact",
+        "/api/indexnow"
       ],
     },
     sitemap: "https://ekimdemirci.com/sitemap.xml",
