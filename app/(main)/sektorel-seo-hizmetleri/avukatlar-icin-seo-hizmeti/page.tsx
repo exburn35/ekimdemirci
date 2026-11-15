@@ -63,22 +63,22 @@ export default function LawyersSEO() {
         {
           step: "1",
           title: "Hukuk Bürosu Analizi",
-          description: "Hukuk büronuzun mevcut durumunu analiz eder, uzmanlık alanlarınızı belirler ve rakip analizi yaparız. Hukuk sektörüne özel anahtar kelimeleri araştırırız.",
+          description: "Hukuk büronuzun mevcut durumunu analiz eder, uzmanlık alanlarınızı belirler ve rakip analizi yaparım. Hukuk sektörüne özel anahtar kelimeleri araştırırım.",
         },
         {
           step: "2",
           title: "İçerik ve SEO Stratejisi",
-          description: "Hukuk blog içerikleri, hizmet sayfaları ve anahtar kelime optimizasyonu ile web sitenizin içeriğini SEO için optimize ederiz.",
+          description: "Hukuk blog içerikleri, hizmet sayfaları ve anahtar kelime optimizasyonu ile web sitenizin içeriğini SEO için optimize ederim.",
         },
         {
           step: "3",
           title: "Yerel ve Teknik Optimizasyon",
-          description: "Google My Business optimizasyonu, yerel dizinlere kayıt ve teknik SEO iyileştirmeleri ile görünürlüğünüzü artırırız.",
+          description: "Google My Business optimizasyonu, yerel dizinlere kayıt ve teknik SEO iyileştirmeleri ile görünürlüğünüzü artırırım.",
         },
         {
           step: "4",
           title: "Sürekli Takip ve İyileştirme",
-          description: "Performans metriklerini takip eder, müvekkil geri bildirimlerini analiz eder ve SEO stratejinizi sürekli olarak iyileştiririz.",
+          description: "Performans metriklerini takip eder, müvekkil geri bildirimlerini analiz eder ve SEO stratejinizi sürekli olarak iyileştiririm.",
         },
       ]}
     />

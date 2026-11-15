@@ -1,84 +1,83 @@
-import { HelpCircle, ChevronDown } from "lucide-react";
+import Link from "next/link";
+import { Plus } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-const faqs: FAQItem[] = [
+const faqs = [
   {
-    question: "Sıralama garantisi veriyor musunuz?",
-    answer: "Hayır, arama motoru algoritmalarının sahibi olmayan hiçbir dürüst SEO uzmanı 1. sıra garantisi veremez. Google'ın kendi resmi yönergeleri de kesin sıralama vaat edenlerden uzak durulmasını tavsiye eder. Ben gerçek dışı vaatler yerine; kanıtlanmış teknik optimizasyonlar, kaliteli semantik içerik ve şeffaf veri takibiyle organik trafiğinizi ve dönüşümlerinizi sürdürülebilir biçimde artırıyorum.",
+    q: "Bir SEO danışmanı tam olarak ne yapar?",
+    a: "Sitenizin arama motorlarında neden olması gerektiği yerde olmadığını tespit eder ve bunu düzeltecek planı kurar. Benim işim; teknik hataları bulmak, içeriklerin hangi aramalara cevap vermesi gerektiğini belirlemek, markanızın dış dünyadaki otoritesini güçlendirmek ve tüm bunların etkisini ölçmek. Uygulamayı ister doğrudan ben yaparım, ister ekibinize net talimatlarla aktarırım.",
   },
   {
-    question: "SEO ile GEO arasındaki fark nedir?",
-    answer: "SEO geleneksel arama motoru sonuç sayfalarında (Google SERP) ilk sıralara yerleşmeyi hedeflerken, GEO (Generative Engine Optimization) ChatGPT, Gemini ve Perplexity gibi yapay zeka motorlarında referans gösterilmeyi sağlar. SEO tıklama ve trafik odaklıyken, GEO doğrudan yanıt ve marka otoritesi odaklıdır. İki disiplin birbirini tamamlayarak dijital varlığınızı geleceğe hazırlar.",
+    q: "GEO, SEO'nun yerini mi alıyor?",
+    a: "Hayır, onu tamamlıyor. Yapay zeka asistanları cevap üretirken büyük ölçüde iyi taranan, net yapılandırılmış ve başka kaynaklarca doğrulanan sayfalardan yararlanıyor. Bu yüzden güçlü bir SEO temeli olmadan kalıcı bir GEO başarısı pek mümkün değil. Ben ikisini aynı stratejinin iki ayağı olarak planlıyorum.",
   },
   {
-    question: "SEO danışmanlığı kimler için uygundur?",
-    answer: "SEO danışmanlığı; Google ve yapay zeka aramalarından düzenli, nitelikli müşteri ve satış kazanmak isteyen e-ticaret siteleri, B2B şirketler, sağlık klinikleri ve kurumsal işletmeler için uygundur. Dijital varlığını reklam bütçelerine bağımlı kılmadan uzun vadeli, sürdürülebilir organik büyüme sağlamak isteyen her marka için en yüksek yatırım getirili stratejidir.",
+    q: "Sonuçları ne zaman görmeye başlarım?",
+    a: "Teknik düzeltmelerin etkisi çoğu zaman ilk birkaç hafta içinde Search Console verilerine yansımaya başlar. Rekabetçi aramalarda kalıcı sıralama artışı ise genellikle üç ila altı ay sürer. Süre; sitenizin başlangıç durumuna, sektörünüze ve uygulama hızına bağlıdır. İlk görüşmede sizin için gerçekçi bir zaman çizelgesi çıkarırım.",
   },
   {
-    question: "ChatGPT'de görünmek garanti edilebilir mi?",
-    answer: "Hayır, yapay zeka modelleri kapalı olasılık algoritmalarıyla çalıştığı için hiçbir platformda kesin görünüm garantisi verilemez. Ancak doğru varlık (Entity) yapılandırması, Schema.org veri mimarisi ve yüksek otoriteli dijital PR stratejileriyle modelin bilgi grafiğinde (Knowledge Graph) yer almanız ve tavsiye edilen birincil kaynak olmanız yüksek olasılıkla sağlanır.",
+    q: "Birinci sıra ya da ChatGPT'de görünme garantisi veriyor musunuz?",
+    a: "Vermiyorum, veren birine de temkinli yaklaşmanızı öneririm. Ne Google'ın ne de yapay zeka şirketlerinin algoritmaları dışarıdan kontrol edilebilir. Garanti edebileceğim şey; doğru yöntemle, şeffaf biçimde çalışmak ve her ay neyin değiştiğini verilerle göstermek.",
   },
   {
-    question: "Çalışma süresi ve sözleşme nasıl?",
-    answer: "SEO ve GEO çalışmaları kalıcı sonuçlar üreten uzun soluklu bir süreç olduğundan, işbirliklerimi genellikle en az 3 ila 6 aylık dönemler halinde yürütüyorum. Sizi bağlayan katı ve hantal ajans sözleşmeleri yerine; aylık şeffaf raporlama, somut hedefler ve karşılıklı güvene dayalı esnek bir çalışma modeli benimsiyorum.",
+    q: "Yapay zeka görünürlüğünü nasıl ölçüyorsunuz?",
+    a: "Sektörünüzde müşterilerinizin sorabileceği soruları belirleyip ChatGPT, Gemini, Perplexity ve Google AI Overviews'ta düzenli olarak test ediyorum. Markanızın ne sıklıkla anıldığını, hangi bağlamda geçtiğini ve hangi kaynakların gösterildiğini kayıt altına alıp aydan aya karşılaştırıyorum.",
+  },
+  {
+    q: "Hangi sektörlerle çalışıyorsunuz?",
+    a: "E-ticaret, sağlık ve klinikler, hukuk büroları, güzellik merkezleri, yerel işletmeler ve B2B şirketler için sektöre özel hizmet sunuyorum. Her sektörün arama davranışı farklı olduğu için yol haritasını da sektöre göre ayrı hazırlıyorum.",
+  },
+  {
+    q: "Çalışma süresi ve sözleşme nasıl işliyor?",
+    a: "SEO birikimli sonuç veren bir iş olduğundan iş birliklerimi genellikle en az üç aylık dönemler halinde planlıyorum. Uzun ve bağlayıcı sözleşmeler yerine aylık raporlama ve net hedeflerle ilerleyen, karşılıklı güvene dayanan bir model kullanıyorum.",
+  },
+  {
+    q: "Ücretsiz ön analizde neler var?",
+    a: "Sitenizin genel teknik sağlığına, öne çıkan içerik fırsatlarına ve yapay zeka asistanlarında markanızın bugünkü durumuna kısa bir bakış. Size en önemli birkaç bulguyu ve önerdiğim ilk adımları iletirim. Sonrasında çalışıp çalışmamak tamamen sizin kararınız.",
   },
 ];
 
 export default function HomeFaq() {
-  const faqSchema = {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map((faq) => ({
+    mainEntity: faqs.map((f) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer,
-      },
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   };
 
   return (
-    <section className="bg-[#0a0f25] border-b border-white/5 py-12 md:py-16 relative">
-      {/* FAQPage JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-            SEO ve GEO Danışmanlığı Hakkında Sıkça Sorulan Sorular
-          </h2>
-          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-            Süreçler, garantiler, çalışma modelleri ve arama motoru optimizasyonuna dair merak edilen doğrudan yanıtlar.
-          </p>
+    <section id="sss" className="bg-white py-20 md:py-28">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div className="lg:col-span-4">
+          <SectionHeading
+            eyebrow="Sıkça sorulanlar"
+            title="Aklınızdaki soruların kısa cevapları"
+            intro="Burada cevabını bulamadığınız bir soru varsa doğrudan bana yazabilirsiniz; en kısa sürede kendim dönüş yapıyorum."
+          />
+          <div className="-mt-4 flex flex-wrap gap-3">
+            <Link href="/sikca-sorulan-sorular" className="text-sm font-semibold text-brand hover:text-brand-dark">
+              Tüm sorular →
+            </Link>
+            <Link href="/iletisim" className="text-sm font-semibold text-ink-soft hover:text-ink">
+              Bana yazın →
+            </Link>
+          </div>
         </div>
 
-        {/* Accordion List (HTML details/summary: answers stay in DOM for SEO & crawlers even when closed) */}
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <details
-              key={faq.question}
-              open={index === 0}
-              className="group rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-500/30 transition-all duration-300 overflow-hidden [&_summary::-webkit-details-marker]:hidden"
-            >
-              <summary className="flex items-center justify-between p-5 sm:p-6 cursor-pointer select-none">
-                <span className="text-base sm:text-lg font-bold text-white group-hover:text-purple-300 transition-colors pr-4">
-                  {faq.question}
-                </span>
-                <span className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-gray-400 group-hover:text-white group-open:rotate-180 transition-transform duration-300">
-                  <ChevronDown className="w-4 h-4" />
+        <div className="divide-y divide-line rounded-3xl border border-line bg-canvas lg:col-span-8">
+          {faqs.map((faq, i) => (
+            <details key={faq.q} className="group px-6 py-5 md:px-8" open={i === 0}>
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 [&::-webkit-details-marker]:hidden">
+                <h3 className="text-base font-semibold text-ink md:text-lg">{faq.q}</h3>
+                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line bg-white text-ink-muted transition-transform group-open:rotate-45 group-open:text-brand">
+                  <Plus className="h-4 w-4" />
                 </span>
               </summary>
-              <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-gray-300 leading-relaxed border-t border-white/5 pt-4">
-                {faq.answer}
-              </div>
+              <p className="mt-3 pr-10 leading-relaxed text-ink-soft">{faq.a}</p>
             </details>
           ))}
         </div>

@@ -145,7 +145,7 @@ export default function CentralResultsEvidence() {
   };
 
   return (
-    <section className="py-24 bg-[#0a0f25] relative overflow-hidden border-t border-white/5">
+    <section className="py-24 bg-canvas relative overflow-hidden border-t border-line">
       {/* Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -157,14 +157,14 @@ export default function CentralResultsEvidence() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-400 mb-6 uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-600 mb-6 uppercase tracking-wider">
             <TrendingUp className="w-4 h-4" />
             Şeffaf & Veriye Dayalı Başarı Kanıtları
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Organik Trafiği Nasıl{" "}<span className="bg-gradient-to-r from-purple-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">%250+ Artırdım?</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-ink tracking-tight mb-4">
+            Organik Trafiği Nasıl{" "}<span className="bg-gradient-to-r from-purple-600 via-emerald-600 to-cyan-600 bg-clip-text text-transparent">%250+ Artırdım?</span>
           </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+          <p className="text-ink-muted max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
             Statik iddialar yerine sektörel bazda kanıtlanmış ölçülebilir sıralama, trafik ve yapay zeka görünürlük verileri.
           </p>
         </motion.div>
@@ -194,10 +194,10 @@ export default function CentralResultsEvidence() {
                 className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
                   isActive
                     ? "bg-purple-600 text-white shadow-[0_0_25px_rgba(147,51,234,0.4)] border border-purple-400/30 scale-105"
-                    : "bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border border-white/10"
+                    : "bg-white text-ink-muted hover:text-ink hover:bg-ink/5 border border-line"
                 }`}
               >
-                <Icon className={`w-4 h-4 md:w-5 md:h-5 ${isActive ? "text-white" : "text-gray-400"}`} />
+                <Icon className={`w-4 h-4 md:w-5 md:h-5 ${isActive ? "text-ink" : "text-ink-muted"}`} />
                 {tab.title}
               </button>
             );
@@ -219,7 +219,7 @@ export default function CentralResultsEvidence() {
                   aria-labelledby={`case-tab-${key}`}
                   tabIndex={isActive ? 0 : -1}
                   aria-hidden={!isActive}
-                  className={`col-start-1 row-start-1 bg-[#111836]/90 border border-purple-500/20 rounded-3xl p-6 md:p-10 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                  className={`col-start-1 row-start-1 bg-white/90 border border-purple-500/20 rounded-3xl p-6 md:p-10 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
                     isActive
                       ? "opacity-100 visible z-10 translate-y-0"
                       : "opacity-0 invisible pointer-events-none -z-10 translate-y-2"
@@ -228,26 +228,26 @@ export default function CentralResultsEvidence() {
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     {/* Left Column: Project Info & Main Growth Card */}
                     <div className="lg:col-span-5 space-y-6">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-500/20 text-purple-300 text-xs font-mono font-semibold border border-purple-500/30">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-500/20 text-purple-700 text-xs font-mono font-semibold border border-purple-500/30">
                         <Calendar className="w-3.5 h-3.5" />
                         {currentCase.projectCode} &bull; {currentCase.durationMonths} Ay Çalışma
                       </div>
 
-                      <h3 className="text-2xl md:text-3xl font-extrabold text-white leading-tight">
+                      <h3 className="text-2xl md:text-3xl font-extrabold text-ink leading-tight">
                         {currentCase.categoryName}
                       </h3>
 
-                      <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                      <p className="text-ink-soft leading-relaxed text-sm md:text-base">
                         {currentCase.summary}
                       </p>
 
                       {/* Big Metric Box */}
                       <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-950/60 to-indigo-950/60 border border-purple-500/30 flex items-center justify-between">
                         <div>
-                          <div className="text-xs uppercase tracking-wider text-purple-300 font-semibold mb-1">
+                          <div className="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-1">
                             Organik Trafik / Görünürlük Artışı
                           </div>
-                          <div className="text-4xl md:text-5xl font-black text-emerald-400 tracking-tight">
+                          <div className="text-4xl md:text-5xl font-black text-emerald-600 tracking-tight">
                             {currentCase.trafficGrowth}
                           </div>
                         </div>
@@ -259,56 +259,56 @@ export default function CentralResultsEvidence() {
                     <div className="lg:col-span-7 space-y-6">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {/* Keyword Box */}
-                        <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                          <div className="flex items-center gap-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                            <Search className="w-4 h-4 text-purple-400" />
+                        <div className="p-5 rounded-2xl bg-white border border-line">
+                          <div className="flex items-center gap-2 text-xs font-semibold text-ink-muted uppercase tracking-wider mb-2">
+                            <Search className="w-4 h-4 text-purple-600" />
                             Hedef Odak Sorgu
                           </div>
-                          <div className="text-white font-bold text-sm md:text-base">
+                          <div className="text-ink font-bold text-sm md:text-base">
                             {currentCase.targetKeyword}
                           </div>
                         </div>
 
                         {/* Duration Box */}
-                        <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                          <div className="flex items-center gap-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                            <Calendar className="w-4 h-4 text-blue-400" />
+                        <div className="p-5 rounded-2xl bg-white border border-line">
+                          <div className="flex items-center gap-2 text-xs font-semibold text-ink-muted uppercase tracking-wider mb-2">
+                            <Calendar className="w-4 h-4 text-blue-600" />
                             Süreç Süresi
                           </div>
-                          <div className="text-white font-bold text-sm md:text-base">
+                          <div className="text-ink font-bold text-sm md:text-base">
                             {currentCase.durationMonths} Ay Kesintisiz Optimizasyon
                           </div>
                         </div>
 
                         {/* Initial Rank */}
-                        <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                          <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
+                        <div className="p-5 rounded-2xl bg-white border border-line">
+                          <div className="text-xs font-semibold text-ink-muted uppercase tracking-wider mb-1">
                             Başlangıç Sırası
                           </div>
-                          <div className="text-xl font-bold text-red-400">
+                          <div className="text-xl font-bold text-red-600">
                             {currentCase.initialRank}
                           </div>
                         </div>
 
                         {/* Current Rank */}
-                        <div className="p-5 rounded-2xl bg-white/5 border border-white/10 bg-emerald-950/20 border-emerald-500/20">
-                          <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-1">
+                        <div className="p-5 rounded-2xl bg-white border border-line bg-emerald-950/20 border-emerald-500/20">
+                          <div className="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-1">
                             Güncel Sıra (Zirve)
                           </div>
-                          <div className="text-xl font-bold text-emerald-300">
+                          <div className="text-xl font-bold text-emerald-700">
                             {currentCase.currentRank}
                           </div>
                         </div>
                       </div>
 
                       {/* Highlights List */}
-                      <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2.5">
-                        <div className="text-xs font-semibold text-purple-300 uppercase tracking-wider mb-2">
+                      <div className="p-5 rounded-2xl bg-white border border-line space-y-2.5">
+                        <div className="text-xs font-semibold text-purple-700 uppercase tracking-wider mb-2">
                           Uygulanan Kritik Teknik & Semantik Adımlar
                         </div>
                         {currentCase.highlights.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2.5 text-xs md:text-sm text-gray-300">
-                            <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                          <div key={idx} className="flex items-start gap-2.5 text-xs md:text-sm text-ink-soft">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </div>
                         ))}
@@ -319,7 +319,7 @@ export default function CentralResultsEvidence() {
                         <Link
                           href={currentCase.link || "/basari-hikayeleri"}
                           tabIndex={isActive ? 0 : -1}
-                          className="inline-flex items-center gap-2 text-sm font-bold text-purple-300 hover:text-white transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-md"
+                          className="inline-flex items-center gap-2 text-sm font-bold text-purple-700 hover:text-ink transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-md"
                         >
                           Detaylı Vaka İncelemesini Gör &rarr;
                         </Link>

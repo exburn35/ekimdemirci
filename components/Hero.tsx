@@ -40,12 +40,12 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[min(120vh,1050px)] flex flex-col items-center pt-24 md:pt-32 overflow-hidden bg-[#0a0f25]">
+    <section className="relative min-h-[min(120vh,1050px)] flex flex-col items-center pt-24 md:pt-32 overflow-hidden bg-canvas">
       {/* Dark Space Background Gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#111836] via-[#0a0f25] to-black z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-white via-canvas to-canvas z-0" />
       
       {/* Dot Pattern Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff20_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_40%,#000_70%,transparent_100%)] z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(#161b2e20_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_40%,#000_70%,transparent_100%)] z-0" />
       
       {/* Animated Gradient Aura */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/20 rounded-full blur-[120px] animate-pulse pointer-events-none z-0" />
@@ -60,7 +60,7 @@ export default function Hero() {
         >
           {/* Badge */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center px-5 py-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-xl text-sm font-bold text-blue-200 mb-8 shadow-[0_0_20px_rgba(59,130,246,0.2)] animate-pulse-slow">
+            <span className="inline-flex items-center px-5 py-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-xl text-sm font-bold text-blue-700 mb-8 shadow-[0_0_20px_rgba(59,130,246,0.2)] animate-pulse-slow">
               <span className="w-2.5 h-2.5 bg-blue-400 rounded-full mr-3 shadow-[0_0_12px_#60a5fa] animate-ping" />
               Sınırlı Kontenjan ile Yeni Projeler Kabul Ediyorum
             </span>
@@ -69,10 +69,10 @@ export default function Hero() {
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold mb-4 leading-tight text-white tracking-tight"
+            className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold mb-4 leading-tight text-ink tracking-tight"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">SEO ve GEO Danışmanı</span>{" "}<br className="hidden md:block" />{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Ekim Demirci</span>
+            <span className="text-ink">SEO ve GEO Danışmanı</span>{" "}<br className="hidden md:block" />{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Ekim Demirci</span>
           </motion.h1>
 
           {/* Slogan Subtitle */}
@@ -86,9 +86,9 @@ export default function Hero() {
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-ink-soft mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Ben Ekim Demirci. Yapay zeka destekli <Link href="/seo-hizmetleri/yapay-zeka-seo" className="text-emerald-400 hover:underline">GEO (Generative Engine Optimization)</Link> ve modern <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-emerald-400 hover:underline">semantik SEO</Link> stratejileriyle web sitenizin arama görünürlüğünü ve dönüşümlerini bireysel uzmanlığımla sürdürülebilir şekilde artırıyorum.
+            Ben Ekim Demirci. Yapay zeka destekli <Link href="/seo-hizmetleri/yapay-zeka-seo" className="text-emerald-600 hover:underline">GEO (Generative Engine Optimization)</Link> ve modern <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-emerald-600 hover:underline">semantik SEO</Link> stratejileriyle web sitenizin arama görünürlüğünü ve dönüşümlerini bireysel uzmanlığımla sürdürülebilir şekilde artırıyorum.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -98,14 +98,14 @@ export default function Hero() {
           >
              <Link
               href="#seo-analizi"
-              className="group px-8 py-4 bg-gradient-to-r from-emerald-400 to-green-500 text-black rounded-full font-bold text-lg hover:from-emerald-300 hover:to-green-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] flex items-center gap-2"
+              className="group px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-500 text-black rounded-full font-bold text-lg hover:from-emerald-600 hover:to-green-600 transition-all duration-300 hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] flex items-center gap-2"
             >
               Ücretsiz SEO Analizi Al
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="#hizmetler"
-              className="px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-full font-semibold text-lg text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+              className="px-8 py-4 bg-white backdrop-blur-md border border-line rounded-full font-semibold text-lg text-ink hover:bg-ink/5 hover:border-line-strong transition-all duration-300"
             >
               Hizmetlerimi İncele
             </Link>
@@ -123,8 +123,8 @@ export default function Hero() {
               const Icon = stat.icon;
               return (
                 <div key={stat.label} className="flex flex-col items-center text-center">
-                   <div className="text-2xl sm:text-3xl font-bold text-white mb-1 shadow-black drop-shadow-lg">{stat.value}</div>
-                   <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-gray-400 flex items-center gap-1">
+                   <div className="text-2xl sm:text-3xl font-bold text-ink mb-1 shadow-black drop-shadow-lg">{stat.value}</div>
+                   <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-ink-muted flex items-center gap-1">
                      <Icon className="w-3 h-3" />
                      <span>{stat.label}</span>
                    </div>
@@ -135,7 +135,7 @@ export default function Hero() {
       </div>
 
       {/* Smooth gradient transition into the dark theme of the next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0a0f25] to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-canvas to-transparent z-20 pointer-events-none" />
     </section>
   );
 }

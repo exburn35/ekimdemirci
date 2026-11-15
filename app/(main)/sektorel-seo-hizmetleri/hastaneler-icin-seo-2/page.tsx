@@ -63,22 +63,22 @@ export default function HospitalsSEO() {
         {
           step: "1",
           title: "Hastane ve Kuruluş Analizi",
-          description: "Hastanenizin mevcut durumunu analiz eder, hizmet alanlarınızı belirler ve rakip analizi yaparız. Sağlık sektörüne özel anahtar kelimeleri araştırırız.",
+          description: "Hastanenizin mevcut durumunu analiz eder, hizmet alanlarınızı belirler ve rakip analizi yaparım. Sağlık sektörüne özel anahtar kelimeleri araştırırım.",
         },
         {
           step: "2",
           title: "Yerel ve Ulusal SEO Stratejisi",
-          description: "Google My Business optimizasyonu, yerel dizinlere kayıt ve ulusal anahtar kelime optimizasyonu ile görünürlüğünüzü artırırız.",
+          description: "Google My Business optimizasyonu, yerel dizinlere kayıt ve ulusal anahtar kelime optimizasyonu ile görünürlüğünüzü artırırım.",
         },
         {
           step: "3",
           title: "İçerik ve Teknik Optimizasyon",
-          description: "Hasta odaklı içerikler oluşturur, çok sayfalı site optimizasyonu yapar ve web sitenizin hızını ve kullanıcı deneyimini optimize ederiz.",
+          description: "Hasta odaklı içerikler oluşturur, çok sayfalı site optimizasyonu yapar ve web sitenizin hızını ve kullanıcı deneyimini optimize ederim.",
         },
         {
           step: "4",
           title: "Sürekli Takip ve İyileştirme",
-          description: "Performans metriklerini takip eder, hasta geri bildirimlerini analiz eder ve SEO stratejinizi sürekli olarak iyileştiririz.",
+          description: "Performans metriklerini takip eder, hasta geri bildirimlerini analiz eder ve SEO stratejinizi sürekli olarak iyileştiririm.",
         },
       ]}
     />

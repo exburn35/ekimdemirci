@@ -87,35 +87,35 @@ export default function AISummarizer({ post }: AISummarizerProps) {
   return (
     <div className="relative w-full z-40 mb-4" ref={dropdownRef}>
       {/* Split Button Container */}
-      <div className="flex items-stretch rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 overflow-hidden h-[44px]">
+      <div className="flex items-stretch rounded-2xl border border-line bg-white hover:bg-ink/[0.03] hover:border-line-strong transition-all duration-300 overflow-hidden h-[44px]">
         {/* Left main action (Link to ChatGPT) */}
         <a
           href={chatgptUrl}
           target="_blank"
           rel="nofollow noopener noreferrer"
-          className="flex items-center gap-2.5 px-4 flex-grow text-white text-[13px] font-semibold hover:text-white transition-colors duration-300"
+          className="flex items-center gap-2.5 px-4 flex-grow text-ink text-[13px] font-semibold hover:text-ink transition-colors duration-300"
         >
           {chatgptIcon}
           <span>AI ile İçeriği Özetle</span>
         </a>
 
         {/* Separator line */}
-        <div className="w-[1px] bg-white/10 self-stretch" />
+        <div className="w-[1px] bg-ink/[0.04] self-stretch" />
 
         {/* Right dropdown arrow toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="px-3.5 flex items-center justify-center text-gray-400 hover:text-white transition-colors duration-300 focus:outline-none cursor-pointer"
+          className="px-3.5 flex items-center justify-center text-ink-muted hover:text-ink transition-colors duration-300 focus:outline-none cursor-pointer"
           aria-label="Diğer AI modelleri ile özetle"
           aria-expanded={isOpen}
         >
-          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180 text-white" : ""}`} />
+          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180 text-ink" : ""}`} />
         </button>
       </div>
 
       {/* Dropdown Options - Kept in SSR HTML for crawlers and bot indexing */}
       <div
-        className={`absolute left-0 right-0 mt-2 rounded-2xl bg-[#0f0f18] border border-white/10 shadow-2xl overflow-hidden py-1.5 z-50 transition-all duration-200 ${
+        className={`absolute left-0 right-0 mt-2 rounded-2xl bg-white border border-line shadow-2xl overflow-hidden py-1.5 z-50 transition-all duration-200 ${
           isOpen
             ? "opacity-100 visible pointer-events-auto translate-y-0"
             : "opacity-0 invisible pointer-events-none -translate-y-2"
@@ -128,7 +128,7 @@ export default function AISummarizer({ post }: AISummarizerProps) {
             target="_blank"
             rel="nofollow noopener noreferrer"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 px-4 py-2.5 text-[13px] text-gray-400 hover:bg-white/[0.04] hover:text-white transition-all duration-300 border-b border-white/[0.02] last:border-0"
+            className="flex items-center gap-3 px-4 py-2.5 text-[13px] text-ink-muted hover:bg-ink/[0.03] hover:text-ink transition-all duration-300 border-b border-line last:border-0"
           >
             <span className="flex-shrink-0">{model.icon}</span>
             <span>{model.label}</span>

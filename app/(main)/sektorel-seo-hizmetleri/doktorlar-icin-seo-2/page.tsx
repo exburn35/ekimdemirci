@@ -63,22 +63,22 @@ export default function DoctorsSEO() {
         {
           step: "1",
           title: "Doktor ve Klinik Analizi",
-          description: "Pratiklerinizin mevcut durumunu analiz eder, uzmanlık alanlarınızı belirler ve rakip analizi yaparız. Tıp sektörüne özel anahtar kelimeleri araştırırız.",
+          description: "Pratiklerinizin mevcut durumunu analiz eder, uzmanlık alanlarınızı belirler ve rakip analizi yaparım. Tıp sektörüne özel anahtar kelimeleri araştırırım.",
         },
         {
           step: "2",
           title: "Yerel SEO Stratejisi",
-          description: "Google My Business optimizasyonu, yerel dizinlere kayıt ve yerel anahtar kelime optimizasyonu ile bölgenizdeki aramalarda görünürlüğünüzü artırırız.",
+          description: "Google My Business optimizasyonu, yerel dizinlere kayıt ve yerel anahtar kelime optimizasyonu ile bölgenizdeki aramalarda görünürlüğünüzü artırırım.",
         },
         {
           step: "3",
           title: "İçerik ve Teknik Optimizasyon",
-          description: "Randevu odaklı içerikler oluşturur, teknik SEO iyileştirmeleri yapar ve web sitenizin hızını ve kullanıcı deneyimini optimize ederiz.",
+          description: "Randevu odaklı içerikler oluşturur, teknik SEO iyileştirmeleri yapar ve web sitenizin hızını ve kullanıcı deneyimini optimize ederim.",
         },
         {
           step: "4",
           title: "Sürekli Takip ve İyileştirme",
-          description: "Performans metriklerini takip eder, hasta geri bildirimlerini analiz eder ve SEO stratejinizi sürekli olarak iyileştiririz.",
+          description: "Performans metriklerini takip eder, hasta geri bildirimlerini analiz eder ve SEO stratejinizi sürekli olarak iyileştiririm.",
         },
       ]}
     />

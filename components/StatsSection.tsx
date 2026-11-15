@@ -36,7 +36,7 @@ export default function StatsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <span className="text-ink">
               Deneyim & Sonuçlar
             </span>
           </h2>
@@ -48,14 +48,14 @@ export default function StatsSection() {
             return (
               <div
                 key={stat.label}
-                className="glass-strong p-8 rounded-2xl text-center hover:bg-white/10 transition-all duration-300 group"
+                className="glass-strong p-8 rounded-2xl text-center hover:bg-ink/5 transition-all duration-300 group"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-8 h-8 text-white" />
+                  <Icon className="w-8 h-8 text-ink" />
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-lg font-semibold text-gray-300 mb-2">{stat.label}</div>
-                <div className="text-sm text-gray-400">{stat.description}</div>
+                <div className="text-4xl md:text-5xl font-bold text-ink mb-2">{stat.value}</div>
+                <div className="text-lg font-semibold text-ink-soft mb-2">{stat.label}</div>
+                <div className="text-sm text-ink-muted">{stat.description}</div>
               </div>
             );
           })}

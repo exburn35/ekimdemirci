@@ -37,8 +37,8 @@ export default function SuccessStoriesClient() {
     <>
       <Breadcrumb items={[{ name: "Başarı Hikayeleri", href: "/basari-hikayeleri" }]} />
       {/* Hero Bölümü */}
-      <section className="relative pt-36 pb-24 overflow-hidden bg-[#0a0f25]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f25] via-[#0d153a] to-[#050814]" />
+      <section className="relative pt-36 pb-24 overflow-hidden bg-canvas">
+        <div className="absolute inset-0 bg-gradient-to-b from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:32px_32px]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
@@ -51,11 +51,11 @@ export default function SuccessStoriesClient() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-              <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Başarı Hikayeleri
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-lg md:text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed font-light">
               Danışanlarımın SEO çalışmaları ile elde ettiği başarılar ve ölçülebilir gerçek sonuçlar. 
               Siz de bu başarıların bir parçası olun.
             </p>
@@ -64,7 +64,7 @@ export default function SuccessStoriesClient() {
       </section>
 
       {/* İstatistik Metrikleri Bölümü */}
-      <section className="py-16 bg-[#050814] relative overflow-hidden">
+      <section className="py-16 bg-canvas relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => {
@@ -76,13 +76,13 @@ export default function SuccessStoriesClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white/[0.02] border border-white/[0.08] p-6 rounded-2xl text-center backdrop-blur-md"
+                  className="bg-white border border-line p-6 rounded-2xl text-center backdrop-blur-md"
                 >
                   <div className="w-14 h-14 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-purple-500/20">
-                    <Icon className="w-6 h-6 text-purple-400" />
+                    <Icon className="w-6 h-6 text-purple-600" />
                   </div>
-                  <div className="text-3xl font-extrabold text-white mb-2">{stat.value}</div>
-                  <div className="text-gray-400 text-xs font-light tracking-wide">{stat.label}</div>
+                  <div className="text-3xl font-extrabold text-ink mb-2">{stat.value}</div>
+                  <div className="text-ink-muted text-xs font-light tracking-wide">{stat.label}</div>
                 </motion.div>
               );
             })}
@@ -91,7 +91,7 @@ export default function SuccessStoriesClient() {
       </section>
 
       {/* Başarı Hikayeleri Filtreleme ve Listeleme Bölümü */}
-      <section className="py-24 bg-gradient-to-b from-[#050814] to-[#0a0f25] relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-canvas to-canvas relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Kategori Filtresi */}
@@ -106,7 +106,7 @@ export default function SuccessStoriesClient() {
                   className={`flex items-center gap-2 px-5 py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${
                     isSelected
                       ? "bg-purple-600 text-white shadow-[0_4px_20px_rgba(168,85,247,0.3)]"
-                      : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
+                      : "bg-white text-ink-muted border border-line hover:bg-ink/5 hover:text-ink"
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -131,23 +131,23 @@ export default function SuccessStoriesClient() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: shouldReduceMotion ? 0 : 0.4 }}
                   whileHover={shouldReduceMotion ? {} : { y: -8, borderColor: "rgba(168, 85, 247, 0.4)", backgroundColor: "rgba(255,255,255,0.03)" }}
-                  className="relative rounded-3xl p-8 border border-white/[0.08] bg-white/[0.01] backdrop-blur-md flex flex-col justify-between group transition-all duration-500"
+                  className="relative rounded-3xl p-8 border border-line bg-white backdrop-blur-md flex flex-col justify-between group transition-all duration-500"
                 >
                   <div>
-                    <span className="text-[10px] font-bold tracking-wider uppercase text-purple-400 bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/20 inline-block mb-4">
+                    <span className="text-[10px] font-bold tracking-wider uppercase text-purple-600 bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/20 inline-block mb-4">
                       {study.sector}
                     </span>
-                    <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 min-h-[56px]">
+                    <h3 className="text-xl font-bold text-ink mb-3 line-clamp-2 min-h-[56px]">
                       {study.company}
                     </h3>
-                    <p className="text-gray-400 text-xs font-light mb-6 line-clamp-3 min-h-[54px] leading-relaxed">
+                    <p className="text-ink-muted text-xs font-light mb-6 line-clamp-3 min-h-[54px] leading-relaxed">
                       {study.summary}
                     </p>
                     
                     {/* Dikkat çekici tek metrik gösterimi */}
                     <div className="mb-8 p-4 bg-purple-500/5 rounded-2xl border border-purple-500/10">
-                      <span className="text-[10px] text-gray-500 block uppercase tracking-wider font-bold mb-1">Öne Çıkan Sonuç</span>
-                      <span className="text-lg md:text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+                      <span className="text-[10px] text-ink-faint block uppercase tracking-wider font-bold mb-1">Öne Çıkan Sonuç</span>
+                      <span className="text-lg md:text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
                         {study.slug === "cevrimici-egitim-platformu" || study.slug === "motosiklet-aksesuarlari-magazasi"
                           ? `Gösterimde ${study.impressionIncrease} artış`
                           : `Tıklamada ${study.clickIncrease} artış`}
@@ -157,7 +157,7 @@ export default function SuccessStoriesClient() {
 
                   <Link
                     href={`/basari-hikayeleri/${study.slug}`}
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors self-start mt-auto"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-purple-600 hover:text-purple-700 transition-colors self-start mt-auto"
                   >
                     Detayları İncele
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" />
@@ -180,14 +180,14 @@ export default function SuccessStoriesClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white/[0.01] border border-white/[0.08] rounded-3xl p-8 md:p-12 text-center backdrop-blur-md relative overflow-hidden"
+            className="bg-white border border-line rounded-3xl p-8 md:p-12 text-center backdrop-blur-md relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5" />
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink tracking-tight">
                 Sıradaki Başarı Hikayesi Sizin Olsun
               </h2>
-              <p className="text-sm md:text-base text-gray-400 mb-8 max-w-xl mx-auto font-light leading-relaxed">
+              <p className="text-sm md:text-base text-ink-muted mb-8 max-w-xl mx-auto font-light leading-relaxed">
                 Bireysel SEO danışmanlığı hizmetlerimle dijital dünyadaki görünürlüğünüzü artırın ve rakiplerinizin önüne geçin.
               </p>
               <motion.div

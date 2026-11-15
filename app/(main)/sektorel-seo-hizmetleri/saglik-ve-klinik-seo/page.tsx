@@ -210,87 +210,87 @@ export default function HealthAndClinicSEOPage() {
         blogCategory="Sağlık SEO"
       >
         {/* HERO TRUST STRIP */}
-        <section className="py-8 bg-[#0a0f25] border-y border-white/5">
+        <section className="py-8 bg-canvas border-y border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-emerald-400">8+ Yıl</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Medikal SEO Deneyimi</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-emerald-600">8+ Yıl</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Medikal SEO Deneyimi</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-teal-400">40+</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Sağlık Projesi & Klinik</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-teal-600">40+</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Sağlık Projesi & Klinik</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-blue-400">YMYL & E-E-A-T</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Google Medikal Kalite Standardı</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-blue-600">YMYL & E-E-A-T</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Google Medikal Kalite Standardı</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-amber-400">TTB & KVKK</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Mevzuata Etik Uyum</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-amber-600">TTB & KVKK</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Mevzuata Etik Uyum</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* DEFINITION & TRANSPARENT EVIDENCE SECTION */}
-        <section className="py-16 bg-[#0a0f25]">
+        <section className="py-16 bg-canvas">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
                 Sağlık ve Klinik SEO Danışmanlığı Nedir?
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
-                Sağlık ve klinik SEO danışmanlığı; özel poliklinikler, doktorlar, diş hekimleri ve hastanelerin Google'ın YMYL (Your Money Your Life) ve E-E-A-T kriterlerine uygun şekilde hastalar tarafından arama sonuçlarında güvenilir bir sağlık otoritesi olarak bulunmasını sağlayan uzmanlık sürecidir. Mağazanız veya kliniğiniz için <Link href="/seo-hizmetleri/teknik-seo" className="text-emerald-400 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-emerald-400 underline font-semibold">Sayfa İçi SEO</Link> kurarak etik çerçevede sürekli hasta randevu trafiği oluşturuyorum.
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
+                Sağlık ve klinik SEO danışmanlığı; özel poliklinikler, doktorlar, diş hekimleri ve hastanelerin Google'ın YMYL (Your Money Your Life) ve E-E-A-T kriterlerine uygun şekilde hastalar tarafından arama sonuçlarında güvenilir bir sağlık otoritesi olarak bulunmasını sağlayan uzmanlık sürecidir. Mağazanız veya kliniğiniz için <Link href="/seo-hizmetleri/teknik-seo" className="text-emerald-600 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-emerald-600 underline font-semibold">Sayfa İçi SEO</Link> kurarak etik çerçevede sürekli hasta randevu trafiği oluşturuyorum.
               </p>
 
-              <div className="pt-6 border-t border-white/10">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-emerald-400" />
+              <div className="pt-6 border-t border-line">
+                <h3 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5 text-emerald-600" />
                   Doğrulanmış Metodoloji ve Şeffaf Ölçüm Çerçevesi
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-5 bg-[#111836] border border-emerald-500/20 rounded-2xl">
-                    <div className="text-xs text-emerald-400 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
-                    <div className="text-3xl font-extrabold text-emerald-300 mb-2">%112 Randevu Artışı</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-emerald-500/20 rounded-2xl">
+                    <div className="text-xs text-emerald-600 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
+                    <div className="text-3xl font-extrabold text-emerald-700 mb-2">%112 Randevu Artışı</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       8 aylık E-E-A-T ve harita optimizasyonu sürecinde poliklinik sitesinde elde edilen doğrulanmış hasta randevu büyümesi. (Kaynak: GA4 Medikal Etkinlik Takibi 2025)
                     </p>
                   </div>
-                  <div className="p-5 bg-[#111836] border border-emerald-500/20 rounded-2xl">
-                    <div className="text-xs text-emerald-400 font-mono font-semibold mb-1">LOCAL PACK KONUMU</div>
-                    <div className="text-3xl font-extrabold text-white mb-2">Haritada İlk 3</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-emerald-500/20 rounded-2xl">
+                    <div className="text-xs text-emerald-600 font-mono font-semibold mb-1">LOCAL PACK KONUMU</div>
+                    <div className="text-3xl font-extrabold text-ink mb-2">Haritada İlk 3</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       Bölgesel diş kliniği ve uzman aramalarında Google Maps paketinde üst sırada yer alma.
                     </p>
                   </div>
-                  <div className="p-5 bg-[#111836] border border-emerald-500/20 rounded-2xl">
-                    <div className="text-xs text-emerald-400 font-mono font-semibold mb-1">YMYL GÜVENLİK PUANI</div>
-                    <div className="text-3xl font-extrabold text-teal-400 mb-2">%100 Uyum</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-emerald-500/20 rounded-2xl">
+                    <div className="text-xs text-emerald-600 font-mono font-semibold mb-1">YMYL GÜVENLİK PUANI</div>
+                    <div className="text-3xl font-extrabold text-teal-600 mb-2">%100 Uyum</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       Hekim biyografisi, yayınlanan tıbbi makale bilimsel atıfları ve etik kurallarla Google kalite standartlarına tam uyum.
                     </p>
                   </div>
                 </div>
 
                 {/* DR. ERSOY KOCABIÇAK CASE STUDY & AHREFS CHART */}
-                <div className="mt-8 pt-6 border-t border-white/10">
+                <div className="mt-8 pt-6 border-t border-line">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                     <div>
-                      <div className="text-xs font-mono font-semibold text-emerald-400 mb-1">GERÇEK SAĞLIK VAKA ÇALIŞMASI (drersoykocabicak.com)</div>
-                      <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                        <TrendingUp className="w-5 h-5 text-emerald-400" />
+                      <div className="text-xs font-mono font-semibold text-emerald-600 mb-1">GERÇEK SAĞLIK VAKA ÇALIŞMASI (drersoykocabicak.com)</div>
+                      <h3 className="text-xl font-bold text-ink flex items-center gap-2">
+                        <TrendingUp className="w-5 h-5 text-emerald-600" />
                         Dr. Ersoy Kocabıçak Ahrefs Organik Trafik Büyüme Grafiği
                       </h3>
                     </div>
-                    <div className="text-xs text-gray-300 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg inline-block">
-                      Başlangıç <span className="text-emerald-400 font-semibold">Mart 2025</span> | Büyüme <span className="text-emerald-400 font-semibold">Günlük 500'den 45.000 Tıklamaya</span>
+                    <div className="text-xs text-ink-soft bg-white border border-line px-3 py-1.5 rounded-lg inline-block">
+                      Başlangıç <span className="text-emerald-600 font-semibold">Mart 2025</span> | Büyüme <span className="text-emerald-600 font-semibold">Günlük 500'den 45.000 Tıklamaya</span>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                    <a href="https://drersoykocabicak.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-semibold underline">drersoykocabicak.com</a> web sitesi için Mart 2025 tarihinde başlattığımız medikal YMYL ve E-E-A-T optimizasyon çalışmaları neticesinde, başlangıçta günlük 500 olan organik tıklama 1 yıl içerisinde günlük 45.000 tıklama seviyesine yükseltilmiştir.
+                  <p className="text-ink-soft text-sm leading-relaxed mb-4">
+                    <a href="https://drersoykocabicak.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-semibold underline">drersoykocabicak.com</a> web sitesi için Mart 2025 tarihinde başlattığım medikal YMYL ve E-E-A-T optimizasyon çalışmaları neticesinde, başlangıçta günlük 500 olan organik tıklama 1 yıl içerisinde günlük 45.000 tıklama seviyesine yükseltilmiştir.
                   </p>
-                  <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#111836] p-2 shadow-2xl">
+                  <div className="rounded-2xl overflow-hidden border border-line bg-white p-2 shadow-2xl">
                     <img 
                       src="/dr-ersoy-kocabicak-ahrefs-verisi.png" 
                       alt="Dr Ersoy Kocabıçak Ahrefs Organik Trafik Büyüme Grafiği" 
@@ -304,33 +304,33 @@ export default function HealthAndClinicSEOPage() {
         </section>
 
         {/* PHYSICIAN AUTHOR & E-E-A-T MODEL SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-emerald-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <UserCheck className="w-8 h-8 text-emerald-400" />
+            <div className="bg-white border border-emerald-500/20 rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <UserCheck className="w-8 h-8 text-emerald-600" />
                 Hekim Yazarlık ve Tıbbi E-E-A-T Model İnşası
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-8">
                 Google, sağlık makalelerinin kimin tarafından yazıldığını ve hangi tıbbi uzman tarafından gözden geçirildiğini doğrulamak ister. Sitenize kurduğum E-E-A-T mimarısı şunları kapsar:
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <h3 className="text-lg font-bold text-emerald-300 mb-2">Hekim Biyografi Kutusu</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                <div className="p-6 bg-white border border-line rounded-2xl">
+                  <h3 className="text-lg font-bold text-emerald-700 mb-2">Hekim Biyografi Kutusu</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">
                     Tıp fakültesi diploması, uzmanlık alanı, çalıştığı kurumlar ve üye olduğu derneklerin doğrulanmış bağlantıları yer alır.
                   </p>
                 </div>
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <h3 className="text-lg font-bold text-teal-300 mb-2">Tıbbi İnceleyen (Medical Reviewer)</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                <div className="p-6 bg-white border border-line rounded-2xl">
+                  <h3 className="text-lg font-bold text-teal-700 mb-2">Tıbbi İnceleyen (Medical Reviewer)</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">
                     İçeriğin uzman hekim tarafından kontrol edildiğini gösteren "Tıbbi Gözden Geçiren" rozeti ve şema işaretlemesi eklenir.
                   </p>
                 </div>
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <h3 className="text-lg font-bold text-blue-300 mb-2">Bilimsel Literatür Atıfları</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                <div className="p-6 bg-white border border-line rounded-2xl">
+                  <h3 className="text-lg font-bold text-blue-700 mb-2">Bilimsel Literatür Atıfları</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">
                     Tıbbi makalelerin altına PubMed, PubMed Central ve resmi sağlık dergilerine referans bağlantıları kurgulanır.
                   </p>
                 </div>
@@ -340,29 +340,29 @@ export default function HealthAndClinicSEOPage() {
         </section>
 
         {/* HEALTH REGULATION & LEGISLATION COMPLIANCE SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-white/10 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <Scale className="w-8 h-8 text-amber-400" />
+            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <Scale className="w-8 h-8 text-amber-600" />
                 Sağlık Mevzuatı, TTB Kılavuzları ve KVKK Uyum Mimarısı
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
                 Sağlık sektöründe dijital görünürlük elde ederken etik ve hukuki kurallara uymak esastır. Sağlık Bakanlığı, Türk Tabipleri Birliği (TTB) ve Ağız Diş Sağlığı yönetmeliklerine aykırı aldatıcı reklam dili kullanmadan, tamamen bilgilendirme odaklı SEO stratejisi yürütüyorum.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-5 bg-white/5 border border-white/10 rounded-2xl flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-amber-400 mt-1 flex-shrink-0" />
+                <div className="p-5 bg-white border border-line rounded-2xl flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-amber-600 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="text-white font-bold text-base mb-1">Tedavi Vaadinden Uzak İçerik</h3>
-                    <p className="text-gray-300 text-sm">Kesin iyileşme vaatleri yerine prosedür, iyileşme süreci ve bilimsel bilgilendirme ön planda tutulur.</p>
+                    <h3 className="text-ink font-bold text-base mb-1">Tedavi Vaadinden Uzak İçerik</h3>
+                    <p className="text-ink-soft text-sm">Kesin iyileşme vaatleri yerine prosedür, iyileşme süreci ve bilimsel bilgilendirme ön planda tutulur.</p>
                   </div>
                 </div>
-                <div className="p-5 bg-white/5 border border-white/10 rounded-2xl flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-amber-400 mt-1 flex-shrink-0" />
+                <div className="p-5 bg-white border border-line rounded-2xl flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-amber-600 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="text-white font-bold text-base mb-1">KVKK & Hasta Gizliliği</h3>
-                    <p className="text-gray-300 text-sm">Hasta öncesi/sonrası fotoğraflarında ve formlarda KVKK açık rıza onay süreçleri gözetilir.</p>
+                    <h3 className="text-ink font-bold text-base mb-1">KVKK & Hasta Gizliliği</h3>
+                    <p className="text-ink-soft text-sm">Hasta öncesi/sonrası fotoğraflarında ve formlarda KVKK açık rıza onay süreçleri gözetilir.</p>
                   </div>
                 </div>
               </div>
@@ -371,23 +371,23 @@ export default function HealthAndClinicSEOPage() {
         </section>
 
         {/* MEDICAL BRANCH CARDS SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
                 <Building className="w-3.5 h-3.5" />
                 Uzmanlık Branşları
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Tıbbi Branşlara Özel SEO Uzmanlığı
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {medicalBranches.map((branch) => (
-                <div key={branch.title} className="bg-[#111836] border border-white/10 p-6 rounded-2xl hover:border-emerald-500/30 transition-all">
-                  <h3 className="text-xl font-bold text-emerald-300 mb-2">{branch.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{branch.desc}</p>
+                <div key={branch.title} className="bg-white border border-line p-6 rounded-2xl hover:border-emerald-500/30 transition-all">
+                  <h3 className="text-xl font-bold text-emerald-700 mb-2">{branch.title}</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">{branch.desc}</p>
                 </div>
               ))}
             </div>
@@ -395,14 +395,14 @@ export default function HealthAndClinicSEOPage() {
         </section>
 
         {/* PATIENT REVIEW MANAGEMENT SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-emerald-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <Star className="w-8 h-8 text-amber-400" />
+            <div className="bg-white border border-emerald-500/20 rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <Star className="w-8 h-8 text-amber-600" />
                 Hasta Değerlendirme ve Yorum İtibar Yönetimi
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
                 Hastaların %85'i klinik veya hekim seçmeden önce Google Haritalar üzerindeki yorumları inceler. Etik kurallar çerçevesinde hasta yorumlarının toplanması, olumsuz geri bildirimlerin kurumsal dille yanıtlanması ve yüksek puan sinyallerinin arama motorlarınca okunmasını sağlıyorum.
               </p>
             </div>
@@ -410,14 +410,14 @@ export default function HealthAndClinicSEOPage() {
         </section>
 
         {/* HEALTH TOURISM & MULTILINGUAL SEO SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-teal-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <Globe2 className="w-8 h-8 text-teal-400" />
+            <div className="bg-white border border-teal-500/20 rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <Globe2 className="w-8 h-8 text-teal-600" />
                 Sağlık Turizmi ve Çok Dilli SEO (EN / DE / AR / RU)
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
                 Uluslararası hasta çekmek isteyen klinikler ve hastaneler için hedef ülkelerdeki (İngiltere, Almanya, Körfez Ülkeleri) arama niyetine özel çok dilli SEO stratejileri uyguluyorum. Doğru hreflang etiketleri, uluslararası arama motoru optimizasyonu ve yerel hedef kitleye uygun tedavi içerikleri ile global hasta ağınızı büyütüyorum.
               </p>
             </div>
@@ -425,23 +425,23 @@ export default function HealthAndClinicSEOPage() {
         </section>
 
         {/* DELIVERABLES LIST SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
                 <PackageCheck className="w-3.5 h-3.5" />
                 Somut Çıktılar
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Sağlık SEO Çalışmasında Teslim Edilen Çıktılar
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {deliverables.map((item, idx) => (
-                <div key={idx} className="bg-[#111836] border border-white/10 p-6 rounded-2xl flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-1 flex-shrink-0" />
-                  <span className="text-gray-200 font-medium text-sm md:text-base">{item}</span>
+                <div key={idx} className="bg-white border border-line p-6 rounded-2xl flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                  <span className="text-ink font-medium text-sm md:text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -449,24 +449,24 @@ export default function HealthAndClinicSEOPage() {
         </section>
 
         {/* TIMELINE ROADMAP SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-teal-500/10 border border-teal-500/20 text-xs font-semibold text-teal-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-teal-500/10 border border-teal-500/20 text-xs font-semibold text-teal-600 uppercase tracking-widest mb-3">
                 <Clock className="w-3.5 h-3.5" />
                 Sonuç Zaman Çizelgesi
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Sağlık ve Klinik SEO Süreç Haritası
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {timelineSteps.map((step) => (
-                <div key={step.period} className="bg-[#111836] border border-teal-500/20 p-8 rounded-2xl relative">
-                  <div className="text-xs font-mono font-semibold text-teal-400 mb-2">{step.period}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{step.desc}</p>
+                <div key={step.period} className="bg-white border border-teal-500/20 p-8 rounded-2xl relative">
+                  <div className="text-xs font-mono font-semibold text-teal-600 mb-2">{step.period}</div>
+                  <h3 className="text-xl font-bold text-ink mb-3">{step.title}</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -474,23 +474,23 @@ export default function HealthAndClinicSEOPage() {
         </section>
 
         {/* TOOLS STRIP SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
                 <Wrench className="w-3.5 h-3.5" />
                 Yazılım & Araç Parkı
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Sağlık SEO Analizinde Kullandığım Başlıca Araçlar
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {toolsList.map((tool) => (
-                <div key={tool.name} className="bg-[#111836] border border-white/10 p-5 rounded-xl text-center">
-                  <div className="font-bold text-white text-base mb-1">{tool.name}</div>
-                  <div className="text-xs text-gray-400">{tool.role}</div>
+                <div key={tool.name} className="bg-white border border-line p-5 rounded-xl text-center">
+                  <div className="font-bold text-ink text-base mb-1">{tool.name}</div>
+                  <div className="text-xs text-ink-muted">{tool.role}</div>
                 </div>
               ))}
             </div>
@@ -498,14 +498,14 @@ export default function HealthAndClinicSEOPage() {
         </section>
 
         {/* PRICING POSTURE SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-r from-emerald-900/30 to-teal-900/30 border border-emerald-500/30 rounded-3xl p-8 md:p-12 text-center">
-              <DollarSign className="w-10 h-10 text-emerald-400 mx-auto mb-4" />
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              <DollarSign className="w-10 h-10 text-emerald-600 mx-auto mb-4" />
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
                 Şeffaf ve Klinik Ölçeğinize Özel Teklif Modeli
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
                 Kliniğinizin branşına, hekim kadrosuna ve hedeflediğiniz pazarlara (yerel veya sağlık turizmi) göre şeffaf danışmanlık bütçeleri kurguluyorum. Gizli maliyet olmadan ilk değerlendirme toplantısı planlayabilirsiniz.
               </p>
               <Link

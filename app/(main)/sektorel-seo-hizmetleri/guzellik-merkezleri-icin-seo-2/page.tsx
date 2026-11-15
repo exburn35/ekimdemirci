@@ -48,7 +48,7 @@ export default function BeautyCentersSEO() {
         },
         {
           title: "Görsel Vurgu",
-          description: "Güzellik merkezleri için görsel içerik çok önemlidir. SEO ile görsellerinizin arama sonuçlarında görünürlüğünü artırır ve müşteri çekiciliğinizi güçlendiririz.",
+          description: "Güzellik merkezleri için görsel içerik çok önemlidir. SEO ile görsellerinizin arama sonuçlarında görünürlüğünü artırır ve müşteri çekiciliğinizi güçlendiririm.",
         },
         {
           title: "Rekabet Avantajı",
@@ -63,22 +63,22 @@ export default function BeautyCentersSEO() {
         {
           step: "1",
           title: "Güzellik Merkezi Analizi",
-          description: "Güzellik merkezinizin mevcut durumunu analiz eder, hizmet alanlarınızı belirler ve rakip analizi yaparız. Güzellik sektörüne özel anahtar kelimeleri araştırırız.",
+          description: "Güzellik merkezinizin mevcut durumunu analiz eder, hizmet alanlarınızı belirler ve rakip analizi yaparım. Güzellik sektörüne özel anahtar kelimeleri araştırırım.",
         },
         {
           step: "2",
           title: "Yerel SEO ve Görsel Stratejisi",
-          description: "Google My Business optimizasyonu, yerel dizinlere kayıt ve görsel SEO ile bölgenizdeki aramalarda görünürlüğünüzü artırırız.",
+          description: "Google My Business optimizasyonu, yerel dizinlere kayıt ve görsel SEO ile bölgenizdeki aramalarda görünürlüğünüzü artırırım.",
         },
         {
           step: "3",
           title: "İçerik ve Teknik Optimizasyon",
-          description: "Randevu odaklı içerikler oluşturur, görsel optimizasyonu yapar ve web sitenizin hızını ve kullanıcı deneyimini optimize ederiz.",
+          description: "Randevu odaklı içerikler oluşturur, görsel optimizasyonu yapar ve web sitenizin hızını ve kullanıcı deneyimini optimize ederim.",
         },
         {
           step: "4",
           title: "Sürekli Takip ve İyileştirme",
-          description: "Performans metriklerini takip eder, müşteri geri bildirimlerini analiz eder ve SEO stratejinizi sürekli olarak iyileştiririz.",
+          description: "Performans metriklerini takip eder, müşteri geri bildirimlerini analiz eder ve SEO stratejinizi sürekli olarak iyileştiririm.",
         },
       ]}
     />

@@ -62,8 +62,8 @@ export default function NavScrollWrapper({
       <div
         className={`mx-auto px-6 py-3.5 rounded-full border transition-all duration-300 ${
           isScrolled
-            ? "bg-[#0a0f25]/90 backdrop-blur-lg border-purple-500/30 shadow-[0_0_30px_rgba(139,92,246,0.25)]"
-            : "bg-[#0a0f25]/70 backdrop-blur-md border-purple-500/20 shadow-[0_0_20px_rgba(139,92,246,0.15)]"
+            ? "bg-white/90 backdrop-blur-lg border-line shadow-lift"
+            : "bg-white/75 backdrop-blur-md border-line shadow-card"
         }`}
       >
         <div className="flex items-center justify-between">
@@ -73,7 +73,7 @@ export default function NavScrollWrapper({
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="lg:hidden text-white p-2 hover:bg-white/10 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+            className="lg:hidden text-ink p-2 hover:bg-ink/5 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu-drawer"
             aria-label="Menüyü aç/kapa"
@@ -94,7 +94,7 @@ export default function NavScrollWrapper({
         aria-label="Mobil Navigasyon Menüsü"
         data-open={isMobileMenuOpen ? "true" : "false"}
         onClick={handleMobileDrawerClick}
-        className={`lg:hidden bg-[#0a0f25]/98 backdrop-blur-2xl border border-white/10 rounded-2xl mt-2 overflow-hidden shadow-2xl flex flex-col transition-all duration-300 ${
+        className={`lg:hidden bg-canvas/98 backdrop-blur-2xl border border-line rounded-2xl mt-2 overflow-hidden shadow-2xl flex flex-col transition-all duration-300 ${
           isMobileMenuOpen
             ? "max-h-[85vh] opacity-100 visible translate-y-0"
             : "max-h-0 opacity-0 invisible -translate-y-2 pointer-events-none"

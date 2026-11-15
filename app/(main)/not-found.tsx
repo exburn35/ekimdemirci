@@ -8,7 +8,7 @@ export default function NotFound() {
   return (
     <div className="relative min-h-[min(100svh,800px)] flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-canvas via-canvas-alt to-canvas" />
       
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -31,7 +31,7 @@ export default function NotFound() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <h1 className="text-9xl md:text-[12rem] font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-none">
+            <h1 className="text-9xl md:text-[12rem] font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-none">
               404
             </h1>
             <motion.div
@@ -57,10 +57,10 @@ export default function NotFound() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-4"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink">
               Sayfa Bulunamadı
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted max-w-2xl mx-auto">
               Maalesef aradığınız sayfa dijital boşlukta kaybolmuş gibi görünüyor. 
               Endişelenmeyin, sizi tekrar doğru yola sokalım.
             </p>
@@ -82,14 +82,14 @@ export default function NotFound() {
             </Link>
             <Link
               href="/iletisim"
-              className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
+              className="px-8 py-4 glass rounded-full font-semibold text-lg text-ink hover:bg-ink/5 transition-all duration-300 flex items-center gap-2"
             >
               <Search className="w-5 h-5" />
               İletişime Geç
             </Link>
             <button
               onClick={() => window.history.back()}
-              className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
+              className="px-8 py-4 glass rounded-full font-semibold text-lg text-ink hover:bg-ink/5 transition-all duration-300 flex items-center gap-2"
             >
               <ArrowLeft className="w-5 h-5" />
               Geri Git
@@ -103,7 +103,7 @@ export default function NotFound() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="pt-12"
           >
-            <p className="text-gray-500 text-sm mb-6">Veya şu sayfaları keşfedin:</p>
+            <p className="text-ink-faint text-sm mb-6">Veya şu sayfaları keşfedin:</p>
             <div className="flex flex-wrap justify-center gap-4">
               {[
                 { name: "Hakkımda", href: "/hakkimda" },
@@ -119,7 +119,7 @@ export default function NotFound() {
                 >
                   <Link
                     href={link.href}
-                    className="px-6 py-2 glass text-gray-300 rounded-full text-sm hover:text-white hover:bg-white/10 transition-all duration-300"
+                    className="px-6 py-2 glass text-ink-soft rounded-full text-sm hover:text-ink hover:bg-ink/5 transition-all duration-300"
                   >
                     {link.name}
                   </Link>

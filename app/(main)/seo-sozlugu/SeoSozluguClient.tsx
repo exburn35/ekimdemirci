@@ -52,7 +52,7 @@ const rawTerms = [
   { term: "Meta Description", desc: "Google arama sonucundaki başlıktan (Mavi olan Metin) hemen altta yer alan gri, detay okutucu açıklama metnidir (maksimum 150-160 karakter), tıklamaları ciddi etkiler." },
   { term: "Mobile First Indexing", desc: "Google'nin bir sitenin ne kadar iyi olduğunu masaüstü tasarımına ve hızına bakarak değil, öncelikle %100 mobil performansına göre sıralamaya alma güncel yaklaşımıdır." },
   { term: "Nofollow Link", desc: "Arka planda (rel='nofollow') ile etiketlenen ve Google'ye 'Bu linklediğim siteye ben garanti veya SEO değerimi (PR) vermiyorum sadece referans ve okuma amaçlı bağladım' dediğiniz köprülerdir." },
-  { term: "Off-Page SEO (Site Dışı SEO)", desc: "Halk arasında Backlink olarak kalsa da; marka aramaları, PR destekleri, sosyal sinyallerle arama motoruna o domain'in internet evreninde ne kadar popüler olduğunu dışarıdan ikna ettiğimiz adımlar bütünüdür." },
+  { term: "Off-Page SEO (Site Dışı SEO)", desc: "Halk arasında Backlink olarak kalsa da; marka aramaları, PR destekleri, sosyal sinyallerle arama motoruna o domain'in internet evreninde ne kadar popüler olduğunu dışarıdan kanıtlayan adımlar bütünüdür." },
   { term: "On-Page SEO (Site İçi SEO)", desc: "İçerik pazarlaması, url yapısı, başlık organizasyonları, iç linkleme, alt text gibi sadece domaininiz sınırlarında site içerisindeki yapıları %100 kusursuz optimize ettiğiniz temel sistemdir." },
   { term: "Orphan Page (Yetim / Öksüz Sayfa)", desc: "Sitenizde olan ama o siteye hiçbir iç linklemenin gitmediği veya çok zor bulunabildiği, botun tamamen unutabildiği sayfalardır. Tarayıcı bütçesi ve SEO zafiyeti yaratır." },
   { term: "Page Speed (Sayfa Yüklenme Hızı)", desc: "Sunucunun dosyaları ilk sunması, görsellerin boyutu, JavaScript şişkinliği ve render sürelerini baz alan ve mobilde %90 oranda sıralamanızı ilk saniyeden etkileyebilecek can damarı SEO faktörüdür." },
@@ -137,7 +137,7 @@ export default function SEOGlossaryPage() {
   };
 
   return (
-    <div className="pt-32 pb-24 min-h-[min(100svh,900px)] bg-[#020617] relative overflow-hidden">
+    <div className="pt-32 pb-24 min-h-[min(100svh,900px)] bg-canvas relative overflow-hidden">
       {/* Background Ambience Layers */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[150px] pointer-events-none" />
@@ -151,7 +151,7 @@ export default function SEOGlossaryPage() {
             initial={false}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-600 uppercase tracking-widest mb-6"
           >
             <BookA className="w-4 h-4" />
             Güncel SEO Rehberi
@@ -163,7 +163,7 @@ export default function SEOGlossaryPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
               SEO Sözlüğü
             </span>
           </motion.h1>
@@ -172,7 +172,7 @@ export default function SEOGlossaryPage() {
             initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl lg:text-2xl text-gray-400 leading-relaxed max-w-2xl mx-auto font-light"
+            className="text-xl lg:text-2xl text-ink-muted leading-relaxed max-w-2xl mx-auto font-light"
           >
             Algoritmalar ve pazarlama jargonları arasında kaybolmayın. Sektörde bilmeniz gereken tüm kritik sıralama ve kavram terimleri, en profesyonel açıklamalarıyla parmaklarınızın ucunda.
           </motion.p>
@@ -187,11 +187,11 @@ export default function SEOGlossaryPage() {
         >
           <div className="relative group">
             <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
-              <Search className="h-6 w-6 text-gray-500 group-focus-within:text-purple-400 transition-colors duration-300" />
+              <Search className="h-6 w-6 text-ink-faint group-focus-within:text-purple-600 transition-colors duration-300" />
             </div>
             <input
               type="text"
-              className="block w-full pl-14 pr-6 py-5 bg-white/5 border border-white/10 rounded-2xl leading-5 bg-glass text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 text-lg transition-all shadow-[0_4px_40px_rgba(0,0,0,0.15)] backdrop-blur-md"
+              className="block w-full pl-14 pr-6 py-5 bg-white border border-line rounded-2xl leading-5 bg-glass text-ink placeholder-ink-faint focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 text-lg transition-all shadow-[0_4px_40px_rgba(0,0,0,0.15)] backdrop-blur-md"
               placeholder="Terim veya kelime öbeği aramaya başlayın... (Örn: LSI, Otorite, Crawl)"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -204,27 +204,27 @@ export default function SEOGlossaryPage() {
           
           {/* Alphabet Index Sticky Sidebar */}
           <div className="lg:w-16 flex-shrink-0">
-            <div className="sticky top-28 hidden lg:flex flex-col gap-1 w-full glass p-2 rounded-2xl border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.2)]">
+            <div className="sticky top-28 hidden lg:flex flex-col gap-1 w-full glass p-2 rounded-2xl border border-line shadow-[0_0_20px_rgba(0,0,0,0.2)]">
               {availableLetters.length > 0 ? availableLetters.map((letter) => (
                 <button
                   key={`index-${letter}`}
                   onClick={() => scrollToLetter(letter)}
-                  className="w-10 h-10 rounded-xl mx-auto text-sm font-bold text-gray-400 hover:text-white hover:bg-white/10 transition-all flex items-center justify-center cursor-pointer"
+                  className="w-10 h-10 rounded-xl mx-auto text-sm font-bold text-ink-muted hover:text-ink hover:bg-ink/5 transition-all flex items-center justify-center cursor-pointer"
                 >
                   {letter}
                 </button>
               )) : (
-                 <span className="text-gray-600 text-center py-4">-</span>
+                 <span className="text-ink-faint text-center py-4">-</span>
               )}
             </div>
             
             {/* Mobile Alphabet Scroller (Row) */}
-            <div className="lg:hidden flex overflow-x-auto gap-2 pb-4 scrollbar-hide w-full sticky top-[72px] bg-[#020617]/90 backdrop-blur-md z-20 pt-4 border-b border-white/5">
+            <div className="lg:hidden flex overflow-x-auto gap-2 pb-4 scrollbar-hide w-full sticky top-[72px] bg-canvas/90 backdrop-blur-md z-20 pt-4 border-b border-line">
               {availableLetters.map((letter) => (
                 <button
                    key={`index-mobile-${letter}`}
                    onClick={() => scrollToLetter(letter)}
-                   className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-gray-300 hover:text-white hover:bg-purple-500/20 hover:border-purple-500/30 transition-all flex items-center justify-center cursor-pointer"
+                   className="flex-shrink-0 w-10 h-10 rounded-xl bg-white border border-line text-sm font-bold text-ink-soft hover:text-ink hover:bg-purple-500/20 hover:border-purple-500/30 transition-all flex items-center justify-center cursor-pointer"
                 >
                   {letter}
                 </button>
@@ -248,25 +248,25 @@ export default function SEOGlossaryPage() {
                     className="relative scroll-mt-32"
                   >
                     {/* The Giant Watermark Alphabet Letter behind the layout */}
-                    <div className="absolute -top-16 -left-8 text-[15rem] leading-none font-black text-white/[0.02] select-none pointer-events-none z-0">
+                    <div className="absolute -top-16 -left-8 text-[15rem] leading-none font-black text-ink/[0.03] select-none pointer-events-none z-0">
                       {letter}
                     </div>
                     
                     <div className="relative z-10 flex flex-col pt-8">
-                       <h2 className="text-5xl font-black text-white mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500 w-max border-b border-purple-500/30 pb-2 px-2">
+                       <h2 className="text-5xl font-black text-ink mb-8 w-max border-b border-purple-500/30 pb-2 px-2">
                         {letter}
                        </h2>
                        
-                       <div className="flex flex-col border border-white/5 rounded-3xl bg-[#0a0f25]/50 backdrop-blur-sm overflow-hidden shadow-2xl">
+                       <div className="flex flex-col border border-line rounded-3xl bg-canvas/50 backdrop-blur-sm overflow-hidden shadow-2xl">
                           {groupedTerms[letter].map((item, index) => (
                              <div 
                                 key={item.term} 
-                                className={`flex flex-col md:flex-row gap-4 md:gap-12 p-8 transition-all hover:bg-white/[0.03] ${index !== groupedTerms[letter].length - 1 ? 'border-b border-white/5' : ''}`}
+                                className={`flex flex-col md:flex-row gap-4 md:gap-12 p-8 transition-all hover:bg-ink/[0.03] ${index !== groupedTerms[letter].length - 1 ? 'border-b border-line' : ''}`}
                              >
                                {/* Term Title */}
                                <div className="md:w-[35%] lg:w-[30%]">
-                                 <h3 className="text-xl md:text-2xl font-bold text-white group cursor-default">
-                                   <span className="relative inline-block transition-all hover:text-purple-400">
+                                 <h3 className="text-xl md:text-2xl font-bold text-ink group cursor-default">
+                                   <span className="relative inline-block transition-all hover:text-purple-600">
                                       {item.term}
                                    </span>
                                  </h3>
@@ -274,7 +274,7 @@ export default function SEOGlossaryPage() {
                                
                                {/* SEO Definition */}
                                <div className="md:w-[65%] lg:w-[70%]">
-                                 <p className="text-gray-400 text-base md:text-[17px] leading-relaxed font-light">
+                                 <p className="text-ink-muted text-base md:text-[17px] leading-relaxed font-light">
                                    {item.desc}
                                  </p>
                                </div>
@@ -290,13 +290,13 @@ export default function SEOGlossaryPage() {
                   layout
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="w-full py-20 text-center flex flex-col items-center justify-center glass rounded-3xl border border-white/10 p-12"
+                  className="w-full py-20 text-center flex flex-col items-center justify-center glass rounded-3xl border border-line p-12"
                 >
-                  <div className="inline-flex w-24 h-24 items-center justify-center rounded-3xl bg-white/5 mb-6 border border-white/10 shadow-inner">
-                     <Search className="w-10 h-10 text-gray-500 animate-pulse" />
+                  <div className="inline-flex w-24 h-24 items-center justify-center rounded-3xl bg-white mb-6 border border-line shadow-inner">
+                     <Search className="w-10 h-10 text-ink-faint animate-pulse" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-3 tracking-tight">Eşleşme Bulunamadı</h3>
-                  <p className="text-gray-500 text-lg max-w-lg leading-relaxed">"{search}" ile ilgili herhangi bir SEO jargonu henüz sözlüğümüze eklenmemiş. Lütfen başka bir anahtar kelime girmeyi deneyin.</p>
+                  <h3 className="text-3xl font-bold text-ink mb-3 tracking-tight">Eşleşme Bulunamadı</h3>
+                  <p className="text-ink-faint text-lg max-w-lg leading-relaxed">"{search}" ile ilgili herhangi bir SEO jargonu henüz sözlüğe eklenmemiş. Lütfen başka bir anahtar kelime girmeyi deneyin.</p>
                 </motion.div>
               )}
             </AnimatePresence>

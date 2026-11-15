@@ -1,69 +1,53 @@
 import Link from "next/link";
-import { ArrowRight, Server, Target, GitCompare } from "lucide-react";
+import { ArrowRight, Layers, Swords, Target, Gauge } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 const factors = [
-  {
-    icon: Server,
-    title: "1. Sitenin Mevcut Durumu",
-    desc: "Web sitenizin sayfa sayısı, CMS altyapısı, Core Web Vitals metrikleri, dizinleme geçmişi ve varsa geçmiş algoritma cezaları; ayrılacak teknik denetim ve düzeltme eforunu doğrudan belirler.",
-  },
-  {
-    icon: Target,
-    title: "2. Sektörel Rekabet Düzeyi",
-    desc: "Hedeflenen anahtar kelimelerin zorluk derecesi, sektördeki rakiplerin alan adı otoritesi ve pazar payı; gerekli içerik hacmini, varlık eşlemelerini ve dış SEO bütçesini şekillendirir.",
-  },
-  {
-    icon: GitCompare,
-    title: "3. Hizmet Kapsamı (SEO / GEO / İkisi)",
-    desc: "Yalnızca geleneksel Google SEO mu, üretken yapay zeka (ChatGPT, Gemini, Perplexity) GEO optimizasyonu mu yoksa her iki disiplini birleştiren hibrit model mi olacağı ücreti belirler.",
-  },
+  { icon: Layers, title: "Sitenin büyüklüğü", text: "On sayfalık bir kurumsal site ile binlerce ürünlü bir mağazanın denetimi ve bakımı aynı emeği gerektirmez." },
+  { icon: Swords, title: "Rekabet yoğunluğu", text: "Hedeflediğiniz aramalarda kimlerle yarıştığınız, ne kadar içerik ve otorite çalışması gerektiğini belirler." },
+  { icon: Gauge, title: "Teknik başlangıç durumu", text: "Altyapısı sağlam bir siteyle yıllardır biriken hataları olan bir site farklı bir ilk dönem ister." },
+  { icon: Target, title: "Kapsam: SEO, GEO ya da ikisi", text: "Sadece arama sonuçlarını mı hedefliyorsunuz, yoksa yapay zeka görünürlüğünü de mi? Kapsam bütçeyi doğrudan etkiler." },
 ];
 
 export default function HomePricingFactors() {
   return (
-    <section className="bg-[#0a0f25] border-b border-white/5 py-12 md:py-16 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-            SEO Danışmanlık Ücretleri Nasıl Belirlenir?
-          </h2>
-          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-            Sabit ve kalıplaşmış paketler yerine; web sitenizin ihtiyaçlarına ve hedeflerinize göre şekillenen şeffaf 3 temel faktör.
-          </p>
-        </div>
-
-        {/* 3 Faktör Kartı */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-10">
-          {factors.map((factor) => {
-            const Icon = factor.icon;
-            return (
-              <div
-                key={factor.title}
-                className="p-6 sm:p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-500/30 transition-all duration-300 flex flex-col justify-start"
+    <section className="bg-white py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              eyebrow="Fiyatlandırma"
+              title="SEO danışmanlığının fiyatını ne belirler?"
+              intro="Tek bir fiyat listesi herkese uymaz; ama belirsizlik de kimseye iyi gelmez. Bu yüzden paketlerimi ve neleri kapsadığını açıkça yayımlıyorum."
+            />
+            <div className="-mt-4 rounded-3xl border border-line bg-canvas p-6">
+              <p className="text-sm text-ink-muted">Aylık danışmanlık paketleri</p>
+              <p className="mt-1 text-3xl font-bold tracking-tight text-ink">
+                ₺20.000<span className="text-base font-medium text-ink-muted">&apos;den başlayan</span>
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                Kesin teklifi ön analizden sonra, sitenizin ihtiyacına göre hazırlıyorum.
+              </p>
+              <Link
+                href="/seo-danismanlik-fiyatlari"
+                className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark"
               >
-                <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-5 shrink-0">
-                  <Icon className="w-6 h-6 text-purple-400" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
-                  {factor.title}
-                </h3>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                  {factor.desc}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+                Paketleri ve kapsamları inceleyin <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
 
-        {/* CTA: Fiyatları İncele */}
-        <div className="text-center">
-          <Link
-            href="/seo-danismanlik-fiyatlari"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-base transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:scale-[1.02] group"
-          >
-            <span>SEO & GEO Danışmanlık Fiyatlarını İncele</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-7">
+            {factors.map(({ icon: Icon, title, text }) => (
+              <div key={title} className="rounded-3xl border border-line bg-canvas p-7">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white text-brand shadow-card">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="font-bold text-ink">{title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -12,6 +12,22 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        // Açık ve sıcak tema token'ları
+        canvas: { DEFAULT: "#F7F6F2", alt: "#EFEDE6" },
+        ink: {
+          DEFAULT: "#161B2E",
+          soft: "#4A5068",
+          muted: "#6B7088",
+          faint: "#8D91A4",
+        },
+        line: { DEFAULT: "#E6E3DA", strong: "#D3CFC2" },
+        brand: { DEFAULT: "#3D3DD6", dark: "#2E2EB0", light: "#ECECFB" },
+        accent: { DEFAULT: "#0F9D8A", dark: "#0B7A6B", light: "#E3F4F1" },
+        night: { DEFAULT: "#161B2E", soft: "#1F2540" },
+      },
+      boxShadow: {
+        card: "0 1px 2px rgba(22,27,46,0.04), 0 4px 16px rgba(22,27,46,0.05)",
+        lift: "0 2px 4px rgba(22,27,46,0.05), 0 12px 32px rgba(22,27,46,0.08)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
@@ -32,7 +48,3 @@ const config: Config = {
   plugins: [],
 };
 export default config;
-
-
-
-

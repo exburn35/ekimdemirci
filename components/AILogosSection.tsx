@@ -10,7 +10,7 @@ export default function AILogosSection() {
       company: "OpenAI",
       description: "AIO (Yapay Zeka Optimizasyonu) ile ChatGPT'nin arama yanıtlarında markanızın ve içeriklerinizin birincil kaynak olarak gösterilmesini hedefliyorum.",
       color: "from-emerald-500 to-teal-600",
-      textColor: "text-emerald-400",
+      textColor: "text-emerald-600",
       borderColor: "group-hover:border-emerald-500/30",
       shadowColor: "hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]",
       svgPath: "M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z",
@@ -20,7 +20,7 @@ export default function AILogosSection() {
       company: "Google",
       description: "Google'ın yapay zeka destekli arama özetlerinde (AI Overview) ve Gemini arama motoru entegrasyonlarında üst sıralarda konumlanmanızı sağlıyorum.",
       color: "from-blue-500 via-purple-500 to-pink-500",
-      textColor: "text-blue-400",
+      textColor: "text-blue-600",
       borderColor: "group-hover:border-blue-500/30",
       shadowColor: "hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
       svgPath: "M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81",
@@ -40,7 +40,7 @@ export default function AILogosSection() {
       company: "Perplexity AI",
       description: "Doğrudan kaynak gösteren ve yapay zeka arama motoru olan Perplexity'de içeriklerinizin ana referans kaynağı olması için optimizasyon yapıyorum.",
       color: "from-teal-600 to-cyan-700",
-      textColor: "text-teal-400",
+      textColor: "text-teal-600",
       borderColor: "group-hover:border-teal-500/30",
       shadowColor: "hover:shadow-[0_0_30px_rgba(20,184,166,0.15)]",
       svgPath: "M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z",
@@ -48,7 +48,7 @@ export default function AILogosSection() {
   ];
 
   return (
-    <section className="py-24 bg-[#070b1e] border-t border-white/5 relative overflow-hidden">
+    <section className="py-24 bg-canvas border-t border-line relative overflow-hidden">
       {/* Background Orbs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -60,18 +60,18 @@ export default function AILogosSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-medium text-purple-400 uppercase tracking-widest mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-medium text-purple-600 uppercase tracking-widest mb-6">
             <Sparkles className="w-3 h-3" />
             YAPAY ZEKA ENTEGRASYONU
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">
-            <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+            <span className="text-ink">
               Yapay Zeka Modelleri ve GEO'nun Önemi
             </span>
           </h2>
           
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed">
             Web sitenizi sadece geleneksel arama motorlarına değil; kullanıcıların doğrudan bilgi aldığı ve sorgu yaptığı en popüler yapay zeka asistanlarına da optimize ediyorum.
           </p>
         </motion.div>
@@ -85,7 +85,7 @@ export default function AILogosSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className={`group relative rounded-2xl bg-[#101530] border border-white/5 p-8 transition-all duration-300 hover:border-purple-500/20 ${platform.borderColor} ${platform.shadowColor} overflow-hidden`}
+              className={`group relative rounded-2xl bg-white border border-line p-8 transition-all duration-300 hover:border-purple-500/20 ${platform.borderColor} ${platform.shadowColor} overflow-hidden`}
             >
               {/* Top Accent line */}
               <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${platform.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
@@ -94,32 +94,32 @@ export default function AILogosSection() {
                 {/* Logo and Identity */}
                 <div className="flex items-center gap-4">
                   {/* Brand SVG wrapper with subtle glow */}
-                  <div className="w-16 h-16 rounded-xl bg-[#070b1e] border border-white/10 flex items-center justify-center relative overflow-hidden group-hover:border-white/20 transition-colors">
+                  <div className="w-16 h-16 rounded-xl bg-canvas border border-line flex items-center justify-center relative overflow-hidden group-hover:border-line-strong transition-colors">
                     <div className={`absolute inset-0 bg-gradient-to-br ${platform.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                     <svg
                       role="img"
                       viewBox="0 0 24 24"
-                      className="w-8 h-8 text-gray-400 group-hover:text-white transition-all duration-300 fill-current group-hover:scale-110"
+                      className="w-8 h-8 text-ink-muted group-hover:text-ink transition-all duration-300 fill-current group-hover:scale-110"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path d={platform.svgPath} />
                     </svg>
                   </div>
                   <div>
-                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-widest">{platform.company}</span>
-                    <h3 className="text-2xl font-bold text-white leading-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-colors">
+                    <span className="text-xs font-semibold text-ink-faint uppercase tracking-widest">{platform.company}</span>
+                    <h3 className="text-2xl font-bold text-ink leading-tight transition-colors group-hover:text-brand">
                       {platform.name}
                     </h3>
                   </div>
                 </div>
 
                 {/* Arrow up right */}
-                <div className="hidden sm:flex w-8 h-8 rounded-full bg-white/5 items-center justify-center text-gray-400 group-hover:bg-white/10 group-hover:text-white transition-all duration-300">
+                <div className="hidden sm:flex w-8 h-8 rounded-full bg-white items-center justify-center text-ink-muted group-hover:bg-ink/5 group-hover:text-ink transition-all duration-300">
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-[1px] group-hover:-translate-y-[1px] transition-transform" />
                 </div>
               </div>
 
-              <p className="text-gray-400 leading-relaxed text-base group-hover:text-gray-300 transition-colors">
+              <p className="text-ink-muted leading-relaxed text-base group-hover:text-ink-soft transition-colors">
                 {platform.description}
               </p>
             </motion.div>

@@ -30,7 +30,7 @@ function formatTldrText(text: string) {
   return parts.map((part, index) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return (
-        <strong key={index} className="text-white font-semibold">
+        <strong key={index} className="text-ink font-semibold">
           {part.slice(2, -2)}
         </strong>
       );
@@ -60,8 +60,8 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
       <BlogLinkPreview />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden min-h-[min(60vh,640px)] flex items-center bg-[#211b39]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#211b39] via-[#1a152e] to-[#211b39]" />
+      <section className="relative pt-32 pb-20 overflow-hidden min-h-[min(60vh,640px)] flex items-center bg-canvas-alt">
+        <div className="absolute inset-0 bg-gradient-to-br from-canvas-alt via-canvas-alt to-canvas-alt" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         
         {post.featuredImage && (
@@ -73,7 +73,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
               className="object-cover transition-opacity duration-1000"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#211b39] via-[#211b39]/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-canvas-alt via-canvas-alt/70 to-transparent" />
           </div>
         )}
 
@@ -81,7 +81,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
           <BlogMotionWrapper>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group"
+              className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors mb-8 group"
             >
               <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
               <span>Blog Yazılarına Dön</span>
@@ -90,37 +90,37 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
             {post.category && (
               <Link
                 href={`/kategori/${slugifyCategory(post.category)}`}
-                className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 hover:text-white transition-colors rounded-full text-xs font-bold mb-8 uppercase tracking-widest"
+                className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-600 hover:bg-blue-500/20 hover:text-ink transition-colors rounded-full text-xs font-bold mb-8 uppercase tracking-widest"
               >
                 {post.category}
               </Link>
             )}
 
             <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tight">
-              <span className="bg-gradient-to-r from-white via-white to-gray-500 bg-clip-text text-transparent">
+              <span className="text-ink">
                 {decodeHtmlEntities(post.title)}
               </span>
             </h1>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-gray-400 text-sm">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-ink-muted text-sm">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-blue-400" />
+                <Calendar className="w-4 h-4 text-blue-600" />
                 <time dateTime={post.publishedAt}>
                   {post.publishedAt ? formatDate(post.publishedAt) : "—"}
                 </time>
               </div>
               {post.updatedAt && post.publishedAt && !isSameDay(post.updatedAt, post.publishedAt) && (
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-emerald-400" />
+                  <Calendar className="w-4 h-4 text-emerald-600" />
                   <span>Son Güncelleme: {formatDate(post.updatedAt)}</span>
                 </div>
               )}
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-purple-400" />
+                <Clock className="w-4 h-4 text-purple-600" />
                 {post.readTime || 5} dk okuma
               </div>
-              <div className="hidden sm:block text-gray-600">|</div>
-              <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs font-semibold select-none">
+              <div className="hidden sm:block text-ink-faint">|</div>
+              <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 px-3 py-1 rounded-full text-xs font-semibold select-none">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -133,7 +133,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
       </section>
 
       {/* Content Layout */}
-      <section className="py-20 bg-[#211b39] relative">
+      <section className="py-20 bg-canvas-alt relative">
         <div className="max-w-7xl lg:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative w-full">
             
@@ -151,18 +151,18 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                 {((post as any).tldr || post.excerpt) && (
                   <div className="mb-10 p-6 bg-purple-500/[0.03] backdrop-blur-md rounded-2xl border border-purple-500/20 relative overflow-hidden group">
                     {/* Visual Accent */}
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#7b5cff] to-[#4a9eff]" />
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-brand to-accent" />
                     
                     <div className="text-xl md:text-2xl font-extrabold tracking-tight mb-4 flex items-center gap-2">
                       <Zap className="w-5 h-5 text-[#7b5cff] animate-pulse flex-shrink-0" />
-                      <span className="bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
                         TL;DR & Önemli Çıkarımlar
                       </span>
                     </div>
 
                     {/* Introductory Summary (Excerpt) */}
                     {post.excerpt && (
-                      <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
+                      <p className="text-ink-soft text-sm md:text-base leading-relaxed mb-4">
                         {decodeHtmlEntities(post.excerpt)}
                       </p>
                     )}
@@ -170,18 +170,18 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                     {/* Bullet Points / Key Takeaways */}
                     {(post as any).tldr ? (
                       <>
-                        <div className="my-4 border-t border-white/5" />
-                        <ul className="space-y-2.5 text-gray-300 text-sm md:text-base">
+                        <div className="my-4 border-t border-line" />
+                        <ul className="space-y-2.5 text-ink-soft text-sm md:text-base">
                           {Array.isArray((post as any).tldr) ? (
                             (post as any).tldr.map((item: string, idx: number) => (
                               <li key={idx} className="flex items-start gap-2.5">
-                                <CheckCircle2 className="w-4 h-4 text-[#4a9eff] mt-1 flex-shrink-0" />
+                                <CheckCircle2 className="w-4 h-4 text-brand mt-1 flex-shrink-0" />
                                 <span className="leading-relaxed">{formatTldrText(item)}</span>
                               </li>
                             ))
                           ) : (
                             <li className="flex items-start gap-2.5">
-                              <CheckCircle2 className="w-4 h-4 text-[#4a9eff] mt-1 flex-shrink-0" />
+                              <CheckCircle2 className="w-4 h-4 text-brand mt-1 flex-shrink-0" />
                               <span className="leading-relaxed">{formatTldrText((post as any).tldr)}</span>
                             </li>
                           )}
@@ -193,15 +193,15 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
                         if (keyPoints.length === 0) return null;
                         return (
                           <>
-                            <div className="my-4 border-t border-white/5" />
+                            <div className="my-4 border-t border-line" />
                             <div className="text-xs font-semibold text-purple-400/80 uppercase tracking-wider mb-3">Yazıda Ele Alınan Önemli Konular</div>
-                            <ul className="space-y-2.5 text-gray-300 text-sm md:text-base">
+                            <ul className="space-y-2.5 text-ink-soft text-sm md:text-base">
                               {keyPoints.map((item) => (
                                 <li key={item.id} className="flex items-start gap-2.5">
-                                  <CheckCircle2 className="w-4 h-4 text-[#4a9eff] mt-1 flex-shrink-0" />
+                                  <CheckCircle2 className="w-4 h-4 text-brand mt-1 flex-shrink-0" />
                                   <a
                                     href={`#${item.id}`}
-                                    className="leading-relaxed font-medium hover:text-[#4a9eff] transition-colors"
+                                    className="leading-relaxed font-medium hover:text-brand transition-colors"
                                   >
                                     {item.text}
                                   </a>
@@ -224,13 +224,13 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
 
                 {/* Tags Section */}
                 {post.tags && post.tags.length > 0 && (
-                  <div className="mt-16 pt-10 border-t border-white/10">
+                  <div className="mt-16 pt-10 border-t border-line">
                     <div className="flex items-center gap-3 flex-wrap">
-                      <Tag className="w-4 h-4 text-blue-400" />
+                      <Tag className="w-4 h-4 text-blue-600" />
                       {post.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-4 py-1.5 bg-white/5 text-gray-300 rounded-full text-xs font-medium border border-white/5 hover:border-white/20 transition-colors"
+                          className="px-4 py-1.5 bg-white text-ink-soft rounded-full text-xs font-medium border border-line hover:border-line-strong transition-colors"
                         >
                           #{tag}
                         </span>
@@ -260,10 +260,10 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
 
       <SEOAuditSection />
       
-      <div className="max-w-7xl mx-auto px-4 py-20 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-4 py-20 border-t border-line">
         <ContactForm
           title="Konuyla İlgili Sorun mu Var?"
-          description="Ekim Demirci olarak tüm dijital büyüme süreçlerinizde yanınızdayız."
+          description="Tüm dijital büyüme süreçlerinizde yanınızdayım."
           showTitle={true}
         />
       </div>

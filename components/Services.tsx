@@ -76,7 +76,7 @@ export default function Services() {
   };
 
   return (
-    <section id="hizmetler" className="py-24 overflow-hidden relative border-t border-white/5 mt-16">
+    <section id="hizmetler" className="py-24 overflow-hidden relative border-t border-line mt-16">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-900/10 to-transparent skew-x-12 -z-10" />
 
@@ -88,10 +88,10 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white tracking-tight">
-            Kapsamlı{" "}<span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">SEO Hizmetlerim</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-ink tracking-tight">
+            Kapsamlı{" "}<span className="bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">SEO Hizmetlerim</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-ink-muted max-w-2xl mx-auto font-medium">
             Arama görünürlüğünüzü en üst düzeye çıkarmak ve sürdürülebilir organik büyüme sağlamak için tasarladığım, kişiselleştirilmiş ve uçtan uca SEO çözümlerim.
           </p>
         </motion.div>
@@ -120,8 +120,8 @@ export default function Services() {
                   onKeyDown={(e) => handleKeyDown(e, index)}
                   className={`text-left p-5 rounded-2xl transition-all duration-300 relative overflow-hidden group border focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
                     isActive 
-                      ? "bg-[#111836] shadow-[0_0_20px_rgba(139,92,246,0.15)] border-purple-500/30" 
-                      : "bg-transparent border-transparent hover:bg-white/5 hover:border-white/10"
+                      ? "bg-white shadow-[0_0_20px_rgba(139,92,246,0.15)] border-purple-500/30" 
+                      : "bg-transparent border-transparent hover:bg-ink/[0.03] hover:border-line"
                   }`}
                 >
                   {isActive && (
@@ -133,7 +133,7 @@ export default function Services() {
                     />
                   )}
                   <div className="flex items-center gap-4">
-                    <span className={`text-xl font-bold transition-colors duration-300 ${isActive ? "text-purple-400" : "text-gray-400 group-hover:text-white"}`}>
+                    <span className={`text-xl font-bold transition-colors duration-300 ${isActive ? "text-purple-600" : "text-ink-muted group-hover:text-ink"}`}>
                       {service.title}
                     </span>
                   </div>
@@ -143,7 +143,7 @@ export default function Services() {
           </div>
 
           {/* Tab Content Display (Right Side) */}
-          <div className="lg:col-span-7 bg-[#111836] rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20 min-h-[400px] flex flex-col justify-center relative overflow-hidden">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20 min-h-[400px] flex flex-col justify-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl opacity-50 -z-0" />
             
             <div className="grid grid-cols-1 grid-rows-1 relative z-10 w-full">
@@ -166,12 +166,12 @@ export default function Services() {
                       }`}
                     >
                       <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-2xl flex items-center justify-center mb-8 border border-purple-500/30">
-                        <Icon className="w-8 h-8 text-purple-400" />
+                        <Icon className="w-8 h-8 text-purple-600" />
                       </div>
-                      <h3 className="text-3xl font-bold text-white mb-6 tracking-tight">
+                      <h3 className="text-3xl font-bold text-ink mb-6 tracking-tight">
                         {service.expandedTitle}
                       </h3>
-                      <p className="text-lg text-gray-400 leading-relaxed mb-8">
+                      <p className="text-lg text-ink-muted leading-relaxed mb-8">
                         {service.description}
                       </p>
                       
@@ -179,7 +179,7 @@ export default function Services() {
                         <Link 
                           href={service.href}
                           tabIndex={isActive ? 0 : -1}
-                          className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-purple-500/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+                          className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-700 transition-colors group bg-white px-4 py-2 rounded-full border border-line hover:border-purple-500/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
                         >
                           Daha fazla bilgi edinin
                           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

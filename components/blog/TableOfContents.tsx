@@ -18,8 +18,8 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
 
   return (
     <div className="glass-strong rounded-2xl p-6">
-      <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-        <Link2 className="w-5 h-5 text-blue-400" />
+      <h3 className="text-xl font-bold text-ink mb-4 flex items-center gap-2">
+        <Link2 className="w-5 h-5 text-blue-600" />
         İçindekiler
       </h3>
       <nav className="space-y-2 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
@@ -27,8 +27,8 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
           <a
             key={heading.id}
             href={`#${heading.id}`}
-            className={`block text-gray-400 hover:text-white transition-colors text-sm ${
-              heading.level === 3 ? "pl-4 border-l border-gray-800" : "font-medium"
+            className={`block text-ink-muted hover:text-ink transition-colors text-sm ${
+              heading.level === 3 ? "pl-4 border-l border-line" : "font-medium"
             }`}
             onClick={(e) => {
               e.preventDefault();

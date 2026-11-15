@@ -72,7 +72,7 @@ export default function FAQPage() {
       <Breadcrumb items={[{ name: "Sıkça Sorulan Sorular", href: "/sikca-sorulan-sorular" }]} />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
@@ -80,14 +80,14 @@ export default function FAQPage() {
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-flex items-center gap-3 mb-6">
-              <HelpCircle className="w-12 h-12 text-blue-400" />
+              <HelpCircle className="w-12 h-12 text-blue-600" />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Sık Sorulan Sorular
               </span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed">
               SEO hizmetleri hakkında merak ettiğiniz soruların cevaplarını burada bulabilirsiniz.
             </p>
           </div>
@@ -108,13 +108,13 @@ export default function FAQPage() {
       </section>
 
       {/* Additional Help Section */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-24 bg-gradient-to-b from-canvas to-canvas-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass-strong rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink">
               Sorunuzun Cevabını Bulamadınız mı?
             </h2>
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted mb-8 max-w-2xl mx-auto">
               Benimle iletişime geçin, size yardımcı olmaktan mutluluk duyarım.
             </p>
             <a

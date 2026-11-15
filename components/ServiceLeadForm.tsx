@@ -69,10 +69,10 @@ export default function ServiceLeadForm() {
         className="bg-green-500/10 border border-green-500/20 rounded-2xl p-8 text-center"
       >
         <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-          <Send className="w-8 h-8 text-white" />
+          <Send className="w-8 h-8 text-ink" />
         </div>
-        <h3 className="text-xl font-bold text-white mb-2">Talebiniz Alındı!</h3>
-        <p className="text-gray-400">
+        <h3 className="text-xl font-bold text-ink mb-2">Talebiniz Alındı!</h3>
+        <p className="text-ink-muted">
           En kısa sürede web sitenizi inceleyip size dönüş yapacağım.
         </p>
       </motion.div>
@@ -80,19 +80,19 @@ export default function ServiceLeadForm() {
   }
 
   return (
-    <div className="glass-strong rounded-3xl p-6 md:p-8 border border-white/10 relative overflow-hidden group">
+    <div className="glass-strong rounded-3xl p-6 md:p-8 border border-line relative overflow-hidden group">
       {/* Background Glow */}
       <div className="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/20 rounded-full blur-3xl group-hover:bg-purple-600/30 transition-colors duration-500" />
       
       <div className="relative z-10">
-        <h3 className="text-xl font-bold text-white mb-2">Hızlı Analiz Talebi</h3>
-        <p className="text-sm text-gray-400 mb-6">
+        <h3 className="text-xl font-bold text-ink mb-2">Hızlı Analiz Talebi</h3>
+        <p className="text-sm text-ink-muted mb-6">
           Web sitenizi ücretsiz incelemem için detayları bırakın.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="relative">
-            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint" />
             <input
               required
               type="text"
@@ -100,12 +100,12 @@ export default function ServiceLeadForm() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Adınız Soyadınız"
-              className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 transition-colors"
+              className="w-full bg-white border border-line rounded-xl py-3 pl-10 pr-4 text-ink placeholder:text-ink-faint focus:outline-none focus:border-purple-500/50 transition-colors"
             />
           </div>
 
           <div className="relative">
-            <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+            <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint" />
             <input
               required
               type="text"
@@ -113,12 +113,12 @@ export default function ServiceLeadForm() {
               value={formData.website}
               onChange={handleChange}
               placeholder="Web Sitesi URL (örn: ekimdemirci.com)"
-              className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 transition-colors"
+              className="w-full bg-white border border-line rounded-xl py-3 pl-10 pr-4 text-ink placeholder:text-ink-faint focus:outline-none focus:border-purple-500/50 transition-colors"
             />
           </div>
 
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint" />
             <input
               required
               type="email"
@@ -126,7 +126,7 @@ export default function ServiceLeadForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="E-posta Adresiniz"
-              className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 transition-colors"
+              className="w-full bg-white border border-line rounded-xl py-3 pl-10 pr-4 text-ink placeholder:text-ink-faint focus:outline-none focus:border-purple-500/50 transition-colors"
             />
           </div>
 
@@ -134,7 +134,7 @@ export default function ServiceLeadForm() {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-medium"
+              className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-600 text-sm font-medium"
             >
               {errorMessage || "Bir hata oluştu. Lütfen tekrar deneyin."}
             </motion.div>
@@ -146,7 +146,7 @@ export default function ServiceLeadForm() {
             className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold py-3 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-purple-500/20 disabled:opacity-50 flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
-              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <div className="w-5 h-5 border-2 border-line-strong border-t-line-strong rounded-full animate-spin" />
             ) : (
               <>
                 Analiz Et <ArrowRight className="w-4 h-4" />

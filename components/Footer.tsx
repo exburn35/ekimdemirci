@@ -55,7 +55,7 @@ const legal = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0f25] pt-24 pb-12 overflow-hidden relative border-t border-white/10">
+    <footer className="bg-night pt-24 pb-12 overflow-hidden relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff10_1px,transparent_1px)] [background-size:24px_24px] opacity-20" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
@@ -64,8 +64,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-3">
-            <Link href="/" className="inline-block mb-6">
-              <Logo className="h-12 w-auto" textClassName="text-2xl font-bold text-white tracking-tight" />
+            <Link href="/" className="mb-6 inline-block rounded-2xl bg-white px-4 py-2">
+              <Logo className="h-10 w-auto" textClassName="text-2xl font-bold tracking-tight text-[#392F67]" />
             </Link>
             <p className="text-gray-400 mb-8 max-w-sm leading-relaxed">
               Veri odaklı SEO stratejileriyle dijital varlığınızı büyütüyor, 

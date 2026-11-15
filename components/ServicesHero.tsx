@@ -6,10 +6,10 @@ import ServiceLeadForm from "./ServiceLeadForm";
 
 export default function ServicesHero() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-[#020617]">
+    <section className="relative pt-32 pb-20 overflow-hidden bg-canvas">
       {/* Advanced Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,1)_0%,rgba(2,6,23,1)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f7f6f2_70%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#161b2e05_1px,transparent_1px),linear-gradient(to_bottom,#161b2e05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       
       {/* Animated Orbs */}
       <motion.div 
@@ -45,26 +45,26 @@ export default function ServicesHero() {
               initial={false}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-blue-400 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-blue-600 mb-8"
             >
               <Sparkles className="w-4 h-4" />
               Kapsamlı SEO Çözümleri
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]">
-              <span className="bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent block">
+              <span className="block text-ink">
                 Sonuç Odaklı
               </span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block mt-2">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent block mt-2">
                 SEO Hizmetleri
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-400 max-w-xl leading-relaxed mb-10">
+            <p className="text-xl md:text-2xl text-ink-muted max-w-xl leading-relaxed mb-10">
               Yapay zeka destekli optimizasyondan teknik mükemmelliğe kadar, arama görünürlüğünüzü artırmak için uzman stratejiler sunuyorum.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6 text-gray-500">
+            <div className="flex flex-col sm:flex-row items-center gap-6 text-ink-faint">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-blue-500" />
                 <span className="text-sm">Veri Odaklı</span>

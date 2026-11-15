@@ -74,7 +74,7 @@ export default function OffPageSEO() {
         },
         {
           title: "Kırık Bağlantı İnşası (Broken Link Building)",
-          description: "Sektörünüzdeki kırık linkleri tespit edip site sahiplerine kendi kaliteli içeriklerimizi önererek kazan-kazan modeliyle backlink topluyorum."
+          description: "Sektörünüzdeki kırık linkleri tespit edip site sahiplerine kaliteli içerikler önererek kazan-kazan modeliyle backlink topluyorum."
         },
         {
           title: "Çapa Metin (Anchor Text) Dengesi",

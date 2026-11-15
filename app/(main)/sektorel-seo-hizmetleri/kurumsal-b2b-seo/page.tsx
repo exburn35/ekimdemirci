@@ -209,64 +209,64 @@ export default function CorporateB2BSEOPage() {
         blogCategory="Kurumsal SEO"
       >
         {/* HERO TRUST STRIP */}
-        <section className="py-8 bg-[#0a0f25] border-y border-white/5">
+        <section className="py-8 bg-canvas border-y border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-indigo-400">8+ Yıl</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Kurumsal B2B SEO Deneyimi</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-indigo-600">8+ Yıl</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Kurumsal B2B SEO Deneyimi</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-purple-400">60+</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">B2B & Sanayi Markası</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-purple-600">60+</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">B2B & Sanayi Markası</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-emerald-400">%78</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Ort. Nitelikli RFQ Lead Artışı</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-emerald-600">%78</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Ort. Nitelikli RFQ Lead Artışı</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-blue-400">Ahrefs & GSC</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Enterprise Veri Standartları</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-blue-600">Ahrefs & GSC</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Enterprise Veri Standartları</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* DEFINITION & TRANSPARENT EVIDENCE SECTION */}
-        <section className="py-16 bg-[#0a0f25]">
+        <section className="py-16 bg-canvas">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
                 Kurumsal ve B2B SEO Danışmanlığı Nedir?
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
-                B2B (Business to Business) ve Kurumsal SEO danışmanlığı; şirketlere, üreticilere, yazılım ve sanayi markalarına hizmet sunan firmaların satın alma karar vericilerine (C-Level yöneticiler, satın alma müdürleri) organik aramalarda ulaşmasını sağlayan stratejik SEO çalışmasıdır. Şirketiniz için <Link href="/seo-hizmetleri/teknik-seo" className="text-indigo-400 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-indigo-400 underline font-semibold">Sayfa İçi SEO</Link> altyapısını kurgulayarak nitelikli teklif taleplerini (RFQ) artırırım.
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
+                B2B (Business to Business) ve Kurumsal SEO danışmanlığı; şirketlere, üreticilere, yazılım ve sanayi markalarına hizmet sunan firmaların satın alma karar vericilerine (C-Level yöneticiler, satın alma müdürleri) organik aramalarda ulaşmasını sağlayan stratejik SEO çalışmasıdır. Şirketiniz için <Link href="/seo-hizmetleri/teknik-seo" className="text-indigo-600 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-indigo-600 underline font-semibold">Sayfa İçi SEO</Link> altyapısını kurgulayarak nitelikli teklif taleplerini (RFQ) artırırım.
               </p>
 
-              <div className="pt-6 border-t border-white/10">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-indigo-400" />
+              <div className="pt-6 border-t border-line">
+                <h3 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5 text-indigo-600" />
                   Doğrulanmış Metodoloji ve Şeffaf Ölçüm Çerçevesi
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-5 bg-[#111836] border border-indigo-500/20 rounded-2xl">
-                    <div className="text-xs text-indigo-400 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
-                    <div className="text-3xl font-extrabold text-emerald-400 mb-2">%78 RFQ Artışı</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-indigo-500/20 rounded-2xl">
+                    <div className="text-xs text-indigo-600 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
+                    <div className="text-3xl font-extrabold text-emerald-600 mb-2">%78 RFQ Artışı</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       9 aylık B2B karar verici odaklı SEO sürecinde kurumsal teklif taleplerinde (RFQ) elde edilen net büyüme. (Kaynak: GA4 B2B Lead Takibi 2025)
                     </p>
                   </div>
-                  <div className="p-5 bg-[#111836] border border-indigo-500/20 rounded-2xl">
-                    <div className="text-xs text-indigo-400 font-mono font-semibold mb-1">HEDEF KİTLE UYUMU</div>
-                    <div className="text-3xl font-extrabold text-white mb-2">C-Level Erişimi</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-indigo-500/20 rounded-2xl">
+                    <div className="text-xs text-indigo-600 font-mono font-semibold mb-1">HEDEF KİTLE UYUMU</div>
+                    <div className="text-3xl font-extrabold text-ink mb-2">C-Level Erişimi</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       Düşük hacimli ama yüksek bütçeli satın alma aramalarında teknik karar vericilere doğrudan ulaşma.
                     </p>
                   </div>
-                  <div className="p-5 bg-[#111836] border border-indigo-500/20 rounded-2xl">
-                    <div className="text-xs text-indigo-400 font-mono font-semibold mb-1">PIPELINE VERİMLİLİĞİ</div>
-                    <div className="text-3xl font-extrabold text-purple-400 mb-2">Yüksek Lead Kalitesi</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-indigo-500/20 rounded-2xl">
+                    <div className="text-xs text-indigo-600 font-mono font-semibold mb-1">PIPELINE VERİMLİLİĞİ</div>
+                    <div className="text-3xl font-extrabold text-purple-600 mb-2">Yüksek Lead Kalitesi</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       Organik kanaldan gelen teklif taleplerinin satış ekibince doğrulanma (SQL) oranında belirgin iyileşme.
                     </p>
                   </div>
@@ -277,33 +277,33 @@ export default function CorporateB2BSEOPage() {
         </section>
 
         {/* WHY B2B IS DIFFERENT SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-indigo-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <Target className="w-8 h-8 text-indigo-400" />
+            <div className="bg-white border border-indigo-500/20 rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <Target className="w-8 h-8 text-indigo-600" />
                 B2B SEO Neden B2C SEO'dan Farklıdır?
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-8">
                 B2C pazarlamada hızlı satın alma ve yüksek arama hacimleri ön plandayken; B2B pazarlamada arama hacimleri düşüktür ancak her bir organik talep şirketiniz için yıllık büyük bütçeli anlaşmalar anlamına gelir. Karar alma süreci tek bir kişi değil, çok paydaşlı kurul (C-Level, Finans, Satın Alma, Teknik Ekip) tarafından yürütülür.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <h3 className="text-lg font-bold text-indigo-300 mb-2">Uzun Satış Döngüsü</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                <div className="p-6 bg-white border border-line rounded-2xl">
+                  <h3 className="text-lg font-bold text-indigo-700 mb-2">Uzun Satış Döngüsü</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">
                     Satın alma kararı haftalar veya aylar sürebilir. SEO stratejisi tüm araştırma aşamalarında markanızı gösterir.
                   </p>
                 </div>
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <h3 className="text-lg font-bold text-purple-300 mb-2">Çok Paydaşlı Karar Birimi</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                <div className="p-6 bg-white border border-line rounded-2xl">
+                  <h3 className="text-lg font-bold text-purple-700 mb-2">Çok Paydaşlı Karar Birimi</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">
                     İçerikler hem teknik mühendisin sorularını hem de finans yöneticisinin maliyet kaygılarını yanıtlar.
                   </p>
                 </div>
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <h3 className="text-lg font-bold text-emerald-300 mb-2">Düşük Hacim - Yüksek Değer</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                <div className="p-6 bg-white border border-line rounded-2xl">
+                  <h3 className="text-lg font-bold text-emerald-700 mb-2">Düşük Hacim - Yüksek Değer</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">
                     Aylık 30 defa aratılan spesifik bir sanayi ürünü anahtar kelimesi milyonluk tedarik anlaşması getirebilir.
                   </p>
                 </div>
@@ -313,23 +313,23 @@ export default function CorporateB2BSEOPage() {
         </section>
 
         {/* B2B SECTOR VERTICALS SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                 <Factory className="w-3.5 h-3.5" />
                 Sektör Dikey Çözümleri
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 B2B Sektör Dikeyine Özel SEO Çözümleri
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {b2bIndustries.map((ind) => (
-                <div key={ind.title} className="bg-[#111836] border border-white/10 p-6 rounded-2xl hover:border-indigo-500/30 transition-all">
-                  <h3 className="text-xl font-bold text-indigo-300 mb-2">{ind.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{ind.desc}</p>
+                <div key={ind.title} className="bg-white border border-line p-6 rounded-2xl hover:border-indigo-500/30 transition-all">
+                  <h3 className="text-xl font-bold text-indigo-700 mb-2">{ind.title}</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">{ind.desc}</p>
                 </div>
               ))}
             </div>
@@ -337,14 +337,14 @@ export default function CorporateB2BSEOPage() {
         </section>
 
         {/* B2B LEAD GENERATION MECHANICS SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-purple-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <FileCheck className="w-8 h-8 text-purple-400" />
+            <div className="bg-white border border-purple-500/20 rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <FileCheck className="w-8 h-8 text-purple-600" />
                 RFQ, Katalog ve Şartname Odaklı B2B Dönüşüm Tüneli
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
                 Organik ziyaretçileri kurumsal teklif talebine (RFQ) dönüştürmek için sitenizde somut dönüşüm tünelleri kuruyorum. Ürün teknik şartnameleri, indirilebilir PDF kataloglar, vaka incelemeleri (case studies) ve hızlı teklif alma formları ile lead dönüşümünü optimizasyona dahil ediyorum.
               </p>
             </div>
@@ -352,14 +352,14 @@ export default function CorporateB2BSEOPage() {
         </section>
 
         {/* CORPORATE TRUST & NDA / SLA SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-white/10 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <ShieldCheck className="w-8 h-8 text-emerald-400" />
+            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <ShieldCheck className="w-8 h-8 text-emerald-600" />
                 Kurumsal Güven, Gizlilik (NDA) ve Hizmet Seviyesi (SLA)
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
                 Kurumsal markalarla çalışırken ticari sırların korunması ve şeffaf iletişim en temel ilkemdir. Tüm projelerde Gizlilik Sözleşmesi (NDA) ve belirlenmiş Hizmet Seviyesi Anlaşması (SLA) ilkeleri çerçevesinde kurumsal çalışma disiplini sürdürürüm.
               </p>
             </div>
@@ -367,23 +367,23 @@ export default function CorporateB2BSEOPage() {
         </section>
 
         {/* DELIVERABLES LIST SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
                 <PackageCheck className="w-3.5 h-3.5" />
                 Somut Çıktılar
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Kurumsal B2B SEO Danışmanlığı Teslimat Çıktıları
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {deliverables.map((item, idx) => (
-                <div key={idx} className="bg-[#111836] border border-white/10 p-6 rounded-2xl flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-1 flex-shrink-0" />
-                  <span className="text-gray-200 font-medium text-sm md:text-base">{item}</span>
+                <div key={idx} className="bg-white border border-line p-6 rounded-2xl flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                  <span className="text-ink font-medium text-sm md:text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -391,24 +391,24 @@ export default function CorporateB2BSEOPage() {
         </section>
 
         {/* TIMELINE ROADMAP SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                 <Clock className="w-3.5 h-3.5" />
                 Sonuç Zaman Çizelgesi
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Kurumsal B2B SEO Süreç Haritası
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {timelineSteps.map((step) => (
-                <div key={step.period} className="bg-[#111836] border border-indigo-500/20 p-8 rounded-2xl relative">
-                  <div className="text-xs font-mono font-semibold text-indigo-400 mb-2">{step.period}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{step.desc}</p>
+                <div key={step.period} className="bg-white border border-indigo-500/20 p-8 rounded-2xl relative">
+                  <div className="text-xs font-mono font-semibold text-indigo-600 mb-2">{step.period}</div>
+                  <h3 className="text-xl font-bold text-ink mb-3">{step.title}</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -416,23 +416,23 @@ export default function CorporateB2BSEOPage() {
         </section>
 
         {/* TOOLS STRIP SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-600 uppercase tracking-widest mb-3">
                 <Wrench className="w-3.5 h-3.5" />
                 Yazılım & Araç Parkı
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Kurumsal B2B SEO Analizinde Kullandığım Başlıca Araçlar
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {toolsList.map((tool) => (
-                <div key={tool.name} className="bg-[#111836] border border-white/10 p-5 rounded-xl text-center">
-                  <div className="font-bold text-white text-base mb-1">{tool.name}</div>
-                  <div className="text-xs text-gray-400">{tool.role}</div>
+                <div key={tool.name} className="bg-white border border-line p-5 rounded-xl text-center">
+                  <div className="font-bold text-ink text-base mb-1">{tool.name}</div>
+                  <div className="text-xs text-ink-muted">{tool.role}</div>
                 </div>
               ))}
             </div>
@@ -440,14 +440,14 @@ export default function CorporateB2BSEOPage() {
         </section>
 
         {/* PRICING POSTURE & CALENDAR APPOINTMENT SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-r from-indigo-900/30 to-purple-900/30 border border-indigo-500/30 rounded-3xl p-8 md:p-12 text-center">
-              <DollarSign className="w-10 h-10 text-indigo-400 mx-auto mb-4" />
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              <DollarSign className="w-10 h-10 text-indigo-600 mx-auto mb-4" />
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
                 Şeffaf ve Şirketinize Özel B2B Teklif Yaklaşımı
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
                 Kurumsal B2B SEO çalışmalarında sabit şablon paketler yerine şirketinizin ürün yapısı, hedef pazarları ve ihale/teklif hacimlerine uygun şeffaf danışmanlık bütçeleri hazırlarım. Dilerseniz doğrudan online randevu takvimi üzerinden strateji görüşmesi planlayabilirsiniz.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
@@ -460,9 +460,9 @@ export default function CorporateB2BSEOPage() {
                 </Link>
                 <Link
                   href="/iletisim"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/20 text-white font-bold hover:bg-white/20 transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-ink/[0.04] border border-line-strong text-ink font-bold hover:bg-ink/5 transition-all"
                 >
-                  <Calendar className="w-5 h-5 text-indigo-400" />
+                  <Calendar className="w-5 h-5 text-indigo-600" />
                   Randevu Randevusu Planlayın
                 </Link>
               </div>

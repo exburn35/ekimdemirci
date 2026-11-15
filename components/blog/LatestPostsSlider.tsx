@@ -85,7 +85,7 @@ export default function LatestPostsSlider({
   if (!posts || posts.length === 0) return null;
 
   return (
-    <section className="py-24 bg-[#0a0f25] relative z-10 overflow-hidden border-t border-white/5">
+    <section className="py-24 bg-canvas relative z-10 overflow-hidden border-t border-line">
       {/* Background Decorative Gradients */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[350px] h-[350px] bg-purple-600/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[350px] h-[350px] bg-cyan-600/5 rounded-full blur-[100px] pointer-events-none" />
@@ -100,14 +100,14 @@ export default function LatestPostsSlider({
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-400 mb-6 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-600 mb-6 uppercase tracking-wider">
               <BookOpen className="w-4 h-4" />
               {badgeText}
             </div>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-              {title}{" "}<span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">{titleHighlight}</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-ink tracking-tight">
+              {title}{" "}<span className="bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">{titleHighlight}</span>
             </h2>
-            <p className="text-gray-400 mt-3 text-sm md:text-base max-w-xl leading-relaxed">
+            <p className="text-ink-muted mt-3 text-sm md:text-base max-w-xl leading-relaxed">
               {subtitle}
             </p>
           </motion.div>
@@ -122,7 +122,7 @@ export default function LatestPostsSlider({
               <button
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
-                className="p-3 rounded-full border border-white/10 bg-white/5 hover:bg-purple-500/20 hover:border-purple-500/30 text-white transition-all disabled:opacity-30 disabled:hover:bg-white/5 disabled:hover:border-white/10 disabled:cursor-not-allowed cursor-pointer"
+                className="p-3 rounded-full border border-line bg-white hover:bg-purple-500/20 hover:border-purple-500/30 text-ink transition-all disabled:opacity-30 disabled:hover:bg-ink/[0.03] disabled:hover:border-line disabled:cursor-not-allowed cursor-pointer"
                 aria-label="Önceki yazılar"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -130,7 +130,7 @@ export default function LatestPostsSlider({
               <button
                 onClick={handleNext}
                 disabled={currentIndex === maxIndex}
-                className="p-3 rounded-full border border-white/10 bg-white/5 hover:bg-purple-500/20 hover:border-purple-500/30 text-white transition-all disabled:opacity-30 disabled:hover:bg-white/5 disabled:hover:border-white/10 disabled:cursor-not-allowed cursor-pointer"
+                className="p-3 rounded-full border border-line bg-white hover:bg-purple-500/20 hover:border-purple-500/30 text-ink transition-all disabled:opacity-30 disabled:hover:bg-ink/[0.03] disabled:hover:border-line disabled:cursor-not-allowed cursor-pointer"
                 aria-label="Sonraki yazılar"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -156,7 +156,7 @@ export default function LatestPostsSlider({
                   className="shrink-0 px-4"
                   style={{ width: `${itemWidthPercent}%` }}
                 >
-                  <article className="bg-[#111836]/30 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden hover:border-purple-500/30 hover:bg-[#111836]/60 transition-all duration-300 group flex flex-col h-full shadow-[0_4px_30px_rgba(0,0,0,0.2)]">
+                  <article className="bg-white/30 backdrop-blur-md rounded-2xl border border-line overflow-hidden hover:border-purple-500/30 hover:bg-white/60 transition-all duration-300 group flex flex-col h-full shadow-[0_4px_30px_rgba(0,0,0,0.2)]">
                     <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
                       {post.featuredImage && (
                         <div className="w-full h-52 overflow-hidden relative">
@@ -169,7 +169,7 @@ export default function LatestPostsSlider({
                           />
                           {post.category && (
                             <div className="absolute top-4 left-4 z-10">
-                              <span className="px-3 py-1 bg-purple-500/80 backdrop-blur-md text-white rounded-full text-xs font-semibold uppercase tracking-wider border border-purple-400/30">
+                              <span className="px-3 py-1 bg-purple-500/80 backdrop-blur-md text-ink rounded-full text-xs font-semibold uppercase tracking-wider border border-purple-400/30">
                                 {post.category}
                               </span>
                             </div>
@@ -179,32 +179,32 @@ export default function LatestPostsSlider({
                       <div className="p-6 flex-grow flex flex-col justify-between">
                         <div>
                           {/* Meta Info */}
-                          <div className="flex items-center gap-3 text-xs text-gray-400 mb-3">
+                          <div className="flex items-center gap-3 text-xs text-ink-muted mb-3">
                             <div className="flex items-center gap-1">
-                              <Calendar className="w-3.5 h-3.5 text-purple-400" />
+                              <Calendar className="w-3.5 h-3.5 text-purple-600" />
                               {post.publishedAt ? formatDate(post.publishedAt) : "—"}
                             </div>
-                            <span className="text-gray-600">•</span>
+                            <span className="text-ink-faint">•</span>
                             <div className="flex items-center gap-1">
-                              <Clock className="w-3.5 h-3.5 text-cyan-400" />
+                              <Clock className="w-3.5 h-3.5 text-cyan-600" />
                               {post.readTime || 5} dk okuma
                             </div>
                           </div>
 
                           {/* Title & Excerpt */}
-                          <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors line-clamp-2 leading-tight">
+                          <h3 className="text-lg md:text-xl font-bold text-ink mb-3 group-hover:text-purple-600 transition-colors line-clamp-2 leading-tight">
                             {(post.title || "").replace(/&#8217;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&')}
                           </h3>
                           {post.excerpt && (
-                            <p className="text-gray-400 text-sm line-clamp-3 mb-6 leading-relaxed">
+                            <p className="text-ink-muted text-sm line-clamp-3 mb-6 leading-relaxed">
                               {post.excerpt}
                             </p>
                           )}
                         </div>
 
                         {/* Footer Action */}
-                        <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
-                          <span className="text-sm font-semibold text-purple-400 group-hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5">
+                        <div className="flex items-center justify-between border-t border-line pt-4 mt-auto">
+                          <span className="text-sm font-semibold text-purple-600 group-hover:text-cyan-600 transition-colors inline-flex items-center gap-1.5">
                             Devamını Oku
                             <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                           </span>
@@ -242,7 +242,7 @@ export default function LatestPostsSlider({
               <button
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
-                className="p-3 rounded-full border border-white/10 bg-white/5 hover:bg-purple-500/20 text-white transition-all disabled:opacity-30 cursor-pointer"
+                className="p-3 rounded-full border border-line bg-white hover:bg-purple-500/20 text-ink transition-all disabled:opacity-30 cursor-pointer"
                 aria-label="Önceki yazılar"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -250,7 +250,7 @@ export default function LatestPostsSlider({
               <button
                 onClick={handleNext}
                 disabled={currentIndex === maxIndex}
-                className="p-3 rounded-full border border-white/10 bg-white/5 hover:bg-purple-500/20 text-white transition-all disabled:opacity-30 cursor-pointer"
+                className="p-3 rounded-full border border-line bg-white hover:bg-purple-500/20 text-ink transition-all disabled:opacity-30 cursor-pointer"
                 aria-label="Sonraki yazılar"
               >
                 <ChevronRight className="w-5 h-5" />

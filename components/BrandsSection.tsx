@@ -20,11 +20,11 @@ export default function BrandsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <span className="text-ink">
                Danışmanlık Verdiğim Markalar
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-ink-muted max-w-2xl mx-auto">
              Farklı sektörlerdeki lider markalar tarafından tercih edilen
           </p>
         </motion.div>
@@ -46,9 +46,9 @@ export default function BrandsSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: (groupIndex * 0.2) + (index * 0.1), duration: 0.4 }}
-                  className="glass p-6 rounded-xl text-center hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                  className="glass p-6 rounded-xl text-center hover:bg-ink/5 transition-all duration-300 hover:scale-105"
                 >
-                  <span className="font-extrabold tracking-wider uppercase text-sm md:text-base bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">{brand}</span>
+                  <span className="font-extrabold tracking-wider uppercase text-sm md:text-base bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">{brand}</span>
                 </motion.div>
               ))}
             </motion.div>

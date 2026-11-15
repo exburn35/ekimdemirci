@@ -3,15 +3,16 @@ import path from "path";
 import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
-interface BrandItem {
-  name: string;
-  file: string;
-}
+const stats = [
+  { value: "+%250", label: "Organik trafik artışı" },
+  { value: "İlk 3", label: "Ortalama sıra hedefi" },
+  { value: "+%180", label: "Yatırım getirisi iyileşmesi" },
+];
 
-const brands: BrandItem[] = [
+const brands = [
   { name: "Enza Home", file: "enza-home.svg" },
   { name: "LTB Jeans", file: "ltb-jeans.svg" },
-  { name: "Levis", file: "levis.svg" },
+  { name: "Levi's", file: "levis.svg" },
   { name: "Vans", file: "vans.svg" },
   { name: "Timberland", file: "timberland.svg" },
   { name: "Dockers", file: "dockers.svg" },
@@ -19,80 +20,48 @@ const brands: BrandItem[] = [
 
 export default function HomeProofBand() {
   const logosDir = path.join(process.cwd(), "public", "logos");
-  const logosDirExists = fs.existsSync(logosDir);
 
   return (
-    <section className="bg-[#0d153a] border-b border-white/5 py-8 md:py-10 relative z-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Sol Kısım: Önceki İstatistikler (+%250 Trafik Artışı, İlk 3 Ortalama Sıra, +%180 ROI İyileşmesi) */}
-          <div className="lg:col-span-5 lg:border-r lg:border-white/10 lg:pr-8">
-            <div className="grid grid-cols-3 gap-4 text-center">
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                  +%250
-                </div>
-                <div className="text-xs text-gray-400 mt-1 font-medium">
-                  Trafik Artışı
-                </div>
+    <section className="border-y border-line bg-white py-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div className="lg:col-span-5">
+          <dl className="grid grid-cols-3 divide-x divide-line">
+            {stats.map((stat) => (
+              <div key={stat.label} className="px-3 text-center first:pl-0 last:pr-0">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">{stat.value}</dd>
+                <dd className="mt-1 text-xs font-medium text-ink-muted">{stat.label}</dd>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-blue-400 tracking-tight">
-                  İlk 3
-                </div>
-                <div className="text-xs text-gray-400 mt-1 font-medium">
-                  Ortalama Sıra
-                </div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 tracking-tight">
-                  +%180
-                </div>
-                <div className="text-xs text-gray-400 mt-1 font-medium">
-                  ROI İyileşmesi
-                </div>
-              </div>
-            </div>
+            ))}
+          </dl>
+          {SITE_CONFIG.proofNote ? (
+            <p className="mt-3 text-center text-xs text-ink-faint">{SITE_CONFIG.proofNote}</p>
+          ) : null}
+        </div>
 
-            {/* proofNote doluysa render et, boşsa hiç render etme */}
-            {SITE_CONFIG.proofNote ? (
-              <p className="text-[11px] sm:text-xs text-gray-400 text-center mt-3 font-mono tracking-tight">
-                {SITE_CONFIG.proofNote}
-              </p>
-            ) : null}
-          </div>
-
-          {/* Sağ Kısım: Marka Logoları / Metin Alanı */}
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4 items-center">
-              {brands.map((brand) => {
-                const logoFilePath = path.join(logosDir, brand.file);
-                const hasLogoFile = logosDirExists && fs.existsSync(logoFilePath);
-
-                return (
-                  <div
-                    key={brand.name}
-                    className="h-12 flex items-center justify-center rounded-xl bg-white/[0.03] border border-white/5 px-2 hover:border-white/15 transition-all duration-300"
-                  >
-                    {hasLogoFile ? (
-                      <div className="relative w-full h-7 grayscale opacity-60 hover:opacity-100 transition-opacity">
-                        <Image
-                          src={`/logos/${brand.file}`}
-                          alt={`${brand.name} Logo`}
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
-                    ) : (
-                      <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-gray-400 text-center truncate">
-                        {brand.name}
-                      </span>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+        <div className="lg:col-span-7">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink-faint lg:text-right">
+            Deneyimimde yer alan markalar
+          </p>
+          <ul className="grid grid-cols-3 gap-2 sm:grid-cols-6">
+            {brands.map((brand) => {
+              const hasLogo = fs.existsSync(path.join(logosDir, brand.file));
+              return (
+                <li
+                  key={brand.name}
+                  className="flex h-12 items-center justify-center rounded-xl border border-line bg-canvas px-2"
+                >
+                  {hasLogo ? (
+                    <div className="relative h-6 w-full opacity-60 grayscale transition-opacity hover:opacity-100">
+                      <Image src={`/logos/${brand.file}`} alt={brand.name} fill className="object-contain" />
+                    </div>
+                  ) : (
+                    <span className="truncate text-xs font-semibold tracking-wide text-ink-muted">{brand.name}</span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </section>
