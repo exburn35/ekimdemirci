@@ -1,203 +1,311 @@
-import Link from "next/link";
-import { 
-  Stethoscope, 
-  ShoppingCart, 
-  Scale, 
-  Sparkles, 
-  UserCircle, 
-  Building2,
-  ArrowRight,
-  CheckCircle2
-} from "lucide-react";
+import { Metadata } from "next";
+import { ShieldCheck, MapPin, Package, Clock, CalendarRange, Megaphone, Signpost, Bot, Wrench } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import SEOAuditSection from "@/components/SEOAuditSection";
-import RelatedPages from "@/components/RelatedPages";
-import RelatedBlogPosts from "@/components/RelatedBlogPosts";
-import ContactForm from "@/components/ContactForm";
+import ServicePageLayout from "@/components/ServicePageLayout";
+import SectorPicker from "@/components/sektorel/SectorPicker";
+import { sectors } from "@/components/sektorel/sectors";
+import { caseStudies } from "@/lib/case-studies";
+import {
+  DemoSection,
+  DemoSide,
+  DemoWindow,
+  ExampleGrid,
+  GuideDefinition,
+  GuideH2,
+  GuideLink,
+  GuideShell,
+  ProcessTimeline,
+  ProofBand,
+  RelatedBand,
+  ScopeGrid,
+  type Faq,
+} from "@/components/service/ServiceBlocks";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Sektörel SEO Hizmetleri",
-  description: "Diş hekimliği, e-ticaret, hukuk, estetik, sağlık ve kurumsal B2B gibi farklı sektörler için özelleştirilmiş veri odaklı SEO danışmanlığı.",
+  description: "E-ticaret, sağlık, diş hekimliği, hukuk, güzellik, yerel işletmeler ve B2B şirketler için sektöre özel SEO danışmanlığı. Sektörünüzün arama davranışına göre hazırlanmış yol haritası.",
   alternates: {
     canonical: "/sektorel-seo-hizmetleri",
   },
   openGraph: {
     title: "Sektörel SEO Hizmetleri | Ekim Demirci",
-    description: "Diş hekimliği, e-ticaret, hukuk, estetik, sağlık ve kurumsal B2B gibi farklı sektörler için özelleştirilmiş veri odaklı SEO danışmanlığı.",
+    description: "Her sektörün arama davranışı farklı. Sektörünüze özel hazırlanmış SEO stratejisiyle doğru müşterilere ulaşın.",
   },
   twitter: {
     title: "Sektörel SEO Hizmetleri | Ekim Demirci",
-    description: "Diş hekimliği, e-ticaret, hukuk, estetik, sağlık ve kurumsal B2B gibi farklı sektörler için özelleştirilmiş veri odaklı SEO danışmanlığı.",
+    description: "Her sektörün arama davranışı farklı. Sektörünüze özel hazırlanmış SEO stratejisiyle doğru müşterilere ulaşın.",
   },
 };
 
-const sectors = [
+const faqItems: Faq[] = [
   {
-    title: "Diş Hekimleri için SEO",
-    description: "Diş hekimi klinikleriniz için özelleştirilmiş SEO stratejileri ile daha fazla hasta kazanın.",
-    icon: Stethoscope,
-    href: "/sektorel-seo-hizmetleri/dis-hekimleri-icin-seo-2",
-    gradient: "from-blue-500 to-cyan-500",
+    question: "Sektörel SEO nedir?",
+    answer: "Sektörel SEO, arama motoru optimizasyonunun bir sektörün kendine özgü arama davranışına, rekabet yapısına ve kurallarına göre uyarlanmış halidir. Bir diş kliniği ile bir e-ticaret sitesinin müşterileri farklı şekillerde arama yapar; sektörel SEO bu farkları baştan hesaba katar.",
   },
   {
-    title: "E-Ticaret SEO",
-    description: "Online mağazanız için teknik ve içerik SEO optimizasyonu ile satışlarınızı artırın.",
-    icon: ShoppingCart,
-    href: "/sektorel-seo-hizmetleri/e-ticaret-seo",
-    gradient: "from-purple-500 to-pink-500",
+    question: "Genel bir SEO çalışması neden yetmez?",
+    answer: "Temel SEO prensipleri her sektörde aynı olsa da öncelikler çok farklı. Sağlıkta güven ve uzmanlık sinyalleri, e-ticarette binlerce sayfanın teknik yönetimi, yerel işletmelerde harita sonuçları belirleyici. Sektörü bilmeden yapılan bir çalışma, en çok etki yaratacak işleri gözden kaçırabiliyor.",
   },
   {
-    title: "Avukatlar için SEO",
-    description: "Hukuk bürolarınız için yerel ve ulusal SEO hizmetleri ile potansiyel müvekkillerinize ulaşın.",
-    icon: Scale,
-    href: "/sektorel-seo-hizmetleri/avukatlar-icin-seo-hizmeti",
-    gradient: "from-green-500 to-emerald-500",
+    question: "Sektörümde hiç deneyiminiz yoksa ne olur?",
+    answer: "Çalışmaya başlamadan önce sektörünüzün arama davranışını, rakiplerinizi ve varsa sektörel kuralları detaylı şekilde inceliyorum. Sektörünüze özel bir sayfa sitede yoksa bile ilk görüşmede yaklaşımımı somut örneklerle anlatıyorum; uygun olup olmadığına birlikte karar veriyoruz.",
   },
   {
-    title: "Güzellik Merkezleri için SEO",
-    description: "Güzellik ve estetik merkezleriniz için SEO ile müşteri portföyünüzü genişletin.",
-    icon: Sparkles,
-    href: "/sektorel-seo-hizmetleri/guzellik-merkezleri-icin-seo-2",
-    gradient: "from-pink-500 to-rose-500",
+    question: "Sağlık ve hukuk sitelerinde SEO neden daha zor?",
+    answer: "Google, insanların sağlığını, parasını ya da güvenliğini etkileyebilecek konuları (YMYL) daha sıkı değerlendiriyor. Bu alanlarda içeriği kimin yazdığı, uzmanlığının nasıl kanıtlandığı ve bilgilerin güvenilirliği çok daha fazla önem taşıyor. Üstelik bu sektörlerde reklam ve tanıtım kuralları da sıkı olduğu için organik görünürlük ayrıca değer kazanıyor.",
   },
   {
-    title: "Doktorlar için SEO",
-    description: "Tıp doktorları ve uzman hekimler için özelleştirilmiş SEO hizmetleri.",
-    icon: UserCircle,
-    href: "/sektorel-seo-hizmetleri/doktorlar-icin-seo-2",
-    gradient: "from-orange-500 to-red-500",
+    question: "Yerel işletmeler için SEO nasıl farklılaşır?",
+    answer: "Yerel işletmelerde müşterilerin büyük bölümü \"yakınımdaki\" ya da şehir adıyla arama yapıyor. Bu aramalarda Google Haritalar sonuçları öne çıkıyor. Google İşletme profili, yorumlar ve konum bilgisi tutarlılığı bu yüzden en önemli konular arasında yer alıyor.",
   },
   {
-    title: "Hastaneler için SEO",
-    description: "Hastaneler ve sağlık kuruluşları için kapsamlı SEO çözümleri.",
-    icon: Building2,
-    href: "/sektorel-seo-hizmetleri/hastaneler-icin-seo-2",
-    gradient: "from-indigo-500 to-blue-500",
+    question: "Sektörel SEO danışmanlığı ne kadara mal olur?",
+    answer: "Fiyat sektörden çok sitenizin büyüklüğüne, rekabet yoğunluğuna ve çalışmanın kapsamına bağlı. Aylık SEO danışmanlık paketlerim 20.000 TL'den başlıyor; backlink ve dijital PR çalışmaları ayrıca bütçelendiriliyor. Kesin teklifi ön analizden sonra hazırlıyorum.",
   },
 ];
 
-const benefits = [
-  "Sektöre özel anahtar kelime araştırması",
-  "Rakip analizi ve benchmarking",
-  "Yerel SEO optimizasyonu",
-  "Teknik SEO iyileştirmeleri",
-  "İçerik stratejisi ve optimizasyonu",
-  "Sürekli performans takibi",
-];
+function formatPercent(raw: string) {
+  const n = parseFloat(raw.replace(/[^\d.]/g, ""));
+  return Number.isNaN(n) ? raw : `+%${n.toLocaleString("tr-TR", { maximumFractionDigits: 1 })}`;
+}
 
 export default function SectoralSEOServices() {
+  const picked = ["hizmet-klinik-seo", "motosiklet-aksesuarlari-magazasi", "cevrimici-egitim-platformu"]
+    .map((slug) => caseStudies.find((c) => c.slug === slug))
+    .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
   return (
     <>
       <Breadcrumb items={[{ name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" }]} />
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-canvas via-canvas-alt to-canvas" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+      <ServicePageLayout
+        title="Sektörel SEO Hizmetleri"
+        subtitle="Sektörünüzün diliyle SEO"
+        description="Bir diş kliniğinin hastası ile bir e-ticaret sitesinin müşterisi Google'da aynı şekilde arama yapmıyor. Ben de her sektöre aynı paketi uygulamak yerine, sizin müşterinizin nasıl aradığını, neye güvendiğini ve rakiplerinizin nerede durduğunu inceleyip size özel bir yol haritası hazırlıyorum."
+        canonicalUrl="https://ekimdemirci.com/sektorel-seo-hizmetleri"
+        afterHeroNode={
+          <DemoSection
+            id="sektor-secici"
+            eyebrow="Sektörünüze göre"
+            title="Her sektörün müşterisi farklı arar."
+            intro="Aşağıdan sektörünüzü seçerek müşterilerinizin Google'da nasıl arama yaptığına ve bu sektörde hangi alanlara odaklandığıma göz atabilirsiniz."
+            window={
+              <DemoWindow label="Sektörel SEO">
+                <SectorPicker />
+              </DemoWindow>
+            }
+            side={
+              <DemoSide
+                title="Aynı prensipler, farklı öncelikler"
+                text="SEO'nun temel kuralları her sektörde aynı; ama hangi işin önce yapılacağı sektörden sektöre değişiyor. Bir klinikte güven sinyalleri, bir e-ticaret sitesinde kategori yapısı, bir yerel işletmede harita sonuçları belirleyici olabiliyor. Sektörü doğru okumak, bütçeyi en çok etki yaratacak işlere ayırmak demek."
+                points={[
+                  "Sektörünüzdeki arama davranışını analiz etmek",
+                  "Rakiplerinizin neden önde olduğunu bulmak",
+                  "Sektörel kuralları ve hassasiyetleri gözetmek",
+                  "Size özel bir öncelik listesi hazırlamak",
+                ]}
+                ctaTitle="Sektörünüzde ne kadar fırsat var?"
+                ctaText="Sitenizi ve rakiplerinizi inceleyip sektörünüzdeki en hızlı büyüme fırsatlarını raporlayayım."
+                ctaLabel="Ücretsiz sektör analizi iste"
+              />
+            }
+          />
+        }
+        icon="Settings"
+        gradient="from-blue-600 via-indigo-600 to-purple-600"
+        blogCategory="SEO Hizmetleri"
+      >
+        <ScopeGrid
+          eyebrow="Sektörler"
+          title="Sektörünüze özel SEO hizmetleri"
+          intro="Aşağıdaki sektörlerin her biri için ayrı bir sayfada, o sektörün arama davranışını, sık yapılan hataları ve uyguladığım yaklaşımı detaylı olarak anlattım."
+          items={sectors.map((s) => ({
+            icon: s.icon,
+            title: s.name,
+            text: `${s.summary} Odak noktaları: ${s.focus.join(", ")}.`,
+            href: `/sektorel-seo-hizmetleri/${s.slug}`,
+            link: "Sektör sayfasını inceleyin",
+          }))}
+        />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-ink">
-                Sektörel SEO Hizmetleri
-              </span>
-            </h1>
-            <p className="text-xl text-ink-muted leading-relaxed">
-              Her sektörün kendine özgü ihtiyaçları vardır. Sektörünüze özel SEO stratejileri ile 
-              dijital varlığınızı güçlendirin ve hedef kitlenize daha etkili şekilde ulaşın.
+        <ExampleGrid
+          eyebrow="Neden sektörel?"
+          title="Neden her sektöre aynı SEO uygulanmaz?"
+          intro="SEO'nun temel prensipleri değişmez; ama her sektörün kendine özgü dinamikleri, hangi işin önce yapılması gerektiğini belirler. İşte en sık karşılaştığım farklar:"
+          items={[
+            { icon: ShieldCheck, title: "Güvenin ağırlığı değişir", text: "Sağlık, hukuk ve finans gibi alanlarda Google içeriği kimin yazdığına ve uzmanlığın nasıl kanıtlandığına çok daha fazla dikkat ediyor. Bu sektörlerde güven sinyalleri ilk öncelik." },
+            { icon: MapPin, title: "Arama yerel olabilir", text: "Klinikler, güzellik merkezleri ve yerel işletmelerde müşterilerin çoğu şehir ya da semt adıyla arıyor. Harita sonuçlarında görünmek, sitenin sıralamasından bile önemli hale geliyor." },
+            { icon: Package, title: "Ölçek farklıdır", text: "Binlerce ürünlü bir e-ticaret sitesinde tek tek sayfa düzenlemek mümkün değil. Burada kategori yapısı, filtre sayfaları ve şablon düzeyinde çözümler belirleyici." },
+            { icon: Clock, title: "Karar süresi uzayabilir", text: "Kurumsal ve B2B satışlarda müşteri karar vermeden önce uzun süre araştırma yapıyor. Bu süreçte doğru aşamada doğru içerikle karşısına çıkmak gerekiyor." },
+            { icon: CalendarRange, title: "Mevsimsellik etkilidir", text: "Turizm, eğitim ve bazı perakende sektörlerinde aramalar yılın belirli dönemlerinde yoğunlaşıyor. İçeriklerin bu dönemlerden önce hazır olması gerekiyor." },
+            { icon: Megaphone, title: "Tanıtım kuralları sıkı olabilir", text: "Sağlık ve hukuk gibi alanlarda reklam ve tanıtım kuralları kısıtlayıcı. Bu sektörlerde kurallara uygun, bilgilendirici içeriklerle kazanılan organik görünürlük ayrıca değer kazanıyor." },
+          ]}
+        />
+
+        <ProcessTimeline
+          title="Sektörel SEO çalışması adım adım nasıl ilerliyor?"
+          intro="Önce sektörünüzü ve rakiplerinizi tanıyorum. Ardından sektörünüze özel bir öncelik listesiyle çalışmaya başlıyor, sonuçları düzenli olarak ölçüyorum."
+          ctaLabel="Ücretsiz sektör analiziyle başlayalım"
+          steps={[
+            {
+              tag: "1. hafta",
+              title: "Sektör ve rakip analizi",
+              paragraphs: [
+                "Sektörünüzde müşterilerin hangi kelimelerle, hangi aşamada arama yaptığını inceliyorum. Aynı aramalarda öne çıkan rakiplerinizin sitelerini, içeriklerini ve bağlantı profillerini analiz ederek onları öne çıkaran etkenleri buluyorum.",
+                "Sektörünüze özel kurallar ve hassasiyetler varsa (sağlık ve hukuk alanındaki tanıtım kuralları gibi) bunları da bu aşamada not ediyorum.",
+              ],
+            },
+            {
+              tag: "1. ve 2. hafta",
+              title: "Sitenizin değerlendirilmesi",
+              paragraphs: [
+                "Sitenizi teknik altyapı, içerik ve otorite açısından değerlendiriyorum. Sektörünüzdeki rakiplerle kıyasladığımda sitenizin güçlü ve zayıf kaldığı noktalar netleşiyor.",
+              ],
+            },
+            {
+              tag: "2. hafta",
+              tone: "accent",
+              title: "Sektörünüze özel yol haritası",
+              paragraphs: [
+                "Analizlerin sonucunda sektörünüze göre önceliklendirilmiş bir yol haritası hazırlıyorum. Örneğin bir klinik için önce güven ve yerel görünürlük, bir e-ticaret sitesi için önce kategori yapısı ve teknik düzen öne çıkabiliyor.",
+                "Her maddenin neden önemli olduğunu ve size ne kazandıracağını açık bir dille anlatıyorum.",
+              ],
+            },
+            {
+              tag: "Ayrı bütçelendirilir",
+              tone: "amber",
+              title: "Uygulama ve otorite çalışmaları",
+              paragraphs: [
+                "Teknik düzenlemeler, içerik çalışmaları ve yerel SEO adımları paralel olarak ilerliyor. Sektörünüzle ilgili yayınlarda yer almanızı sağlayacak backlink ve dijital PR çalışmaları ise yayın maliyetleri değişken olduğu için ayrıca bütçelendiriliyor ve onayınız alınmadan harcama yapılmıyor.",
+              ],
+            },
+            {
+              tag: "Her ay",
+              title: "Ölçüm ve raporlama",
+              paragraphs: [
+                "Sıralamaları, organik ziyaretçileri ve en önemlisi sektörünüze özgü dönüşümleri (randevu, teklif talebi, satış, arama) takip ediyorum. Sonuçlara göre planı güncelliyor, işe yarayanı büyütüyoruz.",
+              ],
+            },
+          ]}
+        />
+
+        <ProofBand
+          title="Farklı sektörlerden sonuçlar"
+          results={picked.map((c) => ({
+            code: c.category,
+            metric: formatPercent(c.clickIncrease),
+            label: `Tıklama artışı · ${c.company}`,
+            detail: c.summary,
+            source: `Vaka analizi, ${c.duration.toLocaleLowerCase("tr-TR")}`,
+          }))}
+        />
+
+        <RelatedBand
+          eyebrow="Diğer hizmetler"
+          title="Sektörünüz ne olursa olsun, temel hizmetler aynı titizlikle yürür"
+          text="Sektörel yaklaşım, hangi işin önce yapılacağını belirler. İşin kendisi ise teknik SEO, içerik ve otorite çalışmalarının bir arada yürütülmesine dayanır. Yapay zeka görünürlüğü de artık her sektör için ayrı bir fırsat."
+          links={[
+            { icon: Signpost, title: "SEO danışmanlığı", href: "/seo-danismanligi", text: "Tüm alanları birlikte ele alan genel çalışma" },
+            { icon: Bot, title: "GEO danışmanlığı", href: "/geo-danismanligi", text: "ChatGPT ve AI Overview görünürlüğü" },
+            { icon: Wrench, title: "Teknik SEO", href: "/seo-hizmetleri/teknik-seo", text: "Tarama, indekslenme ve hız" },
+          ]}
+        />
+
+        <GuideShell
+          id="sektorel-seo-rehberi"
+          eyebrow="Sektörel SEO rehberi"
+          title="Sektörel SEO hakkında bilmeniz gerekenler"
+          intro="Sektörünüze özel bir SEO stratejisine neden ihtiyaç duyduğunuzu ve sektörlere göre nelerin değiştiğini sade bir dille anlattım."
+          toc={[
+            { id: "sektorel-seo-nedir", label: "Sektörel SEO nedir?" },
+            { id: "ymyl", label: "Sağlık, hukuk ve finansta SEO" },
+            { id: "yerel", label: "Yerel işletmelerde SEO" },
+            { id: "e-ticaret", label: "E-ticarette SEO" },
+            { id: "b2b", label: "Kurumsal ve B2B SEO" },
+            { id: "guncellemeler", label: "Google güncellemeleri ve sektörler" },
+          ]}
+          cta={{ eyebrow: "Ücretsiz sektör analizi", title: "Sektörünüzde rakiplerinizin gerisinde mi kalıyorsunuz?", text: "Sitenizi rakiplerinizle karşılaştırıp en hızlı büyüme fırsatlarını raporlayayım.", label: "Ücretsiz analiz isteyin" }}
+          faqTitle="Sektörel SEO hakkında sıkça sorulan sorular"
+          faqItems={faqItems}
+        >
+          <div className="space-y-5">
+            <GuideH2 id="sektorel-seo-nedir">Sektörel SEO nedir?</GuideH2>
+            <GuideDefinition>
+              Sektörel SEO, arama motoru optimizasyonunun bir sektörün kendine özgü arama davranışına, rekabet yapısına,
+              güven beklentilerine ve kurallarına göre uyarlanarak uygulanmasıdır.
+            </GuideDefinition>
+            <p>
+              Teknik altyapı, içerik ve otorite her sektörde SEO&apos;nun üç temel ayağıdır. Sektörel SEO&apos;yu farklı kılan,
+              bu üç ayağın hangisine ne kadar ağırlık verileceğini ve hangi sırayla ilerleneceğini sektörün gerçeklerine göre
+              belirlemesidir. Böylece bütçe, sizin sektörünüzde gerçekten fark yaratacak işlere harcanır.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Sectors Grid */}
-      <section className="py-24 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-ink">
-                Hizmet Verdiğim Sektörler
-              </span>
-            </h2>
-            <p className="text-xl text-ink-muted">
-              Sektörünüze özel SEO çözümleri ile dijital pazarda öne çıkın
+          <div className="space-y-5">
+            <GuideH2 id="ymyl">Sağlık, hukuk ve finansta SEO neden farklıdır?</GuideH2>
+            <p>
+              Google, insanların sağlığını, parasını ya da güvenliğini etkileyebilecek konuları &ldquo;Your Money or Your
+              Life&rdquo; (YMYL) olarak tanımlıyor ve bu konulardaki içerikleri çok daha sıkı değerlendiriyor. İçeriği kimin
+              yazdığı, yazarın uzmanlığının nasıl kanıtlandığı ve bilgilerin güvenilir kaynaklara dayanıp dayanmadığı bu
+              sektörlerde sıralamayı doğrudan etkiliyor.
+            </p>
+            <p>
+              Google&apos;ın kaliteyi nasıl değerlendirdiğini merak ediyorsanız <GuideLink href="/blog/google-raters-guideline-nedir">Google Raters Guideline nedir</GuideLink> yazıma,
+              diş klinikleri özelindeki yaklaşımımı görmek için de <GuideLink href="/blog/dis-klinigi-seo-nedir-dis-hekimleri-icin-neden-onemlidir">diş kliniği SEO</GuideLink> yazıma
+              göz atabilirsiniz.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sectors.map((sector) => {
-              const Icon = sector.icon;
-              return (
-                <div key={sector.href}>
-                  <Link
-                    href={sector.href}
-                    className="block glass-strong p-8 rounded-xl hover:bg-ink/5 transition-all duration-300 group"
-                  >
-                    <div className={`w-16 h-16 bg-gradient-to-br ${sector.gradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-8 h-8 text-ink" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-ink mb-3 group-hover:text-blue-600 transition-colors">
-                      {sector.title}
-                    </h3>
-                    <p className="text-ink-muted mb-4 leading-relaxed">
-                      {sector.description}
-                    </p>
-                    <div className="flex items-center gap-2 text-blue-600 font-medium">
-                      Detayları Gör
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-24 bg-gradient-to-b from-canvas to-canvas-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-ink">
-                Neden Sektörel SEO?
-              </span>
-            </h2>
-            <p className="text-xl text-ink-muted">
-              Her sektörün kendine özgü SEO ihtiyaçları vardır
+          <div className="space-y-5">
+            <GuideH2 id="yerel">Yerel işletmelerde SEO nasıl çalışır?</GuideH2>
+            <p>
+              Bir kuaför, veteriner ya da oto servis için en değerli aramalar, müşterinin yakınında hizmet aradığı
+              aramalardır. Bu aramalarda Google genellikle sonuçların en üstünde bir harita ve üç işletme gösterir. Bu
+              alanda yer almak için Google İşletme profilinin eksiksiz olması, yorumların düzenli gelmesi ve işletme
+              bilgilerinin internetin her yerinde tutarlı olması gerekir.
+            </p>
+            <p>
+              Detaylar için <GuideLink href="/blog/yerel-seo-nedir">yerel SEO nedir</GuideLink> ve{" "}
+              <GuideLink href="/blog/google-my-business-nedir">Google İşletme profili</GuideLink> yazılarıma bakabilirsiniz.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit}
-                className="glass-strong p-6 rounded-xl hover:bg-ink/5 transition-all duration-300"
-              >
-                <CheckCircle2 className="w-6 h-6 text-blue-600 mb-3" />
-                <h3 className="text-lg font-semibold text-ink mb-2">{benefit}</h3>
-              </div>
-            ))}
+          <div className="space-y-5">
+            <GuideH2 id="e-ticaret">E-ticarette SEO neden farklıdır?</GuideH2>
+            <p>
+              E-ticaret sitelerinde yüzlerce, bazen binlerce ürün ve kategori sayfası bulunur. Bu ölçekte sayfaları tek tek
+              düzenlemek yerine kategori yapısını, filtre sayfalarının nasıl yönetileceğini ve ürün sayfası şablonlarını
+              doğru kurgulamak gerekir. Aynı ürünün farklı renk ve beden seçenekleri, stoktan kalkan ürünler ve tekrar eden
+              açıklamalar da e-ticarete özgü sorunlardır.
+            </p>
+            <p>
+              Adım adım bir yol haritası için <GuideLink href="/blog/e-ticaret-seo-nasil-yapilir">e-ticaret SEO nasıl yapılır</GuideLink> rehberimi
+              inceleyebilirsiniz.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Related Blog Posts Slider */}
-      <RelatedBlogPosts />
+          <div className="space-y-5">
+            <GuideH2 id="b2b">Kurumsal ve B2B SEO&apos;da nelere dikkat edilmeli?</GuideH2>
+            <p>
+              B2B şirketlerde arama hacimleri düşük ama her müşterinin değeri yüksektir. Karar süreci uzun ve genellikle
+              birden fazla kişiyi kapsar. Bu yüzden içerik stratejisi, karar vericinin araştırma sürecinin her aşamasına
+              (sorunu tanıma, çözümleri karşılaştırma, tedarikçi seçme) cevap verecek şekilde kurgulanmalıdır.
+            </p>
+          </div>
 
-      {/* Related Pages */}
-      <RelatedPages />
-
-      {/* SEO Audit Section */}
-      <SEOAuditSection />
-
-      {/* Contact Form */}
-      <ContactForm
-        title="Sektörünüze Özel SEO Çözümleri İçin İletişime Geçin"
-        description="Hangi sektörde hizmet veriyorsanız verin, size özel SEO stratejisi geliştirelim."
-        showTitle={true}
-      />
+          <div className="space-y-5">
+            <GuideH2 id="guncellemeler">Google güncellemeleri sektörleri nasıl etkiler?</GuideH2>
+            <p>
+              Google&apos;ın büyük algoritma güncellemeleri her sektörü aynı şiddette etkilemiyor. Özellikle sağlık, finans ve
+              içerik ağırlıklı sektörler, kalite odaklı güncellemelerde daha büyük dalgalanmalar yaşayabiliyor. Sektörünüzün
+              bu değişimlere ne kadar açık olduğunu bilmek, riskleri önceden yönetmeyi kolaylaştırıyor.
+            </p>
+            <p>
+              Bu konuyu <GuideLink href="/blog/google-guncellemelerinden-en-cok-etkilenen-sektorler-ve-ayakta-kalma-rehberi">Google güncellemelerinden en çok etkilenen sektörler</GuideLink> yazımda
+              detaylı olarak ele aldım.
+            </p>
+          </div>
+        </GuideShell>
+      </ServicePageLayout>
     </>
   );
 }
