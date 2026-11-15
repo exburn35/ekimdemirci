@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { prisma } from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
 
@@ -49,29 +48,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 2. Save submission to database (Robust & Isolated)
-    let isSavedToDb = false;
-    try {
-      if (process.env.DATABASE_URL) {
-        await prisma.contactMessage.create({
-          data: {
-            name: cleanName || null,
-            email: cleanEmail.toLowerCase(),
-            phone: cleanPhone || null,
-            website: cleanWebsite || null,
-            message: cleanMessage || null,
-            formType: cleanFormType,
-          },
-        });
-        isSavedToDb = true;
-      } else {
-        console.warn("[Contact API] DATABASE_URL is not set. Skipping DB submission save.");
-      }
-    } catch (dbError) {
-      console.error("[Contact API] Failed to save contact submission to database:", dbError);
-    }
-
-    // 3. Prepare email subject and contents
+    // 2. Prepare email subject and contents
     let subject = "";
     if (cleanFormType === "lead") {
       subject = `🔍 Yeni Analiz Talebi - ${cleanName || cleanEmail}`;
@@ -179,7 +156,7 @@ export async function POST(request: NextRequest) {
       textContent = `${subject}\n${"=".repeat(40)}\nAd Soyad: ${cleanName}\nE-posta: ${cleanEmail}\n${cleanPhone ? `Telefon: ${cleanPhone}\n` : ""}${cleanWebsite ? `Web Sitesi: ${cleanWebsite}\n` : ""}${cleanMessage ? `\nMesaj:\n${cleanMessage}\n` : ""}\n---\nBu mesaj ekimdemirci.com web sitesinden gönderilmiştir.`;
     }
 
-    // 4. Email Sending (Isolated & Resilient)
+    // 3. Email Sending (Isolated & Resilient)
     const hasSmtpCredentials = Boolean(
       process.env.SMTP_USER && process.env.SMTP_PASS
     );
@@ -236,19 +213,32 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // 5. Optional Webhook Notification (Discord / Slack / Telegram)
+    // 4. Optional Webhook Notification (Discord / Slack / Telegram)
+    let isWebhookSent = false;
     if (process.env.CONTACT_WEBHOOK_URL) {
       try {
-        await fetch(process.env.CONTACT_WEBHOOK_URL, {
+        const res = await fetch(process.env.CONTACT_WEBHOOK_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             content: `📬 **${subject}**\n- **Ad:** ${cleanName || "-"}\n- **E-posta:** ${cleanEmail}\n- **Telefon:** ${cleanPhone || "-"}\n- **Site:** ${cleanWebsite || "-"}\n- **Mesaj:** ${cleanMessage || "-"}`,
           }),
-        }).catch((err) => console.error("[Contact API] Webhook failed:", err));
-      } catch {
-        // Ignore webhook error
+        });
+        isWebhookSent = res.ok;
+      } catch (err) {
+        console.error("[Contact API] Webhook failed:", err);
       }
+    }
+
+    // 5. Mesaj hiçbir kanala ulaşmadıysa ziyaretçiye bildir (artık veritabanı yedeği yok)
+    if (!isEmailSent && !isWebhookSent && process.env.NODE_ENV !== "development") {
+      return NextResponse.json(
+        {
+          error:
+            "Mesajınız şu anda iletilemedi. Lütfen WhatsApp üzerinden veya daha sonra tekrar deneyin.",
+        },
+        { status: 503 }
+      );
     }
 
     // 6. Return success response
@@ -258,11 +248,7 @@ export async function POST(request: NextRequest) {
         message: isNewsletter
           ? "Bülten aboneliğiniz başarıyla tamamlandı!"
           : "Mesajınız başarıyla iletildi! En kısa sürede dönüş yapacağım.",
-        savedToDb: isSavedToDb,
         emailSent: isEmailSent,
-        ...((!hasSmtpCredentials && !isSavedToDb)
-          ? { warning: "Sunucu tarafında SMTP veya Veritabanı yapılandırması bekleniyor." }
-          : {}),
       },
       { status: 200 }
     );
