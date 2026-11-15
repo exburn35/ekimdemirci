@@ -1,125 +1,89 @@
 import { Metadata } from "next";
+import {
+  BadgeCheck,
+  FileHeart,
+  MapPin,
+  Star,
+  Globe2,
+  Braces,
+  EyeOff,
+  TrendingDown,
+  Users,
+  MessageSquareWarning,
+  Megaphone,
+  Bot,
+  Building2,
+  Smile,
+  Stethoscope,
+} from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import Link from "next/link";
-import { 
-  Stethoscope, 
-  ShieldCheck, 
-  UserCheck, 
-  HeartPulse, 
-  Award, 
-  FileText, 
-  CheckCircle2, 
-  ArrowRight, 
-  Globe2, 
-  Star, 
-  Clock, 
-  Wrench, 
-  DollarSign,
-  Scale,
-  Building,
-  BarChart3,
-  PackageCheck,
-  TrendingUp
-} from "lucide-react";
+import LocalPackDemo from "@/components/service/LocalPackDemo";
+import {
+  CaseSpotlight,
+  DemoSection,
+  DemoSide,
+  DemoWindow,
+  ExampleGrid,
+  GuideDefinition,
+  GuideH2,
+  GuideLink,
+  GuideShell,
+  ProcessTimeline,
+  ProofBand,
+  RelatedBand,
+  ScopeGrid,
+  type Faq,
+} from "@/components/service/ServiceBlocks";
 
 export const metadata: Metadata = {
   title: "Sağlık ve Klinik SEO Danışmanlığı",
-  description: "Doktorlar, hastaneler ve diş klinikleri için YMYL, E-E-A-T ve MedicalWebPage şeması uyumlu Sağlık ve Klinik SEO danışmanlığı hizmetleri.",
+  description: "Poliklinikler, muayenehaneler ve sağlık kuruluşları için güven odaklı SEO danışmanlığı. Hekim uzmanlığı, tedavi içerikleri ve Google Haritalar görünürlüğüyle daha fazla hasta randevusu.",
   alternates: {
     canonical: "/sektorel-seo-hizmetleri/saglik-ve-klinik-seo",
   },
   openGraph: {
     title: "Sağlık ve Klinik SEO Danışmanlığı | Ekim Demirci",
-    description: "Medikal sektör ve klinikler için Google YMYL ve E-E-A-T standartlarında SEO uzmanlığı.",
+    description: "Hastaların güvenerek seçtiği klinik olmanız için hekim uzmanlığını, tedavi içeriklerini ve yerel görünürlüğü birlikte ele alan SEO danışmanlığı.",
   },
   twitter: {
     title: "Sağlık ve Klinik SEO Danışmanlığı | Ekim Demirci",
-    description: "Medikal sektör ve klinikler için Google YMYL ve E-E-A-T standartlarında SEO uzmanlığı.",
+    description: "Hastaların güvenerek seçtiği klinik olmanız için hekim uzmanlığını, tedavi içeriklerini ve yerel görünürlüğü birlikte ele alan SEO danışmanlığı.",
   },
 };
 
-export default function HealthAndClinicSEOPage() {
-  const faqItems = [
-    {
-      question: "Sağlık mevzuatına aykırı içerik üretmeden SEO nasıl yapılır?",
-      answer: "Sağlık Bakanlığı ve Türk Tabipleri Birliği (TTB) mevzuatına tam uyumlu olarak, tedavi vaadi içermeyen, reklam dilinden uzak, sadece hastaları bilgilendirmeye yönelik bilimsel içerik mimarisi kurgulanır."
-    },
-    {
-      question: "Hekim biyografisi ve akademik geçmiş Google sıralamasını nasıl etkiler?",
-      answer: "Google'ın YMYL (Your Money Your Life) ve E-E-A-T kriterleri uyarınca sağlık içeriklerinin uzman hekim onayından geçtiğini ve hekimin tıbbi diplomaya, sertifikalara sahip olduğunu doğrulamak doğrudan sıralama başarısını belirler."
-    },
-    {
-      question: "Diş kliniği veya muayenehane için Google Haritalar'da nasıl üst sıraya çıkılır?",
-      answer: "MedicalBusiness ve Physician şema entegrasyonu, tutarlı NAP (İşletme Adı, Adres, Telefon) alıntıları ve organik hasta değerlendirmeleri ile Google Maps yerel paketinde (Local Pack) ilk 3 sıra hedeflenir."
-    },
-    {
-      question: "Sağlık turizmi hastaları için çok dilli SEO çalışmaları nasıl işler?",
-      answer: "İngilizce, Almanca, Arapça ve Rusça dillerinde hedef ülkelerin arama niyetine özel hreflang yapısı, lokasyon odaklı tıbbi rehberler ve uluslararası hasta dönüşüm tünelleri kurulur."
-    },
-    {
-      question: "YMYL ve E-E-A-T güncellemelerinden etkilenen sağlık siteleri nasıl kurtarılır?",
-      answer: "Yetersiz hekim profilleri zenginleştirilir, kaynaksız sağlık iddiaları bilimsel literatür atıflarıyla güncellenir ve tıbbi şeffaflık sinyalleri yeniden kurgulanarak sıralama kayıpları telefi edilir."
-    },
-    {
-      question: "Hastaların online değerlendirmeleri ve yorumları SEO sıralamasını etkiler mi?",
-      answer: "Google Haritalar ve dizinlerde yer alan hasta yorumları yerel otorite sinyalidir. Etik yollarla toplanan ve düzenli yanıtlanan değerlendirmeler yerel hasta görünürlüğünü doğrudan artırır."
-    }
-  ];
+const faqItems: Faq[] = [
+  {
+    question: "Sağlık sitelerinde SEO neden diğer sektörlerden farklı?",
+    answer: "Google, sağlık gibi insanların hayatını doğrudan etkileyebilecek konuları (YMYL) çok daha sıkı değerlendiriyor. İçeriği kimin yazdığı, hekimin uzmanlığının nasıl kanıtlandığı ve bilgilerin güvenilir kaynaklara dayanıp dayanmadığı sıralamada belirleyici oluyor. Bu yüzden sağlıkta SEO, güven inşa etmekle başlıyor.",
+  },
+  {
+    question: "Sağlık tanıtım kurallarına uygun SEO nasıl yapılır?",
+    answer: "Sağlık hizmetlerinin tanıtımına dair kurallar; abartılı vaatleri, garanti ifadelerini ve hasta yönlendirici reklamları kısıtlıyor. Ben içerikleri bilgilendirici bir dille, tedavi süreçlerini açıklayan ve hastanın sorularına cevap veren bir yaklaşımla hazırlıyorum. Bu yaklaşım hem kurallara uygun hem de Google'ın sağlık içeriklerinde aradığı güvenilirlikle örtüşüyor.",
+  },
+  {
+    question: "Hekim biyografisi sıralamayı etkiler mi?",
+    answer: "Evet. Google, sağlık içeriklerinde yazarın ve hekimin gerçek bir uzman olduğunu gösteren sinyallere önem veriyor. Eğitim geçmişi, uzmanlık alanları, mesleki üyelikler ve yayınlar içeren detaylı hekim profilleri, sitenin güvenilirliğini artırıyor.",
+  },
+  {
+    question: "Kliniğim Google Haritalar'da nasıl üst sıralara çıkar?",
+    answer: "Google İşletme profilinin eksiksiz ve doğru kategorilerle doldurulması, düzenli ve gerçek hasta yorumları, klinik bilgilerinin internetin her yerinde tutarlı olması ve web sitesindeki yerel sinyaller, harita sonuçlarında belirleyici. Bu alanların hepsini birlikte düzenliyorum.",
+  },
+  {
+    question: "Hasta yorumları SEO'yu etkiler mi?",
+    answer: "Evet, özellikle harita sonuçlarında. Yorumların sayısı, güncelliği ve verilen cevaplar hem sıralamayı hem de hastanın klinik seçimini etkiliyor. Yorumları etik kurallar çerçevesinde nasıl düzenli toplayabileceğinizi ve olumsuz yorumlara nasıl cevap vereceğinizi birlikte planlıyoruz.",
+  },
+  {
+    question: "Sağlık turizmi için yabancı dilde SEO yapıyor musunuz?",
+    answer: "Evet. Yurt dışından hasta kabul eden klinikler için hedef ülkelerdeki arama davranışını inceleyip çok dilli bir site yapısı ve içerik planı hazırlıyorum. Her dil için ayrı anahtar kelime araştırması yapılması, birebir çeviriden çok daha iyi sonuç veriyor.",
+  },
+  {
+    question: "Sağlık SEO'sunun sonuçları ne kadar sürede görülür?",
+    answer: "Harita ve teknik düzenlemelerin etkisi genellikle ilk aylarda görülmeye başlıyor. Rekabetçi tedavi aramalarında kalıcı sıralama ise çoğu zaman altı ay ile bir yıl arasında oturuyor. Sağlıkta güven birikimli olarak büyüyor; düzenli çalışma en sağlıklı sonucu veriyor.",
+  },
+];
 
-  const medicalBranches = [
-    {
-      title: "Diş Hekimliği & İmplant",
-      desc: "İmplant, zirkonyum, gülüş tasarımı ve ortodonti aramalarında yerel harita ve semantik içerik hakimiyeti."
-    },
-    {
-      title: "Estetik & Plastik Cerrahi",
-      desc: "Burun estetiği, saç ekimi ve vücut şekillendirme aramalarında yüksek niyetli hasta dönüşüm kurgusu."
-    },
-    {
-      title: "Dermatoloji & Medikal Estetik",
-      desc: "Lazer tedavileri, cilt gençleştirme ve dermatolojik rahatsızlık bilgilendirmelerinde E-E-A-T otoritesi."
-    },
-    {
-      title: "Genel Sağlık & Poliklinikler",
-      desc: "Çok branşlı hastaneler ve tıp merkezleri için bölüm hiyerarşisine özel MedicalWebPage mimarısı."
-    }
-  ];
-
-  const deliverables = [
-    "Medikal YMYL & E-E-A-T Güvenilirlik Denetim Raporu",
-    "MedicalWebPage, Physician ve MedicalBusiness JSON-LD Kodları",
-    "Hekim Biyografisi ve Tıbbi Danışman Şablon Mimarısı",
-    "Sağlık Turizmi Çok Dilli Hreflang ve İçerik Haritası",
-    "Aylık GA4 Hasta Randevu Dönüşüm ve Harita Raporu"
-  ];
-
-  const timelineSteps = [
-    {
-      period: "1. - 3. Ay",
-      title: "YMYL Temizliği & Hekim Profilleme",
-      desc: "Tıbbi makaleler bilimsel kaynaklarla zenginleştirilir, hekim biyografileri ve şema kodlamaları tamamlanır."
-    },
-    {
-      period: "4. - 6. Ay",
-      title: "Harita & Tedavi Sayfası İyileştirmesi",
-      desc: "Local Business şemaları ve bölgesel arama sayfaları ile ilk hasta randevu sinyalleri artış gösterir."
-    },
-    {
-      period: "7. - 12. Ay",
-      title: "Uluslararası Otorite & Sağlık Turizmi",
-      desc: "Çok dilli içerik mimarısı ile yurt dışı hasta aramalarında sürdürülebilir organik büyüme elde edilir."
-    }
-  ];
-
-  const toolsList = [
-    { name: "Google Search Console", role: "Tıbbi Arama Hacmi & Sıralamalar" },
-    { name: "Google Analytics 4", role: "Hasta Randevu Dönüşüm Takibi" },
-    { name: "Semrush", role: "Medikal Rakip & Kelime Analizi" },
-    { name: "Screaming Frog", role: "E-E-A-T & Şema Mimarisi Denetimi" },
-    { name: "BrightLocal", role: "Yerel Harita & İtibar Yönetimi" }
-  ];
-
+export default function HealthClinicSEO() {
   return (
     <>
       <Breadcrumb items={[
@@ -128,396 +92,265 @@ export default function HealthAndClinicSEOPage() {
       ]} />
       <ServicePageLayout
         title="Sağlık ve Klinik SEO Danışmanlığı"
-        subtitle="Sektörel SEO Çözümleri"
-        description="Özel klinikler, diş hekimleri, hastaneler ve uzman doktorlar için Google YMYL & E-E-A-T standartlarında medikal SEO danışmanlığı. Doğru hasta kitlesine ulaşın, harita ve arama sonuçlarında güvenilir bir sağlık markası inşa edin."
+        subtitle="Hastaların güvenerek seçtiği klinik"
+        description="Bir hasta klinik ya da hekim seçerken önce Google'a bakıyor; tedaviyi araştırıyor, yorumları okuyor, haritada size ne kadar yakın olduğunuzu kontrol ediyor. Ben bu yolculuğun her adımında karşısına güvenilir bir şekilde çıkmanız için hekim uzmanlığınızı, tedavi içeriklerinizi ve yerel görünürlüğünüzü birlikte ele alıyorum."
+        canonicalUrl="https://ekimdemirci.com/sektorel-seo-hizmetleri/saglik-ve-klinik-seo"
+        afterHeroNode={
+          <DemoSection
+            id="harita-gorunurlugu"
+            eyebrow="Harita sonuçları"
+            title="Hasta yakınındaki kliniği arıyor. Sizi bulsun."
+            intro="Sağlık aramalarının önemli bir kısmı yerel: hasta, yakınındaki ve güvenebileceği bir klinik arıyor. Google Haritalar'da ilk üçte yer almak, randevuya giden en kısa yol."
+            window={
+              <DemoWindow label="google.com/maps">
+                <LocalPackDemo
+                  query="yakınımdaki fizik tedavi merkezi"
+                  listings={[
+                    { name: "Merkez Fizyoterapi", category: "Fizik tedavi merkezi", rating: 4.6, reviews: 214 },
+                    { name: "Aktif Yaşam Kliniği", category: "Fizik tedavi kliniği", rating: 4.4, reviews: 132 },
+                    { name: "Şehir Rehabilitasyon", category: "Rehabilitasyon merkezi", rating: 4.5, reviews: 98 },
+                    { name: "Hareket Sağlık", category: "Fizyoterapist", rating: 4.2, reviews: 61 },
+                    { name: "Kliniğiniz", category: "Fizik tedavi merkezi", rating: 4.3, reviews: 23, brand: true },
+                  ]}
+                />
+              </DemoWindow>
+            }
+            side={
+              <DemoSide
+                title="Güven, görünürlükle başlar"
+                text="Ben de bir doktor ararken önce haritadaki seçeneklere, puanlara ve yorumlara bakıyorum; muhtemelen hastalarınız da öyle. Haritada görünmeyen ya da az yorumu olan bir klinik, ne kadar iyi hizmet verirse versin bu karşılaştırmanın dışında kalıyor."
+                points={[
+                  "Google İşletme profilini eksiksiz hale getirmek",
+                  "Hasta yorumlarını düzenli ve etik şekilde artırmak",
+                  "Tedavi sayfalarını hastanın sorularına göre kurgulamak",
+                  "Hekim uzmanlığını Google'a net şekilde göstermek",
+                ]}
+                ctaTitle="Kliniğiniz yerel aramalarda kaçıncı sırada?"
+                ctaText="Kliniğinizin haritadaki ve Google'daki durumunu inceleyip en hızlı yükselebileceğiniz alanları raporlayayım."
+                ctaLabel="Ücretsiz klinik analizi iste"
+              />
+            }
+          />
+        }
         icon="Brain"
-        gradient="from-emerald-500 to-teal-500"
-        features={[
-          "YMYL & E-E-A-T Medikal Kalite Optimizasyonu",
-          "MedicalWebPage & Physician Şema Yapılandırması",
-          "Diş Klinikleri & Poliklinikler İçin Özel Bölüm",
-          "Google Maps & Yerel Hasta Arama Görünürlüğü",
-          "Hekim Onaylı Bilgilendirici İçerik Mimarisi",
-          "Mevzuata Uyumlu Etik SEO Süreçleri"
-        ]}
-        scope={[
-          {
-            title: "YMYL & E-E-A-T Medikal Otorite",
-            description: "Google'ın YMYL algoritmalarına uygun olarak hekim diplomalarını, tıbbi uzmanlık sertifikalarını ve bilimsel atıfları ön plana çıkarıyorum."
-          },
-          {
-            title: "MedicalWebPage & Physician Şeması",
-            description: "Arama motoru botlarına kliniğin çalışma saatlerini, doktor kadrosunu ve tıbbi branşlarını anlatan şema yapılandırması kurguluyorum."
-          },
-          {
-            title: "Hasta Değerlendirme & İtibar Yönetimi",
-            description: "Google Maps ve sağlık dizinlerindeki değerlendirmeleri yöneterek potansiyel hastaların kliniğinize olan güvenini pekiştiriyorum."
-          },
-          {
-            title: "Sağlık Turizmi & Çok Dilli SEO",
-            description: "İngilizce, Almanca ve Arapça dillerinde yurt dışından hasta çekmeye yönelik hreflang mimarisi ve bölgesel stratejiler uyguluyorum."
-          },
-          {
-            title: "Tedavi Odaklı Semantik İçerik Mimarısı",
-            description: "İmplant, estetik ve cerrahi alanlarda hastaların merak ettiği konuları yanıtlayan, mevzuata uygun bilgilendirici içerikler hazırlıyorum."
-          },
-          {
-            title: "Yapay Zeka Aramalarında Hekim Otoritesi",
-            description: "Klinik ve doktorlarınızı ChatGPT, Perplexity ve Google AI Overviews yanıtlarında güvenilir medikal bilgi kaynağı olarak konumlandırıyorum."
-          }
-        ]}
-        process={[
-          {
-            step: "1",
-            title: "YMYL ve Medikal E-E-A-T Analizi",
-            description: "Sitenizdeki hekim biyografilerini, sertifikaları, tıbbi içeriklerin bilimsel referanslarını ve şeffaflık sinyallerini denetliyorum."
-          },
-          {
-            step: "2",
-            title: "MedicalBusiness & Physician Şema Kodlaması",
-            description: "Arama botlarına kliniğin çalışma saatlerini, uzmanlık alanlarını ve doktor kadrosunu anlatan JSON-LD kodlamasını kuruyorum."
-          },
-          {
-            step: "3",
-            title: "Tedavi Odaklı Semantik İçerik Mimarısı",
-            description: "İmplant, zirkonyum, estetik ve cerrahi tedaviler gibi alanlarda hastaların merak ettiği sorulara yanıt veren semantik rehberler oluşturuyorum."
-          },
-          {
-            step: "4",
-            title: "Yerel Harita & Otorite Ağının İnşası",
-            description: "Google İşletme Profili optimizasyonu ve medikal dizin alıntıları ile kliniğinizin yerel konumlanmasını güçlendiriyorum."
-          }
-        ]}
-        targetAudience={[
-          {
-            audience: "Diş Klinikleri & Ağız Sağlığı",
-            benefit: "İmplant, zirkonyum ve ortodonti aramalarında harita ve organik ilk sayfa hakimiyeti."
-          },
-          {
-            audience: "Estetik Cerrahi & Saç Ekimi",
-            benefit: "Sağlık turizmi odaklı uluslararası hasta kazanımı ve yüksek nitelikli randevu trafiği."
-          },
-          {
-            audience: "Uzman Doktor Muayenehaneleri",
-            benefit: "Kişisel uzmanlık branşında doktor adıyla arayan hastalar için yüksek otorite."
-          },
-          {
-            audience: "Özel Hastaneler & Tıp Merkezleri",
-            benefit: "Çoklu bölüm hiyerarşisinde düzenli organ ve branş aramalarında geniş görünürlük."
-          }
-        ]}
-        faqItems={faqItems}
-        blogCategory="Sağlık SEO"
+        gradient="from-emerald-500 via-teal-500 to-cyan-500"
+        blogCategory="SEO Hizmetleri"
       >
-        {/* HERO TRUST STRIP */}
-        <section className="py-8 bg-canvas border-y border-line">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-emerald-600">8+ Yıl</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Medikal SEO Deneyimi</div>
-              </div>
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-teal-600">40+</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Sağlık Projesi & Klinik</div>
-              </div>
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-blue-600">YMYL & E-E-A-T</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Google Medikal Kalite Standardı</div>
-              </div>
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-amber-600">TTB & KVKK</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Mevzuata Etik Uyum</div>
-              </div>
-            </div>
+        <ScopeGrid
+          title="Sağlık ve klinik SEO'sunda neler yapıyorum?"
+          intro="Sağlık sektöründe SEO, güvenle başlar. Google'ın sağlık içeriklerinde aradığı uzmanlık sinyallerini kurarken, hastaların klinik seçerken baktığı her yerde güçlü görünmenizi sağlıyorum."
+          items={[
+            { icon: BadgeCheck, title: "Hekim uzmanlığını görünür kılıyorum", text: "Eğitim geçmişi, uzmanlık alanları, mesleki üyelikler ve yayınlarla zenginleştirilmiş hekim profilleri hazırlıyorum. Böylece hem hastalar hem de Google, içeriklerin gerçek bir uzmandan geldiğini görebiliyor." },
+            { icon: FileHeart, title: "Tedavi sayfalarını hastanın sorularına göre kuruyorum", text: "\"Kaç seans sürer?\", \"Ağrılı mı?\", \"Ne zaman iyileşirim?\" gibi soruların cevabını açık ve güvenilir bir dille veren tedavi sayfaları planlıyorum." },
+            { icon: MapPin, title: "Harita sonuçlarında öne çıkarıyorum", text: "Google İşletme profilinizi eksiksiz hale getiriyor, doğru kategorileri seçiyor ve klinik bilgilerinizin internetin her yerinde tutarlı olmasını sağlıyorum." },
+            { icon: Star, title: "Yorum ve itibar yönetimini planlıyorum", text: "Memnun hastalardan etik kurallar çerçevesinde düzenli yorum alabilmeniz için bir süreç kuruyor, olumsuz yorumlara nasıl cevap vereceğinizi birlikte belirliyoruz." },
+            { icon: Braces, title: "Sağlık şemalarını ekliyorum", text: "Klinik, hekim ve tedavi bilgilerini Google'ın doğrudan anlayabileceği yapılandırılmış veriyle işaretliyorum. Bu, sayfaların doğru anlaşılmasını ve arama sonuçlarında daha zengin görünmesini destekliyor." },
+            { icon: Globe2, title: "Sağlık turizmi için çok dilli yapı kuruyorum", text: "Yurt dışından hasta kabul ediyorsanız hedef ülkelerin arama alışkanlıklarına göre ayrı dil sürümleri ve içerik planı hazırlıyorum." },
+          ]}
+        />
+
+        <ProcessTimeline
+          title="Sağlık SEO çalışması adım adım nasıl ilerliyor?"
+          intro="Önce kliniğinizin dijital görünürlüğünü ve güven sinyallerini analiz ediyorum. Ardından harita, içerik ve teknik çalışmalar paralel olarak ilerliyor."
+          ctaLabel="Ücretsiz klinik analiziyle başlayalım"
+          steps={[
+            {
+              tag: "1. ve 2. hafta",
+              title: "Güven ve görünürlük analizi",
+              paragraphs: [
+                "Sitenizi Google'ın sağlık içeriklerinde aradığı kalite kriterlerine göre inceliyorum: hekim bilgileri ne kadar görünür, içerikleri kim yazıyor, kaynaklar güvenilir mi? Aynı zamanda harita sonuçlarındaki konumunuzu, yorumlarınızı ve bölgenizdeki rakip klinikleri analiz ediyorum.",
+                "Bu analizin sonunda kliniğinizin güçlü yanlarını, güven açısından eksik kalan noktaları ve en hızlı fırsatları gösteren bir rapor hazırlıyorum.",
+              ],
+            },
+            {
+              tag: "Paralel yürür",
+              tone: "accent",
+              title: "Harita ve teknik düzenlemeler",
+              paragraphs: [
+                "Google İşletme profilini, klinik bilgilerinin tutarlılığını ve sitenin teknik altyapısını düzenliyorum. Hastaların çoğu telefondan arama yaptığı için mobil hız ve kolay randevu akışı bu aşamanın öncelikleri arasında.",
+              ],
+            },
+            {
+              tag: "1. aydan itibaren",
+              title: "Hekim profilleri ve tedavi içerikleri",
+              paragraphs: [
+                "Hekim profillerini detaylandırıyor, tedavi sayfalarını hastaların gerçekte sorduğu sorulara göre yeniden kurguluyorum. İçeriklerin hekim tarafından kontrol edilmesini ve güncel kaynaklara dayanmasını sağlıyorum.",
+                "Tüm içerikleri sağlık hizmetlerinin tanıtımına dair kurallara uygun, bilgilendirici bir dille hazırlıyorum; abartılı vaat ve garanti ifadelerinden kaçınıyorum.",
+              ],
+            },
+            {
+              tag: "Ayrı bütçelendirilir",
+              tone: "amber",
+              title: "Otorite ve itibar çalışmaları",
+              paragraphs: [
+                "Sağlık portalları, yerel rehberler ve sektörel yayınlarda kliniğinizin ve hekimlerinizin doğru bilgilerle yer almasını sağlıyorum. Bu yayın çalışmaları maliyeti siteye göre değiştiği için ayrıca bütçelendiriliyor; onayınız olmadan harcama yapılmıyor.",
+              ],
+            },
+            {
+              tag: "Her ay",
+              title: "Randevu odaklı ölçüm",
+              paragraphs: [
+                "Sıralamaların yanında asıl önemli olanı ölçüyorum: telefon aramaları, yol tarifi talepleri, form ve randevu dönüşümleri. Raporları bu sonuçlara göre hazırlıyor, planı buna göre güncelliyorum.",
+              ],
+            },
+          ]}
+        />
+
+        <ExampleGrid
+          title="Kliniğinizde bu durumlardan biri yaşanıyorsa, sağlık SEO'su zamanı"
+          intro="Sağlık sektöründe görünürlük sorunları genellikle şu belirtilerle kendini gösterir:"
+          quoteStyle="speech"
+          items={[
+            { icon: EyeOff, title: "Haritada görünmemek", quote: "Yakınımdaki klinikler çıkıyor, biz çıkmıyoruz", text: "Google İşletme profili eksik ya da tutarsızsa, en yakın klinik siz olsanız bile harita sonuçlarında üst sıralarda yer almanız zor." },
+            { icon: TrendingDown, title: "Güncellemelerle düşen trafik", quote: "Bir Google güncellemesinden sonra trafiğimiz yarıya indi", text: "Sağlık siteleri, kalite odaklı güncellemelerden en çok etkilenen sitelerin başında geliyor. Güven sinyallerinin güçlendirilmesi gerekiyor." },
+            { icon: Users, title: "Hekimlerin tanınmaması", quote: "Hastalar hekimlerimizi tanımadan geliyor", text: "Hekim profilleri zayıfsa hem hasta güveni hem de Google'ın içeriklerinize duyduğu güven düşüyor." },
+            { icon: MessageSquareWarning, title: "Az ya da olumsuz yorum", quote: "Rakiplerimizin yüzlerce yorumu var", text: "Yorum sayısı ve kalitesi hem harita sıralamasını hem de hastanın seçimini doğrudan etkiliyor." },
+            { icon: Megaphone, title: "Reklam kısıtları", quote: "Reklam verirken çok kısıtlanıyoruz", text: "Sağlıkta tanıtım kuralları sıkı; kurallara uygun, bilgilendirici içeriklerle kazanılan organik görünürlük bu yüzden daha da değerli." },
+            { icon: Bot, title: "Yapay zekada görünmemek", quote: "ChatGPT başka klinikleri öneriyor", text: "Hastalar artık yapay zekaya da soruyor. Güçlü hekim profilleri ve güvenilir kaynaklarda yer almak bu cevaplarda görünmenizi destekliyor." },
+          ]}
+        />
+
+        <CaseSpotlight
+          eyebrow="Öne çıkan vaka"
+          title="Dr. Ersoy Kocabıçak: günde 500 tıklamadan 45.000 tıklamaya"
+          text="drersoykocabicak.com için Mart 2025'te başlattığım medikal güven ve içerik optimizasyonu çalışmalarının ardından, başlangıçta günlük 500 olan organik tıklama bir yıl içinde günlük 45.000 seviyesine ulaştı. Hekim profili, tedavi içerikleri ve güven sinyalleri bu büyümenin temelini oluşturdu."
+          image="/dr-ersoy-kocabicak-ahrefs-verisi.png"
+          imageAlt="Dr. Ersoy Kocabıçak sitesinin Ahrefs organik trafik büyüme grafiği"
+          stats={[
+            { value: "500 → 45.000", label: "Günlük organik tıklama" },
+            { value: "12 ay", label: "Çalışma süresi" },
+          ]}
+          siteUrl="https://drersoykocabicak.com/"
+          siteLabel="drersoykocabicak.com"
+        />
+
+        <ProofBand
+          title="Sağlık projelerinden diğer sonuçlar"
+          results={[
+            { code: "Poliklinik", metric: "+%112", label: "Randevu artışı", detail: "Sekiz aylık güven sinyali ve harita optimizasyonu sürecinde bir poliklinik sitesinde elde edilen hasta randevusu artışı.", source: "GA4 medikal etkinlik takibi, 2025" },
+            { code: "Harita sonuçları", metric: "İlk 3", label: "Yerel paket konumu", detail: "Bölgesel diş kliniği ve uzman aramalarında Google Haritalar sonuçlarında ilk üçte yer alma.", source: "Ekim Demirci vaka çalışmaları" },
+            { code: "Özel diş kliniği", metric: "+%100", label: "Tıklama artışı", detail: "Yerel SEO ve uzmanlık şeması çalışmalarıyla dört ayda organik tıklamaların iki katına çıkması.", source: "Vaka analizi, 4 ay" },
+          ]}
+        />
+
+        <RelatedBand
+          eyebrow="Sağlık alanındaki diğer sayfalar"
+          title="Branşınıza özel yaklaşımı inceleyin"
+          text="Sağlık sektörünün farklı alanları için ayrı sayfalarda daha detaylı bilgi veriyorum. Kliniğinizin yapısına en uygun olanı seçebilirsiniz."
+          links={[
+            { icon: Smile, title: "Diş hekimleri için SEO", href: "/sektorel-seo-hizmetleri/dis-hekimleri-icin-seo-2", text: "Tedavi ve semt aramalarında hasta kazanmak" },
+            { icon: Stethoscope, title: "Doktorlar için SEO", href: "/sektorel-seo-hizmetleri/doktorlar-icin-seo-2", text: "Hekim adı ve branşıyla bulunmak" },
+            { icon: Building2, title: "Hastaneler için SEO", href: "/sektorel-seo-hizmetleri/hastaneler-icin-seo-2", text: "Çok branşlı yapılar için mimari" },
+          ]}
+        />
+
+        <GuideShell
+          id="saglik-seo-rehberi"
+          eyebrow="Sağlık SEO rehberi"
+          title="Sağlık ve klinik SEO'su hakkında bilmeniz gerekenler"
+          intro="Sağlık sektöründe SEO'nun neden farklı işlediğini ve kliniğinizin görünürlüğünü artırmak için nelere dikkat etmeniz gerektiğini sade bir dille anlattım."
+          toc={[
+            { id: "saglik-seo-nedir", label: "Sağlık SEO'su nedir?" },
+            { id: "ymyl", label: "YMYL ve güven sinyalleri" },
+            { id: "hekim-profili", label: "İyi bir hekim profili nasıl olmalı?" },
+            { id: "tedavi-sayfasi", label: "Tedavi sayfaları nasıl yazılmalı?" },
+            { id: "harita", label: "Google Haritalar'da görünürlük" },
+            { id: "kurallar", label: "Tanıtım kuralları ve SEO" },
+          ]}
+          cta={{ eyebrow: "Ücretsiz klinik analizi", title: "Hastalar sizi Google'da bulabiliyor mu?", text: "Kliniğinizin Google ve haritadaki durumunu inceleyip fırsatları raporlayayım.", label: "Ücretsiz analiz isteyin" }}
+          faqTitle="Sağlık ve klinik SEO'su hakkında sıkça sorulan sorular"
+          faqItems={faqItems}
+        >
+          <div className="space-y-5">
+            <GuideH2 id="saglik-seo-nedir">Sağlık SEO&apos;su nedir?</GuideH2>
+            <GuideDefinition>
+              Sağlık SEO&apos;su, poliklinik, muayenehane, hastane ve diğer sağlık kuruluşlarının web sitelerinin, hastaların
+              tedavi ve hekim aramalarında güvenilir bir kaynak olarak üst sıralarda yer alması için yapılan arama motoru
+              optimizasyonu çalışmalarıdır.
+            </GuideDefinition>
+            <p>
+              Genel SEO prensipleri sağlıkta da geçerli; ancak öncelikler farklı. Bir e-ticaret sitesinde fiyat ve ürün
+              çeşitliliği öne çıkarken, sağlıkta hastanın ilk aradığı şey güven: Bu hekim gerçekten uzman mı, bu bilgi doğru
+              mu, bu klinik bana yakın mı? Sağlık SEO&apos;su bu soruların her birine güçlü bir cevap vermeyi hedefler.
+            </p>
           </div>
-        </section>
 
-        {/* DEFINITION & TRANSPARENT EVIDENCE SECTION */}
-        <section className="py-16 bg-canvas">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
-                Sağlık ve Klinik SEO Danışmanlığı Nedir?
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
-                Sağlık ve klinik SEO danışmanlığı; özel poliklinikler, doktorlar, diş hekimleri ve hastanelerin Google'ın YMYL (Your Money Your Life) ve E-E-A-T kriterlerine uygun şekilde hastalar tarafından arama sonuçlarında güvenilir bir sağlık otoritesi olarak bulunmasını sağlayan uzmanlık sürecidir. Mağazanız veya kliniğiniz için <Link href="/seo-hizmetleri/teknik-seo" className="text-emerald-600 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-emerald-600 underline font-semibold">Sayfa İçi SEO</Link> kurarak etik çerçevede sürekli hasta randevu trafiği oluşturuyorum.
-              </p>
-
-              <div className="pt-6 border-t border-line">
-                <h3 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-emerald-600" />
-                  Doğrulanmış Metodoloji ve Şeffaf Ölçüm Çerçevesi
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-5 bg-white border border-emerald-500/20 rounded-2xl">
-                    <div className="text-xs text-emerald-600 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
-                    <div className="text-3xl font-extrabold text-emerald-700 mb-2">%112 Randevu Artışı</div>
-                    <p className="text-xs text-ink-soft leading-relaxed">
-                      8 aylık E-E-A-T ve harita optimizasyonu sürecinde poliklinik sitesinde elde edilen doğrulanmış hasta randevu büyümesi. (Kaynak: GA4 Medikal Etkinlik Takibi 2025)
-                    </p>
-                  </div>
-                  <div className="p-5 bg-white border border-emerald-500/20 rounded-2xl">
-                    <div className="text-xs text-emerald-600 font-mono font-semibold mb-1">LOCAL PACK KONUMU</div>
-                    <div className="text-3xl font-extrabold text-ink mb-2">Haritada İlk 3</div>
-                    <p className="text-xs text-ink-soft leading-relaxed">
-                      Bölgesel diş kliniği ve uzman aramalarında Google Maps paketinde üst sırada yer alma.
-                    </p>
-                  </div>
-                  <div className="p-5 bg-white border border-emerald-500/20 rounded-2xl">
-                    <div className="text-xs text-emerald-600 font-mono font-semibold mb-1">YMYL GÜVENLİK PUANI</div>
-                    <div className="text-3xl font-extrabold text-teal-600 mb-2">%100 Uyum</div>
-                    <p className="text-xs text-ink-soft leading-relaxed">
-                      Hekim biyografisi, yayınlanan tıbbi makale bilimsel atıfları ve etik kurallarla Google kalite standartlarına tam uyum.
-                    </p>
-                  </div>
-                </div>
-
-                {/* DR. ERSOY KOCABIÇAK CASE STUDY & AHREFS CHART */}
-                <div className="mt-8 pt-6 border-t border-line">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                    <div>
-                      <div className="text-xs font-mono font-semibold text-emerald-600 mb-1">GERÇEK SAĞLIK VAKA ÇALIŞMASI (drersoykocabicak.com)</div>
-                      <h3 className="text-xl font-bold text-ink flex items-center gap-2">
-                        <TrendingUp className="w-5 h-5 text-emerald-600" />
-                        Dr. Ersoy Kocabıçak Ahrefs Organik Trafik Büyüme Grafiği
-                      </h3>
-                    </div>
-                    <div className="text-xs text-ink-soft bg-white border border-line px-3 py-1.5 rounded-lg inline-block">
-                      Başlangıç <span className="text-emerald-600 font-semibold">Mart 2025</span> | Büyüme <span className="text-emerald-600 font-semibold">Günlük 500'den 45.000 Tıklamaya</span>
-                    </div>
-                  </div>
-                  <p className="text-ink-soft text-sm leading-relaxed mb-4">
-                    <a href="https://drersoykocabicak.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-semibold underline">drersoykocabicak.com</a> web sitesi için Mart 2025 tarihinde başlattığım medikal YMYL ve E-E-A-T optimizasyon çalışmaları neticesinde, başlangıçta günlük 500 olan organik tıklama 1 yıl içerisinde günlük 45.000 tıklama seviyesine yükseltilmiştir.
-                  </p>
-                  <div className="rounded-2xl overflow-hidden border border-line bg-white p-2 shadow-2xl">
-                    <img 
-                      src="/dr-ersoy-kocabicak-ahrefs-verisi.png" 
-                      alt="Dr Ersoy Kocabıçak Ahrefs Organik Trafik Büyüme Grafiği" 
-                      className="w-full h-auto rounded-xl object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="ymyl">YMYL nedir, sağlık sitelerini nasıl etkiler?</GuideH2>
+            <p>
+              YMYL (Your Money or Your Life), Google&apos;ın insanların sağlığını, parasını ya da güvenliğini etkileyebilecek
+              konular için kullandığı bir ifade. Bu konulardaki içerikler, Google&apos;ın kalite değerlendirme yönergelerinde
+              çok daha sıkı bir standarda tabi. İçeriği yazan kişinin deneyimi ve uzmanlığı, sitenin güvenilirliği ve
+              bilgilerin doğruluğu bu değerlendirmenin merkezinde yer alıyor.
+            </p>
+            <p>
+              Google&apos;ın kaliteyi nasıl değerlendirdiğini <GuideLink href="/blog/google-raters-guideline-nedir">Google Raters Guideline nedir</GuideLink> yazımda,
+              yazar uzmanlığının önemini ise <GuideLink href="/blog/yazar-otoritesi-nedir-seodaki-onemi-nedir">yazar otoritesi nedir</GuideLink> yazımda
+              detaylı olarak anlattım.
+            </p>
           </div>
-        </section>
 
-        {/* PHYSICIAN AUTHOR & E-E-A-T MODEL SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-emerald-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
-                <UserCheck className="w-8 h-8 text-emerald-600" />
-                Hekim Yazarlık ve Tıbbi E-E-A-T Model İnşası
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-8">
-                Google, sağlık makalelerinin kimin tarafından yazıldığını ve hangi tıbbi uzman tarafından gözden geçirildiğini doğrulamak ister. Sitenize kurduğum E-E-A-T mimarısı şunları kapsar:
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-6 bg-white border border-line rounded-2xl">
-                  <h3 className="text-lg font-bold text-emerald-700 mb-2">Hekim Biyografi Kutusu</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">
-                    Tıp fakültesi diploması, uzmanlık alanı, çalıştığı kurumlar ve üye olduğu derneklerin doğrulanmış bağlantıları yer alır.
-                  </p>
-                </div>
-                <div className="p-6 bg-white border border-line rounded-2xl">
-                  <h3 className="text-lg font-bold text-teal-700 mb-2">Tıbbi İnceleyen (Medical Reviewer)</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">
-                    İçeriğin uzman hekim tarafından kontrol edildiğini gösteren "Tıbbi Gözden Geçiren" rozeti ve şema işaretlemesi eklenir.
-                  </p>
-                </div>
-                <div className="p-6 bg-white border border-line rounded-2xl">
-                  <h3 className="text-lg font-bold text-blue-700 mb-2">Bilimsel Literatür Atıfları</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">
-                    Tıbbi makalelerin altına PubMed, PubMed Central ve resmi sağlık dergilerine referans bağlantıları kurgulanır.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* HEALTH REGULATION & LEGISLATION COMPLIANCE SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
-                <Scale className="w-8 h-8 text-amber-600" />
-                Sağlık Mevzuatı, TTB Kılavuzları ve KVKK Uyum Mimarısı
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
-                Sağlık sektöründe dijital görünürlük elde ederken etik ve hukuki kurallara uymak esastır. Sağlık Bakanlığı, Türk Tabipleri Birliği (TTB) ve Ağız Diş Sağlığı yönetmeliklerine aykırı aldatıcı reklam dili kullanmadan, tamamen bilgilendirme odaklı SEO stratejisi yürütüyorum.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-5 bg-white border border-line rounded-2xl flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-amber-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-ink font-bold text-base mb-1">Tedavi Vaadinden Uzak İçerik</h3>
-                    <p className="text-ink-soft text-sm">Kesin iyileşme vaatleri yerine prosedür, iyileşme süreci ve bilimsel bilgilendirme ön planda tutulur.</p>
-                  </div>
-                </div>
-                <div className="p-5 bg-white border border-line rounded-2xl flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-amber-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-ink font-bold text-base mb-1">KVKK & Hasta Gizliliği</h3>
-                    <p className="text-ink-soft text-sm">Hasta öncesi/sonrası fotoğraflarında ve formlarda KVKK açık rıza onay süreçleri gözetilir.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* MEDICAL BRANCH CARDS SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
-                <Building className="w-3.5 h-3.5" />
-                Uzmanlık Branşları
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                Tıbbi Branşlara Özel SEO Uzmanlığı
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {medicalBranches.map((branch) => (
-                <div key={branch.title} className="bg-white border border-line p-6 rounded-2xl hover:border-emerald-500/30 transition-all">
-                  <h3 className="text-xl font-bold text-emerald-700 mb-2">{branch.title}</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">{branch.desc}</p>
-                </div>
+          <div className="space-y-5">
+            <GuideH2 id="hekim-profili">İyi bir hekim profili nasıl olmalı?</GuideH2>
+            <p>
+              Hekim profili, hem hastanın güvenini kazanmak hem de Google&apos;a uzmanlığı göstermek için en önemli
+              sayfalardan biri. İyi bir hekim profilinde şunlar yer alır:
+            </p>
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {[
+                ["Eğitim ve uzmanlık", "Mezun olunan okullar, uzmanlık eğitimi ve çalışılan kurumlar."],
+                ["Uzmanlık alanları", "Hekimin odaklandığı tedavi ve işlemler, net bir şekilde."],
+                ["Mesleki üyelikler ve yayınlar", "Dernek üyelikleri, bilimsel yayınlar, kongre sunumları."],
+                ["İçeriklerle bağlantı", "Hekimin yazdığı ya da kontrol ettiği içeriklerin profile bağlanması."],
+              ].map(([t, x]) => (
+                <li key={t} className="rounded-2xl border border-line bg-canvas p-4">
+                  <p className="font-semibold text-ink">{t}</p>
+                  <p className="mt-1 text-[15px] leading-relaxed">{x}</p>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-        </section>
 
-        {/* PATIENT REVIEW MANAGEMENT SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-emerald-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
-                <Star className="w-8 h-8 text-amber-600" />
-                Hasta Değerlendirme ve Yorum İtibar Yönetimi
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
-                Hastaların %85'i klinik veya hekim seçmeden önce Google Haritalar üzerindeki yorumları inceler. Etik kurallar çerçevesinde hasta yorumlarının toplanması, olumsuz geri bildirimlerin kurumsal dille yanıtlanması ve yüksek puan sinyallerinin arama motorlarınca okunmasını sağlıyorum.
-              </p>
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="tedavi-sayfasi">Tedavi sayfaları nasıl yazılmalı?</GuideH2>
+            <p>
+              Hasta bir tedaviyi araştırırken genellikle aynı soruları sorar: Bu tedavi nedir, kimlere uygulanır, kaç seans
+              sürer, ağrılı mıdır, iyileşme ne kadar sürer, riskleri nelerdir? İyi bir tedavi sayfası bu sorulara açık,
+              anlaşılır ve güvenilir cevaplar verir; içeriği bir hekimin kontrol ettiğini ve ne zaman güncellendiğini gösterir.
+            </p>
+            <p>
+              Tedavi sayfalarında &ldquo;en iyi&rdquo;, &ldquo;garantili&rdquo;, &ldquo;kesin sonuç&rdquo; gibi ifadelerden
+              kaçınmak hem tanıtım kuralları hem de güvenilirlik açısından önemli.
+            </p>
           </div>
-        </section>
 
-        {/* HEALTH TOURISM & MULTILINGUAL SEO SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-teal-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
-                <Globe2 className="w-8 h-8 text-teal-600" />
-                Sağlık Turizmi ve Çok Dilli SEO (EN / DE / AR / RU)
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
-                Uluslararası hasta çekmek isteyen klinikler ve hastaneler için hedef ülkelerdeki (İngiltere, Almanya, Körfez Ülkeleri) arama niyetine özel çok dilli SEO stratejileri uyguluyorum. Doğru hreflang etiketleri, uluslararası arama motoru optimizasyonu ve yerel hedef kitleye uygun tedavi içerikleri ile global hasta ağınızı büyütüyorum.
-              </p>
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="harita">Google Haritalar&apos;da görünürlük nasıl artırılır?</GuideH2>
+            <p>
+              Yakınındaki bir klinik arayan hastaya Google genellikle sonuçların en üstünde bir harita ve üç işletme
+              gösteriyor. Bu alanda yer almak için Google İşletme profilinin eksiksiz olması, doğru kategorilerin seçilmesi,
+              düzenli ve gerçek hasta yorumları ve klinik bilgilerinin internetin her yerinde tutarlı olması gerekiyor.
+            </p>
+            <p>
+              Detaylar için <GuideLink href="/blog/yerel-seo-nedir">yerel SEO nedir</GuideLink> ve{" "}
+              <GuideLink href="/blog/google-my-business-nedir">Google İşletme profili</GuideLink> yazılarıma göz atabilirsiniz.
+            </p>
           </div>
-        </section>
 
-        {/* DELIVERABLES LIST SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
-                <PackageCheck className="w-3.5 h-3.5" />
-                Somut Çıktılar
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                Sağlık SEO Çalışmasında Teslim Edilen Çıktılar
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {deliverables.map((item, idx) => (
-                <div key={idx} className="bg-white border border-line p-6 rounded-2xl flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
-                  <span className="text-ink font-medium text-sm md:text-base">{item}</span>
-                </div>
-              ))}
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="kurallar">Tanıtım kuralları SEO&apos;yu nasıl etkiler?</GuideH2>
+            <p>
+              Sağlık hizmetlerinin tanıtımına dair kurallar; abartılı vaatleri, garanti ifadelerini, hasta yönlendirici
+              reklamları ve öncesi-sonrası gibi bazı içerik türlerini kısıtlıyor. Bu kısıtlar reklam kanallarını
+              daraltırken, kurallara uygun bilgilendirici içeriklerle kazanılan organik görünürlüğü daha da değerli
+              hale getiriyor.
+            </p>
+            <p>
+              Bilgilendirici, hastanın sorusuna cevap veren ve abartıdan uzak içerikler; hem kurallarla hem de Google&apos;ın
+              sağlık içeriklerinde aradığı güvenilirlik anlayışıyla örtüşüyor.
+            </p>
           </div>
-        </section>
-
-        {/* TIMELINE ROADMAP SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-teal-500/10 border border-teal-500/20 text-xs font-semibold text-teal-600 uppercase tracking-widest mb-3">
-                <Clock className="w-3.5 h-3.5" />
-                Sonuç Zaman Çizelgesi
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                Sağlık ve Klinik SEO Süreç Haritası
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {timelineSteps.map((step) => (
-                <div key={step.period} className="bg-white border border-teal-500/20 p-8 rounded-2xl relative">
-                  <div className="text-xs font-mono font-semibold text-teal-600 mb-2">{step.period}</div>
-                  <h3 className="text-xl font-bold text-ink mb-3">{step.title}</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* TOOLS STRIP SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
-                <Wrench className="w-3.5 h-3.5" />
-                Yazılım & Araç Parkı
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                Sağlık SEO Analizinde Kullandığım Başlıca Araçlar
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {toolsList.map((tool) => (
-                <div key={tool.name} className="bg-white border border-line p-5 rounded-xl text-center">
-                  <div className="font-bold text-ink text-base mb-1">{tool.name}</div>
-                  <div className="text-xs text-ink-muted">{tool.role}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PRICING POSTURE SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-brand-light to-accent-light border border-emerald-500/30 rounded-3xl p-8 md:p-12 text-center">
-              <DollarSign className="w-10 h-10 text-emerald-600 mx-auto mb-4" />
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
-                Şeffaf ve Klinik Ölçeğinize Özel Teklif Modeli
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-8">
-                Kliniğinizin branşına, hekim kadrosuna ve hedeflediğiniz pazarlara (yerel veya sağlık turizmi) göre şeffaf danışmanlık bütçeleri kurguluyorum. Gizli maliyet olmadan ilk değerlendirme toplantısı planlayabilirsiniz.
-              </p>
-              <Link
-                href="/seo-danismanlik-fiyatlari"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold hover:shadow-lg hover:shadow-emerald-500/25 transition-all"
-              >
-                SEO Danışmanlık Fiyatlarını İnceleyin
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-        </section>
+        </GuideShell>
       </ServicePageLayout>
     </>
   );

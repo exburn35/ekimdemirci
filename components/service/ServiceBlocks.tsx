@@ -431,3 +431,57 @@ export function DemoSide({ title, text, points, ctaTitle, ctaText, ctaLabel }: {
     </>
   );
 }
+
+/* ---------- Öne çıkan vaka (görsel + hikâye) ---------- */
+
+export function CaseSpotlight({
+  eyebrow,
+  title,
+  text,
+  image,
+  imageAlt,
+  stats,
+  siteUrl,
+  siteLabel,
+}: {
+  eyebrow: string;
+  title: string;
+  text: string;
+  image: string;
+  imageAlt: string;
+  stats: { value: string; label: string }[];
+  siteUrl?: string;
+  siteLabel?: string;
+}) {
+  return (
+    <section className="border-t border-line bg-white py-20 md:py-24">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div className="lg:col-span-5">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">{eyebrow}</p>
+          <h2 className="text-3xl font-bold tracking-tight text-ink md:text-[40px] md:leading-[1.2]">{title}</h2>
+          <p className="mt-5 text-lg leading-relaxed text-ink-soft">{text}</p>
+          <dl className="mt-8 grid grid-cols-2 gap-3">
+            {stats.map((s) => (
+              <div key={s.label} className="rounded-2xl border border-line bg-canvas p-4">
+                <dt className="sr-only">{s.label}</dt>
+                <dd className="text-2xl font-bold tracking-tight text-ink">{s.value}</dd>
+                <dd className="mt-0.5 text-xs text-ink-muted">{s.label}</dd>
+              </div>
+            ))}
+          </dl>
+          {siteUrl && siteLabel ? (
+            <a href={siteUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand hover:text-brand-dark">
+              {siteLabel} <ArrowRight className="h-4 w-4" />
+            </a>
+          ) : null}
+        </div>
+        <figure className="lg:col-span-7">
+          <div className="overflow-hidden rounded-3xl border border-line bg-white p-2 shadow-lift">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={image} alt={imageAlt} className="h-auto w-full rounded-2xl" loading="lazy" />
+          </div>
+        </figure>
+      </div>
+    </section>
+  );
+}
