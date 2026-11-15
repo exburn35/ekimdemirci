@@ -45,7 +45,7 @@ const scenarios: Scenario[] = [
 const platformCopy: Record<Platform, { title: string; lead: string; points: string[] }> = {
   chatgpt: {
     title: "ChatGPT'de önerilen marka olmak",
-    lead: "Müşterileriniz artık \"hangisini önerirsin?\" sorusunu ChatGPT'ye soruyor. Cevapta adınız yoksa, o karşılaştırmaya hiç katılmamış oluyorsunuz.",
+    lead: "Ben de dahil olmak üzere hemen hemen herkes artık bir öneri istediğinde ChatGPT'ye soruyor. Cevapta yer almıyorsanız potansiyel müşterinizi kaçırıyor olabilirsiniz.",
     points: [
       "ChatGPT aramasının yararlandığı web dizinlerinde (özellikle Bing) sitenizin sağlam biçimde yer alması",
       "Markanızın web genelinde tutarlı tanımlanması: kurumsal profiller, dizinler, Wikidata ve sosyal hesaplar",
@@ -55,7 +55,7 @@ const platformCopy: Record<Platform, { title: string; lead: string; points: stri
   },
   aio: {
     title: "Google AI Overview'da kaynak gösterilmek",
-    lead: "Google pek çok aramada sonuçların en üstüne yapay zeka özeti koyuyor. Bu özetin altındaki kaynak kartlarında yer almak, ilk sıradan bile daha görünür olabiliyor.",
+    lead: "Google'da bir şey aradığımda artık çoğu zaman önce en üstteki yapay zeka özetini okuyorum; muhtemelen siz de öyle yapıyorsunuz. O özetin altında kaynak olarak gösterilen siteler, ilk sıradaki sonuçtan bile daha çok dikkat çekebiliyor.",
     points: [
       "Soruya ilk paragrafta net, alıntılanabilir bir cevap veren sayfa yapısı",
       "AI Overview kaynaklarının sıklıkla seçildiği üst sıralarda sağlam organik konum",

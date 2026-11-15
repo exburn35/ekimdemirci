@@ -37,6 +37,19 @@ const servicesList = [
   },
 ];
 
+const sectorsList = [
+  { name: "Tüm Sektörler", href: "/sektorel-seo-hizmetleri", desc: "Sektöre özel SEO ve GEO yaklaşımım" },
+  { name: "E-ticaret SEO", href: "/sektorel-seo-hizmetleri/e-ticaret-seo", desc: "Kategori, ürün ve pazaryeri görünürlüğü" },
+  { name: "Sağlık ve Klinik SEO", href: "/sektorel-seo-hizmetleri/saglik-ve-klinik-seo", desc: "Güven odaklı sağlık içerikleri" },
+  { name: "Diş Hekimleri için SEO", href: "/sektorel-seo-hizmetleri/dis-hekimleri-icin-seo-2", desc: "Tedavi aramalarında yerel görünürlük" },
+  { name: "Doktorlar için SEO", href: "/sektorel-seo-hizmetleri/doktorlar-icin-seo-2", desc: "Hekim ve muayenehane görünürlüğü" },
+  { name: "Hastaneler için SEO", href: "/sektorel-seo-hizmetleri/hastaneler-icin-seo-2", desc: "Çok branşlı kurumlar için yapı" },
+  { name: "Güzellik Merkezleri için SEO", href: "/sektorel-seo-hizmetleri/guzellik-merkezleri-icin-seo-2", desc: "Hizmet ve şehir aramaları" },
+  { name: "Avukatlar için SEO", href: "/sektorel-seo-hizmetleri/avukatlar-icin-seo-hizmeti", desc: "Hukuk bürolarına özel strateji" },
+  { name: "Yerel İşletme SEO", href: "/sektorel-seo-hizmetleri/yerel-isletme-seo", desc: "Harita ve yakınımdaki aramalar" },
+  { name: "Kurumsal ve B2B SEO", href: "/sektorel-seo-hizmetleri/kurumsal-b2b-seo", desc: "Uzun satış döngüsüne uygun içerik" },
+];
+
 export default function Navigation() {
   const mobileDrawerContent = (
     <>
@@ -52,6 +65,19 @@ export default function Navigation() {
             >
               <div className="font-medium text-ink">{service.name}</div>
               <div className="text-xs text-ink-muted mt-0.5">{service.desc}</div>
+            </Link>
+          ))}
+        </MobileAccordion>
+
+        <MobileAccordion id="mobile-sectors" label="Sektörler">
+          {sectorsList.map((sector) => (
+            <Link
+              key={sector.href}
+              href={sector.href}
+              className="block text-[15px] text-ink-soft hover:text-ink bg-transparent hover:bg-ink/[0.03] rounded-lg transition-all py-2.5 px-3"
+            >
+              <div className="font-medium text-ink">{sector.name}</div>
+              <div className="text-xs text-ink-muted mt-0.5">{sector.desc}</div>
             </Link>
           ))}
         </MobileAccordion>
@@ -131,7 +157,7 @@ export default function Navigation() {
                 href={service.href}
                 className="group block p-2.5 rounded-lg hover:bg-ink/5 transition-colors duration-150"
               >
-                <div className="text-sm font-medium text-ink group-hover:text-purple-700 transition-colors">
+                <div className="text-sm font-medium text-ink group-hover:text-brand transition-colors">
                   {service.name}
                 </div>
                 <div className="text-xs text-ink-muted group-hover:text-ink-soft transition-colors line-clamp-1">
@@ -142,12 +168,27 @@ export default function Navigation() {
           </div>
         </NavDropdown>
 
+        <NavDropdown id="sectors-mega-dropdown" label="Sektörler" widthClass="w-[520px]">
+          <div className="grid grid-cols-2 gap-1 p-2">
+            {sectorsList.map((sector) => (
+              <Link
+                key={sector.href}
+                href={sector.href}
+                className="group block rounded-lg p-2.5 transition-colors duration-150 hover:bg-ink/5"
+              >
+                <div className="text-sm font-medium text-ink transition-colors group-hover:text-brand">{sector.name}</div>
+                <div className="line-clamp-1 text-xs text-ink-muted">{sector.desc}</div>
+              </Link>
+            ))}
+          </div>
+        </NavDropdown>
+
         <Link
           href="/basari-hikayeleri"
           className="font-medium text-ink-soft hover:text-ink transition-colors duration-200 relative group whitespace-nowrap"
         >
           Vaka Analizleri
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full" />
         </Link>
 
         <Link
@@ -155,7 +196,7 @@ export default function Navigation() {
           className="font-medium text-ink-soft hover:text-ink transition-colors duration-200 relative group whitespace-nowrap"
         >
           Fiyatlar
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full" />
         </Link>
 
         <Link
@@ -163,7 +204,7 @@ export default function Navigation() {
           className="font-medium text-ink-soft hover:text-ink transition-colors duration-200 relative group whitespace-nowrap"
         >
           SEO Ajansları
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full" />
         </Link>
 
         <Link
@@ -171,7 +212,7 @@ export default function Navigation() {
           className="font-medium text-ink-soft hover:text-ink transition-colors duration-200 relative group whitespace-nowrap"
         >
           Blog
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full" />
         </Link>
 
         <Link
@@ -179,7 +220,7 @@ export default function Navigation() {
           className="font-medium text-ink-soft hover:text-ink transition-colors duration-200 relative group whitespace-nowrap"
         >
           SEO Sözlüğü
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full" />
         </Link>
 
         <Link
@@ -187,7 +228,7 @@ export default function Navigation() {
           className="font-medium text-ink-soft hover:text-ink transition-colors duration-200 relative group whitespace-nowrap"
         >
           Hakkımda
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full" />
         </Link>
 
         {/* Tek CTA: "Ücretsiz Analiz" (#analiz) */}

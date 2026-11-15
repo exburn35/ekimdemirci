@@ -49,18 +49,18 @@ export default function AISEO() {
       ]} />
       <ServicePageLayout
       title="Yapay Zeka SEO Uygulama Stratejileri"
-      subtitle="Platform Bazlı Optimizasyon Taktikleri"
-      description="ChatGPT, Perplexity, Claude ve Google AI Overviews motorlarının çalışma mekanizmalarına göre kurgulanan somut teknik ve taktiksel optimizasyon adımları."
+      subtitle="Platform Bazlı Optimizasyon Stratejileri"
+      description="ChatGPT, Perplexity, Claude ve Google AI Overviews motorlarının çalışma mekanizmalarına göre kurgulanan somut teknik ve stratejik optimizasyon adımları."
       icon="Brain"
       gradient="from-blue-500 via-cyan-500 to-emerald-500"
       definition={{
         question: "Platform Bazlı Yapay Zeka SEO Yaklaşımı",
-        answer: "Bu sayfa, farklı yapay zeka arama motorlarının alıntı mekanizmalarına özel somut uygulama taktiklerini içerir.",
+        answer: "Bu sayfa, farklı yapay zeka arama motorlarının alıntı mekanizmalarına özel somut uygulama stratejilerini içerir.",
         paragraph: "Generative Engine Optimization alanında şemsiye kavramlar ve genel metodolojiler hakkında bilgi edinmek isterseniz GEO'nun ne olduğu ve nasıl çalıştığı sayfasını ziyaret edebilirsiniz. Burada ise her bir AI platformuna özgü teknik detaylar ele alınmaktadır."
       }}
       scope={[
         {
-          title: "ChatGPT (OpenAI) Optimizasyon Taktikleri",
+          title: "ChatGPT (OpenAI) Optimizasyon Stratejileri",
           description: "OpenAI arama dizini için Varlık-İlişki (Entity-Attribute) ağı kurguluyor, metinleri canlı web tarayıcısının en rahat alıntılayacağı soru-cevap formatına getiriyorum."
         },
         {

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const geoPlans = [
   {
-    name: "GEO Başlangıç",
+    name: "Radar",
     price: "₺25.000",
     period: "aylık",
     description: "Yapay zeka motorlarında ilk görünürlüğünü başlatmak isteyen markalar için.",
@@ -22,7 +22,7 @@ const geoPlans = [
     border: "border-line",
   },
   {
-    name: "GEO Profesyonel",
+    name: "Referans",
     price: "₺45.000",
     period: "aylık",
     description: "Yapay zeka yanıtlarında birincil kaynak ve önerilen marka olmak isteyen işletmeler için.",
@@ -40,7 +40,7 @@ const geoPlans = [
     border: "border-purple-500/40 shadow-purple-500/10",
   },
   {
-    name: "GEO Kurumsal",
+    name: "Otorite",
     price: "₺75.000",
     period: "aylık",
     description: "Çok dilli, uluslararası ve yüksek rekabetli pazarlarda AI liderliği hedefleyen markalar için.",

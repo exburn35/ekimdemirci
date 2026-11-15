@@ -74,7 +74,7 @@ const sections = [
             <strong className="text-ink">Sıralama ve Ciro Garantisi Beyanı:</strong> Arama motorları (Google, Bing vb.) ve yapay zeka sistemleri (ChatGPT, Gemini, Perplexity) kendi bağımsız algoritmalarıyla çalışan dinamik mekanizmalardır. Hiçbir SEO uzmanı veya ajansı üçüncü taraf arama sistemlerinde kesin 1. sıra garantisi veremez.
           </p>
           <p>
-            Sitede paylaşılan taktik ve analizler tavsiye niteliğinde olup, her sitenin geçmişi, teknik altyapısı ve sektör rekabeti farklılık gösterir. Profesyonel danışmanlık hizmeti, taraflar arasında akdedilecek özel hizmet sözleşmesi şartlarına tabidir.
+            Sitede paylaşılan strateji ve analizler tavsiye niteliğinde olup, her sitenin geçmişi, teknik altyapısı ve sektör rekabeti farklılık gösterir. Profesyonel danışmanlık hizmeti, taraflar arasında akdedilecek özel hizmet sözleşmesi şartlarına tabidir.
           </p>
         </div>
       </>
