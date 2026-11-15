@@ -41,7 +41,11 @@ Başlıklar ve paragraflar **asla yarıda kesilip alt satıra itilmez.**
 
 ## 5. Yayın akışı
 
-- `main` doğrudan Vercel'e (canlıya) yayınlanır; **doğrudan `main`'e commit/push yapılmaz.**
-- Akış: ayrı branch → commit → push → `gh pr create` → Vercel önizlemesi → sahibinin onayı → merge → canlıda kontrol.
-- Merge ve push için her seferinde site sahibinin onayı alınır.
+- Site sahibi **önizleme/onay adımı istemiyor**: tamamlanan değişiklikler sorulmadan doğrudan canlıya alınır.
+- Akış: ayrı branch → commit → push → `gh pr create` → Vercel build'inin başarılı olmasını bekle → merge →
+  canlıda kontrol (sayfalar 200, yeni içerik yayında). Sahibinin incelemesi beklenmez.
+- Vercel build'i başarısız olursa merge edilmez; hata düzeltilip tekrar denenir. Yerelde `tsc` ve `next build`
+  hatasız geçmeden push yapılmaz.
+- Doğrudan `main`'e commit atılmaz (PR geçmişi kayıt olarak tutulur), ama bu adımlar sahibine sorulmadan yapılır.
+- Bittiğinde sahibine canlı adres(ler)i ve yapılan kontrolleri kısaca bildir.
 - GitHub CLI yolu: `/c/Program Files/GitHub CLI/gh.exe`.
