@@ -70,7 +70,7 @@ export default function HomeServices() {
             intro="Her projeye aynı paketi uygulamıyorum. Önce sitenizin hangi katmanda tıkandığını buluyor, ardından sadece gerçekten ihtiyaç duyduğunuz çalışmaları planlıyorum."
           />
           <Link
-            href="/seo-hizmetleri"
+            href="/seo-danismanligi"
             className="mb-10 inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-line-strong px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink/30 md:mb-14 lg:self-auto"
           >
             Tüm SEO hizmetleri <ArrowRight className="h-4 w-4" />

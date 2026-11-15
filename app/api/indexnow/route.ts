@@ -60,7 +60,7 @@ export async function GET(req: NextRequest) {
         "/",
         "/hakkimda",
         "/blog",
-        "/seo-hizmetleri",
+        "/seo-danismanligi",
         "/seo-hizmetleri/teknik-seo",
         "/seo-hizmetleri/sayfa-ici-seo",
         "/seo-hizmetleri/sayfa-disi-seo",

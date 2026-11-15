@@ -633,7 +633,7 @@ export default function GEOHero() {
               {/* Back to services breadcrumb */}
               <div className="hero-left-child">
                 <Link
-                  href="/seo-hizmetleri"
+                  href="/seo-danismanligi"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass hover:bg-ink/5 text-ink-muted hover:text-ink mb-8 transition-all duration-300 group focus-ring-purple"
                 >
                   <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />

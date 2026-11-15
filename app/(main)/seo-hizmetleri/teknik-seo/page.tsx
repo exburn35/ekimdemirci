@@ -41,7 +41,7 @@ export default function TechnicalSEO() {
   return (
     <>
       <Breadcrumb items={[
-        { name: "SEO Hizmetleri", href: "/seo-hizmetleri" },
+        { name: "SEO Danışmanlığı", href: "/seo-danismanligi" },
         { name: "Teknik SEO", href: "/seo-hizmetleri/teknik-seo" }
       ]} />
       <ServicePageLayout

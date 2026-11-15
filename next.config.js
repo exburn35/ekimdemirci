@@ -61,6 +61,12 @@ const nextConfig = {
   },
   async redirects() {
     const legacyRedirects = [
+      // SEO hizmetleri hub sayfası yeni adresine taşındı (alt sayfalar /seo-hizmetleri/... altında kalıyor)
+      {
+        source: '/seo-hizmetleri',
+        destination: '/seo-danismanligi',
+        statusCode: 301,
+      },
       {
         source: '/blog/generative-engine-optimization-geo-nedir',
         destination: '/blog/geo-nedir',

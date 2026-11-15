@@ -9,7 +9,7 @@ const promises = [
 ];
 
 const quickLinks = [
-  { label: "Organik trafiğim düşüyor", href: "/seo-hizmetleri" },
+  { label: "Organik trafiğim düşüyor", href: "/seo-danismanligi" },
   { label: "ChatGPT'de görünmek istiyorum", href: "/geo-danismanligi" },
   { label: "Sitem teknik olarak sorunlu", href: "/seo-hizmetleri/teknik-seo" },
   { label: "Sektörüme özel strateji", href: "/sektorel-seo-hizmetleri" },

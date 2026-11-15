@@ -33,6 +33,7 @@ const socialLinks = [
 
 const services = [
   { name: "GEO Danışmanlığı", href: "/geo-danismanligi" },
+  { name: "SEO Danışmanlığı", href: "/seo-danismanligi" },
   { name: "Yapay Zeka SEO", href: "/seo-hizmetleri/yapay-zeka-seo" },
   { name: "Teknik SEO", href: "/seo-hizmetleri/teknik-seo" },
   { name: "Site İçi SEO", href: "/seo-hizmetleri/sayfa-ici-seo" },

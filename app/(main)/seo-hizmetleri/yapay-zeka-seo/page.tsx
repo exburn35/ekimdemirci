@@ -44,7 +44,7 @@ export default function AISEO() {
   return (
     <>
       <Breadcrumb items={[
-        { name: "SEO Hizmetleri", href: "/seo-hizmetleri" },
+        { name: "SEO Danışmanlığı", href: "/seo-danismanligi" },
         { name: "Yapay Zeka SEO", href: "/seo-hizmetleri/yapay-zeka-seo" }
       ]} />
       <ServicePageLayout

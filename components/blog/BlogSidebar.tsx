@@ -53,7 +53,7 @@ export default function BlogSidebar({ category, posts }: BlogSidebarProps) {
             Sıralamalarınızı yükseltmek ve organik trafiğinizi artırmak için profesyonel SEO hizmetlerimle tanışın.
           </p>
           <Link
-            href="/seo-hizmetleri"
+            href="/seo-danismanligi"
             className="inline-block px-6 py-3 bg-white text-black font-semibold rounded-full text-sm hover:scale-105 transition-transform"
           >
             Hizmetleri İncele

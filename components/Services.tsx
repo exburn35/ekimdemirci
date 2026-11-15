@@ -18,7 +18,7 @@ const services = [
     title: "SEO Analitiği",
     expandedTitle: "SEO Analitiği ile Stratejinizi Anlamlandırıyorum",
     description: "Yatırım getirinizi (ROI) net şekilde ölçmek ve büyüme fırsatlarını belirlemek amacıyla veri odaklı derinlemesine performans takibi yapıyor, analiz süreçlerinizi şeffaf şekilde yönetiyorum.",
-    href: "/seo-hizmetleri"
+    href: "/seo-danismanligi"
   },
   {
     icon: FileText,

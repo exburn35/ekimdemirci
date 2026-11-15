@@ -151,7 +151,7 @@ export default function RelatedPages() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-6 flex items-end justify-between gap-4">
           <h2 className="text-xl font-bold tracking-tight text-ink md:text-2xl">Bunlar da ilginizi çekebilir</h2>
-          <Link href="/seo-hizmetleri" className="hidden text-sm font-semibold text-brand hover:text-brand-dark sm:inline">
+          <Link href="/seo-danismanligi" className="hidden text-sm font-semibold text-brand hover:text-brand-dark sm:inline">
             Tüm hizmetler →
           </Link>
         </div>

@@ -41,7 +41,7 @@ export default function OnPageSEO() {
   return (
     <>
       <Breadcrumb items={[
-        { name: "SEO Hizmetleri", href: "/seo-hizmetleri" },
+        { name: "SEO Danışmanlığı", href: "/seo-danismanligi" },
         { name: "Site İçi SEO", href: "/seo-hizmetleri/sayfa-ici-seo" }
       ]} />
       <ServicePageLayout

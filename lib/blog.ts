@@ -257,8 +257,16 @@ export function cleanAndProcessHtml(html: string, postTitle?: string): { cleanHt
       let newHref = 'href="/"';
       
       if (slug) {
-        const seoServices = ["teknik-seo", "sayfa-ici-seo", "sayfa-disi-seo", "yapay-zeka-seo", "seo-hizmetleri"];
-        if (slug === "on-page-seo" || slug === "sayfa-ici-seo") newHref = 'href="/seo-hizmetleri/sayfa-ici-seo"';
+        const seoServices = ["teknik-seo", "sayfa-ici-seo", "sayfa-disi-seo", "yapay-zeka-seo"];
+        // Eski WordPress adresleri: alt sayfa yolları ("sektorel-seo-hizmetleri/e-ticaret-seo") ve hub sayfaları
+        const legacySectoral: Record<string, string> = { "dis-klinigi-seo": "dis-hekimleri-icin-seo-2" };
+        if (slug === "seo-hizmetleri" || slug === "seo-danismanligi") newHref = 'href="/seo-danismanligi"';
+        else if (slug === "sektorel-seo-hizmetleri") newHref = 'href="/sektorel-seo-hizmetleri"';
+        else if (slug.startsWith("sektorel-seo-hizmetleri/") || slug.startsWith("seo-hizmetleri/")) {
+          const [prefix, sub] = slug.split("/");
+          newHref = `href="/${prefix}/${legacySectoral[sub] || sub}"`;
+        }
+        else if (slug === "on-page-seo" || slug === "sayfa-ici-seo") newHref = 'href="/seo-hizmetleri/sayfa-ici-seo"';
         else if (slug === "off-page-seo" || slug === "sayfa-disi-seo") newHref = 'href="/seo-hizmetleri/sayfa-disi-seo"';
         else if (seoServices.includes(slug)) newHref = `href="/seo-hizmetleri/${slug}"`;
         else {
