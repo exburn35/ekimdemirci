@@ -517,7 +517,7 @@ export default function AIVisual() {
                         </div>
 
                         {/* AI Response Output */}
-                        <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/20 text-xs text-ink space-y-1.5">
+                        <div className="p-2.5 rounded-lg bg-accent-light border border-emerald-500/20 text-xs text-ink space-y-1.5">
                           <div className="flex items-center gap-1.5 text-emerald-600 font-bold text-[11px]">
                             <CheckCircle2 className="w-3.5 h-3.5" />
                             <span>ChatGPT &amp; Perplexity Doğrulanmış Yanıtı:</span>

@@ -189,7 +189,7 @@ export default function FAQ({
             )}
 
             {subtitle && (
-              <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+              <p className="text-ink-muted text-sm md:text-base leading-relaxed">
                 {subtitle}
               </p>
             )}

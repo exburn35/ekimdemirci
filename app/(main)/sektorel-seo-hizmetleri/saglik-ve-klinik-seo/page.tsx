@@ -500,12 +500,12 @@ export default function HealthAndClinicSEOPage() {
         {/* PRICING POSTURE SECTION */}
         <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-emerald-900/30 to-teal-900/30 border border-emerald-500/30 rounded-3xl p-8 md:p-12 text-center">
+            <div className="bg-gradient-to-r from-brand-light to-accent-light border border-emerald-500/30 rounded-3xl p-8 md:p-12 text-center">
               <DollarSign className="w-10 h-10 text-emerald-600 mx-auto mb-4" />
               <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
                 Şeffaf ve Klinik Ölçeğinize Özel Teklif Modeli
               </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-8">
                 Kliniğinizin branşına, hekim kadrosuna ve hedeflediğiniz pazarlara (yerel veya sağlık turizmi) göre şeffaf danışmanlık bütçeleri kurguluyorum. Gizli maliyet olmadan ilk değerlendirme toplantısı planlayabilirsiniz.
               </p>
               <Link

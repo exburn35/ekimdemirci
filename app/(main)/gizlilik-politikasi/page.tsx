@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Gizlilik Politikası ve KVKK Aydınlatma Metni | Ekim Demirci",
+  title: "Gizlilik Politikası ve KVKK Aydınlatma Metni",
   description:
     "Ekim Demirci (ekimdemirci.com) Gizlilik Politikası ve 6698 sayılı KVKK aydınlatma metni. Kişisel verilerinizin toplanması, işlenmesi, korunması ve yasal haklarınız hakkında detaylı bilgi edinin.",
   alternates: {
@@ -168,16 +168,16 @@ const sections = [
           Bu veriler, KVKK&apos;nın 5. maddesinde yer alan aşağıdaki hukuki sebeplere dayanılarak işlenmektedir:
         </p>
         <div className="space-y-2.5 text-sm text-ink-soft">
-          <div className="p-3 rounded-xl bg-purple-950/20 border border-purple-500/20">
+          <div className="p-3 rounded-xl bg-brand-light border border-purple-500/20">
             <strong className="text-ink">a) Sözleşmenin Kurulması ve İfası:</strong> Doğrudan doğruya bir danışmanlık veya analiz hizmeti talebinize yanıt verilmesi ve teklif süreçlerinin yürütülmesi.
           </div>
-          <div className="p-3 rounded-xl bg-purple-950/20 border border-purple-500/20">
+          <div className="p-3 rounded-xl bg-brand-light border border-purple-500/20">
             <strong className="text-ink">b) Veri Sorumlusunun Meşru Menfaati:</strong> Temel hak ve özgürlüklerinize zarar vermemek kaydıyla, sitenin güvenliğinin sağlanması ve sunulan hizmet kalitesinin artırılması.
           </div>
-          <div className="p-3 rounded-xl bg-purple-950/20 border border-purple-500/20">
+          <div className="p-3 rounded-xl bg-brand-light border border-purple-500/20">
             <strong className="text-ink">c) Açık Rıza:</strong> Pazarlama iletişimi veya isteğe bağlı analiz formları vasıtasıyla onayladığınız durumlar.
           </div>
-          <div className="p-3 rounded-xl bg-purple-950/20 border border-purple-500/20">
+          <div className="p-3 rounded-xl bg-brand-light border border-purple-500/20">
             <strong className="text-ink">ç) Hukuki Yükümlülük:</strong> Kanunlarda açıkça öngörülen resmi bilgi paylaşımı zorunlulukları.
           </div>
         </div>
@@ -190,7 +190,7 @@ const sections = [
     icon: Share2,
     content: (
       <>
-        <div className="bg-emerald-950/30 border border-emerald-500/30 rounded-xl p-4 mb-4 text-emerald-700 text-sm flex items-center gap-3">
+        <div className="bg-accent-light border border-emerald-500/30 rounded-xl p-4 mb-4 text-emerald-700 text-sm flex items-center gap-3">
           <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
           <span>
             <strong>Kesin Gizlilik İlkesi:</strong> Kişisel verileriniz hiçbir koşulda ticari reklam, veri simsarlığı veya pazarlama amacıyla 3. şahıslara satılmaz, kiralanmaz veya devredilmez.
@@ -337,7 +337,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-8 sm:pt-12">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-700 text-xs sm:text-sm font-medium mb-6">
               <ShieldCheck className="w-4 h-4 text-purple-600" />
               <span>KVKK &amp; Gizlilik Güvencesi</span>
@@ -438,8 +438,8 @@ export default function PrivacyPolicyPage() {
           </div>
 
           {/* Help & Contact Card */}
-          <div className="mt-14 bg-gradient-to-r from-purple-900/30 via-indigo-900/20 to-purple-900/30 border border-purple-500/30 rounded-3xl p-8 sm:p-10 text-center relative overflow-hidden">
-            <div className="relative z-10 max-w-2xl mx-auto">
+          <div className="mt-14 bg-gradient-to-r from-brand-light via-white to-brand-light border border-brand/20 rounded-3xl p-8 sm:p-10 text-center relative overflow-hidden">
+            <div className="relative z-10">
               <div className="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center mx-auto mb-5 text-purple-700">
                 <HelpCircle className="w-7 h-7" />
               </div>

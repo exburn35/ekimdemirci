@@ -155,7 +155,7 @@ export default function AiAnswerDemo() {
       <div className="pointer-events-none absolute -top-24 left-1/2 h-[380px] w-[720px] -translate-x-1/2 rounded-full bg-brand/10 blur-[120px]" />
 
       <div ref={rootRef} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
+        <div className="mb-10 text-center md:mb-14">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">ChatGPT ve Google AI Overview</p>
           <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-[44px] lg:leading-[1.18]">
             Müşteriniz soruyor. Yapay zeka sizi öneriyor.

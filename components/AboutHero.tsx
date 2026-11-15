@@ -44,7 +44,7 @@ export default function AboutHero() {
                 Ekim Demirci
               </span>
             </h1>
-            <p className="text-2xl md:text-3xl text-ink-muted max-w-3xl mx-auto font-medium mt-8">
+            <p className="text-2xl md:text-3xl text-ink-muted font-medium mt-8">
               Markaların dijital mükemmelliğe ulaşmasına yardımcı olan, 5+ yıllık deneyime sahip SEO Uzmanı & Danışmanı
             </p>
           </motion.div>

@@ -70,7 +70,7 @@ export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingS
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-700 text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5 text-purple-600" />
             Yapay Zeka SEO (GEO) Fiyatlandırması
@@ -86,7 +86,7 @@ export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingS
         {/* Informational Banner Box */}
         {showGeoInfoBox && (
           <div className="mb-16">
-            <div className="relative rounded-2xl bg-gradient-to-r from-purple-900/40 via-slate-900/90 to-emerald-900/40 border border-purple-500/30 p-6 sm:p-8 backdrop-blur-xl shadow-2xl overflow-hidden group">
+            <div className="relative rounded-2xl bg-gradient-to-r from-brand-light via-white to-accent-light border border-purple-500/30 p-6 sm:p-8 backdrop-blur-xl shadow-2xl overflow-hidden group">
               <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500 pointer-events-none" />
               
               <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
@@ -102,7 +102,7 @@ export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingS
                     <h3 className="text-xl sm:text-2xl font-bold text-ink mb-2">
                       GEO Danışmanlığı Hakkında Bilgi Almak İçin Tıklayın
                     </h3>
-                    <p className="text-ink-soft text-sm sm:text-base max-w-2xl leading-relaxed">
+                    <p className="text-ink-soft text-sm sm:text-base leading-relaxed">
                       Generative Engine Optimization (GEO) metodolojisi, yapay zeka botlarının sitenizi nasıl okuduğu, entity otoritesi inşası ve tüm teknik detaylar hakkında kapsamlı bilgi edinin.
                     </p>
                   </div>

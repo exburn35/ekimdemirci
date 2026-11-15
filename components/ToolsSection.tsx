@@ -27,7 +27,7 @@ export default function ToolsSection() {
               Kullandığım Araçlar
             </span>
           </h2>
-          <p className="text-xl text-ink-muted max-w-2xl mx-auto">
+          <p className="text-xl text-ink-muted">
             Olağanüstü SEO sonuçları sunmak için sektör lideri araçlar
           </p>
         </motion.div>

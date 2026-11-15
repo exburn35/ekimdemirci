@@ -18,9 +18,9 @@ import {
 
 function Heading({ eyebrow, title, intro, center = false }: { eyebrow: string; title: string; intro?: string; center?: boolean }) {
   return (
-    <div className={`mb-12 ${center ? "mx-auto max-w-4xl text-center" : ""}`}>
+    <div className={`mb-12 ${center ? "text-center" : ""}`}>
       <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">{eyebrow}</p>
-      <h2 className={`max-w-4xl text-3xl font-bold tracking-tight text-ink md:text-[40px] md:leading-[1.2] ${center ? "mx-auto" : ""}`}>{title}</h2>
+      <h2 className={`text-3xl font-bold tracking-tight text-ink md:text-[40px] md:leading-[1.2] ${center ? "": ""}`}>{title}</h2>
       {intro ? <p className="mt-5 text-lg leading-relaxed text-ink-soft">{intro}</p> : null}
     </div>
   );
@@ -308,7 +308,7 @@ export function GeoPlatformStrategies() {
     <section className="border-t border-line bg-canvas py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 rounded-3xl border border-line bg-white p-7 shadow-card md:p-10 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-2xl">
+          <div className="flex-1">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Platformlara özel stratejiler</p>
             <h2 className="text-2xl font-bold tracking-tight text-ink md:text-3xl">Her yapay zeka aracı kaynaklarını aynı şekilde seçmiyor</h2>
             <p className="mt-3 leading-relaxed text-ink-soft">

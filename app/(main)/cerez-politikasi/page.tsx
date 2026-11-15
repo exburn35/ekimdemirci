@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Çerez Politikası (Cookie Policy) | Ekim Demirci",
+  title: "Çerez Politikası (Cookie Policy)",
   description:
     "Ekim Demirci (ekimdemirci.com) web sitesinde kullanılan çerez türleri, kullanım amaçları ve çerez tercihlerinizi nasıl yönetebileceğinize dair detaylı bilgilendirme.",
   alternates: {
@@ -72,7 +72,7 @@ export default function CookiesPolicyPage() {
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-8 sm:pt-12">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-700 text-xs sm:text-sm font-medium mb-6">
               <Cookie className="w-4 h-4 text-purple-600" />
               <span>Çerez Kullanım İlkeleri</span>
@@ -163,11 +163,11 @@ export default function CookiesPolicyPage() {
           </div>
 
           {/* Contact Box */}
-          <div className="bg-gradient-to-r from-purple-900/30 via-indigo-900/20 to-purple-900/30 border border-purple-500/30 rounded-3xl p-8 text-center">
+          <div className="bg-gradient-to-r from-brand-light via-white to-accent-light border border-purple-500/30 rounded-3xl p-8 text-center">
             <h2 className="text-xl sm:text-2xl font-bold text-ink mb-2">
               Çerez Politikası Hakkında Sorularınız mı Var?
             </h2>
-            <p className="text-ink-soft text-sm max-w-xl mx-auto mb-6">
+            <p className="text-ink-soft text-sm mb-6">
               Çerezler veya gizlilik esaslarıyla ilgili her türlü konu için doğrudan benimle iletişime geçebilirsiniz.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">

@@ -77,7 +77,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
           </div>
         )}
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center lg:text-left">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center lg:text-left">
           <BlogMotionWrapper>
             <Link
               href="/blog"

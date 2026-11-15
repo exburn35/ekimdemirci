@@ -68,7 +68,7 @@ export default function AuditRequest() {
                 SEO Audit Talebi
               </span>
             </h1>
-            <p className="text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-ink-muted leading-relaxed">
               Web sitenizin SEO durumunu ücretsiz analiz edin. Detaylı rapor ve öncelikli öneriler 
               ile iyileştirme fırsatlarını keşfedin.
             </p>
@@ -91,7 +91,7 @@ export default function AuditRequest() {
                 Audit Kapsamı
               </span>
             </h2>
-            <p className="text-xl text-ink-muted max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted">
               Web sitenizi kapsamlı şekilde analiz ediyorum
             </p>
           </motion.div>
@@ -226,7 +226,7 @@ export default function AuditRequest() {
                 Audit Talebinizi Oluşturun
               </span>
             </h2>
-            <p className="text-xl text-ink-muted max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted">
               Formu doldurun, 48 saat içinde detaylı SEO audit raporunuzu alın
             </p>
           </motion.div>

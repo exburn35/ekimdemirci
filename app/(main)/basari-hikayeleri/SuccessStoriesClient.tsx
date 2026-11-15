@@ -55,7 +55,7 @@ export default function SuccessStoriesClient() {
                 Başarı Hikayeleri
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-lg md:text-xl text-ink-muted leading-relaxed font-light">
               Danışanlarımın SEO çalışmaları ile elde ettiği başarılar ve ölçülebilir gerçek sonuçlar. 
               Siz de bu başarıların bir parçası olun.
             </p>
@@ -172,7 +172,7 @@ export default function SuccessStoriesClient() {
 
       {/* Sıradaki Proje CTA Bölümü */}
       <section className="py-24 bg-black relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-950/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-light rounded-full blur-[120px] pointer-events-none" />
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -187,7 +187,7 @@ export default function SuccessStoriesClient() {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink tracking-tight">
                 Sıradaki Başarı Hikayesi Sizin Olsun
               </h2>
-              <p className="text-sm md:text-base text-ink-muted mb-8 max-w-xl mx-auto font-light leading-relaxed">
+              <p className="text-sm md:text-base text-ink-muted mb-8 font-light leading-relaxed">
                 Bireysel SEO danışmanlığı hizmetlerimle dijital dünyadaki görünürlüğünüzü artırın ve rakiplerinizin önüne geçin.
               </p>
               <motion.div

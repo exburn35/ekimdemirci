@@ -24,7 +24,7 @@ export default function BrandsSection() {
                Danışmanlık Verdiğim Markalar
             </span>
           </h2>
-          <p className="text-xl text-ink-muted max-w-2xl mx-auto">
+          <p className="text-xl text-ink-muted">
              Farklı sektörlerdeki lider markalar tarafından tercih edilen
           </p>
         </motion.div>

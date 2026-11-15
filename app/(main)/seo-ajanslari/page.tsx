@@ -4,7 +4,7 @@ import SeoAjanslariClient, { AgencyData } from "./SeoAjanslariClient";
 import agencyRawData from "@/data/seo-ajanslari.json";
 
 export const metadata: Metadata = {
-  title: "Türkiye'deki SEO Ajansları (136 Ajans, 18 İl) - 2026 Dizini | Ekim Demirci",
+  title: "Türkiye'deki SEO Ajansları (136 Ajans, 18 İl) - 2026 Dizini",
   description:
     "Türkiye genelinde 18 ilden 136 SEO ajansının güncel dizini. Şehir bazlı filtreleyin, ajansları karşılaştırın ve doğru SEO ajansını seçme rehberini inceleyin.",
   alternates: {

@@ -189,7 +189,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center">
             {/* Badges */}
             <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-700 border border-purple-500/20">
@@ -213,7 +213,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-ink-soft max-w-3xl mx-auto leading-relaxed font-light mb-8">
+            <p className="text-lg md:text-xl text-ink-soft leading-relaxed font-light mb-8">
               Türkiye&apos;de SEO hizmeti veren ajansların kapsamlı şehir dizini ve işletmeniz için en doğru ajansı seçme rehberi.
             </p>
 
@@ -240,7 +240,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
       {/* Guide & Content Section */}
       <section className="py-12 relative z-10 max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 space-y-16">
         {/* TL;DR & Önemli Çıkarımlar */}
-        <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-950/30 via-white to-blue-950/30 border border-purple-500/20 backdrop-blur-sm relative overflow-hidden shadow-xl">
+        <div className="p-8 rounded-2xl bg-gradient-to-br from-brand-light via-white to-accent-light border border-purple-500/20 backdrop-blur-sm relative overflow-hidden shadow-xl">
           <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-purple-500 via-blue-500 to-indigo-500" />
           <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight mb-6">TL;DR & Önemli Çıkarımlar</h2>
 
@@ -557,7 +557,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
       <section id="ajans-dizini" className="py-16 relative bg-canvas border-t border-line scroll-mt-20">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           {/* Section Header */}
-          <div className="mb-10 text-center max-w-3xl mx-auto">
+          <div className="mb-10 text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-ink mb-4 tracking-tight">
               Türkiye&apos;deki SEO Ajansları
             </h2>
@@ -718,7 +718,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
       {/* Directory Submission / Edit Section */}
       <section id="dizine-ekleme" className="py-20 relative bg-canvas scroll-mt-20">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <div className="max-w-5xl mx-auto p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-purple-950/20 via-white to-blue-950/20 border border-line backdrop-blur-md shadow-2xl relative overflow-hidden">
+          <div className="max-w-5xl mx-auto p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-brand-light via-white to-accent-light border border-line backdrop-blur-md shadow-2xl relative overflow-hidden">
             {/* Ambient glow */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -940,10 +940,10 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
             <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">
               Doğru Ajansı Bulmak İçin Son Adım
             </h2>
-            <p className="text-ink-soft leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
+            <p className="text-ink-soft leading-relaxed text-sm sm:text-base">
               Bu dizinden 3–4 ajansı kısa listeye alın, her birine yukarıdaki soruları sorun ve gelen teklifleri iş kalemleri üzerinden yan yana koyun. Fiyattan önce yaklaşıma bakın: sitenizi gerçekten inceleyip öncelikli bir plan sunan ajans, hazır paket gönderen ajanstan her zaman bir adım öndedir.
             </p>
-            <p className="text-ink-muted text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="text-ink-muted text-sm leading-relaxed">
               Teklifleri birlikte değerlendirmek ya da ajansla çalışmadan önce sitenizin mevcut durumunu bağımsız bir gözle görmek isterseniz{" "}
               <Link href="/iletisim?audit=true" className="text-purple-600 hover:text-purple-700 font-semibold underline">
                 ücretsiz SEO analizi

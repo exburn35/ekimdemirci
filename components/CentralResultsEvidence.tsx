@@ -164,7 +164,7 @@ export default function CentralResultsEvidence() {
           <h2 className="text-3xl md:text-5xl font-extrabold text-ink tracking-tight mb-4">
             Organik Trafiği Nasıl{" "}<span className="bg-gradient-to-r from-purple-600 via-emerald-600 to-cyan-600 bg-clip-text text-transparent">%250+ Artırdım?</span>
           </h2>
-          <p className="text-ink-muted max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+          <p className="text-ink-muted text-base md:text-lg leading-relaxed">
             Statik iddialar yerine sektörel bazda kanıtlanmış ölçülebilir sıralama, trafik ve yapay zeka görünürlük verileri.
           </p>
         </motion.div>
@@ -242,7 +242,7 @@ export default function CentralResultsEvidence() {
                       </p>
 
                       {/* Big Metric Box */}
-                      <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-950/60 to-indigo-950/60 border border-purple-500/30 flex items-center justify-between">
+                      <div className="p-6 rounded-2xl bg-gradient-to-br from-brand-light to-accent-light border border-purple-500/30 flex items-center justify-between">
                         <div>
                           <div className="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-1">
                             Organik Trafik / Görünürlük Artışı
@@ -291,7 +291,7 @@ export default function CentralResultsEvidence() {
                         </div>
 
                         {/* Current Rank */}
-                        <div className="p-5 rounded-2xl bg-white border border-line bg-emerald-950/20 border-emerald-500/20">
+                        <div className="p-5 rounded-2xl bg-white border border-line bg-accent-light border-emerald-500/20">
                           <div className="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-1">
                             Güncel Sıra (Zirve)
                           </div>

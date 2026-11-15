@@ -78,7 +78,7 @@ export default function Services() {
   return (
     <section id="hizmetler" className="py-24 overflow-hidden relative border-t border-line mt-16">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-900/10 to-transparent skew-x-12 -z-10" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-light to-transparent skew-x-12 -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -91,7 +91,7 @@ export default function Services() {
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-ink tracking-tight">
             Kapsamlı{" "}<span className="bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">SEO Hizmetlerim</span>
           </h2>
-          <p className="text-xl text-ink-muted max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-ink-muted font-medium">
             Arama görünürlüğünüzü en üst düzeye çıkarmak ve sürdürülebilir organik büyüme sağlamak için tasarladığım, kişiselleştirilmiş ve uçtan uca SEO çözümlerim.
           </p>
         </motion.div>

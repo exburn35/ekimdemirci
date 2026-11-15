@@ -16,7 +16,7 @@ export default function CaseStudyTeaser() {
           className="bg-white rounded-3xl p-8 md:p-12 overflow-hidden relative shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20"
         >
           {/* Background Pattern */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 to-indigo-900/10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-light to-accent-light" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600 rounded-full blur-3xl opacity-10 -z-0" />
           
           <div className="relative z-10">
@@ -31,7 +31,7 @@ export default function CaseStudyTeaser() {
               Organik Trafiği Nasıl{" "}<span className="text-purple-600">%250 Artırdım</span>
             </h2>
 
-            <p className="text-ink-muted text-lg mb-8 max-w-2xl leading-relaxed">
+            <p className="text-ink-muted text-lg mb-8 leading-relaxed">
               Geliştirdiğim stratejik SEO metodolojisinin, danışanlarımın web sitelerini nasıl organik birer büyüme makinesine dönüştürdüğünü ve arama sonuçlarında nasıl zirveye taşıdığını görün.
             </p>
 

@@ -71,7 +71,7 @@ export default function AILogosSection() {
             </span>
           </h2>
           
-          <p className="text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-ink-muted leading-relaxed">
             Web sitenizi sadece geleneksel arama motorlarına değil; kullanıcıların doğrudan bilgi aldığı ve sorgu yaptığı en popüler yapay zeka asistanlarına da optimize ediyorum.
           </p>
         </motion.div>

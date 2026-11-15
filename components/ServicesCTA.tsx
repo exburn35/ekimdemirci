@@ -23,7 +23,7 @@ export default function ServicesCTA() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink">
               Arama Sıralamalarınızı Artırmaya Hazır mısınız?
             </h2>
-            <p className="text-xl text-ink-muted mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted mb-8">
               SEO hizmetlerimin çevrimiçi varlığınızı nasıl dönüştürebileceğini ve işletmeniz için ölçülebilir sonuçlar sağlayabileceğini konuşalım.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
