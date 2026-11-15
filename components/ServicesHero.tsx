@@ -51,7 +51,7 @@ export default function ServicesHero() {
               Kapsamlı SEO Çözümleri
             </motion.div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.18]">
               <span className="block text-ink">
                 Sonuç Odaklı
               </span>{" "}

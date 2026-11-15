@@ -161,7 +161,7 @@ export default function SEOGlossaryPage() {
             initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.18]"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
               SEO Sözlüğü

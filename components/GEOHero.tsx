@@ -650,7 +650,7 @@ export default function GEOHero() {
               </div>
 
               {/* H1 Heading */}
-              <h1 className="hero-left-child text-ink text-[36px] md:text-[48px] lg:text-[64px] font-bold mb-6 tracking-tight leading-[1.05]">
+              <h1 className="hero-left-child text-ink text-[36px] md:text-[48px] lg:text-[64px] font-bold mb-6 tracking-tight leading-[1.18]">
                 Yapay zekanın{" "}
                 <span className="underline-container">
                   alıntıladığı

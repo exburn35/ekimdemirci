@@ -114,7 +114,7 @@ export default function ServicePageLayout({
                   {subtitle}
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight leading-[1.15]">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight leading-[1.22]">
                   <span className="text-ink">
                     {title}
                   </span>

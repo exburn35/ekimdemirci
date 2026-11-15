@@ -44,7 +44,7 @@ export default function HomeAboutPreview() {
 
         <div className="lg:col-span-7">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Ben kimim?</p>
-          <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-ink sm:text-4xl lg:text-[44px]">
+          <h2 className="text-3xl font-bold leading-[1.22] tracking-tight text-ink sm:text-4xl lg:text-[44px]">
             Merhaba, ben Ekim Demirci.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">{SITE_CONFIG.bioText || defaultBio}</p>
