@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { ArrowRight, Brain, Settings, FileText, Link2, TrendingUp, Users, Target, Award, Search, HelpCircle, FileEdit } from "lucide-react";
 
 const allPages = [
   // Ana Hizmetler
+  {
+    title: "GEO Danışmanlığı",
+    path: "/geo-danismanligi",
+    category: "Hizmetler",
+    icon: Target,
+    description: "ChatGPT ve Google AI Overview cevaplarında önerilen marka olun.",
+    gradient: "",
+    className: "",
+  },
   {
     title: "Yapay Zeka SEO",
     path: "/seo-hizmetleri/yapay-zeka-seo",
@@ -132,94 +140,43 @@ export default function RelatedPages() {
     relatedPages = filteredPages.slice(0, 4);
   }
 
-  // Eksik varsa tamamla
-  while (relatedPages.length < 4) {
-    const randomPage = filteredPages[Math.floor(Math.random() * filteredPages.length)];
-    if (!relatedPages.includes(randomPage)) {
-      relatedPages.push(randomPage);
-    }
+  // Eksik varsa sıradaki sayfalarla tamamla (rastgele seçim hydration uyumsuzluğu yaratıyordu)
+  for (const page of filteredPages) {
+    if (relatedPages.length >= 4) break;
+    if (!relatedPages.includes(page)) relatedPages.push(page);
   }
 
-  // Bento grid css classes based on index to create an interesting layout
-  const bentoClasses = [
-    "col-span-1 md:col-span-2 row-span-2",
-    "col-span-1 md:col-span-1 row-span-1",
-    "col-span-1 md:col-span-1 row-span-1",
-    "col-span-1 md:col-span-2 row-span-1"
-  ];
-
   return (
-    <section className="py-24 bg-canvas relative overflow-hidden border-t border-line mt-16">
-      {/* Magic UI Background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#161b2e15_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-ink"
-          >
-            Yolculuğunuza{" "}<span className="text-purple-600">Devam Edin</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-ink-muted text-lg max-w-2xl mx-auto font-medium"
-          >
-            Sizin için özenle seçilmiş diğer sayfalara göz atarak SEO stratejinizi derinleştirin.
-          </motion.p>
+    <section className="border-t border-line bg-canvas py-14">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <h2 className="text-xl font-bold tracking-tight text-ink md:text-2xl">Bunlar da ilginizi çekebilir</h2>
+          <Link href="/seo-hizmetleri" className="hidden text-sm font-semibold text-brand hover:text-brand-dark sm:inline">
+            Tüm hizmetler →
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[200px] gap-6">
-          {relatedPages.map((page, index) => {
-            const Icon = page?.icon || Link2;
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {relatedPages.map((page) => {
             if (!page) return null;
-
+            const Icon = page.icon || Link2;
             return (
-              <motion.div
+              <Link
                 key={page.path}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className={`${bentoClasses[index % bentoClasses.length]} group relative`}
+                href={page.path}
+                className="group flex items-start gap-3 rounded-2xl border border-line bg-white p-4 transition-all hover:border-brand/30 hover:shadow-card"
               >
-                <Link 
-                  href={page.path}
-                  className="block w-full h-full p-8 rounded-3xl bg-white border border-line shadow-sm hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] hover:border-purple-500/30 transition-all duration-500 overflow-hidden relative flex flex-col justify-between"
-                >
-                  {/* Subtle Magic UI Glow on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-6">
-                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${page.gradient} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg`}>
-                        <Icon className="w-7 h-7 text-ink" />
-                      </div>
-                      <div className="w-10 h-10 rounded-full bg-white border border-line flex items-center justify-center group-hover:bg-purple-500/20 group-hover:border-purple-500/30 group-hover:-translate-y-1 transition-all duration-300">
-                        <ArrowRight className="w-5 h-5 text-ink-faint group-hover:text-purple-600 transition-colors" />
-                      </div>
-                    </div>
-                    
-                    <span className="text-xs font-bold text-purple-600 uppercase tracking-widest mb-2 block">
-                      {page.category}
-                    </span>
-                    <h3 className="text-2xl font-bold text-ink group-hover:text-purple-700 transition-colors mb-2">
-                      {page.title}
-                    </h3>
-                    
-                    {bentoClasses[index % bentoClasses.length].includes("row-span-2") && (
-                      <p className="text-ink-muted leading-relaxed mt-4">
-                        {page.description}
-                      </p>
-                    )}
-                  </div>
-                </Link>
-              </motion.div>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-light text-brand">
+                  <Icon className="h-4 w-4" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="flex items-center justify-between gap-2 text-[15px] font-semibold text-ink group-hover:text-brand">
+                    {page.title}
+                    <ArrowRight className="h-4 w-4 shrink-0 text-ink-faint transition-transform group-hover:translate-x-0.5 group-hover:text-brand" />
+                  </span>
+                  <span className="mt-0.5 line-clamp-2 block text-xs leading-relaxed text-ink-muted">{page.description}</span>
+                </span>
+              </Link>
             );
           })}
         </div>

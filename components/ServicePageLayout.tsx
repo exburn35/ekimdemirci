@@ -172,37 +172,25 @@ export default function ServicePageLayout({
         </section>
       )}
 
-      {/* 3. SCOPE LIST ("Hizmet Kapsamı") - Paragraphs with H2/H3 headlines */}
+      {/* 3. SCOPE LIST ("Hizmet Kapsamı") */}
       {scope && scope.length > 0 && (
-        <section className="py-20 bg-canvas border-t border-line">
+        <section className="py-20 md:py-24 bg-canvas border-t border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-600 uppercase tracking-widest mb-3">
-                <Layers className="w-3.5 h-3.5" />
-                Kapsam Mimarisi
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-ink">
-                {title} Kapsamında Neler Sunuyorum?
+            <div className="mb-12">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Kapsam</p>
+              <h2 className="max-w-4xl text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-ink">
+                {title} kapsamında neler yapıyorum?
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {scope.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="bg-white border border-line p-8 rounded-2xl hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(139,92,246,0.15)] transition-all duration-300 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="w-10 h-10 bg-purple-500/10 border border-purple-500/30 rounded-xl flex items-center justify-center text-purple-600 font-bold mb-5">
-                      0{index + 1}
-                    </div>
-                    <h3 className="text-xl font-bold text-ink mb-3 leading-snug">
-                      {item.title}
-                    </h3>
-                    <p className="text-ink-soft text-sm md:text-base leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
+                <div key={item.title} className="rounded-3xl border border-line bg-white p-7 shadow-card">
+                  <span className="mb-5 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand-light text-sm font-bold text-brand">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mb-2 text-lg font-bold leading-snug text-ink">{item.title}</h3>
+                  <p className="text-[15px] leading-relaxed text-ink-soft">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -231,65 +219,58 @@ export default function ServicePageLayout({
 
       {/* 4. PROCESS STEPS ("Süreç Adımları") */}
       {process && process.length > 0 && (
-        <section className="py-20 bg-canvas border-t border-line">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4">
-                Çalışma Süreci ve Adımlar
-              </h2>
-              <p className="text-ink-muted max-w-2xl mx-auto text-base md:text-lg">
-                Uçtan uca şeffaf ve ölçülebilir aşamalardan oluşan danışmanlık metodolojim.
-              </p>
+        <section className="py-20 md:py-24 bg-white border-t border-line">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+            <div className="lg:col-span-4">
+              <div className="lg:sticky lg:top-28">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Çalışma süreci</p>
+                <h2 className="text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-ink">
+                  Adım adım nasıl ilerliyorum?
+                </h2>
+                <p className="mt-4 leading-relaxed text-ink-soft">
+                  Her aşamada ne yaptığımı ve neden yaptığımı bilirsiniz. Süreç boyunca tek muhatabınız benim.
+                </p>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ol className="relative space-y-5 lg:col-span-8 before:absolute before:left-[22px] before:top-4 before:bottom-4 before:w-px before:bg-line">
               {process.map((item) => (
-                <div
-                  key={item.step}
-                  className="bg-white border border-line p-6 rounded-2xl hover:border-blue-500/40 transition-all duration-300 relative group"
-                >
-                  <div className={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center font-bold text-ink text-lg mb-5 shadow-lg`}>
+                <li key={item.step} className="relative flex gap-5">
+                  <span className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-white text-sm font-bold text-brand shadow-card">
                     {item.step}
+                  </span>
+                  <div className="flex-1 rounded-3xl border border-line bg-canvas p-6">
+                    <h3 className="text-lg font-bold text-ink">{item.title}</h3>
+                    <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{item.description}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-ink mb-2 group-hover:text-blue-600 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
       )}
 
       {/* 5. TARGET AUDIENCE MAPPING ("Bu Hizmetten Kimler Faydalanır?") */}
       {targetAudience && targetAudience.length > 0 && (
-        <section className="py-20 bg-canvas border-t border-line">
+        <section className="py-20 md:py-24 bg-canvas-alt border-t border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
-                <Users className="w-3.5 h-3.5" />
-                Hedef Kitle & Sektörler
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-ink">
-                Bu Hizmetten Kimler Faydalanabilir?
+            <div className="mb-12">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Kimler için?</p>
+              <h2 className="max-w-4xl text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-ink">
+                Bu hizmet en çok kimin işine yarar?
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {targetAudience.map((item) => (
-                <div
-                  key={item.audience}
-                  className="bg-white border border-line p-6 rounded-2xl hover:border-emerald-500/30 transition-all duration-300"
-                >
-                  <h3 className="text-lg font-bold text-emerald-600 mb-2">
-                    {item.audience}
-                  </h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">
-                    {item.benefit}
-                  </p>
+                <div key={item.audience} className="flex gap-4 rounded-3xl border border-line bg-white p-7 shadow-card">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-light text-accent-dark">
+                    <Users className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-bold text-ink">{item.audience}</h3>
+                    <p className="mt-1.5 text-[15px] leading-relaxed text-ink-soft">{item.benefit}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -299,37 +280,25 @@ export default function ServicePageLayout({
 
       {/* 6. CONCRETE RESULTS & EVIDENCE ("Somut Sonuç Kanıtı") */}
       {evidence && evidence.length > 0 && (
-        <section className="py-20 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
-              <div className="flex items-center gap-3 mb-6">
-                <Award className="w-8 h-8 text-amber-600 flex-shrink-0" />
-                <h2 className="text-2xl md:text-4xl font-bold text-ink">
-                  Somut Başarı & Doğrulanmış Vaka Kanıtı
-                </h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {evidence.map((item, idx) => (
-                  <div key={idx} className="p-6 bg-white border border-amber-500/20 rounded-2xl flex flex-col justify-between">
-                    <div>
-                      {item.projectCode && (
-                        <div className="text-xs text-amber-600 font-mono font-semibold mb-2">
-                          {item.projectCode}
-                        </div>
-                      )}
-                      <div className="text-3xl md:text-4xl font-extrabold text-amber-700 mb-2">
-                        {item.metric}
-                      </div>
-                      <p className="text-ink-soft text-sm leading-relaxed mb-4">
-                        {item.detail}
-                      </p>
-                    </div>
-                    <div className="text-xs text-ink-muted border-t border-line pt-3 font-mono">
-                      {item.source}
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <section className="py-20 md:py-24 bg-night">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 flex items-center gap-3">
+              <Award className="h-6 w-6 shrink-0 text-accent" />
+              <h2 className="text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-white">
+                Rakamlarla sonuçlar
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {evidence.map((item, idx) => (
+                <div key={idx} className="flex flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7">
+                  {item.projectCode && (
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/50">{item.projectCode}</p>
+                  )}
+                  <p className="text-3xl font-bold tracking-tight text-white md:text-4xl">{item.metric}</p>
+                  <p className="mt-3 text-[15px] leading-relaxed text-white/70">{item.detail}</p>
+                  <p className="mt-auto border-t border-white/10 pt-4 text-xs text-white/45">{item.source}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

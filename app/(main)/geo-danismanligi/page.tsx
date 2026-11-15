@@ -4,8 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 import ProductSchema from "@/components/schemas/ProductSchema";
 import GEOPricingSection from "@/components/GEOPricingSection";
 import GEOAIToolsSection from "@/components/GEOAIToolsSection";
-import GEODetailedContent from "@/components/GEODetailedContent";
 import AiAnswerDemo from "@/components/geo/AiAnswerDemo";
+import GeoGuide, { type GeoFaq } from "@/components/geo/GeoGuide";
+import { GeoAudience, GeoPlatformStrategies, GeoProcess, GeoProof, GeoScope } from "@/components/geo/GeoSections";
 
 export const metadata: Metadata = {
   title: "GEO (Generative Engine Optimization) Danışmanlığı",
@@ -15,50 +16,58 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
-    description: "Yapay zeka arama motorları için ileri seviye GEO danışmanlığı. Markanızı ChatGPT, Gemini ve Perplexity'de önerilen marka yapın.",
+    description: "ChatGPT ve Google AI Overview cevaplarında markanızın önerilen isim olması için bağımsız GEO danışmanlığı.",
   },
   twitter: {
     title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
-    description: "Yapay zeka arama motorları için ileri seviye GEO danışmanlığı. Markanızı ChatGPT, Gemini ve Perplexity'de önerilen marka yapın.",
+    description: "ChatGPT ve Google AI Overview cevaplarında markanızın önerilen isim olması için bağımsız GEO danışmanlığı.",
   },
 };
 
-export default function GEODanismanligi() {
-  const faqItems = [
-    {
-      question: "ChatGPT'de markamın önerilmesi için neler yapıyorsunuz?",
-      answer: "Önce sektörünüzde müşterilerinizin ChatGPT'ye sorduğu soruları belirleyip markanızın bugün bu cevaplarda geçip geçmediğini ölçüyorum. Ardından ChatGPT aramasının yararlandığı web dizinlerinde (özellikle Bing) sitenizin doğru yer almasını, markanızın kurumsal profiller ve dizinlerde tutarlı tanımlanmasını, karşılaştırma ve sektör içeriklerinde anılmanızı ve OAI-SearchBot erişiminin doğru yönetilmesini sağlıyorum."
-    },
-    {
-      question: "Google AI Overview'da kaynak olarak gösterilmek mümkün mü?",
-      answer: "Garanti edilemez ama olasılık ciddi biçimde artırılabilir. AI Overview kaynakları sıklıkla ilgili aramada üst sıralarda yer alan, soruya net ve alıntılanabilir cevap veren sayfalar arasından seçiliyor. Bu yüzden sayfalarınızı ilk paragrafta doğrudan cevap veren, yapılandırılmış veriyle desteklenen ve uzmanlık sinyali taşıyan bir yapıya kavuşturuyor, etkisini Search Console verileri ve düzenli sorgu testleriyle izliyorum."
-    },
-    {
-      question: "GEO (Generative Engine Optimization) Danışmanlığı Nedir?",
-      answer: "GEO (Generative Engine Optimization), web sitenizin bilgi mimarisini ChatGPT Search, Perplexity, Claude ve Google AI Overviews gibi yapay zeka arama sistemlerinin RAG (Retrieval-Augmented Generation) mekanizmalarına uyarlayarak yanıt metinlerinde güvenilir kaynak (source citation) olarak alıntılanmasını sağlayan bilimsel ve teknik danışmanlık disiplinidir."
-    },
-    {
-      question: "GEO danışmanlığının klasik SEO çalışmalarından farkı nedir?",
-      answer: "Klasik SEO, arama sonuç sayfasındaki 10 mavi bağlantıda üst sıralara yerleşip tıklama almayı hedefler. GEO ise yapay zekanın ürettiği sentezlenmiş yanıtın tam içinde markanızın birincil tavsiye ve güvenilir referans kartı olarak yer almasını sağlar."
-    },
-    {
-      question: "Semantik Üçlüler (Semantic Triplets - Özne-Yüklem-Nesne) GEO ile nasıl ilişkilidir?",
-      answer: "Büyük Dil Modelleri (LLMs) bilgiyi ilişkisel grafikler (Knowledge Graphs) üzerinden işler. Sitenizdeki verileri Özne-Yüklem-Nesne formatında yapılandırdığımda, modeller sitenizdeki gerçekleri halüsinasyona düşmeden hatasız anlar ve alıntılar."
-    },
-    {
-      question: "AI Query Fan-Out tekniği GEO stratejisinde neden önemlidir?",
-      answer: "Yapay zeka arama mimarisine göre, kullanıcı bir arama yaptığında yapay zeka motoru arka planda bu aramayı onlarca alt sorguya (sub-queries) böler. GEO çalışması ile içeriğinizi bu alt sorgu ağacının tamamını kapsayacak şekilde optimize ederim."
-    },
-    {
-      question: "Co-Citation (Marka Birlikteliği) AI güven skorunu nasıl etkiler?",
-      answer: "Yapay zeka motorları bir markanın yetkinliğini dış web kaynaklarında o markanın adının hangi kavramlar ve sektör liderleriyle birlikte anıldığına bakarak ölçer. Otoriter mecralarda kurguladığım co-citation yapısı AI güven skorunuzu doğrudan yükseltir."
-    },
-    {
-      question: "GEO optimizasyonu ne kadar sürede somut sonuç verir?",
-      answer: "GEO optimizasyonlarının etkileri, yapay zeka tarayıcılarının (GPTBot, PerplexityBot, ClaudeBot) sitenizi vektörleştirmesine ve Google AI Overviews indeks güncelleme hızına bağlı olarak 2 ila 4 ay içerisinde görünürlük artışı şeklinde kendini gösterir."
-    }
-  ];
+const faqItems: GeoFaq[] = [
+  {
+    question: "GEO ne demek?",
+    answer: "GEO, Generative Engine Optimization ifadesinin kısaltması. Türkçesiyle üretken motor optimizasyonu. Markanızın ChatGPT, Gemini, Perplexity ve Google AI Overview gibi yapay zeka araçlarının cevaplarında doğru bilgilerle anılması ve önerilmesi için yapılan çalışmaların tamamına verilen isim.",
+  },
+  {
+    question: "GEO ile SEO aynı şey mi?",
+    answer: "Hayır ama birbirine çok yakınlar. SEO, Google'ın sonuç listesinde üst sıralarda yer almanızı hedefler. GEO ise yapay zekanın verdiği cevabın içinde yer almanızı. Yapay zeka araçları büyük ölçüde iyi taranan ve güvenilen sayfalardan beslendiği için sağlam bir SEO temeli, GEO'nun da ön koşulu.",
+  },
+  {
+    question: "ChatGPT'de markamın önerilmesi için neler yapıyorsunuz?",
+    answer: "Önce sektörünüzde müşterilerinizin ChatGPT'ye sorduğu soruları belirleyip markanızın bugün bu cevaplarda geçip geçmediğini ölçüyorum. Ardından sitenizin ChatGPT'nin yararlandığı web aramalarında (Bing dahil) doğru yer almasını, markanızın her platformda tutarlı tanıtılmasını, sektör yayınlarında ve karşılaştırma içeriklerinde anılmanızı ve ChatGPT tarayıcılarının sitenize erişebilmesini sağlıyorum.",
+  },
+  {
+    question: "Google AI Overview'da kaynak olarak gösterilmek mümkün mü?",
+    answer: "Garanti edilemez ama ihtimal ciddi ölçüde artırılabilir. AI Overview kaynakları çoğunlukla o aramada üst sıralarda yer alan ve soruya net cevap veren sayfalar arasından seçiliyor. Bu yüzden sayfalarınızı ilk paragrafta doğrudan cevap veren, güncel ve uzmanlığınızı gösteren bir yapıya kavuşturuyor, etkisini düzenli testlerle takip ediyorum.",
+  },
+  {
+    question: "ChatGPT'de görünmek garanti edilebilir mi?",
+    answer: "Hayır. Yapay zeka araçlarının nasıl cevap üreteceğini kimse dışarıdan kontrol edemez. Size garanti veren birine temkinli yaklaşmanızı öneririm. Benim garanti edebileceğim şey; doğru yöntemle, şeffaf biçimde çalışmak ve her ay neyin değiştiğini verilerle göstermek.",
+  },
+  {
+    question: "GEO sonuçları ne kadar sürede görülür?",
+    answer: "Teknik düzenlemelerin etkisi birkaç hafta içinde görülmeye başlayabiliyor. Düzenli ve kalıcı bir görünürlük artışı ise çoğu projede 2 ila 4 ay içinde belirginleşiyor. Süre; sektördeki rekabete, sitenizin başlangıç durumuna ve markanızın bilinirliğine göre değişiyor.",
+  },
+  {
+    question: "Küçük bir işletme için GEO gerekli mi?",
+    answer: "Müşterileriniz karar vermeden önce yapay zekaya soru soruyorsa evet. Özellikle yerel hizmet veren işletmeler (klinikler, avukatlar, güzellik merkezleri gibi) için \"bana yakın, güvenilir bir ... önerir misin?\" türü sorular hızla artıyor. Küçük işletmeler doğru bir başlangıç paketiyle bu sorularda büyük markalardan önce yer alabiliyor.",
+  },
+  {
+    question: "GEO için sitemi baştan yapmam gerekiyor mu?",
+    answer: "Çoğu zaman hayır. Genellikle mevcut sitenizde teknik düzenlemeler yapmak, önemli sayfaları yeniden yazmak ve eksik içerikleri tamamlamak yeterli oluyor. Sitenin altyapısı yapay zeka araçlarının içeriği okumasına ciddi şekilde engel oluyorsa, bunu analiz aşamasında açıkça belirtiyorum.",
+  },
+  {
+    question: "Yapay zeka botlarını sitemden engellemeli miyim?",
+    answer: "Yapay zeka cevaplarında görünmek istiyorsanız genellikle hayır. Bazı siteler robots.txt dosyasında bu botları farkında olmadan engelliyor ve bu yüzden hiç kaynak gösterilmiyor. Hangi botlara izin verip hangilerini kısıtlayacağınız, iş modelinize göre verilmesi gereken bir karar; bunu birlikte değerlendiriyoruz.",
+  },
+  {
+    question: "GEO danışmanlığının maliyeti nedir?",
+    answer: "Aylık GEO danışmanlık paketlerim 25.000 TL'den başlıyor. Sitenizin büyüklüğüne, sektörünüzdeki rekabete ve hedeflediğiniz platform sayısına göre paket değişiyor. Backlink ve dijital PR çalışmaları, yayın maliyetleri değişken olduğu için ayrıca bütçelendiriliyor.",
+  },
+];
 
+export default function GEODanismanligi() {
   return (
     <>
       <Breadcrumb items={[{ name: "GEO Danışmanlığı", href: "/geo-danismanligi" }]} />
@@ -75,131 +84,21 @@ export default function GEODanismanligi() {
 
       <ServicePageLayout
         title="GEO Danışmanlığı"
-        subtitle="Generative Engine Optimization & RAG Mimarisi"
-        description="Müşterileriniz cevabı artık ChatGPT'ye ve Google'ın yapay zeka özetlerine soruyor. Başta ChatGPT ve Google AI Overview olmak üzere yapay zeka asistanlarında markanızın önerilen ve kaynak gösterilen isim olması için çalışıyorum."
+        subtitle="ChatGPT ve Google AI Overview görünürlüğü"
+        description="ChatGPT'ye bir öneri sorduğunuzda size birkaç isim sayar; o listede olmayan marka, müşterinin aklına hiç gelmez. Ben de sizin o listeye girmeniz için çalışıyorum: sitenizi yapay zekanın kolayca okuyup güvenebileceği hale getiriyor, markanızın internette doğru ve sık anılmasını sağlıyorum."
         afterHeroNode={<AiAnswerDemo />}
         icon="Brain"
         gradient="from-emerald-500 via-teal-500 to-cyan-500"
-        scope={[
-          {
-            title: "Semantik Varlık (Entity) & Knowledge Graph",
-            description: "Markanızı Wikidata, Wikipedia ve otoriter dizinlerde tanımlayarak LLM hafızasında sarsılmaz bir ilişkisel varlık yapısı (Entity) olarak konumlandırıyorum."
-          },
-          {
-            title: "RAG & Source Citation Optimizasyonu",
-            description: "İçeriklerinizi yapay zeka botlarının doğrudan yanıt kartlarına çekebileceği yüksek bilgi yoğunluklu soru-cevap ve tablo bloklarına dönüştürüyorum."
-          },
-          {
-            title: "AI Query Fan-Out Kapsama Stratejisi",
-            description: "Kullanıcı prompt'larından türeyen tüm alt sorgu ağaçlarını (sub-queries) hedefleyen çok açılı semantik içerik mimarisi inşa ediyorum."
-          },
-          {
-            title: "Share of Model Voice (SoMV) Ölçümü",
-            description: "ChatGPT ve Perplexity sorgularında markanızın rakiplere kıyasla önerilme oranını gelişmiş AI takip araçlarıyla anlık izleyip optimize ediyorum."
-          },
-          {
-            title: "Co-Citation & AI Otorite Güven Ağları",
-            description: "Sektörel basın ve otoriter yayınlarda markanızın doğru kavramlarla anılmasını sağlayarak AI güven skorunu üst seviyeye çıkarıyorum."
-          },
-          {
-            title: "AI Crawl & llms.txt Mimari Yönetimi",
-            description: "GPTBot, ClaudeBot ve PerplexityBot erişim izinlerini düzenleyip sitenize özel llms.txt ve vektör tarama kurgularını yapılandırıyorum."
-          }
-        ]}
-        process={[
-          {
-            step: "1",
-            title: "AI Görünürlük & SoMV Auditi",
-            description: "ChatGPT, Perplexity ve Google AI Overviews üzerinde markanızın alıntılanma durumunu ve rakip SoMV oranlarını denetliyorum."
-          },
-          {
-            step: "2",
-            title: "Entity & Knowledge Graph Yapılandırması",
-            description: "Markanızı dijital dünyada tekil, yetkili ve ilişkisel bir varlık (Entity) olarak tanımlıyorum."
-          },
-          {
-            step: "3",
-            title: "Semantik Triple & RAG Dönüşümü",
-            description: "Sayfalarınızı yapay zekanın en rahat okuduğu Özne-Yüklem-Nesne semantik formatına kavuşturuyorum."
-          },
-          {
-            step: "4",
-            title: "JSON-LD Şema Kodlaması",
-            description: "Organization, Service, Product ve Article şemalarını makineler arası dilde entegre ediyorum."
-          },
-          {
-            step: "5",
-            title: "Co-Citation PR & Güven Ağları",
-            description: "Dış mecralarda marka birlikteliklerini kurgulayarak yapay zeka otorite katsayısını artırıyorum."
-          },
-          {
-            step: "6",
-            title: "Sürekli Model Takibi ve Raporlama",
-            description: "Yapay zeka modellerinden gelen yüksek kaliteli yönlendirme trafiğini ve tavsiye payını aylık raporlarla sunuyorum."
-          }
-        ]}
-        targetAudience={[
-          {
-            audience: "E-Ticaret ve Perakende Markaları",
-            benefit: "Ürünlerinizin ChatGPT Search ve Perplexity sorgularında birincil satın alma tavsiyesi olarak listelenmesi."
-          },
-          {
-            audience: "SaaS ve Teknoloji Girişimleri",
-            benefit: "Yazılım çözümlerinizin yapay zeka arama motorlarında kategorinin en iyi alternatifi olarak tavsiye edilmesi."
-          },
-          {
-            audience: "Sağlık ve Medikal Kuruluşlar",
-            benefit: "Tedavi ve uzmanlık alanlarınızın yapay zeka sağlık özetlerinde doğrulanmış kaynak gösterilmesi."
-          },
-          {
-            audience: "B2B ve Kurumsal Şirketler",
-            benefit: "Sektörel rapor ve çözümlerinizin yapay zeka yanıtlarında alıntılanarak kurumsal otoritenin pekişmesi."
-          }
-        ]}
-        evidence={[
-          {
-            projectCode: "PROJE G-1",
-            metric: "+%340 AI Alıntı Artışı",
-            detail: "GEO danışmanlığı yürütülen markanın Perplexity ve ChatGPT yanıtlarında kaynak gösterilme oranındaki artış.",
-            source: "Kaynak: Ekim Demirci Vaka Çalışmaları 2025"
-          },
-          {
-            projectCode: "DOĞRULANMIŞ İSTATİSTİK",
-            metric: "250M+ Haftalık Kullanıcı",
-            detail: "ChatGPT'nin haftalık aktif kullanıcı hacmi ve arama alışkanlıklarındaki dönüşüm.",
-            source: "Kaynak: OpenAI Resmi 2024 Raporu"
-          },
-          {
-            projectCode: "PAZAR ARAŞTIRMASI",
-            metric: "%13 - %80 AI Overviews",
-            detail: "Google AI Overviews'ın bilgi yoğunluklu kategorilerdeki arama sonuçlarını doğrudan kapsama oranı.",
-            source: "Kaynak: Semrush 2025 AI Search Study"
-          }
-        ]}
         blogCategory="yapay-zeka-seo"
       >
-        {/* Contextual Internal Link Banner to Sub-Page */}
-        <section className="py-12 bg-white border-t border-b border-cyan-500/20">
-          <div className="max-w-5xl mx-auto px-4 text-center">
-            <h3 className="text-xl md:text-2xl font-bold text-ink mb-3">
-              Platform Bazlı Uygulama Taktiklerini Keşfedin
-            </h3>
-            <p className="text-ink-soft text-base md:text-lg leading-relaxed">
-              Generative Engine Optimization'ın ne olduğunu ve genel metodolojisini kavradıktan sonra, her bir platform için özel kurgulanan{" "}
-              <a 
-                href="/seo-hizmetleri/yapay-zeka-seo" 
-                className="text-cyan-600 font-semibold underline hover:text-cyan-700 transition-colors"
-              >
-                yapay zeka motorlarına özel uygulama stratejileri
-              </a>{" "}
-              sayfamı inceleyebilir, ChatGPT, Perplexity, Claude ve Google AI Overviews optimizasyon adımlarını uygulayabilirsiniz.
-            </p>
-          </div>
-        </section>
-
+        <GeoScope />
+        <GeoProcess />
+        <GeoAudience />
+        <GeoProof />
+        <GeoPlatformStrategies />
         <GEOPricingSection showGeoInfoBox={false} />
         <GEOAIToolsSection />
-        <GEODetailedContent faqItems={faqItems} />
+        <GeoGuide faqItems={faqItems} />
       </ServicePageLayout>
     </>
   );
