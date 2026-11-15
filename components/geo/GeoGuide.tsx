@@ -238,15 +238,21 @@ export default function GeoGuide({ faqItems }: { faqItems: GeoFaq[] }) {
                 soruya ilk paragrafta net bir cevap vermesi, bilgilerin güncel olması ve yazarın uzmanlığının belli
                 olması, kaynak olarak seçilme ihtimalini artıran unsurlar.
               </p>
-              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-line bg-canvas">
-                <Image
-                  src="/GEO-nasil-calisir.webp"
-                  alt="GEO nasıl çalışır?"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 760px"
-                  className="object-contain"
-                />
-              </div>
+              <figure>
+                <div className="relative aspect-[1164/437] overflow-hidden rounded-2xl border border-line bg-[#1f1f1f]">
+                  <Image
+                    src="/google-ai-overview-kaynak-secimi.png"
+                    alt="Google'da 'GEO nedir' araması için çıkan AI Overview özeti ve sağ taraftaki kaynak kartları"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 760px"
+                    quality={90}
+                    className="object-contain"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm text-ink-muted">
+                  Google&apos;da &ldquo;GEO nedir&rdquo; araması: üstte yapay zeka özeti, sağda bilginin alındığı kaynak kartları.
+                </figcaption>
+              </figure>
             </div>
 
             <div className="space-y-5">
