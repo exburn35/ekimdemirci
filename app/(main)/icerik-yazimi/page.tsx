@@ -60,22 +60,22 @@ export default function ContentWriting() {
         {
           step: "1",
           title: "İçerik Stratejisi",
-          description: "Hedef kitlenizi, anahtar kelimelerinizi ve içerik hedeflerinizi belirleriz. İçerik takvimi ve yayınlama stratejisi oluştururuz.",
+          description: "Hedef kitlenizi, anahtar kelimelerinizi ve içerik hedeflerinizi belirlerim. İçerik takvimini ve yayınlama stratejisini oluştururum.",
         },
         {
           step: "2",
           title: "Araştırma ve Planlama",
-          description: "Konu araştırması yapar, rakip içerikleri analiz eder ve içerik yapısını planlarız. SEO ve kullanıcı deneyimi faktörlerini göz önünde bulundururuz.",
+          description: "Konu araştırması yapar, rakip içerikleri analiz eder ve içerik yapısını planlarım. SEO ve kullanıcı deneyimi faktörlerini göz önünde bulundururum.",
         },
         {
           step: "3",
           title: "İçerik Yazımı",
-          description: "SEO uyumlu, kaliteli ve orijinal içerikler yazarız. İçerikler hedef kitleye uygun ton ve stilde hazırlanır.",
+          description: "SEO uyumlu, kaliteli ve orijinal içerikler yazarım. İçerikler hedef kitleye uygun ton ve stilde hazırlanır.",
         },
         {
           step: "4",
           title: "Optimizasyon ve Yayınlama",
-          description: "İçerikleri SEO için optimize eder, görseller ekler ve yayınlarız. Yayın sonrası performans takibi yaparız.",
+          description: "İçerikleri SEO için optimize eder, görseller ekler ve yayınlarım. Yayın sonrası performans takibini de yaparım.",
         },
       ]}
     />

@@ -57,7 +57,7 @@ const aiTools: AITool[] = [
 
 export default function GEOAIToolsSection() {
   return (
-    <section className="py-20 relative overflow-hidden bg-[#050814] border-t border-b border-cyan-500/10">
+    <section className="py-20 relative overflow-hidden bg-canvas border-t border-b border-cyan-500/10">
       {/* Background glow accents */}
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-purple-600/10 rounded-full blur-[130px] pointer-events-none" />
@@ -65,14 +65,14 @@ export default function GEOAIToolsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-700 text-xs font-semibold uppercase tracking-wider mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
             Yapay Zeka Teknoloji Yığını
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink tracking-tight mb-4">
             Kullandığım AI Görünürlük Araçları
           </h2>
-          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+          <p className="text-ink-soft text-base sm:text-lg leading-relaxed">
             ChatGPT, Perplexity, Claude, Gemini ve Google AI Overviews gibi yapay zeka motorlarında markanızın alıntı (citation) performansını, görünürlük skorlarını ve tavsiye payını ölçmek için kullandığım ileri düzey GEO araçları.
           </p>
         </div>
@@ -86,21 +86,21 @@ export default function GEOAIToolsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="relative group rounded-2xl bg-slate-900/60 border border-cyan-500/20 hover:border-cyan-400/50 p-6 backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between"
+              className="relative group rounded-2xl bg-white/60 border border-cyan-500/20 hover:border-cyan-400/50 p-6 backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between"
             >
               <div>
                 {/* Top Bar: Number Badge & Category Tag */}
                 <div className="flex items-center justify-between gap-2 mb-5">
-                  <span className="w-7 h-7 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-300 text-xs font-extrabold">
+                  <span className="w-7 h-7 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-700 text-xs font-extrabold">
                     0{tool.id}
                   </span>
-                  <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300">
+                  <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-700">
                     {tool.badge}
                   </span>
                 </div>
 
                 {/* Logo Box */}
-                <div className="w-full h-24 bg-white/95 rounded-xl border border-white/20 p-3 mb-5 flex items-center justify-center shadow-md group-hover:bg-white group-hover:scale-[1.02] transition-all duration-300">
+                <div className="w-full h-24 bg-white/95 rounded-xl border border-line-strong p-3 mb-5 flex items-center justify-center shadow-md group-hover:bg-white group-hover:scale-[1.02] transition-all duration-300">
                   <img
                     src={tool.logo}
                     alt={`${tool.name} Logo`}
@@ -109,19 +109,19 @@ export default function GEOAIToolsSection() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-xl font-bold text-ink mb-1 group-hover:text-cyan-700 transition-colors">
                   {tool.name}
                 </h3>
-                <p className="text-xs font-semibold text-cyan-400 mb-3 leading-snug">
+                <p className="text-xs font-semibold text-cyan-600 mb-3 leading-snug">
                   {tool.role}
                 </p>
-                <p className="text-xs text-gray-300 leading-relaxed mb-4">
+                <p className="text-xs text-ink-soft leading-relaxed mb-4">
                   {tool.details}
                 </p>
               </div>
 
               {/* Status / Active Indicator */}
-              <div className="pt-3 border-t border-white/10 flex items-center gap-2 text-[11px] text-emerald-400 font-medium">
+              <div className="pt-3 border-t border-line flex items-center gap-2 text-[11px] text-emerald-600 font-medium">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 Aktif GEO Analiz Aracı
               </div>

@@ -105,7 +105,7 @@ const criteriaList = [
   {
     icon: Scale,
     title: "Rakip Web Sitelerinin Analizi",
-    description: "Sektördeki rakiplerinizin mevcut otorite seviyeleri ve dijital pazarlama bütçeleri hedeflerimize ulaşmak için atmamız gereken adımların büyüklüğünü belirler.",
+    description: "Sektördeki rakiplerinizin mevcut otorite seviyeleri ve dijital pazarlama bütçeleri, hedeflerinize ulaşmak için atılması gereken adımların büyüklüğünü belirler.",
   },
   {
     icon: Gem,
@@ -214,7 +214,7 @@ export default function SEOPricingContent() {
       {/* Hero Bölümü */}
       <section className="relative pt-36 pb-24 overflow-hidden">
         {/* Arka plan katmanı */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f25] via-[#0d153a] to-[#050814]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:32px_32px]" />
         {/* Işık halkaları */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
@@ -228,11 +228,11 @@ export default function SEOPricingContent() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-              <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 SEO Danışmanlık Fiyatları
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-lg md:text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed font-light">
               Bütçenize uygun SEO çözümleri ile dijital varlığınızı güçlendirin. 
               Şeffaf fiyatlandırma ve esnek paketler ile ihtiyaçlarınıza uygun çözümü bulun.
             </p>
@@ -241,7 +241,7 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Fiyat Kartları Bölümü */}
-      <section className="py-20 relative overflow-hidden bg-[#050814]">
+      <section className="py-20 relative overflow-hidden bg-canvas">
         {/* Arka plan blur efekti */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-purple-950/10 rounded-full blur-[130px] pointer-events-none" />
         
@@ -264,10 +264,10 @@ export default function SEOPricingContent() {
                   boxShadow: "0 30px 60px -15px rgba(168, 85, 247, 0.2)",
                   borderColor: plan.popular ? "rgba(168, 85, 247, 0.6)" : "rgba(255, 255, 255, 0.2)"
                 }}
-                className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 border bg-white/[0.02] backdrop-blur-md ${
+                className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 border bg-white backdrop-blur-md ${
                   plan.popular 
-                    ? "border-purple-500/40 bg-gradient-to-b from-purple-950/10 via-white/[0.02] to-white/[0.02]" 
-                    : "border-white/[0.08]"
+                    ? "border-purple-500/40 bg-gradient-to-b from-purple-950/10 via-white to-white" 
+                    : "border-line"
                 }`}
               >
                 {/* Popüler Paket Glow/Pulse Etkisi */}
@@ -296,17 +296,17 @@ export default function SEOPricingContent() {
 
                 <div>
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                    <p className="text-gray-400 text-xs tracking-wide min-h-[40px] px-4 font-light">{plan.description}</p>
+                    <h3 className="text-2xl font-bold text-ink mb-2">{plan.name}</h3>
+                    <p className="text-ink-muted text-xs tracking-wide min-h-[40px] px-4 font-light">{plan.description}</p>
                     
                     {/* Fiyat */}
                     <div className="my-6">
-                      <span className="text-5xl font-extrabold text-white tracking-tight">{plan.price}</span>
-                      <span className="text-gray-500 text-sm ml-2">/ {plan.period}</span>
+                      <span className="text-5xl font-extrabold text-ink tracking-tight">{plan.price}</span>
+                      <span className="text-ink-faint text-sm ml-2">/ {plan.period}</span>
                     </div>
 
                     {/* Hedef Profil Alt Metni */}
-                    <p className="text-purple-300 text-xs py-2 px-4 bg-purple-500/10 rounded-xl border border-purple-500/20 inline-block max-w-full font-light">
+                    <p className="text-purple-700 text-xs py-2 px-4 bg-purple-500/10 rounded-xl border border-purple-500/20 inline-block max-w-full font-light">
                       {plan.profile}
                     </p>
                   </div>
@@ -314,8 +314,8 @@ export default function SEOPricingContent() {
                   <ul className="space-y-4 mb-8">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
+                        <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-ink-soft text-sm leading-relaxed">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -326,7 +326,7 @@ export default function SEOPricingContent() {
                   className={`w-full py-4 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 group text-sm ${
                     plan.popular
                       ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:shadow-[0_0_35px_rgba(168,85,247,0.6)]"
-                      : "bg-white/[0.04] text-white hover:bg-white/[0.08] border border-white/[0.08]"
+                      : "bg-white text-ink hover:bg-ink/5 border border-line"
                   }`}
                 >
                   Teklif Alın
@@ -342,7 +342,7 @@ export default function SEOPricingContent() {
       <GEOPricingSection />
 
       {/* Neden Ekim Demirci? Değer Önerisi */}
-      <section className="py-20 relative bg-[#0a0f25] border-t border-white/[0.05]">
+      <section className="py-20 relative bg-canvas border-t border-line">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
@@ -352,11 +352,11 @@ export default function SEOPricingContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Neden Benimle Çalışmalısınız?
               </span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light">
+            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
               Yalnızca sıralama değil, ölçülebilir büyüme ve doğrudan ciro odaklı danışmanlık yaklaşımı
             </p>
           </motion.div>
@@ -371,13 +371,13 @@ export default function SEOPricingContent() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: shouldReduceMotion ? 0 : index * 0.1, duration: 0.5 }}
-                  className="bg-white/[0.02] border border-white/[0.05] p-6 rounded-2xl hover:border-purple-500/30 transition-all duration-300"
+                  className="bg-white border border-line p-6 rounded-2xl hover:border-purple-500/30 transition-all duration-300"
                 >
                   <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-purple-400" />
+                    <Icon className="w-6 h-6 text-purple-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-ink mb-2">{item.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed font-light">{item.description}</p>
                 </motion.div>
               );
             })}
@@ -386,7 +386,7 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Fiyatlar Neye Göre Değişir? Kriterler Bölümü */}
-      <section className="py-20 relative bg-[#050814] border-t border-white/[0.05]">
+      <section className="py-20 relative bg-canvas border-t border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
@@ -396,11 +396,11 @@ export default function SEOPricingContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 SEO Danışmanlık Fiyatları Neye Göre Belirlenir?
               </span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light">
+            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
               Her web sitesinin dinamikleri farklıdır. Projenin kapsamını ve gereken bütçeyi belirleyen ana kriterler şunlardır:
             </p>
           </motion.div>
@@ -415,15 +415,15 @@ export default function SEOPricingContent() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: shouldReduceMotion ? 0 : idx * 0.1, duration: 0.5 }}
-                  className="bg-white/[0.02] border border-white/[0.06] p-8 rounded-2xl relative overflow-hidden"
+                  className="bg-white border border-line p-8 rounded-2xl relative overflow-hidden"
                 >
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-blue-500/10 rounded-xl shrink-0">
-                      <Icon className="w-6 h-6 text-blue-400" />
+                      <Icon className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-2">{crit.title}</h3>
-                      <p className="text-gray-400 text-sm leading-relaxed font-light">{crit.description}</p>
+                      <h3 className="text-xl font-bold text-ink mb-2">{crit.title}</h3>
+                      <p className="text-ink-muted text-sm leading-relaxed font-light">{crit.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -434,7 +434,7 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Sektörel Senaryolar ve Gerçekçi Bütçeler */}
-      <section className="py-20 relative bg-[#0a0f25] border-t border-white/[0.05]">
+      <section className="py-20 relative bg-canvas border-t border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
@@ -444,11 +444,11 @@ export default function SEOPricingContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Sektörünüze Göre Bütçe Senaryoları
               </span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light">
+            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
               Hangi sektörde faaliyet gösterdiğinize göre çalışma planı ve hedeflenen hacimler değişiklik gösterir.
             </p>
           </motion.div>
@@ -461,18 +461,18 @@ export default function SEOPricingContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: shouldReduceMotion ? 0 : index * 0.1, duration: 0.5 }}
-                className="bg-white/[0.02] border border-white/[0.06] p-6 rounded-2xl flex flex-col justify-between"
+                className="bg-white border border-line p-6 rounded-2xl flex flex-col justify-between"
               >
                 <div>
-                  <span className="inline-block px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-medium rounded-full mb-4">
+                  <span className="inline-block px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-700 text-xs font-medium rounded-full mb-4">
                     {scen.badge}
                   </span>
-                  <h3 className="text-xl font-bold text-white mb-3">{scen.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">{scen.description}</p>
+                  <h3 className="text-xl font-bold text-ink mb-3">{scen.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed font-light mb-6">{scen.description}</p>
                 </div>
                 <Link 
                   href="/sektorel-seo-hizmetleri"
-                  className="text-purple-400 text-xs font-semibold hover:text-purple-300 inline-flex items-center gap-1 group mt-auto"
+                  className="text-purple-600 text-xs font-semibold hover:text-purple-700 inline-flex items-center gap-1 group mt-auto"
                 >
                   Sektörel Detayları İncele
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -484,7 +484,7 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Freelance Danışman mı, Ajans mı? Karşılaştırma Bölümü */}
-      <section className="py-20 relative bg-[#050814] border-t border-white/[0.05]">
+      <section className="py-20 relative bg-canvas border-t border-line">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
@@ -494,30 +494,30 @@ export default function SEOPricingContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Freelance SEO Uzmanı ile Ajans Karşılaştırması
               </span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light">
+            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
               Bütçenizi değerlendirirken hizmet modelinin avantajlarını ve farklarını göz önünde bulundurun.
             </p>
           </motion.div>
 
-          <div className="overflow-x-auto rounded-2xl border border-white/[0.06] bg-white/[0.01]">
+          <div className="overflow-x-auto rounded-2xl border border-line bg-white">
             <table className="w-full text-left border-collapse text-sm">
               <thead>
-                <tr className="border-b border-white/[0.08] bg-white/[0.02]">
-                  <th className="p-4 text-gray-300 font-semibold">Değerlendirme Kriteri</th>
-                  <th className="p-4 text-purple-400 font-semibold">Freelance SEO (Ekim Demirci)</th>
-                  <th className="p-4 text-gray-400 font-semibold">Klasik SEO Ajansları</th>
+                <tr className="border-b border-line bg-white">
+                  <th className="p-4 text-ink-soft font-semibold">Değerlendirme Kriteri</th>
+                  <th className="p-4 text-purple-600 font-semibold">Freelance SEO (Ekim Demirci)</th>
+                  <th className="p-4 text-ink-muted font-semibold">Klasik SEO Ajansları</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/[0.04]">
+              <tbody className="divide-y divide-line">
                 {criteriaRows.map((row) => (
-                  <tr key={row.kriter} className="hover:bg-white/[0.01] transition-colors">
-                    <td className="p-4 text-white font-medium">{row.kriter}</td>
-                    <td className="p-4 text-gray-300 font-light">{row.freelance}</td>
-                    <td className="p-4 text-gray-500 font-light">{row.ajans}</td>
+                  <tr key={row.kriter} className="hover:bg-ink/[0.03] transition-colors">
+                    <td className="p-4 text-ink font-medium">{row.kriter}</td>
+                    <td className="p-4 text-ink-soft font-light">{row.freelance}</td>
+                    <td className="p-4 text-ink-faint font-light">{row.ajans}</td>
                   </tr>
                 ))}
               </tbody>
@@ -527,7 +527,7 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Çalışma Süreci Bölümü */}
-      <section className="py-20 relative bg-[#0a0f25] border-t border-white/[0.05]">
+      <section className="py-20 relative bg-canvas border-t border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
@@ -537,12 +537,12 @@ export default function SEOPricingContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Adım Adım Çalışma Süreci
               </span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light">
-              Danışmanlık boyunca uyguladığımız şeffaf ve metodolojik yaklaşım
+            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
+              Danışmanlık boyunca uyguladığım şeffaf ve metodolojik yaklaşım
             </p>
           </motion.div>
 
@@ -575,11 +575,11 @@ export default function SEOPricingContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: shouldReduceMotion ? 0 : i * 0.1, duration: 0.5 }}
-                className="bg-white/[0.02] border border-white/[0.05] p-6 rounded-2xl relative"
+                className="bg-white border border-line p-6 rounded-2xl relative"
               >
                 <div className="text-3xl font-extrabold text-purple-500/30 mb-3 font-mono">{st.step}</div>
-                <h3 className="text-lg font-bold text-white mb-2">{st.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed font-light">{st.desc}</p>
+                <h3 className="text-lg font-bold text-ink mb-2">{st.title}</h3>
+                <p className="text-ink-muted text-sm leading-relaxed font-light">{st.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -587,7 +587,7 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Sıkça Sorulan Sorular Bölümü */}
-      <section className="py-20 relative bg-[#050814] border-t border-white/[0.05]">
+      <section className="py-20 relative bg-canvas border-t border-line">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
@@ -595,7 +595,7 @@ export default function SEOPricingContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-8 text-center tracking-tight">
+            <h3 className="text-xl md:text-2xl font-bold text-ink mb-8 text-center tracking-tight">
               Sıkça Sorulan Sorular
             </h3>
             <FAQ

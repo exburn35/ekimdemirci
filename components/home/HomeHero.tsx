@@ -1,113 +1,150 @@
-import fs from "fs";
-import path from "path";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, MessageSquareText, Search, UserRound, Sparkles, LineChart } from "lucide-react";
+
+const promises = [
+  { icon: UserRound, text: "Tek muhatap: doğrudan benimle" },
+  { icon: Sparkles, text: "Google ve yapay zeka görünürlüğü birlikte" },
+  { icon: LineChart, text: "Her ay sade, anlaşılır rapor" },
+];
+
+const quickLinks = [
+  { label: "Organik trafiğim düşüyor", href: "/seo-hizmetleri" },
+  { label: "ChatGPT'de görünmek istiyorum", href: "/geo-danismanligi" },
+  { label: "Sitem teknik olarak sorunlu", href: "/seo-hizmetleri/teknik-seo" },
+  { label: "Sektörüme özel strateji", href: "/sektorel-seo-hizmetleri" },
+  { label: "Bütçemi planlamak istiyorum", href: "/seo-danismanlik-fiyatlari" },
+];
 
 export default function HomeHero() {
-  const webpPath = path.join(process.cwd(), "public", "ekim-demirci.webp");
-  const photoSrc = fs.existsSync(webpPath) ? "/ekim-demirci.webp" : "/ekim.jpg";
-
   return (
-    <section className="relative bg-[#0a0f25] border-b border-white/5 pt-28 pb-12 md:pt-36 md:pb-16 overflow-hidden">
-      {/* Background radial glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-purple-600/15 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff0d_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-canvas pt-28 pb-14 md:pt-36 md:pb-20">
+      {/* Yumuşak arka plan dokusu */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#161b2e0f_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
+      <div className="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[520px] rounded-full bg-brand/10 blur-[120px]" />
+      <div className="pointer-events-none absolute top-40 left-[-12%] h-[320px] w-[420px] rounded-full bg-accent/10 blur-[110px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Sol Kolon */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
-            {/* H1 Headline (En fazla 2 satır, ~56-64px) */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[62px] font-bold text-white tracking-tight leading-[1.12] mb-6">
-              SEO ve GEO Danışmanı{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                Ekim Demirci
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-7">
+            <h1 className="tracking-tight">
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-semibold text-ink-soft shadow-card">
+                <span className="h-2 w-2 rounded-full bg-accent" />
+                SEO ve GEO Danışmanı Ekim Demirci
+              </span>
+              <span className="block text-[40px] font-bold leading-[1.08] text-ink sm:text-5xl lg:text-[60px]">
+                Aranan değil,{" "}
+                <span className="relative whitespace-nowrap text-brand">
+                  önerilen
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 200 12"
+                    className="absolute -bottom-2 left-0 h-3 w-full text-accent/60"
+                    preserveAspectRatio="none"
+                  >
+                    <path d="M2 9c40-6 120-8 196-3" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                  </svg>
+                </span>{" "}
+                marka olun.
               </span>
             </h1>
 
-            {/* 2 Cümle (freelance SEO uzmanı ifadesi içeren açıklama) */}
-            <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl font-normal">
-              Arama motorlarında ve üretken yapay zeka yanıtlarında işletmeninizin görünürlüğünü kalıcı olarak artıran bağımsız danışmanlık hizmeti sunuyorum. Deneyimli bir freelance SEO uzmanı olarak, veri odaklı semantik stratejiler ve doğrudan iletişimle markanızı dijitalde zirveye taşıyorum.
+            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft">
+              Müşterileriniz artık yalnızca Google&apos;a yazmıyor; aynı soruyu ChatGPT&apos;ye, Gemini&apos;ye,
+              Perplexity&apos;ye de soruyor. Ben sitenizi bu iki dünyada da doğru anlaşılan, güven veren ve kaynak
+              gösterilen bir yapıya kavuşturuyorum. Arada ajans katmanı yok: stratejiyi kuran da, uygulamayı takip eden
+              de, sonucu size anlatan da benim.
             </p>
 
-            {/* CTA Butonları: /#analiz ve /#vakalar */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/#analiz"
-                className="px-7 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold text-base text-center hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 shadow-[0_0_25px_rgba(139,92,246,0.35)] hover:scale-[1.02] flex items-center justify-center gap-2 group"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-white shadow-[0_8px_24px_-8px_rgba(61,61,214,0.6)] transition-all hover:bg-brand-dark"
               >
-                Ücretsiz SEO Analizi Al
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                Ücretsiz ön analiz iste
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/#vakalar"
-                className="px-7 py-3.5 bg-white/5 hover:bg-white/10 text-white border border-white/15 rounded-full font-semibold text-base text-center transition-all duration-300 hover:border-white/30"
+                href="/#surec"
+                className="inline-flex items-center justify-center rounded-full border border-line-strong bg-white px-7 py-3.5 font-semibold text-ink transition-colors hover:border-ink/30"
               >
-                Vaka Analizlerini Gör
+                Nasıl çalıştığımı görün
               </Link>
             </div>
 
-            {/* 3 Kısa Güven Maddesi (ikonlu, tek satır) */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-white/10">
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Doğrudan İletişim (Aracı Yok)</span>
+            <ul className="mt-10 grid grid-cols-1 gap-3 border-t border-line pt-6 sm:grid-cols-3">
+              {promises.map(({ icon: Icon, text }) => (
+                <li key={text} className="flex items-center gap-2.5 text-sm font-medium text-ink-soft">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-light text-brand">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Fotoğraf + hedef kartları */}
+          <div className="lg:col-span-5">
+            <div className="relative mx-auto w-full max-w-[420px]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-line bg-canvas-alt shadow-lift">
+                <Image
+                  src="/ekim.jpg"
+                  alt="SEO ve GEO Danışmanı Ekim Demirci"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 90vw, 420px"
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/60 to-transparent" />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <p className="text-base font-bold">Ekim Demirci</p>
+                  <p className="text-sm text-white/80">Bağımsız SEO &amp; GEO Danışmanı · İstanbul</p>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300">
-                <Zap className="w-4 h-4 text-blue-400 shrink-0" />
-                <span>Google & AI (GEO) Odaklı</span>
+
+              <div className="absolute -left-6 top-10 hidden w-60 rounded-2xl border border-line bg-white p-4 shadow-lift sm:block">
+                <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-ink-muted">
+                  <Search className="h-3.5 w-3.5 text-brand" /> Google sonuçları
+                </div>
+                <div className="space-y-1.5">
+                  <div className="h-2 w-24 rounded bg-accent/70" />
+                  <div className="h-2 w-full rounded bg-ink/10" />
+                  <div className="h-2 w-4/5 rounded bg-ink/10" />
+                </div>
+                <p className="mt-3 text-[11px] font-medium text-ink-muted">Hedef: ilk sayfada, doğru sorguda</p>
               </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300">
-                <ShieldCheck className="w-4 h-4 text-purple-400 shrink-0" />
-                <span>Şeffaf Aylık Raporlama</span>
+
+              <div className="absolute -right-5 bottom-24 hidden w-64 rounded-2xl border border-line bg-white p-4 shadow-lift sm:block">
+                <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-ink-muted">
+                  <MessageSquareText className="h-3.5 w-3.5 text-accent" /> Yapay zeka cevabı
+                </div>
+                <div className="space-y-1.5">
+                  <div className="h-2 w-full rounded bg-ink/10" />
+                  <div className="h-2 w-5/6 rounded bg-ink/10" />
+                </div>
+                <div className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-accent-light px-2.5 py-1 text-[11px] font-semibold text-accent-dark">
+                  Kaynak: siteniz.com
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Sağ Kolon: Fotoğraf Kartı */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden border border-white/15 bg-gradient-to-b from-white/10 to-white/5 shadow-2xl group flex items-center justify-center">
-              {photoSrc ? (
-                <>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f25] via-transparent to-transparent z-10 opacity-70" />
-                  <Image
-                    src={photoSrc}
-                    alt="SEO ve GEO Danışmanı Ekim Demirci"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 420px"
-                    priority
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  />
-                </>
-              ) : (
-                /* Baş Harfli (ED) Şık Avatar Fallback */
-                <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center select-none">
-                  <div className="w-32 h-32 rounded-3xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-blue-500 p-1 shadow-[0_0_40px_rgba(139,92,246,0.4)] mb-6 flex items-center justify-center">
-                    <div className="w-full h-full rounded-[22px] bg-[#0a0f25] flex items-center justify-center">
-                      <span className="text-4xl font-extrabold bg-gradient-to-r from-purple-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                        ED
-                      </span>
-                    </div>
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">
-                    Ekim Demirci
-                  </div>
-                  <div className="text-sm font-semibold text-purple-300">
-                    SEO & GEO Danışmanı
-                  </div>
-                </div>
-              )}
-
-              {/* Fotoğraf kartı üzerindeki alt rozet */}
-              <div className="absolute bottom-4 left-4 right-4 z-20 p-3.5 rounded-2xl bg-[#0a0f25]/90 backdrop-blur-md border border-white/10 flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-bold text-white">Ekim Demirci</div>
-                  <div className="text-xs text-gray-400">SEO & GEO Danışmanı</div>
-                </div>
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
-              </div>
-            </div>
+        {/* İhtiyaca göre hızlı yönlendirme */}
+        <div className="mt-14 rounded-2xl border border-line bg-white/80 p-4 shadow-card backdrop-blur sm:p-5">
+          <p className="mb-3 text-sm font-semibold text-ink">Sizi buraya ne getirdi?</p>
+          <div className="flex flex-wrap gap-2">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group inline-flex items-center gap-1.5 rounded-full border border-line bg-canvas px-4 py-2 text-sm font-medium text-ink-soft transition-colors hover:border-brand/40 hover:bg-brand-light hover:text-brand"
+              >
+                {link.label}
+                <ArrowRight className="h-3.5 w-3.5 opacity-50 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

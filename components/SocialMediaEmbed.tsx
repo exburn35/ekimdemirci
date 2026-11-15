@@ -20,7 +20,7 @@ export default function SocialMediaEmbed() {
 
   return (
     <div className="glass-strong rounded-2xl p-6 mt-8 overflow-hidden">
-      <h3 className="text-xl font-bold text-white mb-4">Sosyal Medya</h3>
+      <h3 className="text-xl font-bold text-ink mb-4">Sosyal Medya</h3>
       <div className="bg-white rounded-xl overflow-hidden min-h-[400px]">
         <a
           className="twitter-timeline"

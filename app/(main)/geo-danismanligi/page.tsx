@@ -34,15 +34,15 @@ export default function GEODanismanligi() {
     },
     {
       question: "Semantik Üçlüler (Semantic Triplets - Özne-Yüklem-Nesne) GEO ile nasıl ilişkilidir?",
-      answer: "Büyük Dil Modelleri (LLMs) bilgiyi ilişkisel grafikler (Knowledge Graphs) üzerinden işler. Sitenizdeki verileri Özne-Yüklem-Nesne formatında yapılandırdığımızda, modeller sitenizdeki gerçekleri halüsinasyona düşmeden hatasız anlar ve alıntılar."
+      answer: "Büyük Dil Modelleri (LLMs) bilgiyi ilişkisel grafikler (Knowledge Graphs) üzerinden işler. Sitenizdeki verileri Özne-Yüklem-Nesne formatında yapılandırdığımda, modeller sitenizdeki gerçekleri halüsinasyona düşmeden hatasız anlar ve alıntılar."
     },
     {
       question: "AI Query Fan-Out tekniği GEO stratejisinde neden önemlidir?",
-      answer: "Yapay zeka arama mimarisine göre, kullanıcı bir arama yaptığında yapay zeka motoru arka planda bu aramayı onlarca alt sorguya (sub-queries) böler. GEO çalışması ile içeriğinizi bu alt sorgu ağacının tamamını kapsayacak şekilde optimize ederiz."
+      answer: "Yapay zeka arama mimarisine göre, kullanıcı bir arama yaptığında yapay zeka motoru arka planda bu aramayı onlarca alt sorguya (sub-queries) böler. GEO çalışması ile içeriğinizi bu alt sorgu ağacının tamamını kapsayacak şekilde optimize ederim."
     },
     {
       question: "Co-Citation (Marka Birlikteliği) AI güven skorunu nasıl etkiler?",
-      answer: "Yapay zeka motorları bir markanın yetkinliğini dış web kaynaklarında o markanın adının hangi kavramlar ve sektör liderleriyle birlikte anıldığına bakarak ölçer. Otoriter mecralarda kurguladığımız co-citation yapısı AI güven skorunuzu doğrudan yükseltir."
+      answer: "Yapay zeka motorları bir markanın yetkinliğini dış web kaynaklarında o markanın adının hangi kavramlar ve sektör liderleriyle birlikte anıldığına bakarak ölçer. Otoriter mecralarda kurguladığım co-citation yapısı AI güven skorunuzu doğrudan yükseltir."
     },
     {
       question: "GEO optimizasyonu ne kadar sürede somut sonuç verir?",
@@ -169,20 +169,20 @@ export default function GEODanismanligi() {
         blogCategory="yapay-zeka-seo"
       >
         {/* Contextual Internal Link Banner to Sub-Page */}
-        <section className="py-12 bg-[#0d1433] border-t border-b border-cyan-500/20">
+        <section className="py-12 bg-white border-t border-b border-cyan-500/20">
           <div className="max-w-5xl mx-auto px-4 text-center">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+            <h3 className="text-xl md:text-2xl font-bold text-ink mb-3">
               Platform Bazlı Uygulama Taktiklerini Keşfedin
             </h3>
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+            <p className="text-ink-soft text-base md:text-lg leading-relaxed">
               Generative Engine Optimization'ın ne olduğunu ve genel metodolojisini kavradıktan sonra, her bir platform için özel kurgulanan{" "}
               <a 
                 href="/seo-hizmetleri/yapay-zeka-seo" 
-                className="text-cyan-400 font-semibold underline hover:text-cyan-300 transition-colors"
+                className="text-cyan-600 font-semibold underline hover:text-cyan-700 transition-colors"
               >
                 yapay zeka motorlarına özel uygulama stratejileri
               </a>{" "}
-              sayfamızı inceleyebilir, ChatGPT, Perplexity, Claude ve Google AI Overviews optimizasyon adımlarını uygulayabilirsiniz.
+              sayfamı inceleyebilir, ChatGPT, Perplexity, Claude ve Google AI Overviews optimizasyon adımlarını uygulayabilirsiniz.
             </p>
           </div>
         </section>

@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -61,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`${inter.variable} font-sans antialiased text-gray-200 bg-[#0a0f25]`}>
+      <body className={`${inter.variable} font-sans antialiased text-ink bg-canvas`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe 

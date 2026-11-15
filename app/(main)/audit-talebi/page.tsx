@@ -47,7 +47,7 @@ export default function AuditRequest() {
       <Breadcrumb items={[{ name: "Audit Talebi", href: "/audit-talebi" }]} />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
@@ -59,16 +59,16 @@ export default function AuditRequest() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-blue-400 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-blue-600 mb-6">
               <Search className="w-4 h-4" />
               Ücretsiz SEO Audit
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 SEO Audit Talebi
               </span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed">
               Web sitenizin SEO durumunu ücretsiz analiz edin. Detaylı rapor ve öncelikli öneriler 
               ile iyileştirme fırsatlarını keşfedin.
             </p>
@@ -87,11 +87,11 @@ export default function AuditRequest() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Audit Kapsamı
               </span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted max-w-2xl mx-auto">
               Web sitenizi kapsamlı şekilde analiz ediyorum
             </p>
           </motion.div>
@@ -106,13 +106,13 @@ export default function AuditRequest() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="glass-strong p-6 rounded-xl text-center hover:bg-white/10 transition-all duration-300"
+                  className="glass-strong p-6 rounded-xl text-center hover:bg-ink/5 transition-all duration-300"
                 >
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-white" />
+                    <Icon className="w-8 h-8 text-ink" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-ink mb-2">{feature.title}</h3>
+                  <p className="text-ink-muted text-sm">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -126,7 +126,7 @@ export default function AuditRequest() {
             transition={{ duration: 0.6 }}
             className="glass-strong rounded-2xl p-8 md:p-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">
+            <h3 className="text-2xl font-bold text-ink mb-6 text-center">
               Audit Raporunda Yer Alan Analizler
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -139,8 +139,8 @@ export default function AuditRequest() {
                   transition={{ delay: index * 0.05, duration: 0.5 }}
                   className="flex items-center gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                  <span className="text-gray-300">{item}</span>
+                  <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-ink-soft">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -149,7 +149,7 @@ export default function AuditRequest() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-24 bg-gradient-to-b from-canvas to-canvas-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -159,7 +159,7 @@ export default function AuditRequest() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Süreç Nasıl İşliyor?
               </span>
             </h2>
@@ -194,15 +194,15 @@ export default function AuditRequest() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="glass-strong p-8 rounded-2xl hover:bg-white/10 transition-all duration-300"
+                className="glass-strong p-8 rounded-2xl hover:bg-ink/5 transition-all duration-300"
               >
                 <div className="flex items-start gap-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-white text-lg">
                     {item.step}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-gray-400 leading-relaxed">{item.description}</p>
+                    <h3 className="text-2xl font-bold text-ink mb-3">{item.title}</h3>
+                    <p className="text-ink-muted leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -222,11 +222,11 @@ export default function AuditRequest() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Audit Talebinizi Oluşturun
               </span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted max-w-2xl mx-auto">
               Formu doldurun, 48 saat içinde detaylı SEO audit raporunuzu alın
             </p>
           </motion.div>

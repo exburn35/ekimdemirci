@@ -51,30 +51,42 @@ export default function HomeAuditForm() {
       setIsSubmitting(false);
     }
   };
+  const targets = [
+    { value: "SEO", label: "Google sıralamaları" },
+    { value: "GEO", label: "Yapay zeka görünürlüğü" },
+    { value: "İkisi (SEO + GEO)", label: "İkisi birden" },
+  ];
 
   return (
-    <section id="analiz" className="bg-[#0d153a] border-b border-white/5 py-12 md:py-16 relative">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-            Ücretsiz SEO & GEO Analizi
+    <section id="analiz" className="scroll-mt-24 bg-night py-20 md:py-28">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div className="lg:col-span-6">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-accent-light/80">Ücretsiz ön analiz</p>
+          <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[44px]">
+            Sitenizin bugün nerede durduğunu birlikte görelim.
           </h2>
-          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-            Web sitenizin arama motorlarındaki teknik sağlığını ve yapay zeka arama motorlarındaki görünürlüğünü ücretsiz inceleyelim.
+          <p className="mt-5 text-lg leading-relaxed text-white/70">
+            Adresinizi bırakın; sitenizin teknik sağlığına, içerik fırsatlarına ve yapay zeka asistanlarında markanızın
+            nasıl anıldığına bakayım. Bulguları satış konuşması olmadan, açık bir dille iletirim.
           </p>
-          <div className="inline-flex items-center gap-2 mt-4 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs sm:text-sm font-medium">
-            <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>48 saat içinde detaylı rapor e-postanıza iletilir</span>
-          </div>
+          <ul className="mt-8 space-y-3">
+            {["Teknik sağlık ve indeksleme kontrolü", "En hızlı kazanılabilecek içerik fırsatları", "ChatGPT, Gemini ve Perplexity'de marka durumu"].map((item) => (
+              <li key={item} className="flex items-center gap-3 text-white/85">
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/80">
+            <Clock className="h-4 w-4" /> 48 saat içinde e-postanıza iletilir
+          </p>
         </div>
 
-        <div className="p-6 sm:p-10 rounded-3xl bg-[#0a0f25] border border-white/10 shadow-2xl relative">
-          <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Site URL */}
+        <div className="lg:col-span-6">
+          <form onSubmit={handleSubmit} className="space-y-5 rounded-3xl bg-white p-6 shadow-lift sm:p-9">
             <div>
-              <label htmlFor="audit-website" className="block text-sm font-semibold text-gray-200 mb-2">
-                <Globe className="w-4 h-4 inline mr-2 text-purple-400" />
-                Web Sitesi Adresi *
+              <label htmlFor="audit-website" className="mb-2 flex items-center gap-2 text-sm font-semibold text-ink">
+                <Globe className="h-4 w-4 text-brand" /> Web sitenizin adresi
               </label>
               <input
                 type="text"
@@ -84,15 +96,13 @@ export default function HomeAuditForm() {
                 value={formData.website}
                 onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                 placeholder="ornek.com"
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all text-sm"
+                className="w-full rounded-xl border border-line bg-canvas px-4 py-3 text-sm text-ink placeholder-ink-faint transition-all focus:border-brand focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand/10"
               />
             </div>
 
-            {/* E-posta */}
             <div>
-              <label htmlFor="audit-email" className="block text-sm font-semibold text-gray-200 mb-2">
-                <Mail className="w-4 h-4 inline mr-2 text-purple-400" />
-                E-posta Adresiniz *
+              <label htmlFor="audit-email" className="mb-2 flex items-center gap-2 text-sm font-semibold text-ink">
+                <Mail className="h-4 w-4 text-brand" /> E-posta adresiniz
               </label>
               <input
                 type="email"
@@ -102,67 +112,62 @@ export default function HomeAuditForm() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="adiniz@sirketiniz.com"
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all text-sm"
+                className="w-full rounded-xl border border-line bg-canvas px-4 py-3 text-sm text-ink placeholder-ink-faint transition-all focus:border-brand focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand/10"
               />
             </div>
 
-            {/* Hedef (SEO / GEO / İkisi) */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-200 mb-2">
-                <Target className="w-4 h-4 inline mr-2 text-purple-400" />
-                Analiz Hedefiniz *
-              </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {[
-                  { value: "SEO", label: "SEO (Google SERP)" },
-                  { value: "GEO", label: "GEO (AI Yanıtları)" },
-                  { value: "İkisi (SEO + GEO)", label: "İkisi (SEO + GEO)" },
-                ].map((opt) => (
+            <fieldset>
+              <legend className="mb-2 flex items-center gap-2 text-sm font-semibold text-ink">
+                <Target className="h-4 w-4 text-brand" /> En çok neyi merak ediyorsunuz?
+              </legend>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+                {targets.map((opt) => (
                   <button
                     key={opt.value}
                     type="button"
+                    aria-pressed={formData.target === opt.value}
                     onClick={() => setFormData({ ...formData, target: opt.value })}
-                    className={`py-3 px-4 rounded-xl border text-xs sm:text-sm font-medium transition-all text-center ${
+                    className={`rounded-xl border px-3 py-3 text-center text-sm font-medium transition-all ${
                       formData.target === opt.value
-                        ? "bg-purple-600/30 border-purple-500 text-white shadow-sm"
-                        : "bg-white/5 border-white/10 text-gray-300 hover:bg-white/10"
+                        ? "border-brand bg-brand-light text-brand"
+                        : "border-line bg-white text-ink-soft hover:border-line-strong"
                     }`}
                   >
                     {opt.label}
                   </button>
                 ))}
               </div>
-            </div>
+            </fieldset>
 
-            {/* Durum Bildirimleri */}
             {status === "success" && (
-              <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                <span>Talebiniz başarıyla alındı! Analiziniz 48 saat içinde e-posta adresinize iletilecektir.</span>
+              <div className="flex items-center gap-2 rounded-xl border border-accent/20 bg-accent-light p-4 text-sm text-accent-dark">
+                <CheckCircle2 className="h-5 w-5 shrink-0" />
+                <span>Talebiniz bana ulaştı. Ön analizinizi 48 saat içinde e-posta adresinize göndereceğim.</span>
               </div>
             )}
 
             {status === "error" && (
-              <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-300 text-sm">
-                {errorMessage}
-              </div>
+              <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">{errorMessage}</div>
             )}
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-xl font-bold text-base transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.3)] disabled:opacity-50 flex items-center justify-center gap-2 group cursor-pointer"
+              className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-brand py-4 text-base font-semibold text-white transition-colors hover:bg-brand-dark disabled:opacity-50"
             >
               {isSubmitting ? (
-                <span>Analiz Talebi Gönderiliyor...</span>
+                <span>Gönderiliyor...</span>
               ) : (
                 <>
-                  <span>Ücretsiz Analiz Raporunu İste</span>
-                  <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span>Ücretsiz ön analizimi iste</span>
+                  <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </>
               )}
             </button>
+            <p className="text-center text-xs text-ink-faint">
+              Bilgileriniz yalnızca bu talep için kullanılır.{" "}
+              <a href="/gizlilik-politikasi" className="underline underline-offset-2 hover:text-ink-muted">Gizlilik politikası</a>
+            </p>
           </form>
         </div>
       </div>

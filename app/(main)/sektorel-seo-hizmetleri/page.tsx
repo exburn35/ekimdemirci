@@ -91,7 +91,7 @@ export default function SectoralSEOServices() {
       <Breadcrumb items={[{ name: "Sektörel SEO Hizmetleri", href: "/sektorel-seo-hizmetleri" }]} />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
@@ -99,11 +99,11 @@ export default function SectoralSEOServices() {
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Sektörel SEO Hizmetleri
               </span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl leading-relaxed">
+            <p className="text-xl text-ink-muted max-w-3xl leading-relaxed">
               Her sektörün kendine özgü ihtiyaçları vardır. Sektörünüze özel SEO stratejileri ile 
               dijital varlığınızı güçlendirin ve hedef kitlenize daha etkili şekilde ulaşın.
             </p>
@@ -116,11 +116,11 @@ export default function SectoralSEOServices() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                Hizmet Verdiğimiz Sektörler
+              <span className="text-ink">
+                Hizmet Verdiğim Sektörler
               </span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted max-w-2xl mx-auto">
               Sektörünüze özel SEO çözümleri ile dijital pazarda öne çıkın
             </p>
           </div>
@@ -132,18 +132,18 @@ export default function SectoralSEOServices() {
                 <div key={sector.href}>
                   <Link
                     href={sector.href}
-                    className="block glass-strong p-8 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+                    className="block glass-strong p-8 rounded-xl hover:bg-ink/5 transition-all duration-300 group"
                   >
                     <div className={`w-16 h-16 bg-gradient-to-br ${sector.gradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-8 h-8 text-white" />
+                      <Icon className="w-8 h-8 text-ink" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-2xl font-bold text-ink mb-3 group-hover:text-blue-600 transition-colors">
                       {sector.title}
                     </h3>
-                    <p className="text-gray-400 mb-4 leading-relaxed">
+                    <p className="text-ink-muted mb-4 leading-relaxed">
                       {sector.description}
                     </p>
-                    <div className="flex items-center gap-2 text-blue-400 font-medium">
+                    <div className="flex items-center gap-2 text-blue-600 font-medium">
                       Detayları Gör
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -156,15 +156,15 @@ export default function SectoralSEOServices() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-24 bg-gradient-to-b from-canvas to-canvas-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="text-ink">
                 Neden Sektörel SEO?
               </span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted max-w-2xl mx-auto">
               Her sektörün kendine özgü SEO ihtiyaçları vardır
             </p>
           </div>
@@ -173,10 +173,10 @@ export default function SectoralSEOServices() {
             {benefits.map((benefit) => (
               <div
                 key={benefit}
-                className="glass-strong p-6 rounded-xl hover:bg-white/10 transition-all duration-300"
+                className="glass-strong p-6 rounded-xl hover:bg-ink/5 transition-all duration-300"
               >
-                <CheckCircle2 className="w-6 h-6 text-blue-400 mb-3" />
-                <h3 className="text-lg font-semibold text-white mb-2">{benefit}</h3>
+                <CheckCircle2 className="w-6 h-6 text-blue-600 mb-3" />
+                <h3 className="text-lg font-semibold text-ink mb-2">{benefit}</h3>
               </div>
             ))}
           </div>

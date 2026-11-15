@@ -1,144 +1,98 @@
-import fs from "fs";
-import path from "path";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Linkedin, Instagram, Youtube } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
-const tools = [
-  { name: "Google Search Console", shortName: "GSC", src: "/google-search-console.webp" },
-  { name: "Google Analytics 4", shortName: "GA4", src: "/google-analytics-4-logo.webp" },
-  { name: "Ahrefs", shortName: "Ahrefs", src: "/ahrefs-logo.png" },
-  { name: "Semrush", shortName: "Semrush", src: "/semrush-logo.png" },
-  { name: "Screaming Frog", shortName: "Screaming Frog", src: "/screaming-frog-logo.png" },
-  { name: "Python", shortName: "Python", isPython: true },
+const defaultBio =
+  "Markaların hem Google'da hem de yapay zeka asistanlarının cevaplarında bulunabilir olması için çalışan bağımsız bir SEO ve GEO danışmanıyım. Beş yılı aşkın süredir e-ticaretten sağlığa farklı sektörlerdeki sitelerin organik görünürlüğünü büyütüyorum. Teknik altyapıyı, içerik mimarisini ve marka otoritesini ayrı işler olarak değil, birbirini besleyen tek bir sistem olarak ele alıyorum.";
+
+const facts = [
+  { value: "5+ yıl", label: "SEO deneyimi" },
+  { value: "9", label: "Sektöre özel yol haritası" },
+  { value: "60+", label: "Yayımlanmış rehber" },
 ];
 
+const tools = [
+  { name: "Google Search Console", src: "/google-search-console.webp" },
+  { name: "Google Analytics 4", src: "/google-analytics-4-logo.webp" },
+  { name: "Ahrefs", src: "/ahrefs-logo.png" },
+  { name: "Semrush", src: "/semrush-logo.png" },
+  { name: "Screaming Frog", src: "/screaming-frog-logo.png" },
+];
+
+const socials = [
+  { icon: Linkedin, label: "LinkedIn", href: SITE_CONFIG.sameAs.find((u) => u.includes("linkedin")) },
+  { icon: Instagram, label: "Instagram", href: SITE_CONFIG.sameAs.find((u) => u.includes("instagram")) },
+  { icon: Youtube, label: "YouTube", href: SITE_CONFIG.sameAs.find((u) => u.includes("youtube")) },
+].filter((s) => s.href);
+
 export default function HomeAboutPreview() {
-  const webpPath = path.join(process.cwd(), "public", "ekim-demirci.webp");
-  const photoSrc = fs.existsSync(webpPath) ? "/ekim-demirci.webp" : "/ekim.jpg";
-
-  const defaultBio = "Ben Ekim Demirci; markaların Google arama sonuçlarında ve yeni nesil yapay zeka arama motorlarında organik olarak büyümesini sağlayan bağımsız SEO ve GEO danışmanıyım. 5 yılı aşkın süredir e-ticaretten sağlığa onlarca sektörde veriye dayalı stratejilerle sürdürülebilir trafik ve ciro artışı yönetiyorum. Teknik mükemmellik, semantik içerik mimarisi ve varlık tabanlı optimizasyonu tek elden kurgulayarak doğrudan sonuç odaklı çalışıyorum.";
-
   return (
-    <section className="bg-[#0d153a] border-b border-white/5 py-12 md:py-16 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Sol Kolon: Fotoğraf Kartı */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/10 to-white/5 shadow-2xl group flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f25] via-transparent to-transparent z-10 opacity-70" />
-              <Image
-                src={photoSrc}
-                alt="SEO ve GEO Danışmanı Ekim Demirci"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
+    <section id="hakkimda" className="bg-canvas py-20 md:py-28">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div className="lg:col-span-5">
+          <div className="relative mx-auto aspect-square max-w-[440px] overflow-hidden rounded-[32px] border border-line bg-canvas-alt shadow-lift">
+            <Image
+              src="/ekim.jpg"
+              alt="Ekim Demirci"
+              fill
+              sizes="(max-width: 1024px) 90vw, 440px"
+              className="object-cover object-top"
+            />
+          </div>
+        </div>
 
-              {/* Fotoğraf kartı üzerindeki alt rozet */}
-              <div className="absolute bottom-4 left-4 right-4 z-20 p-3.5 rounded-2xl bg-[#0a0f25]/90 backdrop-blur-md border border-white/10 flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-bold text-white">Ekim Demirci</div>
-                  <div className="text-xs text-gray-400">SEO & GEO Danışmanı</div>
-                </div>
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
+        <div className="lg:col-span-7">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Ben kimim?</p>
+          <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-ink sm:text-4xl lg:text-[44px]">
+            Merhaba, ben Ekim Demirci.
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-ink-soft">{SITE_CONFIG.bioText || defaultBio}</p>
+
+          <dl className="mt-8 grid grid-cols-3 gap-4 rounded-2xl border border-line bg-white p-5 shadow-card">
+            {facts.map((fact) => (
+              <div key={fact.label}>
+                <dt className="sr-only">{fact.label}</dt>
+                <dd className="text-2xl font-bold tracking-tight text-ink">{fact.value}</dd>
+                <dd className="text-xs font-medium text-ink-muted">{fact.label}</dd>
               </div>
-            </div>
+            ))}
+          </dl>
+
+          <div className="mt-8">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink-faint">Her gün kullandığım araçlar</p>
+            <ul className="flex flex-wrap gap-2">
+              {tools.map((tool) => (
+                <li key={tool.name} className="flex items-center gap-2 rounded-full border border-line bg-white py-1.5 pl-1.5 pr-3.5 text-sm font-medium text-ink-soft">
+                  <span className="relative h-6 w-6 overflow-hidden rounded-full bg-canvas">
+                    <Image src={tool.src} alt="" fill sizes="24px" className="object-contain p-0.5" />
+                  </span>
+                  {tool.name}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Sağ Kolon: Bio, Araç Logoları ve Sosyal Linkler */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-              Ekim Demirci Kimdir?
-            </h2>
-
-            {/* Biyografi Metni (bioText doluysa onu, boşsa defaultBio'yu gösterir) */}
-            <div className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
-              <p>{SITE_CONFIG.bioText || defaultBio}</p>
-            </div>
-
-            {/* Araç Logoları (GSC, GA4, Ahrefs, Semrush, Screaming Frog, Python) */}
-            <div className="mb-6">
-              <div className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
-                Kullandığım Temel Analiz & Veri Araçları
-              </div>
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
-                {tools.map((tool) => (
-                  <div
-                    key={tool.name}
-                    className="h-12 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center p-2 group hover:border-purple-500/30 transition-colors"
-                    title={tool.name}
-                  >
-                    {tool.isPython ? (
-                      <span className="text-xs font-bold text-amber-400 font-mono">
-                        Python
-                      </span>
-                    ) : tool.src ? (
-                      <div className="relative w-full h-6">
-                        <Image
-                          src={tool.src}
-                          alt={tool.name}
-                          fill
-                          className="object-contain filter grayscale group-hover:grayscale-0 transition-all opacity-75 group-hover:opacity-100"
-                        />
-                      </div>
-                    ) : (
-                      <span className="text-xs font-semibold text-gray-300">
-                        {tool.shortName}
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Sosyal Profil Linkleri & Hakkımda Sayfası Butonu */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
-              <div className="flex items-center gap-3">
-                {SITE_CONFIG.sameAs.map((url) => {
-                  let label = "Sosyal Profil";
-                  let IconComponent: any = null;
-
-                  if (url.includes("linkedin")) {
-                    label = "LinkedIn";
-                    IconComponent = Linkedin;
-                  } else if (url.includes("instagram")) {
-                    label = "Instagram";
-                    IconComponent = Instagram;
-                  } else if (url.includes("youtube")) {
-                    label = "YouTube";
-                    IconComponent = Youtube;
-                  }
-
-                  return (
-                    <a
-                      key={url}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-purple-600 hover:border-purple-600 transition-all"
-                      aria-label={label}
-                    >
-                      {IconComponent ? (
-                        <IconComponent className="w-4 h-4" />
-                      ) : (
-                        <span className="text-xs font-bold font-mono">
-                          {url.includes("medium") ? "M" : url.includes("pinterest") ? "P" : "•"}
-                        </span>
-                      )}
-                    </a>
-                  );
-                })}
-              </div>
-
-              <Link
-                href="/hakkimda"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors group"
-              >
-                <span>Hakkımda Daha Fazla Bilgi Edinin</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <Link
+              href="/hakkimda"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-night-soft"
+            >
+              Hikâyemin tamamı <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <div className="flex gap-2">
+              {socials.map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-ink-muted transition-colors hover:border-brand/40 hover:text-brand"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

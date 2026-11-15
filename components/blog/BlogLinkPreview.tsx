@@ -137,7 +137,7 @@ export default function BlogLinkPreview() {
           className="hidden md:block w-80 pointer-events-none"
         >
           <Link href={`/blog/${data.slug}`} className="block relative pointer-events-auto">
-            <div className="glass-strong rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] border border-white/10 hover:border-blue-500/50 hover:bg-white/15 transition-all duration-300">
+            <div className="glass-strong rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] border border-line hover:border-blue-500/50 hover:bg-ink/5 transition-all duration-300">
               {data.featuredImage && (
                 <div className="w-full h-40 overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent z-10" />
@@ -150,22 +150,22 @@ export default function BlogLinkPreview() {
                 </div>
               )}
               <div className="p-5 relative">
-                <div className="flex items-center gap-2 text-[10px] text-blue-400 font-medium mb-3 uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-[10px] text-blue-600 font-medium mb-3 uppercase tracking-wider">
                   <Calendar className="w-3.5 h-3.5" />
                   {data.publishedAt && formatDateShort(data.publishedAt)}
-                  <span className="mx-1 text-gray-600">•</span>
+                  <span className="mx-1 text-ink-faint">•</span>
                   <Clock className="w-3.5 h-3.5" />
                   {data.readTime || 5} dk okuma
                 </div>
-                <h4 className="text-base font-bold text-white mb-2 leading-tight">
+                <h4 className="text-base font-bold text-ink mb-2 leading-tight">
                   {data.title}
                 </h4>
                 {data.excerpt && (
-                  <p className="text-xs text-gray-400 line-clamp-3 leading-relaxed mb-4">
+                  <p className="text-xs text-ink-muted line-clamp-3 leading-relaxed mb-4">
                     {data.excerpt}
                   </p>
                 )}
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-blue-400 font-bold group">
+                <div className="pt-3 border-t border-line flex items-center justify-between text-blue-600 font-bold group">
                   <span className="text-xs font-bold bg-blue-500/10 px-2 py-1 rounded">Makaleyi Oku</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -173,7 +173,7 @@ export default function BlogLinkPreview() {
             </div>
             
             {/* Arrow */}
-            <div className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-4 h-4 bg-[#0a0f25] border-r border-b border-white/10 rotate-45 -z-10 shadow-lg" />
+            <div className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-4 h-4 bg-canvas border-r border-b border-line rotate-45 -z-10 shadow-lg" />
           </Link>
         </motion.div>
       )}

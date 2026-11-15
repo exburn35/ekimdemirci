@@ -55,11 +55,11 @@ export default function ServicesGrid() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <span className="text-ink">
               SEO Hizmetlerim
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-ink-muted max-w-2xl mx-auto">
             İşinizin ihtiyaçlarına özel kapsamlı çözümler
           </p>
         </motion.div>
@@ -76,16 +76,16 @@ export default function ServicesGrid() {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
                 <Link href={service.href}>
-                  <div className="glass-strong p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 h-full group cursor-pointer">
+                  <div className="glass-strong p-8 rounded-2xl hover:bg-ink/5 transition-all duration-300 h-full group cursor-pointer">
                     <div className="flex items-start gap-6 mb-6">
                       <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                        <Icon className="w-8 h-8 text-white" />
+                        <Icon className="w-8 h-8 text-ink" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                        <h3 className="text-2xl font-bold text-ink mb-3 group-hover:text-blue-600 transition-colors">
                           {service.title}
                         </h3>
-                        <p className="text-gray-400 leading-relaxed mb-4">
+                        <p className="text-ink-muted leading-relaxed mb-4">
                           {service.description}
                         </p>
                       </div>
@@ -95,14 +95,14 @@ export default function ServicesGrid() {
                       {service.features.map((feature) => (
                         <span
                           key={feature}
-                          className="px-3 py-1 glass text-xs font-medium text-gray-300 rounded-full"
+                          className="px-3 py-1 glass text-xs font-medium text-ink-soft rounded-full"
                         >
                           {feature}
                         </span>
                       ))}
                     </div>
 
-                    <div className="flex items-center text-blue-400 font-semibold group-hover:gap-3 transition-all">
+                    <div className="flex items-center text-blue-600 font-semibold group-hover:gap-3 transition-all">
                       Daha Fazla Bilgi
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </div>

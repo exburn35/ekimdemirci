@@ -43,7 +43,7 @@ export default function BlogNewsletter() {
   };
 
   return (
-    <section className="py-24 bg-[#211b39]">
+    <section className="py-24 bg-canvas-alt">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,10 +52,10 @@ export default function BlogNewsletter() {
           transition={{ duration: 0.6 }}
           className="glass-strong rounded-2xl p-8 md:p-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink">
             Yeni Makalelerden Haberdar Olun
           </h2>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-ink-muted mb-8 max-w-2xl mx-auto">
             SEO ve dijital pazarlama hakkında en güncel içerikleri e-posta adresinize gönderelim.
           </p>
 
@@ -63,7 +63,7 @@ export default function BlogNewsletter() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="p-6 bg-green-500/10 border border-green-500/20 rounded-2xl max-w-md mx-auto text-green-400 text-sm font-semibold shadow-sm"
+              className="p-6 bg-green-500/10 border border-green-500/20 rounded-2xl max-w-md mx-auto text-green-600 text-sm font-semibold shadow-sm"
             >
               🎉 Başarıyla abone oldunuz! Harika içerikler yakında gelen kutunuzda olacak.
             </motion.div>
@@ -76,10 +76,10 @@ export default function BlogNewsletter() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="E-posta adresiniz"
-                  className="w-full px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-6 py-3 rounded-full bg-ink/[0.04] border border-line-strong text-ink placeholder-ink-muted focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 {status === "error" && (
-                  <span className="text-red-400 text-xs mt-2 text-left px-4">
+                  <span className="text-red-600 text-xs mt-2 text-left px-4">
                     {errorMessage || "Bir hata oluştu. Lütfen tekrar deneyin."}
                   </span>
                 )}

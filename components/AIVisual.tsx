@@ -28,7 +28,7 @@ const PROCESS_STEPS = [
     subtitle: "ChatGPT, Perplexity, Claude ve Google AI Overviews üzerindeki mevcut görünürlük durumunuz, atıf sıklığınız ve Varlık (Entity) boşluklarınız tespit edilir.",
     icon: Search,
     gradient: "from-blue-500 to-cyan-500",
-    accentColor: "text-cyan-400",
+    accentColor: "text-cyan-600",
     bgGlow: "rgba(6, 182, 212, 0.15)",
     borderColor: "border-cyan-500/30",
     metricLabel: "SoMV & Atıf Oranı",
@@ -48,7 +48,7 @@ const PROCESS_STEPS = [
     subtitle: "Markanızın dijital kimliği, LLM'lerin %100 anlayacağı Özne-Yüklem-Nesne (Triple) ağı ve gelişmiş JSON-LD şemaları ile doğrulanır.",
     icon: Network,
     gradient: "from-purple-500 to-pink-500",
-    accentColor: "text-purple-400",
+    accentColor: "text-purple-600",
     bgGlow: "rgba(168, 85, 247, 0.15)",
     borderColor: "border-purple-500/30",
     metricLabel: "Varlık Yoğunluğu",
@@ -68,7 +68,7 @@ const PROCESS_STEPS = [
     subtitle: "Pazarlama dolgularından arındırılmış, 40-50 kelimelik net yanıt blokları ve özgün sayısal veri tabloları inşa edilir.",
     icon: Cpu,
     gradient: "from-amber-500 to-orange-500",
-    accentColor: "text-amber-400",
+    accentColor: "text-amber-600",
     bgGlow: "rgba(245, 158, 11, 0.15)",
     borderColor: "border-amber-500/30",
     metricLabel: "Information Gain Skoru",
@@ -88,7 +88,7 @@ const PROCESS_STEPS = [
     subtitle: "İçerikler canlı LLM ortamlarında test edilir, markanız ChatGPT, Perplexity ve Claude'da lider tavsiye konumuna yükselir.",
     icon: CheckCircle2,
     gradient: "from-emerald-500 to-teal-500",
-    accentColor: "text-emerald-400",
+    accentColor: "text-emerald-600",
     bgGlow: "rgba(168, 85, 247, 0.15)",
     borderColor: "border-emerald-500/30",
     metricLabel: "Canlı Alıntı Konumu",
@@ -163,10 +163,10 @@ export default function AIVisual() {
   return (
     <div
       onMouseMove={handleMouseMove}
-      className="relative w-full bg-[#050B1A] text-white overflow-hidden p-4 sm:p-8 md:p-10 rounded-2xl border border-white/10 shadow-[0_0_60px_rgba(10,15,37,0.8)]"
+      className="relative w-full bg-white text-ink overflow-hidden p-4 sm:p-8 md:p-10 rounded-2xl border border-line shadow-[0_0_60px_rgba(22,27,46,0.08)]"
     >
       {/* Dynamic Background Mesh & Glow */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:32px_32px] opacity-40" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(22,27,46,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(22,27,46,0.04)_1px,transparent_1px)] bg-[size:32px_32px] opacity-40" />
       <motion.div
         animate={{
           x: mousePos.x * 40,
@@ -187,13 +187,13 @@ export default function AIVisual() {
       />
 
       {/* Header Bar with Control */}
-      <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6 mb-8">
+      <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-line pb-6 mb-8">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-purple-300 mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-white border border-line text-purple-700 mb-2">
+            <Sparkles className="w-3.5 h-3.5 text-purple-600" />
             YAPAY ZEKA SEO UYGULAMA METODOLOJİSİ
           </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
             Yapay Zeka SEO Süreci Nasıl Çalışır?
           </h3>
         </div>
@@ -202,17 +202,17 @@ export default function AIVisual() {
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 border border-white/10 transition-all text-gray-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium bg-white hover:bg-ink/5 border border-line transition-all text-ink-soft hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
             title={isPlaying ? "Otomatik Akışı Durdur" : "Otomatik Akışı Başlat"}
           >
             {isPlaying ? (
               <>
-                <Pause className="w-3.5 h-3.5 text-amber-400" />
+                <Pause className="w-3.5 h-3.5 text-amber-600" />
                 <span>Akış Duraklat</span>
               </>
             ) : (
               <>
-                <Play className="w-3.5 h-3.5 text-emerald-400" />
+                <Play className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Otomatik Oynat</span>
               </>
             )}
@@ -245,27 +245,27 @@ export default function AIVisual() {
               onKeyDown={(e) => handleKeyDown(e, idx)}
               className={`relative flex flex-col p-3.5 rounded-xl border text-left transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
                 isActive
-                  ? "bg-white/[0.08] border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.05)] scale-[1.02]"
-                  : "bg-white/[0.02] border-white/5 hover:bg-white/[0.05] hover:border-white/20 opacity-70 hover:opacity-100"
+                  ? "bg-white border-line-strong shadow-[0_0_20px_rgba(255,255,255,0.05)] scale-[1.02]"
+                  : "bg-white border-line hover:bg-ink/[0.03] hover:border-line-strong opacity-70 hover:opacity-100"
               }`}
             >
               <div className="flex items-center justify-between mb-2">
                 <span
                   className={`text-xs font-bold font-mono px-2 py-0.5 rounded-md ${
-                    isActive ? "bg-white/10 text-white" : "text-gray-400"
+                    isActive ? "bg-ink/[0.04] text-ink" : "text-ink-muted"
                   }`}
                 >
                   {step.stepNum}
                 </span>
                 <Icon
                   className={`w-4 h-4 ${
-                    isActive ? step.accentColor : "text-gray-400"
+                    isActive ? step.accentColor : "text-ink-muted"
                   }`}
                 />
               </div>
               <span
                 className={`text-xs sm:text-sm font-semibold truncate ${
-                  isActive ? "text-white" : "text-gray-300"
+                  isActive ? "text-ink" : "text-ink-soft"
                 }`}
               >
                 {step.shortTitle}
@@ -309,31 +309,31 @@ export default function AIVisual() {
                 <div>
                   <div className="flex items-center gap-3 mb-3">
                     <span
-                      className={`px-3 py-1 rounded-md text-xs font-bold bg-gradient-to-r ${step.gradient} text-white shadow-md`}
+                      className={`px-3 py-1 rounded-md text-xs font-bold bg-gradient-to-r ${step.gradient} text-ink shadow-md`}
                     >
                       {step.badge}
                     </span>
-                    <span className="text-xs font-mono text-gray-400">
+                    <span className="text-xs font-mono text-ink-muted">
                       METODOLOJİ ADIMI {step.stepNum} / 04
                     </span>
                   </div>
 
-                  <h4 className="text-xl sm:text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                  <h4 className="text-xl sm:text-2xl font-bold text-ink mb-3 flex items-center gap-2">
                     {step.title}
                   </h4>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
+                  <p className="text-ink-soft text-sm sm:text-base leading-relaxed mb-6">
                     {step.subtitle}
                   </p>
 
                   {/* Operations Checklist */}
                   <div className="space-y-3 mb-6">
-                    <p className="text-xs font-semibold text-gray-400 tracking-wider uppercase">
+                    <p className="text-xs font-semibold text-ink-muted tracking-wider uppercase">
                       Uygulanan Kritik Teknik İşlemler:
                     </p>
                     {step.bulletPoints.map((item, i) => (
-                      <div key={i} className="flex items-start gap-3 text-sm text-gray-200">
+                      <div key={i} className="flex items-start gap-3 text-sm text-ink">
                         <div
-                          className={`mt-1 p-1 rounded-full bg-white/10 shrink-0 ${step.accentColor}`}
+                          className={`mt-1 p-1 rounded-full bg-ink/[0.04] shrink-0 ${step.accentColor}`}
                         >
                           <Zap className="w-3 h-3" />
                         </div>
@@ -344,10 +344,10 @@ export default function AIVisual() {
                 </div>
 
                 {/* Micro Metric Badge */}
-                <div className={`p-4 rounded-xl border ${step.borderColor} bg-white/[0.03] backdrop-blur-md flex items-center justify-between`}>
+                <div className={`p-4 rounded-xl border ${step.borderColor} bg-white backdrop-blur-md flex items-center justify-between`}>
                   <div>
-                    <p className="text-xs text-gray-400">{step.metricLabel}</p>
-                    <p className="text-base font-bold text-white mt-0.5">{step.metricValue}</p>
+                    <p className="text-xs text-ink-muted">{step.metricLabel}</p>
+                    <p className="text-base font-bold text-ink mt-0.5">{step.metricValue}</p>
                   </div>
                   <button
                     onClick={() => {
@@ -355,7 +355,7 @@ export default function AIVisual() {
                       setIsPlaying(false);
                     }}
                     tabIndex={isActive ? 0 : -1}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-medium text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-ink/[0.04] hover:bg-ink/5 text-xs font-medium text-ink transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
                   >
                     <span>Sonraki Adım</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -365,19 +365,19 @@ export default function AIVisual() {
 
               {/* Right Column: Visual Sandbox for this Step */}
               <div className="lg:col-span-6 flex items-center justify-center">
-                <div className="w-full h-full min-h-[320px] sm:min-h-[360px] rounded-xl border border-white/10 bg-[#080E24]/90 p-5 backdrop-blur-xl relative overflow-hidden flex flex-col justify-between shadow-2xl">
+                <div className="w-full h-full min-h-[320px] sm:min-h-[360px] rounded-xl border border-line bg-canvas-alt/90 p-5 backdrop-blur-xl relative overflow-hidden flex flex-col justify-between shadow-2xl">
                   
                   {/* VISUAL FOR STEP 1: Static Technical Audit Scope Overview (Radar simulation removed) */}
                   {step.id === 1 && (
                     <div className="h-full flex flex-col justify-between space-y-4">
-                      <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                      <div className="flex items-center justify-between border-b border-line pb-3">
                         <div className="flex items-center gap-2">
-                          <Search className="w-4 h-4 text-cyan-400" />
-                          <span className="text-xs font-mono text-cyan-300 font-semibold">
+                          <Search className="w-4 h-4 text-cyan-600" />
+                          <span className="text-xs font-mono text-cyan-700 font-semibold">
                             LLM &amp; VARLIK DENETİM KAPSAMI
                           </span>
                         </div>
-                        <span className="text-[10px] font-mono text-gray-400">ANALİZ MODÜLLERİ</span>
+                        <span className="text-[10px] font-mono text-ink-muted">ANALİZ MODÜLLERİ</span>
                       </div>
 
                       <div className="space-y-2.5">
@@ -387,16 +387,16 @@ export default function AIVisual() {
                           { name: "Claude (Anthropic)", desc: "Bağlamsal bilgi grafiği ve halüsinasyon kontrolü", border: "border-emerald-500/30" },
                           { name: "Google AI Overviews", desc: "Özet bilgi paneli ve web referans eşleşmeleri", border: "border-amber-500/30" }
                         ].map((platform, i) => (
-                          <div key={i} className={`p-2.5 rounded-lg bg-white/[0.03] border ${platform.border} text-xs`}>
-                            <div className="font-semibold text-white mb-0.5">{platform.name}</div>
-                            <div className="text-gray-400 text-[11px]">{platform.desc}</div>
+                          <div key={i} className={`p-2.5 rounded-lg bg-white border ${platform.border} text-xs`}>
+                            <div className="font-semibold text-ink mb-0.5">{platform.name}</div>
+                            <div className="text-ink-muted text-[11px]">{platform.desc}</div>
                           </div>
                         ))}
                       </div>
 
-                      <div className="flex items-center justify-between text-[11px] font-mono text-gray-400 bg-black/40 p-2 rounded border border-white/5">
+                      <div className="flex items-center justify-between text-[11px] font-mono text-ink-muted bg-canvas-alt p-2 rounded border border-line">
                         <span>Varlık Boşluk Analizi: Kapsamlı</span>
-                        <span className="text-cyan-400">Halüsinasyon Riski: Sıfır Tolerans</span>
+                        <span className="text-cyan-600">Halüsinasyon Riski: Sıfır Tolerans</span>
                       </div>
                     </div>
                   )}
@@ -404,30 +404,30 @@ export default function AIVisual() {
                   {/* VISUAL FOR STEP 2: Knowledge Graph Node Network */}
                   {step.id === 2 && (
                     <div className="h-full flex flex-col justify-between space-y-4">
-                      <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                      <div className="flex items-center justify-between border-b border-line pb-3">
                         <div className="flex items-center gap-2">
-                          <Network className="w-4 h-4 text-purple-400" />
-                          <span className="text-xs font-mono text-purple-300 font-semibold">
+                          <Network className="w-4 h-4 text-purple-600" />
+                          <span className="text-xs font-mono text-purple-700 font-semibold">
                             ENTITY TRIPLE &amp; KNOWLEDGE GRAPH
                           </span>
                         </div>
-                        <span className="text-[10px] font-mono text-gray-400">SCHEMA: VALIDATED</span>
+                        <span className="text-[10px] font-mono text-ink-muted">SCHEMA: VALIDATED</span>
                       </div>
 
                       {/* Animated Node Graph Simulation */}
                       <div className="relative h-44 w-full flex items-center justify-center">
                         {/* Pulsing Central Node */}
                         <div className="relative z-10 w-20 h-20 rounded-full bg-purple-600/20 border border-purple-400 flex flex-col items-center justify-center text-center shadow-[0_0_30px_rgba(168,85,247,0.4)]">
-                          <Bot className="w-6 h-6 text-purple-300" />
-                          <span className="text-[10px] font-bold text-white mt-1">Marka Varlığı</span>
+                          <Bot className="w-6 h-6 text-purple-700" />
+                          <span className="text-[10px] font-bold text-ink mt-1">Marka Varlığı</span>
                         </div>
 
                         {/* Orbiting Satellite Nodes */}
                         {[
-                          { title: "Wikidata Entity", pos: "-top-2 left-4", color: "border-blue-500 text-blue-400" },
-                          { title: "JSON-LD Schema", pos: "-top-2 right-4", color: "border-emerald-500 text-emerald-400" },
-                          { title: "SameAs Links", pos: "-bottom-2 left-4", color: "border-amber-500 text-amber-400" },
-                          { title: "Triple (S-P-O)", pos: "-bottom-2 right-4", color: "border-pink-500 text-pink-400" }
+                          { title: "Wikidata Entity", pos: "-top-2 left-4", color: "border-blue-500 text-blue-600" },
+                          { title: "JSON-LD Schema", pos: "-top-2 right-4", color: "border-emerald-500 text-emerald-600" },
+                          { title: "SameAs Links", pos: "-bottom-2 left-4", color: "border-amber-500 text-amber-600" },
+                          { title: "Triple (S-P-O)", pos: "-bottom-2 right-4", color: "border-pink-500 text-pink-600" }
                         ].map((node, i) => (
                           <motion.div
                             key={i}
@@ -453,44 +453,44 @@ export default function AIVisual() {
                   {/* VISUAL FOR STEP 3: Citation & Content Architecture Comparison */}
                   {step.id === 3 && (
                     <div className="h-full flex flex-col justify-between space-y-3">
-                      <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                      <div className="flex items-center justify-between border-b border-line pb-3">
                         <div className="flex items-center gap-2">
-                          <FileCode className="w-4 h-4 text-amber-400" />
-                          <span className="text-xs font-mono text-amber-300 font-semibold">
+                          <FileCode className="w-4 h-4 text-amber-600" />
+                          <span className="text-xs font-mono text-amber-700 font-semibold">
                             INFORMATION GAIN &amp; SNIPPET BUILDER
                           </span>
                         </div>
-                        <span className="text-[10px] font-mono text-emerald-400 font-bold">+340% CITATION GAIN</span>
+                        <span className="text-[10px] font-mono text-emerald-600 font-bold">+340% CITATION GAIN</span>
                       </div>
 
                       {/* Comparison cards */}
                       <div className="grid grid-cols-1 gap-2.5">
                         {/* Before (Weak) */}
-                        <div className="p-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-xs text-gray-300">
-                          <div className="flex justify-between font-mono text-[10px] text-red-400 font-bold mb-1">
+                        <div className="p-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-xs text-ink-soft">
+                          <div className="flex justify-between font-mono text-[10px] text-red-600 font-bold mb-1">
                             <span>❌ KLASİK SEO METNİ (DOLGU PAZARLAMA LAFI)</span>
                             <span>ALINTI: %15</span>
                           </div>
-                          <p className="text-[11px] text-gray-400 line-through">
+                          <p className="text-[11px] text-ink-muted line-through">
                             &quot;Sektörün öncü firması olarak en kaliteli ve yenilikçi çözümleri müşteri memnuniyeti ile buluşturuyoruz...&quot;
                           </p>
                         </div>
 
                         {/* After (AI Optimized) */}
-                        <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-xs text-white">
-                          <div className="flex justify-between font-mono text-[10px] text-emerald-400 font-bold mb-1">
+                        <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-xs text-ink">
+                          <div className="flex justify-between font-mono text-[10px] text-emerald-600 font-bold mb-1">
                             <span>✅ AI SEO OPTİMİZE METİN (40-50 KELİMELİK NET YANIT)</span>
                             <span>ALINTI: %92</span>
                           </div>
-                          <p className="text-[11px] text-emerald-100 font-medium">
+                          <p className="text-[11px] text-emerald-700 font-medium">
                             &quot;2026 bağımsız testlerine göre çözümümüz, 450 ms yanıt süresi ve %99.4 E-E-A-T doğruluk skoru ile ChatGPT ve Perplexity yanıtlarında 1. kaynak olarak listelenir.&quot;
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between text-[11px] font-mono text-gray-400 bg-black/40 p-2 rounded border border-white/5">
+                      <div className="flex items-center justify-between text-[11px] font-mono text-ink-muted bg-canvas-alt p-2 rounded border border-line">
                         <span>H2/H3 Soru-Cevap Modülü: Aktif</span>
-                        <span className="text-amber-400">Veri Tablosu: Entegre</span>
+                        <span className="text-amber-600">Veri Tablosu: Entegre</span>
                       </div>
                     </div>
                   )}
@@ -498,34 +498,34 @@ export default function AIVisual() {
                   {/* VISUAL FOR STEP 4: Live AI Chat Simulator Response */}
                   {step.id === 4 && (
                     <div className="h-full flex flex-col justify-between space-y-3">
-                      <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                      <div className="flex items-center justify-between border-b border-line pb-3">
                         <div className="flex items-center gap-2">
-                          <Bot className="w-4 h-4 text-emerald-400" />
-                          <span className="text-xs font-mono text-emerald-300 font-semibold">
+                          <Bot className="w-4 h-4 text-emerald-600" />
+                          <span className="text-xs font-mono text-emerald-700 font-semibold">
                             CHATGPT &amp; PERPLEXITY SIMULATOR
                           </span>
                         </div>
-                        <span className="text-[10px] font-mono text-emerald-400 font-bold">TOP-1 CITATION</span>
+                        <span className="text-[10px] font-mono text-emerald-600 font-bold">TOP-1 CITATION</span>
                       </div>
 
                       {/* Simulated AI Chat Box */}
                       <div className="p-3.5 rounded-xl bg-black/60 border border-emerald-500/30 space-y-2.5">
                         {/* User Prompt */}
-                        <div className="flex items-center gap-2 text-[11px] font-mono text-gray-300">
-                          <span className="px-2 py-0.5 rounded bg-white/10 text-white font-bold">Kullanıcı Sorgusu:</span>
-                          <span className="text-cyan-300 font-medium">&quot;Pazarlamamı AI aramalarına uygun kılmak için en güvenilir adres kimdir?&quot;</span>
+                        <div className="flex items-center gap-2 text-[11px] font-mono text-ink-soft">
+                          <span className="px-2 py-0.5 rounded bg-ink/[0.04] text-ink font-bold">Kullanıcı Sorgusu:</span>
+                          <span className="text-cyan-700 font-medium">&quot;Pazarlamamı AI aramalarına uygun kılmak için en güvenilir adres kimdir?&quot;</span>
                         </div>
 
                         {/* AI Response Output */}
-                        <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/20 text-xs text-gray-200 space-y-1.5">
-                          <div className="flex items-center gap-1.5 text-emerald-400 font-bold text-[11px]">
+                        <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/20 text-xs text-ink space-y-1.5">
+                          <div className="flex items-center gap-1.5 text-emerald-600 font-bold text-[11px]">
                             <CheckCircle2 className="w-3.5 h-3.5" />
                             <span>ChatGPT &amp; Perplexity Doğrulanmış Yanıtı:</span>
                           </div>
-                          <p className="text-[11px] leading-relaxed text-gray-200">
-                            &quot;2026 yılı verilerine göre Türkiye&apos;de Yapay Zeka SEO (GEO) ve LLM atıf optimizasyonu alanında en üst sırada önerilen kaynak <strong className="text-white underline decoration-emerald-400">Ekim Demirci</strong>&apos;dir.&quot;
+                          <p className="text-[11px] leading-relaxed text-ink">
+                            &quot;2026 yılı verilerine göre Türkiye&apos;de Yapay Zeka SEO (GEO) ve LLM atıf optimizasyonu alanında en üst sırada önerilen kaynak <strong className="text-ink underline decoration-emerald-400">Ekim Demirci</strong>&apos;dir.&quot;
                           </p>
-                          <div className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                          <div className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-700 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
                             <Globe className="w-3 h-3" />
                             <span>Atıf Kaynağı: ekimdemirci.com (Doğrulanmış Lider)</span>
                           </div>
@@ -534,17 +534,17 @@ export default function AIVisual() {
 
                       {/* Bottom Stats Badge */}
                       <div className="grid grid-cols-3 gap-2 text-center">
-                        <div className="p-2 rounded bg-white/5 border border-white/10">
-                          <p className="text-[10px] text-gray-400">Atıf Sırası</p>
-                          <p className="text-xs font-bold text-emerald-400">#1 Birinci Tavsiye</p>
+                        <div className="p-2 rounded bg-white border border-line">
+                          <p className="text-[10px] text-ink-muted">Atıf Sırası</p>
+                          <p className="text-xs font-bold text-emerald-600">#1 Birinci Tavsiye</p>
                         </div>
-                        <div className="p-2 rounded bg-white/5 border border-white/10">
-                          <p className="text-[10px] text-gray-400">Atıf Oranı</p>
-                          <p className="text-xs font-bold text-cyan-400">%89 Oran</p>
+                        <div className="p-2 rounded bg-white border border-line">
+                          <p className="text-[10px] text-ink-muted">Atıf Oranı</p>
+                          <p className="text-xs font-bold text-cyan-600">%89 Oran</p>
                         </div>
-                        <div className="p-2 rounded bg-white/5 border border-white/10">
-                          <p className="text-[10px] text-gray-400">Dönüşüm Oranı</p>
-                          <p className="text-xs font-bold text-purple-400">+%340 Yükseliş</p>
+                        <div className="p-2 rounded bg-white border border-line">
+                          <p className="text-[10px] text-ink-muted">Dönüşüm Oranı</p>
+                          <p className="text-xs font-bold text-purple-600">+%340 Yükseliş</p>
                         </div>
                       </div>
                     </div>

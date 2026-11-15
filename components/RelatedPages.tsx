@@ -70,7 +70,7 @@ const allPages = [
     path: "/basari-hikayeleri",
     category: "Kurumsal",
     icon: Award,
-    description: "Geçmiş projelerimizdeki başarılarımız ve elde ettiğimiz sonuçlar.",
+    description: "Geçmiş projelerimdeki başarılar ve elde ettiğim sonuçlar.",
     gradient: "from-yellow-500 to-orange-500",
     className: "col-span-1 md:col-span-2 row-span-1",
   },
@@ -88,7 +88,7 @@ const allPages = [
     path: "/icerik-yazimi",
     category: "Hizmetler",
     icon: FileEdit,
-    description: "SEO uyumlu, uzman yazar kadromuzdan profesyonel metinler.",
+    description: "SEO uyumlu, uzmanlıkla hazırlanmış profesyonel metinler.",
     gradient: "from-indigo-500 to-purple-500",
     className: "col-span-1 md:col-span-1 row-span-2",
   },
@@ -97,7 +97,7 @@ const allPages = [
     path: "/sikca-sorulan-sorular",
     category: "Bilgi",
     icon: HelpCircle,
-    description: "Süreçlerimiz ve SEO hakkında aklınıza takılan soruların cevapları.",
+    description: "Çalışma sürecim ve SEO hakkında aklınıza takılan soruların cevapları.",
     gradient: "from-teal-500 to-green-500",
     className: "col-span-1 md:col-span-1 row-span-1",
   },
@@ -149,9 +149,9 @@ export default function RelatedPages() {
   ];
 
   return (
-    <section className="py-24 bg-[#0a0f25] relative overflow-hidden border-t border-white/5 mt-16">
+    <section className="py-24 bg-canvas relative overflow-hidden border-t border-line mt-16">
       {/* Magic UI Background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff15_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
+      <div className="absolute inset-0 bg-[radial-gradient(#161b2e15_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -159,16 +159,16 @@ export default function RelatedPages() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-white"
+            className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-ink"
           >
-            Yolculuğunuza{" "}<span className="text-purple-400">Devam Edin</span>
+            Yolculuğunuza{" "}<span className="text-purple-600">Devam Edin</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto font-medium"
+            className="text-ink-muted text-lg max-w-2xl mx-auto font-medium"
           >
             Sizin için özenle seçilmiş diğer sayfalara göz atarak SEO stratejinizi derinleştirin.
           </motion.p>
@@ -190,7 +190,7 @@ export default function RelatedPages() {
               >
                 <Link 
                   href={page.path}
-                  className="block w-full h-full p-8 rounded-3xl bg-[#111836] border border-white/5 shadow-sm hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] hover:border-purple-500/30 transition-all duration-500 overflow-hidden relative flex flex-col justify-between"
+                  className="block w-full h-full p-8 rounded-3xl bg-white border border-line shadow-sm hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] hover:border-purple-500/30 transition-all duration-500 overflow-hidden relative flex flex-col justify-between"
                 >
                   {/* Subtle Magic UI Glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -198,22 +198,22 @@ export default function RelatedPages() {
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-6">
                       <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${page.gradient} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg`}>
-                        <Icon className="w-7 h-7 text-white" />
+                        <Icon className="w-7 h-7 text-ink" />
                       </div>
-                      <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-purple-500/20 group-hover:border-purple-500/30 group-hover:-translate-y-1 transition-all duration-300">
-                        <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-purple-400 transition-colors" />
+                      <div className="w-10 h-10 rounded-full bg-white border border-line flex items-center justify-center group-hover:bg-purple-500/20 group-hover:border-purple-500/30 group-hover:-translate-y-1 transition-all duration-300">
+                        <ArrowRight className="w-5 h-5 text-ink-faint group-hover:text-purple-600 transition-colors" />
                       </div>
                     </div>
                     
-                    <span className="text-xs font-bold text-purple-400 uppercase tracking-widest mb-2 block">
+                    <span className="text-xs font-bold text-purple-600 uppercase tracking-widest mb-2 block">
                       {page.category}
                     </span>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors mb-2">
+                    <h3 className="text-2xl font-bold text-ink group-hover:text-purple-700 transition-colors mb-2">
                       {page.title}
                     </h3>
                     
                     {bentoClasses[index % bentoClasses.length].includes("row-span-2") && (
-                      <p className="text-gray-400 leading-relaxed mt-4">
+                      <p className="text-ink-muted leading-relaxed mt-4">
                         {page.description}
                       </p>
                     )}

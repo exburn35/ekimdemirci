@@ -34,7 +34,7 @@ export default function BlogSocialShare({ title, slug }: BlogSocialShareProps) {
     {
       name: "X",
       href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`,
-      color: "hover:bg-white hover:text-black hover:border-white",
+      color: "hover:bg-ink hover:text-white hover:border-ink",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -71,7 +71,7 @@ export default function BlogSocialShare({ title, slug }: BlogSocialShareProps) {
 
   return (
     <div className="glass-strong rounded-2xl p-6 mt-4">
-      <h4 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider">
+      <h4 className="text-sm font-semibold text-ink-muted mb-4 uppercase tracking-wider">
         Makaleyi Paylaş
       </h4>
       <div className="flex items-center gap-3">
@@ -82,7 +82,7 @@ export default function BlogSocialShare({ title, slug }: BlogSocialShareProps) {
             target="_blank"
             rel="noopener noreferrer"
             title={link.name}
-            className={`w-10 h-10 rounded-xl border border-white/5 bg-white/[0.02] text-gray-400 flex items-center justify-center transition-all duration-300 ${link.color}`}
+            className={`w-10 h-10 rounded-xl border border-line bg-white text-ink-muted flex items-center justify-center transition-all duration-300 ${link.color}`}
           >
             {link.icon}
           </a>

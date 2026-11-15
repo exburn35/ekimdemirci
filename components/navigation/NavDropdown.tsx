@@ -97,7 +97,7 @@ export default function NavDropdown({
         aria-controls={id}
         aria-haspopup="true"
         onClick={handleClick}
-        className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-1 whitespace-nowrap focus:outline-none focus-visible:text-white"
+        className="text-sm font-medium text-ink-soft hover:text-ink transition-colors duration-200 relative group flex items-center gap-1 whitespace-nowrap focus:outline-none focus-visible:text-ink"
       >
         {label}
         <ChevronDown
@@ -117,7 +117,7 @@ export default function NavDropdown({
         role="region"
         aria-labelledby={`${id}-trigger`}
         onClick={handleDropdownClick}
-        className={`absolute top-full left-0 mt-2 ${widthClass} bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-xl transition-all duration-200 z-50
+        className={`absolute top-full left-0 mt-2 ${widthClass} bg-white backdrop-blur-xl border border-line shadow-lift rounded-xl overflow-hidden shadow-xl transition-all duration-200 z-50
           before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3
           ${
             isEscaped

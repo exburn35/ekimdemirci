@@ -211,78 +211,78 @@ export default function ECommerceSEOPage() {
         blogCategory="E-Ticaret SEO"
       >
         {/* HERO TRUST STRIP */}
-        <section className="py-8 bg-[#0a0f25] border-y border-white/5">
+        <section className="py-8 bg-canvas border-y border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-purple-400">8+ Yıl</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Sektörel Uzmanlık</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-purple-600">8+ Yıl</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Sektörel Uzmanlık</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-pink-400">120+</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Tamamlanan SEO Projesi</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-pink-600">120+</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Tamamlanan SEO Projesi</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-emerald-400">%147</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Ort. Organik Tıklama Artışı</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-emerald-600">%147</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Ort. Organik Tıklama Artışı</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-blue-400">GA4 & GSC</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Doğrulanmış Veri Altyapısı</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-blue-600">GA4 & GSC</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Doğrulanmış Veri Altyapısı</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* DEFINITION & METHODOLOGY EVIDENCE SECTION */}
-        <section className="py-16 bg-[#0a0f25]">
+        <section className="py-16 bg-canvas">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             {/* Definition Box */}
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
                 E-Ticaret SEO Danışmanlığı Nedir?
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
-                E-Ticaret SEO Danışmanlığı, online satış yapan markaların kategorilerini ve ürünlerini arama motorlarında doğru kitleyle buluşturan uçtan uca altyapı yönetimidir. Mağazanız için <Link href="/seo-hizmetleri/teknik-seo" className="text-purple-400 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-purple-400 underline font-semibold">Sayfa İçi SEO</Link> mimarisini kurarak geleneksel reklam bütçelerine bağımlılığı azaltır, kesintisiz bir organik ciro kanalı inşa ederim.
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
+                E-Ticaret SEO Danışmanlığı, online satış yapan markaların kategorilerini ve ürünlerini arama motorlarında doğru kitleyle buluşturan uçtan uca altyapı yönetimidir. Mağazanız için <Link href="/seo-hizmetleri/teknik-seo" className="text-purple-600 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-purple-600 underline font-semibold">Sayfa İçi SEO</Link> mimarisini kurarak geleneksel reklam bütçelerine bağımlılığı azaltır, kesintisiz bir organik ciro kanalı inşa ederim.
               </p>
 
               {/* Transparent Evidence Box */}
-              <div className="pt-6 border-t border-white/10">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-emerald-400" />
+              <div className="pt-6 border-t border-line">
+                <h3 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5 text-emerald-600" />
                   Doğrulanmış Metodoloji ve Şeffaf Ölçüm Çerçevesi
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-5 bg-[#111836] border border-purple-500/20 rounded-2xl">
-                    <div className="text-xs text-purple-400 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
-                    <div className="text-3xl font-extrabold text-emerald-400 mb-2">%147 Tıklama Artışı</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-purple-500/20 rounded-2xl">
+                    <div className="text-xs text-purple-600 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
+                    <div className="text-3xl font-extrabold text-emerald-600 mb-2">%147 Tıklama Artışı</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       7 aylık e-ticaret kategori ve filtre optimizasyonu sürecinde elde edilen doğrulanmış organik tıklama büyümesi. (Kaynak: Google Search Console 2025)
                     </p>
                   </div>
-                  <div className="p-5 bg-[#111836] border border-purple-500/20 rounded-2xl">
-                    <div className="text-xs text-purple-400 font-mono font-semibold mb-1">HEDEF KONUMLANMA</div>
-                    <div className="text-3xl font-extrabold text-white mb-2">İlk 3 Sıra</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-purple-500/20 rounded-2xl">
+                    <div className="text-xs text-purple-600 font-mono font-semibold mb-1">HEDEF KONUMLANMA</div>
+                    <div className="text-3xl font-extrabold text-ink mb-2">İlk 3 Sıra</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       Yüksek satın alma niyetli anahtar kelime sorgularında sürdürülebilir arama sonucu görünürlüğü.
                     </p>
                   </div>
-                  <div className="p-5 bg-[#111836] border border-purple-500/20 rounded-2xl">
-                    <div className="text-xs text-purple-400 font-mono font-semibold mb-1">ZENGİN SONUÇ ETKİSİ</div>
-                    <div className="text-3xl font-extrabold text-purple-400 mb-2">+%34 CTR Katkısı</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-purple-500/20 rounded-2xl">
+                    <div className="text-xs text-purple-600 font-mono font-semibold mb-1">ZENGİN SONUÇ ETKİSİ</div>
+                    <div className="text-3xl font-extrabold text-purple-600 mb-2">+%34 CTR Katkısı</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       Product, Offer ve AggregateRating Rich Snippet kodlamaları sonrası arama tıklama oranındaki net artış.
                     </p>
                   </div>
                 </div>
 
                 {/* ARS MOTOR PERFORMANCE CHART */}
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <div className="text-sm font-semibold text-gray-300 mb-3 flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-emerald-400" />
+                <div className="mt-8 pt-6 border-t border-line">
+                  <div className="text-sm font-semibold text-ink-soft mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-emerald-600" />
                     Ars Motor 3 Aylık Performans & Karşılaştırma Grafiği (Google Search Console)
                   </div>
-                  <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#111836] p-2 shadow-2xl">
+                  <div className="rounded-2xl overflow-hidden border border-line bg-white p-2 shadow-2xl">
                     <img 
                       src="/ars-motor-3-aylik-karsilastirma-grafigi.png" 
                       alt="Ars Motor 3 Aylık Karşılaştırma Grafiği" 
@@ -296,26 +296,26 @@ export default function ECommerceSEOPage() {
         </section>
 
         {/* E-COMMERCE PLATFORMS SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-pink-500/10 border border-pink-500/20 text-xs font-semibold text-pink-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-pink-500/10 border border-pink-500/20 text-xs font-semibold text-pink-600 uppercase tracking-widest mb-3">
                 <Store className="w-3.5 h-3.5" />
                 Altyapı Özelinde Çözümler
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Farklı E-Ticaret Altyapılarında SEO Yönetimi
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {ecommercePlatforms.map((platform) => (
-                <div key={platform.name} className="bg-[#111836] border border-white/10 p-6 rounded-2xl hover:border-pink-500/30 transition-all">
-                  <div className="text-xs font-semibold text-pink-400 bg-pink-500/10 px-2.5 py-1 rounded-md inline-block mb-3">
+                <div key={platform.name} className="bg-white border border-line p-6 rounded-2xl hover:border-pink-500/30 transition-all">
+                  <div className="text-xs font-semibold text-pink-600 bg-pink-500/10 px-2.5 py-1 rounded-md inline-block mb-3">
                     {platform.tag}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{platform.name}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{platform.desc}</p>
+                  <h3 className="text-xl font-bold text-ink mb-2">{platform.name}</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">{platform.desc}</p>
                 </div>
               ))}
             </div>
@@ -323,28 +323,28 @@ export default function ECommerceSEOPage() {
         </section>
 
         {/* CATEGORY VS PRODUCT SEARCH INTENT SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-purple-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <Tag className="w-8 h-8 text-purple-400" />
+            <div className="bg-white border border-purple-500/20 rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <Tag className="w-8 h-8 text-purple-600" />
                 Kategori Sorgusu ve Ürün Sorgusu Arama Niyeti Farkı
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <h3 className="text-lg font-bold text-purple-300 mb-3">Kategori Sorguları (Geniş Arama Niyeti)</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                <div className="p-6 bg-white border border-line rounded-2xl">
+                  <h3 className="text-lg font-bold text-purple-700 mb-3">Kategori Sorguları (Geniş Arama Niyeti)</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed mb-4">
                     Kullanıcı henüz tam model kararı vermemiş, çeşitliliği kıyaslamak ister (Örn: "deri erkek ayakkabı"). Bu sayfalarda doğru filtreleme, zengin kategori alt metni ve katmanlı taksonomi ile trafik çekilir.
                   </p>
-                  <div className="text-xs text-purple-400 font-mono font-semibold">Hedef: Yüksek Hacim & Karşılaştırma Trafiği</div>
+                  <div className="text-xs text-purple-600 font-mono font-semibold">Hedef: Yüksek Hacim & Karşılaştırma Trafiği</div>
                 </div>
 
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <h3 className="text-lg font-bold text-pink-300 mb-3">Ürün Sorguları (Satın Alma Niyeti)</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                <div className="p-6 bg-white border border-line rounded-2xl">
+                  <h3 className="text-lg font-bold text-pink-700 mb-3">Ürün Sorguları (Satın Alma Niyeti)</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed mb-4">
                     Kullanıcı alacağı ürünü belirlemiş, fiyat ve stok bilgisi arar (Örn: "X marka 42 numara siyah deri bot"). Bu sayfalarda Product şeması, stok güncellemesi ve hızlı ödeme aksiyonları ön plandadır.
                   </p>
-                  <div className="text-xs text-pink-400 font-mono font-semibold">Hedef: Yüksek Dönüşüm Oranı & Sepet Tamamlama</div>
+                  <div className="text-xs text-pink-600 font-mono font-semibold">Hedef: Yüksek Dönüşüm Oranı & Sepet Tamamlama</div>
                 </div>
               </div>
             </div>
@@ -352,23 +352,23 @@ export default function ECommerceSEOPage() {
         </section>
 
         {/* DELIVERABLES LIST SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
                 <PackageCheck className="w-3.5 h-3.5" />
                 Somut Çıktılar
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Danışmanlık Sürecinde Elde Edeceğiniz Çıktılar
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {deliverables.map((item, idx) => (
-                <div key={idx} className="bg-[#111836] border border-white/10 p-6 rounded-2xl flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-1 flex-shrink-0" />
-                  <span className="text-gray-200 font-medium text-sm md:text-base">{item}</span>
+                <div key={idx} className="bg-white border border-line p-6 rounded-2xl flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                  <span className="text-ink font-medium text-sm md:text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -376,24 +376,24 @@ export default function ECommerceSEOPage() {
         </section>
 
         {/* TIMELINE ROADMAP SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">
                 <Clock className="w-3.5 h-3.5" />
                 Sonuç Zaman Çizelgesi
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 E-Ticaret SEO Süreç Haritası
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {timelineSteps.map((step) => (
-                <div key={step.period} className="bg-[#111836] border border-blue-500/20 p-8 rounded-2xl relative">
-                  <div className="text-xs font-mono font-semibold text-blue-400 mb-2">{step.period}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{step.desc}</p>
+                <div key={step.period} className="bg-white border border-blue-500/20 p-8 rounded-2xl relative">
+                  <div className="text-xs font-mono font-semibold text-blue-600 mb-2">{step.period}</div>
+                  <h3 className="text-xl font-bold text-ink mb-3">{step.title}</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -401,23 +401,23 @@ export default function ECommerceSEOPage() {
         </section>
 
         {/* TOOLS STRIP SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-600 uppercase tracking-widest mb-3">
                 <Wrench className="w-3.5 h-3.5" />
                 Yazılım & Araç Parkı
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 E-Ticaret SEO Analizinde Kullandığım Başlıca Araçlar
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {toolsList.map((tool) => (
-                <div key={tool.name} className="bg-[#111836] border border-white/10 p-5 rounded-xl text-center">
-                  <div className="font-bold text-white text-base mb-1">{tool.name}</div>
-                  <div className="text-xs text-gray-400">{tool.role}</div>
+                <div key={tool.name} className="bg-white border border-line p-5 rounded-xl text-center">
+                  <div className="font-bold text-ink text-base mb-1">{tool.name}</div>
+                  <div className="text-xs text-ink-muted">{tool.role}</div>
                 </div>
               ))}
             </div>
@@ -425,15 +425,15 @@ export default function ECommerceSEOPage() {
         </section>
 
         {/* PRICING POSTURE SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border border-purple-500/30 rounded-3xl p-8 md:p-12 text-center">
-              <DollarSign className="w-10 h-10 text-purple-400 mx-auto mb-4" />
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              <DollarSign className="w-10 h-10 text-purple-600 mx-auto mb-4" />
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
                 Şeffaf ve İhtiyaca Özel Teklif Yaklaşımı
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
-                E-ticaret SEO çalışmalarında sabit şablon paketler yerine mağazanızın ürün sayısı, altyapısı ve hedeflerine uygun şeffaf danışmanlık bütçeleri kurguluyorum. Gizli maliyetler olmadan taahhütsüz ilk değerlendirme görüşmesi yapıyoruz.
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+                E-ticaret SEO çalışmalarında sabit şablon paketler yerine mağazanızın ürün sayısı, altyapısı ve hedeflerine uygun şeffaf danışmanlık bütçeleri kurguluyorum. Gizli maliyetler olmadan taahhütsüz ilk değerlendirme görüşmesi yapıyorum.
               </p>
               <Link
                 href="/seo-danismanlik-fiyatlari"

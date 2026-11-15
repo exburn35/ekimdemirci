@@ -31,24 +31,24 @@ function BentoCard({
 }: BentoCardProps) {
   return (
     <article
-      className={`relative rounded-2xl bg-white/[0.03] border border-white/[0.08] transition-colors duration-300 bento-card ${gridClass} ${paddingClass}`}
+      className={`relative rounded-2xl bg-white border border-line transition-colors duration-300 bento-card ${gridClass} ${paddingClass}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <div className="flex flex-col h-full relative z-10">
         {/* Icon Container with gradient border */}
-        <div className="relative w-10 h-10 rounded-[10px] bg-gradient-to-br from-[#7b5cff]/15 to-[#4a9eff]/15 flex items-center justify-center icon-container">
+        <div className="relative w-10 h-10 rounded-[10px] bg-gradient-to-br from-brand/15 to-accent/15 flex items-center justify-center icon-container">
           <svg className="absolute inset-0 w-full h-full pointer-events-none" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="0.5" y="0.5" width="39" height="39" rx="10" stroke="url(#hero-card-gradient)" strokeWidth="1" />
           </svg>
           {icon}
         </div>
         
-        <h3 className="text-[18px] font-medium text-white mt-5">
+        <h3 className="text-[18px] font-medium text-ink mt-5">
           {title}
         </h3>
         
-        <p className="text-[14px] leading-[1.55] text-gray-400 mt-2">
+        <p className="text-[14px] leading-[1.55] text-ink-muted mt-2">
           {body}
         </p>
       </div>
@@ -64,18 +64,18 @@ export function ServiceBentoGrid({
   onMouseLeave: (e: React.MouseEvent<HTMLDivElement>) => void;
 }) {
   return (
-    <section className="content-section section-1-container border-t border-white/5">
+    <section className="content-section section-1-container border-t border-line">
       
       {/* HEADER */}
       <div className="text-center mb-16 section-1-header">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-blue-400 uppercase tracking-widest mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-line text-xs font-medium text-blue-600 uppercase tracking-widest mb-6">
           <Sparkles className="w-3 h-3" />
           HİZMET KAPSAMI
         </div>
-        <h2 className="text-[36px] md:text-[48px] font-bold text-white tracking-tight mb-4">
+        <h2 className="text-[36px] md:text-[48px] font-bold text-ink tracking-tight mb-4">
           GEO Danışmanlığı Hizmet Katmanları
         </h2>
-        <p className="text-[16px] text-gray-400 max-w-[720px] mx-auto leading-relaxed">
+        <p className="text-[16px] text-ink-muted max-w-[720px] mx-auto leading-relaxed">
           Yapay zekanın markanızı tanıması, anlaması ve referans alması için sekiz katmanlı bir görünürlük altyapısı kuruyorum.
         </p>
       </div>
@@ -90,7 +90,7 @@ export function ServiceBentoGrid({
           title="Entity Authority Building"
           body="Markanızın AI motorları tarafından tutarlı bir varlık olarak tanınması için entity tanımlaması, doğrulanması ve sektörel bağlam içinde konumlandırılması süreçlerini yönetiyorum. LLM'lerin çelişkili veriyle karşılaştığında bir markayı atlamak yerine güvenle anabilmesi için tüm dijital temasları senkronize ediyorum."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-ink">
               <rect x="3" y="4" width="18" height="16" rx="2" />
               <circle cx="12" cy="10" r="3" />
               <path d="M6 20c0-2 2-4 6-4s6 2 6 4" />
@@ -108,7 +108,7 @@ export function ServiceBentoGrid({
           title="Knowledge Graph Integration"
           body="Google'ın Knowledge Graph altyapısı ve LLM'lerin eğitim verisi sentezi sırasında markanızın doğru ilişkilerle yer almasını sağlıyorum. Wikidata, Wikipedia, otoriter veri tabanları ve sektörel kaynaklar arasında bağlantılı bir bilgi mimarisi inşa ediyorum. Bu sayede yapay zeka, markanızı yalnız bir isim olarak değil, ilişkili bir bilgi varlığı (Entity) olarak işliyor."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-ink">
               <circle cx="12" cy="5" r="2" />
               <circle cx="5" cy="19" r="2" />
               <circle cx="19" cy="19" r="2" />
@@ -129,7 +129,7 @@ export function ServiceBentoGrid({
           title="Schema & Structured Data Engineering"
           body="Sektörünüze özel, bağlamsal ve hiyerarşik schema.org mimarisi kuruyorum. Yüzeysel işaretlemenin ötesine geçerek makinelerin sayfanızı kim için, hangi otoriteyle ne anlattığını anlamasını sağlıyorum."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-ink">
               <polyline points="16 18 22 12 16 6" />
               <polyline points="8 6 2 12 8 18" />
               <line x1="14" y1="4" x2="10" y2="20" />
@@ -147,7 +147,7 @@ export function ServiceBentoGrid({
           title="Semantic Content Architecture"
           body="İçeriği topical authority haritası, semantik kümeler ve özne-yüklem-nesne üçlüleriyle yapılandırıyorum. AI motorları sayfanızı tek başına değil, geniş bir anlam ağının parçası olarak görüyor."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-ink">
               <rect x="3" y="3" width="7" height="9" rx="1" />
               <rect x="14" y="3" width="7" height="5" rx="1" />
               <rect x="14" y="12" width="7" height="9" rx="1" />
@@ -166,7 +166,7 @@ export function ServiceBentoGrid({
           title="AI Citation Strategy"
           body="İçeriği yanıt kutularında alıntılanabilir hale getiriyorum. Doğru paragraf uzunluğu, listelenmiş veriler, kaynak atıfları ve özgün veri noktalarıyla referans gösterilme olasılığını artırıyorum."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-ink">
               <path d="M3 21c3 0 5-1 7-4 2-3 2-6 2-6H6V5h6v6c0 5-2 8-5 10H3Zm10 0c3 0 5-1 7-4 2-3 2-6 2-6h-6V5h6v6c0 5-2 8-5 10h-4Z" />
             </svg>
           }
@@ -182,7 +182,7 @@ export function ServiceBentoGrid({
           title="Co-citation & Brand Mentioning"
           body="Markanın yalnız kendi sitesinde değil, sektörün referans yayınlarında, akademik kaynaklarda ve otoriter platformlarda doğru bağlamla anılması için dijital PR sinyallerini yönetiyorum. Hangi isimlerle birlikte anıldığınız, hangi otoritelerin sizi referans verdiği yapay zekanın güven mimarisinin temelidir."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-ink">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
               <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -201,7 +201,7 @@ export function ServiceBentoGrid({
           title="LLM Visibility Monitoring"
           body="ChatGPT, Claude, Perplexity ve Google AI Overviews'ta hangi sorgularda göründüğünüzü, hangi rakiplerle karşılaştırıldığınızı ve alıntı payınızı düzenli olarak ölçüp raporluyorum."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-ink">
               <path d="M3 3v18h18" />
               <circle cx="7" cy="14" r="1" />
               <circle cx="13" cy="8" r="1" />
@@ -221,7 +221,7 @@ export function ServiceBentoGrid({
           title="Competitive AI Audit"
           body="Rakiplerinizin hangi sorgularda alıntılandığını, hangi schema yapılarını ve hangi dış kaynakları kullandığını analiz ediyorum. Görünmeyen rekabeti görünür kılıp aksiyon planına dönüştürüyorum."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-ink">
               <circle cx="12" cy="12" r="10" />
               <circle cx="12" cy="12" r="6" />
               <circle cx="12" cy="12" r="2" />
@@ -241,12 +241,12 @@ export function ServiceBentoGrid({
         </svg>
         
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-[18px] font-medium text-white text-center md:text-left leading-snug">
+          <p className="text-[18px] font-medium text-ink text-center md:text-left leading-snug">
             Markanızın bu sekiz katmandaki mevcut durumunu görmek ister misiniz?
           </p>
           <Link
             href="#analiz"
-            className="inline-flex items-center justify-center h-[46px] px-6 rounded-lg bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] hover:opacity-95 text-white font-medium text-[14px] transition-all duration-300 focus-ring-purple shadow-md shadow-[#7b5cff]/10 whitespace-nowrap"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-lg bg-gradient-to-r from-brand to-accent hover:opacity-95 text-white font-medium text-[14px] transition-all duration-300 focus-ring-purple shadow-md shadow-[#7b5cff]/10 whitespace-nowrap"
           >
             <span>GEO Denetimi Talep Et</span>
             <ArrowRight className="w-4 h-4 ml-2" />
@@ -266,18 +266,18 @@ export function WhyItMattersData({
   onMouseLeave: (e: React.MouseEvent<HTMLDivElement>) => void;
 }) {
   return (
-    <section className="content-section section-2-container border-t border-white/5">
+    <section className="content-section section-2-container border-t border-line">
       
       {/* HEADER */}
       <div className="text-center mb-16 section-2-header">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-blue-400 uppercase tracking-widest mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-line text-xs font-medium text-blue-600 uppercase tracking-widest mb-6">
           <Sparkles className="w-3 h-3" />
           NEDEN ŞİMDİ
         </div>
-        <h2 className="text-[36px] md:text-[48px] font-bold text-white tracking-tight mb-4">
+        <h2 className="text-[36px] md:text-[48px] font-bold text-ink tracking-tight mb-4">
           Arama Ekosistemi Geri Dönüşü Olmayacak Şekilde Değişti
         </h2>
-        <p className="text-[16px] text-gray-400 max-w-[720px] mx-auto leading-relaxed">
+        <p className="text-[16px] text-ink-muted max-w-[720px] mx-auto leading-relaxed">
           Klasik sıralamaya yatırım yapan markalar, kullanıcıların artık ulaşmadığı bir alanı optimize ediyor. Aşağıdaki üç gerçek, bu kaymanın neden ertelenemez olduğunu gösteriyor.
         </p>
       </div>
@@ -287,26 +287,26 @@ export function WhyItMattersData({
         
         {/* Card 1 */}
         <article
-          className="relative rounded-2xl bg-white/[0.03] border border-white/[0.08] p-10 transition-colors duration-300 data-card flex flex-col h-full justify-between"
+          className="relative rounded-2xl bg-white border border-line p-10 transition-colors duration-300 data-card flex flex-col h-full justify-between"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
           <div>
-            <div className="text-[64px] font-semibold text-white flex items-center gap-1 leading-none">
+            <div className="text-[64px] font-semibold text-ink flex items-center gap-1 leading-none">
               <span className="sr-only">%80</span>
-              <span aria-hidden="true" className="data-num-1 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+              <span aria-hidden="true" className="data-num-1 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
                 %80
               </span>
             </div>
             
             {/* Draw Line */}
-            <div className="h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] my-6 transition-all duration-500 data-line-1" style={{ width: "48px" }} />
+            <div className="h-[2px] bg-gradient-to-r from-brand to-accent my-6 transition-all duration-500 data-line-1" style={{ width: "48px" }} />
 
-            <h3 className="text-[18px] font-medium text-white mb-3">
+            <h3 className="text-[18px] font-medium text-ink mb-3">
               Bilgi sorgularında AI yanıtı gösteriliyor
             </h3>
             
-            <p className="text-[14px] leading-[1.55] text-gray-400">
+            <p className="text-[14px] leading-[1.55] text-ink-muted">
               Google, bilgi odaklı aramaların büyük bölümünde artık doğrudan AI Overviews yanıtı sunuyor. Klasik on mavi link sıralaması bu sorguların çoğunda artık ilk ekranın altında kalıyor.
             </p>
           </div>
@@ -314,26 +314,26 @@ export function WhyItMattersData({
 
         {/* Card 2 */}
         <article
-          className="relative rounded-2xl bg-white/[0.03] border border-white/[0.08] p-10 transition-colors duration-300 data-card flex flex-col h-full justify-between"
+          className="relative rounded-2xl bg-white border border-line p-10 transition-colors duration-300 data-card flex flex-col h-full justify-between"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
           <div>
-            <div className="text-[64px] font-semibold text-white flex items-center gap-1 leading-none">
+            <div className="text-[64px] font-semibold text-ink flex items-center gap-1 leading-none">
               <span className="sr-only">100M+</span>
-              <span aria-hidden="true" className="data-num-2 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+              <span aria-hidden="true" className="data-num-2 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
                 100M+
               </span>
             </div>
             
             {/* Draw Line */}
-            <div className="h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] my-6 transition-all duration-500 data-line-2" style={{ width: "48px" }} />
+            <div className="h-[2px] bg-gradient-to-r from-brand to-accent my-6 transition-all duration-500 data-line-2" style={{ width: "48px" }} />
 
-            <h3 className="text-[18px] font-medium text-white mb-3">
+            <h3 className="text-[18px] font-medium text-ink mb-3">
               Aylık sorgu Perplexity&apos;de işleniyor
             </h3>
             
-            <p className="text-[14px] leading-[1.55] text-gray-400">
+            <p className="text-[14px] leading-[1.55] text-ink-muted">
               Perplexity tek başına aylık yüz milyondan fazla sorguya ulaştı ve her ay büyümeye devam ediyor. ChatGPT, Claude ve Gemini de eklendiğinde, klasik aramanın dışındaki ekosistemin hacmi göz ardı edilemez büyüklüğe ulaştı.
             </p>
           </div>
@@ -341,26 +341,26 @@ export function WhyItMattersData({
 
         {/* Card 3 */}
         <article
-          className="relative rounded-2xl bg-white/[0.03] border border-white/[0.08] p-10 transition-colors duration-300 data-card flex flex-col h-full justify-between"
+          className="relative rounded-2xl bg-white border border-line p-10 transition-colors duration-300 data-card flex flex-col h-full justify-between"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
           <div>
-            <div className="text-[64px] font-semibold text-white flex items-center gap-1 leading-none">
+            <div className="text-[64px] font-semibold text-ink flex items-center gap-1 leading-none">
               <span className="sr-only">3x</span>
-              <span aria-hidden="true" className="data-num-3 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+              <span aria-hidden="true" className="data-num-3 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
                 3x
               </span>
             </div>
             
             {/* Draw Line */}
-            <div className="h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] my-6 transition-all duration-500 data-line-3" style={{ width: "48px" }} />
+            <div className="h-[2px] bg-gradient-to-r from-brand to-accent my-6 transition-all duration-500 data-line-3" style={{ width: "48px" }} />
 
-            <h3 className="text-[18px] font-medium text-white mb-3">
+            <h3 className="text-[18px] font-medium text-ink mb-3">
               Dönüşüm oranı AI alıntısından gelen trafikte
             </h3>
             
-            <p className="text-[14px] leading-[1.55] text-gray-400">
+            <p className="text-[14px] leading-[1.55] text-ink-muted">
               AI yanıtlarında alıntılandığı için sitenize gelen ziyaretçi, araştırma fazını tamamlamış ve karar aşamasındadır. Bu trafik, klasik organik aramaya göre belirgin biçimde daha yüksek dönüşüm sağlıyor.
             </p>
           </div>
@@ -369,12 +369,12 @@ export function WhyItMattersData({
       </div>
 
       {/* Model Stats Section */}
-      <div className="mt-20 border-t border-white/5 pt-16 section-2-models-header">
+      <div className="mt-20 border-t border-line pt-16 section-2-models-header">
         <div className="text-center mb-12">
-          <h3 className="text-[24px] md:text-[28px] font-semibold text-white tracking-tight mb-3">
+          <h3 className="text-[24px] md:text-[28px] font-semibold text-ink tracking-tight mb-3">
             Yapay Zeka Motorlarının Yükselişi ve Hacmi
           </h3>
-          <p className="text-[15px] text-gray-400 max-w-[640px] mx-auto leading-relaxed">
+          <p className="text-[15px] text-ink-muted max-w-[640px] mx-auto leading-relaxed">
             Kullanıcıların bilgiye ulaşmak için tercih ettiği en büyük üç yapay zeka modelinin güncel kullanıcı hacmi ve son iki yıldaki büyüme trendi.
           </p>
         </div>
@@ -382,86 +382,86 @@ export function WhyItMattersData({
         {/* Model Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1: ChatGPT */}
-          <article className="relative rounded-2xl bg-white/[0.02] border border-white/[0.06] p-8 transition-colors duration-300 model-card flex flex-col h-full justify-between hover:border-white/[0.12] hover:bg-white/[0.03]">
+          <article className="relative rounded-2xl bg-white border border-line p-8 transition-colors duration-300 model-card flex flex-col h-full justify-between hover:border-line-strong hover:bg-ink/[0.03]">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <span className="text-[12px] uppercase tracking-widest font-semibold text-emerald-400">
+                <span className="text-[12px] uppercase tracking-widest font-semibold text-emerald-600">
                   ChatGPT Search
                 </span>
-                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-emerald-400">
+                <div className="w-8 h-8 rounded-lg bg-white border border-line flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-emerald-600">
                     <circle cx="12" cy="12" r="10" />
                     <line x1="2" y1="12" x2="22" y2="12" />
                     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                   </svg>
                 </div>
               </div>
-              <div className="text-[48px] font-bold text-white leading-none mb-2">
+              <div className="text-[48px] font-bold text-ink leading-none mb-2">
                 <span className="sr-only">250M+</span>
-                <span aria-hidden="true" className="model-num-1 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+                <span aria-hidden="true" className="model-num-1 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
                   250M+
                 </span>
               </div>
-              <div className="text-[13px] font-semibold text-purple-400 mb-4">
+              <div className="text-[13px] font-semibold text-purple-600 mb-4">
                 Son 2 yılda %250+ artış
               </div>
-              <p className="text-[14px] leading-[1.55] text-gray-400">
+              <p className="text-[14px] leading-[1.55] text-ink-muted">
                 Haftalık 250 milyondan fazla aktif kullanıcısıyla, arama motoru entegrasyonu sayesinde geleneksel arama davranışını en çok dönüştüren modeldir.
               </p>
             </div>
           </article>
 
           {/* Card 2: Claude */}
-          <article className="relative rounded-2xl bg-white/[0.02] border border-white/[0.06] p-8 transition-colors duration-300 model-card flex flex-col h-full justify-between hover:border-white/[0.12] hover:bg-white/[0.03]">
+          <article className="relative rounded-2xl bg-white border border-line p-8 transition-colors duration-300 model-card flex flex-col h-full justify-between hover:border-line-strong hover:bg-ink/[0.03]">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <span className="text-[12px] uppercase tracking-widest font-semibold text-orange-400">
+                <span className="text-[12px] uppercase tracking-widest font-semibold text-orange-600">
                   Claude 3.5
                 </span>
-                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-orange-400">
+                <div className="w-8 h-8 rounded-lg bg-white border border-line flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-orange-600">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
               </div>
-              <div className="text-[48px] font-bold text-white leading-none mb-2">
+              <div className="text-[48px] font-bold text-ink leading-none mb-2">
                 <span className="sr-only">30M+</span>
-                <span aria-hidden="true" className="model-num-2 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+                <span aria-hidden="true" className="model-num-2 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
                   30M+
                 </span>
               </div>
-              <div className="text-[13px] font-semibold text-purple-400 mb-4">
+              <div className="text-[13px] font-semibold text-purple-600 mb-4">
                 Son 2 yılda %400+ artış
               </div>
-              <p className="text-[14px] leading-[1.55] text-gray-400">
+              <p className="text-[14px] leading-[1.55] text-ink-muted">
                 Aylık 30 milyondan fazla aktif kullanıcısı ile karmaşık yazılım, derinlemesine analiz ve profesyonel sorgularda en güvenilen alıntı kaynaklarından biridir.
               </p>
             </div>
           </article>
 
           {/* Card 3: Gemini */}
-          <article className="relative rounded-2xl bg-white/[0.02] border border-white/[0.06] p-8 transition-colors duration-300 model-card flex flex-col h-full justify-between hover:border-white/[0.12] hover:bg-white/[0.03]">
+          <article className="relative rounded-2xl bg-white border border-line p-8 transition-colors duration-300 model-card flex flex-col h-full justify-between hover:border-line-strong hover:bg-ink/[0.03]">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <span className="text-[12px] uppercase tracking-widest font-semibold text-blue-400">
+                <span className="text-[12px] uppercase tracking-widest font-semibold text-blue-600">
                   Google Gemini
                 </span>
-                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-blue-400">
+                <div className="w-8 h-8 rounded-lg bg-white border border-line flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-blue-600">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 </div>
               </div>
-              <div className="text-[48px] font-bold text-white leading-none mb-2">
+              <div className="text-[48px] font-bold text-ink leading-none mb-2">
                 <span className="sr-only">1B+</span>
-                <span aria-hidden="true" className="model-num-3 bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+                <span aria-hidden="true" className="model-num-3 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
                   1B+
                 </span>
               </div>
-              <div className="text-[13px] font-semibold text-purple-400 mb-4">
+              <div className="text-[13px] font-semibold text-purple-600 mb-4">
                 Son 2 yılda %250+ arama entegrasyonu
               </div>
-              <p className="text-[14px] leading-[1.55] text-gray-400">
+              <p className="text-[14px] leading-[1.55] text-ink-muted">
                 1 milyardan fazla Google kullanıcısına Android ve Chrome üzerinden doğrudan ulaşarak, AI Overviews altyapısı sayesinde en geniş kitleye hitap eden modeldir.
               </p>
             </div>
@@ -485,10 +485,10 @@ function ExpandableQueries({ queries }: { queries: string[] }) {
   };
 
   return (
-    <div className="mt-6 border-t border-white/5 pt-4">
+    <div className="mt-6 border-t border-line pt-4">
       <button
         onClick={toggle}
-        className="flex items-center justify-between w-full text-[13px] text-gray-400 hover:text-white font-medium focus:outline-none transition-colors group"
+        className="flex items-center justify-between w-full text-[13px] text-ink-muted hover:text-ink font-medium focus:outline-none transition-colors group"
       >
         <span>Tipik soru örnekleri</span>
         <svg
@@ -512,8 +512,8 @@ function ExpandableQueries({ queries }: { queries: string[] }) {
       >
         <ul className="space-y-2 pl-1">
           {queries.map((q, idx) => (
-            <li key={idx} className="text-[13px] text-gray-450 italic flex items-start gap-2">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3 h-3 text-purple-400 mt-1 flex-shrink-0">
+            <li key={idx} className="text-[13px] text-ink-faint italic flex items-start gap-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3 h-3 text-purple-600 mt-1 flex-shrink-0">
                 <polyline points="9 18 15 12 9 6" />
               </svg>
               <span>{q}</span>
@@ -546,17 +546,17 @@ function IndustryCard({
 }: IndustryCardProps) {
   return (
     <article
-      className="relative rounded-2xl bg-white/[0.03] border border-white/[0.08] p-8 transition-colors duration-300 industry-card flex flex-col h-full justify-between"
+      className="relative rounded-2xl bg-white border border-line p-8 transition-colors duration-300 industry-card flex flex-col h-full justify-between"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       {/* Accent border top line */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] rounded-t-[inherit] top-border-line" style={{ width: "0%" }} />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand to-accent rounded-t-[inherit] top-border-line" style={{ width: "0%" }} />
 
       <div>
         {/* Top row: radial glow wrapper around icon + label */}
         <div className="flex items-center justify-between gap-4 mb-5">
-          <span className="text-[12px] uppercase tracking-widest font-semibold bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] bg-clip-text text-transparent">
+          <span className="text-[12px] uppercase tracking-widest font-semibold bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
             {label}
           </span>
           <div className="w-11 h-11 flex items-center justify-center relative industry-icon-bg rounded-lg">
@@ -565,11 +565,11 @@ function IndustryCard({
           </div>
         </div>
 
-        <h3 className="text-[20px] font-medium text-white mb-2 leading-snug">
+        <h3 className="text-[20px] font-medium text-ink mb-2 leading-snug">
           {title}
         </h3>
         
-        <p className="text-[14px] leading-[1.55] text-gray-400">
+        <p className="text-[14px] leading-[1.55] text-ink-muted">
           {body}
         </p>
       </div>
@@ -587,18 +587,18 @@ export function IndustryVerticals({
   onMouseLeave: (e: React.MouseEvent<HTMLDivElement>) => void;
 }) {
   return (
-    <section className="content-section section-3-container border-t border-white/5">
+    <section className="content-section section-3-container border-t border-line">
       
       {/* HEADER */}
       <div className="text-center mb-16 section-3-header">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-blue-400 uppercase tracking-widest mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-line text-xs font-medium text-blue-600 uppercase tracking-widest mb-6">
           <Sparkles className="w-3 h-3" />
           HEDEF SEKTÖRLER
         </div>
-        <h2 className="text-[36px] md:text-[48px] font-bold text-white tracking-tight mb-4">
+        <h2 className="text-[36px] md:text-[48px] font-bold text-ink tracking-tight mb-4">
           Hangi İşletmeler GEO Danışmanlığı Almalı?
         </h2>
-        <p className="text-[16px] text-gray-400 max-w-[720px] mx-auto leading-relaxed">
+        <p className="text-[16px] text-ink-muted max-w-[720px] mx-auto leading-relaxed">
           GEO her sektör için aynı yoğunlukta gerekli değildir. Müşterilerinin satın alma yolculuğu araştırmayla başlayan, karar verirken referans arayan veya karşılaştırma yapan her işletme, AI motorlarında konumlanmadan büyüyemez.
         </p>
       </div>
@@ -611,7 +611,7 @@ export function IndustryVerticals({
           title="B2B SaaS ve Yazılım Şirketleri"
           body="Karar vericilerin yapay zekaya yönelttiği karmaşık ürün karşılaştırma sorgularında öne çıkmak isteyen şirketler. SaaS satın alma sürecinin yüzde sekseni artık AI motorlarında başlıyor."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white relative z-10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-ink relative z-10">
               <polygon points="12 2 2 7 12 12 22 7 12 2" />
               <polyline points="2 17 12 22 22 17" />
               <polyline points="2 12 12 17 22 12" />
@@ -632,7 +632,7 @@ export function IndustryVerticals({
           title="E-ticaret ve D2C Markaları"
           body="Ürün önerisi sorgularında ChatGPT veya Perplexity'nin yanıtının içinde geçmek isteyen markalar. Tek bir AI tavsiyesi, on bin reklam gösteriminden daha yüksek satın alma niyeti taşıyor."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white relative z-10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-ink relative z-10">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z" />
               <line x1="3" y1="6" x2="21" y2="6" />
               <path d="M16 10a4 4 0 0 1-8 0" />
@@ -653,7 +653,7 @@ export function IndustryVerticals({
           title="Sağlık ve Klinik İşletmeleri"
           body="YMYL kapsamında AI motorlarının yüksek güven eşiği aradığı bir sektör. Uzman otoritesi, akademik referanslar ve doğrulanmış hekim profilleri olmadan AI yanıtlarında görünmek mümkün değil."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white relative z-10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-ink relative z-10">
               <path d="M4.5 16.5c-1.5 1.25-2.5 3-2.5 4.5 0 1.5 1 2.5 2.5 2.5s2.5-1 2.5-2.5c0-1.5-1-3.25-2.5-4.5z" />
               <path d="M10 10a4 4 0 0 0-4-4h-.5" />
               <path d="M12 18V6a4 4 0 0 1 8 0v2.5" />
@@ -675,7 +675,7 @@ export function IndustryVerticals({
           title="Hukuk Büroları ve Profesyonel Hizmet"
           body="Bilgi yoğun sorgularda referans gösterilmek isteyen uzmanlık ofisleri. Yapay zekanın hukuki konularda kaynak olarak gösterdiği bürolar, müşteri kazanımında belirgin avantaj elde ediyor."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white relative z-10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-ink relative z-10">
               <line x1="12" y1="3" x2="12" y2="21" />
               <line x1="9" y1="21" x2="15" y2="21" />
               <line x1="6" y1="7" x2="18" y2="7" />
@@ -697,7 +697,7 @@ export function IndustryVerticals({
           title="Finans ve Sigorta Kurumları"
           body="Karşılaştırma ve önerme sorgularında AI yanıtlarında geçmesi kritik olan kurumsal markalar. Finansal ürün seçimi gibi hassas kararlarda AI'nın referans aldığı markalar, müşteri güvenini ilk temasta kazanıyor."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white relative z-10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-ink relative z-10">
               <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
               <path d="M22 12A10 10 0 0 0 12 2v10z" />
             </svg>
@@ -717,7 +717,7 @@ export function IndustryVerticals({
           title="Eğitim ve EdTech Platformları"
           body="Müfredat, kurs ve sertifika önerilerinde AI motorlarının referans aldığı kaynak haline gelmek isteyen platformlar. Öğrencilerin ilk başvurduğu mecra artık AI sohbet kutularıdır."
           icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white relative z-10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-ink relative z-10">
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
               <path d="M6 12v5c0 2 2.5 3 6 3s6-1 6-3v-5" />
             </svg>
@@ -740,17 +740,17 @@ export function IndustryVerticals({
 
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col text-center md:text-left gap-1">
-            <h4 className="text-[22px] font-medium text-white leading-tight">
+            <h4 className="text-[22px] font-medium text-ink leading-tight">
               Markanız bu sektörlerden birinde mi?
             </h4>
-            <p className="text-[14px] text-gray-400">
+            <p className="text-[14px] text-ink-muted">
               Hangi sorgularda göründüğünüzü ve nerede konumlanmanız gerektiğini birlikte planlayalım.
             </p>
           </div>
           
           <Link
             href="#analiz"
-            className="inline-flex items-center justify-center h-[46px] px-6 rounded-lg bg-gradient-to-r from-[#7b5cff] to-[#4a9eff] hover:opacity-95 text-white font-medium text-[14px] transition-all duration-300 focus-ring-purple shadow-md shadow-[#7b5cff]/10 whitespace-nowrap"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-lg bg-gradient-to-r from-brand to-accent hover:opacity-95 text-white font-medium text-[14px] transition-all duration-300 focus-ring-purple shadow-md shadow-[#7b5cff]/10 whitespace-nowrap"
           >
             Stratejik Görüşme Planla
           </Link>

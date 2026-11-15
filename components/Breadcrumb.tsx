@@ -53,7 +53,7 @@ export default function Breadcrumb({ items, className, containerClassName }: Bre
       <nav aria-label="Breadcrumb" className={`w-full pt-24 pb-4 px-4 sm:px-6 lg:px-8 relative z-10 ${className || ""}`}>
         <div className={containerClassName || "max-w-7xl mx-auto"}>
           <div className="inline-flex max-w-full">
-            <ol className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-900/70 border border-white/10 backdrop-blur-xl shadow-lg shadow-black/40 text-xs sm:text-sm max-w-full overflow-hidden">
+            <ol className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/70 border border-line backdrop-blur-xl shadow-lg shadow-black/40 text-xs sm:text-sm max-w-full overflow-hidden">
               {normalizedItems.map((item, index) => {
                 const isFirst = index === 0;
                 const isLast = index === normalizedItems.length - 1;
@@ -68,10 +68,10 @@ export default function Breadcrumb({ items, className, containerClassName }: Bre
                     {isFirst ? (
                       <Link
                         href="/"
-                        className="group flex items-center gap-1.5 text-slate-400 hover:text-white transition-all duration-200 flex-shrink-0"
+                        className="group flex items-center gap-1.5 text-ink-muted hover:text-ink transition-all duration-200 flex-shrink-0"
                         title="Anasayfa"
                       >
-                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 group-hover:bg-purple-500/20 group-hover:border-purple-500/40 group-hover:scale-105 transition-all">
+                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/10 text-purple-600 border border-purple-500/20 group-hover:bg-purple-500/20 group-hover:border-purple-500/40 group-hover:scale-105 transition-all">
                           <Home className="w-3.5 h-3.5" aria-hidden="true" />
                         </span>
                         <span className="sr-only">Anasayfa</span>
@@ -89,7 +89,7 @@ export default function Breadcrumb({ items, className, containerClassName }: Bre
                     ) : (
                       <Link
                         href={item.href || "#"}
-                        className="text-slate-300 hover:text-white font-medium text-xs px-2 py-1 rounded-md hover:bg-white/5 transition-all whitespace-nowrap flex-shrink-0"
+                        className="text-ink-soft hover:text-ink font-medium text-xs px-2 py-1 rounded-md hover:bg-ink/[0.03] transition-all whitespace-nowrap flex-shrink-0"
                       >
                         {cleanName}
                       </Link>

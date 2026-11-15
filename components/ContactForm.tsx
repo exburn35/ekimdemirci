@@ -84,28 +84,28 @@ export default function ContactForm({
   };
 
   return (
-    <section className="py-24 bg-[#0a0f25] border-t border-white/5 relative z-10">
+    <section className="py-24 bg-canvas border-t border-line relative z-10">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-[#111836] rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20 relative"
+          className="bg-white rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20 relative"
         >
           {showTitle && (
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-ink tracking-tight">
                 {title}
               </h2>
-              <p className="text-gray-400 text-lg font-medium">{description}</p>
+              <p className="text-ink-muted text-lg font-medium">{description}</p>
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
-                <User className="w-4 h-4 inline mr-2 text-purple-400" />
+              <label htmlFor="name" className="block text-sm font-semibold text-ink-soft mb-2">
+                <User className="w-4 h-4 inline mr-2 text-purple-600" />
                 Ad Soyad *
               </label>
               <input
@@ -115,14 +115,14 @@ export default function ContactForm({
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm"
+                className="w-full px-4 py-3 bg-white border border-line rounded-xl text-ink placeholder-ink-faint focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-ink/5 transition-all shadow-sm"
                 placeholder="Adınız Soyadınız"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
-                <Mail className="w-4 h-4 inline mr-2 text-purple-400" />
+              <label htmlFor="email" className="block text-sm font-semibold text-ink-soft mb-2">
+                <Mail className="w-4 h-4 inline mr-2 text-purple-600" />
                 E-posta Adresi *
               </label>
               <input
@@ -132,13 +132,13 @@ export default function ContactForm({
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm"
+                className="w-full px-4 py-3 bg-white border border-line rounded-xl text-ink placeholder-ink-faint focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-ink/5 transition-all shadow-sm"
                 placeholder="ornek@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-semibold text-gray-300 mb-2">
+              <label htmlFor="phone" className="block text-sm font-semibold text-ink-soft mb-2">
                 Telefon Numarası
               </label>
               <input
@@ -147,15 +147,15 @@ export default function ContactForm({
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm"
+                className="w-full px-4 py-3 bg-white border border-line rounded-xl text-ink placeholder-ink-faint focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-ink/5 transition-all shadow-sm"
                 placeholder="+90 555 123 4567"
               />
             </div>
 
             {showWebsite && (
               <div>
-                <label htmlFor="website" className="block text-sm font-semibold text-gray-300 mb-2">
-                  <Globe className="w-4 h-4 inline mr-2 text-purple-400" />
+                <label htmlFor="website" className="block text-sm font-semibold text-ink-soft mb-2">
+                  <Globe className="w-4 h-4 inline mr-2 text-purple-600" />
                   Web Sitesi (Opsiyonel)
                 </label>
                 <input
@@ -164,15 +164,15 @@ export default function ContactForm({
                   name="website"
                   value={formData.website}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm"
+                  className="w-full px-4 py-3 bg-white border border-line rounded-xl text-ink placeholder-ink-faint focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-ink/5 transition-all shadow-sm"
                   placeholder="ekimdemirci.com"
                 />
               </div>
             )}
 
             <div>
-              <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
-                <MessageSquare className="w-4 h-4 inline mr-2 text-purple-400" />
+              <label htmlFor="message" className="block text-sm font-semibold text-ink-soft mb-2">
+                <MessageSquare className="w-4 h-4 inline mr-2 text-purple-600" />
                 Mesajınız *
               </label>
               <textarea
@@ -182,7 +182,7 @@ export default function ContactForm({
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all shadow-sm resize-none"
+                className="w-full px-4 py-3 bg-white border border-line rounded-xl text-ink placeholder-ink-faint focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-ink/5 transition-all shadow-sm resize-none"
                 placeholder="Projenizden veya talebinizden bahsedin..."
               />
             </div>
@@ -191,7 +191,7 @@ export default function ContactForm({
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-400 text-sm font-medium shadow-sm"
+                className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-600 text-sm font-medium shadow-sm"
               >
                 Teşekkürler! Mesajınız başarıyla iletildi. En kısa sürede size geri dönüş yapacağım.
               </motion.div>
@@ -201,7 +201,7 @@ export default function ContactForm({
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-medium shadow-sm"
+                className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-600 text-sm font-medium shadow-sm"
               >
                 {errorMessage || "Bir şeyler yanlış gitti. Lütfen tekrar deneyin veya doğrudan iletişime geçin."}
               </motion.div>
@@ -214,7 +214,7 @@ export default function ContactForm({
             >
               {isSubmitting ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <div className="w-5 h-5 border-2 border-line-strong border-t-transparent rounded-full animate-spin" />
                   Gönderiliyor...
                 </>
               ) : (

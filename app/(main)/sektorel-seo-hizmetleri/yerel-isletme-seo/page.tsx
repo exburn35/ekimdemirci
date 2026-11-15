@@ -207,64 +207,64 @@ export default function LocalBusinessSEOPage() {
         blogCategory="Yerel SEO"
       >
         {/* HERO TRUST STRIP */}
-        <section className="py-8 bg-[#0a0f25] border-y border-white/5">
+        <section className="py-8 bg-canvas border-y border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-blue-400">8+ Yıl</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Yerel SEO Deneyimi</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-blue-600">8+ Yıl</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Yerel SEO Deneyimi</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-cyan-400">150+</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Harita & Konum Projesi</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-cyan-600">150+</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Harita & Konum Projesi</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-emerald-400">%134</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Ort. Yol Tarifi & Arama Artışı</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-emerald-600">%134</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Ort. Yol Tarifi & Arama Artışı</div>
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-purple-400">Local Pack</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">Google Maps İlk 3 Sıra</div>
+              <div className="p-4 bg-white border border-line rounded-2xl">
+                <div className="text-2xl md:text-3xl font-extrabold text-purple-600">Local Pack</div>
+                <div className="text-xs md:text-sm text-ink-muted mt-1">Google Maps İlk 3 Sıra</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* DEFINITION & TRANSPARENT EVIDENCE SECTION */}
-        <section className="py-16 bg-[#0a0f25]">
+        <section className="py-16 bg-canvas">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
                 Yerel İşletme SEO Danışmanlığı Nedir?
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
-                Yerel İşletme SEO danışmanlığı, belirli bir şehirde veya bölgede fiziki dükkanı ya da hizmet alanı olan işletmelerin "yakınımdaki", "şehir adı + hizmet" aramalarında Google Haritalar (Local Pack) ve organik aramalarda üst sıralara taşınması çalışmasıdır. Web siteniz için <Link href="/seo-hizmetleri/teknik-seo" className="text-blue-400 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-blue-400 underline font-semibold">Sayfa İçi SEO</Link> altyapısını kurarak telefon aramaları ve yol tarifi dönüşümlerini katlıyorum.
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
+                Yerel İşletme SEO danışmanlığı, belirli bir şehirde veya bölgede fiziki dükkanı ya da hizmet alanı olan işletmelerin "yakınımdaki", "şehir adı + hizmet" aramalarında Google Haritalar (Local Pack) ve organik aramalarda üst sıralara taşınması çalışmasıdır. Web siteniz için <Link href="/seo-hizmetleri/teknik-seo" className="text-blue-600 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-blue-600 underline font-semibold">Sayfa İçi SEO</Link> altyapısını kurarak telefon aramaları ve yol tarifi dönüşümlerini katlıyorum.
               </p>
 
-              <div className="pt-6 border-t border-white/10">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-cyan-400" />
+              <div className="pt-6 border-t border-line">
+                <h3 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5 text-cyan-600" />
                   Doğrulanmış Metodoloji ve Şeffaf Ölçüm Çerçevesi
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-5 bg-[#111836] border border-cyan-500/20 rounded-2xl">
-                    <div className="text-xs text-cyan-400 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
-                    <div className="text-3xl font-extrabold text-emerald-400 mb-2">%134 Arama Artışı</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-cyan-500/20 rounded-2xl">
+                    <div className="text-xs text-cyan-600 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
+                    <div className="text-3xl font-extrabold text-emerald-600 mb-2">%134 Arama Artışı</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       4 aylık yerel SEO ve harita optimizasyonunda işletme telefon aramalarında elde edilen net büyüme. (Kaynak: Google Business Profile 2025)
                     </p>
                   </div>
-                  <div className="p-5 bg-[#111836] border border-cyan-500/20 rounded-2xl">
-                    <div className="text-xs text-cyan-400 font-mono font-semibold mb-1">HARİTA KONUMLANMASI</div>
-                    <div className="text-3xl font-extrabold text-white mb-2">Local Pack 1. Sıra</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-cyan-500/20 rounded-2xl">
+                    <div className="text-xs text-cyan-600 font-mono font-semibold mb-1">HARİTA KONUMLANMASI</div>
+                    <div className="text-3xl font-extrabold text-ink mb-2">Local Pack 1. Sıra</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       Hedef ilçelerde "yakındaki hizmet" sorgularında Haritalar ilk 3 sıra paketinde kalıcı yer edinme.
                     </p>
                   </div>
-                  <div className="p-5 bg-[#111836] border border-cyan-500/20 rounded-2xl">
-                    <div className="text-xs text-cyan-400 font-mono font-semibold mb-1">NAP VERİ DOĞRULUĞU</div>
-                    <div className="text-3xl font-extrabold text-cyan-400 mb-2">Tam Tutarlılık</div>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                  <div className="p-5 bg-white border border-cyan-500/20 rounded-2xl">
+                    <div className="text-xs text-cyan-600 font-mono font-semibold mb-1">NAP VERİ DOĞRULUĞU</div>
+                    <div className="text-3xl font-extrabold text-cyan-600 mb-2">Tam Tutarlılık</div>
+                    <p className="text-xs text-ink-soft leading-relaxed">
                       Adres, telefon ve unvan bilgilerinin tüm dijital dizinlerde birebir doğrulanarak Google güven puanı inşası.
                     </p>
                   </div>
@@ -275,23 +275,23 @@ export default function LocalBusinessSEOPage() {
         </section>
 
         {/* TARGET SECTORS CARDS SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">
                 <Store className="w-3.5 h-3.5" />
                 Kimler İçin Uygun?
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Yerel SEO Hizmetinden Faydalanan Sektörler
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {localSectors.map((sec) => (
-                <div key={sec.title} className="bg-[#111836] border border-white/10 p-6 rounded-2xl hover:border-blue-500/30 transition-all">
-                  <h3 className="text-xl font-bold text-cyan-300 mb-2">{sec.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{sec.desc}</p>
+                <div key={sec.title} className="bg-white border border-line p-6 rounded-2xl hover:border-blue-500/30 transition-all">
+                  <h3 className="text-xl font-bold text-cyan-700 mb-2">{sec.title}</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">{sec.desc}</p>
                 </div>
               ))}
             </div>
@@ -299,14 +299,14 @@ export default function LocalBusinessSEOPage() {
         </section>
 
         {/* REVIEW MANAGEMENT SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-cyan-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <Star className="w-8 h-8 text-amber-400" />
+            <div className="bg-white border border-cyan-500/20 rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <Star className="w-8 h-8 text-amber-600" />
                 Müşteri Yorumları ve Yıldız Puanı Yönetim Stratejisi
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
                 Harita sıralamalarında yalnızca konum yakınlığı değil, müşteri yorumlarının kalitesi ve yanıtlanma hızı da etkilidir. Gerçek müşterilerden organik yorum alma teşvik kurguları hazırlıyor, olumsuz yorumları ise Google politikasını zedelemeden kurumsal dille yönetiyorum.
               </p>
             </div>
@@ -314,14 +314,14 @@ export default function LocalBusinessSEOPage() {
         </section>
 
         {/* MULTI-BRANCH MANAGEMENT SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-white/10 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <Building className="w-8 h-8 text-blue-400" />
+            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <Building className="w-8 h-8 text-blue-600" />
                 Çok Şubeli İşletmeler İçin Şube SEO Mimarisi
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
                 Birden fazla ilçede veya şehirde şubesi olan markalar için her şubenin kendi harita profilini ve web sitesindeki özel şube sayfasını (örneğin `/kadikoy-subesi`) hiyerarşik yapıda kurguluyorum. Şubelerin birbiriyle rekabet etmesini engelleyen net konum sinyalleri kuruyorum.
               </p>
             </div>
@@ -329,14 +329,14 @@ export default function LocalBusinessSEOPage() {
         </section>
 
         {/* CITY/DISTRICT STRATEGY WITH DUPLICATE WARNING SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#111836] border border-amber-500/30 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
-                <AlertTriangle className="w-8 h-8 text-amber-400" />
+            <div className="bg-white border border-amber-500/30 rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
+                <AlertTriangle className="w-8 h-8 text-amber-600" />
                 Şehir ve İlçe Sayfalarında Kopya İçerik Engelleyici İlke
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
                 Aynı metni sadece ilçe adını değiştirerek (Kadıköy SEO, Beşiktaş SEO vb.) yüzlerce sayfaya çoğaltmak Google tarafından doğrudan spammedilir. Kurguladığım lokasyon sayfalarında her bölgeye özel hizmet kapsamı, gerçek projeler ve benzersiz harita modülleri kullanarak organik sıralama gücü elde ederim.
               </p>
             </div>
@@ -344,23 +344,23 @@ export default function LocalBusinessSEOPage() {
         </section>
 
         {/* DELIVERABLES LIST SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
                 <PackageCheck className="w-3.5 h-3.5" />
                 Somut Çıktılar
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Yerel SEO Danışmanlığı Teslimat Çıktıları
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {deliverables.map((item, idx) => (
-                <div key={idx} className="bg-[#111836] border border-white/10 p-6 rounded-2xl flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-1 flex-shrink-0" />
-                  <span className="text-gray-200 font-medium text-sm md:text-base">{item}</span>
+                <div key={idx} className="bg-white border border-line p-6 rounded-2xl flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                  <span className="text-ink font-medium text-sm md:text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -368,24 +368,24 @@ export default function LocalBusinessSEOPage() {
         </section>
 
         {/* TIMELINE ROADMAP SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-600 uppercase tracking-widest mb-3">
                 <Clock className="w-3.5 h-3.5" />
                 Sonuç Zaman Çizelgesi
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Yerel SEO Süreç Haritası
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {timelineSteps.map((step) => (
-                <div key={step.period} className="bg-[#111836] border border-cyan-500/20 p-8 rounded-2xl relative">
-                  <div className="text-xs font-mono font-semibold text-cyan-400 mb-2">{step.period}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{step.desc}</p>
+                <div key={step.period} className="bg-white border border-cyan-500/20 p-8 rounded-2xl relative">
+                  <div className="text-xs font-mono font-semibold text-cyan-600 mb-2">{step.period}</div>
+                  <h3 className="text-xl font-bold text-ink mb-3">{step.title}</h3>
+                  <p className="text-ink-soft text-sm leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -393,23 +393,23 @@ export default function LocalBusinessSEOPage() {
         </section>
 
         {/* TOOLS STRIP SECTION */}
-        <section className="py-16 bg-[#060a1d] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">
                 <Wrench className="w-3.5 h-3.5" />
                 Yazılım & Araç Parkı
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink">
                 Yerel SEO Analizinde Kullandığım Başlıca Araçlar
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {toolsList.map((tool) => (
-                <div key={tool.name} className="bg-[#111836] border border-white/10 p-5 rounded-xl text-center">
-                  <div className="font-bold text-white text-base mb-1">{tool.name}</div>
-                  <div className="text-xs text-gray-400">{tool.role}</div>
+                <div key={tool.name} className="bg-white border border-line p-5 rounded-xl text-center">
+                  <div className="font-bold text-ink text-base mb-1">{tool.name}</div>
+                  <div className="text-xs text-ink-muted">{tool.role}</div>
                 </div>
               ))}
             </div>
@@ -417,14 +417,14 @@ export default function LocalBusinessSEOPage() {
         </section>
 
         {/* PRICING POSTURE SECTION */}
-        <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+        <section className="py-16 bg-canvas border-t border-line">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-r from-blue-900/30 to-cyan-900/30 border border-blue-500/30 rounded-3xl p-8 md:p-12 text-center">
-              <DollarSign className="w-10 h-10 text-cyan-400 mx-auto mb-4" />
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              <DollarSign className="w-10 h-10 text-cyan-600 mx-auto mb-4" />
+              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
                 Şeffaf ve Şube Sayınıza Özel Teklif Yaklaşımı
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
                 Yerel SEO çalışmalarında tek tip paket satışı yerine işletmenizin konum sayısı, rekabet seviyesi ve hedeflerine uygun şeffaf teklifler hazırlarım. Taahhütsüz ilk değerlendirme randevusu oluşturabilirsiniz.
               </p>
               <Link

@@ -119,48 +119,48 @@ export default function AISEO() {
       afterHeroNode={<GoogleAIOverviewSection />}
     >
       {/* Platform Comparison Table Section */}
-      <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+      <section className="py-16 bg-canvas border-t border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
               Yapay Zeka Motorları Karşılaştırmalı Optimizasyon Matrisi
             </h2>
-            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
+            <p className="text-ink-muted text-base md:text-lg max-w-2xl mx-auto">
               Her bir platformun içerik tercihi, öne çıkan alıntı sinyali ve teknik gereksinimleri farklılık gösterir.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-white/10 shadow-2xl">
+          <div className="overflow-x-auto rounded-2xl border border-line shadow-2xl">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#111836] border-b border-white/10 text-white font-bold text-sm md:text-base">
+                <tr className="bg-white border-b border-line text-ink font-bold text-sm md:text-base">
                   <th className="p-4 md:p-5">Platform</th>
                   <th className="p-4 md:p-5">Tercih Edilen İçerik Formatı</th>
                   <th className="p-4 md:p-5">Öne Çıkan Alıntı Sinyali</th>
                   <th className="p-4 md:p-5">Teknik Gereksinim</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5 text-gray-300 text-sm md:text-base bg-[#0d1433]/60">
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="p-4 md:p-5 font-bold text-cyan-400">ChatGPT (OpenAI)</td>
+              <tbody className="divide-y divide-line text-ink-soft text-sm md:text-base bg-white/60">
+                <tr className="hover:bg-ink/[0.03] transition-colors">
+                  <td className="p-4 md:p-5 font-bold text-cyan-600">ChatGPT (OpenAI)</td>
                   <td className="p-4 md:p-5">Soru-Cevap blokları, Özne-Yüklem ilişkisi barındıran net metinler</td>
                   <td className="p-4 md:p-5">Co-citation (Marka Birlikteliği) ve Wikidata varlık bağlantısı</td>
                   <td className="p-4 md:p-5">Hızlı sunucu yanıt süresi, temiz HTML ve JSON-LD şemaları</td>
                 </tr>
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="p-4 md:p-5 font-bold text-purple-400">Perplexity.ai</td>
+                <tr className="hover:bg-ink/[0.03] transition-colors">
+                  <td className="p-4 md:p-5 font-bold text-purple-600">Perplexity.ai</td>
                   <td className="p-4 md:p-5">Sayısal veri tabloları, araştırma özetleri ve karşılaştırmalar</td>
                   <td className="p-4 md:p-5">Açık kaynak atıfları ve metin içi rakamsal doğrulamalar</td>
                   <td className="p-4 md:p-5">İndeksleme engelinin bulunmaması, taranabilir açık URL yapısı</td>
                 </tr>
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="p-4 md:p-5 font-bold text-emerald-400">Claude (Anthropic)</td>
+                <tr className="hover:bg-ink/[0.03] transition-colors">
+                  <td className="p-4 md:p-5 font-bold text-emerald-600">Claude (Anthropic)</td>
                   <td className="p-4 md:p-5">Derin semantik bağlamlı, gereksiz dolgu laflardan arındırılmış editoryal içerikler</td>
                   <td className="p-4 md:p-5">E-E-A-T (Uzmanlık ve Otorite) sinyalleri ve konusal bütünlük</td>
                   <td className="p-4 md:p-5">Mantıksal H1-H6 hiyerarşisi ve anlamsal paragraf kırılımları</td>
                 </tr>
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="p-4 md:p-5 font-bold text-amber-400">Google AI Overviews</td>
+                <tr className="hover:bg-ink/[0.03] transition-colors">
+                  <td className="p-4 md:p-5 font-bold text-amber-600">Google AI Overviews</td>
                   <td className="p-4 md:p-5">40-50 kelimelik doğrudan yanıt paragrafları ve HTML listeleri</td>
                   <td className="p-4 md:p-5">Geleneksel SERP ilk sayfa sıralaması ve Featured Snippet uyumu</td>
                   <td className="p-4 md:p-5">Search Console doğrulaması ve gelişmiş Schema.org etiketleri</td>
@@ -172,7 +172,7 @@ export default function AISEO() {
       </section>
 
       {/* Visual Component */}
-      <section className="py-16 bg-[#0a0f25] border-t border-white/5">
+      <section className="py-16 bg-canvas border-t border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <AIVisual />
         </div>

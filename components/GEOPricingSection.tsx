@@ -19,7 +19,7 @@ const geoPlans = [
       "Aylık AI Görünürlük & Alıntı (Citation) Raporu",
     ],
     popular: false,
-    border: "border-white/10",
+    border: "border-line",
   },
   {
     name: "GEO Profesyonel",
@@ -53,7 +53,7 @@ const geoPlans = [
       "Haftalık İlerleme Raporu ve Kesintisiz Danışmanlık",
     ],
     popular: false,
-    border: "border-white/10",
+    border: "border-line",
   },
 ];
 
@@ -63,7 +63,7 @@ interface GEOPricingSectionProps {
 
 export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingSectionProps) {
   return (
-    <section className="py-20 relative overflow-hidden bg-[#070b19]">
+    <section className="py-20 relative overflow-hidden bg-canvas">
       {/* Background glow accents */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/4 right-10 w-[350px] h-[350px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -71,14 +71,14 @@ export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingS
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-700 text-xs font-semibold uppercase tracking-wider mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-purple-600" />
             Yapay Zeka SEO (GEO) Fiyatlandırması
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink tracking-tight mb-4">
             GEO Danışmanlık Fiyatları
           </h2>
-          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+          <p className="text-ink-soft text-base sm:text-lg leading-relaxed">
             ChatGPT, Google AI Overviews, Perplexity ve Gemini gibi yapay zeka motorlarında markanızın güvenilir bir kaynak olarak önerilmesi ve alıntılanması için özel kurgulanmış paketler.
           </p>
         </div>
@@ -91,18 +91,18 @@ export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingS
               
               <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-300 shrink-0 mt-1 sm:mt-0">
+                  <div className="p-3 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-700 shrink-0 mt-1 sm:mt-0">
                     <Brain className="w-7 h-7" />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-400 mb-1">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-600 mb-1">
                       <Bot className="w-3.5 h-3.5" />
                       Yapay Zeka Görünürlük Rehberi
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-ink mb-2">
                       GEO Danışmanlığı Hakkında Bilgi Almak İçin Tıklayın
                     </h3>
-                    <p className="text-gray-300 text-sm sm:text-base max-w-2xl leading-relaxed">
+                    <p className="text-ink-soft text-sm sm:text-base max-w-2xl leading-relaxed">
                       Generative Engine Optimization (GEO) metodolojisi, yapay zeka botlarının sitenizi nasıl okuduğu, entity otoritesi inşası ve tüm teknik detaylar hakkında kapsamlı bilgi edinin.
                     </p>
                   </div>
@@ -129,7 +129,7 @@ export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingS
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative rounded-2xl bg-slate-900/80 border ${plan.border} p-6 sm:p-8 backdrop-blur-xl flex flex-col justify-between shadow-xl hover:border-purple-500/50 transition-all duration-300 ${
+              className={`relative rounded-2xl bg-white/80 border ${plan.border} p-6 sm:p-8 backdrop-blur-xl flex flex-col justify-between shadow-xl hover:border-purple-500/50 transition-all duration-300 ${
                 plan.popular ? "ring-2 ring-purple-500/50 shadow-purple-900/20" : ""
               }`}
             >
@@ -142,21 +142,21 @@ export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingS
 
               <div>
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed min-h-[36px]">{plan.description}</p>
+                  <h3 className="text-xl font-bold text-ink mb-2">{plan.name}</h3>
+                  <p className="text-ink-muted text-xs sm:text-sm leading-relaxed min-h-[36px]">{plan.description}</p>
                 </div>
 
-                <div className="mb-6 pb-6 border-b border-white/10">
+                <div className="mb-6 pb-6 border-b border-line">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">{plan.price}</span>
-                    <span className="text-gray-400 text-sm font-medium">/{plan.period}</span>
+                    <span className="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight">{plan.price}</span>
+                    <span className="text-ink-muted text-sm font-medium">/{plan.period}</span>
                   </div>
                 </div>
 
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300 leading-snug">
-                      <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <li key={feature} className="flex items-start gap-2.5 text-xs sm:text-sm text-ink-soft leading-snug">
+                      <CheckCircle2 className="w-4 h-4 text-purple-600 shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -169,7 +169,7 @@ export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingS
                   className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-semibold text-sm transition-all duration-200 ${
                     plan.popular
                       ? "bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-lg shadow-purple-600/30"
-                      : "bg-white/5 hover:bg-white/10 text-white border border-white/10"
+                      : "bg-white hover:bg-ink/5 text-ink border border-line"
                   }`}
                 >
                   GEO Teklifi Al
