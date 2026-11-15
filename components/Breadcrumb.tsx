@@ -53,7 +53,7 @@ export default function Breadcrumb({ items, className, containerClassName }: Bre
       <nav aria-label="Breadcrumb" className={`w-full pt-24 pb-4 px-4 sm:px-6 lg:px-8 relative z-10 ${className || ""}`}>
         <div className={containerClassName || "max-w-7xl mx-auto"}>
           <div className="inline-flex max-w-full">
-            <ol className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/70 border border-line backdrop-blur-xl shadow-lg shadow-black/40 text-xs sm:text-sm max-w-full overflow-hidden">
+            <ol className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/85 border border-line backdrop-blur-xl shadow-card text-xs sm:text-sm max-w-full overflow-hidden">
               {normalizedItems.map((item, index) => {
                 const isFirst = index === 0;
                 const isLast = index === normalizedItems.length - 1;
@@ -62,7 +62,7 @@ export default function Breadcrumb({ items, className, containerClassName }: Bre
                 return (
                   <li key={item.href || index} className="flex items-center gap-1.5 sm:gap-2 min-w-0">
                     {!isFirst && (
-                      <ChevronRight className="w-3.5 h-3.5 text-purple-400/50 flex-shrink-0" aria-hidden="true" />
+                      <ChevronRight className="w-3.5 h-3.5 text-ink-faint flex-shrink-0" aria-hidden="true" />
                     )}
 
                     {isFirst ? (
@@ -71,7 +71,7 @@ export default function Breadcrumb({ items, className, containerClassName }: Bre
                         className="group flex items-center gap-1.5 text-ink-muted hover:text-ink transition-all duration-200 flex-shrink-0"
                         title="Anasayfa"
                       >
-                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/10 text-purple-600 border border-purple-500/20 group-hover:bg-purple-500/20 group-hover:border-purple-500/40 group-hover:scale-105 transition-all">
+                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-brand-light text-brand border border-brand/20 group-hover:border-brand/40 group-hover:scale-105 transition-all">
                           <Home className="w-3.5 h-3.5" aria-hidden="true" />
                         </span>
                         <span className="sr-only">Anasayfa</span>
@@ -79,11 +79,11 @@ export default function Breadcrumb({ items, className, containerClassName }: Bre
                       </Link>
                     ) : isLast ? (
                       <span
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-purple-500/30 text-purple-200 font-semibold text-xs tracking-wide shadow-sm min-w-0 max-w-[190px] xs:max-w-[240px] sm:max-w-[360px] md:max-w-[500px] lg:max-w-[650px]"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand-light border border-brand/20 text-brand font-semibold text-xs tracking-wide shadow-sm min-w-0 max-w-[190px] xs:max-w-[240px] sm:max-w-[360px] md:max-w-[500px] lg:max-w-[650px]"
                         aria-current="page"
                         title={cleanName}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse flex-shrink-0" aria-hidden="true"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse flex-shrink-0" aria-hidden="true"></span>
                         <span className="truncate">{cleanName}</span>
                       </span>
                     ) : (

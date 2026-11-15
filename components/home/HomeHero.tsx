@@ -32,7 +32,7 @@ export default function HomeHero() {
                 <span className="h-2 w-2 rounded-full bg-accent" />
                 SEO ve GEO Danışmanı Ekim Demirci
               </span>
-              <span className="block text-[40px] font-bold leading-[1.08] text-ink sm:text-5xl lg:text-[60px]">
+              <span className="block text-[40px] font-bold leading-[1.18] text-ink sm:text-5xl lg:text-[60px]">
                 Aranan değil,{" "}
                 <span className="relative whitespace-nowrap text-brand">
                   önerilen
@@ -96,14 +96,13 @@ export default function HomeHero() {
                   sizes="(max-width: 1024px) 90vw, 420px"
                   className="object-cover object-top"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/60 to-transparent" />
-                <div className="absolute bottom-5 left-5 text-white">
-                  <p className="text-base font-bold">Ekim Demirci</p>
-                  <p className="text-sm text-white/80">Bağımsız SEO &amp; GEO Danışmanı · İstanbul</p>
+                <div className="absolute left-4 top-4 rounded-xl bg-ink/55 px-3 py-2 text-white backdrop-blur-md">
+                  <p className="text-sm font-bold leading-tight">Ekim Demirci</p>
+                  <p className="text-xs text-white/80">Bağımsız SEO &amp; GEO Danışmanı · İstanbul</p>
                 </div>
               </div>
 
-              <div className="absolute -left-6 top-10 hidden w-60 rounded-2xl border border-line bg-white p-4 shadow-lift sm:block">
+              <div className="absolute -left-8 bottom-28 hidden w-52 rounded-2xl border border-line bg-white p-4 shadow-lift sm:block">
                 <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-ink-muted">
                   <Search className="h-3.5 w-3.5 text-brand" /> Google sonuçları
                 </div>
@@ -115,7 +114,7 @@ export default function HomeHero() {
                 <p className="mt-3 text-[11px] font-medium text-ink-muted">Hedef: ilk sayfada, doğru sorguda</p>
               </div>
 
-              <div className="absolute -right-5 bottom-24 hidden w-64 rounded-2xl border border-line bg-white p-4 shadow-lift sm:block">
+              <div className="absolute -right-6 bottom-6 hidden w-56 rounded-2xl border border-line bg-white p-4 shadow-lift sm:block">
                 <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-ink-muted">
                   <MessageSquareText className="h-3.5 w-3.5 text-accent" /> Yapay zeka cevabı
                 </div>

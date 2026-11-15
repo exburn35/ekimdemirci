@@ -96,7 +96,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
               </Link>
             )}
 
-            <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[1.18] tracking-tight">
               <span className="text-ink">
                 {decodeHtmlEntities(post.title)}
               </span>

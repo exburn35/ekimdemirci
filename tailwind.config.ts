@@ -25,6 +25,16 @@ const config: Config = {
         accent: { DEFAULT: "#0F9D8A", dark: "#0B7A6B", light: "#E3F4F1" },
         night: { DEFAULT: "#161B2E", soft: "#1F2540" },
       },
+      // Büyük başlıklarda Türkçe noktalı harflerin (İ, Ö, Ü) üst satıra değmemesi için
+      // varsayılan 1.0–1.1 satır yükseklikleri gevşetildi.
+      fontSize: {
+        "3xl": ["1.875rem", { lineHeight: "1.25" }],
+        "4xl": ["2.25rem", { lineHeight: "1.2" }],
+        "5xl": ["3rem", { lineHeight: "1.16" }],
+        "6xl": ["3.75rem", { lineHeight: "1.12" }],
+        "7xl": ["4.5rem", { lineHeight: "1.1" }],
+        "8xl": ["6rem", { lineHeight: "1.05" }],
+      },
       boxShadow: {
         card: "0 1px 2px rgba(22,27,46,0.04), 0 4px 16px rgba(22,27,46,0.05)",
         lift: "0 2px 4px rgba(22,27,46,0.05), 0 12px 32px rgba(22,27,46,0.08)",

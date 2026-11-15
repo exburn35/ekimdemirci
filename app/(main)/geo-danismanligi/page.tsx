@@ -5,10 +5,11 @@ import ProductSchema from "@/components/schemas/ProductSchema";
 import GEOPricingSection from "@/components/GEOPricingSection";
 import GEOAIToolsSection from "@/components/GEOAIToolsSection";
 import GEODetailedContent from "@/components/GEODetailedContent";
+import AiAnswerDemo from "@/components/geo/AiAnswerDemo";
 
 export const metadata: Metadata = {
   title: "GEO (Generative Engine Optimization) Danışmanlığı",
-  description: "Google'ın güncel arama ve RAG mimarisine dayalı teknik GEO danışmanlığı. Google AI Overviews, ChatGPT Search ve Perplexity'de birincil kaynak olun.",
+  description: "ChatGPT ve Google AI Overview başta olmak üzere yapay zeka cevaplarında markanızın önerilmesi için GEO danışmanlığı. Ücretsiz yapay zeka görünürlük testi isteyin.",
   alternates: {
     canonical: "/geo-danismanligi",
   },
@@ -24,6 +25,14 @@ export const metadata: Metadata = {
 
 export default function GEODanismanligi() {
   const faqItems = [
+    {
+      question: "ChatGPT'de markamın önerilmesi için neler yapıyorsunuz?",
+      answer: "Önce sektörünüzde müşterilerinizin ChatGPT'ye sorduğu soruları belirleyip markanızın bugün bu cevaplarda geçip geçmediğini ölçüyorum. Ardından ChatGPT aramasının yararlandığı web dizinlerinde (özellikle Bing) sitenizin doğru yer almasını, markanızın kurumsal profiller ve dizinlerde tutarlı tanımlanmasını, karşılaştırma ve sektör içeriklerinde anılmanızı ve OAI-SearchBot erişiminin doğru yönetilmesini sağlıyorum."
+    },
+    {
+      question: "Google AI Overview'da kaynak olarak gösterilmek mümkün mü?",
+      answer: "Garanti edilemez ama olasılık ciddi biçimde artırılabilir. AI Overview kaynakları sıklıkla ilgili aramada üst sıralarda yer alan, soruya net ve alıntılanabilir cevap veren sayfalar arasından seçiliyor. Bu yüzden sayfalarınızı ilk paragrafta doğrudan cevap veren, yapılandırılmış veriyle desteklenen ve uzmanlık sinyali taşıyan bir yapıya kavuşturuyor, etkisini Search Console verileri ve düzenli sorgu testleriyle izliyorum."
+    },
     {
       question: "GEO (Generative Engine Optimization) Danışmanlığı Nedir?",
       answer: "GEO (Generative Engine Optimization), web sitenizin bilgi mimarisini ChatGPT Search, Perplexity, Claude ve Google AI Overviews gibi yapay zeka arama sistemlerinin RAG (Retrieval-Augmented Generation) mekanizmalarına uyarlayarak yanıt metinlerinde güvenilir kaynak (source citation) olarak alıntılanmasını sağlayan bilimsel ve teknik danışmanlık disiplinidir."
@@ -67,7 +76,8 @@ export default function GEODanismanligi() {
       <ServicePageLayout
         title="GEO Danışmanlığı"
         subtitle="Generative Engine Optimization & RAG Mimarisi"
-        description="Google'ın gelişmiş arama ve RAG altyapısına dayalı teknik GEO danışmanlığı. ChatGPT, Google AI Overviews, Perplexity ve Claude'da markanızın tavsiye edilen birincil kaynak olmasını sağlıyorum."
+        description="Müşterileriniz cevabı artık ChatGPT'ye ve Google'ın yapay zeka özetlerine soruyor. Başta ChatGPT ve Google AI Overview olmak üzere yapay zeka asistanlarında markanızın önerilen ve kaynak gösterilen isim olması için çalışıyorum."
+        afterHeroNode={<AiAnswerDemo />}
         icon="Brain"
         gradient="from-emerald-500 via-teal-500 to-cyan-500"
         scope={[

@@ -62,7 +62,7 @@ export default function HomeAuditForm() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-6">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-accent-light/80">Ücretsiz ön analiz</p>
-          <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[44px]">
+          <h2 className="text-3xl font-bold leading-[1.22] tracking-tight text-white sm:text-4xl lg:text-[44px]">
             Sitenizin bugün nerede durduğunu birlikte görelim.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-white/70">
