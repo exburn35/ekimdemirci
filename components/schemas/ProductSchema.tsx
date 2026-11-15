@@ -26,8 +26,8 @@ export default function ProductSchema({
   brandName = "Ekim Demirci",
   lowPrice = 25000,
   highPrice = 75000,
-  ratingValue = 4.9,
-  reviewCount = 48,
+  ratingValue,
+  reviewCount,
 }: ProductSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -55,13 +55,18 @@ export default function ProductSchema({
         "url": "https://ekimdemirci.com",
       },
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": ratingValue,
-      "reviewCount": reviewCount,
-      "bestRating": "5",
-      "worstRating": "1",
-    },
+    // Puan yalnızca sitede gösterilen gerçek değerlendirmelere dayanıyorsa eklenmeli
+    ...(ratingValue && reviewCount
+      ? {
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": ratingValue,
+            "reviewCount": reviewCount,
+            "bestRating": "5",
+            "worstRating": "1",
+          },
+        }
+      : {}),
   };
 
   return (
