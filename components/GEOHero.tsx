@@ -669,7 +669,7 @@ export default function GEOHero() {
               </h1>
 
               {/* Subheadline */}
-              <p className="hero-left-child text-[16px] desktop:text-[18px] text-ink-muted leading-[1.55] mb-8 max-w-[480px]">
+              <p className="hero-left-child text-[16px] desktop:text-[18px] text-ink-muted leading-[1.55] mb-8">
                 ChatGPT, Claude, Perplexity ve Google AI Overviews yanıtlarında markanızı birincil kaynak haline getiren GEO danışmanlığı. Sıralanmak yerine alıntılanın.
               </p>
 

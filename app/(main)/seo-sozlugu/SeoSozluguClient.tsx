@@ -146,7 +146,7 @@ export default function SEOGlossaryPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
+        <div className="text-center mb-16 lg:mb-24">
           <motion.div
             initial={false}
             animate={{ opacity: 1, scale: 1 }}
@@ -296,7 +296,7 @@ export default function SEOGlossaryPage() {
                      <Search className="w-10 h-10 text-ink-faint animate-pulse" />
                   </div>
                   <h3 className="text-3xl font-bold text-ink mb-3 tracking-tight">Eşleşme Bulunamadı</h3>
-                  <p className="text-ink-faint text-lg max-w-lg leading-relaxed">"{search}" ile ilgili herhangi bir SEO jargonu henüz sözlüğe eklenmemiş. Lütfen başka bir anahtar kelime girmeyi deneyin.</p>
+                  <p className="text-ink-faint text-lg leading-relaxed">"{search}" ile ilgili herhangi bir SEO jargonu henüz sözlüğe eklenmemiş. Lütfen başka bir anahtar kelime girmeyi deneyin.</p>
                 </motion.div>
               )}
             </AnimatePresence>

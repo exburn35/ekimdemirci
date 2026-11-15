@@ -107,7 +107,7 @@ export default function LatestPostsSlider({
             <h2 className="text-3xl md:text-5xl font-extrabold text-ink tracking-tight">
               {title}{" "}<span className="bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">{titleHighlight}</span>
             </h2>
-            <p className="text-ink-muted mt-3 text-sm md:text-base max-w-xl leading-relaxed">
+            <p className="text-ink-muted mt-3 text-sm md:text-base leading-relaxed">
               {subtitle}
             </p>
           </motion.div>

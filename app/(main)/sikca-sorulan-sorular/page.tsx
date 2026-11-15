@@ -87,7 +87,7 @@ export default function FAQPage() {
                 Sık Sorulan Sorular
               </span>
             </h1>
-            <p className="text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-ink-muted leading-relaxed">
               SEO hizmetleri hakkında merak ettiğiniz soruların cevaplarını burada bulabilirsiniz.
             </p>
           </div>
@@ -114,7 +114,7 @@ export default function FAQPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink">
               Sorunuzun Cevabını Bulamadınız mı?
             </h2>
-            <p className="text-xl text-ink-muted mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted mb-8">
               Benimle iletişime geçin, size yardımcı olmaktan mutluluk duyarım.
             </p>
             <a

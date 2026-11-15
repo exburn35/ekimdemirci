@@ -78,8 +78,6 @@ export default function GEODanismanligi() {
         image="https://ekimdemirci.com/uploads/geo-visual-semantic-patent-diagram.png"
         lowPrice={25000}
         highPrice={75000}
-        ratingValue={4.9}
-        reviewCount={48}
       />
 
       <ServicePageLayout

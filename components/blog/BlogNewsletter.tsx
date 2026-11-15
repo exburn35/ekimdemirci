@@ -55,7 +55,7 @@ export default function BlogNewsletter() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink">
             Yeni Makalelerden Haberdar Olun
           </h2>
-          <p className="text-xl text-ink-muted mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-ink-muted mb-8">
             SEO ve dijital pazarlama hakkında en güncel içerikleri e-posta adresinize gönderelim.
           </p>
 

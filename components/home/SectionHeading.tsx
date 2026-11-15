@@ -17,7 +17,7 @@ export default function SectionHeading({
   const dark = tone === "dark";
 
   return (
-    <div className={`${centered ? "mx-auto max-w-4xl text-center" : "flex-1"} mb-10 md:mb-14`}>
+    <div className={`${centered ? "text-center" : "flex-1"} mb-10 md:mb-14`}>
       <p
         className={`text-xs font-semibold uppercase tracking-[0.18em] mb-3 ${
           dark ? "text-accent-light/80" : "text-brand"
@@ -26,8 +26,8 @@ export default function SectionHeading({
         {eyebrow}
       </p>
       <h2
-        className={`max-w-4xl text-3xl sm:text-4xl lg:text-[44px] font-bold tracking-tight leading-[1.22] ${
-          centered ? "mx-auto" : ""
+        className={`text-3xl sm:text-4xl lg:text-[44px] font-bold tracking-tight leading-[1.22] ${
+          centered ? "": ""
         } ${
           dark ? "text-white" : "text-ink"
         }`}

@@ -120,7 +120,7 @@ export default function ServicePageLayout({
                   </span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-ink-soft leading-relaxed mb-8 max-w-xl">
+                <p className="text-lg md:text-xl text-ink-soft leading-relaxed mb-8">
                   {description}
                 </p>
 
@@ -178,7 +178,7 @@ export default function ServicePageLayout({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Kapsam</p>
-              <h2 className="max-w-4xl text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-ink">
+              <h2 className="text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-ink">
                 {title} kapsamında neler yapıyorum?
               </h2>
             </div>
@@ -256,7 +256,7 @@ export default function ServicePageLayout({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Kimler için?</p>
-              <h2 className="max-w-4xl text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-ink">
+              <h2 className="text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-ink">
                 Bu hizmet en çok kimin işine yarar?
               </h2>
             </div>

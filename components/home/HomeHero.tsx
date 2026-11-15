@@ -49,7 +49,7 @@ export default function HomeHero() {
               </span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            <p className="mt-7 text-lg leading-relaxed text-ink-soft">
               Müşterileriniz artık yalnızca Google&apos;a yazmıyor; aynı soruyu ChatGPT&apos;ye, Gemini&apos;ye,
               Perplexity&apos;ye de soruyor. Ben sitenizi bu iki dünyada da doğru anlaşılan, güven veren ve kaynak
               gösterilen bir yapıya kavuşturuyorum. Arada ajans katmanı yok: stratejiyi kuran da, uygulamayı takip eden

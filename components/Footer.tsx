@@ -67,7 +67,7 @@ export default function Footer() {
             <Link href="/" className="mb-6 inline-block rounded-2xl bg-white px-4 py-2">
               <Logo className="h-10 w-auto" textClassName="text-2xl font-bold tracking-tight text-[#392F67]" />
             </Link>
-            <p className="text-gray-400 mb-8 max-w-sm leading-relaxed">
+            <p className="text-gray-400 mb-8 leading-relaxed">
               Veri odaklı SEO stratejileriyle dijital varlığınızı büyütüyor, 
               sürdürülebilir organik trafik ve artan dönüşüm oranları sağlıyorum.
             </p>

@@ -232,7 +232,7 @@ export default function SEOPricingContent() {
                 SEO Danışmanlık Fiyatları
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-ink-muted max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-lg md:text-xl text-ink-muted leading-relaxed font-light">
               Bütçenize uygun SEO çözümleri ile dijital varlığınızı güçlendirin. 
               Şeffaf fiyatlandırma ve esnek paketler ile ihtiyaçlarınıza uygun çözümü bulun.
             </p>
@@ -243,7 +243,7 @@ export default function SEOPricingContent() {
       {/* Fiyat Kartları Bölümü */}
       <section className="py-20 relative overflow-hidden bg-canvas">
         {/* Arka plan blur efekti */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-purple-950/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-light rounded-full blur-[130px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* staggered reveal tetikleme */}
@@ -266,7 +266,7 @@ export default function SEOPricingContent() {
                 }}
                 className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 border bg-white backdrop-blur-md ${
                   plan.popular 
-                    ? "border-purple-500/40 bg-gradient-to-b from-purple-950/10 via-white to-white" 
+                    ? "border-purple-500/40 bg-gradient-to-b from-brand-light via-white to-white" 
                     : "border-line"
                 }`}
               >
@@ -356,7 +356,7 @@ export default function SEOPricingContent() {
                 Neden Benimle Çalışmalısınız?
               </span>
             </h2>
-            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
+            <p className="text-ink-muted text-sm md:text-base font-light">
               Yalnızca sıralama değil, ölçülebilir büyüme ve doğrudan ciro odaklı danışmanlık yaklaşımı
             </p>
           </motion.div>
@@ -400,7 +400,7 @@ export default function SEOPricingContent() {
                 SEO Danışmanlık Fiyatları Neye Göre Belirlenir?
               </span>
             </h2>
-            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
+            <p className="text-ink-muted text-sm md:text-base font-light">
               Her web sitesinin dinamikleri farklıdır. Projenin kapsamını ve gereken bütçeyi belirleyen ana kriterler şunlardır:
             </p>
           </motion.div>
@@ -448,7 +448,7 @@ export default function SEOPricingContent() {
                 Sektörünüze Göre Bütçe Senaryoları
               </span>
             </h2>
-            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
+            <p className="text-ink-muted text-sm md:text-base font-light">
               Hangi sektörde faaliyet gösterdiğinize göre çalışma planı ve hedeflenen hacimler değişiklik gösterir.
             </p>
           </motion.div>
@@ -498,7 +498,7 @@ export default function SEOPricingContent() {
                 Freelance SEO Uzmanı ile Ajans Karşılaştırması
               </span>
             </h2>
-            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
+            <p className="text-ink-muted text-sm md:text-base font-light">
               Bütçenizi değerlendirirken hizmet modelinin avantajlarını ve farklarını göz önünde bulundurun.
             </p>
           </motion.div>
@@ -541,7 +541,7 @@ export default function SEOPricingContent() {
                 Adım Adım Çalışma Süreci
               </span>
             </h2>
-            <p className="text-ink-muted max-w-2xl mx-auto text-sm md:text-base font-light">
+            <p className="text-ink-muted text-sm md:text-base font-light">
               Danışmanlık boyunca uyguladığım şeffaf ve metodolojik yaklaşım
             </p>
           </motion.div>

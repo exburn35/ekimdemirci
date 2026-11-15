@@ -37,7 +37,7 @@ export default function WhyWorkWithMe() {
               Neden Benimle Çalışmalısınız?
             </span>
           </h2>
-          <p className="text-xl text-ink-muted max-w-2xl mx-auto">
+          <p className="text-xl text-ink-muted">
             Ölçülebilir sonuçlar veren kanıtlanmış bir yaklaşım
           </p>
         </div>

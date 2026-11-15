@@ -39,7 +39,7 @@ export default function CaseStudyClient({ study, relatedStories }: { study: Case
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-ink mb-6 tracking-tight leading-tight">
               {study.company}
             </h1>
-            <p className="text-lg md:text-xl text-ink-soft max-w-3xl font-light leading-relaxed">
+            <p className="text-lg md:text-xl text-ink-soft font-light leading-relaxed">
               {study.summary}
             </p>
           </motion.div>

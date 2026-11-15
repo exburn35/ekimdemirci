@@ -19,7 +19,7 @@ export default function BlogHero() {
               SEO Blogu
             </span>
           </h1>
-          <p className="text-xl text-ink-soft max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-ink-soft leading-relaxed">
             SEO, dijital pazarlama ve web geliştirme hakkında güncel makaleler, ipuçları ve rehberler.
           </p>
         </div>

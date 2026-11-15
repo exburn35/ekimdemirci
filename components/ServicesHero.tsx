@@ -60,7 +60,7 @@ export default function ServicesHero() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-ink-muted max-w-xl leading-relaxed mb-10">
+            <p className="text-xl md:text-2xl text-ink-muted leading-relaxed mb-10">
               Yapay zeka destekli optimizasyondan teknik mükemmelliğe kadar, arama görünürlüğünüzü artırmak için uzman stratejiler sunuyorum.
             </p>
 

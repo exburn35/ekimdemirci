@@ -125,7 +125,7 @@ export default function AISEO() {
             <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
               Yapay Zeka Motorları Karşılaştırmalı Optimizasyon Matrisi
             </h2>
-            <p className="text-ink-muted text-base md:text-lg max-w-2xl mx-auto">
+            <p className="text-ink-muted text-base md:text-lg">
               Her bir platformun içerik tercihi, öne çıkan alıntı sinyali ve teknik gereksinimleri farklılık gösterir.
             </p>
           </div>

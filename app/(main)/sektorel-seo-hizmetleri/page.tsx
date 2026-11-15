@@ -103,7 +103,7 @@ export default function SectoralSEOServices() {
                 Sektörel SEO Hizmetleri
               </span>
             </h1>
-            <p className="text-xl text-ink-muted max-w-3xl leading-relaxed">
+            <p className="text-xl text-ink-muted leading-relaxed">
               Her sektörün kendine özgü ihtiyaçları vardır. Sektörünüze özel SEO stratejileri ile 
               dijital varlığınızı güçlendirin ve hedef kitlenize daha etkili şekilde ulaşın.
             </p>
@@ -120,7 +120,7 @@ export default function SectoralSEOServices() {
                 Hizmet Verdiğim Sektörler
               </span>
             </h2>
-            <p className="text-xl text-ink-muted max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted">
               Sektörünüze özel SEO çözümleri ile dijital pazarda öne çıkın
             </p>
           </div>
@@ -164,7 +164,7 @@ export default function SectoralSEOServices() {
                 Neden Sektörel SEO?
               </span>
             </h2>
-            <p className="text-xl text-ink-muted max-w-2xl mx-auto">
+            <p className="text-xl text-ink-muted">
               Her sektörün kendine özgü SEO ihtiyaçları vardır
             </p>
           </div>

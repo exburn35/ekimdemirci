@@ -75,7 +75,7 @@ export function ServiceBentoGrid({
         <h2 className="text-[36px] md:text-[48px] font-bold text-ink tracking-tight mb-4">
           GEO Danışmanlığı Hizmet Katmanları
         </h2>
-        <p className="text-[16px] text-ink-muted max-w-[720px] mx-auto leading-relaxed">
+        <p className="text-[16px] text-ink-muted leading-relaxed">
           Yapay zekanın markanızı tanıması, anlaması ve referans alması için sekiz katmanlı bir görünürlük altyapısı kuruyorum.
         </p>
       </div>
@@ -277,7 +277,7 @@ export function WhyItMattersData({
         <h2 className="text-[36px] md:text-[48px] font-bold text-ink tracking-tight mb-4">
           Arama Ekosistemi Geri Dönüşü Olmayacak Şekilde Değişti
         </h2>
-        <p className="text-[16px] text-ink-muted max-w-[720px] mx-auto leading-relaxed">
+        <p className="text-[16px] text-ink-muted leading-relaxed">
           Klasik sıralamaya yatırım yapan markalar, kullanıcıların artık ulaşmadığı bir alanı optimize ediyor. Aşağıdaki üç gerçek, bu kaymanın neden ertelenemez olduğunu gösteriyor.
         </p>
       </div>
@@ -374,7 +374,7 @@ export function WhyItMattersData({
           <h3 className="text-[24px] md:text-[28px] font-semibold text-ink tracking-tight mb-3">
             Yapay Zeka Motorlarının Yükselişi ve Hacmi
           </h3>
-          <p className="text-[15px] text-ink-muted max-w-[640px] mx-auto leading-relaxed">
+          <p className="text-[15px] text-ink-muted leading-relaxed">
             Kullanıcıların bilgiye ulaşmak için tercih ettiği en büyük üç yapay zeka modelinin güncel kullanıcı hacmi ve son iki yıldaki büyüme trendi.
           </p>
         </div>
@@ -598,7 +598,7 @@ export function IndustryVerticals({
         <h2 className="text-[36px] md:text-[48px] font-bold text-ink tracking-tight mb-4">
           Hangi İşletmeler GEO Danışmanlığı Almalı?
         </h2>
-        <p className="text-[16px] text-ink-muted max-w-[720px] mx-auto leading-relaxed">
+        <p className="text-[16px] text-ink-muted leading-relaxed">
           GEO her sektör için aynı yoğunlukta gerekli değildir. Müşterilerinin satın alma yolculuğu araştırmayla başlayan, karar verirken referans arayan veya karşılaştırma yapan her işletme, AI motorlarında konumlanmadan büyüyemez.
         </p>
       </div>

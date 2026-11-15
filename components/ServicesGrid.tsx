@@ -59,7 +59,7 @@ export default function ServicesGrid() {
               SEO Hizmetlerim
             </span>
           </h2>
-          <p className="text-xl text-ink-muted max-w-2xl mx-auto">
+          <p className="text-xl text-ink-muted">
             İşinizin ihtiyaçlarına özel kapsamlı çözümler
           </p>
         </motion.div>
