@@ -41,7 +41,7 @@ export default function OffPageSEO() {
   return (
     <>
       <Breadcrumb items={[
-        { name: "SEO Hizmetleri", href: "/seo-hizmetleri" },
+        { name: "SEO Danışmanlığı", href: "/seo-danismanligi" },
         { name: "Site Dışı SEO", href: "/seo-hizmetleri/sayfa-disi-seo" }
       ]} />
       <ServicePageLayout

@@ -500,7 +500,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 
           <p className="text-ink-soft leading-relaxed">
             Birçok işletme bu modelleri birleştirir. Örneğin strateji ve denetim için bir danışmanla, içerik ve uygulama için kurum içi ekip veya bir ajansla çalışılabilir.{" "}
-            <Link href="/seo-hizmetleri" className="text-purple-600 hover:text-purple-700 font-medium underline">
+            <Link href="/seo-danismanligi" className="text-purple-600 hover:text-purple-700 font-medium underline">
               SEO danışmanlığı
             </Link>{" "}
             bu hibrit modelin en sık görülen parçasıdır.

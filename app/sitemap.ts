@@ -13,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/hakkimda",
     "/iletisim",
     "/blog",
-    "/seo-hizmetleri",
+    "/seo-danismanligi",
     "/seo-hizmetleri/teknik-seo",
     "/seo-hizmetleri/sayfa-ici-seo",
     "/seo-hizmetleri/sayfa-disi-seo",

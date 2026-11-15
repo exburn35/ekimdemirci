@@ -7,7 +7,8 @@ export const ROUTE_LABELS: Record<string, string> = {
   // Intermediate levels
   "blog": "Blog",
   "kategori": "Blog",
-  "seo-hizmetleri": "SEO Hizmetleri",
+  "seo-hizmetleri": "SEO Danışmanlığı",
+  "seo-danismanligi": "SEO Danışmanlığı",
   "sektorel-seo-hizmetleri": "Sektörel SEO Hizmetleri",
   "basari-hikayeleri": "Başarı Hikayeleri",
 

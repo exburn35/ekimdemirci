@@ -60,6 +60,7 @@ interface ServicePageLayoutProps {
   children?: ReactNode;
   afterHeroNode?: ReactNode;
   hideHero?: boolean;
+  showBackLink?: boolean;
 }
 
 export default function ServicePageLayout({
@@ -81,6 +82,7 @@ export default function ServicePageLayout({
   children,
   afterHeroNode,
   hideHero = false,
+  showBackLink = true,
 }: ServicePageLayoutProps) {
   const Icon = iconMap[icon] || Settings;
 
@@ -101,13 +103,15 @@ export default function ServicePageLayout({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Left Column */}
               <div>
-                <Link
-                  href="/seo-hizmetleri"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass hover:bg-ink/5 text-ink-muted hover:text-ink mb-8 transition-all duration-300 group text-sm"
-                >
-                  <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                  SEO Hizmetlerine Dön
-                </Link>
+                {showBackLink && (
+                  <Link
+                    href="/seo-danismanligi"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass hover:bg-ink/5 text-ink-muted hover:text-ink mb-8 transition-all duration-300 group text-sm"
+                  >
+                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                    SEO Danışmanlığına Dön
+                  </Link>
+                )}
 
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border border-line text-xs font-semibold text-blue-600 uppercase tracking-widest mb-6">
                   <Sparkles className="w-3.5 h-3.5" />

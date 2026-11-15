@@ -7,7 +7,7 @@ import MobileAccordion from "./navigation/MobileAccordion";
 const servicesList = [
   { 
     name: "SEO Danışmanlığı", 
-    href: "/seo-hizmetleri", 
+    href: "/seo-danismanligi", 
     desc: "Organik görünürlük ve sıralama artışı" 
   },
   { 
