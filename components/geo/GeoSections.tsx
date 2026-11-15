@@ -15,7 +15,6 @@ import {
   Plane,
   GraduationCap,
 } from "lucide-react";
-import { caseStudies } from "@/lib/case-studies";
 
 function Heading({ eyebrow, title, intro, center = false }: { eyebrow: string; title: string; intro?: string; center?: boolean }) {
   return (
@@ -235,8 +234,6 @@ export function GeoAudience() {
 /* ---------------- Kanıt ---------------- */
 
 export function GeoProof() {
-  const study = caseStudies.find((c) => c.slug === "cevrimici-egitim-platformu") ?? caseStudies[0];
-
   return (
     <section className="bg-night py-20 md:py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
@@ -251,24 +248,46 @@ export function GeoProof() {
           <p className="mt-6 text-xs text-white/45">Kaynak: Ekim Demirci vaka çalışmaları, 2025</p>
         </div>
 
-        <div className="lg:col-span-7">
-          <Link
-            href={`/basari-hikayeleri/${study.slug}`}
-            className="group grid grid-cols-1 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] transition-colors hover:bg-white/[0.07] sm:grid-cols-2"
+        <figure className="lg:col-span-7">
+          <a
+            href="/yapay-zeka-trafik-vaka.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block overflow-hidden rounded-3xl border border-white/10 bg-white p-2 shadow-lift"
+            aria-label="Google Analytics 4 yapay zeka trafiği tablosunu tam boyutta aç"
           >
-            <div className="relative aspect-[4/3] bg-white/5 sm:aspect-auto">
-              <Image src={study.imageUrl} alt={`${study.company} vaka analizi`} fill sizes="(max-width: 640px) 100vw, 360px" className="object-cover" />
+            <div className="relative aspect-[1460/652] overflow-hidden rounded-2xl">
+              <Image
+                src="/yapay-zeka-trafik-vaka.png"
+                alt="Google Analytics 4 raporu: ChatGPT, Gemini ve Perplexity'den gelen yapay zeka asistanı trafiğinin önceki döneme göre artışı"
+                fill
+                sizes="(max-width: 1024px) 100vw, 720px"
+                quality={90}
+                className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+              />
             </div>
-            <div className="flex flex-col p-6 md:p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">{study.category} · {study.duration}</p>
-              <h3 className="mt-2 text-xl font-bold text-white">{study.company}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/70">{study.summary}</p>
-              <span className="mt-auto inline-flex items-center gap-1 pt-6 text-sm font-semibold text-accent">
-                Vakanın tamamını okuyun <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
+          </a>
+          <figcaption className="mt-5">
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { value: "+%69", label: "Yapay zekadan gelen kullanıcı" },
+                { value: "+%110", label: "Etkileşimli oturum" },
+                { value: "+%226", label: "Gemini kaynaklı kullanıcı" },
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                  <p className="text-2xl font-bold tracking-tight text-white">{stat.value}</p>
+                  <p className="mt-1 text-xs leading-snug text-white/60">{stat.label}</p>
+                </div>
+              ))}
             </div>
-          </Link>
-        </div>
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-white/45">
+              <span>Google Analytics 4 · 1 Ağustos – 15 Kasım 2026, önceki üç aylık dönemle karşılaştırma</span>
+              <Link href="/basari-hikayeleri" className="group inline-flex items-center gap-1 text-sm font-semibold text-accent">
+                Diğer başarı hikâyeleri <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
