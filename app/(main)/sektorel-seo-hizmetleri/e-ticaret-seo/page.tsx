@@ -1,126 +1,93 @@
 import { Metadata } from "next";
+import {
+  ListTree,
+  SlidersHorizontal,
+  ShoppingBag,
+  Copy,
+  PackageX,
+  Braces,
+  Gauge,
+  EyeOff,
+  Store,
+  TrendingDown,
+  Search,
+  Bot,
+  Wrench,
+  FileText,
+  Sparkles,
+} from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import Link from "next/link";
-import { 
-  ShoppingBag, 
-  TrendingUp, 
-  Search, 
-  Shield, 
-  Sparkles, 
-  CheckCircle2, 
-  ArrowRight, 
-  Layers, 
-  Clock, 
-  PackageCheck, 
-  Wrench, 
-  DollarSign, 
-  Store,
-  Tag,
-  BarChart3
-} from "lucide-react";
+import SerpDemo from "@/components/service/SerpDemo";
+import {
+  CaseSpotlight,
+  DemoSection,
+  DemoSide,
+  DemoWindow,
+  ExampleGrid,
+  GuideDefinition,
+  GuideH2,
+  GuideLink,
+  GuideShell,
+  ProcessTimeline,
+  ProofBand,
+  RelatedBand,
+  ScopeGrid,
+  type Faq,
+} from "@/components/service/ServiceBlocks";
 
 export const metadata: Metadata = {
   title: "E-Ticaret SEO Danışmanlığı",
-  description: "Online satışlarınızı ve organik cironuzu artırmak için ürün ve kategori şemaları, filtre optimizasyonu ve semantik içerik odaklı E-Ticaret SEO danışmanlığı.",
+  description: "Online mağazalar için e-ticaret SEO danışmanlığı. Kategori ve filtre yapısı, ürün sayfaları, ürün şeması ve site hızıyla mağazanızın satın almaya hazır aramalarda görünmesini sağlıyorum.",
   alternates: {
     canonical: "/sektorel-seo-hizmetleri/e-ticaret-seo",
   },
   openGraph: {
     title: "E-Ticaret SEO Danışmanlığı | Ekim Demirci",
-    description: "E-ticaret siteleri için kurguladığım semantik şema ve dönüşüm odaklı SEO çözümleri.",
+    description: "Kategori sayfalarından ürün şemasına, stoktan kalkan ürünlerden site hızına kadar mağazanızın Google'da satış getiren aramalarda görünmesi için SEO danışmanlığı.",
   },
   twitter: {
     title: "E-Ticaret SEO Danışmanlığı | Ekim Demirci",
-    description: "E-ticaret siteleri için kurguladığım semantik şema ve dönüşüm odaklı SEO çözümleri.",
+    description: "Kategori sayfalarından ürün şemasına, stoktan kalkan ürünlerden site hızına kadar mağazanızın Google'da satış getiren aramalarda görünmesi için SEO danışmanlığı.",
   },
 };
 
+const faqItems: Faq[] = [
+  {
+    question: "Önce kategori sayfaları mı, ürün sayfaları mı optimize edilmeli?",
+    answer: "Çoğu mağazada önceliği kategori sayfalarına veriyorum. “Kadın koşu ayakkabısı” gibi geniş ve yüksek hacimli aramalar genellikle kategori sayfalarıyla eşleşiyor. Ürün sayfaları ise model adı ve özellikle yapılan aramalarda öne çıkıyor; en çok satan ve en yüksek kâr bırakan ürünleri paralel olarak ele alıyorum.",
+  },
+  {
+    question: "Filtre sayfaları Google'da indekslenmeli mi?",
+    answer: "Hepsi değil. Renk, beden, fiyat ve marka filtrelerinin birleşimiyle binlerce adres oluşabiliyor; bunların çoğu kimsenin aramadığı, birbirinin kopyası sayfalar. Gerçekten aranan birkaç filtre kombinasyonunu (örneğin “siyah deri bot”) indekslenebilir hale getiriyor, geri kalanı canonical, noindex ya da tarama kurallarıyla kontrol altına alıyorum.",
+  },
+  {
+    question: "Stoktan kalkan ürünlerin sayfasını silmeli miyim?",
+    answer: "Duruma göre değişiyor. Ürün yakında geri gelecekse sayfayı yayında tutup stok bilgisini güncellemek en iyisi. Kalıcı olarak kalkıyorsa ve sayfa trafik ya da bağlantı alıyorsa, en yakın ürüne veya kategoriye yönlendiriyorum. Hiç ziyaret almayan eski sayfalar ise kaldırılabilir. Önemli olan, binlerce ürünün habersizce hata sayfasına dönmemesi.",
+  },
+  {
+    question: "Üreticinin ürün açıklamalarını kullanmak sorun olur mu?",
+    answer: "Aynı açıklama onlarca sitede birebir yer aldığında Google'ın sizin sayfanızı öne çıkarması için bir neden kalmıyor. Bütün ürünleri tek tek yeniden yazmak her zaman mümkün değil; bu yüzden önce satış getiren ürünlerden başlıyor, geri kalanlar için ürün özelliklerinden beslenen, kategoriye özgü şablonlar kurguluyorum.",
+  },
+  {
+    question: "Ürün şeması ne işe yarar?",
+    answer: "Ürün şeması, fiyat, stok durumu ve ürün bilgilerini Google'ın doğrudan okuyabileceği şekilde işaretler. Böylece ürününüz arama sonuçlarında ve Google Alışveriş alanlarında daha zengin görünebilir. Yıldız ve puan bilgisini ise yalnızca sitenizdeki gerçek müşteri yorumlarına dayanıyorsa ekliyorum.",
+  },
+  {
+    question: "Pazaryerleriyle rekabet etmek mümkün mü?",
+    answer: "Geniş aramalarda büyük pazaryerlerini geçmek zor ve zaman alıyor. Ama daha net aramalarda, niş kategorilerde ve uzmanlık gerektiren ürünlerde kendi mağazanızla öne çıkmak mümkün. Pazaryerlerinin genel kategori sayfalarının veremediği detaylı bilgi, karşılaştırma ve rehber içerikleri bu noktada fark yaratıyor.",
+  },
+  {
+    question: "Hangi e-ticaret altyapılarıyla çalışıyorsunuz?",
+    answer: "Shopify, WooCommerce, Ticimax, T-Soft, İkas ve IdeaSoft gibi hazır altyapılarla da özel yazılımlı mağazalarla da çalışıyorum. Her altyapının canonical, adres yapısı ve filtre yönetimi konusunda kendi sınırları var; önce bu sınırları inceleyip neyin altyapı içinde, neyin geliştirme gerektirdiğini netleştiriyorum.",
+  },
+  {
+    question: "E-ticaret SEO'sunun sonuçları ne kadar sürede görülür?",
+    answer: "Teknik ve kategori düzenlemelerinin etkisi çoğu zaman ilk birkaç ay içinde Search Console verisinde görülmeye başlıyor. Rekabetçi kategorilerde kalıcı sıralama ve satışa yansıması ise genellikle altı ay ile bir yıl arasında oturuyor. Mağazanın büyüklüğü ve rekabet düzeyi bu süreyi belirgin şekilde etkiliyor.",
+  },
+];
+
 export default function ECommerceSEOPage() {
-  const faqItems = [
-    {
-      question: "E-ticaret SEO çalışmaları kaç ayda sonuç verir?",
-      answer: "Altyapı sorunlarının çözülmesi ve kategori mimarisinin optimize edilmesinin ardından ilk organik sıralama sinyalleri 4 ila 8 hafta içinde görünür. Düzenli satış ve kalıcı ciro büyümesi ise 4. aydan itibaren belirginleşir."
-    },
-    {
-      question: "Kategori sayfası mı yoksa ürün sayfası mı önce optimize edilmeli?",
-      answer: "Arama hacminin büyük kısmı geniş niyetli kategori ve filtre sorgularında toplandığı için öncelik kategori mimarisidir. Yüksek dönüşüm potansiyeli taşıyan amiral gemisi ürünler ise paralel olarak şema ve içerik açısından zenginleştirilir."
-    },
-    {
-      question: "Hangi e-ticaret altyapılarıyla çalışıyorsunuz?",
-      answer: "Shopify, WooCommerce, Ticimax, T-Soft, İkas ve IdeaSoft başta olmak üzere özel yazılımlı tüm e-ticaret platformlarında teknik tarama engellerini kaldırıp semantik optimizasyon kurguluyorum."
-    },
-    {
-      question: "Reklamsız organik satış ve ciro büyümesi gerçekten mümkün mü?",
-      answer: "Doğru arama niyetine göre hedeflenmiş kategori sayfaları ve zenginleştirilmiş ürün kartları sayesinde, tıklama başına maliyet ödemeden doğrudan satın almaya hazır ziyaretçileri mağazanıza çekerek sürdürülebilir ciro kanalı oluşturuyorum."
-    },
-    {
-      question: "Çok kombinasyonlu filtre ve stok dışı ürün sayfaları SEO tarafında nasıl yönetilir?",
-      answer: "Arama hacmi olmayan filtre kombinasyonlarına noindex veya canonical kuralları uygulanarak indeks bütçesi korunur. Stokta tükenen ürünlerde ise yönlendirme veya benzer ürün önerme stratejisiyle sayfa otoritesi muhafaza edilir."
-    },
-    {
-      question: "Product ve AggregateRating şeması e-ticaret mağazasına ne kazandırır?",
-      answer: "Google arama sonuçlarında ürün fiyatı, stok durumu ve yıldız puanlarının görünmesini sağlayarak arama sonuçlarındaki görünürlüğünüzü zenginleştirir ve tıklama oranını (CTR) artırır."
-    }
-  ];
-
-  const ecommercePlatforms = [
-    {
-      name: "Shopify",
-      tag: "Global Ölçek",
-      desc: "Liquid şablon yapısı, uluslararası SEO mimarisi ve uygulama ekosistemine özel indeksleme kontrolü kurguluyorum."
-    },
-    {
-      name: "WooCommerce",
-      tag: "Tam Esneklik",
-      desc: "Veritabanı yükünü hafifleten sorgu optimizasyonları, gelişmiş taksonomi ve katmanlı şema entegrasyonu sağlıyorum."
-    },
-    {
-      name: "Ticimax, T-Soft & IdeaSoft",
-      tag: "Yerel Güç",
-      desc: "Hazır altyapıların canonical, parametre ve blokaj sınırlamalarını aşan özel SEO teknikleri uyguluyorum."
-    },
-    {
-      name: "İkas",
-      tag: "Modern & Hızlı",
-      desc: "Yüksek sayfa hız avantajını doğru semantik kategori kurgusu ve otomatik ürün şemalarıyla tamamlıyorum."
-    }
-  ];
-
-  const deliverables = [
-    "Detaylı E-Ticaret Teknik SEO & Tarama Bütçesi Raporu",
-    "Kategori, Koleksiyon ve Filtre (Facet) Mimarisi Haritası",
-    "Product, AggregateRating ve Offer JSON-LD Şema Kodları",
-    "Arama Niyetine Uygun Semantik Kategori İçerik Rehberleri",
-    "Aylık GA4 Dönüşüm ve Google Search Console Ciro Raporu"
-  ];
-
-  const timelineSteps = [
-    {
-      period: "1. - 2. Ay",
-      title: "Teknik Altyapı & Şema Mimarısı",
-      desc: "Filtre indeksleme problemleri çözülür, taranabilirlik engelleri kaldırılır ve ürün şemaları entegre edilir."
-    },
-    {
-      period: "3. - 5. Ay",
-      title: "Kategori & Semantik İçerik İyileştirmesi",
-      desc: "Ana kategoriler ve yüksek hacimli alt filtreler hedeflenerek organik görünürlük artışı tetiklenir."
-    },
-    {
-      period: "6. - 12. Ay",
-      title: "Kalıcı Ciro Büyümesi & Pazar Liderliği",
-      desc: "Satın alma niyetli sorgularda üst sıralar elde edilir, reklamsız sürdürülebilir satış kanalı inşa edilir."
-    }
-  ];
-
-  const toolsList = [
-    { name: "Google Search Console", role: "Organik Performans & İndeks Dağılımı" },
-    { name: "Google Analytics 4", role: "E-Ticaret Dönüşüm & Ciro Takibi" },
-    { name: "Semrush", role: "Rakip Kategori & Kelime Analizi" },
-    { name: "Screaming Frog", role: "Derinlemesine Tarama & Şema Denetimi" },
-    { name: "Sitebulb", role: "Görsel Mimarisi & Hiyerarşi Analizi" }
-  ];
-
   return (
     <>
       <Breadcrumb items={[
@@ -129,322 +96,291 @@ export default function ECommerceSEOPage() {
       ]} />
       <ServicePageLayout
         title="E-Ticaret SEO Danışmanlığı"
-        subtitle="Sektörel SEO Çözümleri"
-        description="Online mağazanızın ürün ve kategori sayfalarını Google ve yapay zeka arama motorlarında zirveye taşıyın. Semantik kategori mimarisi, ürün şema entegrasyonu ve dönüşüm odaklı içerik stratejisiyle organik satış cirolarınızı büyütüyorum."
+        subtitle="Satın almaya hazır müşterinin bulduğu mağaza"
+        description="Bir müşteri ürün ararken önce Google'a yazıyor; kategorileri geziyor, fiyatları karşılaştırıyor, stokta olup olmadığına bakıyor. Ben mağazanızın bu aramalarda karşısına çıkması için kategori ve filtre yapınızı, ürün sayfalarınızı ve sitenizin teknik altyapısını birlikte ele alıyorum. Amacım daha fazla ziyaretçiden çok, daha fazla sipariş."
+        canonicalUrl="https://ekimdemirci.com/sektorel-seo-hizmetleri/e-ticaret-seo"
+        afterHeroNode={
+          <DemoSection
+            id="kategori-gorunurlugu"
+            eyebrow="Google sonuçları"
+            title="Müşteri kategoriyi arıyor. Karşısına mağazanız çıksın."
+            intro="E-ticarette en değerli aramaların çoğu kategori aramaları: müşteri henüz modeli seçmemiş, seçeneklere bakıyor. Bu aramalarda ilk sırada pazaryerleri ve büyük mağazalar var; doğru kurulmuş bir kategori sayfasıyla siz de o listeye girebilirsiniz."
+            window={
+              <DemoWindow label="google.com">
+                <SerpDemo
+                  query="kadın koşu ayakkabısı"
+                  results={[
+                    { domain: "buyukpazaryeri.com", title: "Kadın Koşu Ayakkabısı Modelleri ve Fiyatları", snippet: "Binlerce model, hızlı kargo ve kampanyalı fiyatlar." },
+                    { domain: "sporzinciri.com.tr", title: "Kadın Koşu Ayakkabıları | Spor Zinciri", snippet: "Yeni sezon koşu ayakkabıları mağazada ve online." },
+                    { domain: "kosudergisi.com", title: "2026'nın En İyi Kadın Koşu Ayakkabıları", snippet: "Yol ve arazi koşusu için öne çıkan modelleri inceledik." },
+                    { domain: "indirimdunyasi.com", title: "Kadın Koşu Ayakkabısı İndirimleri", snippet: "Farklı mağazalardaki fiyatları karşılaştırın." },
+                    { domain: "magazaniz.com", title: "Kadın Koşu Ayakkabısı | Yol, Arazi ve Günlük Koşu", snippet: "Ayak tipine ve koşu mesafesine göre seçim rehberiyle, stokta olan modeller.", brand: true },
+                  ]}
+                />
+              </DemoWindow>
+            }
+            side={
+              <DemoSide
+                title="Kategori sayfası, mağazanın vitrini"
+                text="Ben de bir şey alacağım zaman çoğu zaman genel bir aramayla başlıyorum ve ilk sayfadaki birkaç mağazaya bakıyorum. Kategori sayfası zayıf olan bir mağaza, ürünleri ne kadar iyi olursa olsun bu karşılaştırmaya hiç giremiyor."
+                points={[
+                  "Kategori ve filtre yapısını aramalara göre kurmak",
+                  "Kopya ve gereksiz sayfaları kontrol altına almak",
+                  "Ürün sayfalarını özgün bilgilerle güçlendirmek",
+                  "Ürün şeması ve hızla sonuçlarda öne çıkmak",
+                ]}
+                ctaTitle="Mağazanız kategori aramalarında kaçıncı sırada?"
+                ctaText="Mağazanızın kategori ve ürün aramalarındaki durumunu inceleyip en hızlı satış getirebilecek fırsatları raporlayayım."
+                ctaLabel="Ücretsiz mağaza analizi iste"
+              />
+            }
+          />
+        }
         icon="Settings"
         gradient="from-purple-500 to-pink-500"
-        features={[
-          "Kategori & Koleksiyon Mimarısı Optimizasyonu",
-          "Facet & Filtre İndeksleme Yönetimi",
-          "Product & AggregateRating Rich Snippet Şemaları",
-          "Core Web Vitals & E-Ticaret Hız İyileştirmesi",
-          "Arama Niyetine Uygun Ürün İçerik Rehberleri",
-          "Dönüşüm Oranı & Sepet Terk Optimizasyonu"
-        ]}
-        scope={[
-          {
-            title: "Kategori & Filtre (Facet) Mimarısı",
-            description: "Binlerce filtreli ürün sayfasının arama motoru botlarını yormasını engelliyor, sadece yüksek arama hacmine sahip değerli kategorilerin taranmasını sağlıyorum."
-          },
-          {
-            title: "Product & Offer Şema Entegrasyonu",
-            description: "Ürün fiyatı, stok durumu ve kullanıcı değerlendirmelerini doğrudan arama sonuçlarına taşıyarak tıklama oranını yükseltiyorum."
-          },
-          {
-            title: "Semantik İçerik Mimarısı",
-            description: "Kategori altlarına ve ürün rehberlerine kullanıcıların satın alma öncesi sorduğu soruları yanıtlayan semantik metinler entegre ediyorum."
-          },
-          {
-            title: "Teknik Performans & Tarama Bütçesi",
-            description: "Site içi kırık bağlantıları, duplike sayfaları ve yavaş açılan görselleri temizleyerek taranabilir bir mağaza yapısı kuruyorum."
-          },
-          {
-            title: "Yapay Zeka Aramalarında Önerilme",
-            description: "Ürünlerinizi ChatGPT, Perplexity ve Google AI Overviews yanıtlarına doğrudan satın alma seçeneği olarak konumlandırıyorum."
-          },
-          {
-            title: "Organik Ciro & Dönüşüm Takibi",
-            description: "Yalnızca organik tıklamayı değil, e-ticaret sitenize gelen ziyaretçilerin satışa dönüşme oranını GA4 üzerinden düzenli raporluyorum."
-          }
-        ]}
-        process={[
-          {
-            step: "1",
-            title: "E-Ticaret Depo & Altyapı Denetimi",
-            description: "Mevcut e-ticaret yazılımınızın teknik tarama engellerini, duplike URL yapılarını ve şema eksikliklerini tespit ediyorum."
-          },
-          {
-            step: "2",
-            title: "Kategori & Filtre Yapılandırması",
-            description: "Kullanıcıların arama alışkanlıklarına göre katmanlı kategori ve filtre URL haritası kurguluyor, indeks karmaşasını engelliyorum."
-          },
-          {
-            step: "3",
-            title: "Ürün & Marka Şema Kodlaması",
-            description: "JSON-LD formatında fiyat, para birimi, stok ve değerlendirme verilerini doğrudan arama botlarına sunacak yapıyı kuruyorum."
-          },
-          {
-            step: "4",
-            title: "Semantik İçerik & Ciro Optimizasyonu",
-            description: "Ürün açıklamalarını ve kategori rehberlerini arama niyetine uygun semantik üçlülerle zenginleştirip dönüşüm oranlarını yükseltiyorum."
-          }
-        ]}
-        targetAudience={[
-          {
-            audience: "Moda & Giyim Mağazaları",
-            benefit: "Sezonluk koleksiyon aramalarında ve beden/renk filtrelerinde organik görünürlük artışı."
-          },
-          {
-            audience: "Elektronik & Ev Eşyası",
-            benefit: "Karşılaştırmalı ürün aramalarında Rich Snippet yıldızları ile öne geçme."
-          },
-          {
-            audience: "Kozmetik & Kişisel Bakım",
-            benefit: "Kullanım amacı ve içerik odaklı arama niyetlerinde kategori hakimiyeti."
-          },
-          {
-            audience: "Niche B2C Üreticileri",
-            benefit: "Doğrudan üreticiden tüketiciye (D2C) satışlarda reklamsız müşteri kazanımı."
-          }
-        ]}
-        faqItems={faqItems}
-        blogCategory="E-Ticaret SEO"
+        blogCategory="SEO Hizmetleri"
       >
-        {/* HERO TRUST STRIP */}
-        <section className="py-8 bg-canvas border-y border-line">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-purple-600">8+ Yıl</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Sektörel Uzmanlık</div>
-              </div>
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-pink-600">120+</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Tamamlanan SEO Projesi</div>
-              </div>
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-emerald-600">%147</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Ort. Organik Tıklama Artışı</div>
-              </div>
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-blue-600">GA4 & GSC</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Doğrulanmış Veri Altyapısı</div>
-              </div>
-            </div>
+        <ScopeGrid
+          title="E-ticaret SEO'sunda neler yapıyorum?"
+          intro="E-ticaret sitelerinde sorunlar genellikle tek tek sayfalarda değil, binlerce sayfayı etkileyen yapıda saklı. Çalışmayı önce yapıyı düzelterek, sonra satış getiren sayfaları güçlendirerek ilerletiyorum."
+          items={[
+            { icon: ListTree, title: "Kategori yapısını aramalara göre kuruyorum", text: "Müşterilerin gerçekte nasıl aradığına bakarak ana ve alt kategorileri düzenliyorum. Aranan ama mağazanızda karşılığı olmayan kategorileri belirliyor, kategori sayfalarına müşterinin işine yarayan kısa ve özgün metinler ekliyorum." },
+            { icon: SlidersHorizontal, title: "Filtre sayfalarını kontrol altına alıyorum", text: "Renk, beden, fiyat ve marka filtreleri binlerce gereksiz adres üretebiliyor. Gerçekten aranan filtre kombinasyonlarını sayfaya dönüştürüyor, geri kalanların Google'ın zamanını boşa harcamasını engelliyorum." },
+            { icon: ShoppingBag, title: "Ürün sayfalarını güçlendiriyorum", text: "Başlık, açıklama, görsel, teknik özellik ve sık sorulan sorularla ürün sayfalarını hem müşteri hem Google için daha anlaşılır hale getiriyorum. İşe en çok satan ve en yüksek kâr bırakan ürünlerden başlıyorum." },
+            { icon: Copy, title: "Tekrar eden içerikleri temizliyorum", text: "Üreticiden gelen aynı açıklamalar, renk ya da beden için açılmış ayrı ürün sayfaları ve aynı ürünün birden fazla adresi. Bu tekrarları canonical, birleştirme ve şablon düzenlemeleriyle çözüyorum." },
+            { icon: PackageX, title: "Stoktan kalkan ürünleri yönetiyorum", text: "Geçici olarak tükenen, kalıcı olarak kaldırılan ve sezonluk ürünler için ayrı kurallar belirliyorum. Böylece yıllarca emek verilmiş sayfaların değeri hata sayfalarında kaybolmuyor." },
+            { icon: Braces, title: "Ürün şeması ve hız üzerinde çalışıyorum", text: "Fiyat, stok ve ürün bilgilerini yapılandırılmış veriyle işaretliyor, mobilde yavaş açılan kategori ve ürün sayfalarını hızlandırıyorum. Çoğu sipariş telefondan geldiği için hız doğrudan satışı etkiliyor." },
+          ]}
+        />
+
+        <ProcessTimeline
+          title="E-ticaret SEO çalışması adım adım nasıl ilerliyor?"
+          intro="Önce mağazanızın yapısını ve satış verisini birlikte inceliyoruz. Ardından teknik düzenlemeler ve kategori içerikleri paralel olarak ilerliyor."
+          ctaLabel="Ücretsiz mağaza analiziyle başlayalım"
+          steps={[
+            {
+              tag: "1. ve 2. hafta",
+              title: "Mağaza analizi ve yol haritası",
+              paragraphs: [
+                "Sitenizi baştan sona tarıyor; kategori yapısını, filtre adreslerini, kopya sayfaları, stoktan kalkan ürünleri ve hız sorunlarını tespit ediyorum. Search Console verisiyle hangi kategorilerin ve ürünlerin zaten görünür olduğunu, hangilerinin rakiplerin gerisinde kaldığını çıkarıyorum.",
+                "Bu bulguları satış verinizle yan yana koyuyorum. Yol haritasında önce en çok ciro getirebilecek kategoriler yer alıyor; hangi kategorilerle başlayacağımıza birlikte karar veriyoruz.",
+              ],
+            },
+            {
+              tag: "Paralel yürür",
+              tone: "accent",
+              title: "Teknik düzenlemeler",
+              paragraphs: [
+                "Filtre ve parametre kurallarını, canonical yapısını, yönlendirmeleri, ürün şemasını ve site hızını düzenliyorum. Bu işlerin bir kısmı altyapı panelinden, bir kısmı yazılım desteğiyle yapılıyor.",
+                "Yazılımcınız ya da altyapı firmanız için yapılması gerekenleri öncelik sırasıyla ve net şekilde yazıyor, uygulamadan sonra her değişikliği kontrol ediyorum.",
+              ],
+            },
+            {
+              tag: "1. aydan itibaren",
+              title: "Kategori ve ürün içerikleri",
+              paragraphs: [
+                "Öncelikli kategorilerin başlıklarını, açıklama metinlerini ve iç bağlantılarını yeniden kurguluyorum. Ardından en çok satan ürünlerin sayfalarını özgün açıklamalar, teknik bilgiler ve müşterilerin sık sorduğu sorularla güçlendiriyorum.",
+                "Gerektiğinde satın alma kararını kolaylaştıran rehber içerikleri de planlıyorum: hangi ürün kime uygun, nasıl seçilir, hangi modeller arasında fark var.",
+              ],
+            },
+            {
+              tag: "Ayrı bütçelendirilir",
+              tone: "amber",
+              title: "Backlink ve dijital PR",
+              paragraphs: [
+                "Sektör blogları, haber siteleri ve ürün inceleme sitelerinde mağazanızın ve ürünlerinizin yer alması, rekabetçi kategorilerde fark yaratıyor. Bu yayın çalışmalarının maliyeti siteye göre değiştiği için ayrıca bütçelendiriliyor; onayınız olmadan hiçbir harcama yapılmıyor.",
+              ],
+            },
+            {
+              tag: "Her ay",
+              title: "Satış odaklı ölçüm",
+              paragraphs: [
+                "Sıralama ve trafiğin yanında organik kanaldan gelen siparişleri, ciroyu ve kategori bazında dönüşüm oranlarını takip ediyorum. Raporu bu sonuçlara göre hazırlıyor, bir sonraki ayın önceliklerini buna göre belirliyorum.",
+              ],
+            },
+          ]}
+        />
+
+        <ExampleGrid
+          title="Mağazanızda bu cümleler kuruluyorsa, e-ticaret SEO'su zamanı"
+          intro="E-ticaret sitelerinde organik satış sorunları genellikle şu şekilde dile geliyor:"
+          quoteStyle="speech"
+          items={[
+            { icon: EyeOff, title: "Kategori aramalarında görünmemek", quote: "Ürünümüzü aratınca hep pazaryerleri çıkıyor", text: "Kategori sayfası zayıfsa Google aramayı başkalarının sayfalarıyla cevaplıyor. Doğru kurulmuş kategori sayfaları bu aramalarda yer açıyor." },
+            { icon: Store, title: "Pazaryeri bağımlılığı", quote: "Satışların çoğu pazaryerinden geliyor, komisyon her şeyi yiyor", text: "Kendi mağazanıza gelen organik trafik, komisyonsuz ve müşteriyle doğrudan ilişki kurduğunuz bir satış kanalı demek." },
+            { icon: Copy, title: "Tekrar eden açıklamalar", quote: "Ürün açıklamalarını üreticinin sitesinden aldık", text: "Aynı metin onlarca sitede varsa, Google'ın sizin sayfanızı seçmesi için bir neden kalmıyor." },
+            { icon: Search, title: "Gereksiz sayfa kalabalığı", quote: "Search Console'da on binlerce sayfa görünüyor, ürünümüz birkaç bin", text: "Filtre ve parametre adresleri kontrolsüz çoğaldığında Google asıl önemli sayfalara daha az zaman ayırıyor." },
+            { icon: TrendingDown, title: "Altyapı değişikliği sonrası kayıp", quote: "Yeni altyapıya geçtikten sonra satışlar düştü", text: "Eski ürün ve kategori adreslerinin doğru yönlendirilmemesi, birikmiş görünürlüğü bir gecede silebiliyor." },
+            { icon: Bot, title: "Yapay zekada görünmemek", quote: "ChatGPT'ye ürün önerisi sorunca bizim mağaza geçmiyor", text: "Müşteriler artık ürün seçerken yapay zekaya da danışıyor. Net ürün bilgisi ve rehber içerikler bu cevaplarda yer almanızı destekliyor." },
+          ]}
+        />
+
+        <CaseSpotlight
+          eyebrow="Öne çıkan vaka"
+          title="Motosiklet aksesuar mağazası: üç ayda gösterimler iki katından fazla"
+          text="Geniş bir ürün yelpazesine rağmen yüksek hacimli aramalarda görünürlüğü çok sınırlı olan bir motosiklet aksesuarı ve giyim mağazasında önce site hızını iyileştirdim. Ardından müşterilerin arama niyetlerini gruplandırarak yeni kategori yapıları kurdum ve iç bağlantıları güçlendirdim. Üç ayın sonunda organik tıklamalar 18.900'den 31.600'e, gösterimler 451 binden 1,02 milyona çıktı."
+          image="/motosiklet-aksesuar-kiyas.png"
+          imageAlt="Motosiklet aksesuar mağazasının üç aylık Google Search Console karşılaştırma grafiği"
+          stats={[
+            { value: "+%67,60", label: "Organik tıklama (3 ay)" },
+            { value: "+%125,30", label: "Organik gösterim (3 ay)" },
+          ]}
+          siteUrl="/basari-hikayeleri/motosiklet-aksesuarlari-magazasi"
+          siteLabel="Vakanın detaylarını inceleyin"
+        />
+
+        <ProofBand
+          title="E-ticaret projelerinden diğer sonuçlar"
+          results={[
+            { code: "Kategori ve filtre", metric: "+%147", label: "Organik tıklama artışı", detail: "Yedi aylık kategori ve filtre optimizasyonu sürecinde bir e-ticaret sitesinde elde edilen organik tıklama artışı.", source: "Google Search Console, 2025" },
+            { code: "Ayakkabı mağazası", metric: "+%29,42", label: "Organik tıklama artışı", detail: "Kategori mimarisi, ürün açıklamaları ve ürün şeması çalışmalarıyla üç ayda tıklamalar 62.100'den 80.400'e, gösterimler %23,07 arttı.", source: "Google Search Console, 3 ay" },
+            { code: "Ürün şeması", metric: "+%34", label: "Tıklama oranı katkısı", detail: "Ürün ve fiyat bilgisini işaretleyen yapılandırılmış veri çalışması sonrasında arama sonuçlarındaki tıklama oranında görülen artış.", source: "Ekim Demirci vaka çalışmaları" },
+          ]}
+        />
+
+        <RelatedBand
+          eyebrow="İlgili hizmetler"
+          title="E-ticaret SEO'yu tamamlayan çalışmalar"
+          text="Mağazalarda teknik altyapı, sayfa içi düzenlemeler ve yapay zeka görünürlüğü birbirine bağlı. İhtiyacınıza göre bu alanlara ayrı ayrı da odaklanabiliyorum."
+          links={[
+            { icon: Wrench, title: "Teknik SEO", href: "/seo-hizmetleri/teknik-seo", text: "Tarama, filtre ve hız sorunları" },
+            { icon: FileText, title: "Sayfa içi SEO", href: "/seo-hizmetleri/sayfa-ici-seo", text: "Kategori ve ürün sayfası düzenlemeleri" },
+            { icon: Sparkles, title: "Yapay zeka SEO", href: "/seo-hizmetleri/yapay-zeka-seo", text: "Ürün önerilerinde mağazanızın adı" },
+          ]}
+        />
+
+        <GuideShell
+          id="e-ticaret-seo-rehberi"
+          eyebrow="E-ticaret SEO rehberi"
+          title="E-ticaret SEO'su hakkında bilmeniz gerekenler"
+          intro="Online mağazalarda SEO'nun nasıl işlediğini, hangi sayfaların satış getirdiğini ve en sık yapılan hatalardan nasıl kaçınacağınızı sade bir dille anlattım."
+          toc={[
+            { id: "e-ticaret-seo-nedir", label: "E-ticaret SEO'su nedir?" },
+            { id: "kategori-filtre", label: "Kategori ve filtre yapısı" },
+            { id: "urun-sayfalari", label: "Ürün sayfaları ve tekrar eden içerik" },
+            { id: "stok", label: "Stoktan kalkan ürünler" },
+            { id: "sema-hiz", label: "Ürün şeması ve site hızı" },
+            { id: "pazaryeri", label: "Pazaryerleriyle rekabet" },
+          ]}
+          cta={{ eyebrow: "Ücretsiz mağaza analizi", title: "Müşteriler mağazanızı Google'da bulabiliyor mu?", text: "Mağazanızın kategori ve ürün aramalarındaki durumunu inceleyip fırsatları raporlayayım.", label: "Ücretsiz analiz isteyin" }}
+          faqTitle="E-ticaret SEO'su hakkında sıkça sorulan sorular"
+          faqItems={faqItems}
+        >
+          <div className="space-y-5">
+            <GuideH2 id="e-ticaret-seo-nedir">E-ticaret SEO&apos;su nedir?</GuideH2>
+            <GuideDefinition>
+              E-ticaret SEO&apos;su, online mağazaların kategori ve ürün sayfalarının, satın almaya hazır müşterilerin
+              yaptığı aramalarda üst sıralarda yer alması ve bu ziyaretlerin siparişe dönüşmesi için yapılan arama
+              motoru optimizasyonu çalışmalarıdır.
+            </GuideDefinition>
+            <p>
+              Bir kurumsal sitede onlarca sayfa olur; bir mağazada ise binlerce, bazen yüz binlerce. Kategoriler,
+              filtreler, ürün varyasyonları ve sezonluk ürünler sürekli yeni adresler üretir. Bu yüzden e-ticarette
+              SEO, tek tek sayfaları düzeltmekten çok, bütün mağazayı etkileyen yapıyı doğru kurmakla ilgilidir.
+            </p>
+            <p>
+              Adım adım bir yol haritası arıyorsanız{" "}
+              <GuideLink href="/blog/e-ticaret-seo-nasil-yapilir">e-ticaret SEO nasıl yapılır</GuideLink> yazımda
+              süreci daha detaylı anlattım.
+            </p>
           </div>
-        </section>
 
-        {/* DEFINITION & METHODOLOGY EVIDENCE SECTION */}
-        <section className="py-16 bg-canvas">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            {/* Definition Box */}
-            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
-                E-Ticaret SEO Danışmanlığı Nedir?
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
-                E-Ticaret SEO Danışmanlığı, online satış yapan markaların kategorilerini ve ürünlerini arama motorlarında doğru kitleyle buluşturan uçtan uca altyapı yönetimidir. Mağazanız için <Link href="/seo-hizmetleri/teknik-seo" className="text-purple-600 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-purple-600 underline font-semibold">Sayfa İçi SEO</Link> mimarisini kurarak geleneksel reklam bütçelerine bağımlılığı azaltır, kesintisiz bir organik ciro kanalı inşa ederim.
-              </p>
-
-              {/* Transparent Evidence Box */}
-              <div className="pt-6 border-t border-line">
-                <h3 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-emerald-600" />
-                  Doğrulanmış Metodoloji ve Şeffaf Ölçüm Çerçevesi
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-5 bg-white border border-purple-500/20 rounded-2xl">
-                    <div className="text-xs text-purple-600 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
-                    <div className="text-3xl font-extrabold text-emerald-600 mb-2">%147 Tıklama Artışı</div>
-                    <p className="text-xs text-ink-soft leading-relaxed">
-                      7 aylık e-ticaret kategori ve filtre optimizasyonu sürecinde elde edilen doğrulanmış organik tıklama büyümesi. (Kaynak: Google Search Console 2025)
-                    </p>
-                  </div>
-                  <div className="p-5 bg-white border border-purple-500/20 rounded-2xl">
-                    <div className="text-xs text-purple-600 font-mono font-semibold mb-1">HEDEF KONUMLANMA</div>
-                    <div className="text-3xl font-extrabold text-ink mb-2">İlk 3 Sıra</div>
-                    <p className="text-xs text-ink-soft leading-relaxed">
-                      Yüksek satın alma niyetli anahtar kelime sorgularında sürdürülebilir arama sonucu görünürlüğü.
-                    </p>
-                  </div>
-                  <div className="p-5 bg-white border border-purple-500/20 rounded-2xl">
-                    <div className="text-xs text-purple-600 font-mono font-semibold mb-1">ZENGİN SONUÇ ETKİSİ</div>
-                    <div className="text-3xl font-extrabold text-purple-600 mb-2">+%34 CTR Katkısı</div>
-                    <p className="text-xs text-ink-soft leading-relaxed">
-                      Product, Offer ve AggregateRating Rich Snippet kodlamaları sonrası arama tıklama oranındaki net artış.
-                    </p>
-                  </div>
-                </div>
-
-                {/* ARS MOTOR PERFORMANCE CHART */}
-                <div className="mt-8 pt-6 border-t border-line">
-                  <div className="text-sm font-semibold text-ink-soft mb-3 flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-emerald-600" />
-                    Ars Motor 3 Aylık Performans & Karşılaştırma Grafiği (Google Search Console)
-                  </div>
-                  <div className="rounded-2xl overflow-hidden border border-line bg-white p-2 shadow-2xl">
-                    <img 
-                      src="/ars-motor-3-aylik-karsilastirma-grafigi.png" 
-                      alt="Ars Motor 3 Aylık Karşılaştırma Grafiği" 
-                      className="w-full h-auto rounded-xl object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="kategori-filtre">Kategori ve filtre sayfaları nasıl kurulmalı?</GuideH2>
+            <p>
+              Kategori sayfaları, mağazanın en çok trafik getiren sayfalarıdır; çünkü insanlar çoğu zaman marka ya da
+              model adıyla değil, &ldquo;erkek deri bot&rdquo; ya da &ldquo;kadın koşu ayakkabısı&rdquo; gibi genel
+              ifadelerle arar. Kategori yapısını mağazanın iç düzenine göre değil, müşterilerin bu arama alışkanlıklarına
+              göre kurmak gerekiyor.
+            </p>
+            <p>
+              Filtreler ise iki ucu keskin bir bıçak. Doğru kullanıldığında &ldquo;su geçirmez kadın botu&rdquo; gibi
+              değerli aramalara ayrı bir sayfayla cevap verebilirsiniz. Kontrolsüz bırakıldığında ise renk, beden ve
+              fiyat filtrelerinin her birleşimi yeni bir adres üretir ve Google zamanını kimsenin aramadığı binlerce
+              sayfada harcar. Bu adreslerin nasıl kontrol edildiğini{" "}
+              <GuideLink href="/blog/robots-txt-nedir-ve-nasil-kullanilir">robots.txt</GuideLink> ve{" "}
+              <GuideLink href="/blog/breadcrumb-nedir">breadcrumb</GuideLink> yazılarımda da ele aldım.
+            </p>
           </div>
-        </section>
 
-        {/* E-COMMERCE PLATFORMS SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-pink-500/10 border border-pink-500/20 text-xs font-semibold text-pink-600 uppercase tracking-widest mb-3">
-                <Store className="w-3.5 h-3.5" />
-                Altyapı Özelinde Çözümler
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                Farklı E-Ticaret Altyapılarında SEO Yönetimi
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {ecommercePlatforms.map((platform) => (
-                <div key={platform.name} className="bg-white border border-line p-6 rounded-2xl hover:border-pink-500/30 transition-all">
-                  <div className="text-xs font-semibold text-pink-600 bg-pink-500/10 px-2.5 py-1 rounded-md inline-block mb-3">
-                    {platform.tag}
-                  </div>
-                  <h3 className="text-xl font-bold text-ink mb-2">{platform.name}</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">{platform.desc}</p>
-                </div>
+          <div className="space-y-5">
+            <GuideH2 id="urun-sayfalari">Ürün sayfaları ve tekrar eden açıklamalar</GuideH2>
+            <p>
+              Mağazaların çoğu ürün açıklamalarını üreticiden ya da tedarikçiden hazır alıyor. Aynı metin onlarca
+              sitede birebir yer aldığında, Google&apos;ın sizin sayfanızı öne çıkarması için bir neden kalmıyor.
+              Aynı ürünün her rengi ya da bedeni için ayrı sayfa açılması da benzer bir kopya sorunu yaratıyor.
+            </p>
+            <p>
+              Binlerce ürünü tek tek yeniden yazmak çoğu zaman gerçekçi değil. Bu yüzden önce en çok satan ve en çok
+              aranan ürünlerden başlıyor, geri kalanlar için ürün özelliklerinden beslenen ve kategoriye özgü bilgiler
+              içeren şablonlar kuruyorum. İyi bir ürün sayfasında şunlar bulunur:
+            </p>
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {[
+                ["Net bir başlık", "Marka, model ve müşterinin aradığı temel özellik bir arada."],
+                ["Özgün açıklama", "Ürünün kime ve hangi kullanım için uygun olduğunu anlatan, kendi cümleleriniz."],
+                ["Teknik özellikler", "Ölçü, malzeme, beden tablosu gibi bilgiler; görsele gömülmeden, metin olarak."],
+                ["Sorular ve yorumlar", "Müşterilerin sık sorduğu sorular ve gerçek müşteri yorumları."],
+              ].map(([t, x]) => (
+                <li key={t} className="rounded-2xl border border-line bg-canvas p-4">
+                  <p className="font-semibold text-ink">{t}</p>
+                  <p className="mt-1 text-[15px] leading-relaxed">{x}</p>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-        </section>
 
-        {/* CATEGORY VS PRODUCT SEARCH INTENT SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-purple-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
-                <Tag className="w-8 h-8 text-purple-600" />
-                Kategori Sorgusu ve Ürün Sorgusu Arama Niyeti Farkı
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="p-6 bg-white border border-line rounded-2xl">
-                  <h3 className="text-lg font-bold text-purple-700 mb-3">Kategori Sorguları (Geniş Arama Niyeti)</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed mb-4">
-                    Kullanıcı henüz tam model kararı vermemiş, çeşitliliği kıyaslamak ister (Örn: "deri erkek ayakkabı"). Bu sayfalarda doğru filtreleme, zengin kategori alt metni ve katmanlı taksonomi ile trafik çekilir.
-                  </p>
-                  <div className="text-xs text-purple-600 font-mono font-semibold">Hedef: Yüksek Hacim & Karşılaştırma Trafiği</div>
-                </div>
-
-                <div className="p-6 bg-white border border-line rounded-2xl">
-                  <h3 className="text-lg font-bold text-pink-700 mb-3">Ürün Sorguları (Satın Alma Niyeti)</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed mb-4">
-                    Kullanıcı alacağı ürünü belirlemiş, fiyat ve stok bilgisi arar (Örn: "X marka 42 numara siyah deri bot"). Bu sayfalarda Product şeması, stok güncellemesi ve hızlı ödeme aksiyonları ön plandadır.
-                  </p>
-                  <div className="text-xs text-pink-600 font-mono font-semibold">Hedef: Yüksek Dönüşüm Oranı & Sepet Tamamlama</div>
-                </div>
-              </div>
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="stok">Stoktan kalkan ürünler nasıl yönetilmeli?</GuideH2>
+            <p>
+              Her mağazada ürünler tükeniyor, sezon değişiyor, bazı modeller kalıcı olarak kaldırılıyor. Bu sayfaların
+              kontrolsüzce silinmesi, yıllar içinde biriken görünürlüğün ve başka sitelerden gelen bağlantıların
+              kaybolması anlamına geliyor. Ziyaretçi de aradığı ürün yerine bir hata sayfasıyla karşılaşıyor.
+            </p>
+            <p>
+              Geçici olarak tükenen ürünlerde sayfayı yayında tutup stok bilgisini güncellemek, kalıcı olarak kalkan
+              ve hâlâ ziyaret alan ürünlerde en yakın ürüne ya da kategoriye yönlendirmek genellikle en sağlıklı yol.
+              Hangi yönlendirme kodunun ne anlama geldiğini{" "}
+              <GuideLink href="/blog/http-yonlendirme-kodlari-nelerdir">HTTP yönlendirme kodları</GuideLink>{" "}
+              yazımda anlattım.
+            </p>
           </div>
-        </section>
 
-        {/* DELIVERABLES LIST SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
-                <PackageCheck className="w-3.5 h-3.5" />
-                Somut Çıktılar
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                Danışmanlık Sürecinde Elde Edeceğiniz Çıktılar
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {deliverables.map((item, idx) => (
-                <div key={idx} className="bg-white border border-line p-6 rounded-2xl flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
-                  <span className="text-ink font-medium text-sm md:text-base">{item}</span>
-                </div>
-              ))}
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="sema-hiz">Ürün şeması ve site hızı neden önemli?</GuideH2>
+            <p>
+              Ürün şeması, fiyat, stok durumu ve ürün bilgilerini Google&apos;ın doğrudan okuyabileceği bir dille
+              işaretler. Bu sayede ürününüz arama sonuçlarında fiyat ve stok bilgisiyle daha dikkat çekici
+              görünebilir. Puan ve yıldız bilgisini ise yalnızca sitenizdeki gerçek müşteri yorumlarına dayanıyorsa
+              eklemek gerekiyor. Konunun temellerini{" "}
+              <GuideLink href="/blog/yapilandirilmis-veri-nedir">yapılandırılmış veri nedir</GuideLink> yazımda
+              bulabilirsiniz.
+            </p>
+            <p>
+              Hız tarafında en yaygın sorunlar; büyük ürün görselleri, çok sayıda eklenti ve uygulama ile mobilde
+              geç yüklenen kategori sayfaları. Siparişlerin büyük kısmı telefondan geldiği için bu sorunlar doğrudan
+              satışı etkiliyor. Sitenizin durumunu{" "}
+              <GuideLink href="/blog/pagespeed-insight-nedir-nasil-kullanilir">PageSpeed Insights</GuideLink> ile
+              kendiniz de kontrol edebilirsiniz.
+            </p>
           </div>
-        </section>
 
-        {/* TIMELINE ROADMAP SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">
-                <Clock className="w-3.5 h-3.5" />
-                Sonuç Zaman Çizelgesi
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                E-Ticaret SEO Süreç Haritası
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {timelineSteps.map((step) => (
-                <div key={step.period} className="bg-white border border-blue-500/20 p-8 rounded-2xl relative">
-                  <div className="text-xs font-mono font-semibold text-blue-600 mb-2">{step.period}</div>
-                  <h3 className="text-xl font-bold text-ink mb-3">{step.title}</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="pazaryeri">Pazaryerleriyle nasıl rekabet edilir?</GuideH2>
+            <p>
+              Geniş aramalarda büyük pazaryerlerinin önüne geçmek kolay değil; çok sayıda ürünleri, güçlü alan adları
+              ve büyük bütçeleri var. Ama her aramada aynı güce sahip değiller. Daha net aramalarda, niş kategorilerde
+              ve uzmanlık gerektiren ürünlerde kendi mağazanızla öne çıkmak mümkün.
+            </p>
+            <p>
+              Pazaryerlerinin genel kategori sayfaları ürünleri listeler ama çoğu zaman müşterinin sorusuna cevap
+              vermez. Ürün seçim rehberleri, karşılaştırmalar ve kendi deneyiminizden gelen bilgiler, sizi bu
+              listelerden ayıran şey oluyor. Bu tür içeriklerin değeri için{" "}
+              <GuideLink href="/blog/information-gain-nedir">information gain nedir</GuideLink> yazıma göz
+              atabilirsiniz.
+            </p>
           </div>
-        </section>
-
-        {/* TOOLS STRIP SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-600 uppercase tracking-widest mb-3">
-                <Wrench className="w-3.5 h-3.5" />
-                Yazılım & Araç Parkı
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                E-Ticaret SEO Analizinde Kullandığım Başlıca Araçlar
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {toolsList.map((tool) => (
-                <div key={tool.name} className="bg-white border border-line p-5 rounded-xl text-center">
-                  <div className="font-bold text-ink text-base mb-1">{tool.name}</div>
-                  <div className="text-xs text-ink-muted">{tool.role}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PRICING POSTURE SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-brand-light to-accent-light border border-purple-500/30 rounded-3xl p-8 md:p-12 text-center">
-              <DollarSign className="w-10 h-10 text-purple-600 mx-auto mb-4" />
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
-                Şeffaf ve İhtiyaca Özel Teklif Yaklaşımı
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-8">
-                E-ticaret SEO çalışmalarında sabit şablon paketler yerine mağazanızın ürün sayısı, altyapısı ve hedeflerine uygun şeffaf danışmanlık bütçeleri kurguluyorum. Gizli maliyetler olmadan taahhütsüz ilk değerlendirme görüşmesi yapıyorum.
-              </p>
-              <Link
-                href="/seo-danismanlik-fiyatlari"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold hover:shadow-lg hover:shadow-purple-500/25 transition-all"
-              >
-                SEO Danışmanlık Fiyatlarını İnceleyin
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-        </section>
+        </GuideShell>
       </ServicePageLayout>
     </>
   );
