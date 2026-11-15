@@ -1,124 +1,88 @@
 import { Metadata } from "next";
+import {
+  Target,
+  Layers,
+  FileCheck,
+  Inbox,
+  Languages,
+  Braces,
+  EyeOff,
+  Users,
+  TrendingDown,
+  FileSearch,
+  Bot,
+  Clock,
+  Wrench,
+  PenLine,
+  Network,
+} from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import Link from "next/link";
-import { 
-  Building2, 
-  Layers, 
-  Briefcase, 
-  FileCheck, 
-  Award, 
-  Target, 
-  CheckCircle2, 
-  ArrowRight, 
-  Calendar, 
-  Clock, 
-  Wrench, 
-  DollarSign, 
-  FileText,
-  ShieldCheck,
-  PackageCheck,
-  BarChart3,
-  Factory
-} from "lucide-react";
+import SerpDemo from "@/components/service/SerpDemo";
+import {
+  DemoSection,
+  DemoSide,
+  DemoWindow,
+  ExampleGrid,
+  GuideDefinition,
+  GuideH2,
+  GuideLink,
+  GuideShell,
+  ProcessTimeline,
+  ProofBand,
+  RelatedBand,
+  ScopeGrid,
+  type Faq,
+} from "@/components/service/ServiceBlocks";
 
 export const metadata: Metadata = {
   title: "Kurumsal ve B2B SEO Danışmanlığı",
-  description: "B2B markaları, sanayi kuruluşları ve kurumsal şirketler için uzun karar alma süreçlerine özel dönüşüm odaklı Kurumsal SEO danışmanlığı.",
+  description: "Üreticiler, tedarikçiler ve kurumsal yazılım firmaları için B2B SEO danışmanlığı. Satın alma ekiplerinin yaptığı aramalarda görünür olmanızı ve bu aramalardan teklif talebi almanızı hedefliyorum.",
   alternates: {
     canonical: "/sektorel-seo-hizmetleri/kurumsal-b2b-seo",
   },
   openGraph: {
     title: "Kurumsal ve B2B SEO Danışmanlığı | Ekim Demirci",
-    description: "B2B şirketleri ve kurumsal markalar için karar verici odaklı B2B SEO çözümleri.",
+    description: "Uzun satış süreçleri ve birden fazla karar vericisi olan şirketler için çözüm sayfaları, karar destek içerikleri ve teklif talebi odaklı SEO danışmanlığı.",
   },
   twitter: {
     title: "Kurumsal ve B2B SEO Danışmanlığı | Ekim Demirci",
-    description: "B2B şirketleri ve kurumsal markalar için karar verici odaklı B2B SEO çözümleri.",
+    description: "Uzun satış süreçleri ve birden fazla karar vericisi olan şirketler için çözüm sayfaları, karar destek içerikleri ve teklif talebi odaklı SEO danışmanlığı.",
   },
 };
 
+const faqItems: Faq[] = [
+  {
+    question: "B2B SEO ile normal SEO arasındaki fark ne?",
+    answer: "Temel kurallar aynı, ama hedef farklı. B2B'de az sayıda kişi arama yapıyor; buna karşılık her biri büyük ve uzun soluklu bir iş anlamına gelebiliyor. Satın alma kararını da genellikle tek kişi değil, teknik ekip, satın alma ve yönetim birlikte veriyor. Bu yüzden B2B SEO'da trafik hacminden çok, doğru kişinin doğru sayfayı bulması ve teklif istemesi önemli.",
+  },
+  {
+    question: "Arama hacmi çok düşük kelimeler için uğraşmaya değer mi?",
+    answer: "Çoğu B2B firması için değer. Ayda birkaç düzine kez aranan teknik bir ürün adı, bir tüketici ürününün binlerce aramasından daha fazla ciro getirebilir. Anahtar kelime araçları bu aramaların bir kısmını hiç göstermiyor bile; bu yüzden araştırmayı satış ekibinizin müşterilerden duyduğu ifadelerle ve Search Console verisiyle birlikte yapıyorum.",
+  },
+  {
+    question: "B2B SEO ne kadar sürede sonuç verir?",
+    answer: "Teknik düzeltmelerin ve çözüm sayfalarının etkisi genellikle ilk birkaç ayda görülmeye başlıyor. Ancak B2B'de satış süreci zaten uzun olduğu için organik kanaldan gelen taleplerin satışa dönmesi de zaman alıyor. Bu yüzden sonuçları en az altı ay ile bir yıllık bir pencerede değerlendirmenizi öneriyorum.",
+  },
+  {
+    question: "Başarıyı nasıl ölçüyorsunuz?",
+    answer: "Sıralama ve trafik takip ettiğim ama tek başına yeterli görmediğim metrikler. Asıl baktığım şey teklif formları, katalog ve doküman indirmeleri, demo talepleri ve organik kanaldan gelen taleplerin satış ekibinizce ne kadarının gerçek fırsat olarak görüldüğü. Bunun için ölçüm altyapısını işin başında birlikte kuruyoruz.",
+  },
+  {
+    question: "Yurt dışındaki alıcılara ulaşmak için ne yapıyorsunuz?",
+    answer: "Hedef ülkelerdeki alıcıların ürününüzü hangi terimlerle aradığını ayrı ayrı araştırıyorum; çünkü bir ülkede yaygın olan teknik terim başka bir ülkede hiç kullanılmayabiliyor. Ardından dil sürümlerini doğru kuruyor, hreflang etiketlerini düzenliyor ve her dil için birebir çeviri yerine o pazara uygun içerik hazırlanmasını sağlıyorum.",
+  },
+  {
+    question: "Google Ads yerine SEO mu yapmalıyız?",
+    answer: "Birini diğerinin yerine koymak zorunda değilsiniz. Reklam kısa vadede talep getirir ama bütçe durduğunda talep de durur. SEO daha yavaş başlar, ancak bir kez kurulduğunda karar vericilerin araştırma sürecinin her aşamasında sizi görmesini sağlar. Reklam verilerinden hangi kelimelerin teklif getirdiğini görmek, SEO önceliklerini belirlerken de işe yarıyor.",
+  },
+  {
+    question: "Ticari bilgilerimizin gizliliği nasıl korunuyor?",
+    answer: "Kurumsal firmalarla çalışırken fiyat listeleri, müşteri bilgileri ve ürün yol haritaları gibi verilere erişmem gerekebiliyor. Bu bilgileri yalnızca çalışma kapsamında kullanıyorum; talep ederseniz çalışmaya başlamadan önce gizlilik sözleşmesi imzalıyoruz.",
+  },
+];
+
 export default function CorporateB2BSEOPage() {
-  const faqItems = [
-    {
-      question: "B2B SEO ne kadar sürede sonuç verir?",
-      answer: "B2B sektöründe arama hacimleri daha düşük ve karar alma süreçleri daha uzun olduğundan, ilk nitelikli teklif talepleri (RFQ) 3. ve 4. aylardan itibaren görünür hale gelir. Kalıcı pipeline ve kurumsal pazar hakimiyeti ise 8 ila 12 ay arasında elde edilir."
-    },
-    {
-      question: "Düşük hacimli B2B anahtar kelimeler gerçekten işe yarar mı?",
-      answer: "Evet, B2B'de hedef aylık 50 arama alan ama her bir arayanı milyonluk tedarik anlaşmasına yönlendiren yüksek niyetli C-Level ve satın alma müdürü aramalarıdır. Düşük hacimli ancak yüksek değerli sorgular B2B'nin en büyük büyüme motorudur."
-    },
-    {
-      question: "Google Ads ile B2B SEO'yu birlikte mi yürütmeliyiz?",
-      answer: "Kısa vadede anlık B2B lead kazanımı için Google Ads kullanılırken, uzun vadede teklif başına maliyeti düşürmek ve karar vericiler gözünde güven inşa etmek için SEO ile entegre yürütülmelidir."
-    },
-    {
-      question: "Rakiplerimiz pazarda yıllardır güçlü sıralamalara sahipse ne yapılabilir?",
-      answer: "Rakiplerin gözden kaçırdığı niş kullanım senaryoları (use cases), teknik beyaz bültenler (whitepapers) ve semantik uzun kuyruklu aramalar hedeflenerek pazar payı adım adım ele geçirilir."
-    },
-    {
-      question: "Uluslararası B2B pazarında yabancı dilde arayan satın alma müdürlerine nasıl ulaşılır?",
-      answer: "Hedef ülkelerin ticari terimlerine uygun çok dilli içerik mimarisi, hreflang etiketleri ve küresel B2B şema işaretlemeleri ile ihracat odaklı organik tüneller kurgulanır."
-    },
-    {
-      question: "B2B SEO çalışmalarında başarı sadece trafikle mi ölçülür?",
-      answer: "Hayır, B2B SEO'da başarı ham ziyaretçi sayısı ile değil; gelen teklif formlarının kalitesi (SQL), katalog indirmeleri ve potansiyel müşteri boru hattı (pipeline) değeri üzerinden ölçülür."
-    }
-  ];
-
-  const b2bIndustries = [
-    {
-      title: "Sanayi & Makine Üreticileri",
-      desc: "Endüstriyel ekipman, yedek parça ve özel imalat yapan fabrikalar için teknik şartname odaklı görünürlük."
-    },
-    {
-      title: "Tedarikçi & Toptan Ticaret",
-      desc: "Büyük ölçekli malzeme tedarikçileri ve distribütörler için kurumsal satın alma müdürlerine erişim."
-    },
-    {
-      title: "SaaS & Kurumsal Yazılım",
-      desc: "İş yazılımları, ERP/CRM sistemleri ve bulut çözümleri sunan firmalar için kullanım senaryosu içerikleri."
-    },
-    {
-      title: "İhracat Odaklı Kurumlar",
-      desc: "Yurt dışındaki ithalatçı ve bayilere ulaşmak isteyen uluslararası B2B markaları için çok dilli SEO."
-    }
-  ];
-
-  const deliverables = [
-    "Kurumsal B2B Karar Verici Niyet & Rekabet Analizi Raporu",
-    "Organization, Corporation ve Brand JSON-LD Şema Kodları",
-    "B2B Dönüşüm Tüneli (RFQ, Katalog İndirme & Şartname Mimarisi)",
-    "Uluslararası B2B Çok Dilli Hreflang ve İçerik Haritası",
-    "Aylık Nitelikli Lead (SQL) ve Pipeline Değeri Performans Raporu"
-  ];
-
-  const timelineSteps = [
-    {
-      period: "1. - 3. Ay",
-      title: "Karar Verici Niyet & Şema Mimarısı",
-      desc: "Satın alma müdürlerinin teknik aramaları analiz edilir, kurumsal şemalar ve teknik tarama altyapısı düzeltilir."
-    },
-    {
-      period: "4. - 6. Ay",
-      title: "B2B Lead Tüneli & Çözüm Sayfaları",
-      desc: "Kullanım senaryoları ve beyaz bültenler hedeflenerek ilk nitelikli teklif talepleri (RFQ) toplanmaya başlar."
-    },
-    {
-      period: "7. - 12. Ay",
-      title: "Uluslararası Pazar & Sürdürülebilir Pipeline",
-      desc: "Karar verici odaklı organik aramalarda ilk sıra yerleşimi tamamlanır, yıllık anlaşmalar sağlayan düzenli lead kanalı oturur."
-    }
-  ];
-
-  const toolsList = [
-    { name: "Google Search Console", role: "Kurumsal B2B Arama Niyeti Takibi" },
-    { name: "Google Analytics 4", role: "B2B Lead & RFQ Dönüşüm Analizi" },
-    { name: "Ahrefs", role: "Global B2B Rakip & Kelime Araştırması" },
-    { name: "Semrush", role: "Pazar Hakimiyeti & İhracat SEO Analizi" },
-    { name: "Screaming Frog", role: "Kurumsal Bilgi Mimarisi & Şema Denetimi" }
-  ];
-
   return (
     <>
       <Breadcrumb items={[
@@ -127,348 +91,278 @@ export default function CorporateB2BSEOPage() {
       ]} />
       <ServicePageLayout
         title="Kurumsal ve B2B SEO Danışmanlığı"
-        subtitle="Sektörel SEO Çözümleri"
-        description="B2B markaları, yazılım şirketleri, üreticiler ve kurumsal firmalar için satın alma karar vericilerini hedefleyen özel B2B SEO stratejileri. Nitelikli teklif taleplerinizi (RFQ) ve kurumsal müşteri ağınızı organik aramayla büyütün."
+        subtitle="Satın alma ekibi araştırırken karşısına çıkan firma"
+        description="Bir firma tedarikçi ararken satın alma uzmanı, mühendis ve yönetici aylarca araştırma yapıyor; teknik özellikleri karşılaştırıyor, referanslara bakıyor, kısa bir liste hazırlıyor. Ben bu araştırmanın her adımında sizin sitenizin karşılarına çıkması ve sonunda teklif istemeleri için çözüm sayfalarınızı, teknik içeriklerinizi ve sitenizin altyapısını birlikte ele alıyorum."
+        canonicalUrl="https://ekimdemirci.com/sektorel-seo-hizmetleri/kurumsal-b2b-seo"
+        afterHeroNode={
+          <DemoSection
+            id="b2b-arama-sonuclari"
+            eyebrow="Google sonuçları"
+            title="Tedarikçi listesi Google'da başlıyor. O listede siz de olun."
+            intro="B2B alıcıların çoğu satış temsilcisiyle konuşmadan önce kendi araştırmasını yapıyor. Arama sonuçlarının ilk sayfasında görünmeyen bir firma, çoğu zaman teklif istenecekler listesine hiç girmiyor."
+            window={
+              <DemoWindow label="google.com">
+                <SerpDemo
+                  query="endüstriyel soğutma sistemleri üreticisi"
+                  results={[
+                    { domain: "sanayirehberi.com", title: "Endüstriyel Soğutma Firmaları Listesi", snippet: "Bölgenizdeki soğutma sistemi üreticileri ve iletişim bilgileri." },
+                    { domain: "sogutmateknik.com.tr", title: "Endüstriyel Soğutma Sistemleri | Proje ve Montaj", snippet: "Gıda, kimya ve ilaç sektörleri için soğutma çözümleri." },
+                    { domain: "b2bpazaryeri.com", title: "Soğutma Sistemi Tedarikçileri ve Teklifleri", snippet: "Yüzlerce tedarikçiden hızlıca teklif alın." },
+                    { domain: "kuzeyiklimlendirme.com", title: "Chiller ve Soğuk Oda Sistemleri", snippet: "Kurulum, bakım ve yedek parça hizmetleri." },
+                    { domain: "firmaniz.com", title: "Endüstriyel Soğutma Sistemleri Üreticisi | Firmanız", snippet: "Kapasite seçimi, teknik dokümanlar ve referans projelerle teklif isteyin.", brand: true },
+                  ]}
+                />
+              </DemoWindow>
+            }
+            side={
+              <DemoSide
+                title="Az arama, büyük iş"
+                text="B2B'de bir kelimenin ayda kaç kez arandığı çoğu zaman yanıltıcı. Teknik bir ürün adını arayan birkaç kişiden biri, yıllarca sürecek bir tedarik ilişkisinin başlangıcı olabiliyor. Ben de bu yüzden işe hacimden değil, kimin ne aradığından başlıyorum."
+                points={[
+                  "Satın alma ekiplerinin gerçekten kullandığı terimleri bulmak",
+                  "Her ürün ve sektör için ayrı çözüm sayfası kurmak",
+                  "Teknik doküman ve karşılaştırma içerikleri hazırlamak",
+                  "Ziyaretçiyi teklif talebine taşıyan yolu kısaltmak",
+                ]}
+                ctaTitle="Firmanız tedarikçi aramalarında görünüyor mu?"
+                ctaText="Sitenizin hangi aramalarda göründüğünü, hangilerinde rakiplerin öne geçtiğini inceleyip size kısa bir rapor hazırlayayım."
+                ctaLabel="Ücretsiz B2B analizi iste"
+              />
+            }
+          />
+        }
         icon="Settings"
         gradient="from-indigo-500 to-purple-600"
-        features={[
-          "Karar Verici Niyet Odaklı B2B Anahtar Kelime Stratejisi",
-          "Düşük Hacimli - Yüksek Dönüşümlü Sorgu Optimizasyonu",
-          "Whitepaper, Case Study & Ürün Şartname Mimarısı",
-          "Organization & Brand Schema Kodlamaları",
-          "Global & Uluslararası B2B Pazarları İçin SEO",
-          "Kurumsal Müşteri Kazanım (Lead Generation) Optimizasyonu"
-        ]}
-        scope={[
-          {
-            title: "Karar Verici Niyet Odaklı Kelime Stratejisi",
-            description: "Genel tüketici aramaları yerine C-Level yöneticilerin ve satın alma müdürlerinin doğrudan teklif istemeden önce yaptığı teknik aramaları hedefliyorum."
-          },
-          {
-            title: "B2B Lead Generation & Dönüşüm Tüneli",
-            description: "Sitenize gelen kurumsal ziyaretçileri RFQ (Teklif Talebi), katalog indirme veya demo randevusuna yönlendiren nitelikli dönüşüm mekanikleri kuruyorum."
-          },
-          {
-            title: "Organization & Brand Şema Entegrasyonu",
-            description: "Arama motoru botlarına şirketinizin kurumsal kimliğini, merkez adresini, bağlı kuruluşlarını ve marka otoritesini şema olarak kodluyorum."
-          },
-          {
-            title: "Düşük Hacimli - Yüksek Değerli Sorgular",
-            description: "Aylık arama sayısı az olsa da her biri yüksek ciro değeri taşıyan spesifik sanayi ve B2B ürün aramalarında zirveye çıkmanızı sağlıyorum."
-          },
-          {
-            title: "İhracat & Global B2B SEO",
-            description: "Yurt dışındaki ithalatçılara ulaşmak isteyen ihracatçı B2B şirketleri için çok dilli ve bölgesel arama stratejileri yürütüyorum."
-          },
-          {
-            title: "Yapay Zeka Aramalarında Kurumsal Otorite",
-            description: "Markanızı ve ürünlerinizi ChatGPT, Perplexity ve Google AI Overviews yanıtlarında sektörün lider B2B çözümü olarak konumlandırıyorum."
-          }
-        ]}
-        process={[
-          {
-            step: "1",
-            title: "Kurumsal B2B Rekabet & Karar Verici Analizi",
-            description: "Hedef kitleniz olan satın alma müdürleri ve C-Level yöneticilerin hangi aramaları yaptığını derinlemesine analiz ediyorum."
-          },
-          {
-            step: "2",
-            title: "B2B Bilgi Mimarisi & Şema Yapılandırması",
-            description: "Organization, Corporation ve Service şema işaretlemeleriyle şirketinizin kurumsal kimliğini arama botlarına kodluyorum."
-          },
-          {
-            step: "3",
-            title: "Semantik Çözüm & Kullanım Senaryosu İçerikleri",
-            description: "Ürün ve hizmetlerinizin sanayi ve sektör sorunlarını nasıl çözdüğünü anlatan teknik ve ikna edici içerik haritaları kurguluyorum."
-          },
-          {
-            step: "4",
-            title: "B2B Lead Generation & Performans Ölçümü",
-            description: "Teklif formları, katalog indirmeleri ve arama butonlarının dönüşüm süreçlerini düzenli olarak optimize ediyorum."
-          }
-        ]}
-        targetAudience={[
-          {
-            audience: "Sanayi & İmalat Şirketleri",
-            benefit: "Endüstriyel parça, hammadde ve özel üretim aramalarında doğrudan fabrika teklif talepleri."
-          },
-          {
-            audience: "Kurumsal Yazılım & SaaS",
-            benefit: "C-Level karar vericilerden demo ve ürün deneme talepleri toplama."
-          },
-          {
-            audience: "Toptan Distribütör & İthalatçılar",
-            benefit: "Bölgesel bayilik ve toptan tedarik aramalarında pazar liderliği."
-          },
-          {
-            audience: "İhracat Yapan B2B Markaları",
-            benefit: "Yabancı ülkelerdeki satın alma departmanlarına organik yolla ulaşım."
-          }
-        ]}
-        faqItems={faqItems}
-        blogCategory="Kurumsal SEO"
+        blogCategory="SEO Hizmetleri"
       >
-        {/* HERO TRUST STRIP */}
-        <section className="py-8 bg-canvas border-y border-line">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-indigo-600">8+ Yıl</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Kurumsal B2B SEO Deneyimi</div>
-              </div>
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-purple-600">60+</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">B2B & Sanayi Markası</div>
-              </div>
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-emerald-600">%78</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Ort. Nitelikli RFQ Lead Artışı</div>
-              </div>
-              <div className="p-4 bg-white border border-line rounded-2xl">
-                <div className="text-2xl md:text-3xl font-extrabold text-blue-600">Ahrefs & GSC</div>
-                <div className="text-xs md:text-sm text-ink-muted mt-1">Enterprise Veri Standartları</div>
-              </div>
-            </div>
+        <ScopeGrid
+          title="Kurumsal ve B2B SEO'da neler yapıyorum?"
+          intro="B2B sitelerde sorun çoğu zaman içerik eksikliği değil, içeriğin alıcının sorusuna cevap vermemesi. Çalışmayı, satın alma sürecinde kimin neye baktığını anlayarak kuruyorum."
+          items={[
+            { icon: Target, title: "Karar vericilerin aramalarını çıkarıyorum", text: "Mühendisin teknik özellik aramasıyla satın alma uzmanının tedarikçi aramasını ayırıyorum. Satış ekibinizin müşterilerden duyduğu ifadeleri de araştırmaya katıyorum; araçların göstermediği değerli aramalar çoğu zaman oradan çıkıyor." },
+            { icon: Layers, title: "Çözüm ve sektör sayfaları kuruyorum", text: "Her ürün grubu ve hizmet verdiğiniz her sektör için ayrı, net bir sayfa planlıyorum. “Gıda sektörü için soğuk oda” arayan biri, genel bir ürün listesine değil, kendi sorununu anlatan sayfaya ulaşmalı." },
+            { icon: FileCheck, title: "Karar destek içerikleri hazırlıyorum", text: "Karşılaştırma yazıları, uygulama örnekleri, teknik dokümanlar ve sık sorulan sorular. Bunlar, alıcının iç toplantıda sizi savunurken elinde olmasını istediği içerikler." },
+            { icon: Inbox, title: "Teklif talebi yolunu kısaltıyorum", text: "Teklif formunu, katalog indirmeyi ve iletişim adımlarını sadeleştiriyorum. Ziyaretçinin sitede kaybolmadan, ihtiyaç duyduğu bilgiyi verip teklif isteyebilmesi için sayfaların akışını düzenliyorum." },
+            { icon: Languages, title: "Çok dilli ve uluslararası yapı kuruyorum", text: "İhracat yapıyorsanız hedef pazarlar için ayrı anahtar kelime araştırması yapıyor, dil sürümlerini ve hreflang etiketlerini doğru kuruyorum. Birebir çeviri yerine her pazarın kendi terimlerini kullanıyorum." },
+            { icon: Braces, title: "Kurumsal kimliği Google'a tanıtıyorum", text: "Şirket bilgilerinizi, ürünlerinizi ve hizmetlerinizi yapılandırılmış veriyle işaretliyorum. Bu, Google'ın ve yapay zeka asistanlarının firmanızı doğru anlamasını ve doğru aramalarla ilişkilendirmesini destekliyor." },
+          ]}
+        />
+
+        <ProcessTimeline
+          title="B2B SEO çalışması adım adım nasıl ilerliyor?"
+          intro="Önce sitenizi, rakiplerinizi ve satış sürecinizi anlıyorum. Ardından teknik düzenlemeler ve içerik çalışmaları birbirini bekletmeden ilerliyor."
+          ctaLabel="Ücretsiz B2B analiziyle başlayalım"
+          steps={[
+            {
+              tag: "1. ve 2. hafta",
+              title: "Analiz ve yol haritası",
+              paragraphs: [
+                "Sitenizin hangi aramalarda göründüğünü, hangi ürün ve sektörlerde hiç görünmediğini ve rakiplerinizin nerede öne geçtiğini inceliyorum. Bu aşamada satış ekibinizle de kısa bir görüşme yapmak istiyorum; en değerli müşterilerin nasıl geldiğini ve hangi soruları sorduğunu bilmek, araştırmanın yönünü belirliyor.",
+                "Analizin sonunda öncelikleri sıralanmış bir yol haritası hazırlıyorum. Hangi sayfayla başlanacağına, hangi pazara önce odaklanılacağına birlikte karar veriyoruz.",
+              ],
+            },
+            {
+              tag: "Paralel yürür",
+              tone: "accent",
+              title: "Teknik düzenlemeler",
+              paragraphs: [
+                "Kurumsal siteler zamanla büyüyor; eski ürün sayfaları, PDF kataloglar, birden fazla dil sürümü ve kapanmış kampanya sayfaları birikiyor. Tarama ve indeksleme sorunlarını, yönlendirmeleri, dil yapısını ve sayfa hızını düzenliyorum.",
+                "Bu işlerin bir kısmı yazılım ekibinizin ya da ajansınızın elinden geçiyor. Onlar için ne yapılması gerektiğini net ve önceliklendirilmiş şekilde yazıyor, uygulamayı birlikte kontrol ediyorum.",
+              ],
+            },
+            {
+              tag: "1. aydan itibaren",
+              title: "Çözüm sayfaları ve karar destek içerikleri",
+              paragraphs: [
+                "Yol haritasındaki sırayla çözüm ve sektör sayfalarını yeniden kurguluyor, ardından karşılaştırma, uygulama örneği ve teknik doküman gibi karar destek içeriklerini planlıyorum. Teknik doğruluk için içeriklerin sizin mühendislerinizden ya da ürün sorumlularınızdan geçmesini sağlıyorum.",
+                "Her sayfada ziyaretçinin bir sonraki adımı net olsun istiyorum: teklif istemek, doküman indirmek ya da bir uzmanla görüşmek.",
+              ],
+            },
+            {
+              tag: "Ayrı bütçelendirilir",
+              tone: "amber",
+              title: "Backlink ve dijital PR",
+              paragraphs: [
+                "Sektör yayınlarında, ticaret rehberlerinde ve fuar ya da dernek sitelerinde firmanızın doğru bilgilerle yer alması, otoritenizi güçlendiriyor. Bu yayın çalışmalarının maliyeti siteye ve yayına göre değiştiği için ayrıca bütçelendiriliyor; onayınız olmadan hiçbir harcama yapılmıyor.",
+              ],
+            },
+            {
+              tag: "Her ay",
+              title: "Teklif odaklı ölçüm",
+              paragraphs: [
+                "Sıralamaları ve trafiği takip ediyorum, ama raporun merkezinde teklif formları, doküman indirmeleri ve demo talepleri var. Mümkünse organik kanaldan gelen taleplerin satış ekibinizde nasıl sonuçlandığını da öğrenip planı buna göre güncelliyorum.",
+              ],
+            },
+          ]}
+        />
+
+        <ExampleGrid
+          title="Bu cümleleri şirketinizde duyuyorsanız, B2B SEO zamanı"
+          intro="Kurumsal firmalarda organik görünürlük sorunları genellikle şu şekilde dile geliyor:"
+          quoteStyle="speech"
+          items={[
+            { icon: EyeOff, title: "Ürün aramalarında görünmemek", quote: "Ürünümüzün adını aratıyorum, karşıma rakipler ve pazar yerleri çıkıyor", text: "Ürün ve çözüm sayfaları yoksa ya da zayıfsa, Google aramayı başkalarının sayfalarıyla cevaplıyor. Her ürün grubu için güçlü bir sayfa gerekiyor." },
+            { icon: Users, title: "Yanlış kitle", quote: "Siteye gelen var ama teklif isteyen yok", text: "Trafiğin büyük kısmı iş arayanlardan, öğrencilerden ya da bilgi amaçlı aramalardan geliyor olabilir. Hedef, satın alma niyetiyle arayanları çekmek." },
+            { icon: Clock, title: "Uzun satış süreci", quote: "Müşteri bizi bulana kadar rakiple masaya oturmuş oluyor", text: "Alıcı araştırmanın erken aşamasında sizi görmezse, kısa listeye de giremiyorsunuz. Karar destek içerikleri bu erken aşamada devreye giriyor." },
+            { icon: FileSearch, title: "Gömülü teknik bilgi", quote: "Bütün teknik bilgi PDF katalogda duruyor", text: "Kataloglar değerli, ama Google ve alıcılar için sayfa içinde okunabilir bilgi çok daha işe yarıyor. Temel teknik bilgiler sayfalara taşınmalı." },
+            { icon: TrendingDown, title: "Yeniden tasarım sonrası kayıp", quote: "Site yenilendikten sonra talepler azaldı", text: "Kurumsal site yenilemelerinde eski adreslerin doğru yönlendirilmemesi, yıllarca biriken görünürlüğün kaybolmasına yol açabiliyor." },
+            { icon: Bot, title: "Yapay zekada görünmemek", quote: "ChatGPT'ye tedarikçi sorduğumda bizim adımız geçmiyor", text: "Alıcılar artık yapay zekaya da danışıyor. Net çözüm sayfaları ve sektör kaynaklarında yer almak, bu cevaplarda görünmenizi destekliyor." },
+          ]}
+        />
+
+        <ProofBand
+          title="B2B projelerinden bir sonuç"
+          results={[
+            { code: "B2B teklif talepleri", metric: "+%78", label: "Teklif talebi (RFQ) artışı", detail: "Karar verici aramalarına odaklanan dokuz aylık bir B2B SEO sürecinde kurumsal teklif taleplerinde elde edilen artış.", source: "GA4 B2B lead takibi, 2025" },
+          ]}
+        />
+
+        <RelatedBand
+          eyebrow="İlgili hizmetler"
+          title="B2B SEO'yu tamamlayan çalışmalar"
+          text="Kurumsal sitelerde teknik altyapı, içerik ve yapay zeka görünürlüğü birbirine bağlı. İhtiyacınıza göre bu alanlara ayrı ayrı da odaklanabiliyorum."
+          links={[
+            { icon: Wrench, title: "Teknik SEO", href: "/seo-hizmetleri/teknik-seo", text: "Büyük ve çok dilli sitelerde tarama düzeni" },
+            { icon: PenLine, title: "İçerik yazımı", href: "/icerik-yazimi", text: "Çözüm sayfaları ve karar destek içerikleri" },
+            { icon: Network, title: "GEO danışmanlığı", href: "/geo-danismanligi", text: "Yapay zeka cevaplarında firmanızın adı" },
+          ]}
+        />
+
+        <GuideShell
+          id="b2b-seo-rehberi"
+          eyebrow="B2B SEO rehberi"
+          title="Kurumsal ve B2B SEO hakkında bilmeniz gerekenler"
+          intro="B2B'de SEO'nun neden farklı işlediğini, hangi sayfaların teklif getirdiğini ve başarıyı nasıl ölçmeniz gerektiğini sade bir dille anlattım."
+          toc={[
+            { id: "b2b-seo-nedir", label: "B2B SEO nedir?" },
+            { id: "dusuk-hacim", label: "Düşük hacimli aramalar" },
+            { id: "cozum-sayfalari", label: "Çözüm ve sektör sayfaları" },
+            { id: "karar-destek", label: "Karar destek içerikleri" },
+            { id: "uluslararasi", label: "Uluslararası B2B SEO" },
+            { id: "olcum", label: "Başarı nasıl ölçülür?" },
+          ]}
+          cta={{ eyebrow: "Ücretsiz B2B analizi", title: "Alıcılar sizi Google'da bulabiliyor mu?", text: "Sitenizin tedarikçi aramalarındaki durumunu inceleyip fırsatları raporlayayım.", label: "Ücretsiz analiz isteyin" }}
+          faqTitle="Kurumsal ve B2B SEO hakkında sıkça sorulan sorular"
+          faqItems={faqItems}
+        >
+          <div className="space-y-5">
+            <GuideH2 id="b2b-seo-nedir">B2B SEO nedir?</GuideH2>
+            <GuideDefinition>
+              B2B SEO, başka şirketlere ürün ya da hizmet satan firmaların web sitelerinin, satın alma sürecindeki
+              karar vericilerin yaptığı aramalarda görünür olması ve bu aramalardan teklif talebi alması için yapılan
+              arama motoru optimizasyonu çalışmalarıdır.
+            </GuideDefinition>
+            <p>
+              Tüketiciye satış yapan bir sitede ziyaretçi çoğu zaman tek başına ve hızlı karar verir. B2B&apos;de ise
+              durum farklı: Bir makine ya da yazılım alımında teknik ekip özellikleri, satın alma birimi fiyatı ve
+              koşulları, yönetim ise riski ve geri dönüşü değerlendirir. Bu süreç haftalar, bazen aylar sürer ve her
+              kişi farklı bir soruyla Google&apos;a gelir.
+            </p>
+            <p>
+              İyi bir B2B SEO çalışması bu kişilerin her birine cevap veren sayfalar kurar. Hedef çok ziyaretçi
+              değil; doğru firmadan, doğru kişinin, doğru zamanda sizi bulmasıdır. Genel SEO prensiplerini merak
+              ediyorsanız <GuideLink href="/blog/seo-nedir">SEO nedir</GuideLink> yazım iyi bir başlangıç noktası.
+            </p>
           </div>
-        </section>
 
-        {/* DEFINITION & TRANSPARENT EVIDENCE SECTION */}
-        <section className="py-16 bg-canvas">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
-                Kurumsal ve B2B SEO Danışmanlığı Nedir?
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
-                B2B (Business to Business) ve Kurumsal SEO danışmanlığı; şirketlere, üreticilere, yazılım ve sanayi markalarına hizmet sunan firmaların satın alma karar vericilerine (C-Level yöneticiler, satın alma müdürleri) organik aramalarda ulaşmasını sağlayan stratejik SEO çalışmasıdır. Şirketiniz için <Link href="/seo-hizmetleri/teknik-seo" className="text-indigo-600 underline font-semibold">Teknik SEO</Link> ve <Link href="/seo-hizmetleri/sayfa-ici-seo" className="text-indigo-600 underline font-semibold">Sayfa İçi SEO</Link> altyapısını kurgulayarak nitelikli teklif taleplerini (RFQ) artırırım.
-              </p>
-
-              <div className="pt-6 border-t border-line">
-                <h3 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-indigo-600" />
-                  Doğrulanmış Metodoloji ve Şeffaf Ölçüm Çerçevesi
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-5 bg-white border border-indigo-500/20 rounded-2xl">
-                    <div className="text-xs text-indigo-600 font-mono font-semibold mb-1">ÖLÇÜMLENEBİLİR CANLI VERİ</div>
-                    <div className="text-3xl font-extrabold text-emerald-600 mb-2">%78 RFQ Artışı</div>
-                    <p className="text-xs text-ink-soft leading-relaxed">
-                      9 aylık B2B karar verici odaklı SEO sürecinde kurumsal teklif taleplerinde (RFQ) elde edilen net büyüme. (Kaynak: GA4 B2B Lead Takibi 2025)
-                    </p>
-                  </div>
-                  <div className="p-5 bg-white border border-indigo-500/20 rounded-2xl">
-                    <div className="text-xs text-indigo-600 font-mono font-semibold mb-1">HEDEF KİTLE UYUMU</div>
-                    <div className="text-3xl font-extrabold text-ink mb-2">C-Level Erişimi</div>
-                    <p className="text-xs text-ink-soft leading-relaxed">
-                      Düşük hacimli ama yüksek bütçeli satın alma aramalarında teknik karar vericilere doğrudan ulaşma.
-                    </p>
-                  </div>
-                  <div className="p-5 bg-white border border-indigo-500/20 rounded-2xl">
-                    <div className="text-xs text-indigo-600 font-mono font-semibold mb-1">PIPELINE VERİMLİLİĞİ</div>
-                    <div className="text-3xl font-extrabold text-purple-600 mb-2">Yüksek Lead Kalitesi</div>
-                    <p className="text-xs text-ink-soft leading-relaxed">
-                      Organik kanaldan gelen teklif taleplerinin satış ekibince doğrulanma (SQL) oranında belirgin iyileşme.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="dusuk-hacim">Düşük hacimli aramalar neden bu kadar değerli?</GuideH2>
+            <p>
+              Anahtar kelime araçlarına bakan pek çok B2B firması hayal kırıklığına uğruyor: Ürünlerinin adı ayda
+              birkaç düzine kez aranıyor, bazen araç hiç veri göstermiyor. Ama bu aramaları yapan kişiler genellikle
+              tam olarak sizin sattığınız şeyi arıyor ve bütçesi hazır. Bir tüketici ürününün binlerce aramasından
+              daha fazla iş getirebiliyorlar.
+            </p>
+            <p>
+              Bu yüzden araştırmayı yalnızca araçlarla yapmıyorum. Satış ekibinizin telefonda duyduğu ifadeler,
+              teklif formlarına yazılan talepler ve Search Console&apos;daki gerçek arama verisi, araçların kaçırdığı
+              değerli aramaları ortaya çıkarıyor. Konuya genel bir bakış için{" "}
+              <GuideLink href="/blog/anahtar-kelime-nedir">anahtar kelime nedir</GuideLink> ve her aramanın ayrı
+              sayfa gerektirip gerektirmediğini anlattığım{" "}
+              <GuideLink href="/blog/bir-sorgu-her-zaman-ayri-bir-sayfayi-hak-eder-mi">bir sorgu her zaman ayrı bir sayfayı hak eder mi</GuideLink>{" "}
+              yazılarıma göz atabilirsiniz.
+            </p>
           </div>
-        </section>
 
-        {/* WHY B2B IS DIFFERENT SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-indigo-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
-                <Target className="w-8 h-8 text-indigo-600" />
-                B2B SEO Neden B2C SEO'dan Farklıdır?
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-8">
-                B2C pazarlamada hızlı satın alma ve yüksek arama hacimleri ön plandayken; B2B pazarlamada arama hacimleri düşüktür ancak her bir organik talep şirketiniz için yıllık büyük bütçeli anlaşmalar anlamına gelir. Karar alma süreci tek bir kişi değil, çok paydaşlı kurul (C-Level, Finans, Satın Alma, Teknik Ekip) tarafından yürütülür.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-6 bg-white border border-line rounded-2xl">
-                  <h3 className="text-lg font-bold text-indigo-700 mb-2">Uzun Satış Döngüsü</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">
-                    Satın alma kararı haftalar veya aylar sürebilir. SEO stratejisi tüm araştırma aşamalarında markanızı gösterir.
-                  </p>
-                </div>
-                <div className="p-6 bg-white border border-line rounded-2xl">
-                  <h3 className="text-lg font-bold text-purple-700 mb-2">Çok Paydaşlı Karar Birimi</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">
-                    İçerikler hem teknik mühendisin sorularını hem de finans yöneticisinin maliyet kaygılarını yanıtlar.
-                  </p>
-                </div>
-                <div className="p-6 bg-white border border-line rounded-2xl">
-                  <h3 className="text-lg font-bold text-emerald-700 mb-2">Düşük Hacim - Yüksek Değer</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">
-                    Aylık 30 defa aratılan spesifik bir sanayi ürünü anahtar kelimesi milyonluk tedarik anlaşması getirebilir.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* B2B SECTOR VERTICALS SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-3">
-                <Factory className="w-3.5 h-3.5" />
-                Sektör Dikey Çözümleri
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                B2B Sektör Dikeyine Özel SEO Çözümleri
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {b2bIndustries.map((ind) => (
-                <div key={ind.title} className="bg-white border border-line p-6 rounded-2xl hover:border-indigo-500/30 transition-all">
-                  <h3 className="text-xl font-bold text-indigo-700 mb-2">{ind.title}</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">{ind.desc}</p>
-                </div>
+          <div className="space-y-5">
+            <GuideH2 id="cozum-sayfalari">Çözüm ve sektör sayfaları nasıl kurulmalı?</GuideH2>
+            <p>
+              Kurumsal sitelerin en sık yaptığı hata, bütün ürünleri tek bir &ldquo;Ürünlerimiz&rdquo; sayfasında
+              listelemek ya da hizmetleri birkaç cümleyle geçmek. Google&apos;ın ve alıcının bir sayfayı belirli bir
+              aramayla eşleştirebilmesi için o sayfanın tek bir konuya odaklanması gerekiyor.
+            </p>
+            <p>
+              Ben genellikle iki katmanlı bir yapı öneriyorum: Her ürün grubu ya da hizmet için bir çözüm sayfası,
+              hizmet verdiğiniz her sektör için de o sektörün sorunlarını anlatan bir sektör sayfası. İyi bir çözüm
+              sayfasında şunlar bulunur:
+            </p>
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {[
+                ["Çözdüğü sorun", "Ürünün ya da hizmetin hangi ihtiyaca cevap verdiği, alıcının diliyle."],
+                ["Teknik özellikler", "Kapasite, ölçüler, standartlar ve sertifikalar; PDF'e gömülmeden, sayfada."],
+                ["Uygulama örnekleri", "Hangi sektörde, hangi koşullarda kullanıldığına dair somut örnekler."],
+                ["Net bir sonraki adım", "Teklif formu, doküman indirme ya da uzmanla görüşme seçeneği."],
+              ].map(([t, x]) => (
+                <li key={t} className="rounded-2xl border border-line bg-canvas p-4">
+                  <p className="font-semibold text-ink">{t}</p>
+                  <p className="mt-1 text-[15px] leading-relaxed">{x}</p>
+                </li>
               ))}
-            </div>
+            </ul>
+            <p>
+              Şirket, ürün ve hizmet bilgilerinin <GuideLink href="/blog/yapilandirilmis-veri-nedir">yapılandırılmış veri</GuideLink>{" "}
+              ile işaretlenmesi de Google&apos;ın firmanızı bir bütün olarak anlamasına yardımcı oluyor.
+            </p>
           </div>
-        </section>
 
-        {/* B2B LEAD GENERATION MECHANICS SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-purple-500/20 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
-                <FileCheck className="w-8 h-8 text-purple-600" />
-                RFQ, Katalog ve Şartname Odaklı B2B Dönüşüm Tüneli
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
-                Organik ziyaretçileri kurumsal teklif talebine (RFQ) dönüştürmek için sitenizde somut dönüşüm tünelleri kuruyorum. Ürün teknik şartnameleri, indirilebilir PDF kataloglar, vaka incelemeleri (case studies) ve hızlı teklif alma formları ile lead dönüşümünü optimizasyona dahil ediyorum.
-              </p>
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="karar-destek">Karar destek içerikleri neden teklif getirir?</GuideH2>
+            <p>
+              Alıcı sizi bulduktan sonra da işi bitmiyor; çoğu zaman bulduğu bilgiyi şirket içinde başkalarına
+              anlatması, seçeneği savunması gerekiyor. Karşılaştırma yazıları (hangi sistem hangi durumda daha
+              uygun), uygulama örnekleri, teknik dokümanlar ve maliyet kalemlerini açıklayan rehberler tam bu noktada
+              işe yarıyor.
+            </p>
+            <p>
+              Bu içerikler hem araştırma aşamasındaki aramalardan trafik getiriyor hem de güven oluşturuyor. Başka
+              sitelerde bulunmayan, sizin deneyiminizden gelen bilgi ise Google&apos;ın da önem verdiği bir fark
+              yaratıyor; bunu <GuideLink href="/blog/information-gain-nedir">information gain nedir</GuideLink>{" "}
+              yazımda anlattım. Teknik dokümanlarınızı PDF olarak yayınlıyorsanız{" "}
+              <GuideLink href="/blog/pdf-dosyalari-icin-seo-nasil-optimize-edilir">PDF dosyaları için SEO</GuideLink>{" "}
+              yazım da işinize yarayacaktır.
+            </p>
           </div>
-        </section>
 
-        {/* CORPORATE TRUST & NDA / SLA SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-line rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-6 flex items-center gap-3">
-                <ShieldCheck className="w-8 h-8 text-emerald-600" />
-                Kurumsal Güven, Gizlilik (NDA) ve Hizmet Seviyesi (SLA)
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-6">
-                Kurumsal markalarla çalışırken ticari sırların korunması ve şeffaf iletişim en temel ilkemdir. Tüm projelerde Gizlilik Sözleşmesi (NDA) ve belirlenmiş Hizmet Seviyesi Anlaşması (SLA) ilkeleri çerçevesinde kurumsal çalışma disiplini sürdürürüm.
-              </p>
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="uluslararasi">Uluslararası ve çok dilli B2B SEO nasıl yapılır?</GuideH2>
+            <p>
+              İhracat yapan firmalarda sık rastlanan bir sorun, Türkçe sitenin birebir çevrilip yayınlanması. Oysa
+              bir ürün Almanya&apos;da başka, Birleşik Arap Emirlikleri&apos;nde başka bir terimle aranabiliyor. Her
+              hedef pazar için ayrı anahtar kelime araştırması yapmak, çeviriden çok daha iyi sonuç veriyor.
+            </p>
+            <p>
+              Teknik tarafta dil sürümlerinin doğru adres yapısıyla kurulması ve hreflang etiketleriyle birbirine
+              bağlanması gerekiyor. Aksi halde Google yanlış ülkeye yanlış dil sürümünü gösterebiliyor ya da sürümleri
+              birbirinin kopyası sanabiliyor. Bu düzenlemeleri teknik SEO çalışmasının bir parçası olarak ele alıyorum.
+            </p>
           </div>
-        </section>
 
-        {/* DELIVERABLES LIST SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
-                <PackageCheck className="w-3.5 h-3.5" />
-                Somut Çıktılar
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                Kurumsal B2B SEO Danışmanlığı Teslimat Çıktıları
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {deliverables.map((item, idx) => (
-                <div key={idx} className="bg-white border border-line p-6 rounded-2xl flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
-                  <span className="text-ink font-medium text-sm md:text-base">{item}</span>
-                </div>
-              ))}
-            </div>
+          <div className="space-y-5">
+            <GuideH2 id="olcum">B2B SEO&apos;da başarı nasıl ölçülür?</GuideH2>
+            <p>
+              B2B&apos;de trafik artışı tek başına iyi bir haber olmayabiliyor; gelen ziyaretçiler iş arayanlar ya da
+              öğrenciler olabilir. Asıl bakılması gereken; teklif formları, katalog ve doküman indirmeleri, demo
+              talepleri ve bu taleplerden kaçının satış ekibince gerçek fırsat olarak görüldüğü.
+            </p>
+            <p>
+              Bunun için çalışmanın başında form ve indirme olaylarını{" "}
+              <GuideLink href="/blog/google-analytics-4-nedir-nasil-kullanilir">Google Analytics 4</GuideLink> üzerinde
+              doğru şekilde kuruyoruz; arama tarafını ise{" "}
+              <GuideLink href="/blog/google-search-console-nedir">Google Search Console</GuideLink> ile takip
+              ediyorum. Böylece hangi sayfanın gerçekten iş getirdiğini görüp emeği oraya yönlendirebiliyoruz.
+            </p>
           </div>
-        </section>
-
-        {/* TIMELINE ROADMAP SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-3">
-                <Clock className="w-3.5 h-3.5" />
-                Sonuç Zaman Çizelgesi
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                Kurumsal B2B SEO Süreç Haritası
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {timelineSteps.map((step) => (
-                <div key={step.period} className="bg-white border border-indigo-500/20 p-8 rounded-2xl relative">
-                  <div className="text-xs font-mono font-semibold text-indigo-600 mb-2">{step.period}</div>
-                  <h3 className="text-xl font-bold text-ink mb-3">{step.title}</h3>
-                  <p className="text-ink-soft text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* TOOLS STRIP SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-600 uppercase tracking-widest mb-3">
-                <Wrench className="w-3.5 h-3.5" />
-                Yazılım & Araç Parkı
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-ink">
-                Kurumsal B2B SEO Analizinde Kullandığım Başlıca Araçlar
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {toolsList.map((tool) => (
-                <div key={tool.name} className="bg-white border border-line p-5 rounded-xl text-center">
-                  <div className="font-bold text-ink text-base mb-1">{tool.name}</div>
-                  <div className="text-xs text-ink-muted">{tool.role}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PRICING POSTURE & CALENDAR APPOINTMENT SECTION */}
-        <section className="py-16 bg-canvas border-t border-line">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-brand-light to-accent-light border border-indigo-500/30 rounded-3xl p-8 md:p-12 text-center">
-              <DollarSign className="w-10 h-10 text-indigo-600 mx-auto mb-4" />
-              <h2 className="text-2xl md:text-4xl font-bold text-ink mb-4">
-                Şeffaf ve Şirketinize Özel B2B Teklif Yaklaşımı
-              </h2>
-              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-8">
-                Kurumsal B2B SEO çalışmalarında sabit şablon paketler yerine şirketinizin ürün yapısı, hedef pazarları ve ihale/teklif hacimlerine uygun şeffaf danışmanlık bütçeleri hazırlarım. Dilerseniz doğrudan online randevu takvimi üzerinden strateji görüşmesi planlayabilirsiniz.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/seo-danismanlik-fiyatlari"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-bold hover:shadow-lg hover:shadow-indigo-500/25 transition-all"
-                >
-                  SEO Danışmanlık Fiyatlarını İnceleyin
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="/iletisim"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-ink/[0.04] border border-line-strong text-ink font-bold hover:bg-ink/5 transition-all"
-                >
-                  <Calendar className="w-5 h-5 text-indigo-600" />
-                  Randevu Randevusu Planlayın
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        </GuideShell>
       </ServicePageLayout>
     </>
   );
