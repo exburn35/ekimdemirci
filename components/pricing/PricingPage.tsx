@@ -119,9 +119,9 @@ const faqItems = [
       "Hayır. Otorite çalışmasının planlanması ve takibi pakete dahil; ancak sitelerde yayınlanacak tanıtım yazılarının ve dijital PR yayınlarının bedeli ayrı bütçelendiriliyor. Hangi sitede yayın yapılacağına sizin onayınızla birlikte karar veriyoruz.",
   },
   {
-    question: "Minimum çalışma süresi var mı?",
+    question: "Sözleşme ya da minimum çalışma süresi var mı?",
     answer:
-      "Uzun ve bağlayıcı sözleşmeler yapmıyorum. Yine de SEO birikimli sonuç veren bir iş olduğu için ilk planı genellikle üç aylık bir dönem olarak kuruyorum; sonrasında aylık olarak devam ediyoruz.",
+      "Sözleşme yapmıyorum ve minimum çalışma süresi yok. Fiyatlar da süreye göre değişmiyor: üç ay çalışsak da bir yıl çalışsak da aylık ücret aynı. Her ay ne yaptığımı ve neyin değiştiğini raporluyorum; devam edip etmemek tamamen sizin kararınız.",
   },
   {
     question: "Sonuçları ne zaman görmeye başlarım?",

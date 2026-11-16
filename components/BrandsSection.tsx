@@ -1,66 +1,83 @@
-"use client";
+import Image from "next/image";
+import { Building2, GraduationCap, HeartPulse, Landmark, Shirt, Sofa } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { brands, logoSize, type Brand } from "@/lib/brands";
 
-import { motion } from "framer-motion";
-
-const brandGroups = [
-  ["Enza Home", "LTB Jeans", "Levis", "Eastpak", "Vans"],
-  ["Timberland", "Dockers", "Yatsan", "İyi Uyku İyi Hayat", "Chakra"],
-  ["Dünyagöz", "Aktif Bank", "N Kolay", "Atlas Üniversitesi", "Maltepe Üniversitesi Hastanesi"],
+const groups: { sector: Brand["sector"]; icon: LucideIcon; span: string }[] = [
+  { sector: "Moda ve giyim", icon: Shirt, span: "lg:col-span-2" },
+  { sector: "Ev ve yaşam", icon: Sofa, span: "" },
+  { sector: "Sağlık", icon: HeartPulse, span: "" },
+  { sector: "Finans", icon: Landmark, span: "" },
+  { sector: "Eğitim", icon: GraduationCap, span: "" },
 ];
 
 export default function BrandsSection() {
   return (
-    <section className="py-16 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-ink">
-               Danışmanlık Verdiğim Markalar
-            </span>
-          </h2>
-          <p className="text-xl text-ink-muted">
-             Farklı sektörlerdeki lider markalar tarafından tercih edilen
+    <section className="bg-canvas py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 md:mb-10">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Deneyim</p>
+          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-[44px]">Danışmanlık verdiğim markalar</h2>
+          <p className="mt-5 text-lg leading-relaxed text-ink-soft">
+            Farklı sektörlerde, farklı büyüklükteki markalarla çalıştım. Her sektörün arama davranışı, rekabeti ve
+            kuralları başka; bu çeşitlilik, sizin sitenize bakarken neye öncelik vermem gerektiğini daha hızlı görmemi
+            sağlıyor.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="space-y-8">
-          {brandGroups.map((group, groupIndex) => (
-            <motion.div
-              key={groupIndex}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: groupIndex * 0.2, duration: 0.6 }}
-              className="grid grid-cols-2 md:grid-cols-5 gap-4"
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {groups.map(({ sector, icon: Icon, span }) => {
+            const items = brands.filter((b) => b.sector === sector);
+            return (
+              <div key={sector} className={`rounded-3xl border border-line bg-white p-6 md:p-7 ${span}`}>
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-light text-brand">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="text-lg font-bold text-ink">{sector}</h3>
+                  <span className="ml-auto text-xs font-semibold text-ink-faint">{items.length} marka</span>
+                </div>
+                <ul className={`grid gap-3 ${span ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-2"}`}>
+                  {items.map((b) => {
+                    const { width, height } = logoSize(b, 3000, 52);
+                    return (
+                      <li
+                        key={b.file}
+                        className="group flex h-24 items-center justify-center rounded-2xl bg-canvas px-4 transition-colors hover:bg-canvas-alt"
+                      >
+                        <Image
+                          src={`/markalar/${b.file}`}
+                          alt={b.name}
+                          title={b.name}
+                          width={width}
+                          height={height}
+                          style={{ width, height, maxWidth: "100%" }}
+                          className="object-contain transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
+          <div className="flex flex-col gap-5 rounded-3xl bg-night p-6 text-white md:col-span-2 md:p-7 lg:col-span-3 lg:flex-row lg:items-center">
+            <Building2 className="h-7 w-7 shrink-0 text-accent-light" />
+            <div className="flex-1">
+              <p className="text-lg font-bold">Sıradaki marka siz olabilirsiniz</p>
+              <p className="mt-1 text-sm leading-relaxed text-white/70">
+                Büyük bir marka olmanız gerekmiyor. Sitenize ücretsiz bir ön bakış atayım, ilk adımları birlikte konuşalım.
+              </p>
+            </div>
+            <a
+              href="/audit-talebi"
+              className="inline-flex shrink-0 self-start rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-canvas lg:self-auto"
             >
-              {group.map((brand, index) => (
-                <motion.div
-                  key={brand}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: (groupIndex * 0.2) + (index * 0.1), duration: 0.4 }}
-                  className="glass p-6 rounded-xl text-center hover:bg-ink/5 transition-all duration-300 hover:scale-105"
-                >
-                  <span className="font-extrabold tracking-wider uppercase text-sm md:text-base bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">{brand}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          ))}
+              Ücretsiz ön analiz isteyin
+            </a>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
-
-
-
-
-

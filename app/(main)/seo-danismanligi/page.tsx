@@ -48,8 +48,8 @@ const faqItems: SeoFaq[] = [
     answer: "Müşterileriniz sizi Google'da arıyorsa evet. Özellikle yerel hizmet veren işletmeler için şehir ve \"yakınımdaki\" aramalarında görünür olmak, en uygun maliyetli müşteri kazanma yollarından biri. Küçük işletmelere uygun başlangıç paketim de bu ihtiyaç için var.",
   },
   {
-    question: "Sözleşme süresi ne kadar?",
-    answer: "SEO birikimli sonuç veren bir iş olduğu için iş birliklerimi genellikle en az üç aylık dönemler halinde planlıyorum. Uzun ve bağlayıcı sözleşmeler yerine aylık raporlama ve net hedeflerle ilerleyen bir model kullanıyorum.",
+    question: "Sözleşme ya da minimum çalışma süresi var mı?",
+    answer: "Sözleşme yapmıyorum ve minimum çalışma süresi yok. Fiyatlar da süreye göre değişmiyor: üç ay çalışsak da bir yıl çalışsak da aylık ücret aynı. Her ay ne yaptığımı ve neyin değiştiğini raporluyorum; devam edip etmemek tamamen sizin kararınız.",
   },
   {
     question: "SEO ile GEO arasındaki fark nedir?",

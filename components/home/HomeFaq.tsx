@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Çalışma süresi ve sözleşme nasıl işliyor?",
-    a: "SEO birikimli sonuç veren bir iş olduğundan iş birliklerimi genellikle en az üç aylık dönemler halinde planlıyorum. Uzun ve bağlayıcı sözleşmeler yerine aylık raporlama ve net hedeflerle ilerleyen, karşılıklı güvene dayanan bir model kullanıyorum.",
+    a: "Sözleşme yapmıyorum ve minimum çalışma süresi yok. Fiyatlar da süreye göre değişmiyor: üç ay çalışsak da bir yıl çalışsak da aylık ücret aynı. Her ay ne yaptığımı ve neyin değiştiğini raporluyorum; devam edip etmemek tamamen sizin kararınız.",
   },
   {
     q: "Ücretsiz ön analizde neler var?",

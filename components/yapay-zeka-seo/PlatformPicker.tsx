@@ -95,7 +95,7 @@ const platforms: Platform[] = [
     ],
     focus: [
       "Google tarafındaki SEO temelini sağlam tutmak",
-      "Google İşletme Profili ve marka bilgilerini tutarlı hale getirmek",
+      "Markanın Google İşletme Profili'ni açmasına ve bilgileri tutarlı tutmasına yol göstermek",
       "Markayı bir varlık (entity) olarak netleştirmek",
     ],
   },
