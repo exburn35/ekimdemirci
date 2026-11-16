@@ -19,7 +19,7 @@ export default function HomeResources({ posts }: { posts: BlogPost[] }) {
   }, {});
 
   return (
-    <section id="kaynaklar" className="bg-canvas py-20 md:py-28">
+    <section id="kaynaklar" className="bg-canvas py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Ücretsiz kaynaklar"

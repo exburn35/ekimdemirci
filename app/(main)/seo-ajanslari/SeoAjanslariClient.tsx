@@ -181,7 +181,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
   return (
     <div className="bg-canvas text-ink">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-14 overflow-hidden">
         {/* Background glow effects */}
         <div className="absolute inset-0 bg-gradient-to-b from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
@@ -554,7 +554,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
       </section>
 
       {/* Directory Section Anchor */}
-      <section id="ajans-dizini" className="py-16 relative bg-canvas border-t border-line scroll-mt-20">
+      <section id="ajans-dizini" className="py-12 relative bg-canvas border-t border-line scroll-mt-20">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           {/* Section Header */}
           <div className="mb-10 text-center">
@@ -716,7 +716,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
       </section>
 
       {/* Directory Submission / Edit Section */}
-      <section id="dizine-ekleme" className="py-20 relative bg-canvas scroll-mt-20">
+      <section id="dizine-ekleme" className="py-12 relative bg-canvas scroll-mt-20">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="max-w-5xl mx-auto p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-brand-light via-white to-accent-light border border-line backdrop-blur-md shadow-2xl relative overflow-hidden">
             {/* Ambient glow */}
@@ -890,7 +890,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
       </section>
 
       {/* SSS (Sıkça Sorulan Sorular) Section */}
-      <section className="py-20 relative bg-canvas border-t border-line">
+      <section className="py-12 relative bg-canvas border-t border-line">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -934,7 +934,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
       </section>
 
       {/* Closing / Son Adım Section */}
-      <section className="py-20 relative bg-canvas border-t border-line">
+      <section className="py-12 relative bg-canvas border-t border-line">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="max-w-5xl mx-auto p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-brand-light via-white to-accent-light border border-line backdrop-blur-md text-center space-y-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">

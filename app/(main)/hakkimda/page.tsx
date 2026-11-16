@@ -41,7 +41,7 @@ export default function About() {
       <BrandsSection />
       <WhyWorkWithMe />
       <StatsSection />
-      <section className="py-20 bg-black">
+      <section className="py-12 bg-black">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-ink">Beni Takip Edin</h2>

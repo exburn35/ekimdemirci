@@ -60,7 +60,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
       <BlogLinkPreview />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden min-h-[min(60vh,640px)] flex items-center bg-canvas-alt">
+      <section className="relative pt-32 pb-14 overflow-hidden min-h-[min(60vh,640px)] flex items-center bg-canvas-alt">
         <div className="absolute inset-0 bg-gradient-to-br from-canvas-alt via-canvas-alt to-canvas-alt" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         
@@ -133,7 +133,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
       </section>
 
       {/* Content Layout */}
-      <section className="py-20 bg-canvas-alt relative">
+      <section className="py-12 bg-canvas-alt relative">
         <div className="max-w-7xl lg:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative w-full">
             

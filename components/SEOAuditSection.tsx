@@ -26,7 +26,7 @@ const auditFeatures = [
 
 export default function SEOAuditSection() {
   return (
-    <section id="seo-analizi" className="py-24 bg-canvas relative z-10 border-t border-line">
+    <section id="seo-analizi" className="py-16 bg-canvas relative z-10 border-t border-line">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 md:p-12 overflow-hidden relative shadow-[0_0_40px_rgba(139,92,246,0.1)] border border-purple-500/20">
           {/* Background Pattern */}

@@ -53,7 +53,7 @@ export default function BlogListClient({ initialPosts }: BlogListClientProps) {
       </section>
 
       {/* Blog Posts */}
-      <section className="py-24 bg-canvas-alt">
+      <section className="py-16 bg-canvas-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post, index) => {

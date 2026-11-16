@@ -20,7 +20,7 @@ export default function GoogleAIOverviewSection() {
   ];
 
   return (
-    <section className="py-24 bg-canvas-alt border-t border-purple-500/10 relative overflow-hidden">
+    <section className="py-16 bg-canvas-alt border-t border-purple-500/10 relative overflow-hidden">
       {/* Background gradients */}
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none" />

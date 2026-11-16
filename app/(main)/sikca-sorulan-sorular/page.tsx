@@ -71,7 +71,7 @@ export default function FAQPage() {
     <>
       <Breadcrumb items={[{ name: "Sıkça Sorulan Sorular", href: "/sikca-sorulan-sorular" }]} />
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-14 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
@@ -95,7 +95,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-black">
+      <section className="py-16 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FAQ
             items={faqs}
@@ -108,7 +108,7 @@ export default function FAQPage() {
       </section>
 
       {/* Additional Help Section */}
-      <section className="py-24 bg-gradient-to-b from-canvas to-canvas-alt">
+      <section className="py-16 bg-gradient-to-b from-canvas to-canvas-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass-strong rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink">

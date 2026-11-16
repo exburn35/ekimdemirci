@@ -18,7 +18,7 @@ import {
 
 function Heading({ eyebrow, title, intro, center = false }: { eyebrow: string; title: string; intro?: string; center?: boolean }) {
   return (
-    <div className={`mb-12 ${center ? "text-center" : ""}`}>
+    <div className={`mb-8 md:mb-10 ${center ? "text-center" : ""}`}>
       <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">{eyebrow}</p>
       <h2 className={`text-3xl font-bold tracking-tight text-ink md:text-[40px] md:leading-[1.2] ${center ? "": ""}`}>{title}</h2>
       {intro ? <p className="mt-5 text-lg leading-relaxed text-ink-soft">{intro}</p> : null}
@@ -63,7 +63,7 @@ const scopeItems = [
 
 export function GeoScope() {
   return (
-    <section className="border-t border-line bg-white py-20 md:py-24">
+    <section className="border-t border-line bg-white py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Heading
           eyebrow="Kapsam"
@@ -144,7 +144,7 @@ const tagStyles: Record<string, string> = {
 
 export function GeoProcess() {
   return (
-    <section className="border-t border-line bg-canvas py-20 md:py-24">
+    <section className="border-t border-line bg-canvas py-12 md:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
@@ -203,7 +203,7 @@ const audiences = [
 
 export function GeoAudience() {
   return (
-    <section className="border-t border-line bg-white py-20 md:py-24">
+    <section className="border-t border-line bg-white py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Heading
           eyebrow="Kimler için?"
@@ -235,7 +235,7 @@ export function GeoAudience() {
 
 export function GeoProof() {
   return (
-    <section className="bg-night py-20 md:py-24">
+    <section className="bg-night py-12 md:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-5">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-accent">Sonuçlardan bir örnek</p>
@@ -305,7 +305,7 @@ const platforms = [
 
 export function GeoPlatformStrategies() {
   return (
-    <section className="border-t border-line bg-canvas py-16">
+    <section className="border-t border-line bg-canvas py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 rounded-3xl border border-line bg-white p-7 shadow-card md:p-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex-1">

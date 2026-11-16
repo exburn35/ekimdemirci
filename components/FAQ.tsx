@@ -150,7 +150,7 @@ export default function FAQ({
   return (
     <section
       id={id}
-      className={`py-24 bg-gradient-to-b from-canvas-alt to-canvas relative overflow-hidden border-t border-line ${className}`}
+      className={`py-16 bg-gradient-to-b from-canvas-alt to-canvas relative overflow-hidden border-t border-line ${className}`}
     >
       {/* Decorative background grid and ambient lighting */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#161b2e01_1px,transparent_1px),linear-gradient(to_bottom,#161b2e01_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] z-0" />
@@ -162,7 +162,7 @@ export default function FAQ({
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {(badge || title || subtitle) && (
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             {badge && showBadge && (
               <div
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold mb-6 uppercase tracking-wider ${

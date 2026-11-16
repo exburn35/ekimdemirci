@@ -28,7 +28,7 @@ const socials = [
 
 export default function HomeAboutPreview() {
   return (
-    <section id="hakkimda" className="bg-canvas py-20 md:py-28">
+    <section id="hakkimda" className="bg-canvas py-12 md:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-5">
           <div className="relative mx-auto aspect-square max-w-[440px] overflow-hidden rounded-[32px] border border-line bg-canvas-alt shadow-lift">

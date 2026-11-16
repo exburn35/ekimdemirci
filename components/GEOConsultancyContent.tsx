@@ -67,7 +67,7 @@ export function ServiceBentoGrid({
     <section className="content-section section-1-container border-t border-line">
       
       {/* HEADER */}
-      <div className="text-center mb-16 section-1-header">
+      <div className="text-center mb-10 section-1-header">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-line text-xs font-medium text-blue-600 uppercase tracking-widest mb-6">
           <Sparkles className="w-3 h-3" />
           HİZMET KAPSAMI
@@ -269,7 +269,7 @@ export function WhyItMattersData({
     <section className="content-section section-2-container border-t border-line">
       
       {/* HEADER */}
-      <div className="text-center mb-16 section-2-header">
+      <div className="text-center mb-10 section-2-header">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-line text-xs font-medium text-blue-600 uppercase tracking-widest mb-6">
           <Sparkles className="w-3 h-3" />
           NEDEN ŞİMDİ
@@ -590,7 +590,7 @@ export function IndustryVerticals({
     <section className="content-section section-3-container border-t border-line">
       
       {/* HEADER */}
-      <div className="text-center mb-16 section-3-header">
+      <div className="text-center mb-10 section-3-header">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-line text-xs font-medium text-blue-600 uppercase tracking-widest mb-6">
           <Sparkles className="w-3 h-3" />
           HEDEF SEKTÖRLER

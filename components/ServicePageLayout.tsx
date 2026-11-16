@@ -92,7 +92,7 @@ export default function ServicePageLayout({
 
       {/* 1. HERO SECTION */}
       {!hideHero && (
-        <section className="relative pt-32 pb-20 overflow-hidden bg-canvas">
+        <section className="relative pt-32 pb-14 overflow-hidden bg-canvas">
           {/* Background & Gradients */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f7f6f2_70%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#161b2e05_1px,transparent_1px),linear-gradient(to_bottom,#161b2e05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
@@ -153,7 +153,7 @@ export default function ServicePageLayout({
 
       {/* 2. DEFINITION BLOCK ("Bu Hizmet Nedir?") */}
       {definition && (
-        <section className="py-20 bg-canvas border-t border-line">
+        <section className="py-12 bg-canvas border-t border-line">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white border border-blue-500/20 rounded-3xl p-8 md:p-12 shadow-[0_0_30px_rgba(59,130,246,0.1)] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -178,9 +178,9 @@ export default function ServicePageLayout({
 
       {/* 3. SCOPE LIST ("Hizmet Kapsamı") */}
       {scope && scope.length > 0 && (
-        <section className="py-20 md:py-24 bg-canvas border-t border-line">
+        <section className="py-12 md:py-16 bg-canvas border-t border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
+            <div className="mb-8 md:mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Kapsam</p>
               <h2 className="text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-ink">
                 {title} kapsamında neler yapıyorum?
@@ -204,9 +204,9 @@ export default function ServicePageLayout({
 
       {/* Legacy Benefits Section fallback if scope is missing */}
       {(!scope || scope.length === 0) && benefits && benefits.length > 0 && (
-        <section className="py-20 bg-canvas border-t border-line">
+        <section className="py-12 bg-canvas border-t border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4">Hizmet Kapsamı ve Avantajlar</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -223,7 +223,7 @@ export default function ServicePageLayout({
 
       {/* 4. PROCESS STEPS ("Süreç Adımları") */}
       {process && process.length > 0 && (
-        <section className="py-20 md:py-24 bg-white border-t border-line">
+        <section className="py-12 md:py-16 bg-white border-t border-line">
           <div className="max-w-7xl mx-auto grid grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-28">
@@ -256,9 +256,9 @@ export default function ServicePageLayout({
 
       {/* 5. TARGET AUDIENCE MAPPING ("Bu Hizmetten Kimler Faydalanır?") */}
       {targetAudience && targetAudience.length > 0 && (
-        <section className="py-20 md:py-24 bg-canvas-alt border-t border-line">
+        <section className="py-12 md:py-16 bg-canvas-alt border-t border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
+            <div className="mb-8 md:mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Kimler için?</p>
               <h2 className="text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-ink">
                 Bu hizmet en çok kimin işine yarar?
@@ -284,9 +284,9 @@ export default function ServicePageLayout({
 
       {/* 6. CONCRETE RESULTS & EVIDENCE ("Somut Sonuç Kanıtı") */}
       {evidence && evidence.length > 0 && (
-        <section className="py-20 md:py-24 bg-night">
+        <section className="py-12 md:py-16 bg-night">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 flex items-center gap-3">
+            <div className="mb-8 md:mb-10 flex items-center gap-3">
               <Award className="h-6 w-6 shrink-0 text-accent" />
               <h2 className="text-3xl md:text-[40px] md:leading-[1.2] font-bold tracking-tight text-white">
                 Rakamlarla sonuçlar

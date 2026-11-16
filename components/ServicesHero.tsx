@@ -6,7 +6,7 @@ import ServiceLeadForm from "./ServiceLeadForm";
 
 export default function ServicesHero() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-canvas">
+    <section className="relative pt-32 pb-14 overflow-hidden bg-canvas">
       {/* Advanced Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f7f6f2_70%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#161b2e05_1px,transparent_1px),linear-gradient(to_bottom,#161b2e05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />

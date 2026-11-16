@@ -25,7 +25,7 @@ const steps = [
 
 export default function HomeProcess() {
   return (
-    <section id="surec" className="scroll-mt-24 bg-canvas py-20 md:py-28">
+    <section id="surec" className="scroll-mt-24 bg-canvas py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Çalışma şeklim"

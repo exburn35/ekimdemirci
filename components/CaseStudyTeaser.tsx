@@ -6,7 +6,7 @@ import { ArrowRight, TrendingUp } from "lucide-react";
 
 export default function CaseStudyTeaser() {
   return (
-    <section className="py-24 bg-canvas relative z-10 overflow-hidden border-t border-line mt-16">
+    <section className="py-16 bg-canvas relative z-10 overflow-hidden border-t border-line mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={false}

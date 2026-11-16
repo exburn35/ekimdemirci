@@ -146,7 +146,7 @@ export default function SEOGlossaryPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Section */}
-        <div className="text-center mb-16 lg:mb-24">
+        <div className="text-center mb-10">
           <motion.div
             initial={false}
             animate={{ opacity: 1, scale: 1 }}
