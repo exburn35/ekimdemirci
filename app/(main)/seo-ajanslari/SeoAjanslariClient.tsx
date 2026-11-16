@@ -16,6 +16,8 @@ import {
   ShieldCheck,
   AlertCircle,
   Filter,
+  Users,
+  Wallet,
 } from "lucide-react";
 
 export interface Agency {
@@ -25,6 +27,71 @@ export interface Agency {
   city: string;
   description: string;
   nofollow?: boolean;
+  priceMin?: number | null;
+  priceMax?: number | null;
+  priceCurrency?: "TL" | "USD" | "EUR" | null;
+  priceNote?: string | null;
+  priceSource?: string | null;
+  teamExact?: number | null;
+  teamRange?: string | null;
+  teamSource?: string | null;
+  teamListed?: number | null;
+  teamListedSource?: string | null;
+  founded?: number | null;
+  foundedSource?: string | null;
+  services?: string[];
+}
+
+export type TeamBucket = "1-10" | "11-50" | "51-200" | "201+";
+
+/** Ekip bilgisini filtrelemek için tek bir aralığa indirger. */
+export function teamBucket(agency: Agency): TeamBucket | null {
+  let n: number | null = agency.teamExact ?? null;
+  if (n == null && agency.teamRange) {
+    const m = agency.teamRange.match(/\d+/);
+    n = m ? Number(m[0]) : null;
+  }
+  if (n == null) n = agency.teamListed ?? null;
+  if (n == null) return null;
+  if (n <= 10) return "1-10";
+  if (n <= 50) return "11-50";
+  if (n <= 200) return "51-200";
+  return "201+";
+}
+
+const CURRENCY_SYMBOL: Record<string, string> = { TL: "₺", USD: "$", EUR: "€" };
+
+function formatMoney(n: number): string {
+  return n.toLocaleString("tr-TR");
+}
+
+export function formatPrice(agency: Agency): string | null {
+  const { priceMin, priceMax } = agency;
+  if (priceMin == null && priceMax == null) return null;
+  const sym = CURRENCY_SYMBOL[agency.priceCurrency || "TL"] || "₺";
+  if (priceMin != null && priceMax != null && priceMin !== priceMax) {
+    return `${formatMoney(priceMin)} – ${formatMoney(priceMax)} ${sym}`;
+  }
+  return `${formatMoney((priceMin ?? priceMax) as number)} ${sym}`;
+}
+
+/** Ekip bilgisi: açıkça belirtilen sayı > LinkedIn aralığı > ekip sayfasında tanıtılan kişi sayısı. */
+export function formatTeam(agency: Agency): { value: string; note: string; source: string | null } | null {
+  if (agency.teamExact != null)
+    return { value: `${agency.teamExact} kişi`, note: "Ajansın kendi beyanı", source: agency.teamSource ?? null };
+  if (agency.teamRange)
+    return {
+      value: `${agency.teamRange.replace("1000+", "1.000+")} kişi`,
+      note: agency.teamSource?.includes("linkedin") ? "LinkedIn verisi" : "Ajansın kendi beyanı",
+      source: agency.teamSource ?? null,
+    };
+  if (agency.teamListed != null)
+    return {
+      value: `${agency.teamListed} kişi`,
+      note: "Ekip sayfasında tanıtılan",
+      source: agency.teamListedSource ?? null,
+    };
+  return null;
 }
 
 export interface AgencyData {
@@ -71,6 +138,8 @@ function formatDate(dateStr: string): string {
 export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariClientProps) {
   const [selectedCity, setSelectedCity] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [teamFilter, setTeamFilter] = useState<"all" | TeamBucket>("all");
+  const [priceOnly, setPriceOnly] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   // Form State
@@ -118,12 +187,15 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
     if (cityFilter !== "all" && agency.city !== cityFilter) {
       return false;
     }
+    if (teamFilter !== "all" && teamBucket(agency) !== teamFilter) return false;
+    if (priceOnly && agency.priceMin == null && agency.priceMax == null) return false;
     if (!query) return true;
     const q = query.toLocaleLowerCase("tr");
     return (
       agency.name.toLocaleLowerCase("tr").includes(q) ||
       agency.city.toLocaleLowerCase("tr").includes(q) ||
-      agency.description.toLocaleLowerCase("tr").includes(q)
+      agency.description.toLocaleLowerCase("tr").includes(q) ||
+      (agency.services || []).some((s) => s.toLocaleLowerCase("tr").includes(q))
     );
   };
 
@@ -131,7 +203,32 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
   const matchingCount = useMemo(() => {
     const q = searchQuery.trim();
     return agencyData.agencies.filter((agency) => isAgencyMatch(agency, selectedCity, q)).length;
-  }, [agencyData.agencies, selectedCity, searchQuery]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [agencyData.agencies, selectedCity, searchQuery, teamFilter, priceOnly]);
+
+  const priceStats = useMemo(() => {
+    const priced = agencyData.agencies.filter(
+      (a) => (a.priceCurrency ?? "TL") === "TL" && (a.priceMin != null || a.priceMax != null)
+    );
+    const starts = priced.map((a) => (a.priceMin ?? a.priceMax) as number).sort((x, y) => x - y);
+    const tops = priced.map((a) => (a.priceMax ?? a.priceMin) as number);
+    const mid = Math.floor(starts.length / 2);
+    const median = starts.length ? (starts.length % 2 ? starts[mid] : Math.round((starts[mid - 1] + starts[mid]) / 2)) : 0;
+    return {
+      count: priced.length,
+      min: starts[0] ?? 0,
+      max: tops.length ? Math.max(...tops) : 0,
+      median,
+    };
+  }, [agencyData.agencies]);
+  const pricedCount = agencyData.agencies.filter((a) => a.priceMin != null || a.priceMax != null).length;
+  const filtersActive = selectedCity !== "all" || searchQuery !== "" || teamFilter !== "all" || priceOnly;
+  const resetFilters = () => {
+    setSelectedCity("all");
+    setSearchQuery("");
+    setTeamFilter("all");
+    setPriceOnly(false);
+  };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -176,7 +273,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
     }
   };
 
-  const isGroupedView = selectedCity === "all" && searchQuery.trim() === "";
+  const isGroupedView = selectedCity === "all" && searchQuery.trim() === "" && teamFilter === "all" && !priceOnly;
 
   return (
     <div className="bg-canvas text-ink">
@@ -562,83 +659,140 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
               Türkiye&apos;deki SEO Ajansları
             </h2>
             <p className="text-ink-soft leading-relaxed">
-              Dizinde 18 ilden 136 SEO ajansı yer alıyor: İstanbul&apos;da 76, Ankara&apos;da 12, İzmir&apos;de 8 ve diğer 15 ilde 40 ajans. Listede sıralama yoktur; ajanslar önce şehre, sonra alfabetik sıraya göre dizilmiştir. Her ajansın web sitesi açılarak SEO hizmeti verdiği kontrol edilmiştir.
+              Dizinde 18 ilden 136 SEO ajansı yer alıyor: İstanbul&apos;da 76, Ankara&apos;da 12, İzmir&apos;de 8 ve diğer 15 ilde 40 ajans. Listede sıralama yoktur; ajanslar önce şehre, sonra alfabetik sıraya göre dizilmiştir. Her ajansın web sitesi açılarak SEO hizmeti verdiği kontrol edilmiştir. Fiyat, ekip ve kuruluş bilgilerini ajansların kendi web sitelerinden derledim; kaynağını her kartta &quot;Tüm detaylar&quot; altında görebilirsiniz. Bilgi bulamadığım alanlara tahmin yazmadım, &quot;Belirtilmemiş&quot; olarak bıraktım.
             </p>
           </div>
 
-          {/* Sticky Filter Bar */}
-          <div className="sticky top-20 z-30 mb-10 p-4 rounded-2xl bg-canvas/90 backdrop-blur-xl border border-line shadow-2xl transition-all">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              {/* Left: City Select and Search Input */}
-              <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto flex-1">
-                {/* City Dropdown */}
-                <div className="relative w-full sm:w-64">
-                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-purple-600">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                  <select
-                    id="city-filter-select"
-                    value={selectedCity}
-                    onChange={(e) => setSelectedCity(e.target.value)}
-                    className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-white border border-line text-ink font-medium text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50 appearance-none cursor-pointer hover:bg-ink/[0.03] transition-colors"
-                  >
-                    <option value="all" className="bg-canvas text-ink">
-                      Tüm Şehirler ({agencyData.count} Ajans)
-                    </option>
-                    {cityList.map((c) => (
-                      <option key={c.name} value={c.name} className="bg-canvas text-ink">
-                        {c.name} ({c.count})
-                      </option>
-                    ))}
-                  </select>
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-ink-muted">
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </div>
-
-                {/* Text Search Input */}
-                <div className="relative w-full sm:flex-1">
-                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-ink-muted">
-                    <Search className="w-4 h-4" />
-                  </div>
-                  <input
-                    id="agency-search-input"
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Ajans adı veya açıklamasında ara..."
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-line text-ink placeholder-ink-muted text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-colors"
-                  />
-                  {searchQuery && (
-                    <button
-                      onClick={() => setSearchQuery("")}
-                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-xs text-ink-muted hover:text-ink"
-                      title="Temizle"
-                    >
-                      ✕
-                    </button>
-                  )}
-                </div>
+          {/* Yayınlanan fiyatların özeti */}
+          {priceStats.count >= 3 && (
+            <div className="mb-8 rounded-2xl border border-line bg-white p-5 sm:p-6">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="text-lg font-bold text-ink">SEO ajansı fiyatları: ajansların kendi yayınladığı rakamlar</h3>
+                <p className="text-xs text-ink-muted">{priceStats.count} ajansın sitesinden, aylık ücret</p>
               </div>
+              <dl className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <div className="rounded-xl bg-canvas px-4 py-3">
+                  <dt className="text-xs font-semibold text-ink-muted">En düşük başlangıç</dt>
+                  <dd className="mt-1 text-2xl font-bold text-ink">{formatMoney(priceStats.min)} ₺</dd>
+                </div>
+                <div className="rounded-xl bg-brand-light px-4 py-3">
+                  <dt className="text-xs font-semibold text-brand">Başlangıç fiyatlarının ortası (medyan)</dt>
+                  <dd className="mt-1 text-2xl font-bold text-brand">{formatMoney(priceStats.median)} ₺</dd>
+                </div>
+                <div className="rounded-xl bg-canvas px-4 py-3">
+                  <dt className="text-xs font-semibold text-ink-muted">En yüksek paket</dt>
+                  <dd className="mt-1 text-2xl font-bold text-ink">{formatMoney(priceStats.max)} ₺</dd>
+                </div>
+              </dl>
+              <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+                Ajansların çoğu fiyatını sitesinde paylaşmıyor ve teklifle çalışıyor; bu rakamlar yalnızca fiyatını açıkça
+                yayınlayan ajanslardan derlendi. KDV durumu ajanstan ajansa değişiyor, ayrıntısını her kartta görebilirsiniz.
+                Kendi fiyatlarımı{" "}
+                <Link href="/seo-danismanlik-fiyatlari" className="font-semibold text-brand underline-offset-2 hover:underline">
+                  SEO fiyatları sayfamda
+                </Link>{" "}
+                açıkça yazıyorum.
+              </p>
+            </div>
+          )}
 
-              {/* Right: Live Counter Badge */}
-              <div className="flex-shrink-0 flex items-center gap-2">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-purple-500/10 text-purple-700 border border-purple-500/20">
-                  <Building2 className="w-4 h-4 text-purple-600" />
-                  <span>{matchingCount} ajans</span>
-                </span>
-                {(selectedCity !== "all" || searchQuery) && (
+          {/* Filter Bar: masaüstünde yapışkan, mobilde akışta */}
+          <div className="mb-10 rounded-2xl border border-line bg-white/95 p-3 shadow-card backdrop-blur-xl sm:p-4 md:sticky md:top-20 md:z-30">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1fr)_auto]">
+              {/* Text Search Input */}
+              <div className="relative sm:col-span-2 xl:col-span-1">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-ink-muted">
+                  <Search className="h-4 w-4" />
+                </div>
+                <label htmlFor="agency-search-input" className="sr-only">Ajans ara</label>
+                <input
+                  id="agency-search-input"
+                  type="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Ajans adı, şehir veya hizmet (ör. e-ticaret SEO)"
+                  className="w-full rounded-xl border border-line bg-canvas py-2.5 pl-10 pr-9 text-sm text-ink placeholder-ink-muted transition-colors focus:outline-none focus:ring-2 focus:ring-brand/40"
+                />
+                {searchQuery && (
                   <button
-                    onClick={() => {
-                      setSelectedCity("all");
-                      setSearchQuery("");
-                    }}
-                    className="text-xs text-ink-muted hover:text-purple-700 underline transition-colors px-2 py-1"
+                    onClick={() => setSearchQuery("")}
+                    className="absolute inset-y-0 right-0 flex items-center pr-3 text-xs text-ink-muted hover:text-ink"
+                    aria-label="Aramayı temizle"
                   >
-                    Filtreyi Sıfırla
+                    ✕
                   </button>
                 )}
               </div>
+
+              {/* City Dropdown */}
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-brand">
+                  <MapPin className="h-4 w-4" />
+                </div>
+                <label htmlFor="city-filter-select" className="sr-only">Şehir</label>
+                <select
+                  id="city-filter-select"
+                  value={selectedCity}
+                  onChange={(e) => setSelectedCity(e.target.value)}
+                  className="w-full cursor-pointer appearance-none rounded-xl border border-line bg-canvas py-2.5 pl-10 pr-9 text-sm font-medium text-ink focus:outline-none focus:ring-2 focus:ring-brand/40"
+                >
+                  <option value="all">Tüm şehirler ({agencyData.count})</option>
+                  {cityList.map((c) => (
+                    <option key={c.name} value={c.name}>
+                      {c.name} ({c.count})
+                    </option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-ink-muted">
+                  <ChevronDown className="h-4 w-4" />
+                </div>
+              </div>
+
+              {/* Team size Dropdown */}
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-brand">
+                  <Users className="h-4 w-4" />
+                </div>
+                <label htmlFor="team-filter-select" className="sr-only">Ekip büyüklüğü</label>
+                <select
+                  id="team-filter-select"
+                  value={teamFilter}
+                  onChange={(e) => setTeamFilter(e.target.value as "all" | TeamBucket)}
+                  className="w-full cursor-pointer appearance-none rounded-xl border border-line bg-canvas py-2.5 pl-10 pr-9 text-sm font-medium text-ink focus:outline-none focus:ring-2 focus:ring-brand/40"
+                >
+                  <option value="all">Tüm ekip büyüklükleri</option>
+                  <option value="1-10">1–10 kişi</option>
+                  <option value="11-50">11–50 kişi</option>
+                  <option value="51-200">51–200 kişi</option>
+                  <option value="201+">200+ kişi</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-ink-muted">
+                  <ChevronDown className="h-4 w-4" />
+                </div>
+              </div>
+
+              {/* Price toggle */}
+              <label className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-line bg-canvas px-3.5 py-2.5 text-sm font-medium text-ink sm:col-span-2 xl:col-span-1">
+                <input
+                  type="checkbox"
+                  checked={priceOnly}
+                  onChange={(e) => setPriceOnly(e.target.checked)}
+                  className="h-4 w-4 rounded border-line-strong accent-brand"
+                />
+                <span className="whitespace-nowrap">Fiyatını yayınlayanlar ({pricedCount})</span>
+              </label>
+            </div>
+
+            <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-line pt-3 text-sm">
+              <span className="inline-flex items-center gap-2 font-semibold text-ink">
+                <Building2 className="h-4 w-4 text-brand" />
+                {matchingCount} ajans listeleniyor
+              </span>
+              {filtersActive && (
+                <button onClick={resetFilters} className="text-xs font-semibold text-brand underline-offset-2 hover:underline">
+                  Filtreleri sıfırla
+                </button>
+              )}
             </div>
           </div>
 
@@ -658,7 +812,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
                       </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
                       {cityAgencies.map((agency) => (
                         <AgencyCard key={agency.slug} agency={agency} />
                       ))}
@@ -681,7 +835,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
               )}
 
               {matchingCount > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
                   {agencyData.agencies.map((agency) => {
                     const isMatch = isAgencyMatch(agency, selectedCity, searchQuery.trim());
                     return (
@@ -699,7 +853,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
                   </div>
                   <h3 className="text-xl font-bold text-ink mb-2">Aramanızla Eşleşen Ajans Bulunamadı</h3>
                   <p className="text-ink-muted text-sm mb-6 leading-relaxed">
-                    Farklı bir arama terimi deneyebilir ya da şehir filtresini &quot;Tüm Şehirler&quot; olarak değiştirebilirsiniz.
+                    Farklı bir arama terimi deneyebilir ya da <button type="button" onClick={resetFilters} className="font-semibold text-brand underline">filtreleri sıfırlayabilirsiniz</button>.
                   </p>
                   <a
                     href="#dizine-ekleme"
@@ -977,59 +1131,142 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
 }
 
 // Individual Agency Card Component
+function SourceLink({ href, label }: { href: string; label: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="nofollow noopener"
+      className="inline-flex items-center gap-1 text-xs font-medium text-ink-muted underline decoration-line-strong underline-offset-2 hover:text-brand"
+    >
+      {label}
+      <ExternalLink className="h-3 w-3" />
+    </a>
+  );
+}
+
 function AgencyCard({ agency }: { agency: Agency }) {
+  const [open, setOpen] = useState(false);
   const domain = formatDomain(agency.website);
   const isDofollow = agency.nofollow === false || agency.website.includes("aora.com.tr");
   const relAttribute = isDofollow ? "noopener" : "nofollow noopener";
+  const price = formatPrice(agency);
+  const team = formatTeam(agency);
+  const services = agency.services || [];
+  const detailsId = `ajans-${agency.slug}-detay`;
+  const hasSources = Boolean(agency.priceSource || team?.source || agency.foundedSource);
 
   return (
-    <div className="group h-full flex flex-col justify-between p-6 rounded-2xl bg-white/[0.025] hover:bg-white/[0.045] border border-line hover:border-purple-500/40 transition-all duration-300 shadow-lg hover:shadow-purple-500/10">
-      <div>
-        {/* Top bar: Agency Name and City Badge */}
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <h3 className="text-lg font-bold text-ink group-hover:text-purple-700 transition-colors leading-snug">
-            {agency.name}
-          </h3>
-          <span className="flex-shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-500/10 text-purple-700 border border-purple-500/20">
-            <MapPin className="w-3 h-3" />
-            {agency.city}
-          </span>
+    <article className="group flex h-full flex-col rounded-2xl border border-line bg-white p-5 shadow-card transition-all duration-300 hover:border-brand/30 hover:shadow-lift sm:p-6">
+      {/* Başlık */}
+      <header className="flex items-start gap-3">
+        <span
+          aria-hidden="true"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-light text-lg font-bold text-brand"
+        >
+          {agency.name.charAt(0).toLocaleUpperCase("tr")}
+        </span>
+        <div className="min-w-0 flex-1">
+          <h3 className="text-lg font-bold leading-snug text-ink">{agency.name}</h3>
+          <div className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+            <a
+              href={agency.website}
+              target="_blank"
+              rel={relAttribute}
+              className="inline-flex items-center gap-1 font-medium text-brand hover:text-brand-dark"
+            >
+              <span className="break-all">{domain}</span>
+              <ExternalLink className="h-3 w-3 shrink-0" />
+            </a>
+            <span className="inline-flex items-center gap-1 text-ink-muted">
+              <MapPin className="h-3 w-3" />
+              {agency.city}
+            </span>
+          </div>
         </div>
+      </header>
 
-        {/* Website Link */}
-        <div className="mb-4">
-          <a
-            href={agency.website}
-            target="_blank"
-            rel={relAttribute}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-purple-600 hover:text-purple-700 transition-colors group/link"
-          >
-            <span>{domain}</span>
-            <ExternalLink className="w-3 h-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-          </a>
+      {/* Temel bilgiler */}
+      <dl className="mt-5 grid grid-cols-2 gap-2">
+        <div className="col-span-2 rounded-xl bg-canvas px-4 py-3">
+          <dt className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-ink-muted">
+            <Wallet className="h-3.5 w-3.5 text-accent" />
+            Aylık SEO ücreti
+          </dt>
+          <dd className={`mt-1 font-bold ${price ? "text-lg text-ink" : "text-sm text-ink-muted"}`}>
+            {price ?? "Sitede yayınlanmıyor, teklifle"}
+          </dd>
+          {price && agency.priceNote ? <dd className={`mt-0.5 text-xs text-ink-muted ${open ? "" : "line-clamp-1"}`}>{agency.priceNote}</dd> : null}
         </div>
+        <div className="rounded-xl bg-canvas px-4 py-3">
+          <dt className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-ink-muted">
+            <Users className="h-3.5 w-3.5 text-accent" />
+            Ekip
+          </dt>
+          <dd className={`mt-1 font-bold ${team ? "text-ink" : "text-sm font-semibold text-ink-muted"}`}>
+            {team ? team.value : "Belirtilmemiş"}
+          </dd>
+          {team ? <dd className="mt-0.5 text-[11px] leading-snug text-ink-muted">{team.note}</dd> : null}
+        </div>
+        <div className="rounded-xl bg-canvas px-4 py-3">
+          <dt className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-ink-muted">
+            <Calendar className="h-3.5 w-3.5 text-accent" />
+            Kuruluş
+          </dt>
+          <dd className={`mt-1 font-bold ${agency.founded ? "text-ink" : "text-sm font-semibold text-ink-muted"}`}>
+            {agency.founded ?? "Belirtilmemiş"}
+          </dd>
+        </div>
+      </dl>
 
-        {/* Description clamped to 3 lines */}
-        <p className="text-sm text-ink-muted leading-relaxed line-clamp-3">
+      {/* Hizmetler */}
+      {services.length > 0 && (
+        <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Hizmetler">
+          {services.map((s) => (
+            <li key={s} className="rounded-full border border-line bg-white px-2.5 py-0.5 text-xs font-medium text-ink-soft">
+              {s}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* Açıklama: kapalıyken 3 satır, açılınca tamamı */}
+      <div className="mt-4 flex-1">
+        <p id={detailsId} className={`text-sm leading-relaxed text-ink-soft ${open ? "" : "line-clamp-3"}`}>
           {agency.description}
         </p>
+        {open && hasSources && (
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 rounded-xl border border-dashed border-line px-3 py-2.5">
+            <span className="w-full text-[11px] font-semibold uppercase tracking-wide text-ink-faint">Bilgi kaynakları</span>
+            {agency.priceSource && <SourceLink href={agency.priceSource} label="Fiyat" />}
+            {team?.source && <SourceLink href={team.source} label="Ekip" />}
+            {agency.foundedSource && <SourceLink href={agency.foundedSource} label="Kuruluş" />}
+          </div>
+        )}
       </div>
 
-      {/* Footer subtle highlight */}
-      <div className="mt-4 pt-3 border-t border-line flex items-center justify-between text-xs text-ink-muted">
-        <span className="flex items-center gap-1">
-          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-          Doğrulanmış Ajans
-        </span>
+      {/* Alt kısım */}
+      <footer className="mt-4 flex items-center justify-between gap-3 border-t border-line pt-4">
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-controls={detailsId}
+          className="inline-flex items-center gap-1 text-sm font-semibold text-ink-soft hover:text-brand"
+        >
+          {open ? "Daha az göster" : "Tüm detaylar"}
+          <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
+        </button>
         <a
           href={agency.website}
           target="_blank"
           rel={relAttribute}
-          className="text-ink-muted hover:text-ink transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand"
         >
-          Siteyi Ziyaret Et →
+          Siteye git
+          <ExternalLink className="h-3.5 w-3.5" />
         </a>
-      </div>
-    </div>
+      </footer>
+    </article>
   );
 }

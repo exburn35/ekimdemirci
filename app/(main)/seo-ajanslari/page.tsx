@@ -6,14 +6,14 @@ import agencyRawData from "@/data/seo-ajanslari.json";
 export const metadata: Metadata = {
   title: "Türkiye'deki SEO Ajansları (136 Ajans, 18 İl) - 2026 Dizini",
   description:
-    "Türkiye genelinde 18 ilden 136 SEO ajansının güncel dizini. Şehir bazlı filtreleyin, ajansları karşılaştırın ve doğru SEO ajansını seçme rehberini inceleyin.",
+    "Türkiye genelinde 18 ilden 136 SEO ajansının güncel dizini. Yayınlanan fiyatları, ekip büyüklüklerini ve kuruluş yıllarını şehir bazında karşılaştırın.",
   alternates: {
     canonical: "https://ekimdemirci.com/seo-ajanslari",
   },
   openGraph: {
     title: "Türkiye'deki SEO Ajansları (136 Ajans, 18 İl) - 2026 Dizini | Ekim Demirci",
     description:
-      "Türkiye genelinde 18 ilden 136 SEO ajansının güncel dizini. Şehir bazlı filtreleyin, ajansları karşılaştırın ve doğru SEO ajansını seçme rehberini inceleyin.",
+      "Türkiye genelinde 18 ilden 136 SEO ajansının güncel dizini. Yayınlanan fiyatları, ekip büyüklüklerini ve kuruluş yıllarını şehir bazında karşılaştırın.",
     url: "https://ekimdemirci.com/seo-ajanslari",
     type: "website",
     locale: "tr_TR",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Türkiye'deki SEO Ajansları (136 Ajans, 18 İl) - 2026 Dizini | Ekim Demirci",
     description:
-      "Türkiye genelinde 18 ilden 136 SEO ajansının güncel dizini. Şehir bazlı filtreleyin, ajansları karşılaştırın ve doğru SEO ajansını seçme rehberini inceleyin.",
+      "Türkiye genelinde 18 ilden 136 SEO ajansının güncel dizini. Yayınlanan fiyatları, ekip büyüklüklerini ve kuruluş yıllarını şehir bazında karşılaştırın.",
   },
 };
 
@@ -78,6 +78,19 @@ export default function SeoAjanslariPage() {
         "name": agency.name,
         "url": agency.website,
         "description": agency.description,
+        ...(agency.founded ? { "foundingDate": String(agency.founded) } : {}),
+        ...(agency.teamExact
+          ? { "numberOfEmployees": { "@type": "QuantitativeValue", "value": agency.teamExact } }
+          : agency.teamRange && /^\d+-\d+$/.test(agency.teamRange)
+            ? {
+                "numberOfEmployees": {
+                  "@type": "QuantitativeValue",
+                  "minValue": Number(agency.teamRange.split("-")[0]),
+                  "maxValue": Number(agency.teamRange.split("-")[1]),
+                },
+              }
+            : {}),
+        ...(agency.services?.length ? { "knowsAbout": agency.services } : {}),
         "address": {
           "@type": "PostalAddress",
           "addressLocality": agency.city,
