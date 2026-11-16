@@ -37,7 +37,7 @@ export default function SuccessStoriesClient() {
     <>
       <Breadcrumb items={[{ name: "Başarı Hikayeleri", href: "/basari-hikayeleri" }]} />
       {/* Hero Bölümü */}
-      <section className="relative pt-36 pb-24 overflow-hidden bg-canvas">
+      <section className="relative pt-36 pb-16 overflow-hidden bg-canvas">
         <div className="absolute inset-0 bg-gradient-to-b from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:32px_32px]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
@@ -64,7 +64,7 @@ export default function SuccessStoriesClient() {
       </section>
 
       {/* İstatistik Metrikleri Bölümü */}
-      <section className="py-16 bg-canvas relative overflow-hidden">
+      <section className="py-12 bg-canvas relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => {
@@ -91,7 +91,7 @@ export default function SuccessStoriesClient() {
       </section>
 
       {/* Başarı Hikayeleri Filtreleme ve Listeleme Bölümü */}
-      <section className="py-24 bg-gradient-to-b from-canvas to-canvas relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-b from-canvas to-canvas relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Kategori Filtresi */}
@@ -171,7 +171,7 @@ export default function SuccessStoriesClient() {
       </section>
 
       {/* Sıradaki Proje CTA Bölümü */}
-      <section className="py-24 bg-black relative overflow-hidden">
+      <section className="py-16 bg-black relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-light rounded-full blur-[120px] pointer-events-none" />
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

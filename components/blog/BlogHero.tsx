@@ -2,7 +2,7 @@ import { FileText } from "lucide-react";
 
 export default function BlogHero() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-canvas-alt">
+    <section className="relative pt-32 pb-14 overflow-hidden bg-canvas-alt">
       <div className="absolute inset-0 bg-gradient-to-br from-canvas-alt via-canvas-alt to-canvas-alt" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#161b2e0a_1px,transparent_1px),linear-gradient(to_bottom,#161b2e0a_1px,transparent_1px)] bg-[size:24px_24px]" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl animate-pulse" />

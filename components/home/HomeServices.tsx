@@ -61,7 +61,7 @@ const sectors = [
 
 export default function HomeServices() {
   return (
-    <section id="hizmetler" className="bg-white py-20 md:py-28">
+    <section id="hizmetler" className="bg-white py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <SectionHeading
@@ -71,7 +71,7 @@ export default function HomeServices() {
           />
           <Link
             href="/seo-danismanligi"
-            className="mb-10 inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-line-strong px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink/30 md:mb-14 lg:self-auto"
+            className="mb-10 inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-line-strong px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink/30 md:mb-10 lg:self-auto"
           >
             Tüm SEO hizmetleri <ArrowRight className="h-4 w-4" />
           </Link>

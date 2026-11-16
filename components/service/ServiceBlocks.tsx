@@ -9,7 +9,7 @@ import type { LucideIcon } from "lucide-react";
 
 export function SectionHead({ eyebrow, title, intro, dark = false }: { eyebrow: string; title: string; intro?: string; dark?: boolean }) {
   return (
-    <div className="mb-12">
+    <div className="mb-8 md:mb-10">
       <p className={`mb-3 text-xs font-semibold uppercase tracking-[0.18em] ${dark ? "text-accent" : "text-brand"}`}>{eyebrow}</p>
       <h2 className={`text-3xl font-bold tracking-tight md:text-[40px] md:leading-[1.2] ${dark ? "text-white" : "text-ink"}`}>{title}</h2>
       {intro ? <p className={`mt-5 text-lg leading-relaxed ${dark ? "text-white/70" : "text-ink-soft"}`}>{intro}</p> : null}
@@ -29,7 +29,7 @@ export interface ScopeItem {
 
 export function ScopeGrid({ eyebrow = "Kapsam", title, intro, items }: { eyebrow?: string; title: string; intro?: string; items: ScopeItem[] }) {
   return (
-    <section className="border-t border-line bg-white py-20 md:py-24">
+    <section className="border-t border-line bg-white py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHead eyebrow={eyebrow} title={title} intro={intro} />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -70,7 +70,7 @@ const tagStyles = {
 
 export function ProcessTimeline({ title, intro, ctaLabel, steps }: { title: string; intro: string; ctaLabel: string; steps: ProcessStep[] }) {
   return (
-    <section className="border-t border-line bg-canvas py-20 md:py-24">
+    <section className="border-t border-line bg-canvas py-12 md:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
@@ -121,7 +121,7 @@ export interface ExampleItem {
 
 export function ExampleGrid({ eyebrow = "Kimler için?", title, intro, items, quoteStyle = "search" }: { eyebrow?: string; title: string; intro?: string; items: ExampleItem[]; quoteStyle?: "search" | "speech" }) {
   return (
-    <section className="border-t border-line bg-white py-20 md:py-24">
+    <section className="border-t border-line bg-white py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHead eyebrow={eyebrow} title={title} intro={intro} />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -163,9 +163,9 @@ export interface ResultItem {
 
 export function ProofBand({ title, results }: { title: string; results: ResultItem[] }) {
   return (
-    <section className="bg-night py-20 md:py-24">
+    <section className="bg-night py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
+        <div className="mb-8 md:mb-10 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
           <div className="flex-1">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-accent">Sonuçlar</p>
             <h2 className="text-3xl font-bold tracking-tight text-white md:text-[40px] md:leading-[1.2]">{title}</h2>
@@ -201,7 +201,7 @@ export interface RelatedLink {
 
 export function RelatedBand({ eyebrow, title, text, links }: { eyebrow: string; title: string; text: string; links: RelatedLink[] }) {
   return (
-    <section className="border-t border-line bg-canvas py-16">
+    <section className="border-t border-line bg-canvas py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 rounded-3xl border border-line bg-white p-7 shadow-card md:p-10 lg:flex-row lg:items-center">
           <div className="flex-1">
@@ -288,10 +288,10 @@ export function GuideShell({
   };
 
   return (
-    <section id={id} className="border-t border-line bg-white py-20 md:py-24">
+    <section id={id} className="border-t border-line bg-white py-12 md:py-16">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14">
+        <div className="mb-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">{eyebrow}</p>
           <p className="text-3xl font-bold tracking-tight text-ink md:text-[44px] md:leading-[1.18]">{title}</p>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">{intro}</p>
@@ -372,10 +372,10 @@ export function DemoSection({
   side: React.ReactNode;
 }) {
   return (
-    <section id={id} className="relative overflow-hidden bg-canvas py-20 md:py-28">
+    <section id={id} className="relative overflow-hidden bg-canvas py-12 md:py-16">
       <div className="pointer-events-none absolute -top-24 left-1/2 h-[380px] w-[720px] -translate-x-1/2 rounded-full bg-brand/10 blur-[120px]" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center md:mb-14">
+        <div className="mb-8 text-center md:mb-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">{eyebrow}</p>
           <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-[44px] lg:leading-[1.18]">{title}</h2>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">{intro}</p>
@@ -454,7 +454,7 @@ export function CaseSpotlight({
   siteLabel?: string;
 }) {
   return (
-    <section className="border-t border-line bg-white py-20 md:py-24">
+    <section className="border-t border-line bg-white py-12 md:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-5">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">{eyebrow}</p>

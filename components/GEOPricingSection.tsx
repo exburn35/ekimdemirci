@@ -63,14 +63,14 @@ interface GEOPricingSectionProps {
 
 export default function GEOPricingSection({ showGeoInfoBox = true }: GEOPricingSectionProps) {
   return (
-    <section className="py-20 relative overflow-hidden bg-canvas">
+    <section className="py-12 relative overflow-hidden bg-canvas">
       {/* Background glow accents */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/4 right-10 w-[350px] h-[350px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-700 text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5 text-purple-600" />
             Yapay Zeka SEO (GEO) Fiyatlandırması

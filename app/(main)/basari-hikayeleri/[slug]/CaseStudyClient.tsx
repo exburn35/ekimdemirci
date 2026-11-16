@@ -12,7 +12,7 @@ export default function CaseStudyClient({ study, relatedStories }: { study: Case
   return (
     <>
       {/* Hero Bölümü */}
-      <section className="relative pt-36 pb-20 overflow-hidden bg-canvas">
+      <section className="relative pt-36 pb-14 overflow-hidden bg-canvas">
         <div className="absolute inset-0 bg-gradient-to-b from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:32px_32px]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
@@ -93,7 +93,7 @@ export default function CaseStudyClient({ study, relatedStories }: { study: Case
       </section>
 
       {/* Metrikler ve GSC Grafikleri */}
-      <section className="py-24 bg-gradient-to-b from-canvas-alt to-canvas relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-b from-canvas-alt to-canvas relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mb-24">

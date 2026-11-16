@@ -58,7 +58,7 @@ export default function HomeAuditForm() {
   ];
 
   return (
-    <section id="analiz" className="scroll-mt-24 bg-night py-20 md:py-28">
+    <section id="analiz" className="scroll-mt-24 bg-night py-12 md:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-6">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-accent-light/80">Ücretsiz ön analiz</p>

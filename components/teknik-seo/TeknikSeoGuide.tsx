@@ -64,11 +64,11 @@ export default function TeknikSeoGuide({ faqItems }: { faqItems: TeknikFaq[] }) 
   };
 
   return (
-    <section id="teknik-seo-rehberi" className="border-t border-line bg-white py-20 md:py-24">
+    <section id="teknik-seo-rehberi" className="border-t border-line bg-white py-12 md:py-16">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14">
+        <div className="mb-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Teknik SEO rehberi</p>
           <p className="text-3xl font-bold tracking-tight text-ink md:text-[44px] md:leading-[1.18]">
             Teknik SEO hakkında bilmeniz gereken her şey

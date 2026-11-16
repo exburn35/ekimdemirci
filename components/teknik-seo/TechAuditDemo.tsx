@@ -78,11 +78,11 @@ export default function TechAuditDemo() {
   const scoreColor = score === null ? "text-ink-faint" : score >= 90 ? "text-accent-dark" : score >= 70 ? "text-amber-600" : "text-red-600";
 
   return (
-    <section id="teknik-tarama" className="relative overflow-hidden bg-canvas py-20 md:py-28">
+    <section id="teknik-tarama" className="relative overflow-hidden bg-canvas py-12 md:py-16">
       <div className="pointer-events-none absolute -top-24 left-1/2 h-[380px] w-[720px] -translate-x-1/2 rounded-full bg-brand/10 blur-[120px]" />
 
       <div ref={rootRef} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center md:mb-14">
+        <div className="mb-8 text-center md:mb-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Teknik denetim</p>
           <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-[44px] lg:leading-[1.18]">
             Sitenizi Google&apos;ın gözüyle tarıyorum.

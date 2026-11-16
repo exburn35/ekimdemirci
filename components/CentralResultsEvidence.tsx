@@ -145,7 +145,7 @@ export default function CentralResultsEvidence() {
   };
 
   return (
-    <section className="py-24 bg-canvas relative overflow-hidden border-t border-line">
+    <section className="py-16 bg-canvas relative overflow-hidden border-t border-line">
       {/* Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
 

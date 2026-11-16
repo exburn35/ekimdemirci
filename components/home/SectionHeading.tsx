@@ -17,7 +17,7 @@ export default function SectionHeading({
   const dark = tone === "dark";
 
   return (
-    <div className={`${centered ? "text-center" : "flex-1"} mb-10 md:mb-14`}>
+    <div className={`${centered ? "text-center" : "flex-1"} mb-8 md:mb-10`}>
       <p
         className={`text-xs font-semibold uppercase tracking-[0.18em] mb-3 ${
           dark ? "text-accent-light/80" : "text-brand"

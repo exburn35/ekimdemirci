@@ -18,7 +18,7 @@ const quickLinks = [
 
 export default function HomeHero() {
   return (
-    <section className="relative overflow-hidden bg-canvas pt-28 pb-14 md:pt-36 md:pb-20">
+    <section className="relative overflow-hidden bg-canvas pt-28 pb-14 md:pt-36 md:pb-14">
       {/* Yumuşak arka plan dokusu */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#161b2e0f_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
       <div className="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[520px] rounded-full bg-brand/10 blur-[120px]" />

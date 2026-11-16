@@ -46,7 +46,7 @@ export default function AuditRequest() {
     <>
       <Breadcrumb items={[{ name: "Audit Talebi", href: "/audit-talebi" }]} />
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-14 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
@@ -77,14 +77,14 @@ export default function AuditRequest() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-black">
+      <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-ink">
@@ -149,14 +149,14 @@ export default function AuditRequest() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-gradient-to-b from-canvas to-canvas-alt">
+      <section className="py-16 bg-gradient-to-b from-canvas to-canvas-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-ink">
@@ -212,7 +212,7 @@ export default function AuditRequest() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-24 bg-black">
+      <section className="py-16 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

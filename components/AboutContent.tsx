@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutContent() {
   return (
-    <section className="py-24 bg-canvas relative z-20 shadow-[0_-12px_40px_rgba(22,27,46,0.06)] rounded-t-[3rem] border-t border-line">
+    <section className="py-16 bg-canvas relative z-20 shadow-[0_-12px_40px_rgba(22,27,46,0.06)] rounded-t-[3rem] border-t border-line">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image */}

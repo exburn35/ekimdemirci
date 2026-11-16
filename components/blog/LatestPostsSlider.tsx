@@ -85,7 +85,7 @@ export default function LatestPostsSlider({
   if (!posts || posts.length === 0) return null;
 
   return (
-    <section className="py-24 bg-canvas relative z-10 overflow-hidden border-t border-line">
+    <section className="py-16 bg-canvas relative z-10 overflow-hidden border-t border-line">
       {/* Background Decorative Gradients */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[350px] h-[350px] bg-purple-600/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[350px] h-[350px] bg-cyan-600/5 rounded-full blur-[100px] pointer-events-none" />

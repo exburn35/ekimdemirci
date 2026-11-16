@@ -49,7 +49,7 @@ export default function HomeFaq() {
   };
 
   return (
-    <section id="sss" className="bg-white py-20 md:py-28">
+    <section id="sss" className="bg-white py-12 md:py-16">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-4">

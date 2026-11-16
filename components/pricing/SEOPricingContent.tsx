@@ -212,7 +212,7 @@ export default function SEOPricingContent() {
     <>
       <Breadcrumb items={[{ name: "SEO Danışmanlık Fiyatları", href: "/seo-danismanlik-fiyatlari" }]} />
       {/* Hero Bölümü */}
-      <section className="relative pt-36 pb-24 overflow-hidden">
+      <section className="relative pt-36 pb-16 overflow-hidden">
         {/* Arka plan katmanı */}
         <div className="absolute inset-0 bg-gradient-to-b from-canvas via-canvas-alt to-canvas" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:32px_32px]" />
@@ -241,7 +241,7 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Fiyat Kartları Bölümü */}
-      <section className="py-20 relative overflow-hidden bg-canvas">
+      <section className="py-12 relative overflow-hidden bg-canvas">
         {/* Arka plan blur efekti */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-light rounded-full blur-[130px] pointer-events-none" />
         
@@ -342,14 +342,14 @@ export default function SEOPricingContent() {
       <GEOPricingSection />
 
       {/* Neden Ekim Demirci? Değer Önerisi */}
-      <section className="py-20 relative bg-canvas border-t border-line">
+      <section className="py-12 relative bg-canvas border-t border-line">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
               <span className="text-ink">
@@ -386,14 +386,14 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Fiyatlar Neye Göre Değişir? Kriterler Bölümü */}
-      <section className="py-20 relative bg-canvas border-t border-line">
+      <section className="py-12 relative bg-canvas border-t border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
               <span className="text-ink">
@@ -434,14 +434,14 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Sektörel Senaryolar ve Gerçekçi Bütçeler */}
-      <section className="py-20 relative bg-canvas border-t border-line">
+      <section className="py-12 relative bg-canvas border-t border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
               <span className="text-ink">
@@ -484,14 +484,14 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Freelance Danışman mı, Ajans mı? Karşılaştırma Bölümü */}
-      <section className="py-20 relative bg-canvas border-t border-line">
+      <section className="py-12 relative bg-canvas border-t border-line">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
               <span className="text-ink">
@@ -527,14 +527,14 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Çalışma Süreci Bölümü */}
-      <section className="py-20 relative bg-canvas border-t border-line">
+      <section className="py-12 relative bg-canvas border-t border-line">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
               <span className="text-ink">
@@ -587,7 +587,7 @@ export default function SEOPricingContent() {
       </section>
 
       {/* Sıkça Sorulan Sorular Bölümü */}
-      <section className="py-20 relative bg-canvas border-t border-line">
+      <section className="py-12 relative bg-canvas border-t border-line">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}

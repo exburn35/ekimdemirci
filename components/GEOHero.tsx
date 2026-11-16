@@ -619,7 +619,7 @@ export default function GEOHero() {
         </defs>
       </svg>
 
-      <section className="geo-hero-section relative pt-32 pb-20 overflow-hidden bg-canvas lg:min-h-[720px] lg:max-h-[880px] flex items-center lg:py-0">
+      <section className="geo-hero-section relative pt-32 pb-14 overflow-hidden bg-canvas lg:min-h-[720px] lg:max-h-[880px] flex items-center lg:py-0">
         {/* Background Gradients and Dots exactly matching site's theme */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f7f6f2_70%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#161b2e05_1px,transparent_1px),linear-gradient(to_bottom,#161b2e05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />

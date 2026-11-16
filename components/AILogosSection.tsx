@@ -48,7 +48,7 @@ export default function AILogosSection() {
   ];
 
   return (
-    <section className="py-24 bg-canvas border-t border-line relative overflow-hidden">
+    <section className="py-16 bg-canvas border-t border-line relative overflow-hidden">
       {/* Background Orbs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -58,7 +58,7 @@ export default function AILogosSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-medium text-purple-600 uppercase tracking-widest mb-6">
             <Sparkles className="w-3 h-3" />
