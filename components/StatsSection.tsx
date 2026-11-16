@@ -1,72 +1,37 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Calendar, Briefcase, Globe, Users } from "lucide-react";
+import { Briefcase, Calendar, Globe, Users } from "lucide-react";
 
 const stats = [
-  {
-    icon: Calendar,
-    value: "2020",
-    label: "Profesyonel Sektöre Giriş",
-    description: "Dijital pazarlama yolculuğumun başlangıcı",
-  },
-  {
-    icon: Briefcase,
-    value: "15+",
-    label: "Farklı Sektör",
-    description: "Çeşitli endüstrilerde deneyim",
-  },
-  {
-    icon: Globe,
-    value: "15+",
-    label: "Danışmanlık Verilen Ülke",
-    description: "Uluslararası SEO uzmanlığı",
-  },
-  {
-    icon: Users,
-    value: "200+",
-    label: "Danışmanlık Verilen Müşteri",
-    description: "Başarıyla teslim edilen projeler",
-  },
+  { icon: Calendar, value: "2020", label: "Sektöre giriş yılım", text: "Dijital pazarlama yolculuğum o yıl başladı." },
+  { icon: Briefcase, value: "15+", label: "Farklı sektör", text: "Moda ve perakendeden sağlığa, finanstan eğitime." },
+  { icon: Globe, value: "15+", label: "Danışmanlık verdiğim ülke", text: "Farklı pazarlarda ve dillerde SEO deneyimi." },
+  { icon: Users, value: "200+", label: "Danışmanlık verdiğim müşteri", text: "Küçük işletmelerden tanınmış markalara." },
 ];
 
 export default function StatsSection() {
   return (
-    <section className="py-16 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-ink">
-              Deneyim & Sonuçlar
-            </span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={stat.label}
-                className="glass-strong p-8 rounded-2xl text-center hover:bg-ink/5 transition-all duration-300 group"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-8 h-8 text-ink" />
+    <section className="bg-canvas py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-line bg-white p-6 shadow-card md:p-10">
+          <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand/10 blur-[90px]" />
+          <div className="relative mb-8 md:mb-10">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">Rakamlarla</p>
+            <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">Deneyimim, kısaca</h2>
+          </div>
+          <dl className="relative grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((s) => {
+              const Icon = s.icon;
+              return (
+                <div key={s.label} className="rounded-2xl bg-canvas p-6">
+                  <Icon className="h-5 w-5 text-brand" />
+                  <dd className="mt-4 text-5xl font-bold tracking-tight text-ink">{s.value}</dd>
+                  <dt className="mt-2 font-semibold text-ink">{s.label}</dt>
+                  <dd className="mt-1 text-sm leading-relaxed text-ink-muted">{s.text}</dd>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-ink mb-2">{stat.value}</div>
-                <div className="text-lg font-semibold text-ink-soft mb-2">{stat.label}</div>
-                <div className="text-sm text-ink-muted">{stat.description}</div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </dl>
         </div>
       </div>
     </section>
   );
 }
-
-
-
-
-
-
