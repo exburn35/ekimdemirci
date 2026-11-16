@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Linkedin, Instagram, Youtube } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { socialChannels } from "@/lib/social";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
 const defaultBio =
@@ -20,11 +21,7 @@ const tools = [
   { name: "Screaming Frog", src: "/screaming-frog-logo.png" },
 ];
 
-const socials = [
-  { icon: Linkedin, label: "LinkedIn", href: SITE_CONFIG.sameAs.find((u) => u.includes("linkedin")) },
-  { icon: Instagram, label: "Instagram", href: SITE_CONFIG.sameAs.find((u) => u.includes("instagram")) },
-  { icon: Youtube, label: "YouTube", href: SITE_CONFIG.sameAs.find((u) => u.includes("youtube")) },
-].filter((s) => s.href);
+const socials = socialChannels;
 
 export default function HomeAboutPreview() {
   return (
@@ -81,16 +78,16 @@ export default function HomeAboutPreview() {
               Hikâyemin tamamı <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <div className="flex gap-2">
-              {socials.map(({ icon: Icon, label, href }) => (
+              {socials.map(({ name, href, logo }) => (
                 <a
-                  key={label}
+                  key={name}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-ink-muted transition-colors hover:border-brand/40 hover:text-brand"
+                  aria-label={name}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white transition-all hover:-translate-y-0.5 hover:shadow-card"
                 >
-                  <Icon className="h-4 w-4" />
+                  <Image src={logo} alt="" width={20} height={20} className="h-5 w-5 object-contain" />
                 </a>
               ))}
             </div>

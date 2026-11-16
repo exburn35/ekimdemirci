@@ -1,42 +1,6 @@
-import { ArrowUpRight, Instagram, Linkedin, PenLine, Pin, Youtube } from "lucide-react";
-
-const channels = [
-  {
-    icon: Linkedin,
-    name: "LinkedIn",
-    handle: "Ekim Demirci",
-    href: "https://www.linkedin.com/in/ekim-demirci/",
-    tone: "bg-[#0A66C2]",
-  },
-  {
-    icon: Instagram,
-    name: "Instagram",
-    handle: "@ekimdemircii",
-    href: "https://www.instagram.com/ekimdemircii/",
-    tone: "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF]",
-  },
-  {
-    icon: Youtube,
-    name: "YouTube",
-    handle: "@ekimdemirciseo",
-    href: "https://www.youtube.com/@ekimdemirciseo",
-    tone: "bg-[#FF0000]",
-  },
-  {
-    icon: PenLine,
-    name: "Medium",
-    handle: "@ekmdmrci",
-    href: "https://medium.com/@ekmdmrci",
-    tone: "bg-ink",
-  },
-  {
-    icon: Pin,
-    name: "Pinterest",
-    handle: "ekimdemirciseo",
-    href: "https://tr.pinterest.com/ekimdemirciseo/",
-    tone: "bg-[#E60023]",
-  },
-];
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import { socialChannels as channels } from "@/lib/social";
 
 export default function FollowSection() {
   return (
@@ -53,7 +17,6 @@ export default function FollowSection() {
 
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {channels.map((c) => {
-            const Icon = c.icon;
             return (
               <li key={c.name}>
                 <a
@@ -63,8 +26,8 @@ export default function FollowSection() {
                   className="group flex h-full flex-col rounded-3xl border border-line bg-canvas p-6 transition-all hover:-translate-y-0.5 hover:bg-white hover:shadow-lift"
                 >
                   <div className="flex items-center justify-between">
-                    <span className={`flex h-11 w-11 items-center justify-center rounded-xl text-white ${c.tone}`}>
-                      <Icon className="h-5 w-5" />
+                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-card transition-transform group-hover:scale-105">
+                      <Image src={c.logo} alt={`${c.name} logosu`} width={36} height={36} className="h-9 w-9 object-contain" />
                     </span>
                     <ArrowUpRight className="h-5 w-5 text-ink-faint transition-colors group-hover:text-brand" />
                   </div>
