@@ -16,6 +16,11 @@ const servicesList = [
     desc: "ChatGPT, Gemini ve AI yanıt optimizasyonu" 
   },
   { 
+    name: "Yapay Zeka SEO", 
+    href: "/seo-hizmetleri/yapay-zeka-seo", 
+    desc: "Platform bazlı ChatGPT, Perplexity ve AI Overview stratejileri" 
+  },
+  { 
     name: "Teknik SEO", 
     href: "/seo-hizmetleri/teknik-seo", 
     desc: "Core Web Vitals, tarama ve indeksleme" 

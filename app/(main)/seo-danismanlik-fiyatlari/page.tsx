@@ -1,71 +1,41 @@
 import { Metadata } from "next";
-import SEOPricingContent from "@/components/pricing/SEOPricingContent";
+import PricingPage from "@/components/pricing/PricingPage";
 import SEOAuditSection from "@/components/SEOAuditSection";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import RelatedPages from "@/components/RelatedPages";
 import ContactForm from "@/components/ContactForm";
 
+const title = "SEO Fiyatları ve GEO Fiyatları 2026";
+const description =
+  "Güncel SEO fiyatları ve GEO fiyatları: aylık ₺20.000'den başlayan SEO danışmanlık paketleri, yapay zeka görünürlüğü için GEO paketleri ve indirimli SEO + GEO paketleri.";
+
 export const metadata: Metadata = {
-  title: "SEO Danışmanlık Fiyatları 2026",
-  description: "Şeffaf SEO danışmanlık fiyatları ve paketleri. Küçük işletmelerden kurumsal markalara kadar bütçenize uygun profesyonel SEO fiyatlandırma modelleri.",
+  title,
+  description,
   alternates: {
     canonical: "/seo-danismanlik-fiyatlari",
   },
   openGraph: {
-    title: "SEO Danışmanlık Fiyatları 2026 | Ekim Demirci",
-    description: "Şeffaf SEO danışmanlık fiyatları ve paketleri. Küçük işletmelerden kurumsal markalara kadar bütçenize uygun profesyonel SEO fiyatlandırma modelleri.",
+    title: `${title} | Ekim Demirci`,
+    description,
   },
   twitter: {
-    title: "SEO Danışmanlık Fiyatları 2026 | Ekim Demirci",
-    description: "Şeffaf SEO danışmanlık fiyatları ve paketleri. Küçük işletmelerden kurumsal markalara kadar bütçenize uygun profesyonel SEO fiyatlandırma modelleri.",
+    title: `${title} | Ekim Demirci`,
+    description,
   },
 };
 
 export default function SEOConsultingPricesPage() {
   return (
     <>
-      <SEOPricingContent />
-
-      {/* SEO Audit Bölümü */}
+      <PricingPage />
       <SEOAuditSection />
-
-      {/* İlgili Blog Yazıları Slider */}
       <RelatedBlogPosts />
-
-      {/* İlgili Sayfalar */}
       <RelatedPages />
-
-      {/* İletişim Formu */}
       <ContactForm
-        title="Size Özel Teklif Alın"
-        description="İhtiyaçlarınıza uygun SEO paketini belirlemek için benimle iletişime geçin."
+        title="Size özel teklif alın"
+        description="Sitenizden ve hedefinizden kısaca bahsedin; size uygun paketi ve fiyatı kendim yazayım."
         showTitle={true}
-      />
-
-      {/* Service ve FAQ Schema Entegrasyonu */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "SEO Danışmanlığı",
-            "serviceType": "SEO Danışmanlığı",
-            "provider": {
-              "@type": "Person",
-              "name": "Ekim Demirci",
-              "url": "https://ekimdemirci.com"
-            },
-            "areaServed": "TR",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "TRY",
-              "lowPrice": "20000",
-              "highPrice": "40000",
-              "offerCount": "3"
-            }
-          })
-        }}
       />
     </>
   );
