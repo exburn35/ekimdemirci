@@ -4,58 +4,14 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Sparkles, Brain, Bot, Zap } from "lucide-react";
 import Link from "next/link";
 
-const geoPlans = [
-  {
-    name: "Radar",
-    price: "₺25.000",
-    period: "aylık",
-    description: "Yapay zeka motorlarında ilk görünürlüğünü başlatmak isteyen markalar için.",
-    features: [
-      "AI Görünürlük & Mention Analizi (ChatGPT, Perplexity, Gemini)",
-      "Temel Entity (Varlık) Yapılandırması",
-      "Schema.org (Organization, Article, FAQPage) Kodlaması",
-      "10 Adet NLP & AEO Uyumlu İçerik Optimizasyonu",
-      "llms.txt ve AI Bot Erişim Kurguları (GPTBot, ClaudeBot)",
-      "Aylık AI Görünürlük & Alıntı (Citation) Raporu",
-    ],
-    popular: false,
-    border: "border-line",
-  },
-  {
-    name: "Referans",
-    price: "₺45.000",
-    period: "aylık",
-    description: "Yapay zeka yanıtlarında birincil kaynak ve önerilen marka olmak isteyen işletmeler için.",
-    features: [
-      "Kapsamlı LLM Görünürlük & Share of Model Voice Analizi",
-      "Derin Entity Otoritesi & Knowledge Graph İnşası",
-      "Semantik Triple (Özne-Yüklem-Nesne) İçerik Mimarisi",
-      "25 Adet AEO & NLP Uyumlu İçerik Kurgusu",
-      "Dijital PR & Co-Citation (Marka Birlikteliği Atıfları)",
-      "Özel AI Bot Erişim & Rendering Optimizasyonları",
-      "Aylık Detaylı Mention Artış Raporu ve Strateji Toplantısı",
-      "Öncelikli Destek & Doğrudan Danışmanlık",
-    ],
-    popular: true,
-    border: "border-purple-500/40 shadow-purple-500/10",
-  },
-  {
-    name: "Otorite",
-    price: "₺75.000",
-    period: "aylık",
-    description: "Çok dilli, uluslararası ve yüksek rekabetli pazarlarda AI liderliği hedefleyen markalar için.",
-    features: [
-      "Çok Dilli (İngilizce / Türkçe) GEO ve AEO Stratejisi",
-      "Özel AI Crawl Audit & Algoritma Takip Otomasyonları",
-      "Wikipedia / Wikidata & Global Knowledge Graph Entegrasyonu",
-      "Sınırsız Semantik İçerik & Schema.org Mimari Yönetimi",
-      "İleri Düzey Co-Citation & Sektörel Basın Atıf Yönetimi",
-      "Haftalık İlerleme Raporu ve Kesintisiz Danışmanlık",
-    ],
-    popular: false,
-    border: "border-line",
-  },
-];
+import { geoPlans as baseGeoPlans, tl } from "@/lib/pricing";
+
+const geoPlans = baseGeoPlans.map((p) => ({
+  ...p,
+  price: tl(p.price),
+  period: "aylık",
+  border: p.popular ? "border-purple-500/40 shadow-purple-500/10" : "border-line",
+}));
 
 interface GEOPricingSectionProps {
   showGeoInfoBox?: boolean;
