@@ -165,6 +165,15 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+.blog-content .bx-answer ol,
+.blog-content .bx-answer ul {
+  margin: 0.5rem 0;
+}
+
+.blog-content .bx-answer li {
+  margin-bottom: 0.2rem;
+}
+
 .blog-content .bx-answer .bx-label,
 .blog-content .bx-note .bx-label {
   display: block;
@@ -637,4 +646,14 @@ h1, h2, h3, h4, h5, h6, p {
     justify-self: center;
     transform: rotate(90deg);
   }
+}
+
+/* Geniş ve ince görseller (ör. GA4 tablo ekran görüntüsü) mobilde kaydırılır */
+.blog-content figure.blog-figure.is-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-content figure.blog-figure.is-scroll img {
+  min-width: 720px;
 }
