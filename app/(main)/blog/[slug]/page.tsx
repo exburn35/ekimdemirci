@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import BlogPostContent from "@/components/blog/BlogPostContent";
 import BlogPostingSchema from "@/components/schemas/BlogPostingSchema";
-import { getAllBlogPosts, getBlogPostBySlug, cleanAndProcessHtml } from "@/lib/blog";
+import { getAllBlogPosts, getBlogPostBySlug, cleanAndProcessHtml, extractFaqFromHtml } from "@/lib/blog";
 
 export const dynamicParams = true;
 
@@ -74,6 +74,19 @@ export default async function BlogPostPage({
 
     const rawContent = typeof post.content === 'string' ? post.content : (post.content?.html || "");
     const { cleanHtml, headings } = cleanAndProcessHtml(rawContent, postTitle);
+    const faqs = extractFaqFromHtml(cleanHtml);
+    const faqSchema =
+      faqs.length > 0
+        ? {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          }
+        : null;
 
     const breadcrumbItems = [
       { name: "Blog", href: "/blog" },
@@ -91,6 +104,9 @@ export default async function BlogPostPage({
           slug: post.slug,
           featuredImage: post.featuredImage
         }} />
+        {faqSchema ? (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        ) : null}
         <BlogPostContent post={post} processedHtml={cleanHtml} headings={headings} />
       </>
     );
