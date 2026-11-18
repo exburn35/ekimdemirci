@@ -149,20 +149,18 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
               <article className="blog-content w-full">
                 {/* TL;DR Section */}
                 {((post as any).tldr || post.excerpt) && (
-                  <div className="mb-10 p-6 bg-purple-500/[0.03] backdrop-blur-md rounded-2xl border border-purple-500/20 relative overflow-hidden group">
-                    {/* Visual Accent */}
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-brand to-accent" />
-                    
-                    <div className="text-xl md:text-2xl font-extrabold tracking-tight mb-4 flex items-center gap-2">
-                      <Zap className="w-5 h-5 text-[#7b5cff] animate-pulse flex-shrink-0" />
-                      <span className="bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
-                        TL;DR & Önemli Çıkarımlar
-                      </span>
+                  <div className="relative mb-10 overflow-hidden rounded-2xl border border-line bg-white p-6 shadow-card md:p-7">
+                    <div className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-brand to-accent" />
+
+                    <div className="mb-4 flex items-center gap-2 text-xl font-extrabold tracking-tight text-ink md:text-2xl">
+                      <Zap className="h-5 w-5 flex-shrink-0 text-brand" />
+                      TL;DR: Kısaca
                     </div>
 
-                    {/* Introductory Summary (Excerpt) */}
+                    {/* Kısa cevap (excerpt) */}
                     {post.excerpt && (
-                      <p className="text-ink-soft text-sm md:text-base leading-relaxed mb-4">
+                      <p className="mb-4 rounded-xl bg-brand-light/60 px-4 py-3 text-sm leading-relaxed text-ink md:text-base">
+                        {(post as any).tldr ? <span className="mr-1.5 font-bold text-brand">Kısa cevap:</span> : null}
                         {decodeHtmlEntities(post.excerpt)}
                       </p>
                     )}

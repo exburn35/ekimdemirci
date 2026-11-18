@@ -464,3 +464,32 @@ export function getBlogNavigation(currentSlug: string): {
 
 export { decodeHtmlEntities, formatDate, formatDateShort, isSameDay } from "./blog-utils";
 
+
+export interface FaqPair {
+  question: string;
+  answer: string;
+}
+
+/**
+ * "Sık Sorulan Sorular" başlıklı h2 bölümündeki h3 soru / paragraf cevap çiftlerini çıkarır.
+ * FAQPage yapılandırılmış verisi bu çiftlerden üretilir, böylece içerik ile schema hep aynı kalır.
+ */
+export function extractFaqFromHtml(html: string): FaqPair[] {
+  if (!html) return [];
+  const sectionMatch = html.match(
+    /<h2[^>]*>\s*(?:Sık Sorulan Sorular|Sıkça Sorulan Sorular|SSS)[^<]*<\/h2>([\s\S]*?)(?=<h2[\s>]|$)/i
+  );
+  if (!sectionMatch) return [];
+  const section = sectionMatch[1];
+  const pairs: FaqPair[] = [];
+  const re = /<h3[^>]*>([\s\S]*?)<\/h3>([\s\S]*?)(?=<h3[\s>]|$)/gi;
+  let m: RegExpExecArray | null;
+  const strip = (s: string) =>
+    decodeHtmlEntities(s.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim());
+  while ((m = re.exec(section)) !== null) {
+    const question = strip(m[1]);
+    const answer = strip(m[2]);
+    if (question && answer) pairs.push({ question, answer });
+  }
+  return pairs;
+}

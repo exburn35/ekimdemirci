@@ -136,6 +136,84 @@ h1, h2, h3, h4, h5, h6, p {
   background: #faf9f6;
 }
 
+/* Mobilde tablolar yatay kaydırılır, sayfayı taşırmaz */
+.blog-content .table-wrap,
+.blog-content figure.wp-block-table {
+  overflow-x: auto;
+  margin: 2.5em 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-content .table-wrap table,
+.blog-content figure.wp-block-table table {
+  margin: 0;
+  min-width: 560px;
+}
+
+/* Kısa cevap kutusu: başlığın altındaki doğrudan yanıt */
+.blog-content .bx-answer {
+  margin: 0 0 1.75em;
+  padding: 1.1rem 1.35rem;
+  border: 1px solid #d9d9f5;
+  border-left: 4px solid #3d3dd6;
+  border-radius: 0 14px 14px 0;
+  background: #f5f5fd;
+  color: #262b40;
+}
+
+.blog-content .bx-answer p {
+  margin: 0;
+}
+
+.blog-content .bx-answer .bx-label,
+.blog-content .bx-note .bx-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3d3dd6;
+}
+
+/* Not / uyarı kutusu */
+.blog-content .bx-note {
+  margin: 2em 0;
+  padding: 1.1rem 1.35rem;
+  border: 1px solid #cfe9e4;
+  border-radius: 14px;
+  background: #f1faf8;
+}
+
+.blog-content .bx-note .bx-label {
+  color: #0b7a6b;
+}
+
+.blog-content .bx-note p:last-child,
+.blog-content .bx-note ul:last-child,
+.blog-content .bx-note ol:last-child {
+  margin-bottom: 0;
+}
+
+/* Kaynaklar listesi */
+.blog-content ol.blog-sources {
+  padding: 1.25rem 1.25rem 1.25rem 2.75rem;
+  border: 1px solid #e6e3da;
+  border-radius: 16px;
+  background: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.blog-content ol.blog-sources li {
+  margin-bottom: 0.9rem;
+  color: #4a5068;
+}
+
+.blog-content ol.blog-sources li:last-child {
+  margin-bottom: 0;
+}
+
 /* Blockquotes */
 .blog-content blockquote {
   border-left: 4px solid #3d3dd6;
