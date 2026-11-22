@@ -657,3 +657,23 @@ h1, h2, h3, h4, h5, h6, p {
 .blog-content figure.blog-figure.is-scroll img {
   min-width: 720px;
 }
+
+/* Gömülü StatCounter grafiği */
+.blog-content [data-embed="statcounter"] {
+  margin: 2.5em 0;
+  overflow-x: auto;
+}
+
+.blog-content [data-embed="statcounter"] .statcounter-chart {
+  margin: 0 auto;
+}
+
+.blog-content [data-embed="statcounter"] figure.blog-figure {
+  margin: 0;
+}
+
+/* Küçük ekran görüntüleri büyütülmeden gösterilir */
+.blog-content figure.blog-figure.is-narrow img {
+  width: auto;
+  max-width: 100%;
+}
