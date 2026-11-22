@@ -15,6 +15,7 @@ import BlogNavigation from "./BlogNavigation";
 import BlogLinkPreview from "./BlogLinkPreview";
 import BlogMotionWrapper from "./BlogMotionWrapper";
 import AISummarizer from "./AISummarizer";
+import BlogEmbeds from "./BlogEmbeds";
 import BlogSocialShare from "./BlogSocialShare";
 
 interface BlogPostContentProps {
@@ -147,6 +148,7 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
             {/* Main Content Area */}
             <div className="lg:col-span-6 min-w-0 w-full">
               <article className="blog-content w-full">
+                <BlogEmbeds />
                 {/* TL;DR Section */}
                 {((post as any).tldr || post.excerpt) && (
                   <div className="relative mb-10 overflow-hidden rounded-2xl border border-line bg-white p-6 shadow-card md:p-7">
