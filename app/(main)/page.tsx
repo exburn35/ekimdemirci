@@ -19,15 +19,15 @@ const description =
 
 export const metadata: Metadata = {
   title: {
-    absolute: "SEO ve GEO Danışmanı Ekim Demirci",
+    absolute: "SEO ve GEO Uzmanı Ekim Demirci",
   },
   description,
   openGraph: {
-    title: "SEO ve GEO Danışmanı Ekim Demirci",
+    title: "SEO ve GEO Uzmanı Ekim Demirci",
     description,
   },
   twitter: {
-    title: "SEO ve GEO Danışmanı Ekim Demirci",
+    title: "SEO ve GEO Uzmanı Ekim Demirci",
     description,
   },
 };

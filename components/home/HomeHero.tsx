@@ -90,7 +90,7 @@ export default function HomeHero() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-line bg-canvas-alt shadow-lift">
                 <Image
                   src="/ekim.jpg"
-                  alt="SEO ve GEO Danışmanı Ekim Demirci"
+                  alt="SEO ve GEO Uzmanı Ekim Demirci"
                   fill
                   priority
                   sizes="(max-width: 1024px) 90vw, 420px"
