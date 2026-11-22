@@ -27,12 +27,12 @@ export default function HomeHero() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-7">
-            <h1 className="tracking-tight">
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-semibold text-ink-soft shadow-card">
-                <span className="h-2 w-2 rounded-full bg-accent" />
-                SEO ve GEO Danışmanı Ekim Demirci
-              </span>
-              <span className="block text-[40px] font-bold leading-[1.18] text-ink sm:text-5xl lg:text-[60px]">
+            <div className="tracking-tight">
+              <h1 className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-semibold text-ink-soft shadow-card">
+                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent" />
+                SEO ve GEO Uzmanı Ekim Demirci
+              </h1>
+              <p className="block text-[40px] font-bold leading-[1.18] text-ink sm:text-5xl lg:text-[60px]">
                 Aranan değil,{" "}
                 <span className="relative whitespace-nowrap text-brand">
                   önerilen
@@ -46,8 +46,8 @@ export default function HomeHero() {
                   </svg>
                 </span>{" "}
                 marka olun.
-              </span>
-            </h1>
+              </p>
+            </div>
 
             <p className="mt-7 text-lg leading-relaxed text-ink-soft">
               Müşterileriniz artık yalnızca Google&apos;a yazmıyor; aynı soruyu ChatGPT&apos;ye, Gemini&apos;ye,
