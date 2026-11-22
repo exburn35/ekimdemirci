@@ -12,7 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "SEO ve GEO Danışmanı Ekim Demirci",
+    default: "SEO ve GEO Uzmanı Ekim Demirci",
     template: "%s | Ekim Demirci"
   },
   description: "İşletmelerin arama sıralamalarında ve yapay zeka yanıtlarında üst sıralara çıkmasına yardımcı olan SEO & GEO Danışmanı Ekim Demirci.",
@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: "https://ekimdemirci.com",
     siteName: "Ekim Demirci - SEO & GEO Danışmanı",
-    title: "SEO ve GEO Danışmanı Ekim Demirci",
+    title: "SEO ve GEO Uzmanı Ekim Demirci",
     description: "İşletmelerin arama sıralamalarında ve yapay zeka yanıtlarında üst sıralara çıkmasına yardımcı olan SEO & GEO Danışmanı Ekim Demirci.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEO ve GEO Danışmanı Ekim Demirci",
+    title: "SEO ve GEO Uzmanı Ekim Demirci",
     description: "İşletmelerin arama sıralamalarında ve yapay zeka yanıtlarında üst sıralara çıkmasına yardımcı olan SEO & GEO Danışmanı Ekim Demirci.",
   },
   robots: {

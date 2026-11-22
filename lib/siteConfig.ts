@@ -4,7 +4,7 @@
  */
 export const SITE_CONFIG = {
   name: "Ekim Demirci",
-  title: "SEO ve GEO Danışmanı Ekim Demirci",
+  title: "SEO ve GEO Uzmanı Ekim Demirci",
   email: "ekmdmrci@gmail.com", // Sabit: Alan adlı e-postaya geçildiğinde buradan tek noktadan güncellenir
   phone: "+90 507 047 47 02",
   phoneFormatted: "+90 507 047 47 02",
