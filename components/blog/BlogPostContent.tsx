@@ -80,22 +80,24 @@ export default function BlogPostContent({ post, processedHtml, headings }: BlogP
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center lg:text-left">
           <BlogMotionWrapper>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors mb-8 group"
-            >
-              <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
-              <span>Blog Yazılarına Dön</span>
-            </Link>
-
-            {post.category && (
+            <div className="mb-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 lg:justify-start">
               <Link
-                href={`/kategori/${slugifyCategory(post.category)}`}
-                className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-600 hover:bg-blue-500/20 hover:text-ink transition-colors rounded-full text-xs font-bold mb-8 uppercase tracking-widest"
+                href="/blog"
+                className="group inline-flex items-center gap-2 text-ink-muted transition-colors hover:text-ink"
               >
-                {post.category}
+                <ArrowLeft className="h-4 w-4 transform transition-transform group-hover:-translate-x-1" />
+                <span>Blog Yazılarına Dön</span>
               </Link>
-            )}
+
+              {post.category && (
+                <Link
+                  href={`/kategori/${slugifyCategory(post.category)}`}
+                  className="inline-block rounded-full border border-brand/20 bg-brand-light px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand transition-colors hover:bg-brand hover:text-white"
+                >
+                  {post.category}
+                </Link>
+              )}
+            </div>
 
             <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[1.18] tracking-tight">
               <span className="text-ink">
