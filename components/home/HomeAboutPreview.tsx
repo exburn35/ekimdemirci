@@ -5,7 +5,7 @@ import { socialChannels } from "@/lib/social";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
 const defaultBio =
-  "Markaların hem Google'da hem de yapay zeka asistanlarının cevaplarında bulunabilir olması için çalışan bağımsız bir SEO ve GEO danışmanıyım. Beş yılı aşkın süredir e-ticaretten sağlığa farklı sektörlerdeki sitelerin organik görünürlüğünü büyütüyorum. Teknik altyapıyı, içerik mimarisini ve marka otoritesini ayrı işler olarak değil, birbirini besleyen tek bir sistem olarak ele alıyorum.";
+  "Markaların hem Google'da hem de yapay zeka asistanlarının cevaplarında bulunabilir olması için çalışan bir SEO ve GEO danışmanıyım. Beş yılı aşkın süredir e-ticaretten sağlığa farklı sektörlerdeki sitelerin organik görünürlüğünü büyütüyorum. Teknik altyapıyı, içerik mimarisini ve marka otoritesini ayrı işler olarak değil, birbirini besleyen tek bir sistem olarak ele alıyorum.";
 
 const facts = [
   { value: "5+ yıl", label: "SEO deneyimi" },

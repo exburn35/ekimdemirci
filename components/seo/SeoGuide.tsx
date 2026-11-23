@@ -179,7 +179,7 @@ export default function SeoGuide({ faqItems }: { faqItems: SeoFaq[] }) {
                     <tr>
                       <th className="px-5 py-3 font-semibold">Konu</th>
                       <th className="px-5 py-3 font-semibold">Ajans</th>
-                      <th className="px-5 py-3 font-semibold text-brand">Bağımsız danışman</th>
+                      <th className="px-5 py-3 font-semibold text-brand">SEO danışmanı</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-line bg-white">

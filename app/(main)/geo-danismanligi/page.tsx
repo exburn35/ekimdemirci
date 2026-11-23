@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
-    description: "ChatGPT ve Google AI Overview cevaplarında markanızın önerilen isim olması için bağımsız GEO danışmanlığı.",
+    description: "ChatGPT ve Google AI Overview cevaplarında markanızın önerilen isim olması için GEO danışmanlığı.",
   },
   twitter: {
     title: "GEO (Generative Engine Optimization) Danışmanlığı | Ekim Demirci",
-    description: "ChatGPT ve Google AI Overview cevaplarında markanızın önerilen isim olması için bağımsız GEO danışmanlığı.",
+    description: "ChatGPT ve Google AI Overview cevaplarında markanızın önerilen isim olması için GEO danışmanlığı.",
   },
 };
 

@@ -21,7 +21,7 @@ export default function HomeWhyIndependent() {
     <section className="bg-canvas-alt py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Neden bağımsız danışman?"
+          eyebrow="Neden benimle çalışmalı?"
           title="Ajansla çalışmak ile benimle çalışmak arasındaki fark"
           intro="Ajansların da doğru tercih olduğu durumlar var; özellikle aynı anda pek çok kanalı yönetmeniz gerekiyorsa. Ama hedefiniz arama ve yapay zeka görünürlüğüyse, tek bir uzmanın derinliği çoğu zaman daha hızlı sonuç getirir. Aşağıda iki çalışma modelini aynı başlıklar altında yan yana görebilirsiniz."
         />

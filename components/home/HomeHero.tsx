@@ -98,7 +98,7 @@ export default function HomeHero() {
                 />
                 <div className="absolute left-4 top-4 rounded-xl bg-ink/55 px-3 py-2 text-white backdrop-blur-md">
                   <p className="text-sm font-bold leading-tight">Ekim Demirci</p>
-                  <p className="text-xs text-white/80">Bağımsız SEO &amp; GEO Danışmanı · İstanbul</p>
+                  <p className="text-xs text-white/80">SEO &amp; GEO Danışmanı · İstanbul</p>
                 </div>
               </div>
 
