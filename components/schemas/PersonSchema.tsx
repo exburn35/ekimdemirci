@@ -14,7 +14,7 @@ export default function PersonSchema() {
         "email": SITE_CONFIG.email,
         "birthDate": "1991-11-02",
         "sameAs": SITE_CONFIG.sameAs,
-        "description": "İşletmelerin organik arama motorlarında ve yapay zeka (GEO) yanıtlarında üst sıralara çıkmasını sağlayan bağımsız SEO ve GEO Danışmanı.",
+        "description": "İşletmelerin organik arama motorlarında ve yapay zeka (GEO) yanıtlarında üst sıralara çıkmasını sağlayan SEO ve GEO Danışmanı.",
         "knowsAbout": [
           "SEO",
           "GEO (Generative Engine Optimization)",

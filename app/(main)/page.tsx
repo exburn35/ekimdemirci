@@ -15,7 +15,7 @@ import type { Metadata } from "next";
 import { getAllBlogPosts } from "@/lib/blog";
 
 const description =
-  "Bağımsız SEO ve GEO danışmanı Ekim Demirci; markanızı Google aramalarında ve ChatGPT, Gemini, Perplexity gibi yapay zeka cevaplarında görünür kılar. Ücretsiz ön analiz isteyin.";
+  "SEO ve GEO danışmanı Ekim Demirci; markanızı Google aramalarında ve ChatGPT, Gemini, Perplexity gibi yapay zeka cevaplarında görünür kılar. Ücretsiz ön analiz isteyin.";
 
 export const metadata: Metadata = {
   title: {

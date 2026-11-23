@@ -7,18 +7,18 @@ import { SeoAudience, SeoProcess, SeoProof, SeoScope, SeoServicesAndPricing } fr
 
 export const metadata: Metadata = {
   title: "SEO Danışmanlığı",
-  description: "Bağımsız SEO danışmanı Ekim Demirci ile sitenizi Google'da müşterilerinizin aradığı kelimelerde üst sıralara taşıyın. Teknik SEO, içerik ve otorite tek elden. Ücretsiz ön analiz isteyin.",
+  description: "SEO danışmanı Ekim Demirci ile sitenizi Google'da müşterilerinizin aradığı kelimelerde üst sıralara taşıyın. Teknik SEO, içerik ve otorite tek elden. Ücretsiz ön analiz isteyin.",
   alternates: {
     canonical: "/seo-danismanligi",
   },
   openGraph: {
     title: "SEO Danışmanlığı | Ekim Demirci",
-    description: "Sitenizi Google'da müşterilerinizin aradığı kelimelerde üst sıralara taşıyan bağımsız SEO danışmanlığı.",
+    description: "Sitenizi Google'da müşterilerinizin aradığı kelimelerde üst sıralara taşıyan SEO danışmanlığı.",
     url: "https://ekimdemirci.com/seo-danismanligi",
   },
   twitter: {
     title: "SEO Danışmanlığı | Ekim Demirci",
-    description: "Sitenizi Google'da müşterilerinizin aradığı kelimelerde üst sıralara taşıyan bağımsız SEO danışmanlığı.",
+    description: "Sitenizi Google'da müşterilerinizin aradığı kelimelerde üst sıralara taşıyan SEO danışmanlığı.",
   },
 };
 

@@ -376,7 +376,7 @@ export default function SeoAjanslariClient({ agencyData, faqs }: SeoAjanslariCli
           {/* Şeffaflık Notu */}
           <div className="mt-6 p-4 rounded-xl bg-purple-500/[0.07] border border-purple-500/20 text-sm text-ink-soft leading-relaxed">
             <p>
-              <strong className="text-ink font-semibold">Şeffaflık notu:</strong> Ben de bağımsız bir{" "}
+              <strong className="text-ink font-semibold">Şeffaflık notu:</strong> Ben de bir{" "}
               <Link
                 href="/hakkimda"
                 className="text-purple-700 hover:text-purple-700 font-semibold underline underline-offset-2"
